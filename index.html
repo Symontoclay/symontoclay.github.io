@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='utf-8' />
+<meta name='generator' content='SymOntoClay/SiteSupportApp'>
+<meta property='og:type' content='article' />
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta property='og:url' content='https://symontoclay.github.io/index.html' />
+<title>SymOntoClay - An open source experimental domain-specific language for game NPC.</title>
+<link rel='icon' href='/favicon.png' type='image/png'>
+<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'></script>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+<link rel='stylesheet' href='/site.css'>
+<script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script>
+<script src='https://kit.fontawesome.com/78db54b323.js'></script>
+</head>
+<body>
+<div class='container main-container'>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<header role='banner'>
+<p><a href = '/'><img src='/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>An open source experimental domain-specific language for game NPC.</span></p>
+</header>
+<nav role='navigation'>
+<a href ='/doc/index.html'>Documentation</a>&nbsp;|&nbsp;<a href ='https://github.com/GNUClay/GNUClay/tree/0.4.0'>Source code</a></nav>
+<hr style='border-bottom-color: #e2e2e2;'>
+<nav class='bread-crumb-nav'>
+<a style='color: #C0C0C0;'>Main</a></nav>
+</div>
+</div>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<article>
+<style>
+.features-preview-row {
+    display: flex;
+	justify-content: space-around; 
+	margin-top: 50px;
+}
+
+.features-preview-block {
+   width: 400px;
+   flex-shrink:0;
+}
+</style>
+
+<h1 class='center-h'>
+What is SymOntoClay?
+</h1>
+
+<p>
+I am going to create logical engine - one of parts of a game engine.
+</p>
+
+<p>
+Usually there exists these common reusable parts of a game engine: rendering engine, audio engine, physics engine. 
+But artificial intelligence is written for each concrete game and can not be separated from code of the game in many cases.
+</p>
+
+<p>
+I am going to have created standalone artificial intelligence engine and add many interesting approaches to the engine.
+</p>
+
+<p>
+I plan It will give me these benefits:
+    <ul>
+        <li>
+		    We can implement more features with less efforts in less time.
+		</li>
+		
+		<li>
+		    We can often use those features using of which was difficult or even impossible.
+		</li>
+    </ul>
+</p>
+
+<p>
+I am interested in such areas of developing:
+    <ul>
+	    <li>
+		    Adding more preset features of this engine for more faster developing of features of concrete game.
+		</li>
+		
+		<li>
+		    Coping and minification of complexity of the code of concrete game.
+		</li>
+	</ul>
+</p>
+
+<h1 class='center-h'>
+What features is planned?
+</h1>
+
+<p>
+The main approaches which I am going to add to my engine.
+I think these approaches are unique for common game engines.
+</p>
+
+<div class="features-preview-row">
+	<div class='features-preview-block'>
+	    <h3 class='center-h'>Integrated natural language processing</h3>
+		<p>I will convert natural language text to predicate expression by ATN.</p>
+		<p>Next these phrases can be processed by means of logic programming.</p>
+    </div>
+	<div class='features-preview-block'>
+	    <h3 class='center-h'>Rules based knowledge system with predicate calculus</h3>
+		<p>We get convenient knowledge storage and can use many advantages of logical programming.</p>
+		<p>Rules based system helps us to calculate missed facts by rules and existing facts.</p>
+    </div>
+</div>
+
+<div class="features-preview-row">
+    <div class='features-preview-block'>
+	    <h3 class='center-h'>Fuzzy logic</br>&nbsp;</h3>
+        <p>We can use logic beyond true or false and operate with concepts like "very", "maybe".</p>
+		<p>So our code can be approximated to natural language sentences.</p>
+    </div>
+	<div class='features-preview-block'>
+	    <h3 class='center-h'>Advanced behavior management</br>&nbsp;</h3>
+        <p>We can change order dispatching of methods, for example by changing inheritance relations.</p>
+		<p>In general we can make great change of behavior of a NPC in one or few code rows.</p>
+    </div>
+</div>
+
+<div class="features-preview-row" style='margin-bottom: 50px;'>
+    <div class='features-preview-block'>
+	    <h3 class='center-h'>Full control of an executable code</br>&nbsp;</h3>
+		<p>We can stop and save executable code to special image.</p>
+		<p>After loading from that image we can continue executing of that code exactly from saved state.</p>
+    </div>
+</div>
+
+<p>
+Next features are in existing game engines. These features are also important for me.
+</p>
+
+<div class="features-preview-row">
+    <div class='features-preview-block'>
+	    <h3 class='center-h'>Maximal declarativity</br>&nbsp;</h3>
+        <p>One of important my goals is to minimize additional code which does not relate directly to game logic.</p>
+		<p>Features should be very clean and self explaining.</p>
+    </div>
+	    <div class='features-preview-block'>
+	    <h3 class='center-h'>Modularity</br>&nbsp;</h3>
+        <p>It allows us to increment developing, delivering and using code.</p>
+		<p>It also is very convenient means for controlling of complexity and decreasing amount of bugs.</p>
+    </div>
+</div>
+
+<div class="features-preview-row">
+    <div class='features-preview-block'>
+	    <h3 class='center-h'>Object-oriented approaches</br>&nbsp;</h3>
+        <p>It describes entities of real worlds and their relations in very convenient way.</p>
+		<p>It also is very convenient means for controlling of complexity and decreasing amount of bugs.</p>
+    </div>
+	<div class='features-preview-block'>
+	    <h3 class='center-h'>Laconic code</br>&nbsp;</h3>
+        <p>I want to describe a game logic on a NPC in concrete game by minimum amount of symbols.</p>
+		<p>Also I want to use special mnemonic symbols instead of key words.</p>
+    </div>
+</div>
+
+<div class="features-preview-row" style='margin-bottom: 50px;'>
+	<div class='features-preview-block'>
+	    <h3 class='center-h'>Run-time modification and evaluation</br>&nbsp;</h3>
+        <p>We constantly change images in our minds during receiving new information from real world.</p>
+		<p>I want to add this approach to writing game logic.</p>
+    </div>
+</div>
+
+<h1 class='center-h'>
+GNUClay language
+</h1>
+
+<p>
+Many described features need a special language, because it looks as unwieldy in languages which doesn't support this on syntax level.
+Some features can be unimplementable in existing languages in simple way.
+</p>
+
+<p>
+Special languages are created quite often.
+Of course we need a good reason for creating a new programming language.
+And I think this language will be able to implement helpful features directly and will help to create more complex game logic faster.
+</p>
+
+<p>
+One more purpose of SymOntoClay language is to separate game logic of NPS from other code.
+In this case we can get more concentration on behaviour of NPC and divide it from other game code.
+</p>
+
+<p>
+Also logic of NPC will become portable and can be realized on different platforms.
+</p>
+
+<h1 class='center-h'>
+Common architecture
+</h1>
+
+<p>
+SymOntoClay is created primarily for game development.
+The first implementation is created for Unity3D.
+But I hope we will able to use SymOntoClay in other cases.
+</p>
+
+<p>
+SymOntoClay exists only for describing behaviour logic.
+And It can not replace complex game engine like Unity3D.
+</p>
+
+<figure class="figure">
+  <img src="/images/common_architecture.png" class="img-fluid" alt="Common architecture diagram">
+  <figcaption class="figure-caption">1.1 Common architecture diagram</figcaption>
+</figure>
+
+<h3 class='center-h'>
+Native platform
+</h3>
+
+<p>
+Native platform provides interaction with hardware, special required services and APIs.
+Also it menages life time of instance of SymOntoClay.
+</p>
+
+<p>
+Now there exists only one available native platform - Unity3D.
+But I hope there will be many available platforms for SymOntoClay in the future.
+My dream is availability SymOntoClay for Unreal engine and robots.
+</p>
+
+<h3 class='center-h'>
+Common bus
+</h3>
+
+<p>
+The common bus aggregates all entities in one cluster, provides interaction between them and caches of common components.
+It provides simultaneity of NPC's actions and saves resources of computer. 
+</p>
+
+<p>
+It may contain user's code on special language which describes common facts or another logic of the game or level.
+</p>
+
+<p>
+One bus should be used for one game or one level of the game and It can menage many NPCs.
+Menaged NPCs can interact with the information as if It is described into the NPCs.
+</p>
+
+<p>
+Common bus is specified for concrete platform. 
+</p>
+
+<h3 class='center-h'>
+Host
+</h3>
+
+<p>
+Firstly Host provides facts or another logic specified for this NPC on the game or level.
+So even inactive game entities have an own hosts to be perceived by active NPCs.
+Player also can perceive this information by special UI means.
+</p>
+
+<p>
+Secondly Host provides interaction between Logical engine of active NPC and Common bus. 
+</p>
+
+<p>
+When NPC was died its host continues own existence as inactive game entity and can be perceived.
+</p>
+
+<p>
+Host is specified for concrete platform. 
+</p>
+
+<h3 class='center-h'>
+Logical engine of active NPC
+</h3>
+
+<p>
+It provides behavior of active NPC.
+All process of NPC are executed here.
+</p>
+
+<p>
+Logical engine of active NPC are independent of concrete platform.
+</p>
+
+<h3 class='center-h'>
+User's code
+</h3>
+
+<p>
+It describes behavior of an active NPC and logical information of the NPC or game level by special programming language.
+</p>
+
+<p>
+All files of the language are merged into SymOntoClay applications.
+These applications can be attached to Logical engine of active NPC, Host or Common bus.
+</p>
+
+<p>
+The special language will contain helpful constructions for more faster creating target features of a game.
+</p>
+
+<h1 class='center-h'>
+Current state of the project
+</h1>
+
+<p>
+By this time I have created two prototypes:
+    <ul>
+	    <li>
+		    Logical database and code executing system.
+		</li>
+		
+		<li>
+		    Integrating with Unity3D and simple demo scene.
+		</li>
+    </ul>
+</p>
+
+<p>
+Now I want create MVP that is minimal system which can provide making entire behavior of game NPC and describing all information of game level by itself.
+Also It should include asset for Unity3d and simple means for debugging.
+</p>
+
+<p>
+I am in front of finish line. 
+But I can make my project on my free time only.
+It delays the completion date of SymOntoClay.
+</p>
+
+<p>
+So I hope I can complete my project as soon as possible.
+And I will be glad any help in the project.
+</p>
+
+<p>
+	&nbsp;
+</p>
+</article>
+</div>
+</div>
+</div>
+<footer class='container' role='contentinfo'>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+This page was last modified on 01 March 2020</br>
+&copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
+The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

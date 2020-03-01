@@ -1,0 +1,19 @@
+{
+    "mainTitle": "SymOntoClay - ",
+    "title": "An open source experimental domain-specific language for game NPC.",
+    "enableFavicon": true,
+    "logo": "/favicon.png",
+	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/roadMap.json",
+    "menu" : {
+        "items": [
+		    {
+			    "href" : "/doc/index.html",
+				"label" : "Documentation"
+			},
+		    {
+			    "href" : "https://github.com/GNUClay/GNUClay/tree/0.4.0",
+				"label" : "Source code"
+			}
+		]
+    }
+}
