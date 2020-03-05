@@ -1129,7 +1129,7 @@ Channel section
 
 <pre class='code'>
 <EBNFCDECL name='StatementsSet'/> = <EBNFC name='Statement'/> [ { <EBNFC name='Statement'/> } ] .
-<EBNFCDECL name='Statement'/> = <EBNFC name='UsualScope'/> .
+<EBNFCDECL name='Statement'/> = <EBNFC name='UsualScope'/> | <EBNFC name='ClausedScopeForStatements'/> .
 </pre>
 
 <h3 class='center-h' data-href="Scopes_chapter">
