@@ -361,7 +361,9 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#ClassContentFullSet" name="ClassContentFullSet">ClassContentFullSet</a> = [ <a href="#ClausedScopeForClassesSet">ClausedScopeForClassesSet</a> ] [ <a href="#ClassContent">ClassContent</a> ] [ <a href="#ClausedScopeForClassesSet">ClausedScopeForClassesSet</a> ] .
 <a href="#ClausedScopeForClassesSet" name="ClausedScopeForClassesSet">ClausedScopeForClassesSet</a> = <a href="#ClausedScopeForClass">ClausedScopeForClass</a> [{ <a href="#ClausedScopeForClass">ClausedScopeForClass</a> }] .
 <a href="#ClausedScopeForClass " name="ClausedScopeForClass ">ClausedScopeForClass </a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ClassContent">ClassContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
-<a href="#ClassContent" name="ClassContent">ClassContent</a>
+<a href="#ClassContent" name="ClassContent">ClassContent</a> = [ <a href="#ClassDeclsSet">ClassDeclsSet</a> ] [ <a href="#StateDeclsSet">StateDeclsSet</a> ] [ <a href="#ProcessDeclsSet">ProcessDeclsSet</a> ]
+                [ <a href="#TypeAliasesSet">TypeAliasesSet</a> ] [ <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> ] [ <a href="#TriggerDeclsSet">TriggerDeclsSet</a> ] [ <a href="#MethodsSet">MethodsSet</a> ] [ <a href="#RestrictionsOfFieldsSet">RestrictionsOfFieldsSet</a> ] 
+				[ <a href="#BlocksOfFactsSet">BlocksOfFactsSet</a> ] [ <a href="#BlocksOfLogicalRulesSet">BlocksOfLogicalRulesSet</a> ] [ <a href="#ExceptionHandlersSet">ExceptionHandlersSet</a> ] [ <a href="#RangeDeclsSet">RangeDeclsSet</a> ] .
 <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> = [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] .
 <a href="#SystemAnnotationsList" name="SystemAnnotationsList">SystemAnnotationsList</a>
 </pre>
@@ -1239,7 +1241,7 @@ Channel section
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 05 March 2020</br>
+This page was last modified on 06 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>
