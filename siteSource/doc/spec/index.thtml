@@ -191,6 +191,16 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 ::    (    )
 </pre>
 
+<h3 class='center-h' data-href="Null_literal_chapter">
+    Null literal
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='NullLiteral'/> = "null" | "Null" .
+</pre>
+
 <h3 class='center-h' data-href="Numbers_literals_chapter">
     Numbers literals
 </h3>
@@ -326,7 +336,8 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
                 [ <EBNFC name='TypeAliasesSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='TriggerDeclsSet'/> ] [ <EBNFC name='MethodsSet'/> ] [ <EBNFC name='RestrictionsOfFieldsSet'/> ] 
 				[ <EBNFC name='BlocksOfFactsSet'/> ] [ <EBNFC name='BlocksOfLogicalRulesSet'/> ] [ <EBNFC name='ExceptionHandlersSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] .
 <EBNFCDECL name='AnnotationsList'/> = [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] .
-<EBNFCDECL name='SystemAnnotationsList'/>
+<EBNFCDECL name='SystemAnnotationsList'/> = <EBNFC name='SystemAnnotation'/> [{ <EBNFC name='SystemAnnotation'/> }] .
+<EBNFCDECL name='SystemAnnotation'/> 
 </pre>
 
 <h4 class='center-h' data-href="Methods_chapter">
@@ -337,7 +348,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 
 <pre class='code'>
 <EBNFCDECL name='MethodsSet'/> = <EBNFC name='Method'/> [{ <EBNFC name='Method'/> }] .
-<EBNFCDECL name='Method'/>
+<EBNFCDECL name='Method'/> = <EBNFC name='FunctionDecl'/> .
 </pre>
 
 <h4 class='center-h' data-href="Restrictions_of_fields_chapter">
@@ -581,7 +592,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FunctionParamsSetDeclaration'/> = <EBNFC name='FunctionParamDeclaration'/> [{ "," <EBNFC name='FunctionParamDeclaration'/> }] .
 <EBNFCDECL name='FunctionParamDeclaration'/>
 <EBNFCDECL name='FunctionReturnDeclaration'/> = <EBNFC name='TypeIdentifier'/> .
-<EBNFCDECL name='FunctionBody'/>FunctionBody</a> = <EBNFC name='StatementsSet'/> .
+<EBNFCDECL name='FunctionBody'/> = <EBNFC name='StatementsSet'/> .
 </pre>
 
 <h3 class='center-h' data-href="Facts_and_logical_rules_chapter">
@@ -605,7 +616,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='NotContradictSymbol'/> = "^:" .
 <EBNFCDECL name='LogicalSentence'/>
 <EBNFCDECL name='LogicalAnnotation'/> = "[:" ( <EBNFC name='FactDecl'/> | "{:" <EBNFC name='ClassName'/> ":}" ) ":]"
-<EBNFCDECL name='LogicalAnnotationsList'/> = <EBNFC name='LogicalAnnotation'/> [{ "," <EBNFC name='LogicalAnnotation'/> }]
+<EBNFCDECL name='LogicalAnnotationsList'/> = <EBNFC name='LogicalAnnotation'/> [{ <EBNFC name='LogicalAnnotation'/> }]
 </pre>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -778,7 +789,18 @@ Defuzzification method is not defined yet!
 <EBNFCDECL name='StringTypeIdentifier'/> = "string" | "String" | "str" .
 <EBNFCDECL name='StringTypeExpr'/> = <EBNFC name='StringLiteral'/> | <EBNFC name='StringTypeExpr'/> .
 </pre>
-	
+
+<h3 class='center-h' data-href="Null_type_chapter">
+    Null type
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='NullTypeIdentifier'/> = <EBNFC name='NullLiteral'/> .
+<EBNFCDECL name='NullTypeExpr'/> = <EBNFC name='NullLiteral'/> | <EBNFC name='NullTypeExpr'/> .
+</pre>
+
 <h2 class='center-h' data-href="Modalities_chapter">
     Modalities
 </h2>
@@ -1018,7 +1040,7 @@ Emotion intensity modality
 Channel section
 </h3>
 
-<LinkToContent/>	
+<LinkToContent/>
 
 <pre class='code'>
 <EBNFCDECL name='ChannelSection'/>
@@ -1031,7 +1053,7 @@ Channel section
     Clauses section
 </h3>
 
-<LinkToContent/>	
+<LinkToContent/>
 
 <pre class='code'>
 <EBNFCDECL name='ClausesSection'/>
@@ -1057,20 +1079,23 @@ Channel section
     Access section
 </h3>
 
-<LinkToContent/>	
+<LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='AccessSection'/>
+<EBNFCDECL name='AccessSection'/> = <EBNFC name='AccessSectionMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='AccessModifierDescription'/> "}" .
 <EBNFCDECL name='AccessSectionMark'/> = "!!:" | "access" | "permissions" | "allow" | "permit" | "a" | "access:" | "permissions:" | "allow:" | "permit:" | "a:" .
-<EBNFCDECL name='AdditionalAccessSection'/>
+<EBNFCDECL name='AdditionalAccessSection'/> = <EBNFC name='AdditionalAccessSectionMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='AccessModifierDescription'/> "}" .
 <EBNFCDECL name='AdditionalAccessSectionMark'/> = "[!!:]" | "[access]" | "[permissions]" | "[allow]" | "[permit]" | "[a]" | "[access:]" | "[permissions:]" | "[allow:]" | "[permit:]" | "[a:]" .
+<EBNFCDECL name='AccessModifierDescription'/> =   ( "published" | ("published" "just" "for" <EBNFC name='AccessModifierPublishJustForCondition'/> ) |
+                        "public" | "internal" | "protected" | "private" ) ":" .
+<EBNFCDECL name='AccessModifierPublishJustForCondition'/> = <EBNFC name='LogicalSentence'/> .
 </pre>
 
 <h3 class='center-h' data-href="Reason_section_chapter">
     Reason section
 </h3>
 
-<LinkToContent/>	
+<LinkToContent/>
 
 <pre class='code'>
 <EBNFCDECL name='ReasonSection'/>
@@ -1083,7 +1108,7 @@ Channel section
     Holder section
 </h3>
 
-<LinkToContent/>	
+<LinkToContent/>
 
 <pre class='code'>
 <EBNFCDECL name='HolderDesc'/>
@@ -1108,7 +1133,7 @@ Channel section
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='Expr'/> = <EBNFC name='BooleanTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> | <EBNFC name='StringTypeExpr'/> .
+<EBNFCDECL name='Expr'/> = <EBNFC name='BooleanTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> | <EBNFC name='StringTypeExpr'/> | <EBNFC name='NullTypeExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
