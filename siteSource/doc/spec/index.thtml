@@ -765,7 +765,7 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <EBNFCDECL name='BooleanTypeIdentifier'/> = "boolean" | "Boolean" | "bool" .
-<EBNFCDECL name='BooleanTypeExpr'/> = <EBNFC name='FuzzyExpr'/> | <EBNFC name='BooleanLiteral'/> | <EBNFC name='BooleanTypeExpr'/> .
+<EBNFCDECL name='BooleanTypeExpr'/> = <EBNFC name='FuzzyExpr'/> | <EBNFC name='BooleanLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='BooleanTypeExpr'/> .
 </pre>
 	
 <h3 class='center-h' data-href="Numeric_types_chapter">
@@ -776,7 +776,7 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <EBNFCDECL name='NumericTypeIdentifier'/> = "number" | "Number" | "num" .
-<EBNFCDECL name='NumericTypeExpr'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='NumericTypeExpr'/> .
+<EBNFCDECL name='NumericTypeExpr'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> .
 </pre>
 	
 <h3 class='center-h' data-href="String_types_chapter">
@@ -787,7 +787,17 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <EBNFCDECL name='StringTypeIdentifier'/> = "string" | "String" | "str" .
-<EBNFCDECL name='StringTypeExpr'/> = <EBNFC name='StringLiteral'/> | <EBNFC name='StringTypeExpr'/> .
+<EBNFCDECL name='StringTypeExpr'/> = <EBNFC name='StringLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='StringTypeExpr'/> .
+</pre>
+
+<h3 class='center-h' data-href="Date_and_time_type_chapter">
+    Date and time type
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name=''/>
 </pre>
 
 <h3 class='center-h' data-href="Null_type_chapter">
@@ -798,7 +808,7 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <EBNFCDECL name='NullTypeIdentifier'/> = <EBNFC name='NullLiteral'/> .
-<EBNFCDECL name='NullTypeExpr'/> = <EBNFC name='NullLiteral'/> | <EBNFC name='NullTypeExpr'/> .
+<EBNFCDECL name='NullTypeExpr'/> = <EBNFC name='NullLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NullTypeExpr'/> .
 </pre>
 
 <h2 class='center-h' data-href="Modalities_chapter">
@@ -829,9 +839,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='CertaintyFactorModality'/> = <EBNFC name='CertaintyFactorModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='CertaintyFactorModality'/> = <EBNFC name='CertaintyFactorModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) .
 <EBNFCDECL name='CertaintyFactorModalityMark'/> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
-<EBNFCDECL name='AdditionalCertaintyFactorModality'/> = <EBNFC name='AdditionalCertaintyFactorModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalCertaintyFactorModality'/> = <EBNFC name='AdditionalCertaintyFactorModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalCertaintyFactorModalityMark'/> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
 </pre>
 
@@ -868,9 +878,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='AcceptedModality'/>
+<EBNFCDECL name='AcceptedModality'/> = <EBNFC name='AcceptedModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) .
 <EBNFCDECL name='AcceptedModalityMark'/> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
-<EBNFCDECL name='AdditionalAcceptedModality'/>
+<EBNFCDECL name='AdditionalAcceptedModality'/> = <EBNFC name='AdditionalAcceptedModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) .
 <EBNFCDECL name='AdditionalAcceptedModalityMark'/> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
 </pre>
 
@@ -881,9 +891,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='DesirableModality'/> = <EBNFC name='DesirableModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='DesirableModality'/> = <EBNFC name='DesirableModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='DesirableModalityMark'/> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
-<EBNFCDECL name='AdditionalDesirableModality'/> = <EBNFC name='AdditionalDesirableModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" . 
+<EBNFCDECL name='AdditionalDesirableModality'/> = <EBNFC name='AdditionalDesirableModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) .  
 <EBNFCDECL name='AdditionalDesirableModalityMark'/> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
 </pre>
 
@@ -894,9 +904,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='NecessityModality'/> = <EBNFC name='NecessityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='NecessityModality'/> = <EBNFC name='NecessityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='NecessityModalityMark'/> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
-<EBNFCDECL name='AdditionalNecessityModality'/> = <EBNFC name='AdditionalNecessityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalNecessityModality'/> = <EBNFC name='AdditionalNecessityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalNecessityModalityMark'/> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
 </pre>
 
@@ -907,9 +917,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='IntentionModality'/> = <EBNFC name='IntentionModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='IntentionModality'/> = <EBNFC name='IntentionModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='IntentionModalityMark'/> = "~>:" | "intention" | "intend" | "plan" | "decide" | "i" | "intention:" | "intend:" | "plan:" | "decide:" | "i:" .
-<EBNFCDECL name='AdditionalIntentionModality'/> = <EBNFC name='AdditionalIntentionModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalIntentionModality'/> = <EBNFC name='AdditionalIntentionModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalIntentionModalityMark'/> = "[~>:]" | "[intention]" | "[intend]" | "[plan]" | "[decide]" | "[i]" | "[intention:]" | "[intend:]" | "[plan:]" | "[decide:]" | "[i:]" .
 </pre>
 
@@ -920,9 +930,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='PriorityModality'/> = <EBNFC name='PriorityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='PriorityModality'/> = <EBNFC name='PriorityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='PriorityModalityMark'/> = "*:" | "priority" | "p" | "priority:" | "p:" .
-<EBNFCDECL name='AdditionalPriorityModality'/> = <EBNFC name='AdditionalPriorityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalPriorityModality'/> = <EBNFC name='AdditionalPriorityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalPriorityModalityMark'/> = "[*:]" | "[priority]" | "[p]" | "[priority:]" | "[p:]" .
 </pre>
 
@@ -933,9 +943,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='MoralQualityModality'/> = <EBNFC name='MoralQualityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='MoralQualityModality'/> = <EBNFC name='MoralQualityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='MoralQualityModalityMark'/> = "/^:" | "moral" | "moral:" .
-<EBNFCDECL name='AdditionalMoralQualityModality'/> = <EBNFC name='AdditionalMoralQualityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalMoralQualityModality'/> = <EBNFC name='AdditionalMoralQualityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalMoralQualityModalityMark'/> = "[/^:]" | "[moral]" | "[moral:]" .
 </pre>
 
@@ -946,9 +956,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='RespectModality'/> = <EBNFC name='RespectModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='RespectModality'/> = <EBNFC name='RespectModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='RespectModalityMark'/> = "/:" | "respect" | "respect:" .
-<EBNFCDECL name='AdditionalRespectModality'/> = <EBNFC name='AdditionalRespectModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalRespectModality'/> = <EBNFC name='AdditionalRespectModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalRespectModalityMark'/> = "[/:]" | "[respect]" | "[respect:]" .
 </pre>
 
@@ -959,9 +969,9 @@ Quantity quality modality
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='QuantityQualityModality'/> = <EBNFC name='QuantityQualityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='QuantityQualityModality'/> = <EBNFC name='QuantityQualityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='QuantityQualityModalityMark'/> = "=:" | "q" | "quantity" | "q:" | "quantity:" .
-<EBNFCDECL name='AdditionalQuantityQualityModality'/> = <EBNFC name='AdditionalQuantityQualityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalQuantityQualityModality'/> = <EBNFC name='AdditionalQuantityQualityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalQuantityQualityModalityMark'/> = "[=:]" | "[q]" | "[quantity]" | "[q:]" | "[quantity:]" .
 </pre>
 
@@ -972,9 +982,9 @@ Quantity quality modality
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='EmotionKindModality'/> = <EBNFC name='EmotionKindModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='EmotionKindModality'/> = <EBNFC name='EmotionKindModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='EmotionKindModalityMark'/> = "~:" | "emotion" | "em" | "emotion:" | "em:" .
-<EBNFCDECL name='AdditionalEmotionKindModality'/> = <EBNFC name='AdditionalEmotionKindModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalEmotionKindModality'/> = <EBNFC name='AdditionalEmotionKindModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalEmotionKindModalityMark'/> = "[~:]" | "[emotion]" | "[em]" | "[emotion:]" | "[em:]" .
 </pre>
 
@@ -985,9 +995,9 @@ Emotion intensity modality
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='EmotionIntensityModality'/> = <EBNFC name='EmotionIntensityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='EmotionIntensityModality'/> = <EBNFC name='EmotionIntensityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='EmotionIntensityModalityMark'/> = "*~:" | "emotion intensity" | "emotion power" | "emi" | "emp" | "emotion intensity:" | "emotion power:" | "emi:" | "emp:" .
-<EBNFCDECL name='AdditionalEmotionIntensityModality'/> = <EBNFC name='AdditionalEmotionIntensityModalityMark'/> [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" .
+<EBNFCDECL name='AdditionalEmotionIntensityModality'/> = <EBNFC name='AdditionalEmotionIntensityModalityMark'/> ( [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" ) | ( "{" [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='BooleanTypeExpr'/> "}" }] "}" ) | ( <EBNFC name='NullTypeExpr'/> ) . 
 <EBNFCDECL name='AdditionalEmotionIntensityModalityMark'/> = "[*~:]" | "[emotion intensity]" | "[emotion power]" | "[emi]" | "[emp]" | "[emotion intensity:]" | "[emotion power:]" | "[emi:]" | "[emp:]" .
 </pre>
 
