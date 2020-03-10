@@ -333,7 +333,7 @@ The ways of doing this will be described below in here section and in describing
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#ObjectDeclsSet" name="ObjectDeclsSet">ObjectDeclsSet</a> = <a href="##ObjectDecl">#ObjectDecl</a> [{ <a href="#ObjectDecl">ObjectDecl</a> }] .
+<a href="#ObjectDeclsSet" name="ObjectDeclsSet">ObjectDeclsSet</a> = <a href="#ObjectDecl">ObjectDecl</a> [{ <a href="#ObjectDecl">ObjectDecl</a> }] .
 <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> =  [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 </pre>
 
@@ -878,10 +878,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> = <a href="#CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
+<a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> = <a href="#CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
 <a href="#CertaintyFactorModalityMark" name="CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
-<a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> = <a href="#AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> = <a href="#AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalCertaintyFactorModalityMark" name="AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
+<a href="#BooleanValOfModality" name="BooleanValOfModality">BooleanValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#BooleanTypeExpr">BooleanTypeExpr</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
 
 <h3 class='center-h' data-href="Time_modality_chapter">
@@ -917,9 +918,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> = <a href="#AcceptedModalityMark">AcceptedModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
+<a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> = <a href="#AcceptedModalityMark">AcceptedModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
 <a href="#AcceptedModalityMark" name="AcceptedModalityMark">AcceptedModalityMark</a> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
-<a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> = <a href="#AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
+<a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> = <a href="#AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
 <a href="#AdditionalAcceptedModalityMark" name="AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
 </pre>
 
@@ -930,9 +931,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#DesirableModality" name="DesirableModality">DesirableModality</a> = <a href="#DesirableModalityMark">DesirableModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#DesirableModality" name="DesirableModality">DesirableModality</a> = <a href="#DesirableModalityMark">DesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#DesirableModalityMark" name="DesirableModalityMark">DesirableModalityMark</a> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
-<a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> = <a href="#AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .  
+<a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> = <a href="#AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .  
 <a href="#AdditionalDesirableModalityMark" name="AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
 </pre>
 
@@ -943,9 +944,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#NecessityModality" name="NecessityModality">NecessityModality</a> = <a href="#NecessityModalityMark">NecessityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#NecessityModality" name="NecessityModality">NecessityModality</a> = <a href="#NecessityModalityMark">NecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#NecessityModalityMark" name="NecessityModalityMark">NecessityModalityMark</a> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
-<a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> = <a href="#AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> = <a href="#AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalNecessityModalityMark" name="AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
 </pre>
 
@@ -956,9 +957,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#IntentionModality" name="IntentionModality">IntentionModality</a> = <a href="#IntentionModalityMark">IntentionModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#IntentionModality" name="IntentionModality">IntentionModality</a> = <a href="#IntentionModalityMark">IntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#IntentionModalityMark" name="IntentionModalityMark">IntentionModalityMark</a> = "~>:" | "intention" | "intend" | "plan" | "decide" | "i" | "intention:" | "intend:" | "plan:" | "decide:" | "i:" .
-<a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> = <a href="#AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> = <a href="#AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalIntentionModalityMark" name="AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> = "[~>:]" | "[intention]" | "[intend]" | "[plan]" | "[decide]" | "[i]" | "[intention:]" | "[intend:]" | "[plan:]" | "[decide:]" | "[i:]" .
 </pre>
 
@@ -969,9 +970,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#PriorityModality" name="PriorityModality">PriorityModality</a> = <a href="#PriorityModalityMark">PriorityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#PriorityModality" name="PriorityModality">PriorityModality</a> = <a href="#PriorityModalityMark">PriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#PriorityModalityMark" name="PriorityModalityMark">PriorityModalityMark</a> = "*:" | "priority" | "p" | "priority:" | "p:" .
-<a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> = <a href="#AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> = <a href="#AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalPriorityModalityMark" name="AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> = "[*:]" | "[priority]" | "[p]" | "[priority:]" | "[p:]" .
 </pre>
 
@@ -982,9 +983,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> = <a href="#MoralQualityModalityMark">MoralQualityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> = <a href="#MoralQualityModalityMark">MoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#MoralQualityModalityMark" name="MoralQualityModalityMark">MoralQualityModalityMark</a> = "/^:" | "moral" | "moral:" .
-<a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> = <a href="#AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> = <a href="#AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalMoralQualityModalityMark" name="AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> = "[/^:]" | "[moral]" | "[moral:]" .
 </pre>
 
@@ -995,9 +996,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#RespectModality" name="RespectModality">RespectModality</a> = <a href="#RespectModalityMark">RespectModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#RespectModality" name="RespectModality">RespectModality</a> = <a href="#RespectModalityMark">RespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#RespectModalityMark" name="RespectModalityMark">RespectModalityMark</a> = "/:" | "respect" | "respect:" .
-<a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> = <a href="#AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> = <a href="#AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalRespectModalityMark" name="AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> = "[/:]" | "[respect]" | "[respect:]" .
 </pre>
 
@@ -1008,9 +1009,9 @@ Quantity quality modality
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> = <a href="#QuantityQualityModalityMark">QuantityQualityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> = <a href="#QuantityQualityModalityMark">QuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#QuantityQualityModalityMark" name="QuantityQualityModalityMark">QuantityQualityModalityMark</a> = "=:" | "q" | "quantity" | "q:" | "quantity:" .
-<a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> = <a href="#AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> = <a href="#AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalQuantityQualityModalityMark" name="AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> = "[=:]" | "[q]" | "[quantity]" | "[q:]" | "[quantity:]" .
 </pre>
 
@@ -1021,9 +1022,9 @@ Quantity quality modality
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> = <a href="#EmotionKindModalityMark">EmotionKindModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> = <a href="#EmotionKindModalityMark">EmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#EmotionKindModalityMark" name="EmotionKindModalityMark">EmotionKindModalityMark</a> = "~:" | "emotion" | "em" | "emotion:" | "em:" .
-<a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> = <a href="#AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> = <a href="#AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalEmotionKindModalityMark" name="AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> = "[~:]" | "[emotion]" | "[em]" | "[emotion:]" | "[em:]" .
 </pre>
 
@@ -1034,9 +1035,9 @@ Emotion intensity modality
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> = <a href="#EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> = <a href="#EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#EmotionIntensityModalityMark" name="EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> = "*~:" | "emotion intensity" | "emotion power" | "emi" | "emp" | "emotion intensity:" | "emotion power:" | "emi:" | "emp:" .
-<a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> = <a href="#AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" ) | ( "{" [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }] "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) . 
+<a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> = <a href="#AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
 <a href="#AdditionalEmotionIntensityModalityMark" name="AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> = "[*~:]" | "[emotion intensity]" | "[emotion power]" | "[emi]" | "[emp]" | "[emotion intensity:]" | "[emotion power:]" | "[emi:]" | "[emp:]" .
 </pre>
 
@@ -1276,7 +1277,7 @@ Channel section
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 09 March 2020</br>
+This page was last modified on 10 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>
