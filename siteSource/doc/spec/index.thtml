@@ -271,7 +271,8 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <pre class='code'>
 <EBNFCDECL name='TypeIdentifier'/> = <EBNFC name='UniversalTypeIdentifier'/> | <EBNFC name='ClassIdentifier'/> | <EBNFC name='ApplicationIdentifier'/> | <EBNFC name='StateIdentifier'/> | <EBNFC name='ProcessIdentifier'/> | <EBNFC name='FunctionIdentifier'/> 
               | <EBNFC name='FactIdentifier'/> | <EBNFC name='LogicalRuleIdentifier'/> | <EBNFC name='TriggerIdentifier'/> | <EBNFC name='TypeAliaseIdentifier'/> | <EBNFC name='RangeIdentifier'/> | 
-			  <EBNFC name='FuzzySetIdentifier'/> | <EBNFC name='BooleanTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> | <EBNFC name='DateTimeIdentifier'/> | <EBNFC name=''/> | <EBNFC name=''/> | <EBNFC name=''/> .
+			  <EBNFC name='FuzzySetIdentifier'/> | <EBNFC name='BooleanTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> | <EBNFC name='DateTimeIdentifier'/> | <EBNFC name='SupervisorIdentifier'/> | <EBNFC name='InstanceIdentifier'/> 
+			  | <EBNFC name='ValueIdentifier'/> | <EBNFC name='ModuleIdentifier'/> .
 </pre>
 
 <h3 class='center-h' data-href="Object-oriented_programming_chapter">
@@ -340,7 +341,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClassContent'/> = [ <EBNFC name='ClassDeclsSet'/> ] [ <EBNFC name='StateDeclsSet'/> ] [ <EBNFC name='ProcessDeclsSet'/> ]
                 [ <EBNFC name='TypeAliasesSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='TriggerDeclsSet'/> ] [ <EBNFC name='MethodsSet'/> ] [ <EBNFC name='RestrictionsOfFieldsSet'/> ] 
 				[ <EBNFC name='BlocksOfFactsSet'/> ] [ <EBNFC name='BlocksOfLogicalRulesSet'/> ] [ <EBNFC name='ExceptionHandlersSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] 
-				[ <EBNFC name=''/> ] [ <EBNFC name=''/> ] [ <EBNFC name=''/> ].
+				[ <EBNFC name='SupervisorDeclsSet'/> ] [ <EBNFC name='InstanceDeclsSet'/> ] [ <EBNFC name='ValueDeclsSet'/> ].
 <EBNFCDECL name='AnnotationsList'/> = [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] .
 <EBNFCDECL name='SystemAnnotationsList'/> = <EBNFC name='SystemAnnotation'/> [{ <EBNFC name='SystemAnnotation'/> }] .
 <EBNFCDECL name='SystemAnnotation'/> 
@@ -504,8 +505,9 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name=''/>
-<EBNFCDECL name=''/>
+<EBNFCDECL name='ModuleDeclsSet'/> = <EBNFC name='ModuleDecl'/> [{ <EBNFC name='ModuleDecl'/> }] .
+<EBNFCDECL name='ModuleIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ModuleDecl'/>
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -579,8 +581,9 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name=''/>
-<EBNFCDECL name=''/>
+<EBNFCDECL name='SupervisorDeclsSet'/> = <EBNFC name='SupervisorDecl'/> [{ <EBNFC name='SupervisorDecl'/> }] .
+<EBNFCDECL name='SupervisorIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='SupervisorDecl'/>
 </pre>
 
 <h3 class='center-h' data-href="Functions_chapter">
@@ -671,8 +674,9 @@ $$:{ ClassName } - the fact belong to ClassName
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name=''/>
-<EBNFCDECL name=''/>
+<EBNFCDECL name='InstanceDeclsSet'/> = <EBNFC name='InstanceDecl'/> [{ <EBNFC name='InstanceDecl'/> }] .
+<EBNFCDECL name='InstanceIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='InstanceDecl'/>
 </pre>
 
 <h3 class='center-h' data-href="Call-blocks_chapter">
@@ -715,7 +719,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='RangeDeclsSet'/> = <EBNFC name='RangeDecl'/> [{ <EBNFC name='RangeDecl'/> }].
+<EBNFCDECL name='RangeDeclsSet'/> = <EBNFC name='RangeDecl'/> [{ <EBNFC name='RangeDecl'/> }] .
 <EBNFCDECL name='RangeName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='RangeIdentifier'/> = <EBNFC name='RangeName'/> .
 <EBNFCDECL name='RangeDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='RangeName'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='OrderedTypeLiteral'/> ".." <EBNFC name='OrderedTypeLiteral'/> 
@@ -729,8 +733,9 @@ $$:{ ClassName } - the fact belong to ClassName
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name=''/>
-<EBNFCDECL name=''/>
+<EBNFCDECL name='ValueDeclsSet'/> = <EBNFC name='ValueDecl'/> [{ <EBNFC name='ValueDecl'/> }] .
+<EBNFCDECL name='ValueIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ValueDecl'/>
 </pre>
 	
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
@@ -877,9 +882,9 @@ Defuzzification method is not defined yet!
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='CompletionModality'/>
+<EBNFCDECL name='CompletionModality'/> = <EBNFC name='CompletionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='CompletionModalityMark'/> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
-<EBNFCDECL name='AdditionalCompletionModality'/>
+<EBNFCDECL name='AdditionalCompletionModality'/> = <EBNFC name='AdditionalCompletionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalCompletionModalityMark'/> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
 </pre>
 
@@ -1053,9 +1058,9 @@ Emotion intensity modality
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='SourceSection'/>
+<EBNFCDECL name='SourceSection'/> =  <EBNFC name='SourceSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='SourceSectionMark'/> = "@:" | "source" | "origin" | "s" | "source:" | "origin:" | "s:" .
-<EBNFCDECL name='AdditionalSourceSection'/>
+<EBNFCDECL name='AdditionalSourceSection'/> =  <EBNFC name='AdditionalSourceSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='AdditionalSourceSectionMark'/> = "[@:]" | "[source]" | "[origin]" | "[s]" | "[source:]" | "[origin:]" | "[s:]" .
 </pre>
 
@@ -1066,9 +1071,9 @@ Channel section
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='ChannelSection'/>
+<EBNFCDECL name='ChannelSection'/> =  <EBNFC name='ChannelSection'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='ChannelSectionMark'/> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
-<EBNFCDECL name='AdditionalChannelSection'/>
+<EBNFCDECL name='AdditionalChannelSection'/> =  <EBNFC name='AdditionalChannelSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='AdditionalChannelSectionMark'/> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
 </pre>
 
@@ -1079,10 +1084,11 @@ Channel section
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='ClausesSection'/>
+<EBNFCDECL name='ClausesSection'/> = <EBNFC name='ClausesSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='ClausesSectionMark'/> = "&:" | "where" | "w" | "where:" | "w:" .
-<EBNFCDECL name='AdditionalClausesSection'/>
+<EBNFCDECL name='AdditionalClausesSection'/> = <EBNFC name='AdditionalClausesSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='AdditionalClausesSectionMark'/> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
+<EBNFCDECL name='LogicalSentenceValOfModality'/>  = ( [ <EBNFC name='AnnotationsList'/> ] "{" ( <EBNFC name='LogicalSentence'/> ) | ([ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='LogicalSentence'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='LogicalSentence'/> "}" }]) "}" ) | ( <EBNFC name='NullTypeExpr'/> ) .
 </pre>
 
 <h3 class='center-h' data-href="No_contradict_section_chapter">
@@ -1092,9 +1098,9 @@ Channel section
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='NoContradictSection'/>
+<EBNFCDECL name='NoContradictSection'/> = <EBNFC name='NoContradictSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='NoContradictSectionMark'/> = "^:" .
-<EBNFCDECL name='AdditionalNoContradictSection'/>
+<EBNFCDECL name='AdditionalNoContradictSection'/> = <EBNFC name='AdditionalNoContradictSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='AdditionalNoContradictSectionMark'/> = "[^:]" .
 </pre>
 
@@ -1134,7 +1140,7 @@ Channel section
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='HolderDesc'/>
+<EBNFCDECL name='HolderDesc'/> = <EBNFC name='HolderDescMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='HolderDescMark'/> = "#:" | "of" | "of:" .
 </pre>
 
@@ -1145,7 +1151,7 @@ Channel section
 <LinkToContent/>	
 
 <pre class='code'>
-<EBNFCDECL name='ModuleDesc'/>
+<EBNFCDECL name='ModuleDesc'/> = <EBNFC name='ModuleDescMark'/> <EBNFC name='ModuleIdentifier'/> .
 <EBNFCDECL name='ModuleDescMark'/> = "$:" | "module" | "module:" .
 </pre>
 
@@ -1203,7 +1209,8 @@ Channel section
 
 <pre class='code'>
 <EBNFCDECL name='SourceCodeFileContent'/> = [ <EBNFC name='NamespaceDeclsSet'/> ][ <EBNFC name='ClassDeclsSet'/> ] [ <EBNFC name='ApplicationDeclsSet'/> ] [ <EBNFC name='FunctionDeclsSet'/> ] [ <EBNFC name='FactDeclsSet'/> ] [ <EBNFC name='LogicalRuleDeclsSet'/> ] [ <EBNFC name='CallBlocksSet'/> ] 
-                [ <EBNFC name='TypeAliaseDeclsSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='StateDeclsSet'/> ] [ <EBNFC name='ProcessDeclsSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] [ <EBNFC name=''/> ] [ <EBNFC name=''/> ] [ <EBNFC name=''/> ].
+                [ <EBNFC name='TypeAliaseDeclsSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='StateDeclsSet'/> ] [ <EBNFC name='ProcessDeclsSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] [ <EBNFC name='ModuleDeclsSet'/> ]
+				[ <EBNFC name='SupervisorDeclsSet'/> ] [ <EBNFC name='InstanceDeclsSet'/> ] [ <EBNFC name='ValueDeclsSet'/> ] .
 <EBNFCDECL name='ClausedScopeForSourceCodeFilesSet'/> = <EBNFC name=''/> [ { <EBNFC name='ClausedScopeForSourceCodeFile'/> } ] .
 <EBNFCDECL name='ClausedScopeForSourceCodeFile '/> = <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='SourceCodeFileContent'/> ] "}" .
 </pre>

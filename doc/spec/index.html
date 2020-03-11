@@ -283,7 +283,11 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#" name=""></a>
+<a href="#DateTimeLiteral" name="DateTimeLiteral">DateTimeLiteral</a> = <a href="#NowDateTimeLiteral">NowDateTimeLiteral</a> | <a href="#PresentDateTimeLiteral">PresentDateTimeLiteral</a> | <a href="#FutureDateTimeLiteral">FutureDateTimeLiteral</a> | <a href="#PastDateTimeLiteral">PastDateTimeLiteral</a> .
+<a href="#NowDateTimeLiteral" name="NowDateTimeLiteral">NowDateTimeLiteral</a> = "now" .
+<a href="#PresentDateTimeLiteral" name="PresentDateTimeLiteral">PresentDateTimeLiteral</a> = "present" .
+<a href="#FutureDateTimeLiteral" name="FutureDateTimeLiteral">FutureDateTimeLiteral</a> = "future" .
+<a href="#PastDateTimeLiteral" name="PastDateTimeLiteral">PastDateTimeLiteral</a> = "past" .
 </pre>
 
 <h3 class='center-h' data-href="Ordered_type_literals_chapter">
@@ -293,7 +297,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#OrderedTypeLiteral" name="OrderedTypeLiteral">OrderedTypeLiteral</a> = <a href="#NumberLiteral">NumberLiteral</a> | <a href="#StringLiteral">StringLiteral</a> .
+<a href="#OrderedTypeLiteral" name="OrderedTypeLiteral">OrderedTypeLiteral</a> = <a href="#NumberLiteral">NumberLiteral</a> | <a href="#StringLiteral">StringLiteral</a> | <a href="#DateTimeLiteral">DateTimeLiteral</a> | <a href="#BooleanLiteral">BooleanLiteral</a>.
 </pre>
 
 
@@ -304,9 +308,10 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#TypeIdentifier" name="TypeIdentifier">TypeIdentifier</a> = <a href="#ObjectDecl">ObjectDecl</a> | <a href="#ClassIdentifier">ClassIdentifier</a> | <a href="#ApplicationIdentifier">ApplicationIdentifier</a> | <a href="#StateIdentifier">StateIdentifier</a> | <a href="#ProcessIdentifier">ProcessIdentifier</a> | <a href="#FunctionIdentifier">FunctionIdentifier</a> 
+<a href="#TypeIdentifier" name="TypeIdentifier">TypeIdentifier</a> = <a href="#UniversalTypeIdentifier">UniversalTypeIdentifier</a> | <a href="#ClassIdentifier">ClassIdentifier</a> | <a href="#ApplicationIdentifier">ApplicationIdentifier</a> | <a href="#StateIdentifier">StateIdentifier</a> | <a href="#ProcessIdentifier">ProcessIdentifier</a> | <a href="#FunctionIdentifier">FunctionIdentifier</a> 
               | <a href="#FactIdentifier">FactIdentifier</a> | <a href="#LogicalRuleIdentifier">LogicalRuleIdentifier</a> | <a href="#TriggerIdentifier">TriggerIdentifier</a> | <a href="#TypeAliaseIdentifier">TypeAliaseIdentifier</a> | <a href="#RangeIdentifier">RangeIdentifier</a> | 
-			  <a href="#FuzzySetIdentifier">FuzzySetIdentifier</a> | <a href="#BooleanTypeIdentifier">BooleanTypeIdentifier</a> | <a href="#NumericTypeIdentifier">NumericTypeIdentifier</a> | <a href="#StringTypeIdentifier">StringTypeIdentifier</a> .
+			  <a href="#FuzzySetIdentifier">FuzzySetIdentifier</a> | <a href="#BooleanTypeIdentifier">BooleanTypeIdentifier</a> | <a href="#NumericTypeIdentifier">NumericTypeIdentifier</a> | <a href="#StringTypeIdentifier">StringTypeIdentifier</a> | <a href="#DateTimeIdentifier">DateTimeIdentifier</a> | <a href="#SupervisorIdentifier">SupervisorIdentifier</a> | <a href="#InstanceIdentifier">InstanceIdentifier</a> 
+			  | <a href="#ValueIdentifier">ValueIdentifier</a> | <a href="#ModuleIdentifier">ModuleIdentifier</a> .
 </pre>
 
 <h3 class='center-h' data-href="Object-oriented_programming_chapter">
@@ -335,6 +340,7 @@ The ways of doing this will be described below in here section and in describing
 <pre class='code'>
 <a href="#ObjectDeclsSet" name="ObjectDeclsSet">ObjectDeclsSet</a> = <a href="#ObjectDecl">ObjectDecl</a> [{ <a href="#ObjectDecl">ObjectDecl</a> }] .
 <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> =  [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#UniversalTypeIdentifier" name="UniversalTypeIdentifier">UniversalTypeIdentifier</a> = "any" | "⊤" .
 </pre>
 
 <h3 class='center-h' data-href="Classes_chapter">
@@ -373,7 +379,8 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#ClausedScopeForClass " name="ClausedScopeForClass ">ClausedScopeForClass </a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ClassContent">ClassContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ClassContent" name="ClassContent">ClassContent</a> = [ <a href="#ClassDeclsSet">ClassDeclsSet</a> ] [ <a href="#StateDeclsSet">StateDeclsSet</a> ] [ <a href="#ProcessDeclsSet">ProcessDeclsSet</a> ]
                 [ <a href="#TypeAliasesSet">TypeAliasesSet</a> ] [ <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> ] [ <a href="#TriggerDeclsSet">TriggerDeclsSet</a> ] [ <a href="#MethodsSet">MethodsSet</a> ] [ <a href="#RestrictionsOfFieldsSet">RestrictionsOfFieldsSet</a> ] 
-				[ <a href="#BlocksOfFactsSet">BlocksOfFactsSet</a> ] [ <a href="#BlocksOfLogicalRulesSet">BlocksOfLogicalRulesSet</a> ] [ <a href="#ExceptionHandlersSet">ExceptionHandlersSet</a> ] [ <a href="#RangeDeclsSet">RangeDeclsSet</a> ] .
+				[ <a href="#BlocksOfFactsSet">BlocksOfFactsSet</a> ] [ <a href="#BlocksOfLogicalRulesSet">BlocksOfLogicalRulesSet</a> ] [ <a href="#ExceptionHandlersSet">ExceptionHandlersSet</a> ] [ <a href="#RangeDeclsSet">RangeDeclsSet</a> ] 
+				[ <a href="#SupervisorDeclsSet">SupervisorDeclsSet</a> ] [ <a href="#InstanceDeclsSet">InstanceDeclsSet</a> ] [ <a href="#ValueDeclsSet">ValueDeclsSet</a> ].
 <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> = [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] .
 <a href="#SystemAnnotationsList" name="SystemAnnotationsList">SystemAnnotationsList</a> = <a href="#SystemAnnotation">SystemAnnotation</a> [{ <a href="#SystemAnnotation">SystemAnnotation</a> }] .
 <a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a> 
@@ -537,7 +544,9 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#" name=""></a>
+<a href="#ModuleDeclsSet" name="ModuleDeclsSet">ModuleDeclsSet</a> = <a href="#ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl">ModuleDecl</a> }] .
+<a href="#ModuleIdentifier" name="ModuleIdentifier">ModuleIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
+<a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a>
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -611,7 +620,9 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#" name=""></a>
+<a href="#SupervisorDeclsSet" name="SupervisorDeclsSet">SupervisorDeclsSet</a> = <a href="#SupervisorDecl">SupervisorDecl</a> [{ <a href="#SupervisorDecl">SupervisorDecl</a> }] .
+<a href="#SupervisorIdentifier" name="SupervisorIdentifier">SupervisorIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
+<a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a>
 </pre>
 
 <h3 class='center-h' data-href="Functions_chapter">
@@ -652,7 +663,6 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ClausedScopeForLogicalRulesSet" name="ClausedScopeForLogicalRulesSet">ClausedScopeForLogicalRulesSet</a> = <a href="#"></a> [ { <a href="#ClausedScopeForLogicalRule">ClausedScopeForLogicalRule</a> } ] .
 <a href="#ClausedScopeForLogicalRule" name="ClausedScopeForLogicalRule">ClausedScopeForLogicalRule</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#"></a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ImplicationSymbol" name="ImplicationSymbol">ImplicationSymbol</a> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
-<a href="#NotContradictSymbol" name="NotContradictSymbol">NotContradictSymbol</a> = "^:" .
 <a href="#LogicalSentence" name="LogicalSentence">LogicalSentence</a>
 <a href="#LogicalAnnotation" name="LogicalAnnotation">LogicalAnnotation</a> = "[:" ( <a href="#FactDecl">FactDecl</a> | "{:" <a href="#ClassName">ClassName</a> ":}" ) ":]"
 <a href="#LogicalAnnotationsList" name="LogicalAnnotationsList">LogicalAnnotationsList</a> = <a href="#LogicalAnnotation">LogicalAnnotation</a> [{ <a href="#LogicalAnnotation">LogicalAnnotation</a> }]
@@ -703,7 +713,9 @@ $$:{ ClassName } - the fact belong to ClassName
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#" name=""></a>
+<a href="#InstanceDeclsSet" name="InstanceDeclsSet">InstanceDeclsSet</a> = <a href="#InstanceDecl">InstanceDecl</a> [{ <a href="#InstanceDecl">InstanceDecl</a> }] .
+<a href="#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
+<a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a>
 </pre>
 
 <h3 class='center-h' data-href="Call-blocks_chapter">
@@ -746,7 +758,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#RangeDeclsSet" name="RangeDeclsSet">RangeDeclsSet</a> = <a href="#RangeDecl">RangeDecl</a> [{ <a href="#RangeDecl">RangeDecl</a> }].
+<a href="#RangeDeclsSet" name="RangeDeclsSet">RangeDeclsSet</a> = <a href="#RangeDecl">RangeDecl</a> [{ <a href="#RangeDecl">RangeDecl</a> }] .
 <a href="#RangeName" name="RangeName">RangeName</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#RangeIdentifier" name="RangeIdentifier">RangeIdentifier</a> = <a href="#RangeName">RangeName</a> .
 <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "range" <a href="#RangeName">RangeName</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> ".." <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> 
@@ -760,7 +772,9 @@ $$:{ ClassName } - the fact belong to ClassName
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#" name=""></a>
+<a href="#ValueDeclsSet" name="ValueDeclsSet">ValueDeclsSet</a> = <a href="#ValueDecl">ValueDecl</a> [{ <a href="#ValueDecl">ValueDecl</a> }] .
+<a href="#ValueIdentifier" name="ValueIdentifier">ValueIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
+<a href="#ValueDecl" name="ValueDecl">ValueDecl</a>
 </pre>
 	
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
@@ -836,7 +850,8 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#" name=""></a>
+<a href="#DateTimeIdentifier" name="DateTimeIdentifier">DateTimeIdentifier</a> = "date" | "time" | "datetime" .
+<a href="#DateTimeTypeExpr" name="DateTimeTypeExpr">DateTimeTypeExpr</a> = <a href="#DateTimeLiteral">DateTimeLiteral</a> | <a href="#NullTypeExpr">NullTypeExpr</a> | <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> .
 </pre>
 
 <h3 class='center-h' data-href="Null_type_chapter">
@@ -892,10 +907,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#TimeModality" name="TimeModality">TimeModality</a>
+<a href="#TimeModality" name="TimeModality">TimeModality</a> = <a href="#TimeModalityMark">TimeModalityMark</a> <a href="#DateTimeValOfModality">DateTimeValOfModality</a> .
 <a href="#TimeModalityMark" name="TimeModalityMark">TimeModalityMark</a> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
-<a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a>
+<a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> = <a href="#AdditionalTimeModalityMark">AdditionalTimeModalityMark</a> <a href="#DateTimeValOfModality">DateTimeValOfModality</a> .
 <a href="#AdditionalTimeModalityMark" name="AdditionalTimeModalityMark">AdditionalTimeModalityMark</a> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
+<a href="#DateTimeValOfModality" name="DateTimeValOfModality">DateTimeValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
 
 <h3 class='center-h' data-href="Completion_modality_chapter">
@@ -905,9 +921,9 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#CompletionModality" name="CompletionModality">CompletionModality</a>
+<a href="#CompletionModality" name="CompletionModality">CompletionModality</a> = <a href="#CompletionModalityMark">CompletionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
 <a href="#CompletionModalityMark" name="CompletionModalityMark">CompletionModalityMark</a> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
-<a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a>
+<a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a> = <a href="#AdditionalCompletionModalityMark">AdditionalCompletionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
 <a href="#AdditionalCompletionModalityMark" name="AdditionalCompletionModalityMark">AdditionalCompletionModalityMark</a> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
 </pre>
 
@@ -1058,6 +1074,7 @@ Emotion intensity modality
 <a href="#ThereforeNotRuleSectionMark" name="ThereforeNotRuleSectionMark">ThereforeNotRuleSectionMark</a> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
 <a href="#AdditionalThereforeNotRuleSection" name="AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a>
 <a href="#AdditionalThereforeNotRuleSectionMark" name="AdditionalThereforeNotRuleSectionMark">AdditionalThereforeNotRuleSectionMark</a> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
+<a href="#" name=""></a>
 </pre>
 
 <h3 class='center-h' data-href="Else_not_rule_section_chapter">
@@ -1080,9 +1097,9 @@ Emotion intensity modality
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#SourceSection" name="SourceSection">SourceSection</a>
+<a href="#SourceSection" name="SourceSection">SourceSection</a> =  <a href="#SourceSectionMark">SourceSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#SourceSectionMark" name="SourceSectionMark">SourceSectionMark</a> = "@:" | "source" | "origin" | "s" | "source:" | "origin:" | "s:" .
-<a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a>
+<a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a> =  <a href="#AdditionalSourceSectionMark">AdditionalSourceSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#AdditionalSourceSectionMark" name="AdditionalSourceSectionMark">AdditionalSourceSectionMark</a> = "[@:]" | "[source]" | "[origin]" | "[s]" | "[source:]" | "[origin:]" | "[s:]" .
 </pre>
 
@@ -1093,9 +1110,9 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#ChannelSection" name="ChannelSection">ChannelSection</a>
+<a href="#ChannelSection" name="ChannelSection">ChannelSection</a> =  <a href="#ChannelSection">ChannelSection</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#ChannelSectionMark" name="ChannelSectionMark">ChannelSectionMark</a> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
-<a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a>
+<a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a> =  <a href="#AdditionalChannelSectionMark">AdditionalChannelSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#AdditionalChannelSectionMark" name="AdditionalChannelSectionMark">AdditionalChannelSectionMark</a> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
 </pre>
 
@@ -1106,10 +1123,11 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#ClausesSection" name="ClausesSection">ClausesSection</a>
+<a href="#ClausesSection" name="ClausesSection">ClausesSection</a> = <a href="#ClausesSectionMark">ClausesSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
 <a href="#ClausesSectionMark" name="ClausesSectionMark">ClausesSectionMark</a> = "&:" | "where" | "w" | "where:" | "w:" .
-<a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a>
+<a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a> = <a href="#AdditionalClausesSectionMark">AdditionalClausesSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
 <a href="#AdditionalClausesSectionMark" name="AdditionalClausesSectionMark">AdditionalClausesSectionMark</a> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
+<a href="#LogicalSentenceValOfModality" name="LogicalSentenceValOfModality">LogicalSentenceValOfModality</a>  = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#LogicalSentence">LogicalSentence</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
 
 <h3 class='center-h' data-href="No_contradict_section_chapter">
@@ -1119,9 +1137,9 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a>
+<a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a> = <a href="#NoContradictSectionMark">NoContradictSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
 <a href="#NoContradictSectionMark" name="NoContradictSectionMark">NoContradictSectionMark</a> = "^:" .
-<a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a>
+<a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a> = <a href="#AdditionalNoContradictSectionMark">AdditionalNoContradictSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
 <a href="#AdditionalNoContradictSectionMark" name="AdditionalNoContradictSectionMark">AdditionalNoContradictSectionMark</a> = "[^:]" .
 </pre>
 
@@ -1161,7 +1179,7 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#HolderDesc" name="HolderDesc">HolderDesc</a>
+<a href="#HolderDesc" name="HolderDesc">HolderDesc</a> = <a href="#HolderDescMark">HolderDescMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#HolderDescMark" name="HolderDescMark">HolderDescMark</a> = "#:" | "of" | "of:" .
 </pre>
 
@@ -1172,7 +1190,7 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a>
+<a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a> = <a href="#ModuleDescMark">ModuleDescMark</a> <a href="#ModuleIdentifier">ModuleIdentifier</a> .
 <a href="#ModuleDescMark" name="ModuleDescMark">ModuleDescMark</a> = "$:" | "module" | "module:" .
 </pre>
 
@@ -1183,7 +1201,7 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#Expr" name="Expr">Expr</a> = <a href="#BooleanTypeExpr">BooleanTypeExpr</a> | <a href="#NumericTypeExpr">NumericTypeExpr</a> | <a href="#StringTypeExpr">StringTypeExpr</a> | <a href="#NullTypeExpr">NullTypeExpr</a> .
+<a href="#Expr" name="Expr">Expr</a> = <a href="#BooleanTypeExpr">BooleanTypeExpr</a> | <a href="#NumericTypeExpr">NumericTypeExpr</a> | <a href="#StringTypeExpr">StringTypeExpr</a> | <a href="#NullTypeExpr">NullTypeExpr</a>  | <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1230,7 +1248,8 @@ Channel section
 
 <pre class='code'>
 <a href="#SourceCodeFileContent" name="SourceCodeFileContent">SourceCodeFileContent</a> = [ <a href="#NamespaceDeclsSet">NamespaceDeclsSet</a> ][ <a href="#ClassDeclsSet">ClassDeclsSet</a> ] [ <a href="#ApplicationDeclsSet">ApplicationDeclsSet</a> ] [ <a href="#FunctionDeclsSet">FunctionDeclsSet</a> ] [ <a href="#FactDeclsSet">FactDeclsSet</a> ] [ <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> ] [ <a href="#CallBlocksSet">CallBlocksSet</a> ] 
-                [ <a href="#TypeAliaseDeclsSet">TypeAliaseDeclsSet</a> ] [ <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> ] [ <a href="#StateDeclsSet">StateDeclsSet</a> ] [ <a href="#ProcessDeclsSet">ProcessDeclsSet</a> ] [ <a href="#RangeDeclsSet">RangeDeclsSet</a> ] [ <a href="#ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> ] .
+                [ <a href="#TypeAliaseDeclsSet">TypeAliaseDeclsSet</a> ] [ <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> ] [ <a href="#StateDeclsSet">StateDeclsSet</a> ] [ <a href="#ProcessDeclsSet">ProcessDeclsSet</a> ] [ <a href="#RangeDeclsSet">RangeDeclsSet</a> ] [ <a href="#ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> ] [ <a href="#ModuleDeclsSet">ModuleDeclsSet</a> ]
+				[ <a href="#SupervisorDeclsSet">SupervisorDeclsSet</a> ] [ <a href="#InstanceDeclsSet">InstanceDeclsSet</a> ] [ <a href="#ValueDeclsSet">ValueDeclsSet</a> ] .
 <a href="#ClausedScopeForSourceCodeFilesSet" name="ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> = <a href="#"></a> [ { <a href="#ClausedScopeForSourceCodeFile">ClausedScopeForSourceCodeFile</a> } ] .
 <a href="#ClausedScopeForSourceCodeFile " name="ClausedScopeForSourceCodeFile ">ClausedScopeForSourceCodeFile </a> = <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#SourceCodeFileContent">SourceCodeFileContent</a> ] "}" .
 </pre>
@@ -1277,7 +1296,7 @@ Channel section
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 10 March 2020</br>
+This page was last modified on 11 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>
