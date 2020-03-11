@@ -244,7 +244,11 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name=''/>
+<EBNFCDECL name='DateTimeLiteral'/> = <EBNFC name='NowDateTimeLiteral'/> | <EBNFC name='PresentDateTimeLiteral'/> | <EBNFC name='FutureDateTimeLiteral'/> | <EBNFC name='PastDateTimeLiteral'/> .
+<EBNFCDECL name='NowDateTimeLiteral'/> = "now" .
+<EBNFCDECL name='PresentDateTimeLiteral'/> = "present" .
+<EBNFCDECL name='FutureDateTimeLiteral'/> = "future" .
+<EBNFCDECL name='PastDateTimeLiteral'/> = "past" .
 </pre>
 
 <h3 class='center-h' data-href="Ordered_type_literals_chapter">
@@ -254,7 +258,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='OrderedTypeLiteral'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='StringLiteral'/> .
+<EBNFCDECL name='OrderedTypeLiteral'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='StringLiteral'/> | <EBNFC name='DateTimeLiteral'/> | <EBNFC name='BooleanLiteral'/>.
 </pre>
 
 
@@ -265,9 +269,9 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='TypeIdentifier'/> = <EBNFC name='ObjectDecl'/> | <EBNFC name='ClassIdentifier'/> | <EBNFC name='ApplicationIdentifier'/> | <EBNFC name='StateIdentifier'/> | <EBNFC name='ProcessIdentifier'/> | <EBNFC name='FunctionIdentifier'/> 
+<EBNFCDECL name='TypeIdentifier'/> = <EBNFC name='UniversalTypeIdentifier'/> | <EBNFC name='ClassIdentifier'/> | <EBNFC name='ApplicationIdentifier'/> | <EBNFC name='StateIdentifier'/> | <EBNFC name='ProcessIdentifier'/> | <EBNFC name='FunctionIdentifier'/> 
               | <EBNFC name='FactIdentifier'/> | <EBNFC name='LogicalRuleIdentifier'/> | <EBNFC name='TriggerIdentifier'/> | <EBNFC name='TypeAliaseIdentifier'/> | <EBNFC name='RangeIdentifier'/> | 
-			  <EBNFC name='FuzzySetIdentifier'/> | <EBNFC name='BooleanTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> .
+			  <EBNFC name='FuzzySetIdentifier'/> | <EBNFC name='BooleanTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> | <EBNFC name='DateTimeIdentifier'/> .
 </pre>
 
 <h3 class='center-h' data-href="Object-oriented_programming_chapter">
@@ -296,6 +300,7 @@ The ways of doing this will be described below in here section and in describing
 <pre class='code'>
 <EBNFCDECL name='ObjectDeclsSet'/> = <EBNFC name='ObjectDecl'/> [{ <EBNFC name='ObjectDecl'/> }] .
 <EBNFCDECL name='ObjectDecl'/> =  [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='ClassContentFullSet'/> "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='UniversalTypeIdentifier'/> = "any" | "⊤" .
 </pre>
 
 <h3 class='center-h' data-href="Classes_chapter">
@@ -797,7 +802,8 @@ Defuzzification method is not defined yet!
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name=''/>
+<EBNFCDECL name='DateTimeIdentifier'/> = "date" | "time" | "datetime" .
+<EBNFCDECL name='DateTimeTypeExpr'/> = <EBNFC name='DateTimeLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='DateTimeTypeExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="Null_type_chapter">
@@ -1144,7 +1150,7 @@ Channel section
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='Expr'/> = <EBNFC name='BooleanTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> | <EBNFC name='StringTypeExpr'/> | <EBNFC name='NullTypeExpr'/> .
+<EBNFCDECL name='Expr'/> = <EBNFC name='BooleanTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> | <EBNFC name='StringTypeExpr'/> | <EBNFC name='NullTypeExpr'/>  | <EBNFC name='DateTimeTypeExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
