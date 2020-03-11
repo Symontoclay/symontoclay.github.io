@@ -505,6 +505,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='code'>
 <EBNFCDECL name=''/>
+<EBNFCDECL name=''/>
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -862,11 +863,11 @@ Defuzzification method is not defined yet!
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='TimeModality'/>
+<EBNFCDECL name='TimeModality'/> = <EBNFC name='TimeModalityMark'/> <EBNFC name='DateTimeValOfModality'/> .
 <EBNFCDECL name='TimeModalityMark'/> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
-<EBNFCDECL name='AdditionalTimeModality'/>
+<EBNFCDECL name='AdditionalTimeModality'/> = <EBNFC name='AdditionalTimeModalityMark'/> <EBNFC name='DateTimeValOfModality'/> .
 <EBNFCDECL name='AdditionalTimeModalityMark'/> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
-<EBNFCDECL name=''/>
+<EBNFCDECL name='DateTimeValOfModality'/> = ( [ <EBNFC name='AnnotationsList'/> ] "{" ( <EBNFC name='DateTimeTypeExpr'/> ) | ([ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='DateTimeTypeExpr'/> "}" [{ "," [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='DateTimeTypeExpr'/> "}" }]) "}" ) | ( <EBNFC name='NullTypeExpr'/> ) .
 </pre>
 
 <h3 class='center-h' data-href="Completion_modality_chapter">
@@ -1029,6 +1030,7 @@ Emotion intensity modality
 <EBNFCDECL name='ThereforeNotRuleSectionMark'/> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
 <EBNFCDECL name='AdditionalThereforeNotRuleSection'/>
 <EBNFCDECL name='AdditionalThereforeNotRuleSectionMark'/> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
+<EBNFCDECL name=''/>
 </pre>
 
 <h3 class='center-h' data-href="Else_not_rule_section_chapter">
