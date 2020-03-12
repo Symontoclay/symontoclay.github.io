@@ -341,6 +341,7 @@ The ways of doing this will be described below in here section and in describing
 <a href="#ObjectDeclsSet" name="ObjectDeclsSet">ObjectDeclsSet</a> = <a href="#ObjectDecl">ObjectDecl</a> [{ <a href="#ObjectDecl">ObjectDecl</a> }] .
 <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> =  [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#UniversalTypeIdentifier" name="UniversalTypeIdentifier">UniversalTypeIdentifier</a> = "any" | "⊤" .
+<a href="#ObjectDeclExpr" name="ObjectDeclExpr">ObjectDeclExpr</a>
 </pre>
 
 <h3 class='center-h' data-href="Classes_chapter">
@@ -372,6 +373,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#ClassIdentifier" name="ClassIdentifier">ClassIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ClassDeclsSet" name="ClassDeclsSet">ClassDeclsSet</a> = <a href="#ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl">ClassDecl</a> }] .
 <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "<span class='keyword'>class</span>" <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#ClassDeclExpr" name="ClassDeclExpr">ClassDeclExpr</a>
 <a href="#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = ( <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [{ "," <a href="#InheritanceDeclItem">InheritanceDeclItem</a> }] ) | ( "{(" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [ { ";" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> ";" } ] ")}" ) .
 <a href="#InheritanceDeclItem" name="InheritanceDeclItem">InheritanceDeclItem</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClassName">ClassName</a> [ "[" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "]" .
 <a href="#ClassContentFullSet" name="ClassContentFullSet">ClassContentFullSet</a> = [ <a href="#ClausedScopeForClassesSet">ClausedScopeForClassesSet</a> ] [ <a href="#ClassContent">ClassContent</a> ] [ <a href="#ClausedScopeForClassesSet">ClausedScopeForClassesSet</a> ] .
@@ -383,7 +385,8 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 				[ <a href="#SupervisorDeclsSet">SupervisorDeclsSet</a> ] [ <a href="#InstanceDeclsSet">InstanceDeclsSet</a> ] [ <a href="#ValueDeclsSet">ValueDeclsSet</a> ].
 <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> = [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] .
 <a href="#SystemAnnotationsList" name="SystemAnnotationsList">SystemAnnotationsList</a> = <a href="#SystemAnnotation">SystemAnnotation</a> [{ <a href="#SystemAnnotation">SystemAnnotation</a> }] .
-<a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a> 
+<a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a>
+<a href="#SystemAnnotationExpr" name="SystemAnnotationExpr">SystemAnnotationExpr</a> 
 </pre>
 
 <h4 class='center-h' data-href="Methods_chapter">
@@ -395,6 +398,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <pre class='code'>
 <a href="#MethodsSet" name="MethodsSet">MethodsSet</a> = <a href="#Method">Method</a> [{ <a href="#Method">Method</a> }] .
 <a href="#Method" name="Method">Method</a> = <a href="#FunctionDecl">FunctionDecl</a> .
+<a href="#MethodDeclExpr" name="MethodDeclExpr">MethodDeclExpr</a>
 </pre>
 
 <h4 class='center-h' data-href="Restrictions_of_fields_chapter">
@@ -406,7 +410,8 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <pre class='code'>
 <a href="#RestrictionsOfFieldsSet" name="RestrictionsOfFieldsSet">RestrictionsOfFieldsSet</a> = <a href="#RestrictionOfField">RestrictionOfField</a> [{ <a href="#RestrictionOfField">RestrictionOfField</a> }] .
 <a href="#RestrictionOfField" name="RestrictionOfField">RestrictionOfField</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "prop" <a href="#PropertyName">PropertyName</a> [ ":" [ <a href="#PropertyType">PropertyType</a> ] [ <a href="#PropertyPower">PropertyPower</a> ] 
-               [ "/" <a href="#PropertyHistoryPower">PropertyHistoryPower</a> ]] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";".
+               [ "/" <a href="#PropertyHistoryPower">PropertyHistoryPower</a> ]] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#RestrictionOfFieldExprDecl" name="RestrictionOfFieldExprDecl">RestrictionOfFieldExprDecl</a>
 <a href="#PropertyName" name="PropertyName">PropertyName</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#PropertyType" name="PropertyType">PropertyType</a> = <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#PropertyPower" name="PropertyPower">PropertyPower</a> = "[" ( "*" | "∞" | <a href="#NumericTypeExpr">NumericTypeExpr</a>) "]" .
@@ -449,6 +454,7 @@ PropertyHistoryPower - by default 0.
 <pre class='code'>
 <a href="#ExceptionHandlersSet" name="ExceptionHandlersSet">ExceptionHandlersSet</a> = <a href="#ExceptionHandler">ExceptionHandler</a> [{ <a href="#ExceptionHandler">ExceptionHandler</a> }] .
 <a href="#ExceptionHandler" name="ExceptionHandler">ExceptionHandler</a>
+<a href="#ExceptionHandlerDeclExpr" name="ExceptionHandlerDeclExpr">ExceptionHandlerDeclExpr</a>
 </pre>
 
 <h3 class='center-h' data-href="Namespaces_chapter">
@@ -499,6 +505,7 @@ Defining namespace as statement
 <pre class='code'>
 <a href="#NamespaceDeclsSet" name="NamespaceDeclsSet">NamespaceDeclsSet</a> = <a href="#NamespaceDecl">NamespaceDecl</a> [{ <a href="#NamespaceDecl">NamespaceDecl</a> }] .
 <a href="#NamespaceDecl" name="NamespaceDecl">NamespaceDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "namespace" ( <a href="#identifier_with_namespace">identifier_with_namespace</a> | <a href="#identifier">identifier</a> ) "{" [ <a href="#ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> ] <a href="#SourceCodeFileContent">SourceCodeFileContent</a> [ <a href="#ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#NamespaceDeclExpr" name="NamespaceDeclExpr">NamespaceDeclExpr</a>
 </pre>
 
 <pre class='code'>
@@ -526,6 +533,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='code'>
 <a href="#UsingStatement" name="UsingStatement">UsingStatement</a> = "using" <a href="#identifier">identifier</a> "::" { <a href="#identifier">identifier</a> "::" } <a href="#identifier">identifier</a> ";"
+<a href="#UsingStatementExpr" name="UsingStatementExpr">UsingStatementExpr</a>
 </pre>
 
 <pre class='code'>
@@ -547,6 +555,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ModuleDeclsSet" name="ModuleDeclsSet">ModuleDeclsSet</a> = <a href="#ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl">ModuleDecl</a> }] .
 <a href="#ModuleIdentifier" name="ModuleIdentifier">ModuleIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a>
+<a href="#ModuleDeclExpr" name="ModuleDeclExpr">ModuleDeclExpr</a>
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -565,7 +574,8 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ApplicationDeclsSet" name="ApplicationDeclsSet">ApplicationDeclsSet</a> = <a href="#ApplicationDecl">ApplicationDecl</a> [{ <a href="#ApplicationDecl">ApplicationDecl</a> }] .
 <a href="#ApplicationIdentifier" name="ApplicationIdentifier">ApplicationIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "app" <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] [ <a href="#ApplicationContent">ApplicationContent</a> ] [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] "}" ] 
-           [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";".
+           [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#ApplicationDeclExpr" name="ApplicationDeclExpr">ApplicationDeclExpr</a>
 <a href="#ClausedScopeForApplicationsSet" name="ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> = <a href="#ClausedScopeForApplication">ClausedScopeForApplication</a> [ { <a href="#ClausedScopeForApplication">ClausedScopeForApplication</a> } ] .
 <a href="#ClausedScopeForApplication" name="ClausedScopeForApplication">ClausedScopeForApplication</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ApplicationContent">ApplicationContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ApplicationContent" name="ApplicationContent">ApplicationContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] [ <a href="#Import">Import</a> ] .
@@ -579,6 +589,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='code'>
 <a href="#Import" name="Import">Import</a> = "import" ":" [{ <a href="#ImportItem">ImportItem</a> }] .
+<a href="#ImportDeclExpr" name="ImportDeclExpr">ImportDeclExpr</a>
 <a href="#ImportItem" name="ImportItem">ImportItem</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#identifier">identifier</a> ";" .
 </pre>
 
@@ -592,6 +603,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#StateDeclsSet" name="StateDeclsSet">StateDeclsSet</a> = <a href="#StateDecl">StateDecl</a> [{ <a href="#StateDecl">StateDecl</a> }] .
 <a href="#StateIdentifier" name="StateIdentifier">StateIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#StateDecl" name="StateDecl">StateDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "state" <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForStatesSet">ClausedScopeForStatesSet</a> ] [ <a href="#StateContent">StateContent</a> ] [ <a href="#ClausedScopeForStatesSet">ClausedScopeForStatesSet</a> ] "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#StateDeclExpr" name="StateDeclExpr">StateDeclExpr</a>
 <a href="#ClausedScopeForStatesSet" name="ClausedScopeForStatesSet">ClausedScopeForStatesSet</a> = <a href="#ClausedScopeForState">ClausedScopeForState</a> [ { <a href="#ClausedScopeForState">ClausedScopeForState</a> } ] .
 <a href="#ClausedScopeForState" name="ClausedScopeForState">ClausedScopeForState</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#StateContent">StateContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#StateContent" name="StateContent">StateContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
@@ -608,6 +620,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ProcessIdentifier" name="ProcessIdentifier">ProcessIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ProcessDecl" name="ProcessDecl">ProcessDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "process" <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForProcessesSet">ClausedScopeForProcessesSet</a> ] [ <a href="#ProcessContent">ProcessContent</a> ] [ <a href="#ClausedScopeForProcessesSet">ClausedScopeForProcessesSet</a> ] "}" ] 
          [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#ProcessDeclExpr" name="ProcessDeclExpr">ProcessDeclExpr</a>
 <a href="#ClausedScopeForProcessesSet" name="ClausedScopeForProcessesSet">ClausedScopeForProcessesSet</a> = <a href="#ClausedScopeForProcess">ClausedScopeForProcess</a> [ { <a href="#ClausedScopeForProcess">ClausedScopeForProcess</a> } ] .
 <a href="#ClausedScopeForProcess" name="ClausedScopeForProcess">ClausedScopeForProcess</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ProcessContent">ProcessContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ProcessContent" name="ProcessContent">ProcessContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
@@ -623,6 +636,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#SupervisorDeclsSet" name="SupervisorDeclsSet">SupervisorDeclsSet</a> = <a href="#SupervisorDecl">SupervisorDecl</a> [{ <a href="#SupervisorDecl">SupervisorDecl</a> }] .
 <a href="#SupervisorIdentifier" name="SupervisorIdentifier">SupervisorIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a>
+<a href="#SupervisorDeclExpr" name="SupervisorDeclExpr">SupervisorDeclExpr</a>
 </pre>
 
 <h3 class='center-h' data-href="Functions_chapter">
@@ -638,7 +652,9 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#FunctionIdentifier" name="FunctionIdentifier">FunctionIdentifier</a> = <a href="#FunctionSignature">FunctionSignature</a> | <a href="#FunctionName">FunctionName</a> .
 <a href="#FunctionDecl" name="FunctionDecl">FunctionDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "func" <a href="#FunctionName">FunctionName</a> <a href="#FunctionSignature">FunctionSignature</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ]
            "=>" "{" [ <a href="#FunctionBody">FunctionBody</a> ] "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#FunctionDeclExpr" name="FunctionDeclExpr">FunctionDeclExpr</a>
 <a href="#AnonymousFunction" name="AnonymousFunction">AnonymousFunction</a>
+<a href="#AnonymousFunctionDeclExpr" name="AnonymousFunctionDeclExpr">AnonymousFunctionDeclExpr</a>
 <a href="#FunctionParamsSetDeclaration" name="FunctionParamsSetDeclaration">FunctionParamsSetDeclaration</a> = <a href="#FunctionParamDeclaration">FunctionParamDeclaration</a> [{ "," <a href="#FunctionParamDeclaration">FunctionParamDeclaration</a> }] .
 <a href="#FunctionParamDeclaration" name="FunctionParamDeclaration">FunctionParamDeclaration</a>
 <a href="#FunctionReturnDeclaration" name="FunctionReturnDeclaration">FunctionReturnDeclaration</a> = <a href="#TypeIdentifier">TypeIdentifier</a> .
@@ -656,16 +672,20 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#LogicalRuleDeclsSet" name="LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> = <a href="#LogicalRuleDecl">LogicalRuleDecl</a> [{ <a href="#LogicalRuleDecl">LogicalRuleDecl</a> }] .
 <a href="#FactIdentifier" name="FactIdentifier">FactIdentifier</a>
 <a href="#FactDecl" name="FactDecl">FactDecl</a>
+<a href="#FactDeclExpr" name="FactDeclExpr">FactDeclExpr</a>
 <a href="#ClausedScopeForFactsSet" name="ClausedScopeForFactsSet">ClausedScopeForFactsSet</a> = <a href="#ClausedScopeForFact">ClausedScopeForFact</a> [ { <a href="#ClausedScopeForFact">ClausedScopeForFact</a> } ] .
 <a href="#ClausedScopeForFact" name="ClausedScopeForFact">ClausedScopeForFact</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#"></a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#LogicalRuleIdentifier" name="LogicalRuleIdentifier">LogicalRuleIdentifier</a>
 <a href="#LogicalRuleDecl" name="LogicalRuleDecl">LogicalRuleDecl</a>
+<a href="#LogicalRuleDeclExpr" name="LogicalRuleDeclExpr">LogicalRuleDeclExpr</a>
 <a href="#ClausedScopeForLogicalRulesSet" name="ClausedScopeForLogicalRulesSet">ClausedScopeForLogicalRulesSet</a> = <a href="#"></a> [ { <a href="#ClausedScopeForLogicalRule">ClausedScopeForLogicalRule</a> } ] .
 <a href="#ClausedScopeForLogicalRule" name="ClausedScopeForLogicalRule">ClausedScopeForLogicalRule</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#"></a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ImplicationSymbol" name="ImplicationSymbol">ImplicationSymbol</a> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <a href="#LogicalSentence" name="LogicalSentence">LogicalSentence</a>
+<a href="#LogicalSentenceDeclExpr" name="LogicalSentenceDeclExpr">LogicalSentenceDeclExpr</a>
 <a href="#LogicalAnnotation" name="LogicalAnnotation">LogicalAnnotation</a> = "[:" ( <a href="#FactDecl">FactDecl</a> | "{:" <a href="#ClassName">ClassName</a> ":}" ) ":]"
-<a href="#LogicalAnnotationsList" name="LogicalAnnotationsList">LogicalAnnotationsList</a> = <a href="#LogicalAnnotation">LogicalAnnotation</a> [{ <a href="#LogicalAnnotation">LogicalAnnotation</a> }]
+<a href="#LogicalAnnotationsList" name="LogicalAnnotationsList">LogicalAnnotationsList</a> = <a href="#LogicalAnnotation">LogicalAnnotation</a> [{ <a href="#LogicalAnnotation">LogicalAnnotation</a> }] .
+<a href="#LogicalAnnotationDeclExpr" name="LogicalAnnotationDeclExpr">LogicalAnnotationDeclExpr</a>
 </pre>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -697,6 +717,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#TriggerIdentifier" name="TriggerIdentifier">TriggerIdentifier</a> = <a href="#TriggerName">TriggerName</a> .
 <a href="#TriggerDecl" name="TriggerDecl">TriggerDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] (( "trigger" <a href="#TriggerName">TriggerName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] "{" [ [ <a href="#ClausedScopeForTriggersSet">ClausedScopeForTriggersSet</a> ] <a href="#TriggersContent">TriggersContent</a> ] [ <a href="#ClausedScopeForTriggersSet">ClausedScopeForTriggersSet</a> ] "}" ) | <a href="#TriggersContent">TriggersContent</a> ) 
                   [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#TriggerDeclExpr" name="TriggerDeclExpr">TriggerDeclExpr</a>
 <a href="#ClausedScopeForTriggersSet" name="ClausedScopeForTriggersSet">ClausedScopeForTriggersSet</a> = <a href="#ClausedScopeForTrigger">ClausedScopeForTrigger</a> [ { <a href="#ClausedScopeForTrigger">ClausedScopeForTrigger</a> } ] .
 <a href="#ClausedScopeForTrigger" name="ClausedScopeForTrigger">ClausedScopeForTrigger</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#TriggersContent">TriggersContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#TriggersContent" name="TriggersContent">TriggersContent</a> = ( "on" <a href="#TriggerOnExpression">TriggerOnExpression</a> "do" "{" <a href="#StatementsSet">StatementsSet</a> "}" ) | 
@@ -716,6 +737,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#InstanceDeclsSet" name="InstanceDeclsSet">InstanceDeclsSet</a> = <a href="#InstanceDecl">InstanceDecl</a> [{ <a href="#InstanceDecl">InstanceDecl</a> }] .
 <a href="#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a>
+<a href="#InstanceDeclExpr" name="InstanceDeclExpr">InstanceDeclExpr</a>
 </pre>
 
 <h3 class='center-h' data-href="Call-blocks_chapter">
@@ -738,6 +760,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='code'>
 <a href="#TypeAliasesSet" name="TypeAliasesSet">TypeAliasesSet</a> = <a href="#TypeAliase">TypeAliase</a> [{ <a href="#TypeAliase">TypeAliase</a> }] .
 <a href="#TypeAliase" name="TypeAliase">TypeAliase</a>
+<a href="#TypeAliaseDeclExpr" name="TypeAliaseDeclExpr">TypeAliaseDeclExpr</a>
 </pre>
 	
 <h3 class='center-h' data-href="Ordered_types_chapter">
@@ -763,6 +786,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#RangeIdentifier" name="RangeIdentifier">RangeIdentifier</a> = <a href="#RangeName">RangeName</a> .
 <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "range" <a href="#RangeName">RangeName</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> ".." <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> 
               [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#RangeDeclExpr" name="RangeDeclExpr">RangeDeclExpr</a>
 </pre> 
 
 <h3 class='center-h' data-href="Values_chapter">
@@ -775,6 +799,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#ValueDeclsSet" name="ValueDeclsSet">ValueDeclsSet</a> = <a href="#ValueDecl">ValueDecl</a> [{ <a href="#ValueDecl">ValueDecl</a> }] .
 <a href="#ValueIdentifier" name="ValueIdentifier">ValueIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#ValueDecl" name="ValueDecl">ValueDecl</a>
+<a href="#ValueDeclExpr" name="ValueDeclExpr">ValueDeclExpr</a>
 </pre>
 	
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
@@ -789,6 +814,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#FuzzySetIdentifier" name="FuzzySetIdentifier">FuzzySetIdentifier</a> = <a href="#FuzzySetName">FuzzySetName</a> .
 <a href="#FuzzySetDecl" name="FuzzySetDecl">FuzzySetDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "fuzzy" "set" <a href="#FuzzySetName">FuzzySetName</a> "of" <a href="#RangeIdentifier">RangeIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ]
             "{" [ <a href="#ClausedScopeForFuzzySetsSet">ClausedScopeForFuzzySetsSet</a> ] <a href="#FuzzySetBody">FuzzySetBody</a> [ <a href="#ClausedScopeForFuzzySetsSet">ClausedScopeForFuzzySetsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#FuzzySetDeclExpr" name="FuzzySetDeclExpr">FuzzySetDeclExpr</a>
 <a href="#ClausedScopeForFuzzySetsSet" name="ClausedScopeForFuzzySetsSet">ClausedScopeForFuzzySetsSet</a> = <a href="#ClausedScopeForFuzzySet">ClausedScopeForFuzzySet</a> [ { <a href="#ClausedScopeForFuzzySet">ClausedScopeForFuzzySet</a> } ] .
 <a href="#ClausedScopeForFuzzySet" name="ClausedScopeForFuzzySet">ClausedScopeForFuzzySet</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#FuzzySetBody">FuzzySetBody</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .			
 <a href="#FuzzySetBody" name="FuzzySetBody">FuzzySetBody</a> = [ <a href="#AdditionalContentOfFuzzySetBody">AdditionalContentOfFuzzySetBody</a> ] [{ <a href="#FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> }] <a href="#FuzzyTermsBlock">FuzzyTermsBlock</a> [{ <a href="#FuzzyTermsBlock">FuzzyTermsBlock</a> }] 
@@ -796,8 +822,10 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#FuzzyTermName" name="FuzzyTermName">FuzzyTermName</a> = <a href="#identifier">identifier</a> .
 <a href="#FuzzyOperatorName" name="FuzzyOperatorName">FuzzyOperatorName</a> = <a href="#identifier">identifier</a> .
 <a href="#FuzzyTermsBlocks" name="FuzzyTermsBlocks">FuzzyTermsBlocks</a> = "terms" ":" <a href="#newline">newline</a> <a href="#FuzzyTerm">FuzzyTerm</a> [{ <a href="#FuzzyTerm">FuzzyTerm</a> }] .
-<a href="#FuzzyTerm" name="FuzzyTerm">FuzzyTerm</a> = [ <a href='AnnotationsList'></a> ] <a href="#FuzzyTermName">FuzzyTermName</a> "=" <a href="#AnonymousFunction">AnonymousFunction</a> [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#FuzzyTermsBlocksDeclExpr" name="FuzzyTermsBlocksDeclExpr">FuzzyTermsBlocksDeclExpr</a>
+<a href="#FuzzyTerm" name="FuzzyTerm">FuzzyTerm</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#FuzzyTermName">FuzzyTermName</a> "=" <a href="#AnonymousFunction">AnonymousFunction</a> [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#FuzzyOperatorsBlock" name="FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> = "operators" ":" <a href="#newline">newline</a> <a href="#FuzzyOperator">FuzzyOperator</a> [{ <a href="#FuzzyOperator">FuzzyOperator</a> }] .
+<a href="#FuzzyOperatorsBlockDeclExpr" name="FuzzyOperatorsBlockDeclExpr">FuzzyOperatorsBlockDeclExpr</a>
 <a href="#FuzzyOperator" name="FuzzyOperator">FuzzyOperator</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#FuzzyOperatorName">FuzzyOperatorName</a> "=" <a href="#AnonymousFunction">AnonymousFunction</a> [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" . 
 <a href="#AdditionalContentOfFuzzySetBody" name="AdditionalContentOfFuzzySetBody">AdditionalContentOfFuzzySetBody</a> = <a href="#ClassContentFullSet">ClassContentFullSet</a> .
 <a href="#FuzzyExpr" name="FuzzyExpr">FuzzyExpr</a>
@@ -894,8 +922,10 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> = <a href="#CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#CertaintyFactorModalityDeclExpr" name="CertaintyFactorModalityDeclExpr">CertaintyFactorModalityDeclExpr</a>
 <a href="#CertaintyFactorModalityMark" name="CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
-<a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> = <a href="#AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> = <a href="#AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalCertaintyFactorModalityDeclExpr" name="AdditionalCertaintyFactorModalityDeclExpr">AdditionalCertaintyFactorModalityDeclExpr</a>
 <a href="#AdditionalCertaintyFactorModalityMark" name="AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
 <a href="#BooleanValOfModality" name="BooleanValOfModality">BooleanValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#BooleanTypeExpr">BooleanTypeExpr</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
@@ -908,8 +938,10 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <a href="#TimeModality" name="TimeModality">TimeModality</a> = <a href="#TimeModalityMark">TimeModalityMark</a> <a href="#DateTimeValOfModality">DateTimeValOfModality</a> .
+<a href="#TimeModalityDeclExpr" name="TimeModalityDeclExpr">TimeModalityDeclExpr</a>
 <a href="#TimeModalityMark" name="TimeModalityMark">TimeModalityMark</a> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
 <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> = <a href="#AdditionalTimeModalityMark">AdditionalTimeModalityMark</a> <a href="#DateTimeValOfModality">DateTimeValOfModality</a> .
+<a href="#AdditionalTimeModalityDeclExpr" name="AdditionalTimeModalityDeclExpr">AdditionalTimeModalityDeclExpr</a>
 <a href="#AdditionalTimeModalityMark" name="AdditionalTimeModalityMark">AdditionalTimeModalityMark</a> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
 <a href="#DateTimeValOfModality" name="DateTimeValOfModality">DateTimeValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
@@ -922,8 +954,10 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <a href="#CompletionModality" name="CompletionModality">CompletionModality</a> = <a href="#CompletionModalityMark">CompletionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#CompletionModalityDeclExpr" name="CompletionModalityDeclExpr">CompletionModalityDeclExpr</a>
 <a href="#CompletionModalityMark" name="CompletionModalityMark">CompletionModalityMark</a> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
 <a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a> = <a href="#AdditionalCompletionModalityMark">AdditionalCompletionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalCompletionModalityDeclExpr" name="AdditionalCompletionModalityDeclExpr">AdditionalCompletionModalityDeclExpr</a>
 <a href="#AdditionalCompletionModalityMark" name="AdditionalCompletionModalityMark">AdditionalCompletionModalityMark</a> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
 </pre>
 
@@ -935,8 +969,10 @@ Defuzzification method is not defined yet!
 
 <pre class='code'>
 <a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> = <a href="#AcceptedModalityMark">AcceptedModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AcceptedModalityDeclExpr" name="AcceptedModalityDeclExpr">AcceptedModalityDeclExpr</a>
 <a href="#AcceptedModalityMark" name="AcceptedModalityMark">AcceptedModalityMark</a> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
 <a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> = <a href="#AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalAcceptedModalityDeclExpr" name="AdditionalAcceptedModalityDeclExpr">AdditionalAcceptedModalityDeclExpr</a>
 <a href="#AdditionalAcceptedModalityMark" name="AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
 </pre>
 
@@ -947,9 +983,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#DesirableModality" name="DesirableModality">DesirableModality</a> = <a href="#DesirableModalityMark">DesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#DesirableModality" name="DesirableModality">DesirableModality</a> = <a href="#DesirableModalityMark">DesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#DesirableModalityDeclExpr" name="DesirableModalityDeclExpr">DesirableModalityDeclExpr</a> 
 <a href="#DesirableModalityMark" name="DesirableModalityMark">DesirableModalityMark</a> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
-<a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> = <a href="#AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .  
+<a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> = <a href="#AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalDesirableModalityDeclExpr" name="AdditionalDesirableModalityDeclExpr">AdditionalDesirableModalityDeclExpr</a>
 <a href="#AdditionalDesirableModalityMark" name="AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
 </pre>
 
@@ -960,9 +998,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#NecessityModality" name="NecessityModality">NecessityModality</a> = <a href="#NecessityModalityMark">NecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#NecessityModality" name="NecessityModality">NecessityModality</a> = <a href="#NecessityModalityMark">NecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#NecessityModalityDeclExpr" name="NecessityModalityDeclExpr">NecessityModalityDeclExpr</a>
 <a href="#NecessityModalityMark" name="NecessityModalityMark">NecessityModalityMark</a> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
-<a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> = <a href="#AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> = <a href="#AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalNecessityModalityDeclExpr" name="AdditionalNecessityModalityDeclExpr">AdditionalNecessityModalityDeclExpr</a>
 <a href="#AdditionalNecessityModalityMark" name="AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
 </pre>
 
@@ -973,9 +1013,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#IntentionModality" name="IntentionModality">IntentionModality</a> = <a href="#IntentionModalityMark">IntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#IntentionModality" name="IntentionModality">IntentionModality</a> = <a href="#IntentionModalityMark">IntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#IntentionModalityDeclExpr" name="IntentionModalityDeclExpr">IntentionModalityDeclExpr</a>
 <a href="#IntentionModalityMark" name="IntentionModalityMark">IntentionModalityMark</a> = "~>:" | "intention" | "intend" | "plan" | "decide" | "i" | "intention:" | "intend:" | "plan:" | "decide:" | "i:" .
-<a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> = <a href="#AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> = <a href="#AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalIntentionModalityDeclExpr" name="AdditionalIntentionModalityDeclExpr">AdditionalIntentionModalityDeclExpr</a>
 <a href="#AdditionalIntentionModalityMark" name="AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> = "[~>:]" | "[intention]" | "[intend]" | "[plan]" | "[decide]" | "[i]" | "[intention:]" | "[intend:]" | "[plan:]" | "[decide:]" | "[i:]" .
 </pre>
 
@@ -986,9 +1028,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#PriorityModality" name="PriorityModality">PriorityModality</a> = <a href="#PriorityModalityMark">PriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#PriorityModality" name="PriorityModality">PriorityModality</a> = <a href="#PriorityModalityMark">PriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#PriorityModalityDeclExpr" name="PriorityModalityDeclExpr">PriorityModalityDeclExpr</a>
 <a href="#PriorityModalityMark" name="PriorityModalityMark">PriorityModalityMark</a> = "*:" | "priority" | "p" | "priority:" | "p:" .
-<a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> = <a href="#AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> = <a href="#AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalPriorityModalityDeclExpr" name="AdditionalPriorityModalityDeclExpr">AdditionalPriorityModalityDeclExpr</a> 
 <a href="#AdditionalPriorityModalityMark" name="AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> = "[*:]" | "[priority]" | "[p]" | "[priority:]" | "[p:]" .
 </pre>
 
@@ -999,9 +1043,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> = <a href="#MoralQualityModalityMark">MoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> = <a href="#MoralQualityModalityMark">MoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#MoralQualityModalityDeclExpr" name="MoralQualityModalityDeclExpr">MoralQualityModalityDeclExpr</a>
 <a href="#MoralQualityModalityMark" name="MoralQualityModalityMark">MoralQualityModalityMark</a> = "/^:" | "moral" | "moral:" .
-<a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> = <a href="#AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> = <a href="#AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalMoralQualityModalityDeclExpr" name="AdditionalMoralQualityModalityDeclExpr">AdditionalMoralQualityModalityDeclExpr</a>
 <a href="#AdditionalMoralQualityModalityMark" name="AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> = "[/^:]" | "[moral]" | "[moral:]" .
 </pre>
 
@@ -1012,9 +1058,11 @@ Defuzzification method is not defined yet!
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#RespectModality" name="RespectModality">RespectModality</a> = <a href="#RespectModalityMark">RespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#RespectModality" name="RespectModality">RespectModality</a> = <a href="#RespectModalityMark">RespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#RespectModalityDeclExpr" name="RespectModalityDeclExpr">RespectModalityDeclExpr</a>
 <a href="#RespectModalityMark" name="RespectModalityMark">RespectModalityMark</a> = "/:" | "respect" | "respect:" .
-<a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> = <a href="#AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> = <a href="#AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalRespectModalityDeclExpr" name="AdditionalRespectModalityDeclExpr">AdditionalRespectModalityDeclExpr</a>
 <a href="#AdditionalRespectModalityMark" name="AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> = "[/:]" | "[respect]" | "[respect:]" .
 </pre>
 
@@ -1025,9 +1073,11 @@ Quantity quality modality
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>	
 
 <pre class='code'>
-<a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> = <a href="#QuantityQualityModalityMark">QuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> = <a href="#QuantityQualityModalityMark">QuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#QuantityQualityModalityDeclExpr" name="QuantityQualityModalityDeclExpr">QuantityQualityModalityDeclExpr</a> 
 <a href="#QuantityQualityModalityMark" name="QuantityQualityModalityMark">QuantityQualityModalityMark</a> = "=:" | "q" | "quantity" | "q:" | "quantity:" .
-<a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> = <a href="#AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> = <a href="#AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalQuantityQualityModalityDeclExpr" name="AdditionalQuantityQualityModalityDeclExpr">AdditionalQuantityQualityModalityDeclExpr</a>
 <a href="#AdditionalQuantityQualityModalityMark" name="AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> = "[=:]" | "[q]" | "[quantity]" | "[q:]" | "[quantity:]" .
 </pre>
 
@@ -1038,9 +1088,11 @@ Quantity quality modality
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> = <a href="#EmotionKindModalityMark">EmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> = <a href="#EmotionKindModalityMark">EmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#EmotionKindModalityDeclExpr" name="EmotionKindModalityDeclExpr">EmotionKindModalityDeclExpr</a>
 <a href="#EmotionKindModalityMark" name="EmotionKindModalityMark">EmotionKindModalityMark</a> = "~:" | "emotion" | "em" | "emotion:" | "em:" .
-<a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> = <a href="#AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> = <a href="#AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalEmotionKindModalityDeclExpr" name="AdditionalEmotionKindModalityDeclExpr">AdditionalEmotionKindModalityDeclExpr</a>
 <a href="#AdditionalEmotionKindModalityMark" name="AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> = "[~:]" | "[emotion]" | "[em]" | "[emotion:]" | "[em:]" .
 </pre>
 
@@ -1052,8 +1104,10 @@ Emotion intensity modality
 
 <pre class='code'>
 <a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> = <a href="#EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#EmotionIntensityModalityDeclExpr" name="EmotionIntensityModalityDeclExpr">EmotionIntensityModalityDeclExpr</a>
 <a href="#EmotionIntensityModalityMark" name="EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> = "*~:" | "emotion intensity" | "emotion power" | "emi" | "emp" | "emotion intensity:" | "emotion power:" | "emi:" | "emp:" .
-<a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> = <a href="#AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
+<a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> = <a href="#AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
+<a href="#AdditionalEmotionIntensityModalityDeclExpr" name="AdditionalEmotionIntensityModalityDeclExpr">AdditionalEmotionIntensityModalityDeclExpr</a> 
 <a href="#AdditionalEmotionIntensityModalityMark" name="AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> = "[*~:]" | "[emotion intensity]" | "[emotion power]" | "[emi]" | "[emp]" | "[emotion intensity:]" | "[emotion power:]" | "[emi:]" | "[emp:]" .
 </pre>
 
@@ -1071,8 +1125,10 @@ Emotion intensity modality
 
 <pre class='code'>
 <a href="#ThereforeNotRuleSection" name="ThereforeNotRuleSection">ThereforeNotRuleSection</a>
+<a href="#ThereforeNotRuleSectionDeclExpr" name="ThereforeNotRuleSectionDeclExpr">ThereforeNotRuleSectionDeclExpr</a>
 <a href="#ThereforeNotRuleSectionMark" name="ThereforeNotRuleSectionMark">ThereforeNotRuleSectionMark</a> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
 <a href="#AdditionalThereforeNotRuleSection" name="AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a>
+<a href="#AdditionalThereforeNotRuleSectionDeclExpr" name="AdditionalThereforeNotRuleSectionDeclExpr">AdditionalThereforeNotRuleSectionDeclExpr</a>
 <a href="#AdditionalThereforeNotRuleSectionMark" name="AdditionalThereforeNotRuleSectionMark">AdditionalThereforeNotRuleSectionMark</a> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
 <a href="#" name=""></a>
 </pre>
@@ -1085,8 +1141,10 @@ Emotion intensity modality
 
 <pre class='code'>
 <a href="#ElseNotRuleSection" name="ElseNotRuleSection">ElseNotRuleSection</a>
+<a href="#ElseNotRuleSectionDeclExpr" name="ElseNotRuleSectionDeclExpr">ElseNotRuleSectionDeclExpr</a>
 <a href="#ElseNotRuleSectionMark" name="ElseNotRuleSectionMark">ElseNotRuleSectionMark</a> = "|!->:" | "else" | "else:" | "otherwise" | "other" | "otherwise:" | "other:" .
 <a href="#AdditionalElseNotRuleSection" name="AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a>
+<a href="#AdditionalElseNotRuleSectionDeclExpr" name="AdditionalElseNotRuleSectionDeclExpr">AdditionalElseNotRuleSectionDeclExpr</a>
 <a href="#AdditionalElseNotRuleSectionMark" name="AdditionalElseNotRuleSectionMark">AdditionalElseNotRuleSectionMark</a> = "[|!->:]" | "[else]" | "[else:]" | "[otherwise]" | "[other]" | "[otherwise:]" | "[other:]" .
 </pre>
 
@@ -1098,8 +1156,10 @@ Emotion intensity modality
 
 <pre class='code'>
 <a href="#SourceSection" name="SourceSection">SourceSection</a> =  <a href="#SourceSectionMark">SourceSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
+<a href="#SourceSectionDeclExpr" name="SourceSectionDeclExpr">SourceSectionDeclExpr</a>
 <a href="#SourceSectionMark" name="SourceSectionMark">SourceSectionMark</a> = "@:" | "source" | "origin" | "s" | "source:" | "origin:" | "s:" .
 <a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a> =  <a href="#AdditionalSourceSectionMark">AdditionalSourceSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
+<a href="#AdditionalSourceSectionDeclExpr" name="AdditionalSourceSectionDeclExpr">AdditionalSourceSectionDeclExpr</a>
 <a href="#AdditionalSourceSectionMark" name="AdditionalSourceSectionMark">AdditionalSourceSectionMark</a> = "[@:]" | "[source]" | "[origin]" | "[s]" | "[source:]" | "[origin:]" | "[s:]" .
 </pre>
 
@@ -1111,8 +1171,10 @@ Channel section
 
 <pre class='code'>
 <a href="#ChannelSection" name="ChannelSection">ChannelSection</a> =  <a href="#ChannelSection">ChannelSection</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
+<a href="#ChannelSectionDeclExpr" name="ChannelSectionDeclExpr">ChannelSectionDeclExpr</a>
 <a href="#ChannelSectionMark" name="ChannelSectionMark">ChannelSectionMark</a> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
 <a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a> =  <a href="#AdditionalChannelSectionMark">AdditionalChannelSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
+<a href="#AdditionalChannelSectionDeclExpr" name="AdditionalChannelSectionDeclExpr">AdditionalChannelSectionDeclExpr</a>
 <a href="#AdditionalChannelSectionMark" name="AdditionalChannelSectionMark">AdditionalChannelSectionMark</a> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
 </pre>
 
@@ -1124,10 +1186,12 @@ Channel section
 
 <pre class='code'>
 <a href="#ClausesSection" name="ClausesSection">ClausesSection</a> = <a href="#ClausesSectionMark">ClausesSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
+<a href="#ClausesSectionDeclExpr" name="ClausesSectionDeclExpr">ClausesSectionDeclExpr</a>
 <a href="#ClausesSectionMark" name="ClausesSectionMark">ClausesSectionMark</a> = "&:" | "where" | "w" | "where:" | "w:" .
 <a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a> = <a href="#AdditionalClausesSectionMark">AdditionalClausesSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
+<a href="#AdditionalClausesSectionDeclExpr" name="AdditionalClausesSectionDeclExpr">AdditionalClausesSectionDeclExpr</a>
 <a href="#AdditionalClausesSectionMark" name="AdditionalClausesSectionMark">AdditionalClausesSectionMark</a> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
-<a href="#LogicalSentenceValOfModality" name="LogicalSentenceValOfModality">LogicalSentenceValOfModality</a>  = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#LogicalSentence">LogicalSentence</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
+<a href="#LogicalSentenceValOfModality" name="LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#LogicalSentence">LogicalSentence</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
 
 <h3 class='center-h' data-href="No_contradict_section_chapter">
@@ -1138,8 +1202,10 @@ Channel section
 
 <pre class='code'>
 <a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a> = <a href="#NoContradictSectionMark">NoContradictSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
+<a href="#NoContradictSectionDeclExpr" name="NoContradictSectionDeclExpr">NoContradictSectionDeclExpr</a>
 <a href="#NoContradictSectionMark" name="NoContradictSectionMark">NoContradictSectionMark</a> = "^:" .
 <a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a> = <a href="#AdditionalNoContradictSectionMark">AdditionalNoContradictSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
+<a href="#AdditionalNoContradictSectionDeclExpr" name="AdditionalNoContradictSectionDeclExpr">AdditionalNoContradictSectionDeclExpr</a>
 <a href="#AdditionalNoContradictSectionMark" name="AdditionalNoContradictSectionMark">AdditionalNoContradictSectionMark</a> = "[^:]" .
 </pre>
 
@@ -1150,13 +1216,16 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#AccessSection" name="AccessSection">AccessSection</a> = <a href="#AccessSectionMark">AccessSectionMark</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#AccessModifierDescription">AccessModifierDescription</a> "}" .
+<a href="#AccessSection" name="AccessSection">AccessSection</a> = <a href="#AccessSectionMark">AccessSectionMark</a> <a href="#ValOfAccessSection">ValOfAccessSection</a> .
+<a href="#AccessSectionDeclExpr" name="AccessSectionDeclExpr">AccessSectionDeclExpr</a>
 <a href="#AccessSectionMark" name="AccessSectionMark">AccessSectionMark</a> = "!!:" | "access" | "permissions" | "allow" | "permit" | "a" | "access:" | "permissions:" | "allow:" | "permit:" | "a:" .
-<a href="#AdditionalAccessSection" name="AdditionalAccessSection">AdditionalAccessSection</a> = <a href="#AdditionalAccessSectionMark">AdditionalAccessSectionMark</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#AccessModifierDescription">AccessModifierDescription</a> "}" .
+<a href="#AdditionalAccessSection" name="AdditionalAccessSection">AdditionalAccessSection</a> = <a href="#AdditionalAccessSectionMark">AdditionalAccessSectionMark</a> <a href="#ValOfAccessSection">ValOfAccessSection</a> .
+<a href="#AdditionalAccessSectionDeclExpr" name="AdditionalAccessSectionDeclExpr">AdditionalAccessSectionDeclExpr</a>
 <a href="#AdditionalAccessSectionMark" name="AdditionalAccessSectionMark">AdditionalAccessSectionMark</a> = "[!!:]" | "[access]" | "[permissions]" | "[allow]" | "[permit]" | "[a]" | "[access:]" | "[permissions:]" | "[allow:]" | "[permit:]" | "[a:]" .
 <a href="#AccessModifierDescription" name="AccessModifierDescription">AccessModifierDescription</a> =   ( "published" | ("published" "just" "for" <a href="#AccessModifierPublishJustForCondition">AccessModifierPublishJustForCondition</a> ) |
                         "public" | "internal" | "protected" | "private" ) ":" .
 <a href="#AccessModifierPublishJustForCondition" name="AccessModifierPublishJustForCondition">AccessModifierPublishJustForCondition</a> = <a href="#LogicalSentence">LogicalSentence</a> .
+<a href="#ValOfAccessSection" name="ValOfAccessSection">ValOfAccessSection</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#AccessModifierDescription">AccessModifierDescription</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#AccessModifierDescription">AccessModifierDescription</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#AccessModifierDescription">AccessModifierDescription</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
 
 <h3 class='center-h' data-href="Reason_section_chapter">
@@ -1167,8 +1236,10 @@ Channel section
 
 <pre class='code'>
 <a href="#ReasonSection" name="ReasonSection">ReasonSection</a>
+<a href="#ReasonSectionDeclExpr" name="ReasonSectionDeclExpr">ReasonSectionDeclExpr</a>
 <a href="#ReasonSectionMark" name="ReasonSectionMark">ReasonSectionMark</a> = "|-<:" | "reason" | "cause" | "reason:" | "cause:" .
 <a href="#AdditionalReasonSection" name="AdditionalReasonSection">AdditionalReasonSection</a>
+<a href="#AdditionalReasonSectionDeclExpr" name="AdditionalReasonSectionDeclExpr">AdditionalReasonSectionDeclExpr</a>
 <a href="#AdditionalReasonSectionMark" name="AdditionalReasonSectionMark">AdditionalReasonSectionMark</a> = "[|-<:]" | "[reason]" | "[cause]" | "[reason:]" | "[cause:]" .
 </pre>
 
@@ -1180,6 +1251,7 @@ Channel section
 
 <pre class='code'>
 <a href="#HolderDesc" name="HolderDesc">HolderDesc</a> = <a href="#HolderDescMark">HolderDescMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
+<a href="#HolderDescDeclExpr" name="HolderDescDeclExpr">HolderDescDeclExpr</a>
 <a href="#HolderDescMark" name="HolderDescMark">HolderDescMark</a> = "#:" | "of" | "of:" .
 </pre>
 
@@ -1191,6 +1263,7 @@ Channel section
 
 <pre class='code'>
 <a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a> = <a href="#ModuleDescMark">ModuleDescMark</a> <a href="#ModuleIdentifier">ModuleIdentifier</a> .
+<a href="#ModuleDescDeclExpr" name="ModuleDescDeclExpr">ModuleDescDeclExpr</a>
 <a href="#ModuleDescMark" name="ModuleDescMark">ModuleDescMark</a> = "$:" | "module" | "module:" .
 </pre>
 
@@ -1201,7 +1274,23 @@ Channel section
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#Expr" name="Expr">Expr</a> = <a href="#BooleanTypeExpr">BooleanTypeExpr</a> | <a href="#NumericTypeExpr">NumericTypeExpr</a> | <a href="#StringTypeExpr">StringTypeExpr</a> | <a href="#NullTypeExpr">NullTypeExpr</a>  | <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> .
+<a href="#Expr" name="Expr">Expr</a> = <a href="#BooleanTypeExpr">BooleanTypeExpr</a> | <a href="#NumericTypeExpr">NumericTypeExpr</a> | <a href="#StringTypeExpr">StringTypeExpr</a> | <a href="#NullTypeExpr">NullTypeExpr</a> | <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> 
+     | <a href="#ObjectDeclExpr">ObjectDeclExpr</a> | <a href="#ClassDeclExpr">ClassDeclExpr</a> | <a href="#SystemAnnotationExpr">SystemAnnotationExpr</a> | <a href="#MethodDeclExpr">MethodDeclExpr</a> | <a href="#RestrictionOfFieldExprDecl">RestrictionOfFieldExprDecl</a> 
+     | <a href="#ExceptionHandlerDeclExpr">ExceptionHandlerDeclExpr</a> | <a href="#NamespaceDeclExpr">NamespaceDeclExpr</a> | <a href="#UsingStatementExpr">UsingStatementExpr</a> | <a href="#ModuleDeclExpr">ModuleDeclExpr</a> | <a href="#ApplicationDeclExpr">ApplicationDeclExpr</a> 
+     | <a href="#ImportDeclExpr">ImportDeclExpr</a> | <a href="#StateDeclExpr">StateDeclExpr</a> | <a href="#ProcessDeclExpr">ProcessDeclExpr</a> | <a href="#SupervisorDeclExpr">SupervisorDeclExpr</a> | <a href="#FunctionDeclExpr">FunctionDeclExpr</a> | <a href="#AnonymousFunctionDeclExpr">AnonymousFunctionDeclExpr</a> 
+     | <a href="#FactDeclExpr">FactDeclExpr</a> | <a href="#LogicalRuleDeclExpr">LogicalRuleDeclExpr</a> | <a href="#LogicalSentenceDeclExpr">LogicalSentenceDeclExpr</a> | <a href="#LogicalAnnotationDeclExpr">LogicalAnnotationDeclExpr</a> | <a href="#TriggerDeclExpr">TriggerDeclExpr</a> 
+			  | <a href="#InstanceDeclExpr">InstanceDeclExpr</a> | <a href="#TypeAliaseDeclExpr">TypeAliaseDeclExpr</a> | <a href="#RangeDeclExpr">RangeDeclExpr</a> | <a href="#ValueDeclExpr">ValueDeclExpr</a> | <a href="#FuzzySetDeclExpr">FuzzySetDeclExpr</a> | <a href="#FuzzyTermsBlocksDeclExpr">FuzzyTermsBlocksDeclExpr</a> 
+			  | <a href="#FuzzyOperatorsBlockDeclExpr">FuzzyOperatorsBlockDeclExpr</a> | <a href="#FuzzyExpr">FuzzyExpr</a> | <a href="#CertaintyFactorModalityDeclExpr">CertaintyFactorModalityDeclExpr</a> | <a href="#AdditionalCertaintyFactorModalityDeclExpr">AdditionalCertaintyFactorModalityDeclExpr</a> | <a href="#TimeModalityDeclExpr">TimeModalityDeclExpr</a> 
+			  | <a href="#AdditionalTimeModalityDeclExpr">AdditionalTimeModalityDeclExpr</a> | <a href="#CompletionModalityDeclExpr">CompletionModalityDeclExpr</a> | <a href="#AdditionalCompletionModalityDeclExpr">AdditionalCompletionModalityDeclExpr</a> | <a href="#AcceptedModalityDeclExpr">AcceptedModalityDeclExpr</a> 
+			  | <a href="#AdditionalAcceptedModalityDeclExpr">AdditionalAcceptedModalityDeclExpr</a> | <a href="#DesirableModalityDeclExpr">DesirableModalityDeclExpr</a> | <a href="#AdditionalDesirableModalityDeclExpr">AdditionalDesirableModalityDeclExpr</a> | <a href="#NecessityModalityDeclExpr">NecessityModalityDeclExpr</a> 
+			  | <a href="#AdditionalNecessityModalityDeclExpr">AdditionalNecessityModalityDeclExpr</a> | <a href="#IntentionModalityDeclExpr">IntentionModalityDeclExpr</a> | <a href="#AdditionalIntentionModalityDeclExpr">AdditionalIntentionModalityDeclExpr</a> | <a href="#PriorityModalityDeclExpr">PriorityModalityDeclExpr</a> 
+			  | <a href="#AdditionalPriorityModalityDeclExpr">AdditionalPriorityModalityDeclExpr</a> | <a href="#MoralQualityModalityDeclExpr">MoralQualityModalityDeclExpr</a> | <a href="#AdditionalMoralQualityModalityDeclExpr">AdditionalMoralQualityModalityDeclExpr</a> | <a href="#RespectModalityDeclExpr">RespectModalityDeclExpr</a> 
+			  | <a href="#AdditionalRespectModalityDeclExpr">AdditionalRespectModalityDeclExpr</a> | <a href="#QuantityQualityModalityDeclExpr">QuantityQualityModalityDeclExpr</a> | <a href="#AdditionalQuantityQualityModalityDeclExpr">AdditionalQuantityQualityModalityDeclExpr</a> | <a href="#EmotionKindModalityDeclExpr">EmotionKindModalityDeclExpr</a> 
+			  | <a href="#AdditionalEmotionKindModalityDeclExpr">AdditionalEmotionKindModalityDeclExpr</a> | <a href="#EmotionIntensityModalityDeclExpr">EmotionIntensityModalityDeclExpr</a> | <a href="#AdditionalEmotionIntensityModalityDeclExpr">AdditionalEmotionIntensityModalityDeclExpr</a> | <a href="#ThereforeNotRuleSectionDeclExpr">ThereforeNotRuleSectionDeclExpr</a> 
+			  | <a href="#AdditionalThereforeNotRuleSectionDeclExpr">AdditionalThereforeNotRuleSectionDeclExpr</a> | <a href="#ElseNotRuleSectionDeclExpr">ElseNotRuleSectionDeclExpr</a> | <a href="#AdditionalElseNotRuleSectionDeclExpr">AdditionalElseNotRuleSectionDeclExpr</a> | <a href="#SourceSectionDeclExpr">SourceSectionDeclExpr</a> 
+			  | <a href="#AdditionalSourceSectionDeclExpr">AdditionalSourceSectionDeclExpr</a> | <a href="#ChannelSectionDeclExpr">ChannelSectionDeclExpr</a> | <a href="#AdditionalChannelSectionDeclExpr">AdditionalChannelSectionDeclExpr</a> | <a href="#ClausesSectionDeclExpr">ClausesSectionDeclExpr</a> 
+			  | <a href="#AdditionalClausesSectionDeclExpr">AdditionalClausesSectionDeclExpr</a> | <a href="#NoContradictSectionDeclExpr">NoContradictSectionDeclExpr</a> | <a href="#AdditionalNoContradictSectionDeclExpr">AdditionalNoContradictSectionDeclExpr</a> | <a href="#AccessSectionDeclExpr">AccessSectionDeclExpr</a> 
+			  | <a href="#AdditionalAccessSectionDeclExpr">AdditionalAccessSectionDeclExpr</a> | <a href="#ReasonSectionDeclExpr">ReasonSectionDeclExpr</a> | <a href="#AdditionalReasonSectionDeclExpr">AdditionalReasonSectionDeclExpr</a> | <a href="#HolderDescDeclExpr">HolderDescDeclExpr</a> | <a href="#ModuleDescDeclExpr">ModuleDescDeclExpr</a> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1296,7 +1385,7 @@ Channel section
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 11 March 2020</br>
+This page was last modified on 12 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>
