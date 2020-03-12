@@ -1251,7 +1251,8 @@ Channel section
 			  | <EBNFC name='AdditionalThereforeNotRuleSectionDeclExpr'/> | <EBNFC name='ElseNotRuleSectionDeclExpr'/> | <EBNFC name='AdditionalElseNotRuleSectionDeclExpr'/> | <EBNFC name='SourceSectionDeclExpr'/> 
 			  | <EBNFC name='AdditionalSourceSectionDeclExpr'/> | <EBNFC name='ChannelSectionDeclExpr'/> | <EBNFC name='AdditionalChannelSectionDeclExpr'/> | <EBNFC name='ClausesSectionDeclExpr'/> 
 			  | <EBNFC name='AdditionalClausesSectionDeclExpr'/> | <EBNFC name='NoContradictSectionDeclExpr'/> | <EBNFC name='AdditionalNoContradictSectionDeclExpr'/> | <EBNFC name='AccessSectionDeclExpr'/> 
-			  | <EBNFC name='AdditionalAccessSectionDeclExpr'/> | <EBNFC name='ReasonSectionDeclExpr'/> | <EBNFC name='AdditionalReasonSectionDeclExpr'/> | <EBNFC name='HolderDescDeclExpr'/> | <EBNFC name='ModuleDescDeclExpr'/> .
+			  | <EBNFC name='AdditionalAccessSectionDeclExpr'/> | <EBNFC name='ReasonSectionDeclExpr'/> | <EBNFC name='AdditionalReasonSectionDeclExpr'/> | <EBNFC name='HolderDescDeclExpr'/> | <EBNFC name='ModuleDescDeclExpr'/> 
+			  | <EBNFC name='UsualScopeDeclExpr'/> | <EBNFC name='ClausedScopeForStatementsDeclExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1285,9 +1286,11 @@ Channel section
 
 <pre class='code'>
 <EBNFCDECL name='UsualScope'/> = [ <EBNFC name='AnnotationsList'/> ] "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='UsualScopeDeclExpr'/>
 <EBNFCDECL name='ClausedScopeClause'/>
 <EBNFCDECL name='ClausedScopeHeader'/> = "width" "{" <EBNFC name='ClausedScopeClause'/> "}" .
-<EBNFCDECL name='ClausedScopeForStatements'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";".
+<EBNFCDECL name='ClausedScopeForStatements'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='ClausedScopeForStatementsDeclExpr'/>
 </pre>
 
 <h2 class='center-h' data-href="Source_code_file_chapter">

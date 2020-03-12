@@ -1290,7 +1290,8 @@ Channel section
 			  | <a href="#AdditionalThereforeNotRuleSectionDeclExpr">AdditionalThereforeNotRuleSectionDeclExpr</a> | <a href="#ElseNotRuleSectionDeclExpr">ElseNotRuleSectionDeclExpr</a> | <a href="#AdditionalElseNotRuleSectionDeclExpr">AdditionalElseNotRuleSectionDeclExpr</a> | <a href="#SourceSectionDeclExpr">SourceSectionDeclExpr</a> 
 			  | <a href="#AdditionalSourceSectionDeclExpr">AdditionalSourceSectionDeclExpr</a> | <a href="#ChannelSectionDeclExpr">ChannelSectionDeclExpr</a> | <a href="#AdditionalChannelSectionDeclExpr">AdditionalChannelSectionDeclExpr</a> | <a href="#ClausesSectionDeclExpr">ClausesSectionDeclExpr</a> 
 			  | <a href="#AdditionalClausesSectionDeclExpr">AdditionalClausesSectionDeclExpr</a> | <a href="#NoContradictSectionDeclExpr">NoContradictSectionDeclExpr</a> | <a href="#AdditionalNoContradictSectionDeclExpr">AdditionalNoContradictSectionDeclExpr</a> | <a href="#AccessSectionDeclExpr">AccessSectionDeclExpr</a> 
-			  | <a href="#AdditionalAccessSectionDeclExpr">AdditionalAccessSectionDeclExpr</a> | <a href="#ReasonSectionDeclExpr">ReasonSectionDeclExpr</a> | <a href="#AdditionalReasonSectionDeclExpr">AdditionalReasonSectionDeclExpr</a> | <a href="#HolderDescDeclExpr">HolderDescDeclExpr</a> | <a href="#ModuleDescDeclExpr">ModuleDescDeclExpr</a> .
+			  | <a href="#AdditionalAccessSectionDeclExpr">AdditionalAccessSectionDeclExpr</a> | <a href="#ReasonSectionDeclExpr">ReasonSectionDeclExpr</a> | <a href="#AdditionalReasonSectionDeclExpr">AdditionalReasonSectionDeclExpr</a> | <a href="#HolderDescDeclExpr">HolderDescDeclExpr</a> | <a href="#ModuleDescDeclExpr">ModuleDescDeclExpr</a> 
+			  | <a href="#UsualScopeDeclExpr">UsualScopeDeclExpr</a> | <a href="#ClausedScopeForStatementsDeclExpr">ClausedScopeForStatementsDeclExpr</a> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1324,9 +1325,11 @@ Channel section
 
 <pre class='code'>
 <a href="#UsualScope" name="UsualScope">UsualScope</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" [ <a href="#StatementsSet">StatementsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#UsualScopeDeclExpr" name="UsualScopeDeclExpr">UsualScopeDeclExpr</a>
 <a href="#ClausedScopeClause" name="ClausedScopeClause">ClausedScopeClause</a>
 <a href="#ClausedScopeHeader" name="ClausedScopeHeader">ClausedScopeHeader</a> = "width" "{" <a href="#ClausedScopeClause">ClausedScopeClause</a> "}" .
-<a href="#ClausedScopeForStatements" name="ClausedScopeForStatements">ClausedScopeForStatements</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#StatementsSet">StatementsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";".
+<a href="#ClausedScopeForStatements" name="ClausedScopeForStatements">ClausedScopeForStatements</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#StatementsSet">StatementsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#ClausedScopeForStatementsDeclExpr" name="ClausedScopeForStatementsDeclExpr">ClausedScopeForStatementsDeclExpr</a>
 </pre>
 
 <h2 class='center-h' data-href="Source_code_file_chapter">
