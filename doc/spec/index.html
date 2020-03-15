@@ -204,6 +204,9 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>prop</span>
 <span class='keyword'>process</span>
 <span class='keyword'>state</span>
+<span class='keyword'>inst</span>
+<span class='keyword'>supervisor</span>
+<span class='keyword'>value</span>
 <span class='keyword'>range</span>
 <span class='keyword'>fuzzy</span>
 <span class='keyword'>set</span>
@@ -380,7 +383,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#ClassName" name="ClassName">ClassName</a> =  <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#ClassIdentifier" name="ClassIdentifier">ClassIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ClassDeclsSet" name="ClassDeclsSet">ClassDeclsSet</a> = <a href="#ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl">ClassDecl</a> }] .
-<a href="#ClassDecl" name="ClassDecl">ClassDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "<span class='keyword'>class</span>" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#ClassDecl" name="ClassDecl">ClassDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "class" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ClassDeclExpr" name="ClassDeclExpr">ClassDeclExpr</a> = ( <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> }] ")" ) .
 <a href="#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = ( <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [{ "," <a href="#InheritanceDeclItem">InheritanceDeclItem</a> }] ) | ( "{(" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [ { ";" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> ";" } ] ")}" ) .
 <a href="#InheritanceDeclItem" name="InheritanceDeclItem">InheritanceDeclItem</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClassName">ClassName</a> [ "[" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "]" .
@@ -584,7 +587,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='code'>
 <a href="#ApplicationDeclsSet" name="ApplicationDeclsSet">ApplicationDeclsSet</a> = <a href="#ApplicationDecl">ApplicationDecl</a> [{ <a href="#ApplicationDecl">ApplicationDecl</a> }] .
 <a href="#ApplicationIdentifier" name="ApplicationIdentifier">ApplicationIdentifier</a> = <a href="#ClassName">ClassName</a> .
-<a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "app" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ApplicationIdentifier">ApplicationIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] [ <a href="#ApplicationContent">ApplicationContent</a> ] [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] "}" ] 
+<a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "app" <a href="#ApplicationIdentifier">ApplicationIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] [ <a href="#ApplicationContent">ApplicationContent</a> ] [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] "}" ] 
            [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ApplicationDeclExpr" name="ApplicationDeclExpr">ApplicationDeclExpr</a> = ( <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> [{ <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> }] ")" ) .
 <a href="#ClausedScopeForApplicationsSet" name="ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> = <a href="#ClausedScopeForApplication">ClausedScopeForApplication</a> [ { <a href="#ClausedScopeForApplication">ClausedScopeForApplication</a> } ] .
@@ -646,8 +649,12 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='code'>
 <a href="#SupervisorDeclsSet" name="SupervisorDeclsSet">SupervisorDeclsSet</a> = <a href="#SupervisorDecl">SupervisorDecl</a> [{ <a href="#SupervisorDecl">SupervisorDecl</a> }] .
 <a href="#SupervisorIdentifier" name="SupervisorIdentifier">SupervisorIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
-<a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a>
+<a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "supervisor" <a href="#SupervisorIdentifier">SupervisorIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForSupervisorsSet">ClausedScopeForSupervisorsSet</a> ] [ <a href="#SupervisorContent">SupervisorContent</a> ] [ <a href="#ClausedScopeForSupervisorsSet">ClausedScopeForSupervisorsSet</a> ] "}" ] 
+           [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#SupervisorDeclExpr" name="SupervisorDeclExpr">SupervisorDeclExpr</a> = ( <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> [{ <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> }] ")" ) .
+<a href="#ClausedScopeForSupervisorsSet" name="ClausedScopeForSupervisorsSet">ClausedScopeForSupervisorsSet</a> = <a href="#ClausedScopeForSupervisor">ClausedScopeForSupervisor</a> [ { <a href="#ClausedScopeForSupervisor">ClausedScopeForSupervisor</a> } ] .
+<a href="#ClausedScopeForSupervisor" name="ClausedScopeForSupervisor">ClausedScopeForSupervisor</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#SupervisorContent">SupervisorContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
+<a href="#SupervisorContent" name="SupervisorContent">SupervisorContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
 </pre>
 
 <h3 class='center-h' data-href="Functions_chapter">
@@ -752,8 +759,12 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='code'>
 <a href="#InstanceDeclsSet" name="InstanceDeclsSet">InstanceDeclsSet</a> = <a href="#InstanceDecl">InstanceDecl</a> [{ <a href="#InstanceDecl">InstanceDecl</a> }] .
 <a href="#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
-<a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a>
+<a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "inst" <a href="#InstanceIdentifier">InstanceIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> ] [ <a href="#InstanceContent">InstanceContent</a> ] [ <a href="#ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> ] "}" ]
+                [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#InstanceDeclExpr" name="InstanceDeclExpr">InstanceDeclExpr</a> = ( <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> [{ <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> }] ")" ) .
+<a href="#ClausedScopeForInstancesSet" name="ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> = <a href="#ClausedScopeForInstance">ClausedScopeForInstance</a> [ { <a href="#ClausedScopeForInstance">ClausedScopeForInstance</a> } ] .
+<a href="#ClausedScopeForInstance" name="ClausedScopeForInstance">ClausedScopeForInstance</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#InstanceContent">InstanceContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
+<a href="#InstanceContent" name="InstanceContent">InstanceContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
 </pre>
 
 <h3 class='center-h' data-href="Call-blocks_chapter">
@@ -817,7 +828,10 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#ValueDecl" name="ValueDecl">ValueDecl</a>
 <a href="#ValueDeclExpr" name="ValueDeclExpr">ValueDeclExpr</a> = ( <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> [{ <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> }] ")" ) .
 </pre>
-	
+
+<!--
+<span class='keyword'>value</span>-->
+
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
     Fuzzy sets
 <a href="#Fuzzy_sets_chapter" name="Fuzzy_sets_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
@@ -1404,7 +1418,7 @@ Channel section
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 14 March 2020</br>
+This page was last modified on 15 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>
