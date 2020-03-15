@@ -195,6 +195,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>app</span>
 <span class='keyword'>class</span>
 <span class='keyword'>namespace</span>
+<span class='keyword'>module</span>
 <span class='keyword'>using</span>
 <span class='keyword'>on</span>
 <span class='keyword'>except</span>
@@ -208,6 +209,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>supervisor</span>
 <span class='keyword'>value</span>
 <span class='keyword'>range</span>
+<span class='keyword'>dim</span>
 <span class='keyword'>fuzzy</span>
 <span class='keyword'>set</span>
 <span class='keyword'>terms</span>
@@ -568,8 +570,12 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='code'>
 <a href="#ModuleDeclsSet" name="ModuleDeclsSet">ModuleDeclsSet</a> = <a href="#ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl">ModuleDecl</a> }] .
 <a href="#ModuleIdentifier" name="ModuleIdentifier">ModuleIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
-<a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a>
+<a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "module" <a href="#ModuleIdentifier">ModuleIdentifier</a> [ "{" [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] [ <a href="#ModuleContent">ModuleContent</a> ] [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] "}" ] 
+           [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ModuleDeclExpr" name="ModuleDeclExpr">ModuleDeclExpr</a> = ( <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> }] ")" ) .
+<a href="#ClausedScopeForModulesSet" name="ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> = <a href="#ClausedScopeForModule">ClausedScopeForModule</a> [ { <a href="#ClausedScopeForModule">ClausedScopeForModule</a> } ] .
+<a href="#ClausedScopeForModule" name="ClausedScopeForModule">ClausedScopeForModule</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ModuleContent">ModuleContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
+<a href="#ModuleContent" name="ModuleContent">ModuleContent</a>
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -808,12 +814,13 @@ $$:{ ClassName } - the fact belong to ClassName
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='code'>
-<a href="#RangeDeclsSet" name="RangeDeclsSet">RangeDeclsSet</a> = <a href="#RangeDecl">RangeDecl</a> [{ <a href="#RangeDecl">RangeDecl</a> }] .
-<a href="#RangeName" name="RangeName">RangeName</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
-<a href="#RangeIdentifier" name="RangeIdentifier">RangeIdentifier</a> = <a href="#RangeName">RangeName</a> .
-<a href="#RangeDecl" name="RangeDecl">RangeDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "range" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#RangeName">RangeName</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> ".." <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> 
+<a href="#RangeDeclsSet" name="RangeDeclsSet">RangeDeclsSet</a> = <a href="#RangeDecl">RangeDecl</a> [{ <a href="#RangeDecl">RangeDecl</a> }] . 
+<a href="#RangeIdentifier" name="RangeIdentifier">RangeIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> . .
+<a href="#RangeDecl" name="RangeDecl">RangeDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "range" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#RangeIdentifier">RangeIdentifier</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> <a href="#RangeDescDecl">RangeDescDecl</a> [ <a href="#DimDecl">DimDecl</a> ]
               [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#RangeDeclExpr" name="RangeDeclExpr">RangeDeclExpr</a> = ( <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> [{ <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> }] ")" ) .
+<a href="#DimDecl" name="DimDecl">DimDecl</a> = "dim" <a href="#TypeIdentifier">TypeIdentifier</a> .
+<a href="#RangeDescDecl" name="RangeDescDecl">RangeDescDecl</a> = <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> ".." <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> .
 </pre> 
 
 <h3 class='center-h' data-href="Values_chapter">
@@ -825,12 +832,10 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='code'>
 <a href="#ValueDeclsSet" name="ValueDeclsSet">ValueDeclsSet</a> = <a href="#ValueDecl">ValueDecl</a> [{ <a href="#ValueDecl">ValueDecl</a> }] .
 <a href="#ValueIdentifier" name="ValueIdentifier">ValueIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
-<a href="#ValueDecl" name="ValueDecl">ValueDecl</a>
+<a href="#ValueDecl" name="ValueDecl">ValueDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "value" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ValueIdentifier">ValueIdentifier</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> [ <a href="#DimDecl">DimDecl</a> ]
+              [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ValueDeclExpr" name="ValueDeclExpr">ValueDeclExpr</a> = ( <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> [{ <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> }] ")" ) .
 </pre>
-
-<!--
-<span class='keyword'>value</span>-->
 
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
     Fuzzy sets

@@ -156,6 +156,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>app</span>
 <span class='keyword'>class</span>
 <span class='keyword'>namespace</span>
+<span class='keyword'>module</span>
 <span class='keyword'>using</span>
 <span class='keyword'>on</span>
 <span class='keyword'>except</span>
@@ -169,6 +170,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>supervisor</span>
 <span class='keyword'>value</span>
 <span class='keyword'>range</span>
+<span class='keyword'>dim</span>
 <span class='keyword'>fuzzy</span>
 <span class='keyword'>set</span>
 <span class='keyword'>terms</span>
@@ -529,8 +531,12 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='code'>
 <EBNFCDECL name='ModuleDeclsSet'/> = <EBNFC name='ModuleDecl'/> [{ <EBNFC name='ModuleDecl'/> }] .
 <EBNFCDECL name='ModuleIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='ModuleDecl'/>
+<EBNFCDECL name='ModuleDecl'/> [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> [ "{" [ <EBNFC name='ClausedScopeForModulesSet'/> ] [ <EBNFC name='ModuleContent'/> ] [ <EBNFC name='ClausedScopeForModulesSet'/> ] "}" ] 
+           [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ModuleDeclExpr'/> = ( <EBNFCDECL name="ModuleDecl"/> ) | ( [ <EBNFCDECL name="AnnotationsList"/> ] "(" <EBNFCDECL name="ModuleDecl"/> [{ <EBNFCDECL name="ModuleDecl"/> }] ")" ) .
+<EBNFCDECL name='ClausedScopeForModulesSet'/> = <EBNFC name='ClausedScopeForModule'/> [ { <EBNFC name='ClausedScopeForModule'/> } ] .
+<EBNFCDECL name='ClausedScopeForModule'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='ModuleContent'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] .
+<EBNFCDECL name='ModuleContent'/>
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -769,12 +775,13 @@ $$:{ ClassName } - the fact belong to ClassName
 <LinkToContent/>
 
 <pre class='code'>
-<EBNFCDECL name='RangeDeclsSet'/> = <EBNFC name='RangeDecl'/> [{ <EBNFC name='RangeDecl'/> }] .
-<EBNFCDECL name='RangeName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='RangeIdentifier'/> = <EBNFC name='RangeName'/> .
-<EBNFCDECL name='RangeDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='GenericParametersDecl'/> <EBNFC name='RangeName'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='OrderedTypeLiteral'/> ".." <EBNFC name='OrderedTypeLiteral'/> 
+<EBNFCDECL name='RangeDeclsSet'/> = <EBNFC name='RangeDecl'/> [{ <EBNFC name='RangeDecl'/> }] . 
+<EBNFCDECL name='RangeIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> . .
+<EBNFCDECL name='RangeDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='GenericParametersDecl'/> <EBNFC name='RangeIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ]
               [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='RangeDeclExpr'/> = ( <EBNFCDECL name="RangeDecl"/> ) | ( [ <EBNFCDECL name="AnnotationsList"/> ] "(" <EBNFCDECL name="RangeDecl"/> [{ <EBNFCDECL name="RangeDecl"/> }] ")" ) .
+<EBNFCDECL name='DimDecl'/> = "dim" <EBNFC name='TypeIdentifier'/> .
+<EBNFCDECL name='RangeDescDecl'/> = <EBNFC name='OrderedTypeLiteral'/> ".." <EBNFC name='OrderedTypeLiteral'/> .
 </pre> 
 
 <h3 class='center-h' data-href="Values_chapter">
@@ -786,12 +793,10 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='code'>
 <EBNFCDECL name='ValueDeclsSet'/> = <EBNFC name='ValueDecl'/> [{ <EBNFC name='ValueDecl'/> }] .
 <EBNFCDECL name='ValueIdentifier'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='ValueDecl'/>
+<EBNFCDECL name='ValueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "value" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ValueIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ]
+              [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ValueDeclExpr'/> = ( <EBNFCDECL name="ValueDecl"/> ) | ( [ <EBNFCDECL name="AnnotationsList"/> ] "(" <EBNFCDECL name="ValueDecl"/> [{ <EBNFCDECL name="ValueDecl"/> }] ")" ) .
 </pre>
-
-<!--
-<span class='keyword'>value</span>-->
 
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
     Fuzzy sets
