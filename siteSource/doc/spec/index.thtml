@@ -536,7 +536,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ModuleDeclExpr'/> = ( <EBNFCDECL name="ModuleDecl"/> ) | ( [ <EBNFCDECL name="AnnotationsList"/> ] "(" <EBNFCDECL name="ModuleDecl"/> [{ <EBNFCDECL name="ModuleDecl"/> }] ")" ) .
 <EBNFCDECL name='ClausedScopeForModulesSet'/> = <EBNFC name='ClausedScopeForModule'/> [ { <EBNFC name='ClausedScopeForModule'/> } ] .
 <EBNFCDECL name='ClausedScopeForModule'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='ModuleContent'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] .
-<EBNFCDECL name='ModuleContent'/>
+<EBNFCDECL name='ModuleContent'/> = <EBNFC name='SourceCodeFileContent'/> .
 </pre>
 
 <h3 class='center-h' data-href="Applications_chapter">
@@ -1287,7 +1287,9 @@ Channel section
 			  | <EBNFC name='AdditionalSourceSectionDeclExpr'/> | <EBNFC name='ChannelSectionDeclExpr'/> | <EBNFC name='AdditionalChannelSectionDeclExpr'/> | <EBNFC name='ClausesSectionDeclExpr'/> 
 			  | <EBNFC name='AdditionalClausesSectionDeclExpr'/> | <EBNFC name='NoContradictSectionDeclExpr'/> | <EBNFC name='AdditionalNoContradictSectionDeclExpr'/> | <EBNFC name='AccessSectionDeclExpr'/> 
 			  | <EBNFC name='AdditionalAccessSectionDeclExpr'/> | <EBNFC name='ReasonSectionDeclExpr'/> | <EBNFC name='AdditionalReasonSectionDeclExpr'/> | <EBNFC name='HolderDescDeclExpr'/> | <EBNFC name='ModuleDescDeclExpr'/> 
-			  | <EBNFC name='UsualScopeDeclExpr'/> | <EBNFC name='ClausedScopeForStatementsDeclExpr'/> .
+			  | <EBNFC name='UsualScopeDeclExpr'/> | <EBNFC name='ClausedScopeForStatementsDeclExpr'/> | <EBNFC name='ExpressionStatementExpr'/> | <EBNFC name='ConditionalStatementExpr'/> | <EBNFC name='SwitchStatementExpr'/> 
+			  | <EBNFC name='TryCatchStatementExpr'/> | <EBNFC name='ForStatementExpr'/> | <EBNFC name='ForeachStatementExpr'/> | <EBNFC name='WhileStatementExpr'/> | <EBNFC name='DoWhileStatementExpr'/> | <EBNFC name='BreakStatementExpr'/> 
+			  | <EBNFC name='ContinueStatementExpr'/> | <EBNFC name='ReturnStatementExpr'/> | <EBNFC name='YieldReturnStatementExpr'/> | <EBNFC name='YieldBreakStatementExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1310,7 +1312,9 @@ Channel section
 
 <pre class='code'>
 <EBNFCDECL name='StatementsSet'/> = <EBNFC name='Statement'/> [ { <EBNFC name='Statement'/> } ] .
-<EBNFCDECL name='Statement'/> = <EBNFC name='UsualScope'/> | <EBNFC name='ClausedScopeForStatements'/> .
+<EBNFCDECL name='Statement'/> = <EBNFC name='UsualScope'/> | <EBNFC name='ClausedScopeForStatements'/> | <EBNFC name='ExpressionStatement'/> | <EBNFC name='ConditionalStatement'/> | <EBNFC name='SwitchStatement'/> 
+              | <EBNFC name='TryCatchStatement'/> | <EBNFC name='ForStatement'/> | <EBNFC name='ForeachStatement'/> | <EBNFC name='WhileStatement'/> | <EBNFC name='DoWhileStatement'/> | <EBNFC name='BreakStatement'/> 
+			  | <EBNFC name='ContinueStatement'/> | <EBNFC name='ReturnStatement'/> | <EBNFC name='YieldReturnStatement'/> | <EBNFC name='YieldBreakStatement'/> .
 </pre>
 
 <h3 class='center-h' data-href="Scopes_chapter">
@@ -1326,6 +1330,149 @@ Channel section
 <EBNFCDECL name='ClausedScopeHeader'/> = "width" "{" <EBNFC name='ClausedScopeClause'/> "}" .
 <EBNFCDECL name='ClausedScopeForStatements'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ClausedScopeForStatementsDeclExpr'/> = ( <EBNFCDECL name="ClausedScopeForStatements"/> ) | ( [ <EBNFCDECL name="AnnotationsList"/> ] "(" <EBNFCDECL name="ClausedScopeForStatements"/> [{ <EBNFCDECL name="ClausedScopeForStatements"/> }] ")" ) .
+</pre>
+
+<h3 class='center-h' data-href="ExpressionStatement_chapter">
+    Expression statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ExpressionStatement'/>
+<EBNFCDECL name='ExpressionStatementExpr'/> = <EBNFC name='ExpressionStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="ConditionalStatement_chapter">
+    Conditional statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ConditionalStatement'/>
+<EBNFCDECL name='ConditionalStatementExpr'/> = <EBNFC name='ConditionalStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="SwitchStatement_chapter">
+    Switch statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='SwitchStatement'/>
+<EBNFCDECL name='SwitchStatementExpr'/> = <EBNFC name='SwitchStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="TryCatchStatement_chapter">
+   Try-catch statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='TryCatchStatement'/>
+<EBNFCDECL name='TryCatchStatementExpr'/> = <EBNFC name='TryCatchStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="ForStatement_chapter">
+    For statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ForStatement'/>
+<EBNFCDECL name='ForStatementExpr'/> = <EBNFC name='ForStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="ForeachStatement_chapter">
+    Foreach statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ForeachStatement'/>
+<EBNFCDECL name='ForeachStatementExpr'/> = <EBNFC name='ForeachStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="WhileStatement_chapter">
+    While statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='WhileStatement'/>
+<EBNFCDECL name='WhileStatementExpr'/> = <EBNFC name='WhileStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="DoWhileStatement_chapter">
+    Do-while statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='DoWhileStatement'/>
+<EBNFCDECL name='DoWhileStatementExpr'/> = <EBNFC name='DoWhileStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="BreakStatement_chapter">
+   Break statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='BreakStatement'/>
+<EBNFCDECL name='BreakStatementExpr'/> = <EBNFC name='BreakStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="ContinueStatement_chapter">
+    Continue statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ContinueStatement'/>
+<EBNFCDECL name='ContinueStatementExpr'/> = <EBNFC name='ContinueStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="ReturnStatement_chapter">
+    Return statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ReturnStatement'/>
+<EBNFCDECL name='ReturnStatementExpr'/> = <EBNFC name='ReturnStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="YieldReturnStatement_chapter">
+    Yield-return statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='YieldReturnStatement'/>
+<EBNFCDECL name='YieldReturnStatementExpr'/> = <EBNFC name='YieldReturnStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="YieldBreakStatement_chapter">
+   Yield-break statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='YieldBreakStatement'/>
+<EBNFCDECL name='YieldBreakStatementExpr'/> = <EBNFC name='YieldBreakStatement'/> .
 </pre>
 
 <h2 class='center-h' data-href="Source_code_file_chapter">
