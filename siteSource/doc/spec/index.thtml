@@ -356,8 +356,8 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClausedScopeForClassesSet'/> = <EBNFC name='ClausedScopeForClass'/> [{ <EBNFC name='ClausedScopeForClass'/> }] .
 <EBNFCDECL name='ClausedScopeForClass '/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='ClassContent'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] .
 <EBNFCDECL name='ClassContent'/> = [ <EBNFC name='ClassDeclsSet'/> ] [ <EBNFC name='StateDeclsSet'/> ] [ <EBNFC name='ProcessDeclsSet'/> ]
-                [ <EBNFC name='TypeAliasesSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='TriggerDeclsSet'/> ] [ <EBNFC name='MethodsSet'/> ] [ <EBNFC name='RestrictionsOfFieldsSet'/> ] 
-				[ <EBNFC name='BlocksOfFactsSet'/> ] [ <EBNFC name='BlocksOfLogicalRulesSet'/> ] [ <EBNFC name='ExceptionHandlersSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] 
+                [ <EBNFC name='TypeAliasesSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='TriggerDeclsSet'/> ] [ <EBNFC name='MethodsSet'/> ] [ <EBNFC name='OpOverloadingMemberDeclsSet'/> ] 
+				[ <EBNFC name='RestrictionsOfFieldsSet'/> ] [ <EBNFC name='BlocksOfFactsSet'/> ] [ <EBNFC name='BlocksOfLogicalRulesSet'/> ] [ <EBNFC name='ExceptionHandlersSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] 
 				[ <EBNFC name='SupervisorDeclsSet'/> ] [ <EBNFC name='InstanceDeclsSet'/> ] [ <EBNFC name='ValueDeclsSet'/> ].
 <EBNFCDECL name='AnnotationsList'/> = [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] .
 <EBNFCDECL name='SystemAnnotationsList'/> = <EBNFC name='SystemAnnotation'/> [{ <EBNFC name='SystemAnnotation'/> }] .
@@ -376,6 +376,18 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='MethodsSet'/> = <EBNFC name='Method'/> [{ <EBNFC name='Method'/> }] .
 <EBNFCDECL name='Method'/> = <EBNFC name='FunctionDecl'/> .
 <EBNFCDECL name='MethodDeclExpr'/> = <EBNFCDECL name="FunctionDeclExpr"/> .
+</pre>
+
+<h4 class='center-h' data-href="OpOverloadingMember_chapter">
+    Operator overloading
+</h4>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='OpOverloadingMemberDeclsSet'/> = <EBNFC name='OpOverloadingMemberDecl'/> [{ <EBNFC name='OpOverloadingMemberDecl'/> }] .
+<EBNFCDECL name='OpOverloadingMemberDecl'/> = <EBNFC name='OpOverloadingDecl'/> .
+<EBNFCDECL name='OpOverloadingMemberDeclExpr'/> = <EBNFC name='OpOverloadingDeclExpr'/> .
 </pre>
 
 <h4 class='center-h' data-href="Restrictions_of_fields_chapter">
@@ -649,6 +661,18 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FunctionAdditionalParamDeclaration'/>
 <EBNFCDECL name='FunctionReturnDeclaration'/> = <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='FunctionBody'/> = <EBNFC name='StatementsSet'/> .
+</pre>
+
+<h3 class='center-h' data-href="OpOverloading_chapter">
+    Operator overloading
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='OpOverloadingDeclsSet'/> = <EBNFC name='OpOverloadingDecl'/> [{ <EBNFC name='OpOverloadingDecl'/> }] .
+<EBNFCDECL name='OpOverloadingDecl'/>
+<EBNFCDECL name='OpOverloadingDeclExpr'/> = ( <EBNFCDECL name="OpOverloadingDecl"/> ) | ( [ <EBNFCDECL name="AnnotationsList"/> ] "(" <EBNFCDECL name="OpOverloadingDecl"/> [{ <EBNFCDECL name="OpOverloadingDecl"/> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="Facts_and_logical_rules_chapter">
@@ -1289,7 +1313,8 @@ Channel section
 			  | <EBNFC name='AdditionalAccessSectionDeclExpr'/> | <EBNFC name='ReasonSectionDeclExpr'/> | <EBNFC name='AdditionalReasonSectionDeclExpr'/> | <EBNFC name='HolderDescDeclExpr'/> | <EBNFC name='ModuleDescDeclExpr'/> 
 			  | <EBNFC name='UsualScopeDeclExpr'/> | <EBNFC name='ClausedScopeForStatementsDeclExpr'/> | <EBNFC name='ExpressionStatementExpr'/> | <EBNFC name='ConditionalStatementExpr'/> | <EBNFC name='SwitchStatementExpr'/> 
 			  | <EBNFC name='TryCatchStatementExpr'/> | <EBNFC name='ForStatementExpr'/> | <EBNFC name='ForeachStatementExpr'/> | <EBNFC name='WhileStatementExpr'/> | <EBNFC name='DoWhileStatementExpr'/> | <EBNFC name='BreakStatementExpr'/> 
-			  | <EBNFC name='ContinueStatementExpr'/> | <EBNFC name='ReturnStatementExpr'/> | <EBNFC name='YieldReturnStatementExpr'/> | <EBNFC name='YieldBreakStatementExpr'/> .
+			  | <EBNFC name='ContinueStatementExpr'/> | <EBNFC name='ReturnStatementExpr'/> | <EBNFC name='YieldReturnStatementExpr'/> | <EBNFC name='YieldBreakStatementExpr'/> | <EBNFC name='OpOverloadingDeclExpr'/>
+              | <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='ArithmeticOpExpr'/> | <EBNFC name='RelationalOpExpr'/> | <EBNFC name='LogicalOpExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1298,11 +1323,49 @@ Channel section
 
 <LinkToContent/>
 
-<h4 class='center-h' data-href="Assignment_operators_chapter">
+<h3 class='center-h' data-href="Assignment_operators_chapter">
     Assignment operators
-</h4>
+</h3>
 
 <LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='AssignmentOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="ArithmeticOp_chapter">
+    Arithmetic operators
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ArithmeticOpExpr'/>
+</pre>
+
+<pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
+Increment and decrement also will be here.
+</pre>
+
+<h3 class='center-h' data-href="RelationalOp_chapter">
+    Relational operators
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='RelationalOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="LogicalOp_chapter">
+    Logical operators
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='LogicalOpExpr'/>
+</pre>
 
 <h2 class='center-h' data-href="Statements_chapter">
     Statements
@@ -1484,7 +1547,7 @@ Channel section
 <pre class='code'>
 <EBNFCDECL name='SourceCodeFileContent'/> = [ <EBNFC name='NamespaceDeclsSet'/> ][ <EBNFC name='ClassDeclsSet'/> ] [ <EBNFC name='ApplicationDeclsSet'/> ] [ <EBNFC name='FunctionDeclsSet'/> ] [ <EBNFC name='FactDeclsSet'/> ] [ <EBNFC name='LogicalRuleDeclsSet'/> ] [ <EBNFC name='CallBlocksSet'/> ] 
                 [ <EBNFC name='TypeAliaseDeclsSet'/> ] [ <EBNFC name='FuzzySetDeclsSet'/> ] [ <EBNFC name='StateDeclsSet'/> ] [ <EBNFC name='ProcessDeclsSet'/> ] [ <EBNFC name='RangeDeclsSet'/> ] [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] [ <EBNFC name='ModuleDeclsSet'/> ]
-				[ <EBNFC name='SupervisorDeclsSet'/> ] [ <EBNFC name='InstanceDeclsSet'/> ] [ <EBNFC name='ValueDeclsSet'/> ] .
+				[ <EBNFC name='SupervisorDeclsSet'/> ] [ <EBNFC name='InstanceDeclsSet'/> ] [ <EBNFC name='ValueDeclsSet'/> ] [ <EBNFC name='OpOverloadingDeclsSet'/> ] .
 <EBNFCDECL name='ClausedScopeForSourceCodeFilesSet'/> = <EBNFC name=''/> [ { <EBNFC name='ClausedScopeForSourceCodeFile'/> } ] .
 <EBNFCDECL name='ClausedScopeForSourceCodeFile '/> = <EBNFC name='ClausedScopeHeader'/> "def" "{" [ <EBNFC name='SourceCodeFileContent'/> ] "}" .
 </pre>
@@ -1522,4 +1585,3 @@ Channel section
 
 </pre>
 -->
-
