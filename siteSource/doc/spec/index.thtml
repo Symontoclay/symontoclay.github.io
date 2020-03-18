@@ -1314,7 +1314,18 @@ Channel section
 			  | <EBNFC name='UsualScopeDeclExpr'/> | <EBNFC name='ClausedScopeForStatementsDeclExpr'/> | <EBNFC name='ExpressionStatementExpr'/> | <EBNFC name='ConditionalStatementExpr'/> | <EBNFC name='SwitchStatementExpr'/> 
 			  | <EBNFC name='TryCatchStatementExpr'/> | <EBNFC name='ForStatementExpr'/> | <EBNFC name='ForeachStatementExpr'/> | <EBNFC name='WhileStatementExpr'/> | <EBNFC name='DoWhileStatementExpr'/> | <EBNFC name='BreakStatementExpr'/> 
 			  | <EBNFC name='ContinueStatementExpr'/> | <EBNFC name='ReturnStatementExpr'/> | <EBNFC name='YieldReturnStatementExpr'/> | <EBNFC name='YieldBreakStatementExpr'/> | <EBNFC name='OpOverloadingDeclExpr'/>
-              | <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='ArithmeticOpExpr'/> | <EBNFC name='RelationalOpExpr'/> | <EBNFC name='LogicalOpExpr'/> .
+              | <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='ArithmeticOpExpr'/> | <EBNFC name='RelationalOpExpr'/> | <EBNFC name='LogicalOpExpr'/> | <EBNFC name='GroupExpr'/> | <EBNFC name='MemberAccessOpExpr'/> 
+			  | <EBNFC name='CallOpExpr'/> | <EBNFC name='IndexingOpExpr'/> | <EBNFC name='ObjectCreationOpExpr'/> | <EBNFC name='InlineConditionalOpExpr'/> | <EBNFC name='CoalesceOpExpr'/> | <EBNFC name='ReflectionOpExpr'/> .
+</pre>
+
+<h3 class='center-h' data-href="GroupExpr_chapter">
+    Group
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='GroupExpr'/> = "(" <EBNFC name='Expr'/> ")" .
 </pre>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1322,6 +1333,21 @@ Channel section
 </h3>
 
 <LinkToContent/>
+
+<p>
+The following table is ordered from highest (_) to lowest (1) precedence.
+</p>
+
+<p>
+<table style="width: 100%">
+    <tr>
+	    <th>Precedence</th>
+		<th>Operators</th>
+		<th>Associativity</th>
+		<th>Operator category</th>
+    </tr>
+</table>
+</p>
 
 <h3 class='center-h' data-href="Assignment_operators_chapter">
     Assignment operators
@@ -1365,6 +1391,93 @@ Increment and decrement also will be here.
 
 <pre class='code'>
 <EBNFCDECL name='LogicalOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="MemberAccessOp_chapter">
+    Member access operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='MemberAccessOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="CallOp_chapter">
+    Call operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='CallOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="IndexingOp_chapter">
+    Indexing operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='IndexingOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="ObjectCreationOp_chapter">
+    Object creation operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ObjectCreationOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="InlineConditionalOp_chapter">
+Inline conditional operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='InlineConditionalOpExpr'/>
+</pre>
+
+
+<pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
+@a is b -> c : d
+It will be like C# ternary operator "?:".
+Also I am going to create inline switch operator.
+</pre>
+
+<h3 class='center-h' data-href="CoalesceOp_chapter">
+    Coalesce operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='CoalesceOpExpr'/>
+</pre>
+
+
+<pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
+It will be like C# operator "??".
+</pre>
+
+<h3 class='center-h' data-href="ReflectionOp_chapter">
+Reflection operator
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='ReflectionOpExpr'/>
+</pre>
+
+
+<pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
+Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 </pre>
 
 <h2 class='center-h' data-href="Statements_chapter">
