@@ -1315,7 +1315,8 @@ Channel section
 			  | <EBNFC name='TryCatchStatementExpr'/> | <EBNFC name='ForStatementExpr'/> | <EBNFC name='ForeachStatementExpr'/> | <EBNFC name='WhileStatementExpr'/> | <EBNFC name='DoWhileStatementExpr'/> | <EBNFC name='BreakStatementExpr'/> 
 			  | <EBNFC name='ContinueStatementExpr'/> | <EBNFC name='ReturnStatementExpr'/> | <EBNFC name='YieldReturnStatementExpr'/> | <EBNFC name='YieldBreakStatementExpr'/> | <EBNFC name='OpOverloadingDeclExpr'/>
               | <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='ArithmeticOpExpr'/> | <EBNFC name='RelationalOpExpr'/> | <EBNFC name='LogicalOpExpr'/> | <EBNFC name='GroupExpr'/> | <EBNFC name='MemberAccessOpExpr'/> 
-			  | <EBNFC name='CallOpExpr'/> | <EBNFC name='IndexingOpExpr'/> | <EBNFC name='ObjectCreationOpExpr'/> | <EBNFC name='InlineConditionalOpExpr'/> | <EBNFC name='CoalesceOpExpr'/> | <EBNFC name='ReflectionOpExpr'/> .
+			  | <EBNFC name='CallOpExpr'/> | <EBNFC name='IndexingOpExpr'/> | <EBNFC name='ObjectCreationOpExpr'/> | <EBNFC name='InlineConditionalOpExpr'/> | <EBNFC name='CoalesceOpExpr'/> | <EBNFC name='ReflectionOpExpr'/>
+              | <EBNFC name='DataSetOpExpr'/> | <EBNFC name='IPCOpExpr'/> | <EBNFC name='IPCStatementExpr'/> .
 </pre>
 
 <h3 class='center-h' data-href="GroupExpr_chapter">
@@ -1394,7 +1395,7 @@ Increment and decrement also will be here.
 </pre>
 
 <h3 class='center-h' data-href="MemberAccessOp_chapter">
-    Member access operator
+    Member access operators
 </h3>
 
 <LinkToContent/>
@@ -1414,7 +1415,7 @@ Increment and decrement also will be here.
 </pre>
 
 <h3 class='center-h' data-href="IndexingOp_chapter">
-    Indexing operator
+    Indexing operators
 </h3>
 
 <LinkToContent/>
@@ -1424,7 +1425,7 @@ Increment and decrement also will be here.
 </pre>
 
 <h3 class='center-h' data-href="ObjectCreationOp_chapter">
-    Object creation operator
+    Object creation operators
 </h3>
 
 <LinkToContent/>
@@ -1434,7 +1435,7 @@ Increment and decrement also will be here.
 </pre>
 
 <h3 class='center-h' data-href="InlineConditionalOp_chapter">
-Inline conditional operator
+Inline conditional operators
 </h3>
 
 <LinkToContent/>
@@ -1451,7 +1452,7 @@ Also I am going to create inline switch operator.
 </pre>
 
 <h3 class='center-h' data-href="CoalesceOp_chapter">
-    Coalesce operator
+    Coalesce operators
 </h3>
 
 <LinkToContent/>
@@ -1466,7 +1467,7 @@ It will be like C# operator "??".
 </pre>
 
 <h3 class='center-h' data-href="ReflectionOp_chapter">
-Reflection operator
+Reflection operators
 </h3>
 
 <LinkToContent/>
@@ -1480,6 +1481,26 @@ Reflection operator
 Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 </pre>
 
+<h3 class='center-h' data-href="DataSetOp_chapter">
+    Dataset operators
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='DataSetOpExpr'/>
+</pre>
+
+<h3 class='center-h' data-href="IPCOp_chapter">
+    Inter-process communication operators
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='IPCOpExpr'/>
+</pre>
+
 <h2 class='center-h' data-href="Statements_chapter">
     Statements
 </h2>
@@ -1490,7 +1511,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <EBNFCDECL name='StatementsSet'/> = <EBNFC name='Statement'/> [ { <EBNFC name='Statement'/> } ] .
 <EBNFCDECL name='Statement'/> = <EBNFC name='UsualScope'/> | <EBNFC name='ClausedScopeForStatements'/> | <EBNFC name='ExpressionStatement'/> | <EBNFC name='ConditionalStatement'/> | <EBNFC name='SwitchStatement'/> 
               | <EBNFC name='TryCatchStatement'/> | <EBNFC name='ForStatement'/> | <EBNFC name='ForeachStatement'/> | <EBNFC name='WhileStatement'/> | <EBNFC name='DoWhileStatement'/> | <EBNFC name='BreakStatement'/> 
-			  | <EBNFC name='ContinueStatement'/> | <EBNFC name='ReturnStatement'/> | <EBNFC name='YieldReturnStatement'/> | <EBNFC name='YieldBreakStatement'/> .
+			  | <EBNFC name='ContinueStatement'/> | <EBNFC name='ReturnStatement'/> | <EBNFC name='YieldReturnStatement'/> | <EBNFC name='YieldBreakStatement'/> | <EBNFC name='IPCStatement'/> .
 </pre>
 
 <h3 class='center-h' data-href="Scopes_chapter">
@@ -1649,6 +1670,17 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <pre class='code'>
 <EBNFCDECL name='YieldBreakStatement'/>
 <EBNFCDECL name='YieldBreakStatementExpr'/> = <EBNFC name='YieldBreakStatement'/> .
+</pre>
+
+<h3 class='center-h' data-href="IPCStatement_chapter">
+Inter-process communication statement
+</h3>
+
+<LinkToContent/>
+
+<pre class='code'>
+<EBNFCDECL name='IPCStatement'/>
+<EBNFCDECL name='IPCStatementExpr'/> = <EBNFC name='IPCStatement'/> .
 </pre>
 
 <h2 class='center-h' data-href="Source_code_file_chapter">
