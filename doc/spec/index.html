@@ -351,7 +351,7 @@ The ways of doing this will be described below in here section and in describing
 <a href="#ObjectDeclsSet" name="ObjectDeclsSet">ObjectDeclsSet</a> = <a href="#ObjectDecl">ObjectDecl</a> [{ <a href="#ObjectDecl">ObjectDecl</a> }] .
 <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> =  [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#UniversalTypeIdentifier" name="UniversalTypeIdentifier">UniversalTypeIdentifier</a> = "any" | "⊤" .
-<a href="#ObjectDeclExpr" name="ObjectDeclExpr">ObjectDeclExpr</a> = ( <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> [{ <a href="#ObjectDecl" name="ObjectDecl">ObjectDecl</a> }] ")" ) .
+<a href="#ObjectDeclExpr" name="ObjectDeclExpr">ObjectDeclExpr</a> = ( <a href="#ObjectDecl">ObjectDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ObjectDecl">ObjectDecl</a> [{ <a href="#ObjectDecl">ObjectDecl</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="Classes_chapter">
@@ -383,7 +383,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#ClassIdentifier" name="ClassIdentifier">ClassIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ClassDeclsSet" name="ClassDeclsSet">ClassDeclsSet</a> = <a href="#ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl">ClassDecl</a> }] .
 <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "class" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#ClassDeclExpr" name="ClassDeclExpr">ClassDeclExpr</a> = ( <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl" name="ClassDecl">ClassDecl</a> }] ")" ) .
+<a href="#ClassDeclExpr" name="ClassDeclExpr">ClassDeclExpr</a> = ( <a href="#ClassDecl">ClassDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl">ClassDecl</a> }] ")" ) .
 <a href="#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = ( <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [{ "," <a href="#InheritanceDeclItem">InheritanceDeclItem</a> }] ) | ( "{(" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [ { ";" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> ";" } ] ")}" ) .
 <a href="#InheritanceDeclItem" name="InheritanceDeclItem">InheritanceDeclItem</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClassName">ClassName</a> [ "[" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "]" .
 <a href="#GenericParametersDecl" name="GenericParametersDecl">GenericParametersDecl</a> = "(<" <a href="#GenericParameter">GenericParameter</a> [{ "," <a href="#GenericParameter">GenericParameter</a> }] ">)" .
@@ -395,7 +395,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> = [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] [{ <a href="#LogicalAnnotationsList">LogicalAnnotationsList</a> }] [{ <a href="#SystemAnnotationsList">SystemAnnotationsList</a> }] .
 <a href="#SystemAnnotationsList" name="SystemAnnotationsList">SystemAnnotationsList</a> = <a href="#SystemAnnotation">SystemAnnotation</a> [{ <a href="#SystemAnnotation">SystemAnnotation</a> }] .
 <a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a> = "[<" <a href="#SystemAnnotationContent">SystemAnnotationContent</a> ">]" .
-<a href="#SystemAnnotationExpr" name="SystemAnnotationExpr">SystemAnnotationExpr</a> = ( <a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a> [{ <a href="#SystemAnnotation" name="SystemAnnotation">SystemAnnotation</a> }] ")" ) .
+<a href="#SystemAnnotationExpr" name="SystemAnnotationExpr">SystemAnnotationExpr</a> = ( <a href="#SystemAnnotation">SystemAnnotation</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#SystemAnnotation">SystemAnnotation</a> [{ <a href="#SystemAnnotation">SystemAnnotation</a> }] ")" ) .
 <a href="#SystemAnnotationContent" name="SystemAnnotationContent">SystemAnnotationContent</a>
 </pre>
 
@@ -433,10 +433,10 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#RestrictionsOfFieldsSet" name="RestrictionsOfFieldsSet">RestrictionsOfFieldsSet</a> = <a href="#RestrictionOfField">RestrictionOfField</a> [{ <a href="#RestrictionOfField">RestrictionOfField</a> }] .
 <a href="#RestrictionOfField" name="RestrictionOfField">RestrictionOfField</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "prop" <a href="#PropertyName">PropertyName</a> [ ":" [ <a href="#PropertyType">PropertyType</a> ] [ <a href="#PropertyPower">PropertyPower</a> ] 
                [ "/" <a href="#PropertyHistoryPower">PropertyHistoryPower</a> ]] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#RestrictionOfFieldExprDecl" name="RestrictionOfFieldExprDecl">RestrictionOfFieldExprDecl</a> = ( <a href="#RestrictionOfField" name="RestrictionOfField">RestrictionOfField</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#RestrictionOfField" name="RestrictionOfField">RestrictionOfField</a> [{ <a href="#RestrictionOfField" name="RestrictionOfField">RestrictionOfField</a> }] ")" ) .
+<a href="#RestrictionOfFieldExprDecl" name="RestrictionOfFieldExprDecl">RestrictionOfFieldExprDecl</a> = ( <a href="#RestrictionOfField">RestrictionOfField</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#RestrictionOfField">RestrictionOfField</a> [{ <a href="#RestrictionOfField">RestrictionOfField</a> }] ")" ) .
 <a href="#PropertyName" name="PropertyName">PropertyName</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#PropertyType" name="PropertyType">PropertyType</a> = <a href="#TypeIdentifier">TypeIdentifier</a> .
-<a href="#PropertyPower" name="PropertyPower">PropertyPower</a> = "[" ( "*" | "∞" | <a href="#NumericTypeExpr">NumericTypeExpr</a>) "]" .
+<a href="#PropertyPower" name="PropertyPower">PropertyPower</a> = "[" ( "*" | "∞" | <a href="#NumericTypeExpr">NumericTypeExpr</a> ) "]" .
 <a href="#PropertyHistoryPower" name="PropertyHistoryPower">PropertyHistoryPower</a> = "[" ( "-" | "*" | "∞" | <a href="#NumericTypeExpr">NumericTypeExpr</a> ) "]" .
 </pre>
 
@@ -476,7 +476,7 @@ PropertyHistoryPower - by default 0.
 <pre class='ebnf-code'>
 <a href="#ExceptionHandlersSet" name="ExceptionHandlersSet">ExceptionHandlersSet</a> = <a href="#ExceptionHandler">ExceptionHandler</a> [{ <a href="#ExceptionHandler">ExceptionHandler</a> }] .
 <a href="#ExceptionHandler" name="ExceptionHandler">ExceptionHandler</a>
-<a href="#ExceptionHandlerDeclExpr" name="ExceptionHandlerDeclExpr">ExceptionHandlerDeclExpr</a> = ( <a href="#ExceptionHandler" name="ExceptionHandler">ExceptionHandler</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ExceptionHandler" name="ExceptionHandler">ExceptionHandler</a> [{ <a href="#ExceptionHandler" name="ExceptionHandler">ExceptionHandler</a> }] ")" ) .
+<a href="#ExceptionHandlerDeclExpr" name="ExceptionHandlerDeclExpr">ExceptionHandlerDeclExpr</a> = ( <a href="#ExceptionHandler">ExceptionHandler</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ExceptionHandler">ExceptionHandler</a> [{ <a href="#ExceptionHandler">ExceptionHandler</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="Namespaces_chapter">
@@ -527,7 +527,7 @@ Defining namespace as statement
 <pre class='ebnf-code'>
 <a href="#NamespaceDeclsSet" name="NamespaceDeclsSet">NamespaceDeclsSet</a> = <a href="#NamespaceDecl">NamespaceDecl</a> [{ <a href="#NamespaceDecl">NamespaceDecl</a> }] .
 <a href="#NamespaceDecl" name="NamespaceDecl">NamespaceDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "namespace" ( <a href="#identifier_with_namespace">identifier_with_namespace</a> | <a href="#identifier">identifier</a> ) "{" [ <a href="#ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> ] <a href="#SourceCodeFileContent">SourceCodeFileContent</a> [ <a href="#ClausedScopeForSourceCodeFilesSet">ClausedScopeForSourceCodeFilesSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#NamespaceDeclExpr" name="NamespaceDeclExpr">NamespaceDeclExpr</a> = ( <a href="#NamespaceDecl" name="NamespaceDecl">NamespaceDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#NamespaceDecl" name="NamespaceDecl">NamespaceDecl</a> [{ <a href="#NamespaceDecl" name="NamespaceDecl">NamespaceDecl</a> }] ")" ) .
+<a href="#NamespaceDeclExpr" name="NamespaceDeclExpr">NamespaceDeclExpr</a> = ( <a href="#NamespaceDecl">NamespaceDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#NamespaceDecl">NamespaceDecl</a> [{ <a href="#NamespaceDecl">NamespaceDecl</a> }] ")" ) .
 </pre>
 
 <pre class='ebnf-code'>
@@ -555,7 +555,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='ebnf-code'>
 <a href="#UsingStatement" name="UsingStatement">UsingStatement</a> = "using" <a href="#identifier">identifier</a> "::" { <a href="#identifier">identifier</a> "::" } <a href="#identifier">identifier</a> ";"
-<a href="#UsingStatementExpr" name="UsingStatementExpr">UsingStatementExpr</a> = ( <a href="#UsingStatement" name="UsingStatement">UsingStatement</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#UsingStatement" name="UsingStatement">UsingStatement</a> [{ <a href="#UsingStatement" name="UsingStatement">UsingStatement</a> }] ")" ) .
+<a href="#UsingStatementExpr" name="UsingStatementExpr">UsingStatementExpr</a> = ( <a href="#UsingStatement">UsingStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#UsingStatement">UsingStatement</a> [{ <a href="#UsingStatement">UsingStatement</a> }] ")" ) .
 </pre>
 
 <pre class='ebnf-code'>
@@ -578,7 +578,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ModuleIdentifier" name="ModuleIdentifier">ModuleIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "module" <a href="#ModuleIdentifier">ModuleIdentifier</a> [ "{" [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] [ <a href="#ModuleContent">ModuleContent</a> ] [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] "}" ] 
            [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#ModuleDeclExpr" name="ModuleDeclExpr">ModuleDeclExpr</a> = ( <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> }] ")" ) .
+<a href="#ModuleDeclExpr" name="ModuleDeclExpr">ModuleDeclExpr</a> = ( <a href="#ModuleDecl">ModuleDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl">ModuleDecl</a> }] ")" ) .
 <a href="#ClausedScopeForModulesSet" name="ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> = <a href="#ClausedScopeForModule">ClausedScopeForModule</a> [ { <a href="#ClausedScopeForModule">ClausedScopeForModule</a> } ] .
 <a href="#ClausedScopeForModule" name="ClausedScopeForModule">ClausedScopeForModule</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ModuleContent">ModuleContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ModuleContent" name="ModuleContent">ModuleContent</a> = <a href="#SourceCodeFileContent">SourceCodeFileContent</a> .
@@ -601,7 +601,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ApplicationIdentifier" name="ApplicationIdentifier">ApplicationIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "app" <a href="#ApplicationIdentifier">ApplicationIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] [ <a href="#ApplicationContent">ApplicationContent</a> ] [ <a href="#ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> ] "}" ] 
            [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#ApplicationDeclExpr" name="ApplicationDeclExpr">ApplicationDeclExpr</a> = ( <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> [{ <a href="#ApplicationDecl" name="ApplicationDecl">ApplicationDecl</a> }] ")" ) .
+<a href="#ApplicationDeclExpr" name="ApplicationDeclExpr">ApplicationDeclExpr</a> = ( <a href="#ApplicationDecl">ApplicationDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ApplicationDecl">ApplicationDecl</a> [{ <a href="#ApplicationDecl">ApplicationDecl</a> }] ")" ) .
 <a href="#ClausedScopeForApplicationsSet" name="ClausedScopeForApplicationsSet">ClausedScopeForApplicationsSet</a> = <a href="#ClausedScopeForApplication">ClausedScopeForApplication</a> [ { <a href="#ClausedScopeForApplication">ClausedScopeForApplication</a> } ] .
 <a href="#ClausedScopeForApplication" name="ClausedScopeForApplication">ClausedScopeForApplication</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ApplicationContent">ApplicationContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ApplicationContent" name="ApplicationContent">ApplicationContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] [ <a href="#Import">Import</a> ] .
@@ -615,7 +615,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='ebnf-code'>
 <a href="#Import" name="Import">Import</a> = "import" ":" [{ <a href="#ImportItem">ImportItem</a> }] ";" .
-<a href="#ImportDeclExpr" name="ImportDeclExpr">ImportDeclExpr</a> = ( <a href="#Import" name="Import">Import</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#Import" name="Import">Import</a> [{ <a href="#Import" name="Import">Import</a> }] ")" ) .
+<a href="#ImportDeclExpr" name="ImportDeclExpr">ImportDeclExpr</a> = ( <a href="#Import">Import</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#Import">Import</a> [{ <a href="#Import">Import</a> }] ")" ) .
 <a href="#ImportItem" name="ImportItem">ImportItem</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#identifier">identifier</a> .
 </pre>
 
@@ -629,7 +629,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#StateDeclsSet" name="StateDeclsSet">StateDeclsSet</a> = <a href="#StateDecl">StateDecl</a> [{ <a href="#StateDecl">StateDecl</a> }] .
 <a href="#StateIdentifier" name="StateIdentifier">StateIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#StateDecl" name="StateDecl">StateDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "state" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#StateIdentifier">StateIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForStatesSet">ClausedScopeForStatesSet</a> ] [ <a href="#StateContent">StateContent</a> ] [ <a href="#ClausedScopeForStatesSet">ClausedScopeForStatesSet</a> ] "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#StateDeclExpr" name="StateDeclExpr">StateDeclExpr</a> = ( <a href="#StateDecl" name="StateDecl">StateDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#StateDecl" name="StateDecl">StateDecl</a> [{ <a href="#StateDecl" name="StateDecl">StateDecl</a> }] ")" ) .
+<a href="#StateDeclExpr" name="StateDeclExpr">StateDeclExpr</a> = ( <a href="#StateDecl">StateDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#StateDecl">StateDecl</a> [{ <a href="#StateDecl">StateDecl</a> }] ")" ) .
 <a href="#ClausedScopeForStatesSet" name="ClausedScopeForStatesSet">ClausedScopeForStatesSet</a> = <a href="#ClausedScopeForState">ClausedScopeForState</a> [ { <a href="#ClausedScopeForState">ClausedScopeForState</a> } ] .
 <a href="#ClausedScopeForState" name="ClausedScopeForState">ClausedScopeForState</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#StateContent">StateContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#StateContent" name="StateContent">StateContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
@@ -646,7 +646,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#ProcessIdentifier" name="ProcessIdentifier">ProcessIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ProcessDecl" name="ProcessDecl">ProcessDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "process" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ProcessIdentifier">ProcessIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForProcessesSet">ClausedScopeForProcessesSet</a> ] [ <a href="#ProcessContent">ProcessContent</a> ] [ <a href="#ClausedScopeForProcessesSet">ClausedScopeForProcessesSet</a> ] "}" ] 
          [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#ProcessDeclExpr" name="ProcessDeclExpr">ProcessDeclExpr</a> = ( <a href="#ProcessDecl" name="ProcessDecl">ProcessDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ProcessDecl" name="ProcessDecl">ProcessDecl</a> [{ <a href="#ProcessDecl" name="ProcessDecl">ProcessDecl</a> }] ")" ) .
+<a href="#ProcessDeclExpr" name="ProcessDeclExpr">ProcessDeclExpr</a> = ( <a href="#ProcessDecl">ProcessDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ProcessDecl">ProcessDecl</a> [{ <a href="#ProcessDecl">ProcessDecl</a> }] ")" ) .
 <a href="#ClausedScopeForProcessesSet" name="ClausedScopeForProcessesSet">ClausedScopeForProcessesSet</a> = <a href="#ClausedScopeForProcess">ClausedScopeForProcess</a> [ { <a href="#ClausedScopeForProcess">ClausedScopeForProcess</a> } ] .
 <a href="#ClausedScopeForProcess" name="ClausedScopeForProcess">ClausedScopeForProcess</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#ProcessContent">ProcessContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ProcessContent" name="ProcessContent">ProcessContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
@@ -663,7 +663,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#SupervisorIdentifier" name="SupervisorIdentifier">SupervisorIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "supervisor" <a href="#SupervisorIdentifier">SupervisorIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForSupervisorsSet">ClausedScopeForSupervisorsSet</a> ] [ <a href="#SupervisorContent">SupervisorContent</a> ] [ <a href="#ClausedScopeForSupervisorsSet">ClausedScopeForSupervisorsSet</a> ] "}" ] 
            [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#SupervisorDeclExpr" name="SupervisorDeclExpr">SupervisorDeclExpr</a> = ( <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> [{ <a href="#SupervisorDecl" name="SupervisorDecl">SupervisorDecl</a> }] ")" ) .
+<a href="#SupervisorDeclExpr" name="SupervisorDeclExpr">SupervisorDeclExpr</a> = ( <a href="#SupervisorDecl">SupervisorDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#SupervisorDecl">SupervisorDecl</a> [{ <a href="#SupervisorDecl">SupervisorDecl</a> }] ")" ) .
 <a href="#ClausedScopeForSupervisorsSet" name="ClausedScopeForSupervisorsSet">ClausedScopeForSupervisorsSet</a> = <a href="#ClausedScopeForSupervisor">ClausedScopeForSupervisor</a> [ { <a href="#ClausedScopeForSupervisor">ClausedScopeForSupervisor</a> } ] .
 <a href="#ClausedScopeForSupervisor" name="ClausedScopeForSupervisor">ClausedScopeForSupervisor</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#SupervisorContent">SupervisorContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#SupervisorContent" name="SupervisorContent">SupervisorContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
@@ -683,11 +683,11 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#FunctionDecl" name="FunctionDecl">FunctionDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "func" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#FunctionName">FunctionName</a> <a href="#FunctionSignature">FunctionSignature</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ]
            [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ]
 		   "=>" "{" [ <a href="#FunctionBody">FunctionBody</a> ] "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#FunctionDeclExpr" name="FunctionDeclExpr">FunctionDeclExpr</a> = ( <a href="#FunctionDecl" name="FunctionDecl">FunctionDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#FunctionDecl" name="FunctionDecl">FunctionDecl</a> [{ <a href="#FunctionDecl" name="FunctionDecl">FunctionDecl</a> }] ")" ) .
+<a href="#FunctionDeclExpr" name="FunctionDeclExpr">FunctionDeclExpr</a> = ( <a href="#FunctionDecl">FunctionDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#FunctionDecl">FunctionDecl</a> [{ <a href="#FunctionDecl">FunctionDecl</a> }] ")" ) .
 <a href="#AnonymousFunction" name="AnonymousFunction">AnonymousFunction</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] [ "func" ] <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#FunctionSignature">FunctionSignature</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ]
            [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ]
 		   "=>" "{" [ <a href="#FunctionBody">FunctionBody</a> ] "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" . 
-<a href="#AnonymousFunctionDeclExpr" name="AnonymousFunctionDeclExpr">AnonymousFunctionDeclExpr</a> = ( <a href="#AnonymousFunction" name="AnonymousFunction">AnonymousFunction</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AnonymousFunction" name="AnonymousFunction">AnonymousFunction</a> [{ <a href="#AnonymousFunction" name="AnonymousFunction">AnonymousFunction</a> }] ")" ) .
+<a href="#AnonymousFunctionDeclExpr" name="AnonymousFunctionDeclExpr">AnonymousFunctionDeclExpr</a> = ( <a href="#AnonymousFunction">AnonymousFunction</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AnonymousFunction">AnonymousFunction</a> [{ <a href="#AnonymousFunction">AnonymousFunction</a> }] ")" ) .
 <a href="#FunctionParamsSetDeclaration" name="FunctionParamsSetDeclaration">FunctionParamsSetDeclaration</a> = <a href="#FunctionParamDeclaration">FunctionParamDeclaration</a> [{ "," <a href="#FunctionParamDeclaration">FunctionParamDeclaration</a> }] .
 <a href="#FunctionParamDeclaration" name="FunctionParamDeclaration">FunctionParamDeclaration</a>
 <a href="#FunctionAdditionalParamsSetDeclaration" name="FunctionAdditionalParamsSetDeclaration">FunctionAdditionalParamsSetDeclaration</a> = <a href="#FunctionAdditionalParamDeclaration">FunctionAdditionalParamDeclaration</a> [{ "," <a href="#FunctionAdditionalParamDeclaration">FunctionAdditionalParamDeclaration</a> }] .
@@ -705,7 +705,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <a href="#OpOverloadingDeclsSet" name="OpOverloadingDeclsSet">OpOverloadingDeclsSet</a> = <a href="#OpOverloadingDecl">OpOverloadingDecl</a> [{ <a href="#OpOverloadingDecl">OpOverloadingDecl</a> }] .
 <a href="#OpOverloadingDecl" name="OpOverloadingDecl">OpOverloadingDecl</a>
-<a href="#OpOverloadingDeclExpr" name="OpOverloadingDeclExpr">OpOverloadingDeclExpr</a> = ( <a href="#OpOverloadingDecl" name="OpOverloadingDecl">OpOverloadingDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#OpOverloadingDecl" name="OpOverloadingDecl">OpOverloadingDecl</a> [{ <a href="#OpOverloadingDecl" name="OpOverloadingDecl">OpOverloadingDecl</a> }] ")" ) .
+<a href="#OpOverloadingDeclExpr" name="OpOverloadingDeclExpr">OpOverloadingDeclExpr</a> = ( <a href="#OpOverloadingDecl">OpOverloadingDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#OpOverloadingDecl">OpOverloadingDecl</a> [{ <a href="#OpOverloadingDecl">OpOverloadingDecl</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="Facts_and_logical_rules_chapter">
@@ -719,20 +719,20 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <a href="#LogicalRuleDeclsSet" name="LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> = <a href="#LogicalRuleDecl">LogicalRuleDecl</a> [{ <a href="#LogicalRuleDecl">LogicalRuleDecl</a> }] .
 <a href="#FactIdentifier" name="FactIdentifier">FactIdentifier</a>
 <a href="#FactDecl" name="FactDecl">FactDecl</a>
-<a href="#FactDeclExpr" name="FactDeclExpr">FactDeclExpr</a> = ( <a href="#FactDecl" name="FactDecl">FactDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#FactDecl" name="FactDecl">FactDecl</a> [{ <a href="#FactDecl" name="FactDecl">FactDecl</a> }] ")" ) .
+<a href="#FactDeclExpr" name="FactDeclExpr">FactDeclExpr</a> = ( <a href="#FactDeclsSet">FactDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#FactDeclsSet">FactDeclsSet</a> [{ <a href="#FactDeclsSet">FactDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForFactsSet" name="ClausedScopeForFactsSet">ClausedScopeForFactsSet</a> = <a href="#ClausedScopeForFact">ClausedScopeForFact</a> [ { <a href="#ClausedScopeForFact">ClausedScopeForFact</a> } ] .
 <a href="#ClausedScopeForFact" name="ClausedScopeForFact">ClausedScopeForFact</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#"></a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#LogicalRuleIdentifier" name="LogicalRuleIdentifier">LogicalRuleIdentifier</a>
 <a href="#LogicalRuleDecl" name="LogicalRuleDecl">LogicalRuleDecl</a>
-<a href="#LogicalRuleDeclExpr" name="LogicalRuleDeclExpr">LogicalRuleDeclExpr</a> = ( <a href="#LogicalRuleDecl" name="LogicalRuleDecl">LogicalRuleDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalRuleDecl" name="LogicalRuleDecl">LogicalRuleDecl</a> [{ <a href="#LogicalRuleDecl" name="LogicalRuleDecl">LogicalRuleDecl</a> }] ")" ) .
+<a href="#LogicalRuleDeclExpr" name="LogicalRuleDeclExpr">LogicalRuleDeclExpr</a> = ( <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> [{ <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForLogicalRulesSet" name="ClausedScopeForLogicalRulesSet">ClausedScopeForLogicalRulesSet</a> = <a href="#"></a> [ { <a href="#ClausedScopeForLogicalRule">ClausedScopeForLogicalRule</a> } ] .
 <a href="#ClausedScopeForLogicalRule" name="ClausedScopeForLogicalRule">ClausedScopeForLogicalRule</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#"></a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#ImplicationSymbol" name="ImplicationSymbol">ImplicationSymbol</a> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <a href="#LogicalSentence" name="LogicalSentence">LogicalSentence</a>
-<a href="#LogicalSentenceDeclExpr" name="LogicalSentenceDeclExpr">LogicalSentenceDeclExpr</a> = ( <a href="#LogicalSentence" name="LogicalSentence">LogicalSentence</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalSentence" name="LogicalSentence">LogicalSentence</a> [{ <a href="#LogicalSentence" name="LogicalSentence">LogicalSentence</a> }] ")" ) .
+<a href="#LogicalSentenceDeclExpr" name="LogicalSentenceDeclExpr">LogicalSentenceDeclExpr</a> = ( <a href="#LogicalSentence">LogicalSentence</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalSentence">LogicalSentence</a> [{ <a href="#LogicalSentence">LogicalSentence</a> }] ")" ) .
 <a href="#LogicalAnnotation" name="LogicalAnnotation">LogicalAnnotation</a> = "[:" ( <a href="#FactDecl">FactDecl</a> | "{:" <a href="#ClassName">ClassName</a> ":}" ) ":]"
 <a href="#LogicalAnnotationsList" name="LogicalAnnotationsList">LogicalAnnotationsList</a> = <a href="#LogicalAnnotation">LogicalAnnotation</a> [{ <a href="#LogicalAnnotation">LogicalAnnotation</a> }] .
-<a href="#LogicalAnnotationDeclExpr" name="LogicalAnnotationDeclExpr">LogicalAnnotationDeclExpr</a> = ( <a href="#LogicalAnnotation" name="LogicalAnnotation">LogicalAnnotation</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalAnnotation" name="LogicalAnnotation">LogicalAnnotation</a> [{ <a href="#LogicalAnnotation" name="LogicalAnnotation">LogicalAnnotation</a> }] ")" ) .
+<a href="#LogicalAnnotationDeclExpr" name="LogicalAnnotationDeclExpr">LogicalAnnotationDeclExpr</a> = ( <a href="#LogicalAnnotation">LogicalAnnotation</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalAnnotation">LogicalAnnotation</a> [{ <a href="#LogicalAnnotation">LogicalAnnotation</a> }] ")" ) .
 </pre>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -764,7 +764,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#TriggerIdentifier" name="TriggerIdentifier">TriggerIdentifier</a> = <a href="#TriggerName">TriggerName</a> .
 <a href="#TriggerDecl" name="TriggerDecl">TriggerDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] (( "trigger" <a href="#TriggerName">TriggerName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] "{" [ [ <a href="#ClausedScopeForTriggersSet">ClausedScopeForTriggersSet</a> ] <a href="#TriggersContent">TriggersContent</a> ] [ <a href="#ClausedScopeForTriggersSet">ClausedScopeForTriggersSet</a> ] "}" ) | <a href="#TriggersContent">TriggersContent</a> ) 
                   [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#TriggerDeclExpr" name="TriggerDeclExpr">TriggerDeclExpr</a> = ( <a href="#TriggerDecl" name="TriggerDecl">TriggerDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#TriggerDecl" name="TriggerDecl">TriggerDecl</a> [{ <a href="#TriggerDecl" name="TriggerDecl">TriggerDecl</a> }] ")" ) .
+<a href="#TriggerDeclExpr" name="TriggerDeclExpr">TriggerDeclExpr</a> = ( <a href="#TriggerDeclsSet">TriggerDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#TriggerDeclsSet">TriggerDeclsSet</a> [{ <a href="#TriggerDeclsSet">TriggerDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForTriggersSet" name="ClausedScopeForTriggersSet">ClausedScopeForTriggersSet</a> = <a href="#ClausedScopeForTrigger">ClausedScopeForTrigger</a> [ { <a href="#ClausedScopeForTrigger">ClausedScopeForTrigger</a> } ] .
 <a href="#ClausedScopeForTrigger" name="ClausedScopeForTrigger">ClausedScopeForTrigger</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#TriggersContent">TriggersContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#TriggersContent" name="TriggersContent">TriggersContent</a> = ( "on" <a href="#TriggerOnExpression">TriggerOnExpression</a> "do" "{" <a href="#StatementsSet">StatementsSet</a> "}" ) | 
@@ -785,7 +785,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "inst" <a href="#InstanceIdentifier">InstanceIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> ] [ <a href="#InstanceContent">InstanceContent</a> ] [ <a href="#ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> ] "}" ]
                 [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#InstanceDeclExpr" name="InstanceDeclExpr">InstanceDeclExpr</a> = ( <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> [{ <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> }] ")" ) .
+<a href="#InstanceDeclExpr" name="InstanceDeclExpr">InstanceDeclExpr</a> = ( <a href="#InstanceDeclsSet">InstanceDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#InstanceDeclsSet">InstanceDeclsSet</a> [{ <a href="#InstanceDeclsSet">InstanceDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForInstancesSet" name="ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> = <a href="#ClausedScopeForInstance">ClausedScopeForInstance</a> [ { <a href="#ClausedScopeForInstance">ClausedScopeForInstance</a> } ] .
 <a href="#ClausedScopeForInstance" name="ClausedScopeForInstance">ClausedScopeForInstance</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#InstanceContent">InstanceContent</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .
 <a href="#InstanceContent" name="InstanceContent">InstanceContent</a> = [ <a href="#ClassContentFullSet">ClassContentFullSet</a> ] .
@@ -811,7 +811,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='ebnf-code'>
 <a href="#TypeAliasesSet" name="TypeAliasesSet">TypeAliasesSet</a> = <a href="#TypeAliase">TypeAliase</a> [{ <a href="#TypeAliase">TypeAliase</a> }] .
 <a href="#TypeAliase" name="TypeAliase">TypeAliase</a>
-<a href="#TypeAliaseDeclExpr" name="TypeAliaseDeclExpr">TypeAliaseDeclExpr</a> = ( <a href="#TypeAliase" name="TypeAliase">TypeAliase</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#TypeAliase" name="TypeAliase">TypeAliase</a> [{ <a href="#TypeAliase" name="TypeAliase">TypeAliase</a> }] ")" ) .
+<a href="#TypeAliaseDeclExpr" name="TypeAliaseDeclExpr">TypeAliaseDeclExpr</a> = ( <a href="#TypeAliasesSet">TypeAliasesSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#TypeAliasesSet">TypeAliasesSet</a> [{ <a href="#TypeAliasesSet">TypeAliasesSet</a> }] ")" ) .
 </pre>
 	
 <h3 class='center-h' data-href="Ordered_types_chapter">
@@ -821,7 +821,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#OrderedTypeDecl" name="OrderedTypeDecl">OrderedTypeDecl</a> = <a href="#RangeDecl">RangeDecl</a> | <a href="#RangeDecl">RangeDecl</a> | <a href="#RangeDecl">RangeDecl</a> | <a href="#RangeDecl">RangeDecl</a> .
+<a href="#OrderedTypeDecl" name="OrderedTypeDecl">OrderedTypeDecl</a> = <a href="#RangeDecl">RangeDecl</a> .
 <a href="#OrderedTypeIdentifier" name="OrderedTypeIdentifier">OrderedTypeIdentifier</a> = <a href="#RangeIdentifier">RangeIdentifier</a> | <a href="#BooleanTypeIdentifier">BooleanTypeIdentifier</a> | <a href="#NumericTypeIdentifier">NumericTypeIdentifier</a> | <a href="#StringTypeIdentifier">StringTypeIdentifier</a> .
 </pre>
 	
@@ -836,7 +836,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#RangeIdentifier" name="RangeIdentifier">RangeIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> . .
 <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "range" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#RangeIdentifier">RangeIdentifier</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> <a href="#RangeDescDecl">RangeDescDecl</a> [ <a href="#DimDecl">DimDecl</a> ]
               [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#RangeDeclExpr" name="RangeDeclExpr">RangeDeclExpr</a> = ( <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> [{ <a href="#RangeDecl" name="RangeDecl">RangeDecl</a> }] ")" ) .
+<a href="#RangeDeclExpr" name="RangeDeclExpr">RangeDeclExpr</a> = ( <a href="#RangeDeclsSet">RangeDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#RangeDeclsSet">RangeDeclsSet</a> [{ <a href="#RangeDeclsSet">RangeDeclsSet</a> }] ")" ) .
 <a href="#DimDecl" name="DimDecl">DimDecl</a> = "dim" <a href="#TypeIdentifier">TypeIdentifier</a> .
 <a href="#RangeDescDecl" name="RangeDescDecl">RangeDescDecl</a> = <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> ".." <a href="#OrderedTypeLiteral">OrderedTypeLiteral</a> .
 </pre> 
@@ -852,7 +852,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#ValueIdentifier" name="ValueIdentifier">ValueIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "value" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ValueIdentifier">ValueIdentifier</a> "of" <a href="#OrderedTypeIdentifier">OrderedTypeIdentifier</a> [ <a href="#DimDecl">DimDecl</a> ]
               [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#ValueDeclExpr" name="ValueDeclExpr">ValueDeclExpr</a> = ( <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> [{ <a href="#ValueDecl" name="ValueDecl">ValueDecl</a> }] ")" ) .
+<a href="#ValueDeclExpr" name="ValueDeclExpr">ValueDeclExpr</a> = ( <a href="#ValueDeclsSet">ValueDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ValueDeclsSet">ValueDeclsSet</a> [{ <a href="#ValueDeclsSet">ValueDeclsSet</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="Fuzzy_sets_chapter">
@@ -867,7 +867,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#FuzzySetIdentifier" name="FuzzySetIdentifier">FuzzySetIdentifier</a> = <a href="#FuzzySetName">FuzzySetName</a> .
 <a href="#FuzzySetDecl" name="FuzzySetDecl">FuzzySetDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "fuzzy" "set" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#FuzzySetName">FuzzySetName</a> "of" <a href="#RangeIdentifier">RangeIdentifier</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ]
             "{" [ <a href="#ClausedScopeForFuzzySetsSet">ClausedScopeForFuzzySetsSet</a> ] <a href="#FuzzySetBody">FuzzySetBody</a> [ <a href="#ClausedScopeForFuzzySetsSet">ClausedScopeForFuzzySetsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#FuzzySetDeclExpr" name="FuzzySetDeclExpr">FuzzySetDeclExpr</a> = ( <a href="#FuzzySetDecl" name="FuzzySetDecl">FuzzySetDecl</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#FuzzySetDecl" name="FuzzySetDecl">FuzzySetDecl</a> [{ <a href="#FuzzySetDecl" name="FuzzySetDecl">FuzzySetDecl</a> }] ")" ) .
+<a href="#FuzzySetDeclExpr" name="FuzzySetDeclExpr">FuzzySetDeclExpr</a> = ( <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> [{ <a href="#FuzzySetDeclsSet">FuzzySetDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForFuzzySetsSet" name="ClausedScopeForFuzzySetsSet">ClausedScopeForFuzzySetsSet</a> = <a href="#ClausedScopeForFuzzySet">ClausedScopeForFuzzySet</a> [ { <a href="#ClausedScopeForFuzzySet">ClausedScopeForFuzzySet</a> } ] .
 <a href="#ClausedScopeForFuzzySet" name="ClausedScopeForFuzzySet">ClausedScopeForFuzzySet</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#FuzzySetBody">FuzzySetBody</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] .			
 <a href="#FuzzySetBody" name="FuzzySetBody">FuzzySetBody</a> = [ <a href="#AdditionalContentOfFuzzySetBody">AdditionalContentOfFuzzySetBody</a> ] [{ <a href="#FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> }] <a href="#FuzzyTermsBlock">FuzzyTermsBlock</a> [{ <a href="#FuzzyTermsBlock">FuzzyTermsBlock</a> }] 
@@ -875,10 +875,10 @@ $$:{ ClassName } - the fact belong to ClassName
 <a href="#FuzzyTermName" name="FuzzyTermName">FuzzyTermName</a> = <a href="#identifier">identifier</a> .
 <a href="#FuzzyOperatorName" name="FuzzyOperatorName">FuzzyOperatorName</a> = <a href="#identifier">identifier</a> .
 <a href="#FuzzyTermsBlocks" name="FuzzyTermsBlocks">FuzzyTermsBlocks</a> = "terms" ":" <a href="#newline">newline</a> <a href="#FuzzyTerm">FuzzyTerm</a> [{ <a href="#FuzzyTerm">FuzzyTerm</a> }] .
-<a href="#FuzzyTermsBlocksDeclExpr" name="FuzzyTermsBlocksDeclExpr">FuzzyTermsBlocksDeclExpr</a> = ( <a href="#FuzzyTermsBlocks" name="FuzzyTermsBlocks">FuzzyTermsBlocks</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#FuzzyTermsBlocks" name="FuzzyTermsBlocks">FuzzyTermsBlocks</a> [{ <a href="#FuzzyTermsBlocks" name="FuzzyTermsBlocks">FuzzyTermsBlocks</a> }] ")" ) .
+<a href="#FuzzyTermsBlocksDeclExpr" name="FuzzyTermsBlocksDeclExpr">FuzzyTermsBlocksDeclExpr</a> = ( <a href="#FuzzyTermsBlocks">FuzzyTermsBlocks</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#FuzzyTermsBlocks">FuzzyTermsBlocks</a> [{ <a href="#FuzzyTermsBlocks">FuzzyTermsBlocks</a> }] ")" ) .
 <a href="#FuzzyTerm" name="FuzzyTerm">FuzzyTerm</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#FuzzyTermName">FuzzyTermName</a> "=" <a href="#AnonymousFunction">AnonymousFunction</a> [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#FuzzyOperatorsBlock" name="FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> = "operators" ":" <a href="#newline">newline</a> <a href="#FuzzyOperator">FuzzyOperator</a> [{ <a href="#FuzzyOperator">FuzzyOperator</a> }] .
-<a href="#FuzzyOperatorsBlockDeclExpr" name="FuzzyOperatorsBlockDeclExpr">FuzzyOperatorsBlockDeclExpr</a> = ( <a href="#FuzzyOperatorsBlock" name="FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#FuzzyOperatorsBlock" name="FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> [{ <a href="#FuzzyOperatorsBlock" name="FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> }] ")" ) .
+<a href="#FuzzyOperatorsBlockDeclExpr" name="FuzzyOperatorsBlockDeclExpr">FuzzyOperatorsBlockDeclExpr</a> = ( <a href="#FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> [{ <a href="#FuzzyOperatorsBlock">FuzzyOperatorsBlock</a> }] ")" ) .
 <a href="#FuzzyOperator" name="FuzzyOperator">FuzzyOperator</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#FuzzyOperatorName">FuzzyOperatorName</a> "=" <a href="#AnonymousFunction">AnonymousFunction</a> [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" . 
 <a href="#AdditionalContentOfFuzzySetBody" name="AdditionalContentOfFuzzySetBody">AdditionalContentOfFuzzySetBody</a> = <a href="#ClassContentFullSet">ClassContentFullSet</a> .
 <a href="#FuzzyExpr" name="FuzzyExpr">FuzzyExpr</a>
@@ -954,7 +954,7 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#ModalitiesSet" name="ModalitiesSet">ModalitiesSet</a> = <a href="#Modality">Modality</a> [{ <a href="#Modality">Modality</a> }] .
-<a href="#Modality" name="Modality">Modality</a> = <a href="#CertaintyFactorModality">CertaintyFactorModality</a> | <a href="#CertaintyFactorModality">CertaintyFactorModality</a> | <a href="#CertaintyFactorModality">CertaintyFactorModality</a> | <a href="#CertaintyFactorModality">CertaintyFactorModality</a> | <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> | <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> | <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> | <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> | <a href="#TimeModality">TimeModality</a> | <a href="#TimeModality">TimeModality</a> | <a href="#TimeModality">TimeModality</a> | <a href="#TimeModality">TimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#CompletionModality">CompletionModality</a> | <a href="#CompletionModality">CompletionModality</a> | <a href="#CompletionModality">CompletionModality</a> | <a href="#CompletionModality">CompletionModality</a> | <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> | <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> | <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> | <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> | <a href="#AcceptedModality">AcceptedModality</a> | <a href="#AcceptedModality">AcceptedModality</a> | <a href="#AcceptedModality">AcceptedModality</a> | <a href="#AcceptedModality">AcceptedModality</a> | <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> | <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> | <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> | <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> | <a href="#DesirableModality">DesirableModality</a> | <a href="#DesirableModality">DesirableModality</a> | <a href="#DesirableModality">DesirableModality</a> | <a href="#DesirableModality">DesirableModality</a> | <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> | <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> | <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> | <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> | <a href="#NecessityModality">NecessityModality</a> | <a href="#NecessityModality">NecessityModality</a> | <a href="#NecessityModality">NecessityModality</a> | <a href="#NecessityModality">NecessityModality</a> | <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> | <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> | <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> | <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> | <a href="#IntentionModality">IntentionModality</a> | <a href="#IntentionModality">IntentionModality</a> | <a href="#IntentionModality">IntentionModality</a> | <a href="#IntentionModality">IntentionModality</a> | <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> | <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> | <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> | <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> | <a href="#PriorityModality">PriorityModality</a> | <a href="#PriorityModality">PriorityModality</a> | <a href="#PriorityModality">PriorityModality</a> | <a href="#PriorityModality">PriorityModality</a> | <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> | <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> | <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> | <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> | <a href="#MoralQualityModality">MoralQualityModality</a> | <a href="#MoralQualityModality">MoralQualityModality</a> | <a href="#MoralQualityModality">MoralQualityModality</a> | <a href="#MoralQualityModality">MoralQualityModality</a> | <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> | <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> | <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> | <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> | <a href="#RespectModality">RespectModality</a> | <a href="#RespectModality">RespectModality</a> | <a href="#RespectModality">RespectModality</a> | <a href="#RespectModality">RespectModality</a> | <a href="#AdditionalRespectModality">AdditionalRespectModality</a> | <a href="#AdditionalRespectModality">AdditionalRespectModality</a> | <a href="#AdditionalRespectModality">AdditionalRespectModality</a> | <a href="#AdditionalRespectModality">AdditionalRespectModality</a> | <a href="#QuantityQualityModality">QuantityQualityModality</a> | <a href="#QuantityQualityModality">QuantityQualityModality</a> | <a href="#QuantityQualityModality">QuantityQualityModality</a> | <a href="#QuantityQualityModality">QuantityQualityModality</a> | <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> | <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> | <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> | <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> | <a href="#EmotionKindModality">EmotionKindModality</a> | <a href="#EmotionKindModality">EmotionKindModality</a> | <a href="#EmotionKindModality">EmotionKindModality</a> | <a href="#EmotionKindModality">EmotionKindModality</a> | <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> | <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> | <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> | <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> | <a href="#EmotionIntensityModality">EmotionIntensityModality</a> | <a href="#EmotionIntensityModality">EmotionIntensityModality</a> | <a href="#EmotionIntensityModality">EmotionIntensityModality</a> | <a href="#EmotionIntensityModality">EmotionIntensityModality</a> | <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> | <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> | <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> | <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> | <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> | <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> | <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> | <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> | <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> | <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> | <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> | <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> | <a href="#ElseNotRuleSection">ElseNotRuleSection</a> | <a href="#ElseNotRuleSection">ElseNotRuleSection</a> | <a href="#ElseNotRuleSection">ElseNotRuleSection</a> | <a href="#ElseNotRuleSection">ElseNotRuleSection</a> | <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> | <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> | <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> | <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> | <a href="#SourceSection">SourceSection</a> | <a href="#SourceSection">SourceSection</a> | <a href="#SourceSection">SourceSection</a> | <a href="#SourceSection">SourceSection</a> | <a href="#AdditionalSourceSection">AdditionalSourceSection</a> | <a href="#AdditionalSourceSection">AdditionalSourceSection</a> | <a href="#AdditionalSourceSection">AdditionalSourceSection</a> | <a href="#AdditionalSourceSection">AdditionalSourceSection</a> | <a href="#ChannelSection">ChannelSection</a> | <a href="#ChannelSection">ChannelSection</a> | <a href="#ChannelSection">ChannelSection</a> | <a href="#ChannelSection">ChannelSection</a> | <a href="#AdditionalChannelSection">AdditionalChannelSection</a> | <a href="#AdditionalChannelSection">AdditionalChannelSection</a> | <a href="#AdditionalChannelSection">AdditionalChannelSection</a> | <a href="#AdditionalChannelSection">AdditionalChannelSection</a> | <a href="#ClausesSection">ClausesSection</a> | <a href="#ClausesSection">ClausesSection</a> | <a href="#ClausesSection">ClausesSection</a> | <a href="#ClausesSection">ClausesSection</a> | <a href="#AdditionalClausesSection">AdditionalClausesSection</a> | <a href="#AdditionalClausesSection">AdditionalClausesSection</a> | <a href="#AdditionalClausesSection">AdditionalClausesSection</a> | <a href="#AdditionalClausesSection">AdditionalClausesSection</a> | <a href="#NoContradictSection">NoContradictSection</a> | <a href="#NoContradictSection">NoContradictSection</a> | <a href="#NoContradictSection">NoContradictSection</a> | <a href="#NoContradictSection">NoContradictSection</a> | <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> | <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> | <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> | <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> | <a href="#AccessSection">AccessSection</a> | <a href="#AccessSection">AccessSection</a> | <a href="#AccessSection">AccessSection</a> | <a href="#AccessSection">AccessSection</a> | <a href="#AdditionalAccessSection">AdditionalAccessSection</a> | <a href="#AdditionalAccessSection">AdditionalAccessSection</a> | <a href="#AdditionalAccessSection">AdditionalAccessSection</a> | <a href="#AdditionalAccessSection">AdditionalAccessSection</a> | <a href="#ReasonSectionMark">ReasonSectionMark</a> | <a href="#AdditionalReasonSection">AdditionalReasonSection</a> | <a href="#AdditionalReasonSection">AdditionalReasonSection</a> | <a href="#AdditionalReasonSection">AdditionalReasonSection</a> | <a href="#AdditionalReasonSection">AdditionalReasonSection</a> | <a href="#HolderDesc">HolderDesc</a> | <a href="#HolderDesc">HolderDesc</a> | <a href="#HolderDesc">HolderDesc</a> | <a href="#HolderDesc">HolderDesc</a> | <a href="#ModuleDesc">ModuleDesc</a> | <a href="#ModuleDesc">ModuleDesc</a> | <a href="#ModuleDesc">ModuleDesc</a> | <a href="#ModuleDesc">ModuleDesc</a> .
+<a href="#Modality" name="Modality">Modality</a> = <a href="#CertaintyFactorModality">CertaintyFactorModality</a> | <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> | <a href="#TimeModality">TimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#AdditionalTimeModality">AdditionalTimeModality</a> | <a href="#CompletionModality">CompletionModality</a> | <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> | <a href="#AcceptedModality">AcceptedModality</a> | <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> | <a href="#DesirableModality">DesirableModality</a> | <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> | <a href="#NecessityModality">NecessityModality</a> | <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> | <a href="#IntentionModality">IntentionModality</a> | <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> | <a href="#PriorityModality">PriorityModality</a> | <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> | <a href="#MoralQualityModality">MoralQualityModality</a> | <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> | <a href="#RespectModality">RespectModality</a> | <a href="#AdditionalRespectModality">AdditionalRespectModality</a> | <a href="#QuantityQualityModality">QuantityQualityModality</a> | <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> | <a href="#EmotionKindModality">EmotionKindModality</a> | <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> | <a href="#EmotionIntensityModality">EmotionIntensityModality</a> | <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> | <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> | <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> | <a href="#ElseNotRuleSection">ElseNotRuleSection</a> | <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> | <a href="#SourceSection">SourceSection</a> | <a href="#AdditionalSourceSection">AdditionalSourceSection</a> | <a href="#ChannelSection">ChannelSection</a> | <a href="#AdditionalChannelSection">AdditionalChannelSection</a> | <a href="#ClausesSection">ClausesSection</a> | <a href="#AdditionalClausesSection">AdditionalClausesSection</a> | <a href="#NoContradictSection">NoContradictSection</a> | <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> | <a href="#AccessSection">AccessSection</a> | <a href="#AdditionalAccessSection">AdditionalAccessSection</a> | <a href="#ReasonSectionMark">ReasonSectionMark</a> | <a href="#AdditionalReasonSection">AdditionalReasonSection</a> | <a href="#HolderDesc">HolderDesc</a> | <a href="#ModuleDesc">ModuleDesc</a> .
 </pre>
 
 <h3 class='center-h' data-href="Certainty_factor_chapter">
@@ -965,10 +965,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> = <a href="#CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#CertaintyFactorModalityDeclExpr" name="CertaintyFactorModalityDeclExpr">CertaintyFactorModalityDeclExpr</a> = ( <a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> [{ <a href="#CertaintyFactorModality" name="CertaintyFactorModality">CertaintyFactorModality</a> }] ")" ) .
+<a href="#CertaintyFactorModalityDeclExpr" name="CertaintyFactorModalityDeclExpr">CertaintyFactorModalityDeclExpr</a> = ( <a href="#CertaintyFactorModality">CertaintyFactorModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#CertaintyFactorModality">CertaintyFactorModality</a> [{ <a href="#CertaintyFactorModality">CertaintyFactorModality</a> }] ")" ) .
 <a href="#CertaintyFactorModalityMark" name="CertaintyFactorModalityMark">CertaintyFactorModalityMark</a> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
 <a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> = <a href="#AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalCertaintyFactorModalityDeclExpr" name="AdditionalCertaintyFactorModalityDeclExpr">AdditionalCertaintyFactorModalityDeclExpr</a> = ( <a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> [{ <a href="#AdditionalCertaintyFactorModality" name="AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> }] ")" ) .
+<a href="#AdditionalCertaintyFactorModalityDeclExpr" name="AdditionalCertaintyFactorModalityDeclExpr">AdditionalCertaintyFactorModalityDeclExpr</a> = ( <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> [{ <a href="#AdditionalCertaintyFactorModality">AdditionalCertaintyFactorModality</a> }] ")" ) .
 <a href="#AdditionalCertaintyFactorModalityMark" name="AdditionalCertaintyFactorModalityMark">AdditionalCertaintyFactorModalityMark</a> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
 <a href="#BooleanValOfModality" name="BooleanValOfModality">BooleanValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#BooleanTypeExpr">BooleanTypeExpr</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
@@ -981,10 +981,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#TimeModality" name="TimeModality">TimeModality</a> = <a href="#TimeModalityMark">TimeModalityMark</a> <a href="#DateTimeValOfModality">DateTimeValOfModality</a> .
-<a href="#TimeModalityDeclExpr" name="TimeModalityDeclExpr">TimeModalityDeclExpr</a> = ( <a href="#TimeModality" name="TimeModality">TimeModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#TimeModality" name="TimeModality">TimeModality</a> [{ <a href="#TimeModality" name="TimeModality">TimeModality</a> }] ")" ) .
+<a href="#TimeModalityDeclExpr" name="TimeModalityDeclExpr">TimeModalityDeclExpr</a> = ( <a href="#TimeModality">TimeModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#TimeModality">TimeModality</a> [{ <a href="#TimeModality">TimeModality</a> }] ")" ) .
 <a href="#TimeModalityMark" name="TimeModalityMark">TimeModalityMark</a> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
 <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> = <a href="#AdditionalTimeModalityMark">AdditionalTimeModalityMark</a> <a href="#DateTimeValOfModality">DateTimeValOfModality</a> .
-<a href="#AdditionalTimeModalityDeclExpr" name="AdditionalTimeModalityDeclExpr">AdditionalTimeModalityDeclExpr</a> = ( <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> [{ <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> }] ")" ) .
+<a href="#AdditionalTimeModalityDeclExpr" name="AdditionalTimeModalityDeclExpr">AdditionalTimeModalityDeclExpr</a> = ( <a href="#"></a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#"></a> [{ <a href="#"></a> }] ")" ) ( <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> [{ <a href="#AdditionalTimeModality" name="AdditionalTimeModality">AdditionalTimeModality</a> }] ")" ) .
 <a href="#AdditionalTimeModalityMark" name="AdditionalTimeModalityMark">AdditionalTimeModalityMark</a> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
 <a href="#DateTimeValOfModality" name="DateTimeValOfModality">DateTimeValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#DateTimeTypeExpr">DateTimeTypeExpr</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
@@ -997,10 +997,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#CompletionModality" name="CompletionModality">CompletionModality</a> = <a href="#CompletionModalityMark">CompletionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#CompletionModalityDeclExpr" name="CompletionModalityDeclExpr">CompletionModalityDeclExpr</a> = ( <a href="#CompletionModality" name="CompletionModality">CompletionModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#CompletionModality" name="CompletionModality">CompletionModality</a> [{ <a href="#CompletionModality" name="CompletionModality">CompletionModality</a> }] ")" ) .
+<a href="#CompletionModalityDeclExpr" name="CompletionModalityDeclExpr">CompletionModalityDeclExpr</a> = ( <a href="#CompletionModality">CompletionModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#CompletionModality">CompletionModality</a> [{ <a href="#CompletionModality">CompletionModality</a> }] ")" ) .
 <a href="#CompletionModalityMark" name="CompletionModalityMark">CompletionModalityMark</a> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
 <a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a> = <a href="#AdditionalCompletionModalityMark">AdditionalCompletionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalCompletionModalityDeclExpr" name="AdditionalCompletionModalityDeclExpr">AdditionalCompletionModalityDeclExpr</a> = ( <a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a> [{ <a href="#AdditionalCompletionModality" name="AdditionalCompletionModality">AdditionalCompletionModality</a> }] ")" ) .
+<a href="#AdditionalCompletionModalityDeclExpr" name="AdditionalCompletionModalityDeclExpr">AdditionalCompletionModalityDeclExpr</a> = ( <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> [{ <a href="#AdditionalCompletionModality">AdditionalCompletionModality</a> }] ")" ) .
 <a href="#AdditionalCompletionModalityMark" name="AdditionalCompletionModalityMark">AdditionalCompletionModalityMark</a> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
 </pre>
 
@@ -1012,10 +1012,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> = <a href="#AcceptedModalityMark">AcceptedModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AcceptedModalityDeclExpr" name="AcceptedModalityDeclExpr">AcceptedModalityDeclExpr</a> = ( <a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> [{ <a href="#AcceptedModality" name="AcceptedModality">AcceptedModality</a> }] ")" ) .
+<a href="#AcceptedModalityDeclExpr" name="AcceptedModalityDeclExpr">AcceptedModalityDeclExpr</a> = ( <a href="#AcceptedModality">AcceptedModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AcceptedModality">AcceptedModality</a> [{ <a href="#AcceptedModality">AcceptedModality</a> }] ")" ) .
 <a href="#AcceptedModalityMark" name="AcceptedModalityMark">AcceptedModalityMark</a> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
 <a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> = <a href="#AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalAcceptedModalityDeclExpr" name="AdditionalAcceptedModalityDeclExpr">AdditionalAcceptedModalityDeclExpr</a> = ( <a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> [{ <a href="#AdditionalAcceptedModality" name="AdditionalAcceptedModality">AdditionalAcceptedModality</a> }] ")" ) .
+<a href="#AdditionalAcceptedModalityDeclExpr" name="AdditionalAcceptedModalityDeclExpr">AdditionalAcceptedModalityDeclExpr</a> = ( <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> [{ <a href="#AdditionalAcceptedModality">AdditionalAcceptedModality</a> }] ")" ) .
 <a href="#AdditionalAcceptedModalityMark" name="AdditionalAcceptedModalityMark">AdditionalAcceptedModalityMark</a> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
 </pre>
 
@@ -1027,10 +1027,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#DesirableModality" name="DesirableModality">DesirableModality</a> = <a href="#DesirableModalityMark">DesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#DesirableModalityDeclExpr" name="DesirableModalityDeclExpr">DesirableModalityDeclExpr</a> = ( <a href="#DesirableModality" name="DesirableModality">DesirableModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#DesirableModality" name="DesirableModality">DesirableModality</a> [{ <a href="#DesirableModality" name="DesirableModality">DesirableModality</a> }] ")" ) . 
+<a href="#DesirableModalityDeclExpr" name="DesirableModalityDeclExpr">DesirableModalityDeclExpr</a> = ( <a href="#DesirableModality">DesirableModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#DesirableModality">DesirableModality</a> [{ <a href="#DesirableModality">DesirableModality</a> }] ")" ) . 
 <a href="#DesirableModalityMark" name="DesirableModalityMark">DesirableModalityMark</a> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
 <a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> = <a href="#AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalDesirableModalityDeclExpr" name="AdditionalDesirableModalityDeclExpr">AdditionalDesirableModalityDeclExpr</a> = ( <a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> [{ <a href="#AdditionalDesirableModality" name="AdditionalDesirableModality">AdditionalDesirableModality</a> }] ")" ) .
+<a href="#AdditionalDesirableModalityDeclExpr" name="AdditionalDesirableModalityDeclExpr">AdditionalDesirableModalityDeclExpr</a> = ( <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> [{ <a href="#AdditionalDesirableModality">AdditionalDesirableModality</a> }] ")" ) .
 <a href="#AdditionalDesirableModalityMark" name="AdditionalDesirableModalityMark">AdditionalDesirableModalityMark</a> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
 </pre>
 
@@ -1042,10 +1042,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#NecessityModality" name="NecessityModality">NecessityModality</a> = <a href="#NecessityModalityMark">NecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#NecessityModalityDeclExpr" name="NecessityModalityDeclExpr">NecessityModalityDeclExpr</a> = ( <a href="#NecessityModality" name="NecessityModality">NecessityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#NecessityModality" name="NecessityModality">NecessityModality</a> [{ <a href="#NecessityModality" name="NecessityModality">NecessityModality</a> }] ")" ) .
+<a href="#NecessityModalityDeclExpr" name="NecessityModalityDeclExpr">NecessityModalityDeclExpr</a> = ( <a href="#NecessityModality">NecessityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#NecessityModality">NecessityModality</a> [{ <a href="#NecessityModality">NecessityModality</a> }] ")" ) .
 <a href="#NecessityModalityMark" name="NecessityModalityMark">NecessityModalityMark</a> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
 <a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> = <a href="#AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalNecessityModalityDeclExpr" name="AdditionalNecessityModalityDeclExpr">AdditionalNecessityModalityDeclExpr</a> = ( <a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> [{ <a href="#AdditionalNecessityModality" name="AdditionalNecessityModality">AdditionalNecessityModality</a> }] ")" ) .
+<a href="#AdditionalNecessityModalityDeclExpr" name="AdditionalNecessityModalityDeclExpr">AdditionalNecessityModalityDeclExpr</a> = ( <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> [{ <a href="#AdditionalNecessityModality">AdditionalNecessityModality</a> }] ")" ) .
 <a href="#AdditionalNecessityModalityMark" name="AdditionalNecessityModalityMark">AdditionalNecessityModalityMark</a> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
 </pre>
 
@@ -1057,10 +1057,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#IntentionModality" name="IntentionModality">IntentionModality</a> = <a href="#IntentionModalityMark">IntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#IntentionModalityDeclExpr" name="IntentionModalityDeclExpr">IntentionModalityDeclExpr</a> = ( <a href="#IntentionModality" name="IntentionModality">IntentionModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#IntentionModality" name="IntentionModality">IntentionModality</a> [{ <a href="#IntentionModality" name="IntentionModality">IntentionModality</a> }] ")" ) .
+<a href="#IntentionModalityDeclExpr" name="IntentionModalityDeclExpr">IntentionModalityDeclExpr</a> = ( <a href="#IntentionModality">IntentionModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#IntentionModality">IntentionModality</a> [{ <a href="#IntentionModality">IntentionModality</a> }] ")" ) .
 <a href="#IntentionModalityMark" name="IntentionModalityMark">IntentionModalityMark</a> = "~>:" | "intention" | "intend" | "plan" | "decide" | "i" | "intention:" | "intend:" | "plan:" | "decide:" | "i:" .
 <a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> = <a href="#AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalIntentionModalityDeclExpr" name="AdditionalIntentionModalityDeclExpr">AdditionalIntentionModalityDeclExpr</a> = ( <a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> [{ <a href="#AdditionalIntentionModality" name="AdditionalIntentionModality">AdditionalIntentionModality</a> }] ")" ) .
+<a href="#AdditionalIntentionModalityDeclExpr" name="AdditionalIntentionModalityDeclExpr">AdditionalIntentionModalityDeclExpr</a> = ( <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> [{ <a href="#AdditionalIntentionModality">AdditionalIntentionModality</a> }] ")" ) .
 <a href="#AdditionalIntentionModalityMark" name="AdditionalIntentionModalityMark">AdditionalIntentionModalityMark</a> = "[~>:]" | "[intention]" | "[intend]" | "[plan]" | "[decide]" | "[i]" | "[intention:]" | "[intend:]" | "[plan:]" | "[decide:]" | "[i:]" .
 </pre>
 
@@ -1072,10 +1072,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#PriorityModality" name="PriorityModality">PriorityModality</a> = <a href="#PriorityModalityMark">PriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#PriorityModalityDeclExpr" name="PriorityModalityDeclExpr">PriorityModalityDeclExpr</a> = ( <a href="#PriorityModality" name="PriorityModality">PriorityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#PriorityModality" name="PriorityModality">PriorityModality</a> [{ <a href="#PriorityModality" name="PriorityModality">PriorityModality</a> }] ")" ) .
+<a href="#PriorityModalityDeclExpr" name="PriorityModalityDeclExpr">PriorityModalityDeclExpr</a> = ( <a href="#PriorityModality">PriorityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#PriorityModality">PriorityModality</a> [{ <a href="#PriorityModality">PriorityModality</a> }] ")" ) .
 <a href="#PriorityModalityMark" name="PriorityModalityMark">PriorityModalityMark</a> = "*:" | "priority" | "p" | "priority:" | "p:" .
 <a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> = <a href="#AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalPriorityModalityDeclExpr" name="AdditionalPriorityModalityDeclExpr">AdditionalPriorityModalityDeclExpr</a> = ( <a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> [{ <a href="#AdditionalPriorityModality" name="AdditionalPriorityModality">AdditionalPriorityModality</a> }] ")" ) . 
+<a href="#AdditionalPriorityModalityDeclExpr" name="AdditionalPriorityModalityDeclExpr">AdditionalPriorityModalityDeclExpr</a> = ( <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> [{ <a href="#AdditionalPriorityModality">AdditionalPriorityModality</a> }] ")" ) . 
 <a href="#AdditionalPriorityModalityMark" name="AdditionalPriorityModalityMark">AdditionalPriorityModalityMark</a> = "[*:]" | "[priority]" | "[p]" | "[priority:]" | "[p:]" .
 </pre>
 
@@ -1087,10 +1087,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> = <a href="#MoralQualityModalityMark">MoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#MoralQualityModalityDeclExpr" name="MoralQualityModalityDeclExpr">MoralQualityModalityDeclExpr</a> = ( <a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> [{ <a href="#MoralQualityModality" name="MoralQualityModality">MoralQualityModality</a> }] ")" ) .
+<a href="#MoralQualityModalityDeclExpr" name="MoralQualityModalityDeclExpr">MoralQualityModalityDeclExpr</a> = ( <a href="#MoralQualityModality">MoralQualityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#MoralQualityModality">MoralQualityModality</a> [{ <a href="#MoralQualityModality">MoralQualityModality</a> }] ")" ) .
 <a href="#MoralQualityModalityMark" name="MoralQualityModalityMark">MoralQualityModalityMark</a> = "/^:" | "moral" | "moral:" .
 <a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> = <a href="#AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalMoralQualityModalityDeclExpr" name="AdditionalMoralQualityModalityDeclExpr">AdditionalMoralQualityModalityDeclExpr</a> = ( <a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> [{ <a href="#AdditionalMoralQualityModality" name="AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> }] ")" ) .
+<a href="#AdditionalMoralQualityModalityDeclExpr" name="AdditionalMoralQualityModalityDeclExpr">AdditionalMoralQualityModalityDeclExpr</a> = ( <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> [{ <a href="#AdditionalMoralQualityModality">AdditionalMoralQualityModality</a> }] ")" ) .
 <a href="#AdditionalMoralQualityModalityMark" name="AdditionalMoralQualityModalityMark">AdditionalMoralQualityModalityMark</a> = "[/^:]" | "[moral]" | "[moral:]" .
 </pre>
 
@@ -1102,10 +1102,10 @@ Defuzzification method is not defined yet!
 
 <pre class='ebnf-code'>
 <a href="#RespectModality" name="RespectModality">RespectModality</a> = <a href="#RespectModalityMark">RespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#RespectModalityDeclExpr" name="RespectModalityDeclExpr">RespectModalityDeclExpr</a> = ( <a href="#RespectModality" name="RespectModality">RespectModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#RespectModality" name="RespectModality">RespectModality</a> [{ <a href="#RespectModality" name="RespectModality">RespectModality</a> }] ")" ) .
+<a href="#RespectModalityDeclExpr" name="RespectModalityDeclExpr">RespectModalityDeclExpr</a> = ( <a href="#RespectModality">RespectModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#RespectModality">RespectModality</a> [{ <a href="#RespectModality">RespectModality</a> }] ")" ) .
 <a href="#RespectModalityMark" name="RespectModalityMark">RespectModalityMark</a> = "/:" | "respect" | "respect:" .
 <a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> = <a href="#AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalRespectModalityDeclExpr" name="AdditionalRespectModalityDeclExpr">AdditionalRespectModalityDeclExpr</a> = ( <a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> [{ <a href="#AdditionalRespectModality" name="AdditionalRespectModality">AdditionalRespectModality</a> }] ")" ) .
+<a href="#AdditionalRespectModalityDeclExpr" name="AdditionalRespectModalityDeclExpr">AdditionalRespectModalityDeclExpr</a> = ( <a href="#AdditionalRespectModality">AdditionalRespectModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalRespectModality">AdditionalRespectModality</a> [{ <a href="#AdditionalRespectModality">AdditionalRespectModality</a> }] ")" ) .
 <a href="#AdditionalRespectModalityMark" name="AdditionalRespectModalityMark">AdditionalRespectModalityMark</a> = "[/:]" | "[respect]" | "[respect:]" .
 </pre>
 
@@ -1117,10 +1117,10 @@ Quantity quality modality
 
 <pre class='ebnf-code'>
 <a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> = <a href="#QuantityQualityModalityMark">QuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#QuantityQualityModalityDeclExpr" name="QuantityQualityModalityDeclExpr">QuantityQualityModalityDeclExpr</a> = ( <a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> [{ <a href="#QuantityQualityModality" name="QuantityQualityModality">QuantityQualityModality</a> }] ")" ) .
+<a href="#QuantityQualityModalityDeclExpr" name="QuantityQualityModalityDeclExpr">QuantityQualityModalityDeclExpr</a> = ( <a href="#QuantityQualityModality">QuantityQualityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#QuantityQualityModality">QuantityQualityModality</a> [{ <a href="#QuantityQualityModality">QuantityQualityModality</a> }] ")" ) .
 <a href="#QuantityQualityModalityMark" name="QuantityQualityModalityMark">QuantityQualityModalityMark</a> = "=:" | "q" | "quantity" | "q:" | "quantity:" .
 <a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> = <a href="#AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalQuantityQualityModalityDeclExpr" name="AdditionalQuantityQualityModalityDeclExpr">AdditionalQuantityQualityModalityDeclExpr</a> = ( <a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> [{ <a href="#AdditionalQuantityQualityModality" name="AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> }] ")" ) .
+<a href="#AdditionalQuantityQualityModalityDeclExpr" name="AdditionalQuantityQualityModalityDeclExpr">AdditionalQuantityQualityModalityDeclExpr</a> = ( <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> [{ <a href="#AdditionalQuantityQualityModality">AdditionalQuantityQualityModality</a> }] ")" ) .
 <a href="#AdditionalQuantityQualityModalityMark" name="AdditionalQuantityQualityModalityMark">AdditionalQuantityQualityModalityMark</a> = "[=:]" | "[q]" | "[quantity]" | "[q:]" | "[quantity:]" .
 </pre>
 
@@ -1132,10 +1132,10 @@ Quantity quality modality
 
 <pre class='ebnf-code'>
 <a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> = <a href="#EmotionKindModalityMark">EmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#EmotionKindModalityDeclExpr" name="EmotionKindModalityDeclExpr">EmotionKindModalityDeclExpr</a> = ( <a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> [{ <a href="#EmotionKindModality" name="EmotionKindModality">EmotionKindModality</a> }] ")" ) .
+<a href="#EmotionKindModalityDeclExpr" name="EmotionKindModalityDeclExpr">EmotionKindModalityDeclExpr</a> = ( <a href="#EmotionKindModality">EmotionKindModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#EmotionKindModality">EmotionKindModality</a> [{ <a href="#EmotionKindModality">EmotionKindModality</a> }] ")" ) .
 <a href="#EmotionKindModalityMark" name="EmotionKindModalityMark">EmotionKindModalityMark</a> = "~:" | "emotion" | "em" | "emotion:" | "em:" .
 <a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> = <a href="#AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalEmotionKindModalityDeclExpr" name="AdditionalEmotionKindModalityDeclExpr">AdditionalEmotionKindModalityDeclExpr</a> = ( <a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> [{ <a href="#AdditionalEmotionKindModality" name="AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> }] ")" ) .
+<a href="#AdditionalEmotionKindModalityDeclExpr" name="AdditionalEmotionKindModalityDeclExpr">AdditionalEmotionKindModalityDeclExpr</a> = ( <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> [{ <a href="#AdditionalEmotionKindModality">AdditionalEmotionKindModality</a> }] ")" ) .
 <a href="#AdditionalEmotionKindModalityMark" name="AdditionalEmotionKindModalityMark">AdditionalEmotionKindModalityMark</a> = "[~:]" | "[emotion]" | "[em]" | "[emotion:]" | "[em:]" .
 </pre>
 
@@ -1147,10 +1147,10 @@ Emotion intensity modality
 
 <pre class='ebnf-code'>
 <a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> = <a href="#EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> . 
-<a href="#EmotionIntensityModalityDeclExpr" name="EmotionIntensityModalityDeclExpr">EmotionIntensityModalityDeclExpr</a> = ( <a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> [{ <a href="#EmotionIntensityModality" name="EmotionIntensityModality">EmotionIntensityModality</a> }] ")" ) .
+<a href="#EmotionIntensityModalityDeclExpr" name="EmotionIntensityModalityDeclExpr">EmotionIntensityModalityDeclExpr</a> = ( <a href="#EmotionIntensityModality">EmotionIntensityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#EmotionIntensityModality">EmotionIntensityModality</a> [{ <a href="#EmotionIntensityModality">EmotionIntensityModality</a> }] ")" ) .
 <a href="#EmotionIntensityModalityMark" name="EmotionIntensityModalityMark">EmotionIntensityModalityMark</a> = "*~:" | "emotion intensity" | "emotion power" | "emi" | "emp" | "emotion intensity:" | "emotion power:" | "emi:" | "emp:" .
 <a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> = <a href="#AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> <a href="#BooleanValOfModality">BooleanValOfModality</a> .
-<a href="#AdditionalEmotionIntensityModalityDeclExpr" name="AdditionalEmotionIntensityModalityDeclExpr">AdditionalEmotionIntensityModalityDeclExpr</a> = ( <a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> [{ <a href="#AdditionalEmotionIntensityModality" name="AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> }] ")" ) .
+<a href="#AdditionalEmotionIntensityModalityDeclExpr" name="AdditionalEmotionIntensityModalityDeclExpr">AdditionalEmotionIntensityModalityDeclExpr</a> = ( <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> [{ <a href="#AdditionalEmotionIntensityModality">AdditionalEmotionIntensityModality</a> }] ")" ) .
 <a href="#AdditionalEmotionIntensityModalityMark" name="AdditionalEmotionIntensityModalityMark">AdditionalEmotionIntensityModalityMark</a> = "[*~:]" | "[emotion intensity]" | "[emotion power]" | "[emi]" | "[emp]" | "[emotion intensity:]" | "[emotion power:]" | "[emi:]" | "[emp:]" .
 </pre>
 
@@ -1168,10 +1168,10 @@ Emotion intensity modality
 
 <pre class='ebnf-code'>
 <a href="#ThereforeNotRuleSection" name="ThereforeNotRuleSection">ThereforeNotRuleSection</a>
-<a href="#ThereforeNotRuleSectionDeclExpr" name="ThereforeNotRuleSectionDeclExpr">ThereforeNotRuleSectionDeclExpr</a> = ( <a href="#ThereforeNotRuleSection" name="ThereforeNotRuleSection">ThereforeNotRuleSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ThereforeNotRuleSection" name="ThereforeNotRuleSection">ThereforeNotRuleSection</a> [{ <a href="#ThereforeNotRuleSection" name="ThereforeNotRuleSection">ThereforeNotRuleSection</a> }] ")" ) .
+<a href="#ThereforeNotRuleSectionDeclExpr" name="ThereforeNotRuleSectionDeclExpr">ThereforeNotRuleSectionDeclExpr</a> = ( <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> [{ <a href="#ThereforeNotRuleSection">ThereforeNotRuleSection</a> }] ")" ) .
 <a href="#ThereforeNotRuleSectionMark" name="ThereforeNotRuleSectionMark">ThereforeNotRuleSectionMark</a> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
 <a href="#AdditionalThereforeNotRuleSection" name="AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a>
-<a href="#AdditionalThereforeNotRuleSectionDeclExpr" name="AdditionalThereforeNotRuleSectionDeclExpr">AdditionalThereforeNotRuleSectionDeclExpr</a> = ( <a href="#AdditionalThereforeNotRuleSection" name="AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalThereforeNotRuleSection" name="AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> [{ <a href="#AdditionalThereforeNotRuleSection" name="AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> }] ")" ) .
+<a href="#AdditionalThereforeNotRuleSectionDeclExpr" name="AdditionalThereforeNotRuleSectionDeclExpr">AdditionalThereforeNotRuleSectionDeclExpr</a> = ( <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> [{ <a href="#AdditionalThereforeNotRuleSection">AdditionalThereforeNotRuleSection</a> }] ")" ) .
 <a href="#AdditionalThereforeNotRuleSectionMark" name="AdditionalThereforeNotRuleSectionMark">AdditionalThereforeNotRuleSectionMark</a> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
 <a href="#" name=""></a>
 </pre>
@@ -1184,10 +1184,10 @@ Emotion intensity modality
 
 <pre class='ebnf-code'>
 <a href="#ElseNotRuleSection" name="ElseNotRuleSection">ElseNotRuleSection</a>
-<a href="#ElseNotRuleSectionDeclExpr" name="ElseNotRuleSectionDeclExpr">ElseNotRuleSectionDeclExpr</a> = ( <a href="#ElseNotRuleSection" name="ElseNotRuleSection">ElseNotRuleSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ElseNotRuleSection" name="ElseNotRuleSection">ElseNotRuleSection</a> [{ <a href="#ElseNotRuleSection" name="ElseNotRuleSection">ElseNotRuleSection</a> }] ")" ) .
+<a href="#ElseNotRuleSectionDeclExpr" name="ElseNotRuleSectionDeclExpr">ElseNotRuleSectionDeclExpr</a> = ( <a href="#ElseNotRuleSection">ElseNotRuleSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ElseNotRuleSection">ElseNotRuleSection</a> [{ <a href="#ElseNotRuleSection">ElseNotRuleSection</a> }] ")" ) .
 <a href="#ElseNotRuleSectionMark" name="ElseNotRuleSectionMark">ElseNotRuleSectionMark</a> = "|!->:" | "else" | "else:" | "otherwise" | "other" | "otherwise:" | "other:" .
 <a href="#AdditionalElseNotRuleSection" name="AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a>
-<a href="#AdditionalElseNotRuleSectionDeclExpr" name="AdditionalElseNotRuleSectionDeclExpr">AdditionalElseNotRuleSectionDeclExpr</a> = ( <a href="#AdditionalElseNotRuleSection" name="AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalElseNotRuleSection" name="AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> [{ <a href="#AdditionalElseNotRuleSection" name="AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> }] ")" ) .
+<a href="#AdditionalElseNotRuleSectionDeclExpr" name="AdditionalElseNotRuleSectionDeclExpr">AdditionalElseNotRuleSectionDeclExpr</a> = ( <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> [{ <a href="#AdditionalElseNotRuleSection">AdditionalElseNotRuleSection</a> }] ")" ) .
 <a href="#AdditionalElseNotRuleSectionMark" name="AdditionalElseNotRuleSectionMark">AdditionalElseNotRuleSectionMark</a> = "[|!->:]" | "[else]" | "[else:]" | "[otherwise]" | "[other]" | "[otherwise:]" | "[other:]" .
 </pre>
 
@@ -1199,10 +1199,10 @@ Emotion intensity modality
 
 <pre class='ebnf-code'>
 <a href="#SourceSection" name="SourceSection">SourceSection</a> =  <a href="#SourceSectionMark">SourceSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
-<a href="#SourceSectionDeclExpr" name="SourceSectionDeclExpr">SourceSectionDeclExpr</a> = ( <a href="#SourceSection" name="SourceSection">SourceSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#SourceSection" name="SourceSection">SourceSection</a> [{ <a href="#SourceSection" name="SourceSection">SourceSection</a> }] ")" ) .
+<a href="#SourceSectionDeclExpr" name="SourceSectionDeclExpr">SourceSectionDeclExpr</a> = ( <a href="#SourceSection">SourceSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#SourceSection">SourceSection</a> [{ <a href="#SourceSection">SourceSection</a> }] ")" ) .
 <a href="#SourceSectionMark" name="SourceSectionMark">SourceSectionMark</a> = "@:" | "source" | "origin" | "s" | "source:" | "origin:" | "s:" .
 <a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a> =  <a href="#AdditionalSourceSectionMark">AdditionalSourceSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
-<a href="#AdditionalSourceSectionDeclExpr" name="AdditionalSourceSectionDeclExpr">AdditionalSourceSectionDeclExpr</a> = ( <a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a> [{ <a href="#AdditionalSourceSection" name="AdditionalSourceSection">AdditionalSourceSection</a> }] ")" ) .
+<a href="#AdditionalSourceSectionDeclExpr" name="AdditionalSourceSectionDeclExpr">AdditionalSourceSectionDeclExpr</a> = ( <a href="#AdditionalSourceSection">AdditionalSourceSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalSourceSection">AdditionalSourceSection</a> [{ <a href="#AdditionalSourceSection">AdditionalSourceSection</a> }] ")" ) .
 <a href="#AdditionalSourceSectionMark" name="AdditionalSourceSectionMark">AdditionalSourceSectionMark</a> = "[@:]" | "[source]" | "[origin]" | "[s]" | "[source:]" | "[origin:]" | "[s:]" .
 </pre>
 
@@ -1214,10 +1214,10 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#ChannelSection" name="ChannelSection">ChannelSection</a> =  <a href="#ChannelSection">ChannelSection</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
-<a href="#ChannelSectionDeclExpr" name="ChannelSectionDeclExpr">ChannelSectionDeclExpr</a> = ( <a href="#ChannelSection" name="ChannelSection">ChannelSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ChannelSection" name="ChannelSection">ChannelSection</a> [{ <a href="#ChannelSection" name="ChannelSection">ChannelSection</a> }] ")" ) .
+<a href="#ChannelSectionDeclExpr" name="ChannelSectionDeclExpr">ChannelSectionDeclExpr</a> = ( <a href="#ChannelSection">ChannelSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ChannelSection">ChannelSection</a> [{ <a href="#ChannelSection">ChannelSection</a> }] ")" ) .
 <a href="#ChannelSectionMark" name="ChannelSectionMark">ChannelSectionMark</a> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
 <a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a> =  <a href="#AdditionalChannelSectionMark">AdditionalChannelSectionMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
-<a href="#AdditionalChannelSectionDeclExpr" name="AdditionalChannelSectionDeclExpr">AdditionalChannelSectionDeclExpr</a> = ( <a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a> [{ <a href="#AdditionalChannelSection" name="AdditionalChannelSection">AdditionalChannelSection</a> }] ")" ) .
+<a href="#AdditionalChannelSectionDeclExpr" name="AdditionalChannelSectionDeclExpr">AdditionalChannelSectionDeclExpr</a> = ( <a href="#AdditionalChannelSection">AdditionalChannelSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalChannelSection">AdditionalChannelSection</a> [{ <a href="#AdditionalChannelSection">AdditionalChannelSection</a> }] ")" ) .
 <a href="#AdditionalChannelSectionMark" name="AdditionalChannelSectionMark">AdditionalChannelSectionMark</a> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
 </pre>
 
@@ -1229,10 +1229,10 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#ClausesSection" name="ClausesSection">ClausesSection</a> = <a href="#ClausesSectionMark">ClausesSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
-<a href="#ClausesSectionDeclExpr" name="ClausesSectionDeclExpr">ClausesSectionDeclExpr</a> = ( <a href="#ClausesSection" name="ClausesSection">ClausesSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClausesSection" name="ClausesSection">ClausesSection</a> [{ <a href="#ClausesSection" name="ClausesSection">ClausesSection</a> }] ")" ) .
+<a href="#ClausesSectionDeclExpr" name="ClausesSectionDeclExpr">ClausesSectionDeclExpr</a> = ( <a href="#ClausesSection">ClausesSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClausesSection">ClausesSection</a> [{ <a href="#ClausesSection">ClausesSection</a> }] ")" ) .
 <a href="#ClausesSectionMark" name="ClausesSectionMark">ClausesSectionMark</a> = "&:" | "where" | "w" | "where:" | "w:" .
 <a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a> = <a href="#AdditionalClausesSectionMark">AdditionalClausesSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
-<a href="#AdditionalClausesSectionDeclExpr" name="AdditionalClausesSectionDeclExpr">AdditionalClausesSectionDeclExpr</a> = ( <a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a> [{ <a href="#AdditionalClausesSection" name="AdditionalClausesSection">AdditionalClausesSection</a> }] ")" ) .
+<a href="#AdditionalClausesSectionDeclExpr" name="AdditionalClausesSectionDeclExpr">AdditionalClausesSectionDeclExpr</a> = ( <a href="#AdditionalClausesSection">AdditionalClausesSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalClausesSection">AdditionalClausesSection</a> [{ <a href="#AdditionalClausesSection">AdditionalClausesSection</a> }] ")" ) .
 <a href="#AdditionalClausesSectionMark" name="AdditionalClausesSectionMark">AdditionalClausesSectionMark</a> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
 <a href="#LogicalSentenceValOfModality" name="LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> = ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" ( <a href="#LogicalSentence">LogicalSentence</a> ) | ([ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" [{ "," [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" <a href="#LogicalSentence">LogicalSentence</a> "}" }]) "}" ) | ( <a href="#NullTypeExpr">NullTypeExpr</a> ) .
 </pre>
@@ -1245,10 +1245,10 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a> = <a href="#NoContradictSectionMark">NoContradictSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
-<a href="#NoContradictSectionDeclExpr" name="NoContradictSectionDeclExpr">NoContradictSectionDeclExpr</a> = ( <a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a> [{ <a href="#NoContradictSection" name="NoContradictSection">NoContradictSection</a> }] ")" ) .
+<a href="#NoContradictSectionDeclExpr" name="NoContradictSectionDeclExpr">NoContradictSectionDeclExpr</a> = ( <a href="#NoContradictSection">NoContradictSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#NoContradictSection">NoContradictSection</a> [{ <a href="#NoContradictSection">NoContradictSection</a> }] ")" ) .
 <a href="#NoContradictSectionMark" name="NoContradictSectionMark">NoContradictSectionMark</a> = "^:" .
 <a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a> = <a href="#AdditionalNoContradictSectionMark">AdditionalNoContradictSectionMark</a> <a href="#LogicalSentenceValOfModality">LogicalSentenceValOfModality</a> .
-<a href="#AdditionalNoContradictSectionDeclExpr" name="AdditionalNoContradictSectionDeclExpr">AdditionalNoContradictSectionDeclExpr</a> = ( <a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a> [{ <a href="#AdditionalNoContradictSection" name="AdditionalNoContradictSection">AdditionalNoContradictSection</a> }] ")" ) .
+<a href="#AdditionalNoContradictSectionDeclExpr" name="AdditionalNoContradictSectionDeclExpr">AdditionalNoContradictSectionDeclExpr</a> = ( <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> [{ <a href="#AdditionalNoContradictSection">AdditionalNoContradictSection</a> }] ")" ) .
 <a href="#AdditionalNoContradictSectionMark" name="AdditionalNoContradictSectionMark">AdditionalNoContradictSectionMark</a> = "[^:]" .
 </pre>
 
@@ -1260,10 +1260,10 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#AccessSection" name="AccessSection">AccessSection</a> = <a href="#AccessSectionMark">AccessSectionMark</a> <a href="#ValOfAccessSection">ValOfAccessSection</a> .
-<a href="#AccessSectionDeclExpr" name="AccessSectionDeclExpr">AccessSectionDeclExpr</a> = ( <a href="#AccessSection" name="AccessSection">AccessSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AccessSection" name="AccessSection">AccessSection</a> [{ <a href="#AccessSection" name="AccessSection">AccessSection</a> }] ")" ) .
+<a href="#AccessSectionDeclExpr" name="AccessSectionDeclExpr">AccessSectionDeclExpr</a> = ( <a href="#AccessSection">AccessSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AccessSection">AccessSection</a> [{ <a href="#AccessSection">AccessSection</a> }] ")" ) .
 <a href="#AccessSectionMark" name="AccessSectionMark">AccessSectionMark</a> = "!!:" | "access" | "permissions" | "allow" | "permit" | "a" | "access:" | "permissions:" | "allow:" | "permit:" | "a:" .
 <a href="#AdditionalAccessSection" name="AdditionalAccessSection">AdditionalAccessSection</a> = <a href="#AdditionalAccessSectionMark">AdditionalAccessSectionMark</a> <a href="#ValOfAccessSection">ValOfAccessSection</a> .
-<a href="#AdditionalAccessSectionDeclExpr" name="AdditionalAccessSectionDeclExpr">AdditionalAccessSectionDeclExpr</a> = ( <a href="#AdditionalAccessSection" name="AdditionalAccessSection">AdditionalAccessSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalAccessSection" name="AdditionalAccessSection">AdditionalAccessSection</a> [{ <a href="#AdditionalAccessSection" name="AdditionalAccessSection">AdditionalAccessSection</a> }] ")" ) .
+<a href="#AdditionalAccessSectionDeclExpr" name="AdditionalAccessSectionDeclExpr">AdditionalAccessSectionDeclExpr</a> = ( <a href="#AdditionalAccessSection">AdditionalAccessSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalAccessSection">AdditionalAccessSection</a> [{ <a href="#AdditionalAccessSection">AdditionalAccessSection</a> }] ")" ) .
 <a href="#AdditionalAccessSectionMark" name="AdditionalAccessSectionMark">AdditionalAccessSectionMark</a> = "[!!:]" | "[access]" | "[permissions]" | "[allow]" | "[permit]" | "[a]" | "[access:]" | "[permissions:]" | "[allow:]" | "[permit:]" | "[a:]" .
 <a href="#AccessModifierDescription" name="AccessModifierDescription">AccessModifierDescription</a> =   ( "published" | ("published" "just" "for" <a href="#AccessModifierPublishJustForCondition">AccessModifierPublishJustForCondition</a> ) |
                         "public" | "internal" | "protected" | "private" ) ":" .
@@ -1279,10 +1279,10 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#ReasonSection" name="ReasonSection">ReasonSection</a>
-<a href="#ReasonSectionDeclExpr" name="ReasonSectionDeclExpr">ReasonSectionDeclExpr</a> = ( <a href="#ReasonSection" name="ReasonSection">ReasonSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ReasonSection" name="ReasonSection">ReasonSection</a> [{ <a href="#ReasonSection" name="ReasonSection">ReasonSection</a> }] ")" ) .
+<a href="#ReasonSectionDeclExpr" name="ReasonSectionDeclExpr">ReasonSectionDeclExpr</a> = ( <a href="#ReasonSection">ReasonSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ReasonSection">ReasonSection</a> [{ <a href="#ReasonSection">ReasonSection</a> }] ")" ) .
 <a href="#ReasonSectionMark" name="ReasonSectionMark">ReasonSectionMark</a> = "|-<:" | "reason" | "cause" | "reason:" | "cause:" .
 <a href="#AdditionalReasonSection" name="AdditionalReasonSection">AdditionalReasonSection</a>
-<a href="#AdditionalReasonSectionDeclExpr" name="AdditionalReasonSectionDeclExpr">AdditionalReasonSectionDeclExpr</a> = ( <a href="#AdditionalReasonSection" name="AdditionalReasonSection">AdditionalReasonSection</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalReasonSection" name="AdditionalReasonSection">AdditionalReasonSection</a> [{ <a href="#AdditionalReasonSection" name="AdditionalReasonSection">AdditionalReasonSection</a> }] ")" ) .
+<a href="#AdditionalReasonSectionDeclExpr" name="AdditionalReasonSectionDeclExpr">AdditionalReasonSectionDeclExpr</a> = ( <a href="#AdditionalReasonSection">AdditionalReasonSection</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#AdditionalReasonSection">AdditionalReasonSection</a> [{ <a href="#AdditionalReasonSection">AdditionalReasonSection</a> }] ")" ) .
 <a href="#AdditionalReasonSectionMark" name="AdditionalReasonSectionMark">AdditionalReasonSectionMark</a> = "[|-<:]" | "[reason]" | "[cause]" | "[reason:]" | "[cause:]" .
 </pre>
 
@@ -1294,7 +1294,7 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#HolderDesc" name="HolderDesc">HolderDesc</a> = <a href="#HolderDescMark">HolderDescMark</a> <a href="#TypeIdentifier">TypeIdentifier</a> .
-<a href="#HolderDescDeclExpr" name="HolderDescDeclExpr">HolderDescDeclExpr</a> = ( <a href="#HolderDesc" name="HolderDesc">HolderDesc</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#HolderDesc" name="HolderDesc">HolderDesc</a> [{ <a href="#HolderDesc" name="HolderDesc">HolderDesc</a> }] ")" ) .
+<a href="#HolderDescDeclExpr" name="HolderDescDeclExpr">HolderDescDeclExpr</a> = ( <a href="#HolderDesc">HolderDesc</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#HolderDesc">HolderDesc</a> [{ <a href="#HolderDesc">HolderDesc</a> }] ")" ) .
 <a href="#HolderDescMark" name="HolderDescMark">HolderDescMark</a> = "#:" | "of" | "of:" .
 </pre>
 
@@ -1306,7 +1306,7 @@ Channel section
 
 <pre class='ebnf-code'>
 <a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a> = <a href="#ModuleDescMark">ModuleDescMark</a> <a href="#ModuleIdentifier">ModuleIdentifier</a> .
-<a href="#ModuleDescDeclExpr" name="ModuleDescDeclExpr">ModuleDescDeclExpr</a> = ( <a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a> [{ <a href="#ModuleDesc" name="ModuleDesc">ModuleDesc</a> }] ")" ) .
+<a href="#ModuleDescDeclExpr" name="ModuleDescDeclExpr">ModuleDescDeclExpr</a> = ( <a href="#ModuleDesc">ModuleDesc</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ModuleDesc">ModuleDesc</a> [{ <a href="#ModuleDesc">ModuleDesc</a> }] ")" ) .
 <a href="#ModuleDescMark" name="ModuleDescMark">ModuleDescMark</a> = "$:" | "module" | "module:" .
 </pre>
 
@@ -1510,7 +1510,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#StatementsSet" name="StatementsSet">StatementsSet</a> = <a href="#Statement">Statement</a> [ { <a href="#Statement">Statement</a> } ] .
-<a href="#Statement" name="Statement">Statement</a> = <a href="#UsualScope">UsualScope</a> | <a href="#UsualScope">UsualScope</a> | <a href="#UsualScope">UsualScope</a> | <a href="#UsualScope">UsualScope</a> | <a href="#ClausedScopeForStatements">ClausedScopeForStatements</a> | <a href="#ExpressionStatement">ExpressionStatement</a> | <a href="#ConditionalStatement">ConditionalStatement</a> | <a href="#SwitchStatement">SwitchStatement</a> | <a href="#TryCatchStatement">TryCatchStatement</a> | <a href="#ForStatement">ForStatement</a> | <a href="#ForeachStatement">ForeachStatement</a> | <a href="#WhileStatement">WhileStatement</a> | <a href="#DoWhileStatement">DoWhileStatement</a> | <a href="#BreakStatement">BreakStatement</a> | <a href="#ContinueStatement">ContinueStatement</a> | <a href="#ReturnStatement">ReturnStatement</a> | <a href="#YieldReturnStatement">YieldReturnStatement</a> | <a href="#YieldBreakStatement">YieldBreakStatement</a> | <a href="#IPCStatement">IPCStatement</a> .
+<a href="#Statement" name="Statement">Statement</a> = <a href="#UsualScope">UsualScope</a> | <a href="#ClausedScopeForStatements">ClausedScopeForStatements</a> | <a href="#ExpressionStatement">ExpressionStatement</a> | <a href="#ConditionalStatement">ConditionalStatement</a> | <a href="#SwitchStatement">SwitchStatement</a> | <a href="#TryCatchStatement">TryCatchStatement</a> | <a href="#ForStatement">ForStatement</a> | <a href="#ForeachStatement">ForeachStatement</a> | <a href="#WhileStatement">WhileStatement</a> | <a href="#DoWhileStatement">DoWhileStatement</a> | <a href="#BreakStatement">BreakStatement</a> | <a href="#ContinueStatement">ContinueStatement</a> | <a href="#ReturnStatement">ReturnStatement</a> | <a href="#YieldReturnStatement">YieldReturnStatement</a> | <a href="#YieldBreakStatement">YieldBreakStatement</a> | <a href="#IPCStatement">IPCStatement</a> .
 </pre>
 
 <h3 class='center-h' data-href="Scopes_chapter">
@@ -1521,12 +1521,12 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#UsualScope" name="UsualScope">UsualScope</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "{" [ <a href="#StatementsSet">StatementsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
-<a href="#UsualScopeDeclExpr" name="UsualScopeDeclExpr">UsualScopeDeclExpr</a> = ( <a href="#UsualScope" name="UsualScope">UsualScope</a> ) | ( [ <a href="#AnnotationsList" name="AnnotationsList">AnnotationsList</a> ] "(" <a href="#UsualScope" name="UsualScope">UsualScope</a> [{ <a href="#UsualScope" name="UsualScope">UsualScope</a> }] ")" ) .
+<a href="#UsualScopeDeclExpr" name="UsualScopeDeclExpr">UsualScopeDeclExpr</a> = ( <a href="#UsualScope">UsualScope</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#UsualScope">UsualScope</a> [{ <a href="#UsualScope">UsualScope</a> }] ")" ) .
 <a href="#ClausedScopeClause" name="ClausedScopeClause">ClausedScopeClause</a>
 <a href="#ClausedScopeHeader" name="ClausedScopeHeader">ClausedScopeHeader</a> = "width" "{" <a href="#ClausedScopeClause">ClausedScopeClause</a> "}" .
 <a href="#ClausedScopeForStatements" name="ClausedScopeForStatements">ClausedScopeForStatements</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClausedScopeHeader">ClausedScopeHeader</a> "def" "{" [ <a href="#StatementsSet">StatementsSet</a> ] "}" [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ClausedScopeForStatementsDeclExpr" name="ClausedScopeForStatementsDeclExpr">ClausedScopeForStatementsDeclExpr</a> = ( <a href="#ClausedScopeForStatements">ClausedScopeForStatements</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClausedScopeForStatements">ClausedScopeForStatements</a> [{ <a href="#ClausedScopeForStatements">ClausedScopeForStatements</a> }] ")" ) .
-</pre><!--<TEBNFC name='NonExprAsExprVal' param1 = '' />-->
+</pre>
 
 <h3 class='center-h' data-href="ExpressionStatement_chapter">
     Expression statement
@@ -1536,7 +1536,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#ExpressionStatement" name="ExpressionStatement">ExpressionStatement</a>
-<a href="#ExpressionStatementExpr" name="ExpressionStatementExpr">ExpressionStatementExpr</a> = <a href="#ExpressionStatement">ExpressionStatement</a> .
+<a href="#ExpressionStatementExpr" name="ExpressionStatementExpr">ExpressionStatementExpr</a> = ( <a href="#ExpressionStatement">ExpressionStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ExpressionStatement">ExpressionStatement</a> [{ <a href="#ExpressionStatement">ExpressionStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="ConditionalStatement_chapter">
@@ -1547,7 +1547,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#ConditionalStatement" name="ConditionalStatement">ConditionalStatement</a>
-<a href="#ConditionalStatementExpr" name="ConditionalStatementExpr">ConditionalStatementExpr</a> = <a href="#ConditionalStatement">ConditionalStatement</a> .
+<a href="#ConditionalStatementExpr" name="ConditionalStatementExpr">ConditionalStatementExpr</a> = ( <a href="#ConditionalStatement">ConditionalStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ConditionalStatement">ConditionalStatement</a> [{ <a href="#ConditionalStatement">ConditionalStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="SwitchStatement_chapter">
@@ -1558,7 +1558,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#SwitchStatement" name="SwitchStatement">SwitchStatement</a>
-<a href="#SwitchStatementExpr" name="SwitchStatementExpr">SwitchStatementExpr</a> = <a href="#SwitchStatement">SwitchStatement</a> .
+<a href="#SwitchStatementExpr" name="SwitchStatementExpr">SwitchStatementExpr</a> = ( <a href="#SwitchStatement">SwitchStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#SwitchStatement">SwitchStatement</a> [{ <a href="#SwitchStatement">SwitchStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="TryCatchStatement_chapter">
@@ -1569,7 +1569,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#TryCatchStatement" name="TryCatchStatement">TryCatchStatement</a>
-<a href="#TryCatchStatementExpr" name="TryCatchStatementExpr">TryCatchStatementExpr</a> = <a href="#TryCatchStatement">TryCatchStatement</a> .
+<a href="#TryCatchStatementExpr" name="TryCatchStatementExpr">TryCatchStatementExpr</a> = ( <a href="#TryCatchStatement">TryCatchStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#TryCatchStatement">TryCatchStatement</a> [{ <a href="#TryCatchStatement">TryCatchStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="ForStatement_chapter">
@@ -1580,7 +1580,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#ForStatement" name="ForStatement">ForStatement</a>
-<a href="#ForStatementExpr" name="ForStatementExpr">ForStatementExpr</a> = <a href="#ForStatement">ForStatement</a> .
+<a href="#ForStatementExpr" name="ForStatementExpr">ForStatementExpr</a> = ( <a href="#ForStatement">ForStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ForStatement">ForStatement</a> [{ <a href="#ForStatement">ForStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="ForeachStatement_chapter">
@@ -1591,7 +1591,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#ForeachStatement" name="ForeachStatement">ForeachStatement</a>
-<a href="#ForeachStatementExpr" name="ForeachStatementExpr">ForeachStatementExpr</a> = <a href="#ForeachStatement">ForeachStatement</a> .
+<a href="#ForeachStatementExpr" name="ForeachStatementExpr">ForeachStatementExpr</a> = ( <a href="#ForeachStatement">ForeachStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ForeachStatement">ForeachStatement</a> [{ <a href="#ForeachStatement">ForeachStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="WhileStatement_chapter">
@@ -1602,7 +1602,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#WhileStatement" name="WhileStatement">WhileStatement</a>
-<a href="#WhileStatementExpr" name="WhileStatementExpr">WhileStatementExpr</a> = <a href="#WhileStatement">WhileStatement</a> .
+<a href="#WhileStatementExpr" name="WhileStatementExpr">WhileStatementExpr</a> = ( <a href="#WhileStatement">WhileStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#WhileStatement">WhileStatement</a> [{ <a href="#WhileStatement">WhileStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="DoWhileStatement_chapter">
@@ -1613,7 +1613,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#DoWhileStatement" name="DoWhileStatement">DoWhileStatement</a>
-<a href="#DoWhileStatementExpr" name="DoWhileStatementExpr">DoWhileStatementExpr</a> = <a href="#DoWhileStatement">DoWhileStatement</a> .
+<a href="#DoWhileStatementExpr" name="DoWhileStatementExpr">DoWhileStatementExpr</a> = ( <a href="#DoWhileStatement">DoWhileStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#DoWhileStatement">DoWhileStatement</a> [{ <a href="#DoWhileStatement">DoWhileStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="BreakStatement_chapter">
@@ -1624,7 +1624,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#BreakStatement" name="BreakStatement">BreakStatement</a>
-<a href="#BreakStatementExpr" name="BreakStatementExpr">BreakStatementExpr</a> = <a href="#BreakStatement">BreakStatement</a> .
+<a href="#BreakStatementExpr" name="BreakStatementExpr">BreakStatementExpr</a> = ( <a href="#BreakStatement">BreakStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#BreakStatement">BreakStatement</a> [{ <a href="#BreakStatement">BreakStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="ContinueStatement_chapter">
@@ -1635,7 +1635,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#ContinueStatement" name="ContinueStatement">ContinueStatement</a>
-<a href="#ContinueStatementExpr" name="ContinueStatementExpr">ContinueStatementExpr</a> = <a href="#ContinueStatement">ContinueStatement</a> .
+<a href="#ContinueStatementExpr" name="ContinueStatementExpr">ContinueStatementExpr</a> = ( <a href="#ContinueStatement">ContinueStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ContinueStatement">ContinueStatement</a> [{ <a href="#ContinueStatement">ContinueStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="ReturnStatement_chapter">
@@ -1646,7 +1646,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#ReturnStatement" name="ReturnStatement">ReturnStatement</a>
-<a href="#ReturnStatementExpr" name="ReturnStatementExpr">ReturnStatementExpr</a> = <a href="#ReturnStatement">ReturnStatement</a> .
+<a href="#ReturnStatementExpr" name="ReturnStatementExpr">ReturnStatementExpr</a> = ( <a href="#ReturnStatement">ReturnStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ReturnStatement">ReturnStatement</a> [{ <a href="#ReturnStatement">ReturnStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="YieldReturnStatement_chapter">
@@ -1657,7 +1657,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#YieldReturnStatement" name="YieldReturnStatement">YieldReturnStatement</a>
-<a href="#YieldReturnStatementExpr" name="YieldReturnStatementExpr">YieldReturnStatementExpr</a> = <a href="#YieldReturnStatement">YieldReturnStatement</a> .
+<a href="#YieldReturnStatementExpr" name="YieldReturnStatementExpr">YieldReturnStatementExpr</a> = ( <a href="#YieldReturnStatement">YieldReturnStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#YieldReturnStatement">YieldReturnStatement</a> [{ <a href="#YieldReturnStatement">YieldReturnStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="YieldBreakStatement_chapter">
@@ -1668,7 +1668,7 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <pre class='ebnf-code'>
 <a href="#YieldBreakStatement" name="YieldBreakStatement">YieldBreakStatement</a>
-<a href="#YieldBreakStatementExpr" name="YieldBreakStatementExpr">YieldBreakStatementExpr</a> = <a href="#YieldBreakStatement">YieldBreakStatement</a> .
+<a href="#YieldBreakStatementExpr" name="YieldBreakStatementExpr">YieldBreakStatementExpr</a> = ( <a href="#YieldBreakStatement">YieldBreakStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#YieldBreakStatement">YieldBreakStatement</a> [{ <a href="#YieldBreakStatement">YieldBreakStatement</a> }] ")" ) .
 </pre>
 
 <h3 class='center-h' data-href="IPCStatement_chapter">
@@ -1679,7 +1679,7 @@ Inter-process communication statement
 
 <pre class='ebnf-code'>
 <a href="#IPCStatement" name="IPCStatement">IPCStatement</a>
-<a href="#IPCStatementExpr" name="IPCStatementExpr">IPCStatementExpr</a> = <a href="#IPCStatement">IPCStatement</a> .
+<a href="#IPCStatementExpr" name="IPCStatementExpr">IPCStatementExpr</a> = ( <a href="#IPCStatement">IPCStatement</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#IPCStatement">IPCStatement</a> [{ <a href="#IPCStatement">IPCStatement</a> }] ")" ) .
 </pre>
 
 <h2 class='center-h' data-href="Source_code_file_chapter">
