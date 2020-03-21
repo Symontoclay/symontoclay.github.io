@@ -63,7 +63,15 @@ hr{
     background-color: #f8f9fa;
 }
 
-.keyword{
+.ebnf-code {
+    background-color: #f8f9fa;
+}
+
+.templates{
+	display: none;
+}
+
+.keyword {
 	font-weight: bold;
 }
 
