@@ -11,7 +11,7 @@ SymOntoClay language specification
 <LinkToContent/>
 
 <p>
-The syntax is specified using <ico target="Wikipedia"></ico><a href='https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form'>Extended Backus-Naur Form (EBNF)</a>.
+The syntax is specified using <ico target="Wikipedia"/><a href='https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form'>Extended Backus-Naur Form (EBNF)</a>.
 </p>
 
 <h2 class='center-h' data-href="Source_code_representation_chapter">
@@ -21,11 +21,11 @@ The syntax is specified using <ico target="Wikipedia"></ico><a href='https://en.
 <LinkToContent/>
 
 <p>
-Source ebnf-code is Unicode text encoded in <ico target="Wikipedia"></ico><a href='https://en.wikipedia.org/wiki/UTF-8'>UTF-8</a>.
+Source ebnf-code is Unicode text encoded in <ico target="Wikipedia"/><a href='https://en.wikipedia.org/wiki/UTF-8'>UTF-8</a>.
 </p>
 
 <p>
-But I will prefer symbols which are defined in <ico target="Wikipedia"></ico><a href='https://en.wikipedia.org/wiki/ASCII'>ASCII</a>.
+But I will prefer symbols which are defined in <ico target="Wikipedia"/><a href='https://en.wikipedia.org/wiki/ASCII'>ASCII</a>.
 Except some special symbols which are defined in Unicode only.
 </p>
 
@@ -1341,6 +1341,118 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='ArithmeticOpExpr' groups="Expr"/> = <GEBNFC name='ArithmeticOpExpr' kind='or'/> .
+</pre>
+
+<h4 class='center-h' data-href="AddOp_chapter">
+    Operator "+"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='AddOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "+" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="Sub_chapter">
+    Operator "-"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='SubOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "-" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="MulOp_chapter">
+    Operator "*"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='MulOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "*" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="DivOp_chapter">
+    Operator "/"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='DivOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "/" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="EucDivOp_chapter">
+    Operator "%"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='EucDivOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "%" <EBNFC name='Expr'/> .
+</pre>
+
+<!--https://en.wikipedia.org/wiki/Euclidean_division-->
+
+<h4 class='center-h' data-href="PowOp_chapter">
+    Operator "**"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='PowOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "**" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="RootOp_chapter">
+    Operator "//"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='RootOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "//" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="AddPercentOp_chapter">
+    Operator "+%"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='AddPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="SubPercentOp_chapter">
+    Operator "-%"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='SubPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="MulPercentOp_chapter">
+    Operator "*%"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='MulPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "" <EBNFC name='Expr'/> .
+</pre>
+
+<h4 class='center-h' data-href="DivPercentOp_chapter">
+    Operator "/%"
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='DivPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "" <EBNFC name='Expr'/> .
 </pre>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
