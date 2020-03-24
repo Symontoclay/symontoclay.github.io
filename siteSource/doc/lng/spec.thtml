@@ -1553,18 +1553,17 @@ Also I am going to create inline switch operator.
 </pre>
 
 <h3 class='center-h' data-href="CoalesceOp_chapter">
-    Coalesce operators
+    Coalesce operator "??"
 </h3>
 
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='CoalesceOpExpr' groups="Expr"/> = <GEBNFC name='CoalesceOpExpr' kind='or'/> .
+<EBNFCDECL name='CoalesceOpExpr' groups="Expr"/> = <EBNFC name='Expr'/> "??" <EBNFC name='Expr'/> .
 </pre>
 
-
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
-It will be like C# operator "??".
+It will be like C# operator <a href='https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/operators/null-coalescing-operator'>"??"</a>.
 </pre>
 
 <h3 class='center-h' data-href="ReflectionOp_chapter">

@@ -1,5 +1,5 @@
 ﻿{
-    breadcrumbTitle : "SymOntoClay language specification",
+    breadcrumbTitle : "Language specification",
 	isReady: true,
 	description : "SymOntoClay language specification",
 	pluginsPipeline: [
