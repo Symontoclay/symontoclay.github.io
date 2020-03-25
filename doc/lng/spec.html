@@ -1389,7 +1389,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#AddOpExpr" name="AddOpExpr">AddOpExpr</a> = <a href="#Expr">Expr</a> "+" <a href="#Expr">Expr</a> .
+<a href="#AddOpExpr" name="AddOpExpr">AddOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "+" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="Sub_chapter">
@@ -1399,7 +1399,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#SubOpExpr" name="SubOpExpr">SubOpExpr</a> = <a href="#Expr">Expr</a> "-" <a href="#Expr">Expr</a> .
+<a href="#SubOpExpr" name="SubOpExpr">SubOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "-" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="MulOp_chapter">
@@ -1409,7 +1409,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#MulOpExpr" name="MulOpExpr">MulOpExpr</a> = <a href="#Expr">Expr</a> "*" <a href="#Expr">Expr</a> .
+<a href="#MulOpExpr" name="MulOpExpr">MulOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "*" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="DivOp_chapter">
@@ -1419,7 +1419,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#DivOpExpr" name="DivOpExpr">DivOpExpr</a> = <a href="#Expr">Expr</a> "/" <a href="#Expr">Expr</a> .
+<a href="#DivOpExpr" name="DivOpExpr">DivOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "/" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="EucDivOp_chapter">
@@ -1429,7 +1429,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#EucDivOpExpr" name="EucDivOpExpr">EucDivOpExpr</a> = <a href="#Expr">Expr</a> "%" <a href="#Expr">Expr</a> .
+<a href="#EucDivOpExpr" name="EucDivOpExpr">EucDivOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "%" <a href="#Expr">Expr</a> .
 </pre>
 
 <!--https://en.wikipedia.org/wiki/Euclidean_division-->
@@ -1441,7 +1441,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#PowOpExpr" name="PowOpExpr">PowOpExpr</a> = <a href="#Expr">Expr</a> "**" <a href="#Expr">Expr</a> .
+<a href="#PowOpExpr" name="PowOpExpr">PowOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "**" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="RootOp_chapter">
@@ -1451,7 +1451,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#RootOpExpr" name="RootOpExpr">RootOpExpr</a> = <a href="#Expr">Expr</a> "//" <a href="#Expr">Expr</a> .
+<a href="#RootOpExpr" name="RootOpExpr">RootOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "//" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="AddPercentOp_chapter">
@@ -1461,7 +1461,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#AddPercentOpExpr" name="AddPercentOpExpr">AddPercentOpExpr</a> = <a href="#Expr">Expr</a> "+%" <a href="#Expr">Expr</a> .
+<a href="#AddPercentOpExpr" name="AddPercentOpExpr">AddPercentOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "+%" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="SubPercentOp_chapter">
@@ -1471,7 +1471,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#SubPercentOpExpr" name="SubPercentOpExpr">SubPercentOpExpr</a> = <a href="#Expr">Expr</a> "-%" <a href="#Expr">Expr</a> .
+<a href="#SubPercentOpExpr" name="SubPercentOpExpr">SubPercentOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "-%" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="MulPercentOp_chapter">
@@ -1481,7 +1481,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#MulPercentOpExpr" name="MulPercentOpExpr">MulPercentOpExpr</a> = <a href="#Expr">Expr</a> "*%" <a href="#Expr">Expr</a> .
+<a href="#MulPercentOpExpr" name="MulPercentOpExpr">MulPercentOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "*%" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="DivPercentOp_chapter">
@@ -1491,7 +1491,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#DivPercentOpExpr" name="DivPercentOpExpr">DivPercentOpExpr</a> = <a href="#Expr">Expr</a> "/%" <a href="#Expr">Expr</a> .
+<a href="#DivPercentOpExpr" name="DivPercentOpExpr">DivPercentOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "/%" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="IncrementOp_chapter">
@@ -1501,7 +1501,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#IncrementOpExpr" name="IncrementOpExpr">IncrementOpExpr</a> = <a href="#Expr">Expr</a> "++" <a href="#Expr">Expr</a> .
+<a href="#IncrementOpExpr" name="IncrementOpExpr">IncrementOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "++" <a href="#Expr">Expr</a> .
 </pre>
 
 <h4 class='center-h' data-href="DecrementOp_chapter">
@@ -1511,7 +1511,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#DecrementOpExpr" name="DecrementOpExpr">DecrementOpExpr</a> = <a href="#Expr">Expr</a> "--" <a href="#Expr">Expr</a> .
+<a href="#DecrementOpExpr" name="DecrementOpExpr">DecrementOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "--" <a href="#Expr">Expr</a> .
 </pre>
 
 <h3 class='center-h' data-href="RelationalOp_chapter">
@@ -1598,7 +1598,7 @@ Also I am going to create inline switch operator.
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <pre class='ebnf-code'>
-<a href="#CoalesceOpExpr" name="CoalesceOpExpr">CoalesceOpExpr</a> = <a href="#Expr">Expr</a> "??" <a href="#Expr">Expr</a> .
+<a href="#CoalesceOpExpr" name="CoalesceOpExpr">CoalesceOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "??" <a href="#Expr">Expr</a> .
 </pre>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1843,6 +1843,8 @@ Inter-process communication statement
 	
 	
 	
+	
+	
 </div>
 
 <!--
@@ -1881,7 +1883,7 @@ Inter-process communication statement
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 24 March 2020</br>
+This page was last modified on 25 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>

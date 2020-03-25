@@ -1350,7 +1350,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AddOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "+" <EBNFC name='Expr'/> .
+<EBNFCDECL name='AddOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '+'/> .
 </pre>
 
 <h4 class='center-h' data-href="Sub_chapter">
@@ -1360,7 +1360,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='SubOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "-" <EBNFC name='Expr'/> .
+<EBNFCDECL name='SubOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '-'/> .
 </pre>
 
 <h4 class='center-h' data-href="MulOp_chapter">
@@ -1370,7 +1370,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='MulOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "*" <EBNFC name='Expr'/> .
+<EBNFCDECL name='MulOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '*'/> .
 </pre>
 
 <h4 class='center-h' data-href="DivOp_chapter">
@@ -1380,7 +1380,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='DivOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "/" <EBNFC name='Expr'/> .
+<EBNFCDECL name='DivOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '/'/> .
 </pre>
 
 <h4 class='center-h' data-href="EucDivOp_chapter">
@@ -1390,7 +1390,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='EucDivOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "%" <EBNFC name='Expr'/> .
+<EBNFCDECL name='EucDivOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '%'/> .
 </pre>
 
 <!--https://en.wikipedia.org/wiki/Euclidean_division-->
@@ -1402,7 +1402,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='PowOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "**" <EBNFC name='Expr'/> .
+<EBNFCDECL name='PowOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '**'/> .
 </pre>
 
 <h4 class='center-h' data-href="RootOp_chapter">
@@ -1412,7 +1412,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='RootOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "//" <EBNFC name='Expr'/> .
+<EBNFCDECL name='RootOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '//'/> .
 </pre>
 
 <h4 class='center-h' data-href="AddPercentOp_chapter">
@@ -1422,7 +1422,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AddPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "+%" <EBNFC name='Expr'/> .
+<EBNFCDECL name='AddPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '+%'/> .
 </pre>
 
 <h4 class='center-h' data-href="SubPercentOp_chapter">
@@ -1432,7 +1432,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='SubPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "-%" <EBNFC name='Expr'/> .
+<EBNFCDECL name='SubPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '-%'/> .
 </pre>
 
 <h4 class='center-h' data-href="MulPercentOp_chapter">
@@ -1442,7 +1442,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='MulPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "*%" <EBNFC name='Expr'/> .
+<EBNFCDECL name='MulPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '*%'/> .
 </pre>
 
 <h4 class='center-h' data-href="DivPercentOp_chapter">
@@ -1452,7 +1452,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='DivPercentOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "/%" <EBNFC name='Expr'/> .
+<EBNFCDECL name='DivPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '/%'/> .
 </pre>
 
 <h4 class='center-h' data-href="IncrementOp_chapter">
@@ -1462,7 +1462,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='IncrementOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "++" <EBNFC name='Expr'/> .
+<EBNFCDECL name='IncrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '++'/> .
 </pre>
 
 <h4 class='center-h' data-href="DecrementOp_chapter">
@@ -1472,7 +1472,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='DecrementOpExpr' groups='ArithmeticOpExpr'/> = <EBNFC name='Expr'/> "--" <EBNFC name='Expr'/> .
+<EBNFCDECL name='DecrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '--'/> .
 </pre>
 
 <h3 class='center-h' data-href="RelationalOp_chapter">
@@ -1559,7 +1559,7 @@ Also I am going to create inline switch operator.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='CoalesceOpExpr' groups="Expr"/> = <EBNFC name='Expr'/> "??" <EBNFC name='Expr'/> .
+<EBNFCDECL name='CoalesceOpExpr' groups="Expr"/> = <TEBNFC name='BinaryOp' param = '??'/> .
 </pre>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1797,7 +1797,7 @@ Inter-process communication statement
 </p>
 
 <div class='templates'>
-    <TEBNFCDECL name="NonExprAsExprVal" param='_ExprType'>
+    <TEBNFCDECL name='NonExprAsExprVal' param='_ExprType'>
         ( <EBNFC name='_ExprType'/> ) | ( [ <EBNFC name='AnnotationsList'/> ] "(" <EBNFC name='_ExprType'/> [{ <EBNFC name='_ExprType'/> }] ")" )
     </TEBNFCDECL>
 	
@@ -1811,6 +1811,10 @@ Inter-process communication statement
 	
 	<TEBNFCDECL name="DeclSet" param='_ExprType'>
 	    <EBNFC name='_ExprType'/> [{ <EBNFC name='_ExprType'/> }]
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="BinaryOp" param='_OpLiteral'>
+	    <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "_OpLiteral" <EBNFC name='Expr'/>
 	</TEBNFCDECL>
 </div>
 
