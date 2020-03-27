@@ -382,9 +382,11 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <a href="#ClassName" name="ClassName">ClassName</a> =  <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
 <a href="#ClassIdentifier" name="ClassIdentifier">ClassIdentifier</a> = <a href="#ClassName">ClassName</a> .
 <a href="#ClassDeclsSet" name="ClassDeclsSet">ClassDeclsSet</a> = <a href="#ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl">ClassDecl</a> }] .
-<a href="#ClassDecl" name="ClassDecl">ClassDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "class" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ClassName">ClassName</a> [ "is" <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
+<a href="#ClassDecl" name="ClassDecl">ClassDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "class" <a href="#GenericParametersDecl">GenericParametersDecl</a> <a href="#ClassName">ClassName</a> <br>
+             [ "is" ( <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [{ "," <a href="#InheritanceDeclItem">InheritanceDeclItem</a> }] ) | ( "{(" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [ ";" { <a href="#InheritanceDeclItem">InheritanceDeclItem</a> ";" } ] ")}" ) ] </br>
+			 [ "{" <a href="#ClassContentFullSet">ClassContentFullSet</a> "}" ] [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ClassDeclExpr" name="ClassDeclExpr">ClassDeclExpr</a> = ( <a href="#ClassDecl">ClassDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClassDecl">ClassDecl</a> [{ <a href="#ClassDecl">ClassDecl</a> }] ")" ) .
-<a href="#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = ( <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [{ "," <a href="#InheritanceDeclItem">InheritanceDeclItem</a> }] ) | ( "{(" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [ { ";" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> ";" } ] ")}" ) .
+<a href="#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = ( <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [{ "," <a href="#InheritanceDeclItem">InheritanceDeclItem</a> }] ) | ( "{(" <a href="#InheritanceDeclItem">InheritanceDeclItem</a> [ ";" { <a href="#InheritanceDeclItem">InheritanceDeclItem</a> ";" } ] ")}" ) .
 <a href="#InheritanceDeclItem" name="InheritanceDeclItem">InheritanceDeclItem</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#ClassName">ClassName</a> [ "[" <a href="#BooleanTypeExpr">BooleanTypeExpr</a> "]" .
 <a href="#GenericParametersDecl" name="GenericParametersDecl">GenericParametersDecl</a> = "(<" <a href="#GenericParameter">GenericParameter</a> [{ "," <a href="#GenericParameter">GenericParameter</a> }] ">)" .
 <a href="#GenericParameter" name="GenericParameter">GenericParameter</a>
@@ -577,7 +579,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <a href="#ModuleDeclsSet" name="ModuleDeclsSet">ModuleDeclsSet</a> = <a href="#ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl">ModuleDecl</a> }] .
 <a href="#ModuleIdentifier" name="ModuleIdentifier">ModuleIdentifier</a> = <a href="#identifier">identifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
-<a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "module" <a href="#ModuleIdentifier">ModuleIdentifier</a> [ "{" [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] [ <a href="#ModuleContent">ModuleContent</a> ] [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] "}" ] 
+<a href="#ModuleDecl" name="ModuleDecl">ModuleDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "module" <a href="#ModuleIdentifier">ModuleIdentifier</a> [ "{" [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] [ <a href="#ModuleContent">ModuleContent</a> ] [ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ] "}" ] 
            [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#ModuleDeclExpr" name="ModuleDeclExpr">ModuleDeclExpr</a> = ( <a href="#ModuleDecl">ModuleDecl</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ModuleDecl">ModuleDecl</a> [{ <a href="#ModuleDecl">ModuleDecl</a> }] ")" ) .
 <a href="#ClausedScopeForModulesSetExpr" name="ClausedScopeForModulesSetExpr">ClausedScopeForModulesSetExpr</a> = ( <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> [{ <a href="#ClausedScopeForModulesSet">ClausedScopeForModulesSet</a> }] ")" ) .
@@ -2113,6 +2115,8 @@ Synchronization statement
 	
 	
 	
+	
+	
 </div>
 
 <!--
@@ -2151,7 +2155,7 @@ Synchronization statement
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 26 March 2020</br>
+This page was last modified on 27 March 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>

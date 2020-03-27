@@ -343,9 +343,11 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClassName'/> =  <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ClassIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ClassDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> </br>
+             <TEBNFC name='InheritanceDecl'/> </br>
+			 [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ClassDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClassDecl' /> .
-<EBNFCDECL name='InheritanceDecl'/> = ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ { ";" <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
+<EBNFCDECL name='InheritanceDecl'/> = ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
 <EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClassName'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" .
 <EBNFCDECL name='GenericParametersDecl'/> = "(<" <EBNFC name='GenericParameter'/> [{ "," <EBNFC name='GenericParameter'/> }] ">)" .
 <EBNFCDECL name='GenericParameter'/>
@@ -538,7 +540,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <EBNFCDECL name='ModuleDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ModuleDecl'/> .
 <EBNFCDECL name='ModuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='ModuleDecl'/> [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> [ "{" [ <EBNFC name='ClausedScopeForModulesSet'/> ] [ <EBNFC name='ModuleContent'/> ] [ <EBNFC name='ClausedScopeForModulesSet'/> ] "}" ] 
+<EBNFCDECL name='ModuleDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> [ "{" [ <EBNFC name='ClausedScopeForModulesSet'/> ] [ <EBNFC name='ModuleContent'/> ] [ <EBNFC name='ClausedScopeForModulesSet'/> ] "}" ] 
            [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ModuleDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ModuleDecl'/> .
 <EBNFCDECL name='ClausedScopeForModulesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForModulesSet'/> .
@@ -2089,6 +2091,10 @@ Synchronization statement
 	
 	<TEBNFCDECL name="BinaryOp_2" param='_OpLiteral'>
 	    <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] _OpLiteral <EBNFC name='Expr'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="InheritanceDecl">
+	    [ "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) ]
 	</TEBNFCDECL>
 </div>
 
