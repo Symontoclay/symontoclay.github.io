@@ -9,10 +9,6 @@
 		    {
 			    "href" : "/doc/index.html",
 				"label" : "Documentation"
-			},
-		    {
-			    "href" : "https://github.com/Symontoclay/SymOntoClay",
-				"label" : "Source code"
 			}
 		]
     }

@@ -343,10 +343,10 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClassName'/> =  <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ClassIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ClassDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ "is" <EBNFC name='InheritanceDecl'/> ]
+<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ <EBNFC name='InheritanceDecl'/> ]
 			 [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ClassDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClassDecl' /> .
-<EBNFCDECL name='InheritanceDecl'/> = ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
+<EBNFCDECL name='InheritanceDecl'/> = "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
 <EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClassName'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" .
 <EBNFCDECL name='GenericParametersDecl'/> = "(<" <EBNFC name='GenericParameter'/> [{ "," <EBNFC name='GenericParameter'/> }] ">)" .
 <EBNFCDECL name='GenericParameter'/>
@@ -407,6 +407,18 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 PropertyPower - by default 1.
 PropertyHistoryPower - by default 0.
 </pre>      
+
+<h4 class='center-h' data-href="Member_variable_chapter">
+Member-variable
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='VarMemberDeclSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'VarMemberDecl'/> .
+<EBNFCDECL name='VarMemberDecl'/>
+<EBNFCDECL name='VarMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'VarMemberDecl'/> .
+</pre>
 	  
 <h4 class='center-h' data-href="Blocks_of_facts_chapter">
     Blocks of facts
@@ -440,6 +452,18 @@ PropertyHistoryPower - by default 0.
 <EBNFCDECL name='ExceptionHandlersSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'ExceptionHandler'/> .
 <EBNFCDECL name='ExceptionHandler'/>
 <EBNFCDECL name='ExceptionHandlerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExceptionHandler'/> .
+</pre>
+
+<h4 class='center-h' data-href="Member-event_chapter">
+    Member-event
+</h4>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='EventMemberDeclSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'EventMemberDecl'/> .
+<EBNFCDECL name='EventMemberDecl'/>
+<EBNFCDECL name='EventMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventMemberDecl'/> .
 </pre>
 
 <h3 class='center-h' data-href="Namespaces_chapter">
@@ -563,7 +587,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <EBNFCDECL name='ApplicationDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ApplicationDecl'/> .
 <EBNFCDECL name='ApplicationIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
-<EBNFCDECL name='ApplicationDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "app" <EBNFC name='ApplicationIdentifier'/> [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForApplicationsSet'/> ] [ <EBNFC name='ApplicationContent'/> ] [ <EBNFC name='ClausedScopeForApplicationsSet'/> ] "}" ] 
+<EBNFCDECL name='ApplicationDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "app" <EBNFC name='ApplicationIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForApplicationsSet'/> ] [ <EBNFC name='ApplicationContent'/> ] [ <EBNFC name='ClausedScopeForApplicationsSet'/> ] "}" ] 
            [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ApplicationDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ApplicationDecl'/> .
 <EBNFCDECL name='ClausedScopeForApplicationsSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForApplicationsSet'/> .
@@ -593,7 +617,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <EBNFCDECL name='StateDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
 <EBNFCDECL name='StateIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
-<EBNFCDECL name='StateDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "state" <EBNFC name='GenericParametersDecl'/> <EBNFC name='StateIdentifier'/> [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForStatesSet'/> ] [ <EBNFC name='StateContent'/> ] [ <EBNFC name='ClausedScopeForStatesSet'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='StateDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "state" <EBNFC name='GenericParametersDecl'/> <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForStatesSet'/> ] [ <EBNFC name='StateContent'/> ] [ <EBNFC name='ClausedScopeForStatesSet'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='StateDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'StateDecl'/> .
 <EBNFCDECL name='Expr' groups="ClausedScopeForStatesSetExpr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForStatesSet'/> .
 <EBNFCDECL name='ClausedScopeForStatesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForState'/> .
@@ -610,7 +634,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <EBNFCDECL name='ProcessDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ProcessDecl'/> .
 <EBNFCDECL name='ProcessIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
-<EBNFCDECL name='ProcessDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "process" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ProcessIdentifier'/> [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForProcessesSet'/> ] [ <EBNFC name='ProcessContent'/> ] [ <EBNFC name='ClausedScopeForProcessesSet'/> ] "}" ] 
+<EBNFCDECL name='ProcessDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "process" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ProcessIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForProcessesSet'/> ] [ <EBNFC name='ProcessContent'/> ] [ <EBNFC name='ClausedScopeForProcessesSet'/> ] "}" ] 
          [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ProcessDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ProcessDecl'/> .
 <EBNFCDECL name='ClausedScopeForProcessesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForProcessesSet'/> .
@@ -628,7 +652,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <EBNFCDECL name='SupervisorDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'SupervisorDecl'/> .
 <EBNFCDECL name='SupervisorIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='SupervisorDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "supervisor" <EBNFC name='SupervisorIdentifier'/> [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] [ <EBNFC name='SupervisorContent'/> ] [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] "}" ] 
+<EBNFCDECL name='SupervisorDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "supervisor" <EBNFC name='SupervisorIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] [ <EBNFC name='SupervisorContent'/> ] [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] "}" ] 
            [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='SupervisorDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SupervisorDecl'/> .
 <EBNFCDECL name='ClausedScopeForSupervisorsSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForSupervisorsSet'/> .
@@ -648,7 +672,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FunctionName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FunctionSignature'/> = "(" <EBNFC name='FunctionParamsDeclaration'/> ")" [ "(|" <EBNFC name='FunctionAdditionalParamsSetDeclaration'/> "|)" ] ":" <EBNFC name='FunctionReturnDeclaration'/> .
 <EBNFCDECL name='FunctionIdentifier' groups="TypeIdentifier"/> = <EBNFC name='FunctionSignature'/> | <EBNFC name='FunctionName'/> .
-<EBNFCDECL name='FunctionDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "func" <EBNFC name='GenericParametersDecl'/> <EBNFC name='FunctionName'/> <EBNFC name='FunctionSignature'/> [ "is" <EBNFC name='InheritanceDecl'/> ]
+<EBNFCDECL name='FunctionDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "func" <EBNFC name='GenericParametersDecl'/> <EBNFC name='FunctionName'/> <EBNFC name='FunctionSignature'/> [ <EBNFC name='InheritanceDecl'/> ]
            [ "{" <EBNFC name='ClassContentFullSet'/> "}" ]
 		   "=>" "{" [ <EBNFC name='FunctionBody'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='FunctionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FunctionDecl' /> .
@@ -722,6 +746,18 @@ $$:{ ClassName } - the fact belong to ClassName
 {: #5f145455-246f-4006-840d-9a0d009a44fe $:{#simple_module} {?Z(?X,?Y)} :}
 </pre>
 
+<h3 class='center-h' data-href="Events_chapter">
+Events
+</h3>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='EventDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'EventDecl'/> .
+<EBNFCDECL name='EventDecl'/>
+<EBNFCDECL name='EventDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventDeclsSet'/> .
+</pre>
+
 <h3 class='center-h' data-href="Triggers_chapter">
     Triggers
 </h3>
@@ -732,7 +768,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <EBNFCDECL name='TriggerDeclsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'TriggerDecl'/> .
 <EBNFCDECL name='TriggerName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='TriggerName'/> .
-<EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerName'/> [ "is" <EBNFC name='InheritanceDecl'/> ] "{" [ [ <EBNFC name='ClausedScopeForTriggersSet'/> ] <EBNFC name='TriggersContent'/> ] [ <EBNFC name='ClausedScopeForTriggersSet'/> ] "}" ) | <EBNFC name='TriggersContent'/> ) 
+<EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerName'/> [ <EBNFC name='InheritanceDecl'/> ] "{" [ [ <EBNFC name='ClausedScopeForTriggersSet'/> ] <EBNFC name='TriggersContent'/> ] [ <EBNFC name='ClausedScopeForTriggersSet'/> ] "}" ) | <EBNFC name='TriggersContent'/> ) 
                   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='TriggerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TriggerDeclsSet'/> .
 <EBNFCDECL name='ClausedScopeForTriggersSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForTriggersSet'/> .
@@ -754,7 +790,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='ebnf-code'>
 <EBNFCDECL name='InstanceDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'InstanceDecl'/> .
 <EBNFCDECL name='InstanceIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='InstanceDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "inst" <EBNFC name='InstanceIdentifier'/> [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForInstancesSet'/> ] [ <EBNFC name='InstanceContent'/> ] [ <EBNFC name='ClausedScopeForInstancesSet'/> ] "}" ]
+<EBNFCDECL name='InstanceDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "inst" <EBNFC name='InstanceIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForInstancesSet'/> ] [ <EBNFC name='InstanceContent'/> ] [ <EBNFC name='ClausedScopeForInstancesSet'/> ] "}" ]
                 [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='InstanceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'InstanceDeclsSet'/> .
 <EBNFCDECL name='ClausedScopeForInstancesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForInstancesSet'/> .
@@ -772,6 +808,18 @@ $$:{ ClassName } - the fact belong to ClassName
 <pre class='ebnf-code'>
 <EBNFCDECL name='CallBlocksSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'CallBlock'/> .
 <EBNFCDECL name='CallBlock'/>
+</pre>
+
+<h3 class='center-h' data-href="Synonyms_chapter">
+Synonyms
+</h3>
+
+<LinkToContent/>
+
+<pre class='ebnf-code'>
+<EBNFCDECL name='SynonymDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
+<EBNFCDECL name='SynonymDecl'/>
+<EBNFCDECL name='SynonymDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SynonymDeclsSet'/> .
 </pre>
 
 <h3 class='center-h' data-href="Type_aliases_chapter">
@@ -807,7 +855,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <EBNFCDECL name='RangeDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'RangeDecl'/> . 
 <EBNFCDECL name='RangeIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> . .
 <EBNFCDECL name='RangeDecl' groups="OrderedTypeDecl"/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='GenericParametersDecl'/> <EBNFC name='RangeIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ]
-              [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
+              [ <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='RangeDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'RangeDeclsSet'/> .
 <EBNFCDECL name='DimDecl'/> = "dim" <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='RangeDescDecl'/> = <EBNFC name='OrderedTypeLiteral'/> ".." <EBNFC name='OrderedTypeLiteral'/> .
@@ -823,7 +871,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <EBNFCDECL name='ValueDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ValueDecl'/> .
 <EBNFCDECL name='ValueIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ValueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "value" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ValueIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ]
-              [ "is" <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
+              [ <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ValueDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ValueDeclsSet'/> .
 </pre>
 
@@ -837,7 +885,7 @@ $$:{ ClassName } - the fact belong to ClassName
 <EBNFCDECL name='FuzzySetDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FuzzySetDecl'/> .
 <EBNFCDECL name='FuzzySetName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FuzzySetIdentifier' groups="TypeIdentifier"/> = <EBNFC name='FuzzySetName'/> .
-<EBNFCDECL name='FuzzySetDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "fuzzy" "set" <EBNFC name='GenericParametersDecl'/> <EBNFC name='FuzzySetName'/> "of" <EBNFC name='RangeIdentifier'/> [ "is" <EBNFC name='InheritanceDecl'/> ]
+<EBNFCDECL name='FuzzySetDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "fuzzy" "set" <EBNFC name='GenericParametersDecl'/> <EBNFC name='FuzzySetName'/> "of" <EBNFC name='RangeIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ]
             "{" [ <EBNFC name='ClausedScopeForFuzzySetsSet'/> ] <EBNFC name='FuzzySetBody'/> [ <EBNFC name='ClausedScopeForFuzzySetsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='FuzzySetDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzySetDeclsSet'/> .
 <EBNFCDECL name='ClausedScopeForFuzzySetsSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForFuzzySetsSet'/>
