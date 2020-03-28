@@ -343,8 +343,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClassName'/> =  <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ClassIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ClassDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> </br>
-             <TEBNFC name='InheritanceDecl'/> </br>
+<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ "is" <EBNFC name='InheritanceDecl'/> ]
 			 [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ClassDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClassDecl' /> .
 <EBNFCDECL name='InheritanceDecl'/> = ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
@@ -2091,10 +2090,6 @@ Synchronization statement
 	
 	<TEBNFCDECL name="BinaryOp_2" param='_OpLiteral'>
 	    <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] _OpLiteral <EBNFC name='Expr'/>
-	</TEBNFCDECL>
-	
-	<TEBNFCDECL name="InheritanceDecl">
-	    [ "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) ]
 	</TEBNFCDECL>
 </div>
 
