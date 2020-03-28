@@ -281,9 +281,9 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='TypeIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or' /> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Object-oriented_programming_chapter">
     Object-oriented programming
@@ -308,12 +308,12 @@ The ways of doing this will be described below in here section and in describing
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ObjectDeclsSet'/> = <TEBNFC name='DeclSet' param = 'ObjectDecl'/> .
 <EBNFCDECL name='ObjectDecl'/> =  [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='ClassContentFullSet'/> "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='UniversalTypeIdentifier' groups="TypeIdentifier"/> = "any" | "⊤" .
 <EBNFCDECL name='ObjectDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ObjectDecl' /> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Classes_chapter">
     Classes
@@ -339,11 +339,11 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ClassName'/> =  <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ClassIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ClassDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ <EBNFC name='InheritanceDecl'/> ]
+<EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
 			 [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ClassDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClassDecl' /> .
 <EBNFCDECL name='InheritanceDecl'/> = "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
@@ -360,7 +360,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='SystemAnnotation'/> = "[<" <EBNFC name='SystemAnnotationContent'/> ">]" .
 <EBNFCDECL name='SystemAnnotationExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SystemAnnotation'/> .
 <EBNFCDECL name='SystemAnnotationContent'/>
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="Methods_chapter">
     Methods
