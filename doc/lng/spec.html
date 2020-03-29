@@ -470,6 +470,7 @@ Defining namespace in identifier
 
 <pre class='ebnf-code'>
 <a href="#identifier_with_namespace" name="identifier_with_namespace">identifier_with_namespace</a> = <a href="#identifier">identifier</a> "::" { <a href="#identifier">identifier</a> "::" } <a href="#identifier">identifier</a> .
+<a href="#instance_identifier_with_namespace" name="instance_identifier_with_namespace">instance_identifier_with_namespace</a> = <a href="#identifier">identifier</a> "::" { <a href="#identifier">identifier</a> "::" } <a href="#InstanceIdentifier">InstanceIdentifier</a> .
 </pre>
 
 <pre class='ebnf-code'>
@@ -484,6 +485,7 @@ Defining namespace by round brackets
 
 <pre class='ebnf-code'>
 <a href="#identifier_with_namespace" name="identifier_with_namespace">identifier_with_namespace</a> = "`" <a href="#identifier">identifier</a> "(" ( <a href="#identifier_with_namespace">identifier_with_namespace</a> | <a href="#identifier">identifier</a> ) ")" "`" .
+<a href="#instance_identifier_with_namespace" name="instance_identifier_with_namespace">instance_identifier_with_namespace</a> = "`" <a href="#InstanceIdentifier">InstanceIdentifier</a> "(" ( <a href="#identifier_with_namespace">identifier_with_namespace</a> | <a href="#identifier">identifier</a> ) ")" "`" .
 </pre>
 
 <pre class='ebnf-code'>
@@ -694,13 +696,13 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <a href="#FactDeclsSet" name="FactDeclsSet">FactDeclsSet</a> = <a href="#FactDecl">FactDecl</a> [{ <a href="#FactDecl">FactDecl</a> }] .
 <a href="#LogicalRuleDeclsSet" name="LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> = <a href="#LogicalRuleDecl">LogicalRuleDecl</a> [{ <a href="#LogicalRuleDecl">LogicalRuleDecl</a> }] .
-<a href="#FactIdentifier" name="FactIdentifier">FactIdentifier</a> = <a href="#InstanceIdentifier">InstanceIdentifier</a> .
+<a href="#FactIdentifier" name="FactIdentifier">FactIdentifier</a> = <a href="#InstanceIdentifier">InstanceIdentifier</a> | <a href="#instance_identifier_with_namespace">instance_identifier_with_namespace</a> .
 <a href="#FactDecl" name="FactDecl">FactDecl</a> .
 <a href="#FactDeclExpr" name="FactDeclExpr">FactDeclExpr</a> = ( <a href="#FactDeclsSet">FactDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#FactDeclsSet">FactDeclsSet</a> [{ <a href="#FactDeclsSet">FactDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForFactsSetExpr" name="ClausedScopeForFactsSetExpr">ClausedScopeForFactsSetExpr</a> = ( <a href="#ClausedScopeForFactsSet">ClausedScopeForFactsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClausedScopeForFactsSet">ClausedScopeForFactsSet</a> [{ <a href="#ClausedScopeForFactsSet">ClausedScopeForFactsSet</a> }] ")" ) .
 <a href="#ClausedScopeForFactsSet" name="ClausedScopeForFactsSet">ClausedScopeForFactsSet</a> = <a href="#ClausedScopeForFact">ClausedScopeForFact</a> [{ <a href="#ClausedScopeForFact">ClausedScopeForFact</a> }] .
 <a href="#ClausedScopeForFact" name="ClausedScopeForFact">ClausedScopeForFact</a> = <!--<TEBNFC name='DefScope' param = ''/>--> .
-<a href="#LogicalRuleIdentifier" name="LogicalRuleIdentifier">LogicalRuleIdentifier</a> = <a href="#InstanceIdentifier">InstanceIdentifier</a> .
+<a href="#LogicalRuleIdentifier" name="LogicalRuleIdentifier">LogicalRuleIdentifier</a> = <a href="#InstanceIdentifier">InstanceIdentifier</a> | <a href="#instance_identifier_with_namespace">instance_identifier_with_namespace</a> .
 <a href="#LogicalRuleDecl" name="LogicalRuleDecl">LogicalRuleDecl</a> .
 <a href="#LogicalRuleDeclExpr" name="LogicalRuleDeclExpr">LogicalRuleDeclExpr</a> = ( <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> [{ <a href="#LogicalRuleDeclsSet">LogicalRuleDeclsSet</a> }] ")" ) .
 <a href="#ClausedScopeForLogicalRulesSetExpr" name="ClausedScopeForLogicalRulesSetExpr">ClausedScopeForLogicalRulesSetExpr</a> = ( <a href="#ClausedScopeForLogicalRulesSet">ClausedScopeForLogicalRulesSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#ClausedScopeForLogicalRulesSet">ClausedScopeForLogicalRulesSet</a> [{ <a href="#ClausedScopeForLogicalRulesSet">ClausedScopeForLogicalRulesSet</a> }] ")" ) .
@@ -774,7 +776,7 @@ Events
 
 <pre class='ebnf-code'>
 <a href="#InstanceDeclsSet" name="InstanceDeclsSet">InstanceDeclsSet</a> = <a href="#InstanceDecl">InstanceDecl</a> [{ <a href="#InstanceDecl">InstanceDecl</a> }] .
-<a href="#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = <a href="#InstanceIdentifier">InstanceIdentifier</a> | <a href="#identifier_with_namespace">identifier_with_namespace</a> .
+<a href="#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = <a href="#InstanceIdentifier">InstanceIdentifier</a> | <a href="#instance_identifier_with_namespace">instance_identifier_with_namespace</a> .
 <a href="#InstanceDecl" name="InstanceDecl">InstanceDecl</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] "inst" <a href="#InstanceIdentifier">InstanceIdentifier</a> [ <a href="#InheritanceDecl">InheritanceDecl</a> ] [ "{" [ <a href="#ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> ] [ <a href="#InstanceContent">InstanceContent</a> ] [ <a href="#ClausedScopeForInstancesSet">ClausedScopeForInstancesSet</a> ] "}" ]
                 [ <a href="#ModalitiesSet">ModalitiesSet</a> ] ";" .
 <a href="#InstanceDeclExpr" name="InstanceDeclExpr">InstanceDeclExpr</a> = ( <a href="#InstanceDeclsSet">InstanceDeclsSet</a> ) | ( [ <a href="#AnnotationsList">AnnotationsList</a> ] "(" <a href="#InstanceDeclsSet">InstanceDeclsSet</a> [{ <a href="#InstanceDeclsSet">InstanceDeclsSet</a> }] ")" ) .
