@@ -1894,9 +1894,23 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='IPCOpExpr' groups="Expr"/> = <GEBNFC name='IPCOpExpr' kind='or'/> .
-</pre>
+</gr>
+
+<h4 class='center-h' data-href="ChannelOp_chapter">
+    Channel (event) operators
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='ChannelOpExpr' groups="IPCOpExpr"/> = <GEBNFC name='ChannelOpExpr' kind='or'/> .
+<EBNFCDECL name='SyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> ">>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> "<<" <EBNFC name='SourceExpr'/> ) .
+<EBNFCDECL name='AsyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> "~>>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> "<<~" <EBNFC name='SourceExpr'/> ) .
+<EBNFCDECL name='SourceExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='DestExpr'/> = <EBNFC name='Expr'/> .
+</gr>
 
 <h2 class='center-h' data-href="Statements_chapter">
     Statements
@@ -1966,6 +1980,17 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <EBNFCDECL name='TryCatchStatement' groups="Statement"/> .
 <EBNFCDECL name='TryCatchStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TryCatchStatement'/> .
 </pre>
+
+<h3 class='center-h' data-href="PanicStatement_chapter">
+Panic statement
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='PanicStatement' groups="Statement"/>  .
+<EBNFCDECL name='PanicStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'PanicStatement'/> .
+</gr>
 
 <h3 class='center-h' data-href="ForStatement_chapter">
     For statement
@@ -2055,20 +2080,16 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <EBNFCDECL name='YieldStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'YieldStatement'/> .
 </pre>
 
-<h3 class='center-h' data-href="ChannelStatement_chapter">
-Channel statement
+<h3 class='center-h' data-href="ExclusiveStatement_chapter">
+Exclusive statement
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
-<EBNFCDECL name='ChannelStatement' groups="Statement"/> = <GEBNFC name='ChannelStatement' kind='or'/> .
-<EBNFCDECL name='ChannelStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ChannelStatement'/> .
-<EBNFCDECL name='SyncChannelStatement' groups='ChannelStatement'/> = ( <EBNFC name='SourceExpr'/> ">>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> "<<" <EBNFC name='SourceExpr'/> ) .
-<EBNFCDECL name='AsyncChannelStatement' groups='ChannelStatement'/> = ( <EBNFC name='SourceExpr'/> "~>>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> "<<~" <EBNFC name='SourceExpr'/> ) .
-<EBNFCDECL name='SourceExpr'/> = <EBNFC name='Expr'/> .
-<EBNFCDECL name='DestExpr'/> = <EBNFC name='Expr'/> .
-</pre>
+<gr>
+<EBNFCDECL name='ExclusiveStatement' groups="Statement"/>  .
+<EBNFCDECL name='ExclusiveStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExclusiveStatement'/> .
+</gr>
 
 <h3 class='center-h' data-href="TriggerStatement_chapter">
 Trigger statement
@@ -2076,10 +2097,10 @@ Trigger statement
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='TriggerStatement' groups="Statement"/> = <EBNFC name='TriggersContent'/> .
 <EBNFCDECL name='TriggerStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TriggerStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="SynchronizationStatement_chapter">
 Synchronization statement
