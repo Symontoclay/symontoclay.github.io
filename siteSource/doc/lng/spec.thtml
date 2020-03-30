@@ -87,16 +87,17 @@ Identifiers name program entities such as variables and types.
 </p>
 
 <gr>
-<EBNFCDECL name='identifier'/> = ( <EBNFC name='letter'/> { <EBNFC name='letter'/> | <EBNFC name='decimal_digit'/> } ) | ( "`" { <EBNFC name='unicode_char'/> } "`") .
-<EBNFCDECL name='VarIdentifier'/> = "@"<EBNFC name='identifier'/> .
-<EBNFCDECL name='SysVarOrOpIdentifier'/> = "@@"<EBNFC name='identifier'/> .
-<EBNFCDECL name='ConditionalEntityIdentifier'/> = "#@"<EBNFC name='identifier'/> .
-<EBNFCDECL name='InstanceIdentifier' groups="TypeIdentifier"/> = "#"<EBNFC name='identifier'/> .
-<EBNFCDECL name='ShortConditionalEntityIdentifier'/> = "##"<EBNFC name='identifier'/> .
-<EBNFCDECL name='QueryVarIdentifier'/> = "?"<EBNFC name='identifier'/> .
-<EBNFCDECL name='DataSourceIdentifier'/> = "@:"<EBNFC name='identifier'/> .
-<EBNFCDECL name='EventIdentifier'/> = "@>"<EBNFC name='identifier'/> .
-<EBNFCDECL name='ScopeTargetIdentifier'/> = ":::"<EBNFC name='identifier'/> .
+<EBNFCDECL name='Identifier'/> = <GEBNFC name='Identifier' kind='or' /> .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier'/> = ( <EBNFC name='letter'/> { <EBNFC name='letter'/> | <EBNFC name='decimal_digit'/> } ) | ( "`" { <EBNFC name='unicode_char'/> } "`") .
+<EBNFCDECL name='VarIdentifier' groups='Identifier'/> = "@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='SysVarOrOpIdentifier' groups='Identifier'/> = "@@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConditionalEntityIdentifier' groups='Identifier'/> = "#@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='InstanceIdentifier' groups="Identifier;TypeIdentifier"/> = "#"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ShortConditionalEntityIdentifier' groups='Identifier'/> = "##"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='QueryVarIdentifier' groups='Identifier'/> = "?"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='DataSourceIdentifier' groups='Identifier'/> = "@:"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='EventIdentifier' groups='Identifier'/> = "@>"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ScopeTargetIdentifier' groups='Identifier'/> = ":::"<EBNFC name='ConceptIdentifier'/> .
 </gr>
 
 <p>
@@ -195,6 +196,13 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>continue</span>
 <span class='keyword'>return</span>
 <span class='keyword'>yield</span>
+<span class='keyword'>if</span>
+<span class='keyword'>elif</span>
+<span class='keyword'>else</span>
+<span class='keyword'>try</span>
+<span class='keyword'>catch</span>
+<span class='keyword'>finally</span>
+<span class='keyword'>panic</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -347,7 +355,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ClassName'/> =  <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ClassName'/> =  <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ClassIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ClassDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
 <EBNFCDECL name='ClassDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "class" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassName'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
@@ -375,11 +383,11 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='MethodsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'Method'/> .
 <EBNFCDECL name='Method'/> = <EBNFC name='FunctionDecl'/> .
 <EBNFCDECL name='MethodDeclExpr' groups="Expr"/> = <EBNFC name="FunctionDeclExpr" groups="Expr"/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="OpOverloadingMember_chapter">
     Operator overloading
@@ -387,11 +395,11 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='OpOverloadingMemberDeclsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'OpOverloadingMemberDecl'/> .
 <EBNFCDECL name='OpOverloadingMemberDecl'/> = <EBNFC name='OpOverloadingDecl'/> .
 <EBNFCDECL name='OpOverloadingMemberDeclExpr'/> = <EBNFC name='OpOverloadingDeclExpr'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="Restrictions_of_fields_chapter">
     Restrictions of fields
@@ -399,16 +407,16 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='RestrictionsOfFieldsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'RestrictionOfField'/> .
 <EBNFCDECL name='RestrictionOfField'/> = [ <EBNFC name='AnnotationsList'/> ] "prop" <EBNFC name='PropertyName'/> [ ":" [ <EBNFC name='PropertyType'/> ] [ <EBNFC name='PropertyPower'/> ] 
                [ "/" <EBNFC name='PropertyHistoryPower'/> ]] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='RestrictionOfFieldExprDecl' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'RestrictionOfField'/> .
-<EBNFCDECL name='PropertyName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='PropertyName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='PropertyType'/> = <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='PropertyPower'/> = "[" ( "*" | "∞" | <EBNFC name='NumericTypeExpr'/> ) "]" .
 <EBNFCDECL name='PropertyHistoryPower'/> = "[" ( "-" | "*" | "∞" | <EBNFC name='NumericTypeExpr'/> ) "]" .
-</pre>
+</gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 PropertyPower - by default 1.
@@ -421,11 +429,11 @@ Member-variable
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='VarMemberDeclSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'VarMemberDecl'/> .
 <EBNFCDECL name='VarMemberDecl'/> .
 <EBNFCDECL name='VarMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'VarMemberDecl'/> .
-</pre>
+</gr>
 	  
 <h4 class='center-h' data-href="Blocks_of_facts_chapter">
     Blocks of facts
@@ -433,10 +441,10 @@ Member-variable
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='BlocksOfFactsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'BlockOfFacts'/> .
 <EBNFCDECL name='BlockOfFacts'/> = <EBNFC name='FactDeclsSet'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="Blocks_of_logical_rules_chapter">
     Blocks of logical rules
@@ -444,10 +452,10 @@ Member-variable
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='BlocksOfLogicalRulesSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'BlockOfLogicalRules'/> .
 <EBNFCDECL name='BlockOfLogicalRules'/> = <EBNFC name='LogicalRuleDeclsSet'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="exception_handlers_chapter">
     Exception handlers
@@ -455,11 +463,11 @@ Member-variable
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ExceptionHandlersSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'ExceptionHandler'/> .
 <EBNFCDECL name='ExceptionHandler'/> .
 <EBNFCDECL name='ExceptionHandlerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExceptionHandler'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="Member-event_chapter">
     Member-event
@@ -491,8 +499,8 @@ Defining namespace in identifier
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='identifier_with_namespace'/> = <EBNFC name='identifier'/> "::" { <EBNFC name='identifier'/> "::" } <EBNFC name='identifier'/> .
-<EBNFCDECL name='instance_identifier_with_namespace'/> = <EBNFC name='identifier'/> "::" { <EBNFC name='identifier'/> "::" } <EBNFC name='InstanceIdentifier'/> .
+<EBNFCDECL name='identifier_with_namespace'/> = <EBNFC name='ConceptIdentifier'/> "::" { <EBNFC name='ConceptIdentifier'/> "::" } <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='instance_identifier_with_namespace'/> = <EBNFC name='ConceptIdentifier'/> "::" { <EBNFC name='ConceptIdentifier'/> "::" } <EBNFC name='InstanceIdentifier'/> .
 </pre>
 
 <pre class='ebnf-code'>
@@ -506,8 +514,8 @@ Defining namespace by round brackets
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='identifier_with_namespace'/> = "`" <EBNFC name='identifier'/> "(" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='identifier'/> ) ")" "`" .
-<EBNFCDECL name='instance_identifier_with_namespace'/> = "`" <EBNFC name='InstanceIdentifier'/> "(" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='identifier'/> ) ")" "`" .
+<EBNFCDECL name='identifier_with_namespace'/> = "`" <EBNFC name='ConceptIdentifier'/> "(" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='ConceptIdentifier'/> ) ")" "`" .
+<EBNFCDECL name='instance_identifier_with_namespace'/> = "`" <EBNFC name='InstanceIdentifier'/> "(" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='ConceptIdentifier'/> ) ")" "`" .
 </pre>
 
 <pre class='ebnf-code'>
@@ -522,7 +530,7 @@ Defining namespace as statement
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='NamespaceDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'NamespaceDecl'/> .
-<EBNFCDECL name='NamespaceDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "namespace" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='identifier'/> ) "{" [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] <EBNFC name='SourceCodeFileContent'/> [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='NamespaceDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "namespace" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='ConceptIdentifier'/> ) "{" [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] <EBNFC name='SourceCodeFileContent'/> [ <EBNFC name='ClausedScopeForSourceCodeFilesSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='NamespaceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'NamespaceDecl'/> .
 </pre>
 
@@ -550,7 +558,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 </p>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='UsingStatement'/> = "using" <EBNFC name='identifier'/> "::" { <EBNFC name='identifier'/> "::" } <EBNFC name='identifier'/> ";"
+<EBNFCDECL name='UsingStatement'/> = "using" <EBNFC name='ConceptIdentifier'/> "::" { <EBNFC name='ConceptIdentifier'/> "::" } <EBNFC name='ConceptIdentifier'/> ";"
 <EBNFCDECL name='UsingStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'UsingStatement'/> .
 </pre>
 
@@ -571,7 +579,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='ModuleDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ModuleDecl'/> .
-<EBNFCDECL name='ModuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ModuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ModuleDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> [ "{" [ <EBNFC name='ClausedScopeForModulesSet'/> ] [ <EBNFC name='ModuleContent'/> ] [ <EBNFC name='ClausedScopeForModulesSet'/> ] "}" ] 
            [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ModuleDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ModuleDecl'/> .
@@ -614,7 +622,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <pre class='ebnf-code'>
 <EBNFCDECL name='Import'/> = "import" ":" [{ <EBNFC name='ImportItem'/> }] ";" .
 <EBNFCDECL name='ImportDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'Import'/> .
-<EBNFCDECL name='ImportItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='identifier'/> .
+<EBNFCDECL name='ImportItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ConceptIdentifier'/> .
 </pre>
 
 <h3 class='center-h' data-href="States_chapter">
@@ -660,7 +668,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='SupervisorDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'SupervisorDecl'/> .
-<EBNFCDECL name='SupervisorIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='SupervisorIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='SupervisorDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "supervisor" <EBNFC name='SupervisorIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] [ <EBNFC name='SupervisorContent'/> ] [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] "}" ] 
            [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='SupervisorDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SupervisorDecl'/> .
@@ -678,7 +686,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='FunctionDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
-<EBNFCDECL name='FunctionName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FunctionSignature'/> = "(" <EBNFC name='FunctionParamsDeclaration'/> ")" [ "(|" <EBNFC name='FunctionAdditionalParamsSetDeclaration'/> "|)" ] ":" <EBNFC name='FunctionReturnDeclaration'/> .
 <EBNFCDECL name='FunctionIdentifier' groups="TypeIdentifier"/> = <EBNFC name='FunctionSignature'/> | <EBNFC name='FunctionName'/> .
 <EBNFCDECL name='FunctionDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "func" <EBNFC name='GenericParametersDecl'/> <EBNFC name='FunctionName'/> <EBNFC name='FunctionSignature'/> [ <EBNFC name='InheritanceDecl'/> ]
@@ -775,7 +783,7 @@ Events
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='TriggerDeclsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'TriggerDecl'/> .
-<EBNFCDECL name='TriggerName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='TriggerName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='TriggerName'/> .
 <EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerName'/> [ <EBNFC name='InheritanceDecl'/> ] "{" [ [ <EBNFC name='ClausedScopeForTriggersSet'/> ] <EBNFC name='TriggersContent'/> ] [ <EBNFC name='ClausedScopeForTriggersSet'/> ] "}" ) | <EBNFC name='TriggersContent'/> ) 
                   [ <EBNFC name='ModalitiesSet'/> ] ";" .
@@ -862,7 +870,7 @@ Synonyms
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='RangeDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'RangeDecl'/> . 
-<EBNFCDECL name='RangeIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> . .
+<EBNFCDECL name='RangeIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> . .
 <EBNFCDECL name='RangeDecl' groups="OrderedTypeDecl"/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='GenericParametersDecl'/> <EBNFC name='RangeIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ]
               [ <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='RangeDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'RangeDeclsSet'/> .
@@ -878,7 +886,7 @@ Synonyms
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='ValueDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ValueDecl'/> .
-<EBNFCDECL name='ValueIdentifier' groups="TypeIdentifier"/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ValueIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ValueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "value" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ValueIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ]
               [ <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ValueDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ValueDeclsSet'/> .
@@ -892,7 +900,7 @@ Synonyms
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='FuzzySetDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FuzzySetDecl'/> .
-<EBNFCDECL name='FuzzySetName'/> = <EBNFC name='identifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='FuzzySetName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FuzzySetIdentifier' groups="TypeIdentifier"/> = <EBNFC name='FuzzySetName'/> .
 <EBNFCDECL name='FuzzySetDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "fuzzy" "set" <EBNFC name='GenericParametersDecl'/> <EBNFC name='FuzzySetName'/> "of" <EBNFC name='RangeIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ]
             "{" [ <EBNFC name='ClausedScopeForFuzzySetsSet'/> ] <EBNFC name='FuzzySetBody'/> [ <EBNFC name='ClausedScopeForFuzzySetsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
@@ -902,8 +910,8 @@ Synonyms
 <EBNFCDECL name='ClausedScopeForFuzzySet'/> = <TEBNFC name='DefScope' param = 'FuzzySetBody'/> .			
 <EBNFCDECL name='FuzzySetBody'/> = [ <EBNFC name='AdditionalContentOfFuzzySetBody'/> ] [{ <EBNFC name='FuzzyOperatorsBlock'/> }] <EBNFC name='FuzzyTermsBlock'/> [{ <EBNFC name='FuzzyTermsBlock'/> }] 
             [{ <EBNFC name='FuzzyOperatorsBlock'/> }] [{ <EBNFC name='FuzzyTermsBlock'/> }] [ <EBNFC name='AdditionalContentOfFuzzySetBody'/> ] .
-<EBNFCDECL name='FuzzyTermName'/> = <EBNFC name='identifier'/> .
-<EBNFCDECL name='FuzzyOperatorName'/> = <EBNFC name='identifier'/> .
+<EBNFCDECL name='FuzzyTermName'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='FuzzyOperatorName'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='FuzzyTermsBlocks'/> = "terms" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyTerm'/> [{ <EBNFC name='FuzzyTerm'/> }] .
 <EBNFCDECL name='FuzzyTermsBlocksDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyTermsBlocks'/> .
 <EBNFCDECL name='FuzzyTerm'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyTermName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
@@ -1398,7 +1406,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '='/> .
+<EBNFCDECL name='AssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '='/> .
 </pre>
 
 <h4 class='center-h' data-href="CoalesceAssignmentOp_chapter">
@@ -1408,7 +1416,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='CoalesceAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '??='/> .
+<EBNFCDECL name='CoalesceAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '??='/> .
 </pre>
 
 <h4 class='center-h' data-href="AddAssignmentOp_chapter">
@@ -1418,7 +1426,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AddAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '+='/> .
+<EBNFCDECL name='AddAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '+='/> .
 </pre>
 
 <h4 class='center-h' data-href="SubAssignmentOp_chapter">
@@ -1428,7 +1436,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='SubAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '-='/> .
+<EBNFCDECL name='SubAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '-='/> .
 </pre>
 
 <h4 class='center-h' data-href="MulAssignmentOp_chapter">
@@ -1438,7 +1446,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='MulAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '*='/> .
+<EBNFCDECL name='MulAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '*='/> .
 </pre>
 
 <h4 class='center-h' data-href="DivAssignmentOp_chapter">
@@ -1448,7 +1456,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='DivAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '/='/> .
+<EBNFCDECL name='DivAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '/='/> .
 </pre>
 
 <h4 class='center-h' data-href="EucDivAssignmentOp_chapter">
@@ -1458,7 +1466,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='EucDivAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '%='/> .
+<EBNFCDECL name='EucDivAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '%='/> .
 </pre>
 
 <h4 class='center-h' data-href="PowAssignmentOp_chapter">
@@ -1468,7 +1476,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='PowAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '**='/> .
+<EBNFCDECL name='PowAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '**='/> .
 </pre>
 
 <h4 class='center-h' data-href="RootAssignmentOp_chapter">
@@ -1478,7 +1486,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='RootAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '//='/> .
+<EBNFCDECL name='RootAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '//='/> .
 </pre>
 
 <h4 class='center-h' data-href="AddPercentAssignmentOp_chapter">
@@ -1488,7 +1496,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AddPercentAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '+%='/> .
+<EBNFCDECL name='AddPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '+%='/> .
 </pre>
 
 <h4 class='center-h' data-href="SubPercentAssignmentOp_chapter">
@@ -1498,7 +1506,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='SubPercentAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '-%='/> .
+<EBNFCDECL name='SubPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '-%='/> .
 </pre>
 
 <h4 class='center-h' data-href="MulPercentAssignmentOp_chapter">
@@ -1508,7 +1516,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='MulPercentAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '*%='/> .
+<EBNFCDECL name='MulPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '*%='/> .
 </pre>
 
 <h4 class='center-h' data-href="DivPercentAssignmentOp_chapter">
@@ -1518,7 +1526,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='DivPercentAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '/%='/> .
+<EBNFCDECL name='DivPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '/%='/> .
 </pre>
 
 <h4 class='center-h' data-href="AndAssignmentOp_chapter">
@@ -1528,7 +1536,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AndAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '&='/> .
+<EBNFCDECL name='AndAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '&='/> .
 </pre>
 
 <h4 class='center-h' data-href="OrAssignmentOp_chapter">
@@ -1538,7 +1546,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='OrAssignmentOpExpr'/ groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '|='/> .
+<EBNFCDECL name='OrAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '|='/> .
 </pre>
 
 <h3 class='center-h' data-href="ArithmeticOp_chapter">
@@ -1700,7 +1708,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='EqualOpExpr'/ groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = 'is'/> .
+<EBNFCDECL name='EqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = 'is'/> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOp_chapter">
@@ -1710,7 +1718,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='MoreOpExpr'/ groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>'/> .
+<EBNFCDECL name='MoreOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>'/> .
 </pre>
 
 <h4 class='center-h' data-href="LessOp_chapter">
@@ -1720,7 +1728,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='LessOpExpr'/ groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<'/> .
+<EBNFCDECL name='LessOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<'/> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOrEqualOp_chapter">
@@ -1730,7 +1738,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='MoreOrEqualOpExpr'/ groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>='/> .
+<EBNFCDECL name='MoreOrEqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>='/> .
 </pre>
 
 <h4 class='center-h' data-href="LessOrEqualOp_chapter">
@@ -1740,8 +1748,18 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='LessOrEqualOpExpr'/ groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<='/> .
+<EBNFCDECL name='LessOrEqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<='/> .
 </pre>
+
+<h4 class='center-h' data-href="RangeBooleanOp_chapter">
+Range boolean operator
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='RangeBooleanOpExpr' groups='RelationalOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) .
+</gr>
 
 <h3 class='center-h' data-href="LogicalOp_chapter">
     Logical operators
@@ -1760,7 +1778,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='AndOpExpr'/ groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "and" | "&" )'/> .
+<EBNFCDECL name='AndOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "and" | "&" )'/> .
 </pre>
 
 <h4 class='center-h' data-href="OrOp_chapter">
@@ -1770,7 +1788,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='OrOpExpr'/ groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "or" | "|")'/> .
+<EBNFCDECL name='OrOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "or" | "|")'/> .
 </pre>
 
 <h4 class='center-h' data-href="NotOp_chapter">
@@ -1780,7 +1798,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='NotOpExpr'/ groups='LogicalOpExpr'/> = <TEBNFC name='UnaryOp_2' param = '( "not" | "!" )'/> .
+<EBNFCDECL name='NotOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='UnaryOp_2' param = '( "not" | "!" )'/> .
 </pre>
 
 <h4 class='center-h' data-href="InvertVarOp_chapter">
@@ -1790,7 +1808,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='InvertVarOpExpr'/ groups='LogicalOpExpr'/> = <TEBNFC name='UnaryOp' param = '!!'/> .
+<EBNFCDECL name='InvertVarOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='UnaryOp' param = '!!'/> .
 </pre>
 
 <h3 class='center-h' data-href="MemberAccessOp_chapter">
@@ -1913,6 +1931,16 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <EBNFCDECL name='DestExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
+<h3 class='center-h' data-href="PanicOp_chapter">
+Panic operator
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='PanicOpExpr' groups="Expr"/>  .
+</gr>
+
 <h2 class='center-h' data-href="Statements_chapter">
     Statements
 </h2>
@@ -1981,17 +2009,6 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <EBNFCDECL name='TryCatchStatement' groups="Statement"/> .
 <EBNFCDECL name='TryCatchStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TryCatchStatement'/> .
 </pre>
-
-<h3 class='center-h' data-href="PanicStatement_chapter">
-Panic statement
-</h3>
-
-<LinkToContent/>
-
-<gr>
-<EBNFCDECL name='PanicStatement' groups="Statement"/>  .
-<EBNFCDECL name='PanicStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'PanicStatement'/> .
-</gr>
 
 <h3 class='center-h' data-href="ForStatement_chapter">
     For statement
@@ -2183,9 +2200,9 @@ Synchronization statement
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name=''/>
-</pre>
+</gr>
 
 <EBNFC name=''/>
 
