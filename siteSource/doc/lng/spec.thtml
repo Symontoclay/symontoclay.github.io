@@ -95,6 +95,7 @@ Identifiers name program entities such as variables and types.
 <EBNFCDECL name='ShortConditionalEntityIdentifier'/> = "##"<EBNFC name='identifier'/> .
 <EBNFCDECL name='QueryVarIdentifier'/> = "?"<EBNFC name='identifier'/> .
 <EBNFCDECL name='DataSourceIdentifier'/> = "@:"<EBNFC name='identifier'/> .
+<EBNFCDECL name='EventIdentifier'/> = "@>"<EBNFC name='identifier'/> .
 <EBNFCDECL name='ScopeTargetIdentifier'/> = ":::"<EBNFC name='identifier'/> .
 </gr>
 
