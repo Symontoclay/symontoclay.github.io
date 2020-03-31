@@ -88,16 +88,16 @@ Identifiers name program entities such as variables and types.
 
 <gr>
 <EBNFCDECL name='Identifier'/> = <GEBNFC name='Identifier' kind='or' /> .
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier'/> = ( <EBNFC name='letter'/> { <EBNFC name='letter'/> | <EBNFC name='decimal_digit'/> } ) | ( "`" { <EBNFC name='unicode_char'/> } "`") .
-<EBNFCDECL name='VarIdentifier' groups='Identifier'/> = "@"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='SysVarOrOpIdentifier' groups='Identifier'/> = "@@"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='ConditionalEntityIdentifier' groups='Identifier'/> = "#@"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='InstanceIdentifier' groups="Identifier;TypeIdentifier"/> = "#"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='ShortConditionalEntityIdentifier' groups='Identifier'/> = "##"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='QueryVarIdentifier' groups='Identifier'/> = "?"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='DataSourceIdentifier' groups='Identifier'/> = "@:"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='EventIdentifier' groups='Identifier'/> = "@>"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='ScopeTargetIdentifier' groups='Identifier'/> = ":::"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;Expr'/> = ( <EBNFC name='letter'/> { <EBNFC name='letter'/> | <EBNFC name='decimal_digit'/> } ) | ( "`" { <EBNFC name='unicode_char'/> } "`") .
+<EBNFCDECL name='VarIdentifier' groups='Identifier;Expr'/> = "@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='SysVarOrOpIdentifier' groups='Identifier;Expr'/> = "@@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConditionalEntityIdentifier' groups='Identifier;Expr'/> = "#@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='InstanceIdentifier' groups="Identifier;TypeIdentifier;Expr"/> = "#"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ShortConditionalEntityIdentifier' groups='Identifier;Expr'/> = "##"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='QueryVarIdentifier' groups='Identifier;Expr'/> = "?"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='DataSourceIdentifier' groups='Identifier;Expr'/> = "@:"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='EventIdentifier' groups='Identifier;Expr'/> = "@>"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ScopeTargetIdentifier' groups='Identifier;Expr'/> = ":::"<EBNFC name='ConceptIdentifier'/> .
 </gr>
 
 <p>
