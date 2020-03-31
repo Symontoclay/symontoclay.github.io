@@ -711,11 +711,11 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='OpOverloadingDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'OpOverloadingDecl'/> .
 <EBNFCDECL name='OpOverloadingDecl'/> .
 <EBNFCDECL name='OpOverloadingDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'OpOverloadingDecl'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Facts_and_logical_rules_chapter">
     Facts and logical rules
@@ -723,7 +723,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='FactDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='LogicalRuleDeclsSet' groups="SourceCodeFileContent"/> = <EBNFC name='LogicalRuleDecl'/> [{ <EBNFC name='LogicalRuleDecl'/> }] .
 <EBNFCDECL name='FactIdentifier' groups="TypeIdentifier"/> = <EBNFC name='InstanceIdentifier'/> | <EBNFC name='instance_identifier_with_namespace'/> .
@@ -741,10 +741,10 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <EBNFCDECL name='LogicalSentence'/> .
 <EBNFCDECL name='LogicalSentenceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalSentence'/> .
-<EBNFCDECL name='LogicalAnnotation'/> = "[:" ( <EBNFC name='FactDecl'/> | "{:" <EBNFC name='ClassName'/> ":}" ) ":]"
+<EBNFCDECL name='LogicalAnnotation'/> = "[:" ( <EBNFC name='FactDecl'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> ) ":]"
 <EBNFCDECL name='LogicalAnnotationsList'/> = <EBNFC name='LogicalAnnotation'/> [{ <EBNFC name='LogicalAnnotation'/> }] .
 <EBNFCDECL name='LogicalAnnotationDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalAnnotation'/> .
-</pre>
+</gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 !((name=helen|name=ann)&class=girl)
@@ -1972,10 +1972,10 @@ Panic operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ExpressionStatement' groups="Statement"/> = <EBNFC name='Expr'/> ";" .
 <EBNFCDECL name='ExpressionStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExpressionStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="ConditionalStatement_chapter">
     Conditional statement
@@ -1983,10 +1983,10 @@ Panic operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
-<EBNFCDECL name='ConditionalStatement' groups="Statement"/> .
+<gr>
+<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ [ <EBNFC name='AnnotationsList'/> ] "else" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] .
 <EBNFCDECL name='ConditionalStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="SwitchStatement_chapter">
     Switch statement
@@ -1994,10 +1994,10 @@ Panic operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SwitchStatement' groups="Statement"/> .
 <EBNFCDECL name='SwitchStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SwitchStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="TryCatchStatement_chapter">
    Try-catch statement
