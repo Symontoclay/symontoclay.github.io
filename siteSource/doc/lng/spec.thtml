@@ -370,11 +370,6 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClausedScopeForClassesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForClass'/> .
 <EBNFCDECL name='ClausedScopeForClass '/> = <TEBNFC name='DefScope' param = 'ClassContent'/> .
 <EBNFCDECL name='ClassContent'/> = <GEBNFC name='ClassContent' kind='op_and'/> .
-<EBNFCDECL name='AnnotationsList'/> = [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] [{ <EBNFC name='LogicalAnnotationsList'/> }] [{ <EBNFC name='SystemAnnotationsList'/> }] .
-<EBNFCDECL name='SystemAnnotationsList'/> = <EBNFC name='SystemAnnotation'/> [{ <EBNFC name='SystemAnnotation'/> }] .
-<EBNFCDECL name='SystemAnnotation'/> = "[<" <EBNFC name='SystemAnnotationContent'/> ">]" .
-<EBNFCDECL name='SystemAnnotationExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SystemAnnotation'/> .
-<EBNFCDECL name='SystemAnnotationContent'/>
 </gr>
 
 <h4 class='center-h' data-href="Methods_chapter">
@@ -740,10 +735,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForLogicalRule'/> = <!--<TEBNFC name='DefScope' param = ''/>--> .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <EBNFCDECL name='LogicalSentence'/> .
-<EBNFCDECL name='LogicalSentenceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalSentence'/> .
-<EBNFCDECL name='LogicalAnnotation'/> = "[:" ( <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> ) ":]"
-<EBNFCDECL name='LogicalAnnotationsList'/> = <EBNFC name='LogicalAnnotation'/> [{ <EBNFC name='LogicalAnnotation'/> }] .
-<EBNFCDECL name='LogicalAnnotationDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalAnnotation'/> .
+<EBNFCDECL name='LogicalVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1330,11 +1322,11 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='HolderDesc' groups="Modality"/> = <EBNFC name='HolderDescMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='HolderDescDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'HolderDesc'/> .
 <EBNFCDECL name='HolderDescMark'/> = "#:" | "of" | "of:" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Module_section_chapter">
     Module section
@@ -1342,11 +1334,47 @@ Channel section
 
 <LinkToContent/>	
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ModuleDesc' groups="Modality"/> = <EBNFC name='ModuleDescMark'/> <EBNFC name='ModuleIdentifier'/> .
 <EBNFCDECL name='ModuleDescDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ModuleDesc'/> .
 <EBNFCDECL name='ModuleDescMark'/> = "$:" | "module" | "module:" .
-</pre>
+</gr>
+
+<h2 class='center-h' data-href="Annotations_chapter">
+Annotations
+</h2>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='AnnotationsList'/> = { [ <EBNFC name='LogicalAnnotationsList'/> ] [ <EBNFC name='SystemAnnotationsList'/> ] } .
+</gr>
+
+<h3 class='center-h' data-href="System_annotations_chapter">
+System annotations
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='SystemAnnotationsList'/> = ( <EBNFC name='SystemAnnotation'/> [{ <EBNFC name='SystemAnnotation'/> }] ) | ( "[<" <EBNFC name='SystemAnnotation'/> [{ "," <EBNFC name='SystemAnnotation'/> }] ">]" ).
+<EBNFCDECL name='SystemAnnotation'/> = "[<" <EBNFC name='SystemAnnotationContent'/> ">]" .
+<EBNFCDECL name='SystemAnnotationExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SystemAnnotation'/> .
+<EBNFCDECL name='SystemAnnotationContent'/>
+</gr>
+
+<h3 class='center-h' data-href="Logical_annotations_chapter">
+Logical annotations
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='LogicalSentenceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalSentence'/> .
+<EBNFCDECL name='LogicalAnnotation'/> = "[:" <EBNFC name='LogicalVal'/> ":]" .
+<EBNFCDECL name='LogicalAnnotationsList'/> = ( <EBNFC name='LogicalAnnotation'/> [{ <EBNFC name='LogicalAnnotation'/> }] ) | ( "[:" <EBNFC name='LogicalAnnotation'/> [{ "," <EBNFC name='LogicalAnnotation'/> }] ":]" ) .
+<EBNFCDECL name='LogicalAnnotationDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalAnnotation'/> .
+</gr>
 
 <h2 class='center-h' data-href="Expressions_chapter">
     Expressions
@@ -1354,9 +1382,9 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='Expr'/> = <GEBNFC name='Expr' kind='or'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="GroupExpr_chapter">
     Group
@@ -1364,9 +1392,9 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='GroupExpr' groups="Expr"/> = "(" <EBNFC name='Expr'/> ")" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Operators_chapter">
     Operators
