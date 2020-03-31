@@ -741,7 +741,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <EBNFCDECL name='LogicalSentence'/> .
 <EBNFCDECL name='LogicalSentenceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalSentence'/> .
-<EBNFCDECL name='LogicalAnnotation'/> = "[:" ( <EBNFC name='FactDecl'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> ) ":]"
+<EBNFCDECL name='LogicalAnnotation'/> = "[:" ( <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> ) ":]"
 <EBNFCDECL name='LogicalAnnotationsList'/> = <EBNFC name='LogicalAnnotation'/> [{ <EBNFC name='LogicalAnnotation'/> }] .
 <EBNFCDECL name='LogicalAnnotationDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalAnnotation'/> .
 </gr>
