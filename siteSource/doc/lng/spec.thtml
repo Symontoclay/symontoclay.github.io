@@ -202,7 +202,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>try</span>
 <span class='keyword'>catch</span>
 <span class='keyword'>finally</span>
-<span class='keyword'>panic</span>
+<span class='keyword'>error</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -1925,20 +1925,20 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <gr>
 <EBNFCDECL name='ChannelOpExpr' groups="IPCOpExpr"/> = <GEBNFC name='ChannelOpExpr' kind='or'/> .
-<EBNFCDECL name='SyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> ">>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> "<<" <EBNFC name='SourceExpr'/> ) .
-<EBNFCDECL name='AsyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> "~>>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> "<<~" <EBNFC name='SourceExpr'/> ) .
+<EBNFCDECL name='SyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> [ <EBNFC name='AnnotationsList'/> ] ">>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<" <EBNFC name='SourceExpr'/> ) .
+<EBNFCDECL name='AsyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> [ <EBNFC name='AnnotationsList'/> ] "~>>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<~" <EBNFC name='SourceExpr'/> ) .
 <EBNFCDECL name='SourceExpr'/> = <EBNFC name='Expr'/> .
 <EBNFCDECL name='DestExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
-<h3 class='center-h' data-href="PanicOp_chapter">
-Panic operator
+<h3 class='center-h' data-href="ErrorOp_chapter">
+Error operator
 </h3>
 
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='PanicOpExpr' groups="Expr"/>  .
+<EBNFCDECL name='ErrorOpExpr' groups="Expr"/> = [ <EBNFC name='AnnotationsList'/> ] "error" <EBNFC name='Expr'/> .
 </gr>
 
 <h2 class='center-h' data-href="Statements_chapter">
