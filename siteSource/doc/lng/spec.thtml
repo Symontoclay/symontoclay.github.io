@@ -203,6 +203,26 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>catch</span>
 <span class='keyword'>finally</span>
 <span class='keyword'>error</span>
+<span class='keyword'>type</span>
+<span class='keyword'>obj</span>
+<span class='keyword'>select</span>
+<span class='keyword'>insert</span>
+<span class='keyword'>delete</span>
+<span class='keyword'>merge</span>
+<span class='keyword'>unmerge</span>
+<span class='keyword'>new</span>
+<span class='keyword'>clone</span>
+<span class='keyword'>deep</span>
+<span class='keyword'>as</span>
+<span class='keyword'>modal</span>
+<span class='keyword'>wait</span>
+<span class='keyword'>lock</span>
+<span class='keyword'>exclusive</span>
+<span class='keyword'>delm</span>
+<span class='keyword'>dels</span>
+<span class='keyword'>dela</span>
+<span class='keyword'>delsm</span>
+<span class='keyword'>make</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
