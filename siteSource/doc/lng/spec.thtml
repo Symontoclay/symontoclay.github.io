@@ -2146,17 +2146,6 @@ Error operator
 <EBNFCDECL name='YieldStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'YieldStatement'/> .
 </pre>
 
-<h3 class='center-h' data-href="ExclusiveStatement_chapter">
-Exclusive statement
-</h3>
-
-<LinkToContent/>
-
-<gr>
-<EBNFCDECL name='ExclusiveStatement' groups="Statement"/>  .
-<EBNFCDECL name='ExclusiveStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExclusiveStatement'/> .
-</gr>
-
 <h3 class='center-h' data-href="TriggerStatement_chapter">
 Trigger statement
 </h3>
@@ -2175,7 +2164,7 @@ Synchronization statement
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='SynchronizationStatement' groups="Statement"/> .
+<EBNFCDECL name='SynchronizationStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] ( "exclusive" | "lock" ) [ "(" <EBNFC name='Identifier'/> [{ "," <EBNFC name='Identifier'/> }] ")" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" .
 <EBNFCDECL name='SynchronizationStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SynchronizationStatement'/> .
 </pre>
 
