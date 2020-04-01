@@ -1865,19 +1865,59 @@ Range boolean operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
-<EBNFCDECL name='MemberAccessOpExpr' groups="Expr"/> = <GEBNFC name='MemberAccessOpExpr' kind='or'/> .
-</pre>
+<gr>
+<EBNFCDECL name='MemberAccessOpExpr' groups='Expr'/> = <GEBNFC name='MemberAccessOpExpr' kind='or'/> .
+</gr>
 
-<h3 class='center-h' data-href="CallOp_chapter">
+<h4 class='center-h' data-href='PointerOp_chapter'>
+Operator "."
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='PointerOpExpr' groups='MemberAccessOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='CoalescePointerOp_chapter'>
+Operator "?."
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='CoalescePointerOpExpr' groups='MemberAccessOpExpr' /> = .
+</gr>
+
+<h3 class='center-h' data-href='CallOp_chapter'>
     Call operator
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
-<EBNFCDECL name='CallOpExpr' groups="Expr"/> = <GEBNFC name='CallOpExpr' kind='or'/> .
-</pre>
+<gr>
+<EBNFCDECL name='CallingOpExpr' groups='Expr'/> = <GEBNFC name='CallingOpExpr' kind='or'/> .
+</gr>
+
+<h4 class='center-h' data-href='CallOp_chapter'>
+Operator "()"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='CallOpExpr' groups='CallingOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='CoalesceCallOp_chapter'>
+Operator "?()"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='CoalesceCallOpExpr' groups='CallingOpExpr' /> = .
+</gr>
 
 <h3 class='center-h' data-href="IndexingOp_chapter">
     Indexing operators
@@ -1885,9 +1925,29 @@ Range boolean operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='IndexingOpExpr' groups="Expr"/> = <GEBNFC name='IndexingOpExpr' kind='or'/> .
-</pre>
+</gr>
+
+<h4 class='center-h' data-href='IndexerOp_chapter'>
+    Operator "[]"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='IndexerOpExpr' groups='IndexingOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='CoalesceIndexerOp_chapter'>
+Operator "?[]"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='CoalesceIndexerOpExpr' groups='IndexingOpExpr' /> = .
+</gr>
 
 <h3 class='center-h' data-href="ObjectCreationOp_chapter">
     Object creation operators
@@ -1895,9 +1955,39 @@ Range boolean operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ObjectCreationOpExpr' groups="Expr"/> = <GEBNFC name='ObjectCreationOpExpr' kind='or'/> .
-</pre>
+</gr>
+
+<h4 class='center-h' data-href='NewOp_chapter'>
+new
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='NewOpExpr' groups='ObjectCreationOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='CloneOp_chapter'>
+clone
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='CloneOpExpr' groups='ObjectCreationOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='DeepCloneOp_chapter'>
+deep clone
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='DeepCloneOpExpr' groups='ObjectCreationOpExpr' /> = .
+</gr>
 
 <h3 class='center-h' data-href="InlineConditionalOp_chapter">
 Inline conditional operators
@@ -1905,10 +1995,9 @@ Inline conditional operators
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='InlineConditionalOpExpr' groups="Expr"/> = <GEBNFC name='InlineConditionalOpExpr' kind='or'/> .
-</pre>
-
+</gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 @a is b -> c : d
@@ -1922,9 +2011,9 @@ Also I am going to create inline switch operator.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='CoalesceOpExpr' groups="Expr"/> = <TEBNFC name='BinaryOp' param = '??'/> .
-</pre>
+</gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 It will be like C# operator <a href='https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/operators/null-coalescing-operator'>"??"</a>.
@@ -1936,9 +2025,9 @@ Reflection operators
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ReflectionOpExpr' groups="Expr"/> = <GEBNFC name='ReflectionOpExpr' kind='or'/> .
-</pre>
+</gr>
 
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1951,9 +2040,59 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DataSetOpExpr' groups="Expr"/> = <GEBNFC name='DataSetOpExpr' kind='or'/> .
-</pre>
+</gr>
+
+<h4 class='center-h' data-href='SelectOp_chapter'>
+select
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='SelectOpExpr' groups='DataSetOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='InsertOp_chapter'>
+insert
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='InsertOpExpr' groups='DataSetOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='DeleteOp_chapter'>
+delete
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='DeleteOpExpr' groups='DataSetOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='MergeOp_chapter'>
+merge
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='MergeOpExpr' groups='DataSetOpExpr' /> = .
+</gr>
+
+<h4 class='center-h' data-href='UnMergeOp_chapter'>
+unmerge
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='UnMergeOpExpr' groups='DataSetOpExpr' /> = .
+</gr>
 
 <h3 class='center-h' data-href="IPCOp_chapter">
     Inter-process communication operators
@@ -1977,6 +2116,16 @@ Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
 <EBNFCDECL name='AsyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> [ <EBNFC name='AnnotationsList'/> ] "~>>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<~" <EBNFC name='SourceExpr'/> ) .
 <EBNFCDECL name='SourceExpr'/> = <EBNFC name='Expr'/> .
 <EBNFCDECL name='DestExpr'/> = <EBNFC name='Expr'/> .
+</gr>
+
+<h4 class='center-h' data-href='WaitOpExpr_chapter'>
+wait
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='WaitOpExpr' groups='IPCOpExpr' /> =  .
 </gr>
 
 <h3 class='center-h' data-href="ErrorOp_chapter">
@@ -2006,13 +2155,13 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='UsualScope' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='UsualScopeDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'UsualScope'/> .
 <EBNFCDECL name='ClausedScopeClause'/> .
 <EBNFCDECL name='ClausedScopeForStatements' groups="Statement"/> = <TEBNFC name='DefScope' param = 'StatementsSet'/> .
 <EBNFCDECL name='ClausedScopeForStatementsDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForStatements'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="ExpressionStatement_chapter">
     Expression statement
@@ -2233,20 +2382,20 @@ Synchronization statement
 
 <LinkToContent/>
 
-<h3 class='center-h' data-href="">
+<h3 class='center-h' data-href=''>
 
 </h3>
 
 <LinkToContent/>
 
-<h4 class='center-h' data-href="">
+<h4 class='center-h' data-href=''>
 
 </h4>
 
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name=''/>
+<EBNFCDECL name=''/> = .
 </gr>
 
 <EBNFC name=''/>
