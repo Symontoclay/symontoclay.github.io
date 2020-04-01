@@ -345,7 +345,7 @@ The ways of doing this will be described below in here section and in describing
 
 <gr>
 <EBNFCDECL name='ObjectDeclsSet'/> = <TEBNFC name='DeclSet' param = 'ObjectDecl'/> .
-<EBNFCDECL name='ObjectDecl'/> =  [ <EBNFC name='AnnotationsList'/> ] "{" <EBNFC name='ClassContentFullSet'/> "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='ObjectDecl'/> = .
 <EBNFCDECL name='UniversalTypeIdentifier' groups="TypeIdentifier"/> = "any" | "⊤" .
 <EBNFCDECL name='ObjectDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ObjectDecl' /> .
 </gr>
@@ -755,7 +755,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForLogicalRule'/> = <!--<TEBNFC name='DefScope' param = ''/>--> .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <EBNFCDECL name='LogicalSentence'/> .
-<EBNFCDECL name='LogicalVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
+<EBNFCDECL name='LogicalSentenceVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1217,10 +1217,10 @@ Emotion intensity modality
 <LinkToContent/>	
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='ThereforeNotRuleSection' groups="Modality"/>
+<EBNFCDECL name='ThereforeNotRuleSection' groups="Modality"/> = <EBNFC name='ThereforeNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ThereforeNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ThereforeNotRuleSection'/> .
 <EBNFCDECL name='ThereforeNotRuleSectionMark'/> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
-<EBNFCDECL name='AdditionalThereforeNotRuleSection' groups="Modality"/>
+<EBNFCDECL name='AdditionalThereforeNotRuleSection' groups="Modality"/> = <EBNFC name='AdditionalThereforeNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalThereforeNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalThereforeNotRuleSection'/> .
 <EBNFCDECL name='AdditionalThereforeNotRuleSectionMark'/> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
 <EBNFCDECL name=''/>
@@ -1233,10 +1233,10 @@ Emotion intensity modality
 <LinkToContent/>	
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='ElseNotRuleSection' groups="Modality"/>
+<EBNFCDECL name='ElseNotRuleSection' groups="Modality"/> = <EBNFC name='ElseNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ElseNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ElseNotRuleSection'/> .
 <EBNFCDECL name='ElseNotRuleSectionMark'/> = "|!->:" | "else" | "else:" | "otherwise" | "other" | "otherwise:" | "other:" .
-<EBNFCDECL name='AdditionalElseNotRuleSection' groups="Modality"/>
+<EBNFCDECL name='AdditionalElseNotRuleSection' groups="Modality"/> = <EBNFC name='AdditionalElseNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalElseNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalElseNotRuleSection'/> .
 <EBNFCDECL name='AdditionalElseNotRuleSectionMark'/> = "[|!->:]" | "[else]" | "[else:]" | "[otherwise]" | "[other]" | "[otherwise:]" | "[other:]" .
 </pre>
@@ -1328,10 +1328,10 @@ Channel section
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='ReasonSection'/> .
+<EBNFCDECL name='ReasonSection'/> = <EBNFC name='ReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ReasonSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ReasonSection'/> .
 <EBNFCDECL name='ReasonSectionMark' groups="Modality"/> = "|-<:" | "reason" | "cause" | "reason:" | "cause:" .
-<EBNFCDECL name='AdditionalReasonSection' groups="Modality"/> .
+<EBNFCDECL name='AdditionalReasonSection' groups="Modality"/> = <EBNFC name='AdditionalReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalReasonSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalReasonSection'/> .
 <EBNFCDECL name='AdditionalReasonSectionMark'/> = "[|-<:]" | "[reason]" | "[cause]" | "[reason:]" | "[cause:]" .
 </pre>
@@ -1391,7 +1391,7 @@ Logical annotations
 
 <gr>
 <EBNFCDECL name='LogicalSentenceDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalSentence'/> .
-<EBNFCDECL name='LogicalAnnotation'/> = "[:" <EBNFC name='LogicalVal'/> ":]" .
+<EBNFCDECL name='LogicalAnnotation'/> = "[:" <EBNFC name='LogicalSentenceVal'/> ":]" .
 <EBNFCDECL name='LogicalAnnotationsList'/> = ( <EBNFC name='LogicalAnnotation'/> [{ <EBNFC name='LogicalAnnotation'/> }] ) | ( "[:" <EBNFC name='LogicalAnnotation'/> [{ "," <EBNFC name='LogicalAnnotation'/> }] ":]" ) .
 <EBNFCDECL name='LogicalAnnotationDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalAnnotation'/> .
 </gr>
@@ -1726,7 +1726,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='IncrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='UnaryOp' param = '++'/> .
+<EBNFCDECL name='IncrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='PostfixUnaryOp' param = '++'/> .
 </pre>
 
 <h4 class='center-h' data-href="DecrementOp_chapter">
@@ -1736,7 +1736,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='DecrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='UnaryOp' param = '--'/> .
+<EBNFCDECL name='DecrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='PostfixUnaryOp' param = '--'/> .
 </pre>
 
 <h3 class='center-h' data-href="RelationalOp_chapter">
@@ -2218,6 +2218,14 @@ Synchronization statement
 	
 	<TEBNFCDECL name="UnaryOp_2" param='_OpLiteral'>
 	    [ <EBNFC name='AnnotationsList'/> ] _OpLiteral <EBNFC name='Expr'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="PostfixUnaryOp" param='_OpLiteral'>
+	    <TEBNFC name='PostfixUnaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="PostfixUnaryOp_2" param='_OpLiteral'>
+	    <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] _OpLiteral
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name="BinaryOp" param='_OpLiteral'>
