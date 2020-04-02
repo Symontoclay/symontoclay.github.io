@@ -223,6 +223,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>dela</span>
 <span class='keyword'>delsm</span>
 <span class='keyword'>make</span>
+<span class='keyword'>in</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -345,13 +346,15 @@ The ways of doing this will be described below in here section and in describing
 
 <gr>
 <EBNFCDECL name='ObjectDeclsSet'/> = <TEBNFC name='DeclSet' param = 'ObjectDecl'/> .
-<EBNFCDECL name='ObjectDecl'/> = .
-<EBNFCDECL name='UniversalTypeIdentifier' groups="TypeIdentifier"/> = "any" | "⊤" .
-<EBNFCDECL name='ObjectDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ObjectDecl' /> .
+<EBNFCDECL name='ObjectDecl'/> = <GEBNFC name='ObjectDecl' kind='or' /> .
+<EBNFCDECL name='UniversalTypeIdentifier' groups='TypeIdentifier'/> = "any" | "⊤" .
+<EBNFCDECL name='ObjectDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ObjectDecl' /> .
+<EBNFCDECL name='ShortObjectDecl' groups='ObjectDecl'/> = .
+<EBNFCDECL name='LongObjectDecl' groups='ObjectDecl'/> = .
 </gr>
 
-<h3 class='center-h' data-href="Classes_chapter">
-    Classes
+<h3 class='center-h' data-href="Class_chapter">
+    Class
 </h3>
 
 <LinkToContent/>
@@ -392,7 +395,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='ClassContent'/> = <GEBNFC name='ClassContent' kind='op_and'/> .
 </gr>
 
-<h4 class='center-h' data-href="Methods_chapter">
+<h4 class='center-h' data-href="Method_chapter">
     Methods
 </h4>
 
@@ -416,8 +419,8 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <EBNFCDECL name='OpOverloadingMemberDeclExpr'/> = <EBNFC name='OpOverloadingDeclExpr'/> .
 </gr>
 
-<h4 class='center-h' data-href="Restrictions_of_fields_chapter">
-    Restrictions of fields
+<h4 class='center-h' data-href="Restriction_of_field_chapter">
+    Restriction of field
 </h4>
 
 <LinkToContent/>
@@ -450,8 +453,8 @@ Member-variable
 <EBNFCDECL name='VarMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'VarMemberDecl'/> .
 </gr>
 	  
-<h4 class='center-h' data-href="Blocks_of_facts_chapter">
-    Blocks of facts
+<h4 class='center-h' data-href="Block_of_facts_chapter">
+    Block of facts
 </h4>
 
 <LinkToContent/>
@@ -461,8 +464,8 @@ Member-variable
 <EBNFCDECL name='BlockOfFacts'/> = <EBNFC name='FactDeclsSet'/> .
 </gr>
 
-<h4 class='center-h' data-href="Blocks_of_logical_rules_chapter">
-    Blocks of logical rules
+<h4 class='center-h' data-href="Block_of_logical_rules_chapter">
+    Block of logical rules
 </h4>
 
 <LinkToContent/>
@@ -473,7 +476,7 @@ Member-variable
 </gr>
 
 <h4 class='center-h' data-href="exception_handlers_chapter">
-    Exception handlers
+    Exception handler
 </h4>
 
 <LinkToContent/>
@@ -490,14 +493,14 @@ Member-variable
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='EventMemberDeclSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'EventMemberDecl'/> .
 <EBNFCDECL name='EventMemberDecl'/> .
 <EBNFCDECL name='EventMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventMemberDecl'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Namespaces_chapter">
-    Namespaces
+<h3 class='center-h' data-href="Namespace_chapter">
+    Namespace
 </h3>
 
 <LinkToContent/>
@@ -513,10 +516,10 @@ Defining namespace in identifier
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='identifier_with_namespace'/> = <EBNFC name='ConceptIdentifier'/> "::" { <EBNFC name='ConceptIdentifier'/> "::" } <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='instance_identifier_with_namespace'/> = <EBNFC name='ConceptIdentifier'/> "::" { <EBNFC name='ConceptIdentifier'/> "::" } <EBNFC name='InstanceIdentifier'/> .
-</pre>
+</gr>
 
 <pre class='ebnf-code'>
 mathematics::Set
@@ -528,10 +531,10 @@ Defining namespace by round brackets
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='identifier_with_namespace'/> = "`" <EBNFC name='ConceptIdentifier'/> "(" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='ConceptIdentifier'/> ) ")" "`" .
 <EBNFCDECL name='instance_identifier_with_namespace'/> = "`" <EBNFC name='InstanceIdentifier'/> "(" ( <EBNFC name='identifier_with_namespace'/> | <EBNFC name='ConceptIdentifier'/> ) ")" "`" .
-</pre>
+</gr>
 
 <pre class='ebnf-code'>
 `Set (mathematics)`
@@ -586,13 +589,13 @@ If identifiers are in different namespaces we can use identifier with namespace 
 "using" statement can be used both in root of source ebnf-code file and into other statements with figure brackets.
 </p>
 
-<h3 class='center-h' data-href="Modules_chapter">
-    Modules
+<h3 class='center-h' data-href="Module_chapter">
+    Module
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ModuleDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ModuleDecl'/> .
 <EBNFCDECL name='ModuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ModuleDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> [ "{" [ <EBNFC name='ClausedScopeForModulesSet'/> ] [ <EBNFC name='ModuleContent'/> ] [ <EBNFC name='ClausedScopeForModulesSet'/> ] "}" ] 
@@ -602,10 +605,10 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForModulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForModule'/> .
 <EBNFCDECL name='ClausedScopeForModule'/> = <TEBNFC name='DefScope' param = 'ModuleContent'/> .
 <EBNFCDECL name='ModuleContent'/> = <EBNFC name='SourceCodeFileContent'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Applications_chapter">
-    Applications
+<h3 class='center-h' data-href="Application_chapter">
+    Application
 </h3>
 
 <LinkToContent/>
@@ -616,7 +619,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ApplicationDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ApplicationDecl'/> .
 <EBNFCDECL name='ApplicationIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ApplicationDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "app" <EBNFC name='ApplicationIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForApplicationsSet'/> ] [ <EBNFC name='ApplicationContent'/> ] [ <EBNFC name='ClausedScopeForApplicationsSet'/> ] "}" ] 
@@ -626,27 +629,27 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForApplicationsSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForApplication'/> .
 <EBNFCDECL name='ClausedScopeForApplication'/> = <TEBNFC name='DefScope' param = 'ApplicationContent'/> .
 <EBNFCDECL name='ApplicationContent'/> = [ <EBNFC name='ClassContentFullSet'/> ] [ <EBNFC name='Import'/> ] .
-</pre>
+</gr>
 
-<h4 class='center-h' data-href="Imports_chapter">
-    Imports
+<h4 class='center-h' data-href="Import_chapter">
+    Import
 </h4>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='Import'/> = "import" ":" [{ <EBNFC name='ImportItem'/> }] ";" .
 <EBNFCDECL name='ImportDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'Import'/> .
 <EBNFCDECL name='ImportItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ConceptIdentifier'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="States_chapter">
-    States
+<h3 class='center-h' data-href="State_chapter">
+    State
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='StateDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
 <EBNFCDECL name='StateIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='StateDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "state" <EBNFC name='GenericParametersDecl'/> <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForStatesSet'/> ] [ <EBNFC name='StateContent'/> ] [ <EBNFC name='ClausedScopeForStatesSet'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
@@ -655,15 +658,15 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForStatesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForState'/> .
 <EBNFCDECL name='ClausedScopeForState'/> = <TEBNFC name='DefScope' param = 'StateContent'/> .
 <EBNFCDECL name='StateContent'/> = [ <EBNFC name='ClassContentFullSet'/> ] .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Processes_chapter">
-    Processes
+<h3 class='center-h' data-href="Process_chapter">
+    Process
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ProcessDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ProcessDecl'/> .
 <EBNFCDECL name='ProcessIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ClassName'/> .
 <EBNFCDECL name='ProcessDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "process" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ProcessIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForProcessesSet'/> ] [ <EBNFC name='ProcessContent'/> ] [ <EBNFC name='ClausedScopeForProcessesSet'/> ] "}" ] 
@@ -673,15 +676,15 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForProcessesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForProcess'/> .
 <EBNFCDECL name='ClausedScopeForProcess'/> = <TEBNFC name='DefScope' param = 'ProcessContent'/> .
 <EBNFCDECL name='ProcessContent'/> = [ <EBNFC name='ClassContentFullSet'/> ] .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Supervisors_chapter">
-    Supervisors
+<h3 class='center-h' data-href="Supervisor_chapter">
+    Supervisor
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SupervisorDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'SupervisorDecl'/> .
 <EBNFCDECL name='SupervisorIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='SupervisorDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "supervisor" <EBNFC name='SupervisorIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] [ <EBNFC name='SupervisorContent'/> ] [ <EBNFC name='ClausedScopeForSupervisorsSet'/> ] "}" ] 
@@ -691,15 +694,15 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForSupervisorsSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForSupervisor'/> .
 <EBNFCDECL name='ClausedScopeForSupervisor'/> = <TEBNFC name='DefScope' param = 'SupervisorContent'/> .
 <EBNFCDECL name='SupervisorContent'/> = [ <EBNFC name='ClassContentFullSet'/> ] .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Functions_chapter">
-    Functions
+<h3 class='center-h' data-href="Function_chapter">
+    Function
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='FunctionDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
 <EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FunctionSignature'/> = "(" <EBNFC name='FunctionParamsDeclaration'/> ")" [ "(|" <EBNFC name='FunctionAdditionalParamsSetDeclaration'/> "|)" ] ":" <EBNFC name='FunctionReturnDeclaration'/> .
@@ -718,7 +721,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FunctionAdditionalParamDeclaration'/> .
 <EBNFCDECL name='FunctionReturnDeclaration'/> = <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='FunctionBody'/> = <EBNFC name='StatementsSet'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="OpOverloading_chapter">
     Operator overloading
@@ -732,8 +735,8 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='OpOverloadingDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'OpOverloadingDecl'/> .
 </gr>
 
-<h3 class='center-h' data-href="Facts_and_logical_rules_chapter">
-    Facts and logical rules
+<h3 class='center-h' data-href="Fact_and_logical_rule_chapter">
+    Fact and logical rule
 </h3>
 
 <LinkToContent/>
@@ -775,25 +778,25 @@ $$:{ ClassName } - the fact belong to ClassName
 {: #5f145455-246f-4006-840d-9a0d009a44fe $:{#simple_module} {?Z(?X,?Y)} :}
 </pre>
 
-<h3 class='center-h' data-href="Events_chapter">
-Events
+<h3 class='center-h' data-href="Event_chapter">
+Event
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='EventDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'EventDecl'/> .
 <EBNFCDECL name='EventDecl'/> .
 <EBNFCDECL name='EventDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventDeclsSet'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Triggers_chapter">
-    Triggers
+<h3 class='center-h' data-href="Trigger_chapter">
+    Trigger
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='TriggerDeclsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'TriggerDecl'/> .
 <EBNFCDECL name='TriggerName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='TriggerName'/> .
@@ -808,15 +811,15 @@ Events
                   ( "on" <EBNFC name='TriggerOnExpression'/> "{" <EBNFC name='TriggersContent'/> "}" ) .
 <EBNFCDECL name='TriggerOnExpression'/> .
 <EBNFCDECL name='TriggerExceptExpression'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Instances_chapter">
-    Instances
+<h3 class='center-h' data-href="Instance_chapter">
+    Instance
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='InstanceDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'InstanceDecl'/> .
 <EBNFCDECL name='InstanceIdentifier' groups="TypeIdentifier"/> = <EBNFC name='InstanceIdentifier'/> | <EBNFC name='instance_identifier_with_namespace'/> .
 <EBNFCDECL name='InstanceDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "inst" <EBNFC name='InstanceIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] [ "{" [ <EBNFC name='ClausedScopeForInstancesSet'/> ] [ <EBNFC name='InstanceContent'/> ] [ <EBNFC name='ClausedScopeForInstancesSet'/> ] "}" ]
@@ -826,61 +829,61 @@ Events
 <EBNFCDECL name='ClausedScopeForInstancesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForInstance'/> .
 <EBNFCDECL name='ClausedScopeForInstance'/> = <TEBNFC name='DefScope' param = 'InstanceContent'/> .
 <EBNFCDECL name='InstanceContent'/> = [ <EBNFC name='ClassContentFullSet'/> ] .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Call-blocks_chapter">
-    Call-blocks
+<h3 class='center-h' data-href="Call-block_chapter">
+    Call-block
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='CallBlocksSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'CallBlock'/> .
 <EBNFCDECL name='CallBlock'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Synonyms_chapter">
-Synonyms
+<h3 class='center-h' data-href="Synonym_chapter">
+Synonym
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SynonymDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
 <EBNFCDECL name='SynonymDecl'/> .
 <EBNFCDECL name='SynonymDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SynonymDeclsSet'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Type_aliases_chapter">
-    Type aliases
+<h3 class='center-h' data-href="Type_alias_chapter">
+    Type alias
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='TypeAliasesSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'TypeAlias'/> .
 <EBNFCDECL name='TypeAlias'/> .
 <EBNFCDECL name='TypeAliasDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TypeAliasesSet'/> .
-</pre>
+</gr>
 	
-<h3 class='center-h' data-href="Ordered_types_chapter">
-    Ordered types
+<h3 class='center-h' data-href="Ordered_type_chapter">
+    Ordered type
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='OrderedTypeDecl'/> = <GEBNFC name='OrderedTypeDecl' kind='or'/> .
 <EBNFCDECL name='OrderedTypeIdentifier'/> = <EBNFC name='RangeIdentifier'/> | <EBNFC name='BooleanTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> .
-</pre>
+</gr>
 	
-<h3 class='center-h' data-href="Ranges_chapter">
-    Ranges
+<h3 class='center-h' data-href="Range_chapter">
+    Range
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='RangeDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'RangeDecl'/> . 
 <EBNFCDECL name='RangeIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> . .
 <EBNFCDECL name='RangeDecl' groups="OrderedTypeDecl"/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='GenericParametersDecl'/> <EBNFC name='RangeIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ]
@@ -888,29 +891,29 @@ Synonyms
 <EBNFCDECL name='RangeDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'RangeDeclsSet'/> .
 <EBNFCDECL name='DimDecl'/> = "dim" <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='RangeDescDecl'/> = <EBNFC name='OrderedTypeLiteral'/> ".." <EBNFC name='OrderedTypeLiteral'/> .
-</pre> 
+</gr> 
 
-<h3 class='center-h' data-href="Values_chapter">
-    Values
+<h3 class='center-h' data-href="Value_chapter">
+    Value
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ValueDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ValueDecl'/> .
 <EBNFCDECL name='ValueIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ValueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "value" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ValueIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ]
               [ <EBNFC name='InheritanceDecl'/> ] [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ValueDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ValueDeclsSet'/> .
-</pre>
+</gr>
 
-<h3 class='center-h' data-href="Fuzzy_sets_chapter">
-    Fuzzy sets
+<h3 class='center-h' data-href="Fuzzy_set_chapter">
+    Fuzzy set
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='FuzzySetDeclsSet' groups="ClassContent;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FuzzySetDecl'/> .
 <EBNFCDECL name='FuzzySetName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FuzzySetIdentifier' groups="TypeIdentifier"/> = <EBNFC name='FuzzySetName'/> .
@@ -932,7 +935,7 @@ Synonyms
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" . 
 <EBNFCDECL name='AdditionalContentOfFuzzySetBody'/> = <EBNFC name='ClassContentFullSet'/> .
 <EBNFCDECL name='FuzzyExpr' groups="Expr"/> .
-</pre>
+</gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 Fuzzy sets - Linguistic variables
@@ -941,38 +944,38 @@ Fuzzy term - Linguistic value
 Defuzzification method is not defined yet!
 </pre>
 
-<h3 class='center-h' data-href="Boolean_types_chapter">
-    Boolean types
+<h3 class='center-h' data-href="Boolean_type_chapter">
+    Boolean type
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='BooleanTypeIdentifier' groups="TypeIdentifier"/> = "boolean" | "Boolean" | "bool" .
 <EBNFCDECL name='BooleanTypeExpr' groups="Expr"/> = <EBNFC name='FuzzyExpr'/> | <EBNFC name='BooleanLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='BooleanTypeExpr'/> .
-</pre>
+</gr>
 	
-<h3 class='center-h' data-href="Numeric_types_chapter">
-    Numeric types
+<h3 class='center-h' data-href="Numeric_type_chapter">
+    Numeric type
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='NumericTypeIdentifier' groups="TypeIdentifier"/> = "number" | "Number" | "num" .
 <EBNFCDECL name='NumericTypeExpr' groups="Expr"/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> .
-</pre>
+</gr>
 	
-<h3 class='center-h' data-href="String_types_chapter">
-    String types
+<h3 class='center-h' data-href="String_type_chapter">
+    String type
 </h3>
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='StringTypeIdentifier' groups="TypeIdentifier"/> = "string" | "String" | "str" .
 <EBNFCDECL name='StringTypeExpr' groups="Expr"/> = <EBNFC name='StringLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='StringTypeExpr'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Date_and_time_type_chapter">
     Date and time type
@@ -980,10 +983,10 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DateTimeIdentifier' groups="TypeIdentifier"/> = "date" | "time" | "datetime" .
 <EBNFCDECL name='DateTimeTypeExpr' groups="Expr"/> = <EBNFC name='DateTimeLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='DateTimeTypeExpr'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Null_type_chapter">
     Null type
@@ -991,10 +994,10 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='NullTypeIdentifier'/> = <EBNFC name='NullLiteral'/> .
 <EBNFCDECL name='NullTypeExpr' groups="Expr"/> = <EBNFC name='NullLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NullTypeExpr'/> .
-</pre>
+</gr>
 
 <h2 class='center-h' data-href="Modalities_chapter">
     Modalities
