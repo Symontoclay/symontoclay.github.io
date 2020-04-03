@@ -384,14 +384,14 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 			 [ "{" <EBNFC name='ClassContentFullSet'/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ClassDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClassDecl' /> .
 <EBNFCDECL name='InheritanceDecl'/> = "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
-<EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClassName'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" .
+<EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ClassName'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" ] .
 <EBNFCDECL name='GenericParametersDecl'/> = "(<" <EBNFC name='GenericParameter'/> [{ "," <EBNFC name='GenericParameter'/> }] ">)" .
-<EBNFCDECL name='GenericParameter'/>
+<EBNFCDECL name='GenericParameter'/> = .
 <EBNFCDECL name='ClassContentFullSet'/> = [ <EBNFC name='ClausedScopeForClassesSet'/> ] [ <EBNFC name='ClassContent'/> ] [ <EBNFC name='ClausedScopeForClassesSet'/> ] .
 <EBNFCDECL name='ClausedScopeForClassesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForClassesSet'/> .
-<EBNFCDECL name='ClausedScopeForClassesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForClass'/> .
+<EBNFCDECL name='ClausedScopeForClassesSet' groups='ClassContent'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForClass'/> .
 <EBNFCDECL name='ClausedScopeForClass '/> = <TEBNFC name='DefScope' param = 'ClassContent'/> .
-<EBNFCDECL name='ClassContent'/> = <GEBNFC name='ClassContent' kind='op_and'/> .
+<EBNFCDECL name='ClassContent'/> = { <GEBNFC name='ClassContent' kind='op_and'/> } .
 </gr>
 
 <h4 class='center-h' data-href="Method_chapter">
@@ -401,7 +401,7 @@ You can read more about it <a href='#Applications_chapter'>here</a>.
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='MethodsSet' groups="ClassContent"/> = <TEBNFC name='DeclSet' param = 'Method'/> .
+<EBNFCDECL name='MethodsSet' groups='ClassContent'/> = <TEBNFC name='DeclSet' param = 'Method'/> .
 <EBNFCDECL name='Method'/> = <EBNFC name='FunctionDecl'/> .
 <EBNFCDECL name='MethodDeclExpr' groups="Expr"/> = <EBNFC name="FunctionDeclExpr" groups="Expr"/> .
 </gr>
