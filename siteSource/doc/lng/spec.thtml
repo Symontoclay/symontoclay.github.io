@@ -2321,10 +2321,10 @@ unmerge
 
 <gr>
 <EBNFCDECL name='ChannelOpExpr' groups="IPCOpExpr"/> = <GEBNFC name='ChannelOpExpr' kind='or'/> .
-<EBNFCDECL name='SyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> [ <EBNFC name='AnnotationsList'/> ] ">>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<" <EBNFC name='SourceExpr'/> ) .
-<EBNFCDECL name='AsyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceExpr'/> [ <EBNFC name='AnnotationsList'/> ] "~>>" <EBNFC name='DestExpr'/> ) | ( <EBNFC name='DestExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<~" <EBNFC name='SourceExpr'/> ) .
-<EBNFCDECL name='SourceExpr'/> = <EBNFC name='Expr'/> .
-<EBNFCDECL name='DestExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='SyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceChannelOpExpr'/> [ <EBNFC name='AnnotationsList'/> ] ">>" <EBNFC name='DestChannelOpExpr'/> ) | ( <EBNFC name='DestChannelOpExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<" <EBNFC name='SourceChannelOpExpr'/> ) .
+<EBNFCDECL name='AsyncChannelOpExpr' groups='ChannelOpExpr'/> = ( <EBNFC name='SourceChannelOpExpr'/> [ <EBNFC name='AnnotationsList'/> ] "~>>" <EBNFC name='DestChannelOpExpr'/> ) | ( <EBNFC name='DestChannelOpExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<~" <EBNFC name='SourceChannelOpExpr'/> ) .
+<EBNFCDECL name='SourceChannelOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='DestChannelOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <h4 class='center-h' data-href='WaitOpExpr_chapter'>
@@ -2390,7 +2390,7 @@ Error operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ [ <EBNFC name='AnnotationsList'/> ] "else" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] .
+<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ [ <EBNFC name='AnnotationsList'/> ] "else" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] ";" .
 <EBNFCDECL name='ConditionalStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalStatement'/> .
 </gr>
 
@@ -2422,10 +2422,13 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
-<EBNFCDECL name='ForStatement' groups="Statement"/> .
+<gr>
+<EBNFCDECL name='ForStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "for" "(" <EBNFC name='InitializerForStatementExpr'/> ";" <EBNFC name='ConditionForStatementExpr'/> ";" <EBNFC name='IteratorForStatementExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ";" .
 <EBNFCDECL name='ForStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ForStatement'/> .
-</pre>
+<EBNFCDECL name='InitializerForStatementExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='ConditionForStatementExpr'/> = <EBNFC name='BooleanTypeExpr'/> .
+<EBNFCDECL name='IteratorForStatementExpr'/> = <EBNFC name='Expr'/> .
+</gr>
 
 <h3 class='center-h' data-href="ForeachStatement_chapter">
     Foreach statement
@@ -2433,10 +2436,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
-<EBNFCDECL name='ForeachStatement' groups="Statement"/> .
+<gr>
+<EBNFCDECL name='ForeachStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "foreach" "(" <EBNFC name='VarExpr'/> "in" <EBNFC name='Expr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ";" .
 <EBNFCDECL name='ForeachStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ForeachStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="WhileStatement_chapter">
     While statement
@@ -2444,10 +2447,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='WhileStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "while" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ";" .
 <EBNFCDECL name='WhileStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'WhileStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="DoWhileStatement_chapter">
     Do-while statement
@@ -2455,10 +2458,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DoWhileStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "do" "{" [ <EBNFC name='StatementsSet'/> ] "}" "while" "(" <EBNFC name='BooleanTypeExpr'/> ")" ";" .
 <EBNFCDECL name='DoWhileStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'DoWhileStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="BreakStatement_chapter">
    Break statement
@@ -2466,10 +2469,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='BreakStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "break" ";" .
 <EBNFCDECL name='BreakStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'BreakStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="ContinueStatement_chapter">
     Continue statement
