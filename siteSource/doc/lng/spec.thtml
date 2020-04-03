@@ -220,7 +220,6 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>exclusive</span>
 <span class='keyword'>delm</span>
 <span class='keyword'>dels</span>
-<span class='keyword'>dela</span>
 <span class='keyword'>delsm</span>
 <span class='keyword'>make</span>
 <span class='keyword'>in</span>
@@ -715,7 +714,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 		   "=>" "{" [ <EBNFC name='FunctionBody'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" . 
 <EBNFCDECL name='AnonymousFunctionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AnonymousFunction' /> .
 <EBNFCDECL name='FunctionParamsSetDeclaration'/> = <EBNFC name='FunctionParamDeclaration'/> [{ "," <EBNFC name='FunctionParamDeclaration'/> }] .
-<EBNFCDECL name='FunctionParamDeclaration'/> .
+<EBNFCDECL name='FunctionParamDeclaration'/> = <TEBNFC name='VariableExpr'/> .
 <EBNFCDECL name='FunctionAdditionalParamsSetDeclaration'/> = <EBNFC name='FunctionAdditionalParamDeclaration'/> [{ "," <EBNFC name='FunctionAdditionalParamDeclaration'/> }] .
 <EBNFCDECL name='FunctionAdditionalParamDeclaration'/> .
 <EBNFCDECL name='FunctionReturnDeclaration'/> = <EBNFC name='TypeIdentifier'/> .
@@ -1118,7 +1117,7 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='CertaintyFactorModality' groups="Modality"/> = <EBNFC name='CertaintyFactorModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='CertaintyFactorModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'CertaintyFactorModality'/> .
 <EBNFCDECL name='CertaintyFactorModalityMark'/> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
@@ -1126,7 +1125,7 @@ Defuzzification method is not defined yet!
 <EBNFCDECL name='AdditionalCertaintyFactorModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalCertaintyFactorModality'/> .
 <EBNFCDECL name='AdditionalCertaintyFactorModalityMark'/> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
 <EBNFCDECL name='BooleanValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'BooleanTypeExpr'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Time_modality_chapter">
     Time modality
@@ -1518,7 +1517,17 @@ Logical annotations
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='GroupExpr' groups="Expr"/> = "(" <EBNFC name='Expr'/> ")" .
+<EBNFCDECL name='GroupExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
+</gr>
+
+<h3 class='center-h' data-href='_chapter'>
+
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='VarExpr' groups='Expr'/> = <TEBNFC name='VariableExpr'/> .
 </gr>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -2570,9 +2579,13 @@ Synchronization statement
 	    <TEBNFC name='BinaryOp_2' param = '"_OpLiteral"'/>
 	</TEBNFCDECL>
 	
-	<TEBNFCDECL name="BinaryOp_2" param='_OpLiteral'>
+	<TEBNFCDECL name='BinaryOp_2' param='_OpLiteral'>
 	    <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] _OpLiteral <EBNFC name='Expr'/>
 	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='VariableExpr'>
+	    [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='VarIdentifier'/> [ ":" <EBNFC name='TypeIdentifier'/> ]
+	</TEBNFCDECL>	
 </div>
 
 <!--
