@@ -2131,13 +2131,108 @@ Reflection operators
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ReflectionOpExpr' groups="Expr"/> = <GEBNFC name='ReflectionOpExpr' kind='or'/> .
+<EBNFCDECL name='ReflectionOpExpr' groups='Expr'/> = <GEBNFC name='ReflectionOpExpr' kind='or'/> .
 </gr>
 
+<h4 class='center-h' data-href='TypeOfOp_chapter'>
+Operator "type of"
+</h4>
 
-<pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
-Type information, maybe Cast and also modality, ">>>" and "<<<" operators.
-</pre>
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='TypeOfOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='ModalOfOp_chapter'>
+Operator "modal of"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='ModalOfOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='PublicRunTimeTypeChangesOp_chapter'>
+Operator ">>>" "<<<"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='PublicRunTimeTypeChangesOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='SetInheritanceOp_chapter'>
+Operator "is" (inheritance)
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='SetInheritanceOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='CastOp_chapter'>
+Operator "as"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='CastOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='MakeTypeOp_chapter'>
+Operator "make"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='MakeTypeOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='NameAsOp_chapter'>
+Operator "name as"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='NameAsOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='DeleteMemberOp_chapter'>
+Operator "delm"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='DeleteMemberOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='DeleteSubItemOp_chapter'>
+Operator "dels"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='DeleteSubItemOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='DeleteSubItemAndMemberOp_chapter'>
+Operator "delsm"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='DeleteSubItemAndMemberOpExpr' groups='ReflectionOpExpr'/> = .
+</gr>
 
 <h3 class='center-h' data-href="DataSetOp_chapter">
     Dataset operators
