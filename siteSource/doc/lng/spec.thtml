@@ -1106,10 +1106,10 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ModalitiesSet'/> = <EBNFC name='Modality'/> [{ <EBNFC name='Modality'/> }] .
 <EBNFCDECL name='Modality'/> = <GEBNFC name='Modality' kind='or' /> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Certainty_factor_chapter">
     Certainty factor
@@ -1133,7 +1133,7 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='TimeModality' groups="Modality"/> = <EBNFC name='TimeModalityMark'/> <EBNFC name='DateTimeValOfModality'/> .
 <EBNFCDECL name='TimeModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TimeModality'/> .
 <EBNFCDECL name='TimeModalityMark'/> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
@@ -1141,7 +1141,7 @@ Defuzzification method is not defined yet!
 <EBNFCDECL name='AdditionalTimeModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalTimeModality'/> .
 <EBNFCDECL name='AdditionalTimeModalityMark'/> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
 <EBNFCDECL name='DateTimeValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'DateTimeTypeExpr'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Completion_modality_chapter">
     Completion modality
@@ -1149,14 +1149,14 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='CompletionModality' groups="Modality"/> = <EBNFC name='CompletionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='CompletionModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'CompletionModality'/> .
 <EBNFCDECL name='CompletionModalityMark'/> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
 <EBNFCDECL name='AdditionalCompletionModality' groups="Modality"/> = <EBNFC name='AdditionalCompletionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalCompletionModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalCompletionModality'/> .
 <EBNFCDECL name='AdditionalCompletionModalityMark'/> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Accepted_modality_chapter">
     Accepted modality
@@ -1164,14 +1164,14 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>	
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AcceptedModality' groups="Modality"/> = <EBNFC name='AcceptedModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AcceptedModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AcceptedModality'/> .
 <EBNFCDECL name='AcceptedModalityMark'/> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
 <EBNFCDECL name='AdditionalAcceptedModality' groups="Modality"/> = <EBNFC name='AdditionalAcceptedModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalAcceptedModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalAcceptedModality'/> .
 <EBNFCDECL name='AdditionalAcceptedModalityMark'/> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Desirable_modality_chapter">
     Desirable modality
@@ -1179,14 +1179,14 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>	
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DesirableModality' groups="Modality"/> = <EBNFC name='DesirableModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='DesirableModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'DesirableModality'/> . 
 <EBNFCDECL name='DesirableModalityMark'/> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
 <EBNFCDECL name='AdditionalDesirableModality' groups="Modality"/> = <EBNFC name='AdditionalDesirableModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalDesirableModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalDesirableModality'/> .
 <EBNFCDECL name='AdditionalDesirableModalityMark'/> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Necessity_modality_chapter">
     Necessity modality
@@ -1194,14 +1194,14 @@ Defuzzification method is not defined yet!
 
 <LinkToContent/>	
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='NecessityModality' groups="Modality"/> = <EBNFC name='NecessityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='NecessityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'NecessityModality'/> .
 <EBNFCDECL name='NecessityModalityMark'/> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
 <EBNFCDECL name='AdditionalNecessityModality' groups="Modality"/> = <EBNFC name='AdditionalNecessityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalNecessityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalNecessityModality'/> .
 <EBNFCDECL name='AdditionalNecessityModalityMark'/> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Intention_modality_chapter">
     Intention modality
@@ -1520,8 +1520,8 @@ Logical annotations
 <EBNFCDECL name='GroupExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
 </gr>
 
-<h3 class='center-h' data-href='_chapter'>
-
+<h3 class='center-h' data-href='Var_chapter'>
+Variable
 </h3>
 
 <LinkToContent/>
@@ -1557,9 +1557,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AssignsOpExpr' groups="Expr"/> = <GEBNFC name='AssignsOpExpr' kind='or'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="AssignmentOp_chapter">
     Operator "="
@@ -1567,9 +1567,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="CoalesceAssignmentOp_chapter">
     Operator "??="
@@ -1577,9 +1577,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='CoalesceAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '??='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="AddAssignmentOp_chapter">
     Operator "+="
@@ -1587,9 +1587,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AddAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '+='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="SubAssignmentOp_chapter">
     Operator "-="
@@ -1597,9 +1597,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SubAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '-='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="MulAssignmentOp_chapter">
     Operator "*="
@@ -1607,9 +1607,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='MulAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '*='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="DivAssignmentOp_chapter">
     Operator "/="
@@ -1617,9 +1617,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DivAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '/='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="EucDivAssignmentOp_chapter">
     Operator "%="
