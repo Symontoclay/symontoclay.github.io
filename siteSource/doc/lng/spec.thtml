@@ -572,10 +572,10 @@ If identifiers are in different namespaces we can use identifier with namespace 
 "using" statement allow us to use identifiers without those identifiers of namespaces which was resolved by the statement.
 </p>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='UsingStatement'/> = "using" <EBNFC name='ConceptIdentifier'/> "::" { <EBNFC name='ConceptIdentifier'/> "::" } <EBNFC name='ConceptIdentifier'/> ";"
 <EBNFCDECL name='UsingStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'UsingStatement'/> .
-</pre>
+</gr>
 
 <pre class='ebnf-code'>
 <span class='keyword'>using</span> mathematics;
