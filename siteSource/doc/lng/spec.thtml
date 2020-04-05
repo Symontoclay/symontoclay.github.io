@@ -842,7 +842,7 @@ Conditional entity
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ConditionalEntityDeclsSet' groups=ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ConditionalEntityDecl'/> .
+<EBNFCDECL name='ConditionalEntityDeclsSet' groups='ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ConditionalEntityDecl'/> .
 <EBNFCDECL name='ConditionalEntityDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalEntityDeclsSet'/> .
 <EBNFCDECL name='ConditionalEntityDecl'/> = .
 </gr>
@@ -1042,7 +1042,7 @@ Map
 <EBNFCDECL name='FuzzyTerm'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyTermName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
-<EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" . 
+<EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='FuzzyExpr' groups="Expr"/> .
 </gr>
 
