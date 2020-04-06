@@ -473,7 +473,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='MapToNpcMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'MapToNpcMemberDecl'/> .
-<EBNFCDECL name='MapToNpcMemberDecl'/> = "map" "to" "npc" ( <EBNFC name='LogicalSentence'/> | ( "{" <EBNFC name='LogicalSentence'/> [{ "," <EBNFC name='LogicalSentence'/> }] "}" ) | <EBNFC name='NullTypeExpr'/> ) .
+<EBNFCDECL name='MapToNpcMemberDecl'/> = "map" "to" "npc" ( <EBNFC name='LogicalSentence'/> | ( "{" <EBNFC name='LogicalSentence'/> [{ "," <EBNFC name='LogicalSentence'/> }] "}" ) | <EBNFC name='NullTypeExpr'/> ) ";" .
 <EBNFCDECL name='MapToNpcMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'MapToNpcMemberDecl'/> .
 </gr>
 
