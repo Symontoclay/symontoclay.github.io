@@ -2427,7 +2427,7 @@ Error operator
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='TryCatchStatement' groups="Statement"/> .
+<EBNFCDECL name='TryCatchStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "try" "{" [ <EBNFC name='StatementsSet'/> ] "}" </br> [ <TEBNFC name='CatchTemplate'/> ] </br> [ "finally" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] ";" .
 <EBNFCDECL name='TryCatchStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TryCatchStatement'/> .
 </pre>
 
@@ -2495,10 +2495,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ContinueStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "continue" ";" .
 <EBNFCDECL name='ContinueStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ContinueStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="ReturnStatement_chapter">
     Return statement
@@ -2506,10 +2506,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ReturnStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "return" [ <EBNFC name='Expr'/> ] ";" .
 <EBNFCDECL name='ReturnStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ReturnStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="YieldReturnStatement_chapter">
     Yield-return statement
@@ -2517,10 +2517,10 @@ Error operator
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='YieldStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "yield" [ <EBNFC name='Expr'/> ] ";" .
 <EBNFCDECL name='YieldStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'YieldStatement'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="TriggerStatement_chapter">
 Trigger statement
