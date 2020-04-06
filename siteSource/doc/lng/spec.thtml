@@ -369,7 +369,7 @@ The ways of doing this will be described below in here section and in describing
 
 <gr>
 <EBNFCDECL name='MethodsSet' groups='ObjectMembers'/> = <TEBNFC name='DeclSet' param = 'Method'/> .
-<EBNFCDECL name='Method'/> = <EBNFC name='FunctionDecl'/> .
+<EBNFCDECL name='Method'/> = <EBNFC name='FunctionDecl'/> ";" .
 <EBNFCDECL name='MethodDeclExpr' groups="Expr"/> = <EBNFC name="FunctionDeclExpr" groups="Expr"/> .
 </gr>
 
@@ -381,7 +381,7 @@ The ways of doing this will be described below in here section and in describing
 
 <gr>
 <EBNFCDECL name='OpOverloadingMemberDeclsSet' groups='ObjectMembers'/> = <TEBNFC name='DeclSet' param = 'OpOverloadingMemberDecl'/> .
-<EBNFCDECL name='OpOverloadingMemberDecl'/> = <EBNFC name='OpOverloadingDecl'/> .
+<EBNFCDECL name='OpOverloadingMemberDecl'/> = <EBNFC name='OpOverloadingDecl'/> ";"  .
 <EBNFCDECL name='OpOverloadingMemberDeclExpr'/> = <EBNFC name='OpOverloadingDeclExpr'/> .
 </gr>
 
@@ -415,7 +415,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='VarMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'VarMemberDecl'/> .
-<EBNFCDECL name='VarMemberDecl'/> = <TEBNFC name='VariableExpr'/> .
+<EBNFCDECL name='VarMemberDecl'/> = <TEBNFC name='VariableExpr'/> [ "=" <EBNFC name='Expr'/> ] ";" .
 <EBNFCDECL name='VarMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'VarMemberDecl'/> .
 </gr>
 	  
@@ -427,7 +427,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='BlocksOfFactsSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'BlockOfFacts'/> .
-<EBNFCDECL name='BlockOfFacts'/> = <EBNFC name='FactDeclsSet'/> .
+<EBNFCDECL name='BlockOfFacts'/> = <EBNFC name='FactDeclsSet'/> ";" .
 </gr>
 
 <h4 class='center-h' data-href="Block_of_logical_rules_chapter">
@@ -438,7 +438,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='BlocksOfLogicalRulesSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'BlockOfLogicalRules'/> .
-<EBNFCDECL name='BlockOfLogicalRules'/> = <EBNFC name='LogicalRuleDeclsSet'/> .
+<EBNFCDECL name='BlockOfLogicalRules'/> = <EBNFC name='LogicalRuleDeclsSet'/>  ";" .
 </gr>
 
 <h4 class='center-h' data-href="exception_handlers_chapter">
@@ -449,7 +449,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='ExceptionHandlersSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'ExceptionHandler'/> .
-<EBNFCDECL name='ExceptionHandler'/> = <TEBNFC name='CatchTemplate'/> .
+<EBNFCDECL name='ExceptionHandler'/> = <TEBNFC name='CatchTemplate'/> ";" .
 <EBNFCDECL name='ExceptionHandlerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExceptionHandler'/> .
 </gr>
 
@@ -863,7 +863,7 @@ Conditional entity
 <gr>
 <EBNFCDECL name='ConditionalEntityDeclsSet' groups='ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ConditionalEntityDecl'/> .
 <EBNFCDECL name='ConditionalEntityDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalEntityDeclsSet'/> .
-<EBNFCDECL name='ConditionalEntityDecl'/> = .
+<EBNFCDECL name='ConditionalEntityDecl'/> = [ <EBNFC name='AnnotationsList'/> ] ( "#@" | <EBNFC name='ConditionalEntityIdentifier'/> ) "(" <EBNFC name='LogicalSentenceExpr'/> ")" .
 </gr>
 
 <h3 class='center-h' data-href="Call-block_chapter">
@@ -943,8 +943,8 @@ Intersection type
 <EBNFCDECL name='RangeDeclsSet' groups="ObjectTypeDecls;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'RangeDecl'/> . 
 <EBNFCDECL name='RangeIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='RangeDecl' groups="OrderedTypeDecl"/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='GenericParametersDecl'/> <EBNFC name='RangeIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ]
-              [ <EBNFC name='InheritanceDecl'/> ] 
-			  [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] 
+              [ <EBNFC name='InheritanceDecl'/> ] <br/>
+			  [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
 			  [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='RangeDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'RangeDeclsSet'/> .
 <EBNFCDECL name='DimDecl'/> = "dim" <EBNFC name='TypeIdentifier'/> .
@@ -961,8 +961,8 @@ Intersection type
 <EBNFCDECL name='ValueDeclsSet' groups='ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ValueDecl'/> .
 <EBNFCDECL name='ValueIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ValueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "value" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ValueIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ]
-              [ <EBNFC name='InheritanceDecl'/> ] 
-			  [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] 
+              [ <EBNFC name='InheritanceDecl'/> ] <br/>
+			  [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
 			  [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ValueDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ValueDeclsSet'/> .
 </gr>
@@ -978,7 +978,9 @@ Set
 <EBNFCDECL name='SetIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='SetTypeIdentifier' groups='TypeIdentifier'/> = "set" [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] .
 <EBNFCDECL name='SetDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'SetDeclsSet'/> .
-<EBNFCDECL name='SetDecl'/> = .
+<EBNFCDECL name='SetDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "set" <EBNFC name='SetIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
+               [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
+			   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 </gr>
 
 <h3 class='center-h' data-href='List_chapter'>
@@ -992,7 +994,9 @@ List
 <EBNFCDECL name='ListIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ListTypeIdentifier' groups='TypeIdentifier'/> = "list" [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] .
 <EBNFCDECL name='ListDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ListDeclsSet'/> .
-<EBNFCDECL name='ListDecl'/> = .
+<EBNFCDECL name='ListDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "list" <EBNFC name='ListIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
+              [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
+			  [ <EBNFC name='ModalitiesSet'/> ] ";" .
 </gr>
 
 <h3 class='center-h' data-href='Queue_chapter'>
@@ -1006,7 +1010,9 @@ Queue
 <EBNFCDECL name='QueueIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='QueueTypeIdentifier' groups='TypeIdentifier'/> = "queue" [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] .
 <EBNFCDECL name='QueueDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'QueueDeclsSet'/> .
-<EBNFCDECL name='QueueDecl'/> = .
+<EBNFCDECL name='QueueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "queue" <EBNFC name='QueueIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
+              [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
+			  [ <EBNFC name='ModalitiesSet'/> ] ";" .
 </gr>
 
 <h3 class='center-h' data-href='Stack_chapter'>
@@ -1020,7 +1026,9 @@ Stack
 <EBNFCDECL name='StackIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='StackTypeIdentifier' groups='TypeIdentifier'/> = "stack" [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] .
 <EBNFCDECL name='StackDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'StackDeclsSet'/> .
-<EBNFCDECL name='StackDecl'/> = .
+<EBNFCDECL name='StackDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "stack" <EBNFC name='StackIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
+               [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
+			   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 </gr>
 
 <h3 class='center-h' data-href='Map_chapter'>
@@ -1034,7 +1042,9 @@ Map
 <EBNFCDECL name='MapIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='MapTypeIdentifier' groups='TypeIdentifier'/> = "map" [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] .
 <EBNFCDECL name='MapDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'MapDeclsSet'/> .
-<EBNFCDECL name='MapDecl'/> = .
+<EBNFCDECL name='MapDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "map" <EBNFC name='MapIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
+               [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
+			   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 </gr>
 
 <h3 class='center-h' data-href="Fuzzy_set_chapter">
@@ -1062,7 +1072,7 @@ Map
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='FuzzyExpr' groups="Expr"/> .
+<EBNFCDECL name='FuzzyExpr' groups="Expr"/> = <EBNFC name='FuzzySetIdentifier'/> "::" <EBNFC name='FuzzyTermName'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1136,6 +1146,7 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='ModalitiesSet'/> = <EBNFC name='Modality'/> [{ <EBNFC name='Modality'/> }] .
 <EBNFCDECL name='Modality'/> = <GEBNFC name='Modality' kind='or' /> .
+<EBNFCDECL name='ModalityMark'/> = <GEBNFC name='ModalityMark' kind='or' /> .
 </gr>
 
 <h3 class='center-h' data-href="Certainty_factor_chapter">
@@ -1147,10 +1158,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='CertaintyFactorModality' groups="Modality"/> = <EBNFC name='CertaintyFactorModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='CertaintyFactorModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'CertaintyFactorModality'/> .
-<EBNFCDECL name='CertaintyFactorModalityMark'/> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
+<EBNFCDECL name='CertaintyFactorModalityMark' groups='ModalityMark'/> = "%:" | "cf" | "certain" | "sure" | "right" | "true" | "cf:" | "certain:" | "sure:" | "right:" | "true:" .
 <EBNFCDECL name='AdditionalCertaintyFactorModality' groups="Modality"/> = <EBNFC name='AdditionalCertaintyFactorModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalCertaintyFactorModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalCertaintyFactorModality'/> .
-<EBNFCDECL name='AdditionalCertaintyFactorModalityMark'/> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
+<EBNFCDECL name='AdditionalCertaintyFactorModalityMark' groups='ModalityMark'/> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
 <EBNFCDECL name='BooleanValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'BooleanTypeExpr'/> .
 </gr>
 
@@ -1163,10 +1174,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='TimeModality' groups="Modality"/> = <EBNFC name='TimeModalityMark'/> <EBNFC name='DateTimeValOfModality'/> .
 <EBNFCDECL name='TimeModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TimeModality'/> .
-<EBNFCDECL name='TimeModalityMark'/> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
+<EBNFCDECL name='TimeModalityMark' groups='ModalityMark'/> = "-:" | "time" | "when" | "t" | "time:" | "when:" | "t:" .
 <EBNFCDECL name='AdditionalTimeModality' groups="Modality"/> = <EBNFC name='AdditionalTimeModalityMark'/> <EBNFC name='DateTimeValOfModality'/> .
 <EBNFCDECL name='AdditionalTimeModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalTimeModality'/> .
-<EBNFCDECL name='AdditionalTimeModalityMark'/> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
+<EBNFCDECL name='AdditionalTimeModalityMark' groups='ModalityMark'/> = "[-:]" | "[time]" | "[when]" | "[t]" | "[time:]" | "[when:]" | "[t:]" .
 <EBNFCDECL name='DateTimeValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'DateTimeTypeExpr'/> .
 </gr>
 
@@ -1179,10 +1190,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='CompletionModality' groups="Modality"/> = <EBNFC name='CompletionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='CompletionModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'CompletionModality'/> .
-<EBNFCDECL name='CompletionModalityMark'/> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
+<EBNFCDECL name='CompletionModalityMark' groups='ModalityMark'/> = "|:" | "final" | "completed" | "completion" | "finished" | "finalized" | "fin" | "final:" | "completed:" | "completion:" | "finished:" | "finalized:" | "fin:" .
 <EBNFCDECL name='AdditionalCompletionModality' groups="Modality"/> = <EBNFC name='AdditionalCompletionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalCompletionModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalCompletionModality'/> .
-<EBNFCDECL name='AdditionalCompletionModalityMark'/> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
+<EBNFCDECL name='AdditionalCompletionModalityMark' groups='ModalityMark'/> = "[|:]" | "[final]" | "[completed]" | "[completion]" | "[finished]" | "[finalized]" | "[fin]" | "[final:]" | "[completed:]" | "[completion:]" | "[finished:]" | "[finalized:]" | "[fin:]" .
 </gr>
 
 <h3 class='center-h' data-href="Accepted_modality_chapter">
@@ -1194,10 +1205,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='AcceptedModality' groups="Modality"/> = <EBNFC name='AcceptedModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AcceptedModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AcceptedModality'/> .
-<EBNFCDECL name='AcceptedModalityMark'/> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
+<EBNFCDECL name='AcceptedModalityMark' groups='ModalityMark'/> = "+:" | "accepted" | "accept" | "a" | "accepted:" | "accept:" | "a:" .
 <EBNFCDECL name='AdditionalAcceptedModality' groups="Modality"/> = <EBNFC name='AdditionalAcceptedModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalAcceptedModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalAcceptedModality'/> .
-<EBNFCDECL name='AdditionalAcceptedModalityMark'/> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
+<EBNFCDECL name='AdditionalAcceptedModalityMark' groups='ModalityMark'/> = "[+:]" | "[accepted]" | "[accept]" | "[a]" | "[accepted:]" | "[accept:]" | "[a:]" .
 </gr>
 
 <h3 class='center-h' data-href="Desirable_modality_chapter">
@@ -1209,10 +1220,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='DesirableModality' groups="Modality"/> = <EBNFC name='DesirableModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='DesirableModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'DesirableModality'/> . 
-<EBNFCDECL name='DesirableModalityMark'/> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
+<EBNFCDECL name='DesirableModalityMark' groups='ModalityMark'/> = "~~:" | "desirable" | "optative" | "d" | "desirable:" | "optative:" | "d:" .
 <EBNFCDECL name='AdditionalDesirableModality' groups="Modality"/> = <EBNFC name='AdditionalDesirableModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalDesirableModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalDesirableModality'/> .
-<EBNFCDECL name='AdditionalDesirableModalityMark'/> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
+<EBNFCDECL name='AdditionalDesirableModalityMark' groups='ModalityMark'/> = "[~~:]" | "[desirable]" | "[optative]" | "[d]" | "[desirable:]" | "[optative:]" | "[d:]" .
 </gr>
 
 <h3 class='center-h' data-href="Necessity_modality_chapter">
@@ -1224,10 +1235,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='NecessityModality' groups="Modality"/> = <EBNFC name='NecessityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='NecessityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'NecessityModality'/> .
-<EBNFCDECL name='NecessityModalityMark'/> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
+<EBNFCDECL name='NecessityModalityMark' groups='ModalityMark'/> = "~!:" | "necessity" | "need" | "must" | "should" | "ought" | "obligation" | "oblige" | "n" | "necessity:" | "need:" | "must:" | "should:" | "ought:" | "obligation:" | "oblige:" | "n:" .
 <EBNFCDECL name='AdditionalNecessityModality' groups="Modality"/> = <EBNFC name='AdditionalNecessityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalNecessityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalNecessityModality'/> .
-<EBNFCDECL name='AdditionalNecessityModalityMark'/> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
+<EBNFCDECL name='AdditionalNecessityModalityMark' groups='ModalityMark'/> = "[~!:]" | "[necessity]" | "[need]" | "[must]" | "[should]" | "[ought]" | "[obligation]" | "[oblige]" | "[n]" | "[necessity:]" | "[need:]" | "[must:]" | "[should:]" | "[ought:]" | "[obligation:]" | "[oblige:]" | "[n:]" .
 </gr>
 
 <h3 class='center-h' data-href="Intention_modality_chapter">
@@ -1239,10 +1250,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='IntentionModality' groups="Modality"/> = <EBNFC name='IntentionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='IntentionModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'IntentionModality'/> .
-<EBNFCDECL name='IntentionModalityMark'/> = "~>:" | "intention" | "intend" | "plan" | "decide" | "i" | "intention:" | "intend:" | "plan:" | "decide:" | "i:" .
+<EBNFCDECL name='IntentionModalityMark' groups='ModalityMark'/> = "~>:" | "intention" | "intend" | "plan" | "decide" | "i" | "intention:" | "intend:" | "plan:" | "decide:" | "i:" .
 <EBNFCDECL name='AdditionalIntentionModality' groups="Modality"/> = <EBNFC name='AdditionalIntentionModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalIntentionModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalIntentionModality'/> .
-<EBNFCDECL name='AdditionalIntentionModalityMark'/> = "[~>:]" | "[intention]" | "[intend]" | "[plan]" | "[decide]" | "[i]" | "[intention:]" | "[intend:]" | "[plan:]" | "[decide:]" | "[i:]" .
+<EBNFCDECL name='AdditionalIntentionModalityMark' groups='ModalityMark'/> = "[~>:]" | "[intention]" | "[intend]" | "[plan]" | "[decide]" | "[i]" | "[intention:]" | "[intend:]" | "[plan:]" | "[decide:]" | "[i:]" .
 </gr>
 
 <h3 class='center-h' data-href="Priority_modality_chapter">
@@ -1254,10 +1265,10 @@ Defuzzification method is not defined yet!
 <gr>
 <EBNFCDECL name='PriorityModality' groups="Modality"/> = <EBNFC name='PriorityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='PriorityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'PriorityModality'/> .
-<EBNFCDECL name='PriorityModalityMark'/> = "*:" | "priority" | "p" | "priority:" | "p:" .
+<EBNFCDECL name='PriorityModalityMark' groups='ModalityMark'/> = "*:" | "priority" | "p" | "priority:" | "p:" .
 <EBNFCDECL name='AdditionalPriorityModality' groups="Modality"/> = <EBNFC name='AdditionalPriorityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalPriorityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalPriorityModality'/> . 
-<EBNFCDECL name='AdditionalPriorityModalityMark'/> = "[*:]" | "[priority]" | "[p]" | "[priority:]" | "[p:]" .
+<EBNFCDECL name='AdditionalPriorityModalityMark' groups='ModalityMark'/> = "[*:]" | "[priority]" | "[p]" | "[priority:]" | "[p:]" .
 </gr>
 
 <h3 class='center-h' data-href="Moral_quality_modality_chapter">
@@ -1269,10 +1280,10 @@ Defuzzification method is not defined yet!
 <pre class='ebnf-code'>
 <EBNFCDECL name='MoralQualityModality' groups="Modality"/> = <EBNFC name='MoralQualityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='MoralQualityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'MoralQualityModality'/> .
-<EBNFCDECL name='MoralQualityModalityMark'/> = "/^:" | "moral" | "moral:" .
+<EBNFCDECL name='MoralQualityModalityMark' groups='ModalityMark'/> = "/^:" | "moral" | "moral:" .
 <EBNFCDECL name='AdditionalMoralQualityModality' groups="Modality"/> = <EBNFC name='AdditionalMoralQualityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalMoralQualityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalMoralQualityModality'/> .
-<EBNFCDECL name='AdditionalMoralQualityModalityMark'/> = "[/^:]" | "[moral]" | "[moral:]" .
+<EBNFCDECL name='AdditionalMoralQualityModalityMark' groups='ModalityMark'/> = "[/^:]" | "[moral]" | "[moral:]" .
 </pre>
 
 <h3 class='center-h' data-href="Respect_modality_chapter">
@@ -1284,10 +1295,10 @@ Defuzzification method is not defined yet!
 <pre class='ebnf-code'>
 <EBNFCDECL name='RespectModality' groups="Modality"/> = <EBNFC name='RespectModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='RespectModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'RespectModality'/> .
-<EBNFCDECL name='RespectModalityMark'/> = "/:" | "respect" | "respect:" .
+<EBNFCDECL name='RespectModalityMark' groups='ModalityMark'/> = "/:" | "respect" | "respect:" .
 <EBNFCDECL name='AdditionalRespectModality' groups="Modality"/> = <EBNFC name='AdditionalRespectModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalRespectModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalRespectModality'/> .
-<EBNFCDECL name='AdditionalRespectModalityMark'/> = "[/:]" | "[respect]" | "[respect:]" .
+<EBNFCDECL name='AdditionalRespectModalityMark' groups='ModalityMark'/> = "[/:]" | "[respect]" | "[respect:]" .
 </pre>
 
 <h3 class='center-h' data-href="Quantity_quality_modality_chapter">
@@ -1299,10 +1310,10 @@ Quantity quality modality
 <pre class='ebnf-code'>
 <EBNFCDECL name='QuantityQualityModality' groups="Modality"/> = <EBNFC name='QuantityQualityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='QuantityQualityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'QuantityQualityModality'/> .
-<EBNFCDECL name='QuantityQualityModalityMark'/> = "=:" | "q" | "quantity" | "q:" | "quantity:" .
+<EBNFCDECL name='QuantityQualityModalityMark' groups='ModalityMark'/> = "=:" | "q" | "quantity" | "q:" | "quantity:" .
 <EBNFCDECL name='AdditionalQuantityQualityModality' groups="Modality"/> = <EBNFC name='AdditionalQuantityQualityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalQuantityQualityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalQuantityQualityModality'/> .
-<EBNFCDECL name='AdditionalQuantityQualityModalityMark'/> = "[=:]" | "[q]" | "[quantity]" | "[q:]" | "[quantity:]" .
+<EBNFCDECL name='AdditionalQuantityQualityModalityMark' groups='ModalityMark'/> = "[=:]" | "[q]" | "[quantity]" | "[q:]" | "[quantity:]" .
 </pre>
 
 <h3 class='center-h' data-href="Emotion_kind_chapter">
@@ -1314,10 +1325,10 @@ Quantity quality modality
 <pre class='ebnf-code'>
 <EBNFCDECL name='EmotionKindModality' groups="Modality"/> = <EBNFC name='EmotionKindModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='EmotionKindModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EmotionKindModality'/> .
-<EBNFCDECL name='EmotionKindModalityMark'/> = "~:" | "emotion" | "em" | "emotion:" | "em:" .
+<EBNFCDECL name='EmotionKindModalityMark' groups='ModalityMark'/> = "~:" | "emotion" | "em" | "emotion:" | "em:" .
 <EBNFCDECL name='AdditionalEmotionKindModality' groups="Modality"/> = <EBNFC name='AdditionalEmotionKindModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalEmotionKindModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalEmotionKindModality'/> .
-<EBNFCDECL name='AdditionalEmotionKindModalityMark'/> = "[~:]" | "[emotion]" | "[em]" | "[emotion:]" | "[em:]" .
+<EBNFCDECL name='AdditionalEmotionKindModalityMark' groups='ModalityMark'/> = "[~:]" | "[emotion]" | "[em]" | "[emotion:]" | "[em:]" .
 </pre>
 
 <h3 class='center-h' data-href="Emotion_intensity_modality_chapter">
@@ -1329,10 +1340,10 @@ Emotion intensity modality
 <pre class='ebnf-code'>
 <EBNFCDECL name='EmotionIntensityModality' groups="Modality"/> = <EBNFC name='EmotionIntensityModalityMark'/> <EBNFC name='BooleanValOfModality'/> . 
 <EBNFCDECL name='EmotionIntensityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EmotionIntensityModality'/> .
-<EBNFCDECL name='EmotionIntensityModalityMark'/> = "*~:" | "emotion intensity" | "emotion power" | "emi" | "emp" | "emotion intensity:" | "emotion power:" | "emi:" | "emp:" .
+<EBNFCDECL name='EmotionIntensityModalityMark' groups='ModalityMark'/> = "*~:" | "emotion intensity" | "emotion power" | "emi" | "emp" | "emotion intensity:" | "emotion power:" | "emi:" | "emp:" .
 <EBNFCDECL name='AdditionalEmotionIntensityModality' groups="Modality"/> = <EBNFC name='AdditionalEmotionIntensityModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalEmotionIntensityModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalEmotionIntensityModality'/> .
-<EBNFCDECL name='AdditionalEmotionIntensityModalityMark'/> = "[*~:]" | "[emotion intensity]" | "[emotion power]" | "[emi]" | "[emp]" | "[emotion intensity:]" | "[emotion power:]" | "[emi:]" | "[emp:]" .
+<EBNFCDECL name='AdditionalEmotionIntensityModalityMark' groups='ModalityMark'/> = "[*~:]" | "[emotion intensity]" | "[emotion power]" | "[emi]" | "[emp]" | "[emotion intensity:]" | "[emotion power:]" | "[emi:]" | "[emp:]" .
 </pre>
 
 <h2 class='center-h' data-href="Sections_similar_to_modalities_chapter">
@@ -1350,10 +1361,10 @@ Emotion intensity modality
 <pre class='ebnf-code'>
 <EBNFCDECL name='ThereforeNotRuleSection' groups="Modality"/> = <EBNFC name='ThereforeNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ThereforeNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ThereforeNotRuleSection'/> .
-<EBNFCDECL name='ThereforeNotRuleSectionMark'/> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
+<EBNFCDECL name='ThereforeNotRuleSectionMark' groups='ModalityMark'/> = "|->:" | "so" | "therefore" | "so:" | "therefore:" .
 <EBNFCDECL name='AdditionalThereforeNotRuleSection' groups="Modality"/> = <EBNFC name='AdditionalThereforeNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalThereforeNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalThereforeNotRuleSection'/> .
-<EBNFCDECL name='AdditionalThereforeNotRuleSectionMark'/> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
+<EBNFCDECL name='AdditionalThereforeNotRuleSectionMark' groups='ModalityMark'/> = "[|->:]" | "[so]" | "[therefore]" | "[so:]" | "[therefore:]" .
 <EBNFCDECL name=''/>
 </pre>
 
@@ -1366,10 +1377,10 @@ Emotion intensity modality
 <pre class='ebnf-code'>
 <EBNFCDECL name='ElseNotRuleSection' groups="Modality"/> = <EBNFC name='ElseNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ElseNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ElseNotRuleSection'/> .
-<EBNFCDECL name='ElseNotRuleSectionMark'/> = "|!->:" | "else" | "else:" | "otherwise" | "other" | "otherwise:" | "other:" .
+<EBNFCDECL name='ElseNotRuleSectionMark' groups='ModalityMark'/> = "|!->:" | "else" | "else:" | "otherwise" | "other" | "otherwise:" | "other:" .
 <EBNFCDECL name='AdditionalElseNotRuleSection' groups="Modality"/> = <EBNFC name='AdditionalElseNotRuleSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalElseNotRuleSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalElseNotRuleSection'/> .
-<EBNFCDECL name='AdditionalElseNotRuleSectionMark'/> = "[|!->:]" | "[else]" | "[else:]" | "[otherwise]" | "[other]" | "[otherwise:]" | "[other:]" .
+<EBNFCDECL name='AdditionalElseNotRuleSectionMark' groups='ModalityMark'/> = "[|!->:]" | "[else]" | "[else:]" | "[otherwise]" | "[other]" | "[otherwise:]" | "[other:]" .
 </pre>
 
 <h3 class='center-h' data-href="Source_section_chapter">
@@ -1381,10 +1392,10 @@ Emotion intensity modality
 <pre class='ebnf-code'>
 <EBNFCDECL name='SourceSection' groups="Modality"/> =  <EBNFC name='SourceSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='SourceSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SourceSection'/> .
-<EBNFCDECL name='SourceSectionMark'/> = "@:" | "source" | "origin" | "s" | "source:" | "origin:" | "s:" .
+<EBNFCDECL name='SourceSectionMark' groups='ModalityMark'/> = "@:" | "source" | "origin" | "s" | "source:" | "origin:" | "s:" .
 <EBNFCDECL name='AdditionalSourceSection' groups="Modality"/> =  <EBNFC name='AdditionalSourceSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='AdditionalSourceSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalSourceSection'/> .
-<EBNFCDECL name='AdditionalSourceSectionMark'/> = "[@:]" | "[source]" | "[origin]" | "[s]" | "[source:]" | "[origin:]" | "[s:]" .
+<EBNFCDECL name='AdditionalSourceSectionMark' groups='ModalityMark'/> = "[@:]" | "[source]" | "[origin]" | "[s]" | "[source:]" | "[origin:]" | "[s:]" .
 </pre>
 
 <h3 class='center-h' data-href="Channel_section_chapter">
@@ -1396,10 +1407,10 @@ Channel section
 <pre class='ebnf-code'>
 <EBNFCDECL name='ChannelSection' groups="Modality"/> =  <EBNFC name='ChannelSection'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='ChannelSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ChannelSection'/> .
-<EBNFCDECL name='ChannelSectionMark'/> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
+<EBNFCDECL name='ChannelSectionMark' groups='ModalityMark'/> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
 <EBNFCDECL name='AdditionalChannelSection' groups="Modality"/> =  <EBNFC name='AdditionalChannelSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='AdditionalChannelSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalChannelSection'/> .
-<EBNFCDECL name='AdditionalChannelSectionMark'/> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
+<EBNFCDECL name='AdditionalChannelSectionMark' groups='ModalityMark'/> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
 </pre>
 
 <h3 class='center-h' data-href="Clauses_section_chapter">
@@ -1411,10 +1422,10 @@ Channel section
 <pre class='ebnf-code'>
 <EBNFCDECL name='ClausesSection' groups="Modality"/> = <EBNFC name='ClausesSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='ClausesSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausesSection'/> .
-<EBNFCDECL name='ClausesSectionMark'/> = "&:" | "where" | "w" | "where:" | "w:" .
+<EBNFCDECL name='ClausesSectionMark' groups='ModalityMark'/> = "&:" | "where" | "w" | "where:" | "w:" .
 <EBNFCDECL name='AdditionalClausesSection' groups="Modality"/> = <EBNFC name='AdditionalClausesSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='AdditionalClausesSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalClausesSection'/> .
-<EBNFCDECL name='AdditionalClausesSectionMark'/> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
+<EBNFCDECL name='AdditionalClausesSectionMark' groups='ModalityMark'/> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
 <EBNFCDECL name='LogicalSentenceValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'LogicalSentence'/> .
 </pre>
 
@@ -1427,10 +1438,10 @@ Channel section
 <pre class='ebnf-code'>
 <EBNFCDECL name='NoContradictSection' groups="Modality"/> = <EBNFC name='NoContradictSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='NoContradictSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'NoContradictSection'/> .
-<EBNFCDECL name='NoContradictSectionMark'/> = "^:" .
+<EBNFCDECL name='NoContradictSectionMark' groups='ModalityMark'/> = "^:" .
 <EBNFCDECL name='AdditionalNoContradictSection' groups="Modality"/> = <EBNFC name='AdditionalNoContradictSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='AdditionalNoContradictSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalNoContradictSection'/> .
-<EBNFCDECL name='AdditionalNoContradictSectionMark'/> = "[^:]" .
+<EBNFCDECL name='AdditionalNoContradictSectionMark' groups='ModalityMark'/> = "[^:]" .
 </pre>
 
 <h3 class='center-h' data-href="Access_section_chapter">
@@ -1442,10 +1453,10 @@ Channel section
 <pre class='ebnf-code'>
 <EBNFCDECL name='AccessSection' groups="Modality"/> = <EBNFC name='AccessSectionMark'/> <EBNFC name='ValOfAccessSection'/> .
 <EBNFCDECL name='AccessSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AccessSection'/> .
-<EBNFCDECL name='AccessSectionMark'/> = "!!:" | "access" | "permissions" | "allow" | "permit" | "a" | "access:" | "permissions:" | "allow:" | "permit:" | "a:" .
+<EBNFCDECL name='AccessSectionMark' groups='ModalityMark'/> = "!!:" | "access" | "permissions" | "allow" | "permit" | "a" | "access:" | "permissions:" | "allow:" | "permit:" | "a:" .
 <EBNFCDECL name='AdditionalAccessSection' groups="Modality"/> = <EBNFC name='AdditionalAccessSectionMark'/> <EBNFC name='ValOfAccessSection'/> .
 <EBNFCDECL name='AdditionalAccessSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalAccessSection'/> .
-<EBNFCDECL name='AdditionalAccessSectionMark'/> = "[!!:]" | "[access]" | "[permissions]" | "[allow]" | "[permit]" | "[a]" | "[access:]" | "[permissions:]" | "[allow:]" | "[permit:]" | "[a:]" .
+<EBNFCDECL name='AdditionalAccessSectionMark' groups='ModalityMark'/> = "[!!:]" | "[access]" | "[permissions]" | "[allow]" | "[permit]" | "[a]" | "[access:]" | "[permissions:]" | "[allow:]" | "[permit:]" | "[a:]" .
 <EBNFCDECL name='AccessModifierDescription'/> =   ( "published" | ("published" "just" "for" <EBNFC name='AccessModifierPublishJustForCondition'/> ) |
                         "public" | "internal" | "protected" | "private" ) ":" .
 <EBNFCDECL name='AccessModifierPublishJustForCondition'/> = <EBNFC name='LogicalSentence'/> .
@@ -1459,12 +1470,12 @@ Channel section
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='ReasonSection'/> = <EBNFC name='ReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
+<EBNFCDECL name='ReasonSection' groups="Modality"/> = <EBNFC name='ReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ReasonSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ReasonSection'/> .
-<EBNFCDECL name='ReasonSectionMark' groups="Modality"/> = "|-<:" | "reason" | "cause" | "reason:" | "cause:" .
+<EBNFCDECL name='ReasonSectionMark' groups='ModalityMark'/> = "|-<:" | "reason" | "cause" | "reason:" | "cause:" .
 <EBNFCDECL name='AdditionalReasonSection' groups="Modality"/> = <EBNFC name='AdditionalReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalReasonSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalReasonSection'/> .
-<EBNFCDECL name='AdditionalReasonSectionMark'/> = "[|-<:]" | "[reason]" | "[cause]" | "[reason:]" | "[cause:]" .
+<EBNFCDECL name='AdditionalReasonSectionMark' groups='ModalityMark'/> = "[|-<:]" | "[reason]" | "[cause]" | "[reason:]" | "[cause:]" .
 </pre>
 
 <h3 class='center-h' data-href="Holder_section_chapter">
@@ -1476,7 +1487,7 @@ Channel section
 <gr>
 <EBNFCDECL name='HolderDesc' groups="Modality"/> = <EBNFC name='HolderDescMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='HolderDescDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'HolderDesc'/> .
-<EBNFCDECL name='HolderDescMark'/> = "#:" | "of" | "of:" .
+<EBNFCDECL name='HolderDescMark' groups='ModalityMark'/> = "#:" | "of" | "of:" .
 </gr>
 
 <h3 class='center-h' data-href="Module_section_chapter">
@@ -1488,7 +1499,7 @@ Channel section
 <gr>
 <EBNFCDECL name='ModuleDesc' groups="Modality"/> = <EBNFC name='ModuleDescMark'/> <EBNFC name='ModuleIdentifier'/> .
 <EBNFCDECL name='ModuleDescDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ModuleDesc'/> .
-<EBNFCDECL name='ModuleDescMark'/> = "$:" | "module" | "module:" .
+<EBNFCDECL name='ModuleDescMark' groups='ModalityMark'/> = "$:" | "module" | "module:" .
 </gr>
 
 <h2 class='center-h' data-href="Annotations_chapter">
@@ -2622,7 +2633,7 @@ Synchronization statement
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='CatchTemplate'>
-	    [ <EBNFC name='AnnotationsList'/> ] "catch" "(" <EBNFC name='LogicalSentenceExpr'/> | <EBNFC name='LogicalSentenceVal'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}"
+	    [ <EBNFC name='AnnotationsList'/> ] "catch" "(" ( <EBNFC name='LogicalSentenceExpr'/> | <EBNFC name='LogicalSentenceVal'/> ) ")" "{" [ <EBNFC name='StatementsSet'/> ] "}"
 	</TEBNFCDECL>
 </div>
 
