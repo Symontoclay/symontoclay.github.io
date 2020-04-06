@@ -760,9 +760,16 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForLogicalRulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForLogicalRule'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRule'/> = <!--<TEBNFC name='DefScope' param = ''/>--> .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
-<EBNFCDECL name='LogicalSentence'/> .
+<EBNFCDECL name='LogicalSentenceExpr'/> .
+<EBNFCDECL name='LogicalSentence'/> = <TEBNFC name='LogicalSentenceVarQuantification'/> "{" <EBNFC name='LogicalSentenceExpr'/> "}" .
 <EBNFCDECL name='LogicalSentenceVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='LogicalSentenceVarQuantification'>
+        "(" ("&forall;" | "&exist;") <EBNFC name='VarIdentifier'/> [{ "," ("&forall;" | "&exist;") <EBNFC name='VarIdentifier'/> }] ")"
+    </TEBNFCDECL>
+</div>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 !((name=helen|name=ann)&class=girl)
@@ -2603,7 +2610,7 @@ Synchronization statement
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='CatchTemplate'>
-	    [ <EBNFC name='AnnotationsList'/> ] "catch" "(" <EBNFC name='LogicalSentenceVal'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}"
+	    [ <EBNFC name='AnnotationsList'/> ] "catch" "(" <EBNFC name='LogicalSentenceExpr'/> | <EBNFC name='LogicalSentenceVal'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}"
 	</TEBNFCDECL>
 </div>
 
