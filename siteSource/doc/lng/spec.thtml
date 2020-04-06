@@ -449,7 +449,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='ExceptionHandlersSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'ExceptionHandler'/> .
-<EBNFCDECL name='ExceptionHandler'/> .
+<EBNFCDECL name='ExceptionHandler'/> = <TEBNFC name='CatchTemplate'/> .
 <EBNFCDECL name='ExceptionHandlerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExceptionHandler'/> .
 </gr>
 
@@ -722,7 +722,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FunctionParamsSetDeclaration'/> = <EBNFC name='FunctionParamDeclaration'/> [{ "," <EBNFC name='FunctionParamDeclaration'/> }] .
 <EBNFCDECL name='FunctionParamDeclaration'/> = <TEBNFC name='VariableExpr'/> .
 <EBNFCDECL name='FunctionAdditionalParamsSetDeclaration'/> = <EBNFC name='FunctionAdditionalParamDeclaration'/> [{ "," <EBNFC name='FunctionAdditionalParamDeclaration'/> }] .
-<EBNFCDECL name='FunctionAdditionalParamDeclaration'/> .
+<EBNFCDECL name='FunctionAdditionalParamDeclaration'/> = <TEBNFC name='VariableExpr'/>.
 <EBNFCDECL name='FunctionReturnDeclaration'/> = <EBNFC name='TypeIdentifier'/> .
 </gr>
 
