@@ -465,6 +465,18 @@ Member-variable
 <EBNFCDECL name='EventMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventMemberDecl'/> .
 </gr>
 
+<h4 class='center-h' data-href="Map_to_NPC_on_game_level_chapter">
+    Map to NPC on game level
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='MapToNpcMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'MapToNpcMemberDecl'/> .
+<EBNFCDECL name='MapToNpcMemberDecl'/> = "map" "to" "npc" ( <EBNFC name='LogicalSentence'/> | ( "{" <EBNFC name='LogicalSentence'/> [{ "," <EBNFC name='LogicalSentence'/> }] "}" ) | <EBNFC name='NullTypeExpr'/> ) .
+<EBNFCDECL name='MapToNpcMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'MapToNpcMemberDecl'/> .
+</gr>
+
 <h3 class='center-h' data-href="Class_chapter">
     Class
 </h3>
