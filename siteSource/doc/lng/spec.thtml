@@ -415,7 +415,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='VarMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'VarMemberDecl'/> .
-<EBNFCDECL name='VarMemberDecl'/> .
+<EBNFCDECL name='VarMemberDecl'/> = <TEBNFC name='VariableExpr'/> .
 <EBNFCDECL name='VarMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'VarMemberDecl'/> .
 </gr>
 	  
