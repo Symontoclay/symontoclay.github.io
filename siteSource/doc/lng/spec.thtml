@@ -2220,7 +2220,7 @@ Operator "modal of"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ModalOfOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='ModalOfOpExpr' groups='ReflectionOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] "modal" "(" <EBNFC name='ModalityMark'/> ")" "of" <EBNFC name='Expr'/> .
 </gr>
 
 <h4 class='center-h' data-href='PublicRunTimeTypeChangesOp_chapter'>
@@ -2252,11 +2252,11 @@ Operator "as"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CastOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='CastOpExpr' groups='ReflectionOpExpr'/> = ( <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "as" <EBNFC name='TypeIdentifier'/> ) | ( "(" <EBNFC name='TypeIdentifier'/> ")" <EBNFC name='Expr'/> ) .
 </gr>
 
 <h4 class='center-h' data-href='MakeTypeOp_chapter'>
-Operator "make"
+Operator "make as"
 </h4>
 
 <LinkToContent/>
@@ -2272,7 +2272,7 @@ Operator "name as"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='NameAsOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='NameAsOpExpr' groups='ReflectionOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] "name" <EBNFC name='Expr'/> "as" ( <EBNFC name='TypeIdentifier'/> | <EBNFC name='StringTypeExpr'/> ) .
 </gr>
 
 <h4 class='center-h' data-href='DeleteMemberOp_chapter'>
