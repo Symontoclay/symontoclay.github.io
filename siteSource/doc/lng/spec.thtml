@@ -348,10 +348,10 @@ The ways of doing this will be described below in here section and in describing
 <EBNFCDECL name='ObjectDecl'/> = <GEBNFC name='ObjectDecl' kind='or' /> .
 <EBNFCDECL name='UniversalTypeIdentifier' groups='TypeIdentifier'/> = "any" | "⊤" .
 <EBNFCDECL name='ObjectDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ObjectDecl' /> .
-<EBNFCDECL name='ClassIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ClassIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ShortObjectDecl' groups='ObjectDecl'/> = .
 <EBNFCDECL name='LongObjectDecl' groups='ObjectDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "obj" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
-			 [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
+			 [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] </br> [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='InheritanceDecl'/> = "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
 <EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='TypeIdentifier'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" ] .
 <EBNFCDECL name='GenericParametersDecl'/> = "(<" <EBNFC name='GenericParameter'/> [{ "," <EBNFC name='GenericParameter'/> }] ">)" .
@@ -359,6 +359,8 @@ The ways of doing this will be described below in here section and in describing
 <EBNFCDECL name='ClausedScopeForObjectsSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForObjectsSet'/> .
 <EBNFCDECL name='ClausedScopeForObjectsSet' groups='ObjectTypeDecls'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForObject'/> .
 <EBNFCDECL name='ClausedScopeForObject '/> = <TEBNFC name='DefScope_2' param = "{ <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> }"/> .
+<EBNFCDECL name='AnnotationsListMember' groups='ObjectMembers'/> = <EBNFC name='AnnotationsList'/> ";" .
+<EBNFCDECL name='ModalitiesSetMember' groups='ObjectMembers'/> = <EBNFC name='ModalitiesSet'/> ";" .
 </gr>
 
 <h4 class='center-h' data-href="Method_chapter">
@@ -1072,7 +1074,7 @@ Map
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='FuzzyExpr' groups="Expr"/> = <EBNFC name='FuzzySetIdentifier'/> "::" <EBNFC name='FuzzyTermName'/> .
+<EBNFCDECL name='FuzzyExpr' groups="Expr;TypeIdentifier"/> = <EBNFC name='FuzzySetIdentifier'/> "::" <EBNFC name='FuzzyTermName'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1961,6 +1963,16 @@ Range boolean operator
 <EBNFCDECL name='RangeBooleanOpExpr' groups='RelationalOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) .
 </gr>
 
+<h4 class='center-h' data-href='InOp_chapter'>
+Operator "in"
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='InOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = 'in'/> .
+</gr>
+
 <h3 class='center-h' data-href="LogicalOp_chapter">
     Logical operators
 </h3>
@@ -2028,7 +2040,7 @@ Operator "."
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='PointerOpExpr' groups='MemberAccessOpExpr' /> = .
+<EBNFCDECL name='PointerOpExpr' groups='MemberAccessOpExpr' /> = <TEBNFC name='BinaryOp' param = '.'/>.
 </gr>
 
 <h4 class='center-h' data-href='CoalescePointerOp_chapter'>
@@ -2038,7 +2050,17 @@ Operator "?."
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CoalescePointerOpExpr' groups='MemberAccessOpExpr' /> = .
+<EBNFCDECL name='CoalescePointerOpExpr' groups='MemberAccessOpExpr' /> = <TEBNFC name='BinaryOp' param = '?.'/> .
+</gr>
+
+<h4 class='center-h' data-href='GetSubItemOp_chapter'>
+Operator "::" (Get subitem)
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='GetSubItemOpExpr'/> = <TEBNFC name='BinaryOp' param = '::'/> .
 </gr>
 
 <h3 class='center-h' data-href='CallOp_chapter'>
