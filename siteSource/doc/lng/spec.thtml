@@ -2140,7 +2140,7 @@ new
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='NewOpExpr' groups='ObjectCreationOpExpr' /> = .
+<EBNFCDECL name='NewOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp' param = 'new'/>.
 </gr>
 
 <h4 class='center-h' data-href='CloneOp_chapter'>
@@ -2150,7 +2150,7 @@ clone
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CloneOpExpr' groups='ObjectCreationOpExpr' /> = .
+<EBNFCDECL name='CloneOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp_2' param = '( "clone" | "..." )'/> .
 </gr>
 
 <h4 class='center-h' data-href='DeepCloneOp_chapter'>
@@ -2160,7 +2160,7 @@ deep clone
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DeepCloneOpExpr' groups='ObjectCreationOpExpr' /> = .
+<EBNFCDECL name='DeepCloneOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp_2' param = '( "deep" "clone" | "..*" )'/>.
 </gr>
 
 <h3 class='center-h' data-href="InlineConditionalOp_chapter">
@@ -2210,7 +2210,7 @@ Operator "type of"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='TypeOfOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='TypeOfOpExpr' groups='ReflectionOpExpr'/> = <TEBNFC name='UnaryOp_2' param = '"type" "of"'/>.
 </gr>
 
 <h4 class='center-h' data-href='ModalOfOp_chapter'>
@@ -2394,7 +2394,7 @@ wait
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='WaitOpExpr' groups='IPCOpExpr' /> =  .
+<EBNFCDECL name='WaitOpExpr' groups='IPCOpExpr' /> = <TEBNFC name='UnaryOp' param = 'wait'/> .
 </gr>
 
 <h3 class='center-h' data-href="ErrorOp_chapter">
