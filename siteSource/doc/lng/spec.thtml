@@ -2230,7 +2230,9 @@ Operator ">>>" "<<<"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='PublicRunTimeTypeChangesOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='PublicRunTimeTypeChangesOpExpr' groups='ReflectionOpExpr'/> = ( <EBNFC name='SourcePublicRunTimeTypeChangesOpExpr'/> [ <EBNFC name='AnnotationsList'/> ] ">>>" <EBNFC name='DestPublicRunTimeTypeChangesOpExpr'/> ) | ( <EBNFC name='DestPublicRunTimeTypeChangesOpExpr'/> [ <EBNFC name='AnnotationsList'/> ] "<<<" <EBNFC name='SourcePublicRunTimeTypeChangesOpExpr'/> ) .
+<EBNFCDECL name='SourcePublicRunTimeTypeChangesOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='DestPublicRunTimeTypeChangesOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <h4 class='center-h' data-href='SetInheritanceOp_chapter'>
