@@ -762,26 +762,40 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FactDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='LogicalRuleDeclsSet' groups="SourceCodeFileContent"/> = <EBNFC name='LogicalRuleDecl'/> [{ <EBNFC name='LogicalRuleDecl'/> }] .
 <EBNFCDECL name='FactIdentifier' groups="TypeIdentifier"/> = <EBNFC name='InstanceIdentifier'/> | <EBNFC name='instance_identifier_with_namespace'/> .
-<EBNFCDECL name='FactDecl'/> = .
+<EBNFCDECL name='FactDecl'/> = "{:" <TEBNFC name='FactIdentifier'/> <TEBNFC name='FactStartBodyDecl'/> [ <EBNFC name='ModalitiesSet'/> ] ":}" .
 <EBNFCDECL name='FactDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FactDeclsSet'/> .
-<EBNFCDECL name='ClausedScopeForFactsSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForFactsSet'/> .
-<EBNFCDECL name='ClausedScopeForFactsSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForFact'/> .
-<EBNFCDECL name='ClausedScopeForFact'/> = <!--<TEBNFC name='DefScope' param = ''/>--> .
 <EBNFCDECL name='LogicalRuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='InstanceIdentifier'/> | <EBNFC name='instance_identifier_with_namespace'/> .
 <EBNFCDECL name='LogicalRuleDecl'/> .
 <EBNFCDECL name='LogicalRuleDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalRuleDeclsSet'/> .
+<EBNFCDECL name='LogicalRuleImplicationGroup'/> = "{" <TEBNFC name='LogicalRuleImplicationGroupItem'/> [{ "," <TEBNFC name='LogicalRuleImplicationGroupItem'/> }] "}" .
 <EBNFCDECL name='ClausedScopeForLogicalRulesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForLogicalRulesSet'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForLogicalRule'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRule'/> = <!--<TEBNFC name='DefScope' param = ''/>--> .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
 <EBNFCDECL name='LogicalSentenceExpr'/> .
-<EBNFCDECL name='LogicalSentence'/> = <TEBNFC name='LogicalSentenceVarQuantification'/> "{" <EBNFC name='LogicalSentenceExpr'/> "}" .
+<EBNFCDECL name='LogicalSentence'/> = <TEBNFC name='LogicalSentence'/> .
 <EBNFCDECL name='LogicalSentenceVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
 
 <div class='templates'>
     <TEBNFCDECL name='LogicalSentenceVarQuantification'>
         "(" ("&forall;" | "&exist;") <EBNFC name='VarIdentifier'/> [{ "," ("&forall;" | "&exist;") <EBNFC name='VarIdentifier'/> }] ")"
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='ConditionalEntityDeclInFactOrRule'>
+        "(:" <EBNFC name='ConditionalEntityDecl'/> [{ "," <EBNFC name='ConditionalEntityDecl'/> }] ":)"
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='FactStartBodyDecl'>
+        [ <EBNFC name='ModalitiesSet'/> ] [ <TEBNFC name='ConditionalEntityDeclInFactOrRule'/> ] [ <TEBNFC name='LogicalSentenceVarQuantification'/> ] [ ">:" <TEBNFC name='LogicalSentenceVarQuantification'/> ] "{" <EBNFC name='LogicalSentenceExpr'/> "}" 
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='LogicalSentence'>
+        <TEBNFC name='LogicalSentenceVarQuantification'/> "{" <EBNFC name='LogicalSentenceExpr'/> "}"
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='LogicalRuleImplicationGroupItem'>
+        ( ( ( <TEBNFC name='LogicalSentence'/> | <EBNFC name='LogicalRuleImplicationGroup'/> ) | ( "{" <EBNFC name='ClausedScopeForLogicalRule'/> "}" ) [ <EBNFC name='ModalitiesSet'/> ] ) | <EBNFC name='ClausedScopeForLogicalRule'/> )
     </TEBNFCDECL>
 </div>
 
