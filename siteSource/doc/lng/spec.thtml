@@ -997,6 +997,7 @@ Set
 <EBNFCDECL name='SetDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "set" <EBNFC name='SetIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
                [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
 			   [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='SetTypeExpr' groups="Expr"/> = "{" <EBNFC name='Expr'/> [{ "," <EBNFC name='Expr'/> }] "}" .
 </gr>
 
 <h3 class='center-h' data-href='List_chapter'>
@@ -1013,6 +1014,7 @@ List
 <EBNFCDECL name='ListDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "list" <EBNFC name='ListIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
               [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
 			  [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='ListTypeExpr' groups="Expr"/> = "[" <EBNFC name='Expr'/> [{ "," <EBNFC name='Expr'/> }] "]" .
 </gr>
 
 <h3 class='center-h' data-href='Queue_chapter'>
@@ -1061,6 +1063,7 @@ Map
 <EBNFCDECL name='MapDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "map" <EBNFC name='MapIdentifier'/> [ "of" <EBNFC name='TypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] ] [ <EBNFC name='InheritanceDecl'/> ] <br/>
                [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
 			   [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='MapTypeExpr' groups="Expr"/> = "{" <EBNFC name='Expr'/> ":" <EBNFC name='Expr'/> [{ "," <EBNFC name='Expr'/> ":" <EBNFC name='Expr'/> }] "}" .
 </gr>
 
 <h3 class='center-h' data-href="Fuzzy_set_chapter">
