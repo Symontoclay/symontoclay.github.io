@@ -765,14 +765,14 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FactDecl'/> = "{:" <TEBNFC name='FactIdentifier'/> <TEBNFC name='FactStartBodyDecl'/> [ <EBNFC name='ModalitiesSet'/> ] ":}" .
 <EBNFCDECL name='FactDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FactDeclsSet'/> .
 <EBNFCDECL name='LogicalRuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='InstanceIdentifier'/> | <EBNFC name='instance_identifier_with_namespace'/> .
-<EBNFCDECL name='LogicalRuleDecl'/> .
+<EBNFCDECL name='LogicalRuleDecl'/> = "{:" <EBNFC name='LogicalRuleIdentifier'/> <TEBNFC name='FactStartBodyDecl'/> <EBNFC name='ImplicationSymbol'/> <TEBNFC name='LogicalRuleImplicationGroupItem'/> [ <EBNFC name='ModalitiesSet'/> ] ":}" .
 <EBNFCDECL name='LogicalRuleDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalRuleDeclsSet'/> .
 <EBNFCDECL name='LogicalRuleImplicationGroup'/> = "{" <TEBNFC name='LogicalRuleImplicationGroupItem'/> [{ "," <TEBNFC name='LogicalRuleImplicationGroupItem'/> }] "}" .
 <EBNFCDECL name='ClausedScopeForLogicalRulesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForLogicalRulesSet'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForLogicalRule'/> .
-<EBNFCDECL name='ClausedScopeForLogicalRule'/> = <!--<TEBNFC name='DefScope' param = ''/>--> .
+<EBNFCDECL name='ClausedScopeForLogicalRule'/> = <TEBNFC name='DefScope' param = "<TEBNFC name='LogicalRuleImplicationGroupItem'/>"/> .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
-<EBNFCDECL name='LogicalSentenceExpr'/> .
+<EBNFCDECL name='LogicalSentenceExpr'/> =  .
 <EBNFCDECL name='LogicalSentence'/> = <TEBNFC name='LogicalSentence'/> .
 <EBNFCDECL name='LogicalSentenceVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
@@ -2631,12 +2631,12 @@ Synchronization statement
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name="DefScope" param='_ExprType'>
-	    [ <EBNFC name='AnnotationsList'/> ] "width" "{" <EBNFC name='ClausedScopeClause'/> "}" "def" "{" [ <EBNFC name='_ExprType'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";"
+	    <TEBNFC name='DefScope_2' param="[ <EBNFC name='_ExprType'/> ]"/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name="DefScope_2" param='_ExprType'>
-	    [ <EBNFC name='AnnotationsList'/> ] "width" "{" <EBNFC name='ClausedScopeClause'/> "}" "def" "{" _ExprType ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";"
-	</TEBNFCDECL>	
+	    [ <EBNFC name='AnnotationsList'/> ] "width" "{" <EBNFC name='ClausedScopeClause'/> "}" "def" "{" _ExprType "}" [ <EBNFC name='ModalitiesSet'/> ] ";"
+	</TEBNFCDECL>
 	
 	<TEBNFCDECL name="DeclSet" param='_ExprType'>
 	    <EBNFC name='_ExprType'/> [{ <EBNFC name='_ExprType'/> }]
