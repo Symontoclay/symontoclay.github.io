@@ -223,6 +223,7 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>delsm</span>
 <span class='keyword'>make</span>
 <span class='keyword'>in</span>
+<span class='keyword'>synonym</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -890,7 +891,7 @@ Conditional entity
 
 <gr>
 <EBNFCDECL name='CallBlocksSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'CallBlock'/> .
-<EBNFCDECL name='CallBlock'/> .
+<EBNFCDECL name='CallBlock'/> = .
 </gr>
 
 <h3 class='center-h' data-href="Synonym_chapter">
@@ -901,7 +902,7 @@ Synonym
 
 <gr>
 <EBNFCDECL name='SynonymDeclsSet' groups="ObjectTypeDecls;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
-<EBNFCDECL name='SynonymDecl'/> .
+<EBNFCDECL name='SynonymDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "synonym" <EBNFC name='Expr'/> "for" <EBNFC name='Expr'/> [ "with" <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='SynonymDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'SynonymDeclsSet'/> .
 </gr>
 
