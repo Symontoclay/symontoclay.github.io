@@ -905,6 +905,30 @@ Synonym
 <EBNFCDECL name='SynonymDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'SynonymDeclsSet'/> .
 </gr>
 
+<h3 class='center-h' data-href="Merge_concepts_or_instances_chapter">
+Merge concepts or instances
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='MergeDeclsSet' groups="ObjectTypeDecls;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'MergeDecl'/> .
+<EBNFCDECL name='MergeDecl'/> = <EBNFC name='MergeOpExpr'/> ";" .
+<EBNFCDECL name='MergeDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'MergeDeclsSet'/> .
+</gr>
+
+<h3 class='center-h' data-href="Unmerge_concepts_or_instances_chapter">
+Unmerge concepts or instances
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='UnMergeDeclsSet' groups="ObjectTypeDecls;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'UnMergeDecl'/> .
+<EBNFCDECL name='UnMergeDecl'/> = <EBNFC name='UnMergeOpExpr'/> ";" .
+<EBNFCDECL name='UnMergeDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'UnMergeDeclsSet'/> .
+</gr>
+
 <h3 class='center-h' data-href='Union_type_chapter'>
 Union type
 </h3>
@@ -2369,7 +2393,7 @@ merge
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='MergeOpExpr' groups='DataSetOpExpr' /> = .
+<EBNFCDECL name='MergeOpExpr' groups='DataSetOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "merge" <EBNFC name='Expr'/> "and" <EBNFC name='Expr'/> [ <EBNFC name='ModalitiesSet'/> ] .
 </gr>
 
 <h4 class='center-h' data-href='UnMergeOp_chapter'>
@@ -2379,7 +2403,7 @@ unmerge
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='UnMergeOpExpr' groups='DataSetOpExpr' /> = .
+<EBNFCDECL name='UnMergeOpExpr' groups='DataSetOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "unmerge" <EBNFC name='Expr'/> "and" <EBNFC name='Expr'/> [ <EBNFC name='ModalitiesSet'/> ] .
 </gr>
 
 <h3 class='center-h' data-href="IPCOp_chapter">
