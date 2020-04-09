@@ -1927,7 +1927,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='EqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = 'is'/> .
+<EBNFCDECL name='EqualOpExpr' groups='RelationalOpExpr'/> = <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "is" [ "(" [( "±" | "+-" )] <EBNFC name='Expr'/> ")" ] <EBNFC name='Expr'/> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOp_chapter">
