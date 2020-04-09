@@ -1091,7 +1091,7 @@ Map
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='FuzzyExpr' groups="Expr;TypeIdentifier"/> = <EBNFC name='FuzzySetIdentifier'/> "::" <EBNFC name='FuzzyTermName'/> .
+<EBNFCDECL name='FuzzyExpr' groups="Expr;TypeIdentifier"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
