@@ -2177,7 +2177,7 @@ deep clone
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DeepCloneOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp_2' param = '( "deep" "clone" | "..*" )'/>.
+<EBNFCDECL name='DeepCloneOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp_2' param = '( "deep" "clone" | "..*" )'/> .
 </gr>
 
 <h3 class='center-h' data-href="InlineConditionalOp_chapter">
@@ -2299,7 +2299,7 @@ Operator "delm"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DeleteMemberOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='DeleteMemberOpExpr' groups='ReflectionOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] "delm" ( <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "." <EBNFC name='Expr'/> ) .
 </gr>
 
 <h4 class='center-h' data-href='DeleteSubItemOp_chapter'>
@@ -2309,7 +2309,7 @@ Operator "dels"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DeleteSubItemOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='DeleteSubItemOpExpr' groups='ReflectionOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] "dels" ( <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "::" <EBNFC name='Expr'/> ) .
 </gr>
 
 <h4 class='center-h' data-href='DeleteSubItemAndMemberOp_chapter'>
@@ -2319,7 +2319,7 @@ Operator "delsm"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DeleteSubItemAndMemberOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='DeleteSubItemAndMemberOpExpr' groups='ReflectionOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] "delsm" ( ( <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "." <EBNFC name='Expr'/>) | ( <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "::" <EBNFC name='Expr'/> ) ) .
 </gr>
 
 <h3 class='center-h' data-href="DataSetOp_chapter">
