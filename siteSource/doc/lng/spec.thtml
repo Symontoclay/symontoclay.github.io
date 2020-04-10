@@ -349,9 +349,9 @@ The ways of doing this will be described below in here section and in describing
 <EBNFCDECL name='ObjectDecl'/> = <GEBNFC name='ObjectDecl' kind='or' /> .
 <EBNFCDECL name='UniversalTypeIdentifier' groups='TypeIdentifier'/> = "any" | "⊤" .
 <EBNFCDECL name='ObjectDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ObjectDecl' /> .
-<EBNFCDECL name='ClassIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='ShortObjectDecl' groups='ObjectDecl'/> = .
-<EBNFCDECL name='LongObjectDecl' groups='ObjectDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "obj" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ClassIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
+<EBNFCDECL name='ObjectIdentifier' groups='TypeIdentifier'/> = <EBNFC name='TypeIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='ShortObjectDecl' groups='ObjectDecl'/> = <TEBNFC name='ShortObjDeclTemplate'/> ";" .
+<EBNFCDECL name='LongObjectDecl' groups='ObjectDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "obj" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ObjectIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
 			 [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] </br> [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='InheritanceDecl'/> = "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
 <EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='TypeIdentifier'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" ] .
@@ -363,6 +363,16 @@ The ways of doing this will be described below in here section and in describing
 <EBNFCDECL name='AnnotationsListMember' groups='ObjectMembers'/> = <EBNFC name='AnnotationsList'/> ";" .
 <EBNFCDECL name='ModalitiesSetMember' groups='ObjectMembers'/> = <EBNFC name='ModalitiesSet'/> ";" .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='ShortObjDeclTemplate'>
+        "{" (("clone" | "..." | "deep" "clone" | "..*" ) <EBNFC name='ObjectIdentifier'/> ) [ ( <TEBNFC name='ShortObjItemTemplate'/> ) [{ "," ( <TEBNFC name='ShortObjItemTemplate'/> ) }] ] "}"
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='ShortObjItemTemplate'>
+        <EBNFC name='PropertyName'/> "=" <EBNFC name='Expr'/>
+    </TEBNFCDECL>
+</div>
 
 <h4 class='center-h' data-href="Method_chapter">
     Methods
@@ -1610,6 +1620,16 @@ Variable
 
 <gr>
 <EBNFCDECL name='VarExpr' groups='Expr'/> = <TEBNFC name='VariableExpr'/> .
+</gr>
+
+<h3 class='center-h' data-href='_chapter'>
+Object expression
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='ObjExpr' groups='Expr'/> = <TEBNFC name='ShortObjDeclTemplate'/> .
 </gr>
 
 <h3 class='center-h' data-href="Operators_chapter">
