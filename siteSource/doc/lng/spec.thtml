@@ -353,7 +353,7 @@ The ways of doing this will be described below in here section and in describing
 <EBNFCDECL name='ShortObjectDecl' groups='ObjectDecl'/> = <TEBNFC name='ShortObjDeclTemplate'/> ";" .
 <EBNFCDECL name='LongObjectDecl' groups='ObjectDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "obj" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ObjectIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
 			 [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] </br> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='InheritanceDecl'/> = "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" ) .
+<EBNFCDECL name='InheritanceDecl'/> = <TEBNFC name='InheritanceDeclTemplate'/> .
 <EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='TypeIdentifier'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" ] .
 <EBNFCDECL name='GenericParametersDecl'/> = "(<" <EBNFC name='GenericParameter'/> [{ "," <EBNFC name='GenericParameter'/> }] ">)" .
 <EBNFCDECL name='GenericParameter'/> = .
@@ -371,6 +371,10 @@ The ways of doing this will be described below in here section and in describing
     
     <TEBNFCDECL name='ShortObjItemTemplate'>
         <EBNFC name='PropertyName'/> "=" <EBNFC name='Expr'/>
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='InheritanceDeclTemplate'>
+         "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" )
     </TEBNFCDECL>
 </div>
 
@@ -2172,7 +2176,7 @@ Operator "?()"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='IndexerOpExpr' groups='IndexingOpExpr' /> = .
+<EBNFCDECL name='IndexerOpExpr' groups='IndexingOpExpr' /> = <EBNFC name='Expr'/> [ "~" ] "[" <EBNFC name='Expr'/> "]" .
 </gr>
 
 <h4 class='center-h' data-href='CoalesceIndexerOp_chapter'>
@@ -2182,7 +2186,7 @@ Operator "?[]"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CoalesceIndexerOpExpr' groups='IndexingOpExpr' /> = .
+<EBNFCDECL name='CoalesceIndexerOpExpr' groups='IndexingOpExpr' /> = <EBNFC name='Expr'/> "?" [ "~" ] "[" <EBNFC name='Expr'/> "]" .
 </gr>
 
 <h3 class='center-h' data-href="ObjectCreationOp_chapter">
@@ -2304,7 +2308,7 @@ Operator "is" (inheritance)
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='SetInheritanceOpExpr' groups='ReflectionOpExpr'/> = .
+<EBNFCDECL name='SetInheritanceOpExpr' groups='ReflectionOpExpr'/> = <EBNFC name='Expr'/> <TEBNFC name='InheritanceDeclTemplate'/> .
 </gr>
 
 <h4 class='center-h' data-href='CastOp_chapter'>
