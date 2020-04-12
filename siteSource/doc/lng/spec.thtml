@@ -263,18 +263,18 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <EBNFCDECL name='FloatPointLiteral'/> = <EBNFC name='IntegerLiteral'/> "." <EBNFC name='IntegerLiteral'/> .
 </gr>
 
-<h3 class='center-h' data-href="Boolean_literals_chapter">
-    Boolean literals
+<h3 class='center-h' data-href="Fuzzy_logic_literals_chapter">
+    Fuzzy logic literals
 </h3>
 
 <LinkToContent/>
 
 <p>
-   SumOntoClay uses usual number in range [0;1] as boolean literal instead of a special literal.
+   SumOntoClay uses usual number in range [0;1] as fuzzy logic literal instead of a special literal.
 </p>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='BooleanLiteral'/> = <EBNFC name='NumberLiteral'/> .
+<EBNFCDECL name='FuzzyLogicLiteral'/> = <EBNFC name='NumberLiteral'/> .
 </pre>
 
 <h3 class='center-h' data-href="Strings_literals_chapter">
@@ -308,7 +308,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='OrderedTypeLiteral'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='StringLiteral'/> | <EBNFC name='DateTimeLiteral'/> | <EBNFC name='BooleanLiteral'/>.
+<EBNFCDECL name='OrderedTypeLiteral'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='StringLiteral'/> | <EBNFC name='DateTimeLiteral'/> | <EBNFC name='FuzzyLogicLiteral'/>.
 </gr>
 
 
@@ -355,7 +355,7 @@ The ways of doing this will be described below in here section and in describing
 <EBNFCDECL name='LongObjectDecl' groups='ObjectDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "obj" <EBNFC name='GenericParametersDecl'/> <EBNFC name='ObjectIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] </br>
 			 [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] </br> [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='InheritanceDecl'/> = <TEBNFC name='InheritanceDeclTemplate'/> .
-<EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='TypeIdentifier'/> [ "[" <EBNFC name='BooleanTypeExpr'/> "]" ] .
+<EBNFCDECL name='InheritanceDeclItem'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='TypeIdentifier'/> [ "[" <EBNFC name='FuzzyLogicTypeExpr'/> "]" ] .
 <EBNFCDECL name='GenericParametersDecl'/> = "(<" <EBNFC name='GenericParameter'/> [{ "," <EBNFC name='GenericParameter'/> }] ">)" .
 <EBNFCDECL name='GenericParameter'/> = .
 <EBNFCDECL name='ClausedScopeForObjectsSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForObjectsSet'/> .
@@ -629,13 +629,13 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <gr>
 <EBNFCDECL name='ModuleDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'ModuleDecl'/> .
 <EBNFCDECL name='ModuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='ModuleDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> [ "{" [ <EBNFC name='ClausedScopeForModulesSet'/> ] [ <EBNFC name='ModuleContent'/> ] [ <EBNFC name='ClausedScopeForModulesSet'/> ] "}" ] 
+<EBNFCDECL name='ModuleDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "module" <EBNFC name='ModuleIdentifier'/> <br/>
+           [ "{" { <br/> <GEBNFC name='SourceCodeFileContent' kind='op_and'/> <br/> <GEBNFC name='ClausedScopeForModule' kind='op_and'/> <br/> } "}" ] <br/>
            [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='ModuleDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ModuleDecl'/> .
 <EBNFCDECL name='ClausedScopeForModulesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForModulesSet'/> .
 <EBNFCDECL name='ClausedScopeForModulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForModule'/> .
-<EBNFCDECL name='ClausedScopeForModule'/> = <TEBNFC name='DefScope' param = 'ModuleContent'/> .
-<EBNFCDECL name='ModuleContent'/> = <EBNFC name='SourceCodeFileContent'/> .
+<EBNFCDECL name='ClausedScopeForModule' groups='ClausedScopeForModule'/> = <TEBNFC name='DefScope_2' param = "{ <br/> <GEBNFC name='SourceCodeFileContent' kind='op_and'/> <br/> <GEBNFC name='ClausedScopeForModule' kind='op_and'/> <br/> }"/> .
 </gr>
 
 <h3 class='center-h' data-href="Application_chapter">
@@ -788,7 +788,6 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='ClausedScopeForLogicalRulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForLogicalRule'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRule'/> = <TEBNFC name='DefScope' param = "<TEBNFC name='LogicalRuleImplicationGroupItem'/>"/> .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" | "<-" | "<->" | "→" | "←" | "↔" .
-<EBNFCDECL name='LogicalSentenceExpr'/> =  .
 <EBNFCDECL name='LogicalSentence'/> = <TEBNFC name='LogicalSentence'/> .
 <EBNFCDECL name='LogicalSentenceVal'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicalSentence'/> | <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
@@ -986,7 +985,7 @@ Intersection type
 
 <gr>
 <EBNFCDECL name='OrderedTypeDecl'/> = <GEBNFC name='OrderedTypeDecl' kind='or'/> .
-<EBNFCDECL name='OrderedTypeIdentifier'/> = <EBNFC name='RangeIdentifier'/> | <EBNFC name='BooleanTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> .
+<EBNFCDECL name='OrderedTypeIdentifier'/> = <EBNFC name='RangeIdentifier'/> | <EBNFC name='FuzzyLogicTypeIdentifier'/> | <EBNFC name='NumericTypeIdentifier'/> | <EBNFC name='StringTypeIdentifier'/> .
 </gr>
 	
 <h3 class='center-h' data-href="Range_chapter">
@@ -1131,7 +1130,7 @@ Map
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='FuzzyExpr' groups="Expr;TypeIdentifier"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
+<EBNFCDECL name='FuzzyTermExpr' groups="Expr;TypeIdentifier"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1141,15 +1140,15 @@ Fuzzy term - Linguistic value
 Defuzzification method is not defined yet!
 </pre>
 
-<h3 class='center-h' data-href="Boolean_type_chapter">
-    Boolean type
+<h3 class='center-h' data-href="Fuzzy_logic_type_chapter">
+    Fuzzy logic type
 </h3>
 
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='BooleanTypeIdentifier' groups="TypeIdentifier"/> = "boolean" | "Boolean" | "bool" .
-<EBNFCDECL name='BooleanTypeExpr' groups="Expr"/> = <EBNFC name='FuzzyExpr'/> | <EBNFC name='BooleanLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='BooleanTypeExpr'/> .
+<EBNFCDECL name='FuzzyLogicTypeIdentifier' groups="TypeIdentifier"/> = "fuzzy" | "Fuzzy" | "fuz" .
+<EBNFCDECL name='FuzzyLogicTypeExpr' groups="Expr"/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
 </gr>
 	
 <h3 class='center-h' data-href="Numeric_type_chapter">
@@ -1221,7 +1220,7 @@ Defuzzification method is not defined yet!
 <EBNFCDECL name='AdditionalCertaintyFactorModality' groups="Modality"/> = <EBNFC name='AdditionalCertaintyFactorModalityMark'/> <EBNFC name='BooleanValOfModality'/> .
 <EBNFCDECL name='AdditionalCertaintyFactorModalityDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalCertaintyFactorModality'/> .
 <EBNFCDECL name='AdditionalCertaintyFactorModalityMark' groups='ModalityMark'/> = "[%:]" | "[cf]" | "[certain]" | "[sure]" | "[right]" | "[true]" | "[cf:]" | "[certain:]" | "[sure:]" | "[right:]" | "[true:]" .
-<EBNFCDECL name='BooleanValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'BooleanTypeExpr'/> .
+<EBNFCDECL name='BooleanValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'FuzzyLogicTypeExpr'/> .
 </gr>
 
 <h3 class='center-h' data-href="Time_modality_chapter">
@@ -1605,6 +1604,16 @@ Logical annotations
 
 <gr>
 <EBNFCDECL name='Expr'/> = <GEBNFC name='Expr' kind='or'/> .
+</gr>
+
+<h3 class='center-h' data-href='Logical_sentence_expression_chapter'>
+    Logical sentence expression
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='LogicalSentenceExpr' groups='Expr'/> = <GEBNFC name='LogicalSentenceExpr' kind='or'/> .
 </gr>
 
 <h3 class='center-h' data-href="GroupExpr_chapter">
@@ -2519,7 +2528,7 @@ Error operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ [ <EBNFC name='AnnotationsList'/> ] "else" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] ";" .
+<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='FuzzyLogicTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='FuzzyLogicTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ [ <EBNFC name='AnnotationsList'/> ] "else" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] ";" .
 <EBNFCDECL name='ConditionalStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalStatement'/> .
 </gr>
 
@@ -2555,7 +2564,7 @@ Error operator
 <EBNFCDECL name='ForStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "for" "(" <EBNFC name='InitializerForStatementExpr'/> ";" <EBNFC name='ConditionForStatementExpr'/> ";" <EBNFC name='IteratorForStatementExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ";" .
 <EBNFCDECL name='ForStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ForStatement'/> .
 <EBNFCDECL name='InitializerForStatementExpr'/> = <EBNFC name='Expr'/> .
-<EBNFCDECL name='ConditionForStatementExpr'/> = <EBNFC name='BooleanTypeExpr'/> .
+<EBNFCDECL name='ConditionForStatementExpr'/> = <EBNFC name='FuzzyLogicTypeExpr'/> .
 <EBNFCDECL name='IteratorForStatementExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
@@ -2577,7 +2586,7 @@ Error operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='WhileStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "while" "(" <EBNFC name='BooleanTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ";" .
+<EBNFCDECL name='WhileStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "while" "(" <EBNFC name='FuzzyLogicTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ";" .
 <EBNFCDECL name='WhileStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'WhileStatement'/> .
 </gr>
 
@@ -2588,7 +2597,7 @@ Error operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DoWhileStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "do" "{" [ <EBNFC name='StatementsSet'/> ] "}" "while" "(" <EBNFC name='BooleanTypeExpr'/> ")" ";" .
+<EBNFCDECL name='DoWhileStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "do" "{" [ <EBNFC name='StatementsSet'/> ] "}" "while" "(" <EBNFC name='FuzzyLogicTypeExpr'/> ")" ";" .
 <EBNFCDECL name='DoWhileStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'DoWhileStatement'/> .
 </gr>
 
