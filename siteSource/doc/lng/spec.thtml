@@ -225,6 +225,8 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>in</span>
 <span class='keyword'>synonym</span>
 <span class='keyword'>call</span>
+<span class='keyword'>where</span>
+<span class='keyword'>default</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -248,7 +250,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='NullLiteral'/> = "null" | "Null" .
+<EBNFCDECL name='NullLiteral' groups='ConstExpr'/> = "null" | "Null" .
 </pre>
 
 <h3 class='center-h' data-href="Numbers_literals_chapter">
@@ -258,7 +260,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='NumberLiteral'/> = <EBNFC name='IntegerLiteral'/> | <EBNFC name='FloatPointLiteral'/> .
+<EBNFCDECL name='NumberLiteral' groups='ConstExpr'/> = <EBNFC name='IntegerLiteral'/> | <EBNFC name='FloatPointLiteral'/> .
 <EBNFCDECL name='IntegerLiteral'/> = <EBNFC name='decimal_digit'/> [ { <EBNFC name='decimal_digit'/> } ] .
 <EBNFCDECL name='FloatPointLiteral'/> = <EBNFC name='IntegerLiteral'/> "." <EBNFC name='IntegerLiteral'/> .
 </gr>
@@ -274,7 +276,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 </p>
 
 <pre class='ebnf-code'>
-<EBNFCDECL name='FuzzyLogicLiteral'/> = <EBNFC name='NumberLiteral'/> .
+<EBNFCDECL name='FuzzyLogicLiteral' groups='ConstExpr'/> = <EBNFC name='NumberLiteral'/> .
 </pre>
 
 <h3 class='center-h' data-href="Strings_literals_chapter">
@@ -284,7 +286,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='StringLiteral'/> = (""" <EBNFC name='unicode_char'/> [{ <EBNFC name='unicode_char'/> }] """) | ("'" <EBNFC name='unicode_char'/> [{ <EBNFC name='unicode_char'/> }] "'").
+<EBNFCDECL name='StringLiteral' groups='ConstExpr'/> = (""" <EBNFC name='unicode_char'/> [{ <EBNFC name='unicode_char'/> }] """) | ("'" <EBNFC name='unicode_char'/> [{ <EBNFC name='unicode_char'/> }] "'").
 </gr>
 
 <h3 class='center-h' data-href="Date_and_time_literals_chapter">
@@ -294,7 +296,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DateTimeLiteral'/> = <GEBNFC name='DateTimeLiteral' kind='or' /> .
+<EBNFCDECL name='DateTimeLiteral' groups='ConstExpr'/> = <GEBNFC name='DateTimeLiteral' kind='or' /> .
 <EBNFCDECL name='NowDateTimeLiteral' groups="DateTimeLiteral"/> = "now" .
 <EBNFCDECL name='PresentDateTimeLiteral' groups="DateTimeLiteral"/> = "present" .
 <EBNFCDECL name='FutureDateTimeLiteral' groups="DateTimeLiteral"/> = "future" .
@@ -319,7 +321,7 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='TypeIdentifier' groups='Expr'/> = <GEBNFC name='TypeIdentifier' kind='or' /> .
+<EBNFCDECL name='TypeIdentifier' groups='Expr;ConstExpr'/> = <GEBNFC name='TypeIdentifier' kind='or' /> .
 </gr>
 
 <h3 class='center-h' data-href="Object-oriented_programming_chapter">
@@ -1130,7 +1132,7 @@ Map
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='FuzzyTermExpr' groups="Expr;TypeIdentifier"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
+<EBNFCDECL name='FuzzyTermExpr' groups="Expr;TypeIdentifier;ConstExpr"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1624,6 +1626,16 @@ Logical annotations
 
 <gr>
 <EBNFCDECL name='GroupExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
+</gr>
+
+<h3 class='center-h' data-href='ConstExpr_chapter'>
+    Constant expression
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='ConstExpr' groups='Expr'/> = <GEBNFC name='ConstExpr' kind='or'/> .
 </gr>
 
 <h3 class='center-h' data-href='Var_chapter'>
@@ -2136,7 +2148,7 @@ Operator "::" (Get subitem)
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='GetSubItemOpExpr'/> = <TEBNFC name='BinaryOp' param = '::'/> .
+<EBNFCDECL name='GetSubItemOpExpr' groups='ConstExpr'/> = <TEBNFC name='BinaryOp' param = '::'/> .
 </gr>
 
 <h3 class='center-h' data-href='CallOp_chapter'>
