@@ -2544,8 +2544,13 @@ Error operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='FuzzyLogicTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='FuzzyLogicTypeExpr'/> ")" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ [ <EBNFC name='AnnotationsList'/> ] "else" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] ";" .
+<EBNFCDECL name='ConditionalStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "if" "(" <EBNFC name='ConditionConditionalStatement'/> ")" <EBNFC name='ConsequentConditionalStatement'/> [ [ <EBNFC name='AnnotationsList'/> ] "elif" "(" <EBNFC name='AlternativeConditionConditionalStatement'/> ")" <EBNFC name='AlternativeConsequentConditionalStatement'/> ] [ [ <EBNFC name='AnnotationsList'/> ] "else" <EBNFC name='AlternativeConditionalStatement'/> ] ";" .
 <EBNFCDECL name='ConditionalStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalStatement'/> .
+<EBNFCDECL name='ConditionConditionalStatement'/> = <EBNFC name='FuzzyLogicTypeExpr'/> .
+<EBNFCDECL name='ConsequentConditionalStatement'/> = "{" [ <EBNFC name='StatementsSet'/> ] "}" .
+<EBNFCDECL name='AlternativeConditionConditionalStatement'/> = <EBNFC name='FuzzyLogicTypeExpr'/> .
+<EBNFCDECL name='AlternativeConsequentConditionalStatement'/> = "{" [ <EBNFC name='StatementsSet'/> ] "}" .
+<EBNFCDECL name='AlternativeConditionalStatement'/> = "{" [ <EBNFC name='StatementsSet'/> ] "}" .
 </gr>
 
 <h3 class='center-h' data-href="SwitchStatement_chapter">
