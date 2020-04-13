@@ -227,6 +227,8 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>call</span>
 <span class='keyword'>where</span>
 <span class='keyword'>default</span>
+<span class='keyword'>switch</span>
+<span class='keyword'>case</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -2252,19 +2254,21 @@ deep clone
 </gr>
 
 <h3 class='center-h' data-href="InlineConditionalOp_chapter">
-Inline conditional operators
+Inline conditional operator
 </h3>
 
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='InlineConditionalOpExpr' groups="Expr"/> = <GEBNFC name='InlineConditionalOpExpr' kind='or'/> .
+<EBNFCDECL name='InlineConditionalOpExpr' groups="Expr"/> = <EBNFC name='ConditionInlineConditionalOpExpr'/> "->" <EBNFC name='ConsequentInlineConditionalOpExpr'/> "||" <EBNFC name='AlternativeInlineConditionalOpExpr'/> .
+<EBNFCDECL name='ConditionInlineConditionalOpExpr'/> = <EBNFC name='FuzzyLogicTypeExpr'/> .
+<EBNFCDECL name='ConsequentInlineConditionalOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='AlternativeInlineConditionalOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
-@a is b -> c : d
+@a is b -> c || d
 It will be like C# ternary operator "?:".
-Also I am going to create inline switch operator.
 </pre>
 
 <h3 class='center-h' data-href="CoalesceOp_chapter">
