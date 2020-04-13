@@ -2560,9 +2560,23 @@ Error operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='SwitchStatement' groups="Statement"/> .
+<EBNFCDECL name='SwitchStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] "switch" "(" <EBNFC name='Expr'/> ")" </br>
+       "{" </br>
+       [{ <EBNFC name='CaseSectionOfSwitchStatement'/> }] </br>
+       [ <EBNFC name='DefaultSectionOfSwitchStatement'/> ] </br>
+       "}" ";".
 <EBNFCDECL name='SwitchStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SwitchStatement'/> .
+<EBNFCDECL name='CaseSectionHeaderOfSwitchStatement'/> = [ <EBNFC name='AnnotationsList'/> ] "case" ( <EBNFC name='ConstExpr'/> | ( <EBNFC name='VarIdentifier'/> ":" <EBNFC name='TypeIdentifier'/> ) ) [ [<EBNFC name='AnnotationsList'/>] "where" <EBNFC name='FuzzyLogicTypeExpr'/> ] "->" .
+<EBNFCDECL name='CaseSectionOfSwitchStatement'/> = <EBNFC name='CaseSectionHeaderOfSwitchStatement'/> </br> [{ <EBNFC name='CaseSectionHeaderOfSwitchStatement'/> }] </br> <TEBNFC name='CaseSectionBodyOfSwitchStatementTemplate'/> .
+<EBNFCDECL name='DefaultSectionOfSwitchStatement'/> = "default" "->" </br> <TEBNFC name='CaseSectionBodyOfSwitchStatementTemplate'/> .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='CaseSectionBodyOfSwitchStatementTemplate'>
+         [ [ "{" ] </br> [ <EBNFC name='StatementsSet'/> ] </br> [ "}" ";" ] ] </br>
+         [ ( <EBNFC name='BreakStatement'/> | <EBNFC name='ReturnStatement'/> | <EBNFC name='YieldStatement'/> ) ";" ]
+    </TEBNFCDECL>
+</div>
 
 <h3 class='center-h' data-href="TryCatchStatement_chapter">
    Try-catch statement
