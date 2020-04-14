@@ -88,13 +88,14 @@ Identifiers name program entities such as variables and types.
 
 <gr>
 <EBNFCDECL name='Identifier'/> = <GEBNFC name='Identifier' kind='or' /> .
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier;Expr'/> = ( <EBNFC name='letter'/> { <EBNFC name='letter'/> | <EBNFC name='decimal_digit'/> } ) | ( "`" { <EBNFC name='unicode_char'/> } "`") .
-<EBNFCDECL name='VarIdentifier' groups='Identifier;Expr'/> = "@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = ( <EBNFC name='letter'/> { <EBNFC name='letter'/> | <EBNFC name='decimal_digit'/> } ) | ( "`" { <EBNFC name='unicode_char'/> } "`") .
+<EBNFCDECL name='VarIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = "@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='LogicalSentenceVarIdentifier'groups='Identifier;LogicalSentenceExpr'/> = "$"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='SysVarOrOpIdentifier' groups='Identifier;Expr'/> = "@@"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='ConditionalEntityIdentifier' groups='Identifier;Expr'/> = "#@"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='InstanceIdentifier' groups="Identifier;TypeIdentifier;Expr"/> = "#"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='ShortConditionalEntityIdentifier' groups='Identifier;Expr'/> = "##"<EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='QueryVarIdentifier' groups='Identifier;Expr'/> = "?"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConditionalEntityIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = "#@"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='InstanceIdentifier' groups="Identifier;TypeIdentifier;Expr;LogicalSentenceExpr"/> = "#"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ShortConditionalEntityIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = "##"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='QueryVarIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = "?"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='DataSourceIdentifier' groups='Identifier;Expr'/> = "@:"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='EventIdentifier' groups='Identifier;Expr'/> = "@>"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='ScopeTargetIdentifier' groups='Identifier;Expr'/> = ":::"<EBNFC name='ConceptIdentifier'/> .
@@ -895,7 +896,7 @@ Conditional entity
 
 <gr>
 <EBNFCDECL name='ConditionalEntityDeclsSet' groups='ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ConditionalEntityDecl'/> .
-<EBNFCDECL name='ConditionalEntityDeclExpr' groups='Expr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalEntityDeclsSet'/> .
+<EBNFCDECL name='ConditionalEntityDeclExpr' groups='Expr;LogicalSentenceExpr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalEntityDeclsSet'/> .
 <EBNFCDECL name='ConditionalEntityDecl'/> = [ <EBNFC name='AnnotationsList'/> ] ( "#@" | <EBNFC name='ConditionalEntityIdentifier'/> ) "(" <EBNFC name='LogicalSentenceExpr'/> ")" .
 </gr>
 
@@ -1132,7 +1133,7 @@ Map
 <EBNFCDECL name='FuzzyOperatorsBlock' groups='FuzzySetMembers'/> = "operators" ":" <EBNFC name='newline'/> <EBNFC name='FuzzyOperator'/> [{ <EBNFC name='FuzzyOperator'/> }] .
 <EBNFCDECL name='FuzzyOperatorsBlockDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FuzzyOperatorsBlock'/> .
 <EBNFCDECL name='FuzzyOperator'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='FuzzyOperatorName'/> "=" <EBNFC name='AnonymousFunction'/> [ <EBNFC name='ModalitiesSet'/> ] ";" .
-<EBNFCDECL name='FuzzyTermExpr' groups="Expr;TypeIdentifier;ConstExpr"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
+<EBNFCDECL name='FuzzyTermExpr' groups="Expr;TypeIdentifier;ConstExpr;LogicalSentenceExpr"/> = [ [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyOperatorName'/> ] [ <EBNFC name='FuzzySetIdentifier'/> "::" ] <EBNFC name='FuzzyTermName'/> .
 </gr>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
@@ -1150,7 +1151,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='FuzzyLogicTypeIdentifier' groups="TypeIdentifier"/> = "fuzzy" | "Fuzzy" | "fuz" .
-<EBNFCDECL name='FuzzyLogicTypeExpr' groups="Expr"/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
+<EBNFCDECL name='FuzzyLogicTypeExpr' groups="Expr;LogicalSentenceExpr"/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
 </gr>
 	
 <h3 class='center-h' data-href="Numeric_type_chapter">
@@ -1161,7 +1162,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='NumericTypeIdentifier' groups="TypeIdentifier"/> = "number" | "Number" | "num" .
-<EBNFCDECL name='NumericTypeExpr' groups="Expr"/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> .
+<EBNFCDECL name='NumericTypeExpr' groups="Expr;LogicalSentenceExpr"/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NumericTypeExpr'/> .
 </gr>
 	
 <h3 class='center-h' data-href="String_type_chapter">
@@ -1172,7 +1173,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='StringTypeIdentifier' groups="TypeIdentifier"/> = "string" | "String" | "str" .
-<EBNFCDECL name='StringTypeExpr' groups="Expr"/> = <EBNFC name='StringLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='StringTypeExpr'/> .
+<EBNFCDECL name='StringTypeExpr' groups="Expr;LogicalSentenceExpr"/> = <EBNFC name='StringLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='StringTypeExpr'/> .
 </gr>
 
 <h3 class='center-h' data-href="Date_and_time_type_chapter">
@@ -1183,7 +1184,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='DateTimeIdentifier' groups="TypeIdentifier"/> = "date" | "time" | "datetime" .
-<EBNFCDECL name='DateTimeTypeExpr' groups="Expr"/> = <EBNFC name='DateTimeLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='DateTimeTypeExpr'/> .
+<EBNFCDECL name='DateTimeTypeExpr' groups="Expr;LogicalSentenceExpr"/> = <EBNFC name='DateTimeLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='DateTimeTypeExpr'/> .
 </gr>
 
 <h3 class='center-h' data-href="Null_type_chapter">
@@ -1194,7 +1195,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='NullTypeIdentifier'/> = <EBNFC name='NullLiteral'/> .
-<EBNFCDECL name='NullTypeExpr' groups="Expr"/> = <EBNFC name='NullLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NullTypeExpr'/> .
+<EBNFCDECL name='NullTypeExpr' groups="Expr;LogicalSentenceExpr"/> = <EBNFC name='NullLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='NullTypeExpr'/> .
 </gr>
 
 <h2 class='center-h' data-href="Modalities_chapter">
@@ -1618,6 +1619,78 @@ Logical annotations
 <EBNFCDECL name='LogicalSentenceExpr' groups='Expr'/> = <GEBNFC name='LogicalSentenceExpr' kind='or'/> .
 </gr>
 
+<h4 class='center-h' data-href='Logical_sentence_group_chapter'>
+    Logical sentence group
+</h4>
+
+<LinkToContent/>
+
+<See data-href='GroupExpr_chapter'/>
+
+<h4 class='center-h' data-href='Logical_sentence_named_group_chapter'>
+    Logical sentence named group
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='NamedGroupLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='Logical_sentence_variable_chapter'>
+Logical sentence variable
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='VarLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='Logical_sentence_query_variable_chapter'>
+Logical sentence query variable
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='QueryVarLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='Logical_sentence_predicate_chapter'>
+Logical sentence predicate
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='PredicateLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+</gr>
+
+<h4 class='center-h' data-href='Logical_sentence_Logical_operators_chapter'>
+Logical sentence Logical operators
+</h4>
+
+<LinkToContent/>
+
+<See data-href='LogicalOp_chapter'/>
+
+<h4 class='center-h' data-href='Logical_sentence_Member_access_operators_chapter'>
+Logical sentence Member access operators
+</h4>
+
+<LinkToContent/>
+
+<See data-href='MemberAccessOp_chapter'/>
+
+<h4 class='center-h' data-href='Logical_sentence_Relational_operators_chapter'>
+Logical sentence Relational operators
+</h4>
+
+<LinkToContent/>
+
+<See data-href='RelationalOp_chapter'/>
+
 <h3 class='center-h' data-href="GroupExpr_chapter">
     Group
 </h3>
@@ -1626,6 +1699,7 @@ Logical annotations
 
 <gr>
 <EBNFCDECL name='GroupExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
+<EBNFCDECL name='GroupLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
 </gr>
 
 <h3 class='center-h' data-href='ConstExpr_chapter'>
@@ -1645,7 +1719,7 @@ Variable
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='VarExpr' groups='Expr'/> = <TEBNFC name='VariableExpr'/> .
+<EBNFCDECL name='VarExpr' groups='Expr;LogicalSentenceExpr'/> = <TEBNFC name='VariableExpr'/> .
 </gr>
 
 <h3 class='center-h' data-href='_chapter'>
@@ -1655,7 +1729,7 @@ Object expression
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='ObjExpr' groups='Expr'/> = <TEBNFC name='ShortObjDeclTemplate'/> .
+<EBNFCDECL name='ObjExpr' groups='Expr;LogicalSentenceExpr'/> = <TEBNFC name='ShortObjDeclTemplate'/> .
 </gr>
 
 <h3 class='center-h' data-href="Operators_chapter">
@@ -1989,6 +2063,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='RelationalOpExpr' groups="Expr"/> = <GEBNFC name='RelationalOpExpr' kind='or'/> .
+<EBNFCDECL name='RelationalOpLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = <GEBNFC name='RelationalOpLogicalSentenceExpr' kind='or'/> .
 </pre>
 
 <h4 class='center-h' data-href="EqualOp_chapter">
@@ -1999,6 +2074,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='EqualOpExpr' groups='RelationalOpExpr'/> = <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "is" [ "(" [( "±" | "+-" )] <EBNFC name='Expr'/> ")" ] <EBNFC name='Expr'/> .
+<EBNFCDECL name='EqualOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="MoreOp_chapter">
@@ -2009,6 +2085,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='MoreOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>'/> .
+<EBNFCDECL name='MoreOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="LessOp_chapter">
@@ -2019,6 +2096,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='LessOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<'/> .
+<EBNFCDECL name='LessOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="MoreOrEqualOp_chapter">
@@ -2029,6 +2107,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='MoreOrEqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>='/> .
+<EBNFCDECL name='MoreOrLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="LessOrEqualOp_chapter">
@@ -2039,16 +2118,18 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='LessOrEqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<='/> .
+<EBNFCDECL name='LessOrLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </pre>
 
-<h4 class='center-h' data-href="RangeBooleanOp_chapter">
-Range boolean operator
+<h4 class='center-h' data-href="RangeFuzzyLogicOp_chapter">
+Range fuzzy logic operator
 </h4>
 
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='RangeBooleanOpExpr' groups='RelationalOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) .
+<EBNFCDECL name='RangeFuzzyLogicOpExpr' groups='RelationalOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) .
+<EBNFCDECL name='RangeFuzzyLogicOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </gr>
 
 <h4 class='center-h' data-href='InOp_chapter'>
@@ -2059,6 +2140,7 @@ Operator "in"
 
 <gr>
 <EBNFCDECL name='InOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = 'in'/> .
+<EBNFCDECL name='InOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
 </gr>
 
 <h3 class='center-h' data-href="LogicalOp_chapter">
@@ -2069,6 +2151,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='LogicalOpExpr' groups="Expr"/> = <GEBNFC name='LogicalOpExpr' kind='or'/> .
+<EBNFCDECL name='LogicalOpLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = <GEBNFC name='LogicalOpLogicalSentenceExpr' kind='or'/> .
 </pre>
 
 <h4 class='center-h' data-href="AndOp_chapter">
@@ -2079,6 +2162,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='AndOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "and" | "&" )'/> .
+<EBNFCDECL name='AndOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="OrOp_chapter">
@@ -2089,6 +2173,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='OrOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "or" | "|")'/> .
+<EBNFCDECL name='OrOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="NotOp_chapter">
@@ -2099,6 +2184,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='NotOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='UnaryOp_2' param = '( "not" | "!" )'/> .
+<EBNFCDECL name='NotOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = .
 </pre>
 
 <h4 class='center-h' data-href="InvertVarOp_chapter">
@@ -2119,6 +2205,7 @@ Operator "in"
 
 <gr>
 <EBNFCDECL name='MemberAccessOpExpr' groups='Expr'/> = <GEBNFC name='MemberAccessOpExpr' kind='or'/> .
+<EBNFCDECL name='MemberAccessOpLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = <GEBNFC name='MemberAccessOpLogicalSentenceExpr' kind='or'/> .
 </gr>
 
 <h4 class='center-h' data-href='PointerOp_chapter'>
@@ -2129,6 +2216,7 @@ Operator "."
 
 <gr>
 <EBNFCDECL name='PointerOpExpr' groups='MemberAccessOpExpr' /> = <TEBNFC name='BinaryOp' param = '.'/>.
+<EBNFCDECL name='PointerOpLogicalSentenceExpr' groups='MemberAccessOpLogicalSentenceExpr'/> = .
 </gr>
 
 <h4 class='center-h' data-href='CoalescePointerOp_chapter'>
@@ -2149,6 +2237,7 @@ Operator "::" (Get subitem)
 
 <gr>
 <EBNFCDECL name='GetSubItemOpExpr' groups='ConstExpr'/> = <TEBNFC name='BinaryOp' param = '::'/> .
+<EBNFCDECL name='GetSubItemOpLogicalSentenceExpr' groups='MemberAccessOpLogicalSentenceExpr'/> = .
 </gr>
 
 <h3 class='center-h' data-href='CallOp_chapter'>
