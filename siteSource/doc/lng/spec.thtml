@@ -482,7 +482,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='EventMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'EventMemberDecl'/> .
-<EBNFCDECL name='EventMemberDecl'/> .
+<EBNFCDECL name='EventMemberDecl'/> = <TEBNFC name='EventDeclTemplate'/> ";" .
 <EBNFCDECL name='EventMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventMemberDecl'/> .
 </gr>
 
@@ -842,9 +842,15 @@ Event
 
 <gr>
 <EBNFCDECL name='EventDeclsSet' groups="ObjectTypeDecls;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'EventDecl'/> .
-<EBNFCDECL name='EventDecl'/> .
+<EBNFCDECL name='EventDecl'/> = <TEBNFC name='EventDeclTemplate'/> ";" .
 <EBNFCDECL name='EventDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventDeclsSet'/> .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='EventDeclTemplate'>
+        [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='EventIdentifier'/>
+    </TEBNFCDECL>
+</div>
 
 <h3 class='center-h' data-href="Trigger_chapter">
     Trigger
