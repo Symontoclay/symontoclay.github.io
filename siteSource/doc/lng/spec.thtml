@@ -1648,7 +1648,7 @@ Logical annotations
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='NamedGroupLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+<EBNFCDECL name='NamedGroupLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = <EBNFC name='VarLogicalSentenceExpr'/> "=" ( <EBNFC name='PredicateLogicalSentenceExpr'/> | ( "(" <EBNFC name='LogicalSentenceExpr'/> ")" )) .
 </gr>
 
 <h4 class='center-h' data-href='Logical_sentence_variable_chapter'>
@@ -1658,7 +1658,7 @@ Logical sentence variable
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='VarLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+<EBNFCDECL name='VarLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='LogicalSentenceVarIdentifier'/> .
 </gr>
 
 <h4 class='center-h' data-href='Logical_sentence_query_variable_chapter'>
@@ -1668,7 +1668,7 @@ Logical sentence query variable
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='QueryVarLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+<EBNFCDECL name='QueryVarLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='QueryVarIdentifier'/> .
 </gr>
 
 <h4 class='center-h' data-href='Logical_sentence_predicate_chapter'>
@@ -1678,7 +1678,7 @@ Logical sentence predicate
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='PredicateLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+<EBNFCDECL name='PredicateLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = <!--[ <EBNFC name='AnnotationsList'/> ] [ "?" ] <EBNFC name='ConceptIdentifier'/> "("  ")"--> .
 </gr>
 
 <h4 class='center-h' data-href='Logical_sentence_Logical_operators_chapter'>
@@ -1713,7 +1713,7 @@ Logical sentence Relational operators
 
 <gr>
 <EBNFCDECL name='GroupExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
-<EBNFCDECL name='GroupLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = .
+<EBNFCDECL name='GroupLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = "(" <EBNFC name='LogicalSentenceExpr'/> ")" .
 </gr>
 
 <h3 class='center-h' data-href='ConstExpr_chapter'>
@@ -2088,7 +2088,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='EqualOpExpr' groups='RelationalOpExpr'/> = <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] "is" [ "(" [( "±" | "+-" )] <EBNFC name='Expr'/> ")" ] <EBNFC name='Expr'/> .
-<EBNFCDECL name='EqualOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='EqualOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> =  <EBNFC name='LogicalSentenceExpr'/> [ <EBNFC name='AnnotationsList'/> ] "is" [ "(" [( "±" | "+-" )] <EBNFC name='Expr'/> ")" ] <EBNFC name='LogicalSentenceExpr'/> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOp_chapter">
@@ -2099,7 +2099,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='MoreOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>'/> .
-<EBNFCDECL name='MoreOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='MoreOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = '>'/> .
 </pre>
 
 <h4 class='center-h' data-href="LessOp_chapter">
@@ -2110,7 +2110,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='LessOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<'/> .
-<EBNFCDECL name='LessOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='LessOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = '<'/> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOrEqualOp_chapter">
@@ -2121,7 +2121,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='MoreOrEqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '>='/> .
-<EBNFCDECL name='MoreOrLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='MoreOrLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = '>='/> .
 </pre>
 
 <h4 class='center-h' data-href="LessOrEqualOp_chapter">
@@ -2132,7 +2132,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='LessOrEqualOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = '<='/> .
-<EBNFCDECL name='LessOrLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='LessOrLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = '<='/> .
 </pre>
 
 <h4 class='center-h' data-href="RangeFuzzyLogicOp_chapter">
@@ -2142,8 +2142,8 @@ Range fuzzy logic operator
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='RangeFuzzyLogicOpExpr' groups='RelationalOpExpr'/> = [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) .
-<EBNFCDECL name='RangeFuzzyLogicOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='RangeFuzzyLogicOpExpr' groups='RelationalOpExpr'/> = <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='Expr'/> .
+<EBNFCDECL name='RangeFuzzyLogicOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = <EBNFC name='LogicalSentenceExpr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='LogicalSentenceExpr'/> [ <EBNFC name='AnnotationsList'/> ] ( ">" | ">=" | "<" | "<=" ) <EBNFC name='LogicalSentenceExpr'/> .
 </gr>
 
 <h4 class='center-h' data-href='InOp_chapter'>
@@ -2154,7 +2154,7 @@ Operator "in"
 
 <gr>
 <EBNFCDECL name='InOpExpr' groups='RelationalOpExpr'/> = <TEBNFC name='BinaryOp' param = 'in'/> .
-<EBNFCDECL name='InOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='InOpLogicalSentenceExpr' groups='RelationalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = 'in'/> .
 </gr>
 
 <h3 class='center-h' data-href="LogicalOp_chapter">
@@ -2176,7 +2176,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='AndOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "and" | "&" )'/> .
-<EBNFCDECL name='AndOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='AndOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp_2' param = '( "and" | "&" )'/> .
 </pre>
 
 <h4 class='center-h' data-href="OrOp_chapter">
@@ -2187,7 +2187,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='OrOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '( "or" | "|")'/> .
-<EBNFCDECL name='OrOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='OrOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp_2' param = '( "or" | "|")'/> .
 </pre>
 
 <h4 class='center-h' data-href="NotOp_chapter">
@@ -2198,7 +2198,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <EBNFCDECL name='NotOpExpr' groups='LogicalOpExpr'/> = <TEBNFC name='UnaryOp_2' param = '( "not" | "!" )'/> .
-<EBNFCDECL name='NotOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='NotOpLogicalSentenceExpr' groups='LogicalOpLogicalSentenceExpr'/> = <TEBNFC name='LUnaryOp_2' param = '( "not" | "!" )'/> .
 </pre>
 
 <h4 class='center-h' data-href="InvertVarOp_chapter">
@@ -2229,8 +2229,8 @@ Operator "."
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='PointerOpExpr' groups='MemberAccessOpExpr' /> = <TEBNFC name='BinaryOp' param = '.'/>.
-<EBNFCDECL name='PointerOpLogicalSentenceExpr' groups='MemberAccessOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='PointerOpExpr' groups='MemberAccessOpExpr' /> = <TEBNFC name='BinaryOp' param = '.'/> .
+<EBNFCDECL name='PointerOpLogicalSentenceExpr' groups='MemberAccessOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = '.'/> .
 </gr>
 
 <h4 class='center-h' data-href='CoalescePointerOp_chapter'>
@@ -2251,7 +2251,7 @@ Operator "::" (Get subitem)
 
 <gr>
 <EBNFCDECL name='GetSubItemOpExpr' groups='ConstExpr'/> = <TEBNFC name='BinaryOp' param = '::'/> .
-<EBNFCDECL name='GetSubItemOpLogicalSentenceExpr' groups='MemberAccessOpLogicalSentenceExpr'/> = .
+<EBNFCDECL name='GetSubItemOpLogicalSentenceExpr' groups='MemberAccessOpLogicalSentenceExpr'/> = <TEBNFC name='LBinaryOp' param = '::'/> .
 </gr>
 
 <h3 class='center-h' data-href='CallOp_chapter'>
@@ -2871,8 +2871,20 @@ Synchronization statement
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name="UnaryOp_2" param='_OpLiteral'>
-	    [ <EBNFC name='AnnotationsList'/> ] _OpLiteral <EBNFC name='Expr'/>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='Expr'/>"/>
 	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="LUnaryOp" param='_OpLiteral'>
+	    <TEBNFC name='LUnaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="LUnaryOp_2" param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicalSentenceExpr'/>"/>
+	</TEBNFCDECL>	
+	
+	<TEBNFCDECL name="UnaryOp_base" param='_OpLiteral' param2='_ExpType'>
+	    [ <EBNFC name='AnnotationsList'/> ] _OpLiteral _ExpType
+	</TEBNFCDECL>	
 	
 	<TEBNFCDECL name="PostfixUnaryOp" param='_OpLiteral'>
 	    <TEBNFC name='PostfixUnaryOp_2' param = '"_OpLiteral"'/>
@@ -2887,7 +2899,19 @@ Synchronization statement
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='BinaryOp_2' param='_OpLiteral'>
-	    <EBNFC name='Expr'/> [ <EBNFC name='AnnotationsList'/> ] _OpLiteral <EBNFC name='Expr'/>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='Expr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name="LBinaryOp" param='_OpLiteral'>
+	    <TEBNFC name='LBinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='LBinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicalSentenceExpr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='BinaryOp_base' param='_OpLiteral' param2='_ExpType'>
+	    _ExpType [ <EBNFC name='AnnotationsList'/> ] _OpLiteral _ExpType
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='VariableExpr'>
