@@ -230,6 +230,14 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>default</span>
 <span class='keyword'>switch</span>
 <span class='keyword'>case</span>
+<span class='keyword'>into</span>
+<span class='keyword'>from</span>
+<span class='keyword'>take</span>
+<span class='keyword'>skip</span>
+<span class='keyword'>order</span>
+<span class='keyword'>by</span>
+<span class='keyword'>asc</span>
+<span class='keyword'>desc</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -2507,8 +2515,34 @@ select
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='SelectOpExpr' groups='DataSetOpExpr' /> = .
+<EBNFCDECL name='SelectOpExpr' groups='DataSetOpExpr' /> = <EBNFC name='FullSelectOpExpr'/> | <EBNFC name='ShortSelectOpExpr'/> .
+<EBNFCDECL name='FullSelectOpExpr'/> = .
+<EBNFCDECL name='ShortSelectOpExpr'/> = .
+<EBNFCDECL name='SelectSectionOfSelectOpExpr'/> = .
+<EBNFCDECL name='FromSectionOfSelectOpExpr'/> = .
+<EBNFCDECL name='WhereSectionOfSelectOpExpr'/> = .
+<EBNFCDECL name='OrderBySectionOfSelectOpExpr'/> = .
+<EBNFCDECL name='SkipSectionOfSelectOpExpr'/> = .
+<EBNFCDECL name='TakeSectionOfSelectOpExpr'/> = .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='WhereSectionOfSelectOpExprTemplate'>
+	[ <EBNFC name='AnnotationsList'/> ] "where" <EBNFC name='WhereSectionOfSelectOpExpr'/>
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='OrderBySectionOfSelectOpExprTemplate'>
+	[ <EBNFC name='AnnotationsList'/> ] "order" "by" <EBNFC name='OrderBySectionOfSelectOpExpr'/>
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='SkipSectionOfSelectOpExprTemplate'>
+	[ <EBNFC name='AnnotationsList'/> ] "skip" <EBNFC name='SkipSectionOfSelectOpExpr'/>
+    </TEBNFCDECL>
+    
+    <TEBNFCDECL name='TakeSectionOfSelectOpExprTemplate'>
+	[ <EBNFC name='AnnotationsList'/> ] "take" <EBNFC name='TakeSectionOfSelectOpExpr'/>
+    </TEBNFCDECL>
+</div>
 
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
