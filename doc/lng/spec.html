@@ -248,6 +248,14 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>default</span>
 <span class='keyword'>switch</span>
 <span class='keyword'>case</span>
+<span class='keyword'>into</span>
+<span class='keyword'>from</span>
+<span class='keyword'>take</span>
+<span class='keyword'>skip</span>
+<span class='keyword'>order</span>
+<span class='keyword'>by</span>
+<span class='keyword'>asc</span>
+<span class='keyword'>desc</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -1213,7 +1221,7 @@ Logical annotations
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#NamedGroupLogicalSentenceExpr" name="NamedGroupLogicalSentenceExpr">NamedGroupLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#NamedGroupLogicalSentenceExpr" name="NamedGroupLogicalSentenceExpr">NamedGroupLogicalSentenceExpr</a> = <a href="#VarLogicalSentenceExpr">VarLogicalSentenceExpr</a> "=" ( <a href="#PredicateLogicalSentenceExpr">PredicateLogicalSentenceExpr</a> | ( "(" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> ")" )) .</div></div>
 
 <h4 class='center-h' data-href='Logical_sentence_variable_chapter'>
 Logical sentence variable
@@ -1221,7 +1229,7 @@ Logical sentence variable
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#VarLogicalSentenceExpr" name="VarLogicalSentenceExpr">VarLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#VarLogicalSentenceExpr" name="VarLogicalSentenceExpr">VarLogicalSentenceExpr</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#LogicalSentenceVarIdentifier">LogicalSentenceVarIdentifier</a> .</div></div>
 
 <h4 class='center-h' data-href='Logical_sentence_query_variable_chapter'>
 Logical sentence query variable
@@ -1229,7 +1237,7 @@ Logical sentence query variable
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#QueryVarLogicalSentenceExpr" name="QueryVarLogicalSentenceExpr">QueryVarLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#QueryVarLogicalSentenceExpr" name="QueryVarLogicalSentenceExpr">QueryVarLogicalSentenceExpr</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] <a href="#QueryVarIdentifier">QueryVarIdentifier</a> .</div></div>
 
 <h4 class='center-h' data-href='Logical_sentence_predicate_chapter'>
 Logical sentence predicate
@@ -1237,7 +1245,7 @@ Logical sentence predicate
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#PredicateLogicalSentenceExpr" name="PredicateLogicalSentenceExpr">PredicateLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#PredicateLogicalSentenceExpr" name="PredicateLogicalSentenceExpr">PredicateLogicalSentenceExpr</a> = <!--[ <EBNFC name='AnnotationsList'/> ] [ "?" ] <EBNFC name='ConceptIdentifier'/> "("  ")"--> .</div></div>
 
 <h4 class='center-h' data-href='Logical_sentence_Logical_operators_chapter'>
 Logical sentence Logical operators
@@ -1269,7 +1277,7 @@ Logical sentence Relational operators
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#GroupExpr" name="GroupExpr">GroupExpr</a> = "(" <a href="#Expr">Expr</a> ")" .</div><div class="ebnf-code-item"><a href="#GroupLogicalSentenceExpr" name="GroupLogicalSentenceExpr">GroupLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#GroupExpr" name="GroupExpr">GroupExpr</a> = "(" <a href="#Expr">Expr</a> ")" .</div><div class="ebnf-code-item"><a href="#GroupLogicalSentenceExpr" name="GroupLogicalSentenceExpr">GroupLogicalSentenceExpr</a> = "(" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> ")" .</div></div>
 
 <h3 class='center-h' data-href='ConstExpr_chapter'>
     Constant expression
@@ -1623,7 +1631,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <a href="#EqualOpExpr" name="EqualOpExpr">EqualOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "is" [ "(" [( "±" | "+-" )] <a href="#Expr">Expr</a> ")" ] <a href="#Expr">Expr</a> .
-<a href="#EqualOpLogicalSentenceExpr" name="EqualOpLogicalSentenceExpr">EqualOpLogicalSentenceExpr</a> = .
+<a href="#EqualOpLogicalSentenceExpr" name="EqualOpLogicalSentenceExpr">EqualOpLogicalSentenceExpr</a> =  <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "is" [ "(" [( "±" | "+-" )] <a href="#Expr">Expr</a> ")" ] <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOp_chapter">
@@ -1634,7 +1642,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <a href="#MoreOpExpr" name="MoreOpExpr">MoreOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ">" <a href="#Expr">Expr</a> .
-<a href="#MoreOpLogicalSentenceExpr" name="MoreOpLogicalSentenceExpr">MoreOpLogicalSentenceExpr</a> = .
+<a href="#MoreOpLogicalSentenceExpr" name="MoreOpLogicalSentenceExpr">MoreOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ">" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="LessOp_chapter">
@@ -1645,7 +1653,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <a href="#LessOpExpr" name="LessOpExpr">LessOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "<" <a href="#Expr">Expr</a> .
-<a href="#LessOpLogicalSentenceExpr" name="LessOpLogicalSentenceExpr">LessOpLogicalSentenceExpr</a> = .
+<a href="#LessOpLogicalSentenceExpr" name="LessOpLogicalSentenceExpr">LessOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "<" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="MoreOrEqualOp_chapter">
@@ -1656,7 +1664,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <a href="#MoreOrEqualOpExpr" name="MoreOrEqualOpExpr">MoreOrEqualOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ">=" <a href="#Expr">Expr</a> .
-<a href="#MoreOrLogicalSentenceExpr" name="MoreOrLogicalSentenceExpr">MoreOrLogicalSentenceExpr</a> = .
+<a href="#MoreOrLogicalSentenceExpr" name="MoreOrLogicalSentenceExpr">MoreOrLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ">=" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="LessOrEqualOp_chapter">
@@ -1667,7 +1675,7 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <pre class='ebnf-code'>
 <a href="#LessOrEqualOpExpr" name="LessOrEqualOpExpr">LessOrEqualOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "<=" <a href="#Expr">Expr</a> .
-<a href="#LessOrLogicalSentenceExpr" name="LessOrLogicalSentenceExpr">LessOrLogicalSentenceExpr</a> = .
+<a href="#LessOrLogicalSentenceExpr" name="LessOrLogicalSentenceExpr">LessOrLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "<=" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="RangeFuzzyLogicOp_chapter">
@@ -1676,7 +1684,7 @@ Range fuzzy logic operator
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#RangeFuzzyLogicOpExpr" name="RangeFuzzyLogicOpExpr">RangeFuzzyLogicOpExpr</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) .</div><div class="ebnf-code-item"><a href="#RangeFuzzyLogicOpLogicalSentenceExpr" name="RangeFuzzyLogicOpLogicalSentenceExpr">RangeFuzzyLogicOpLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#RangeFuzzyLogicOpExpr" name="RangeFuzzyLogicOpExpr">RangeFuzzyLogicOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#RangeFuzzyLogicOpLogicalSentenceExpr" name="RangeFuzzyLogicOpLogicalSentenceExpr">RangeFuzzyLogicOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( ">" | ">=" | "<" | "<=" ) <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .</div></div>
 
 <h4 class='center-h' data-href='InOp_chapter'>
 Operator "in"
@@ -1684,7 +1692,7 @@ Operator "in"
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#InOpExpr" name="InOpExpr">InOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "in" <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#InOpLogicalSentenceExpr" name="InOpLogicalSentenceExpr">InOpLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#InOpExpr" name="InOpExpr">InOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "in" <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#InOpLogicalSentenceExpr" name="InOpLogicalSentenceExpr">InOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "in" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .</div></div>
 
 <h3 class='center-h' data-href="LogicalOp_chapter">
     Logical operators
@@ -1705,7 +1713,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <a href="#AndOpExpr" name="AndOpExpr">AndOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( "and" | "&" ) <a href="#Expr">Expr</a> .
-<a href="#AndOpLogicalSentenceExpr" name="AndOpLogicalSentenceExpr">AndOpLogicalSentenceExpr</a> = .
+<a href="#AndOpLogicalSentenceExpr" name="AndOpLogicalSentenceExpr">AndOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( "and" | "&" ) <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="OrOp_chapter">
@@ -1716,7 +1724,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <a href="#OrOpExpr" name="OrOpExpr">OrOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( "or" | "|") <a href="#Expr">Expr</a> .
-<a href="#OrOpLogicalSentenceExpr" name="OrOpLogicalSentenceExpr">OrOpLogicalSentenceExpr</a> = .
+<a href="#OrOpLogicalSentenceExpr" name="OrOpLogicalSentenceExpr">OrOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] ( "or" | "|") <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="NotOp_chapter">
@@ -1727,7 +1735,7 @@ Operator "in"
 
 <pre class='ebnf-code'>
 <a href="#NotOpExpr" name="NotOpExpr">NotOpExpr</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] ( "not" | "!" ) <a href="#Expr">Expr</a> .
-<a href="#NotOpLogicalSentenceExpr" name="NotOpLogicalSentenceExpr">NotOpLogicalSentenceExpr</a> = .
+<a href="#NotOpLogicalSentenceExpr" name="NotOpLogicalSentenceExpr">NotOpLogicalSentenceExpr</a> = [ <a href="#AnnotationsList">AnnotationsList</a> ] ( "not" | "!" ) <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .
 </pre>
 
 <h4 class='center-h' data-href="InvertVarOp_chapter">
@@ -1754,7 +1762,7 @@ Operator "."
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#PointerOpExpr" name="PointerOpExpr">PointerOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "." <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#PointerOpLogicalSentenceExpr" name="PointerOpLogicalSentenceExpr">PointerOpLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#PointerOpExpr" name="PointerOpExpr">PointerOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "." <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#PointerOpLogicalSentenceExpr" name="PointerOpLogicalSentenceExpr">PointerOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "." <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .</div></div>
 
 <h4 class='center-h' data-href='CoalescePointerOp_chapter'>
 Operator "?."
@@ -1770,7 +1778,7 @@ Operator "::" (Get subitem)
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#GetSubItemOpExpr" name="GetSubItemOpExpr">GetSubItemOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "::" <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#GetSubItemOpLogicalSentenceExpr" name="GetSubItemOpLogicalSentenceExpr">GetSubItemOpLogicalSentenceExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#GetSubItemOpExpr" name="GetSubItemOpExpr">GetSubItemOpExpr</a> = <a href="#Expr">Expr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "::" <a href="#Expr">Expr</a> .</div><div class="ebnf-code-item"><a href="#GetSubItemOpLogicalSentenceExpr" name="GetSubItemOpLogicalSentenceExpr">GetSubItemOpLogicalSentenceExpr</a> = <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> [ <a href="#AnnotationsList">AnnotationsList</a> ] "::" <a href="#LogicalSentenceExpr">LogicalSentenceExpr</a> .</div></div>
 
 <h3 class='center-h' data-href='CallOp_chapter'>
     Call operator
@@ -1979,7 +1987,17 @@ select
 
 <p><a href="#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a href="#SelectOpExpr" name="SelectOpExpr">SelectOpExpr</a> = .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a href="#SelectOpExpr" name="SelectOpExpr">SelectOpExpr</a> = <a href="#FullSelectOpExpr">FullSelectOpExpr</a> | <a href="#ShortSelectOpExpr">ShortSelectOpExpr</a> .</div><div class="ebnf-code-item"><a href="#FullSelectOpExpr" name="FullSelectOpExpr">FullSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#ShortSelectOpExpr" name="ShortSelectOpExpr">ShortSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#SelectSectionOfSelectOpExpr" name="SelectSectionOfSelectOpExpr">SelectSectionOfSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#FromSectionOfSelectOpExpr" name="FromSectionOfSelectOpExpr">FromSectionOfSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#WhereSectionOfSelectOpExpr" name="WhereSectionOfSelectOpExpr">WhereSectionOfSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#OrderBySectionOfSelectOpExpr" name="OrderBySectionOfSelectOpExpr">OrderBySectionOfSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#SkipSectionOfSelectOpExpr" name="SkipSectionOfSelectOpExpr">SkipSectionOfSelectOpExpr</a> = .</div><div class="ebnf-code-item"><a href="#TakeSectionOfSelectOpExpr" name="TakeSectionOfSelectOpExpr">TakeSectionOfSelectOpExpr</a> = .</div></div>
+
+<div class='templates'>
+    
+    
+    
+    
+    
+    
+    
+</div>
 
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
@@ -2216,6 +2234,18 @@ Synchronization statement
 	
 	
 	
+		
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -2264,7 +2294,7 @@ Synchronization statement
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 14 April 2020</br>
+This page was last modified on 15 April 2020</br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License</a>
 </div>
