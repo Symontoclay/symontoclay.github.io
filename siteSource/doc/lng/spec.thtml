@@ -238,6 +238,8 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>by</span>
 <span class='keyword'>asc</span>
 <span class='keyword'>desc</span>
+<span class='keyword'>let</span>
+<span class='keyword'>const</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -1678,7 +1680,8 @@ Logical sentence predicate
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='PredicateLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = <!--[ <EBNFC name='AnnotationsList'/> ] [ "?" ] <EBNFC name='ConceptIdentifier'/> "("  ")"--> .
+<EBNFCDECL name='PredicateLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = [ <EBNFC name='AnnotationsList'/> ] [ "?" ] <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='ParemeterOfPredicateLogicalSentenceExpr'/> [{ "," <EBNFC name='ParemeterOfPredicateLogicalSentenceExpr'/> }] ")" .
+<EBNFCDECL name='ParemeterOfPredicateLogicalSentenceExpr'/> = .
 </gr>
 
 <h4 class='center-h' data-href='Logical_sentence_Logical_operators_chapter'>
@@ -1843,9 +1846,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='EucDivAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '%='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="PowAssignmentOp_chapter">
     Operator "**="
@@ -1853,9 +1856,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='PowAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '**='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="RootAssignmentOp_chapter">
     Operator "//="
@@ -1863,9 +1866,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='RootAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '//='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="AddPercentAssignmentOp_chapter">
     Operator "+%="
@@ -1873,9 +1876,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AddPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '+%='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="SubPercentAssignmentOp_chapter">
     Operator "-%="
@@ -1883,9 +1886,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SubPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '-%='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="MulPercentAssignmentOp_chapter">
     Operator "*%="
@@ -1893,9 +1896,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='MulPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '*%='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="DivPercentAssignmentOp_chapter">
     Operator "/%="
@@ -1903,9 +1906,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DivPercentAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '/%='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="AndAssignmentOp_chapter">
     Operator "&="
@@ -1913,9 +1916,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AndAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '&='/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="OrAssignmentOp_chapter">
     Operator "|="
@@ -1923,9 +1926,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='OrAssignmentOpExpr' groups='AssignsOpExpr'/> = <TEBNFC name='BinaryOp' param = '|='/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="ArithmeticOp_chapter">
     Arithmetic operators
@@ -1933,9 +1936,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ArithmeticOpExpr' groups="Expr"/> = <GEBNFC name='ArithmeticOpExpr' kind='or'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="AddOp_chapter">
     Operator "+"
@@ -1943,9 +1946,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AddOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '+'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="Sub_chapter">
     Operator "-"
@@ -1953,9 +1956,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SubOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '-'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="MulOp_chapter">
     Operator "*"
@@ -1963,9 +1966,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='MulOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '*'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="DivOp_chapter">
     Operator "/"
@@ -1973,9 +1976,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='DivOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '/'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="EucDivOp_chapter">
     Operator "%"
@@ -1983,9 +1986,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='EucDivOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '%'/> .
-</pre>
+</gr>
 
 <!--https://en.wikipedia.org/wiki/Euclidean_division-->
 
@@ -1995,9 +1998,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='PowOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '**'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="RootOp_chapter">
     Operator "//"
@@ -2005,9 +2008,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='RootOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '//'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="AddPercentOp_chapter">
     Operator "+%"
@@ -2015,9 +2018,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AddPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '+%'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="SubPercentOp_chapter">
     Operator "-%"
@@ -2025,9 +2028,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SubPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '-%'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="MulPercentOp_chapter">
     Operator "*%"
@@ -2035,9 +2038,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='MulPercentOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='BinaryOp' param = '*%'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="DivPercentOp_chapter">
     Operator "/%"
