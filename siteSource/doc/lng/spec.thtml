@@ -262,9 +262,9 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='NullLiteral' groups='ConstExpr'/> = "null" | "Null" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Numbers_literals_chapter">
     Numbers literals
@@ -288,9 +288,9 @@ The following character sequences represent <a href='#Operators_chapter'>operato
    SumOntoClay uses usual number in range [0;1] as fuzzy logic literal instead of a special literal.
 </p>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='FuzzyLogicLiteral' groups='ConstExpr'/> = <EBNFC name='NumberLiteral'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Strings_literals_chapter">
     Strings literals
@@ -325,7 +325,6 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <gr>
 <EBNFCDECL name='OrderedTypeLiteral'/> = <EBNFC name='NumberLiteral'/> | <EBNFC name='StringLiteral'/> | <EBNFC name='DateTimeLiteral'/> | <EBNFC name='FuzzyLogicLiteral'/>.
 </gr>
-
 
 <h2 class='center-h' data-href="Types_chapter">
     Types
@@ -446,7 +445,7 @@ Member-variable
 
 <gr>
 <EBNFCDECL name='VarMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'VarMemberDecl'/> .
-<EBNFCDECL name='VarMemberDecl'/> = <TEBNFC name='VariableExpr'/> [ "=" <EBNFC name='Expr'/> ] ";" .
+<EBNFCDECL name='VarMemberDecl'/> = [ "const" ] <TEBNFC name='VariableExpr'/> [ "=" <EBNFC name='Expr'/> ] ";" .
 <EBNFCDECL name='VarMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'VarMemberDecl'/> .
 </gr>
 	  
@@ -1546,14 +1545,14 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ReasonSection' groups="Modality"/> = <EBNFC name='ReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='ReasonSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ReasonSection'/> .
 <EBNFCDECL name='ReasonSectionMark' groups='ModalityMark'/> = "|-<:" | "reason" | "cause" | "reason:" | "cause:" .
 <EBNFCDECL name='AdditionalReasonSection' groups="Modality"/> = <EBNFC name='AdditionalReasonSectionMark'/> <EBNFC name='LogicalSentenceVal'/> .
 <EBNFCDECL name='AdditionalReasonSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalReasonSection'/> .
 <EBNFCDECL name='AdditionalReasonSectionMark' groups='ModalityMark'/> = "[|-<:]" | "[reason]" | "[cause]" | "[reason:]" | "[cause:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Holder_section_chapter">
     Holder section
@@ -1736,7 +1735,7 @@ Variable
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='VarExpr' groups='Expr;LogicalSentenceExpr'/> = <TEBNFC name='VariableExpr'/> .
+<EBNFCDECL name='VarExpr' groups='Expr;LogicalSentenceExpr'/> = [ ( "const" | "let" ) ] <TEBNFC name='VariableExpr'/> .
 </gr>
 
 <h3 class='center-h' data-href='_chapter'>
