@@ -926,8 +926,8 @@ Conditional entity
 
 <gr>
 <EBNFCDECL name='ConditionalEntityDeclsSet' groups='ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ConditionalEntityDecl'/> .
-<EBNFCDECL name='ConditionalEntityDeclExpr' groups='Expr;LogicalSentenceExpr'/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalEntityDeclsSet'/> .
-<EBNFCDECL name='ConditionalEntityDecl'/> = [ <EBNFC name='AnnotationsList'/> ] ( "#@" | <EBNFC name='ConditionalEntityIdentifier'/> ) "(" <EBNFC name='LogicalSentenceExpr'/> ")" .
+<EBNFCDECL name='ConditionalEntityDeclExpr' groups='Expr;'/> = <TEBNFC name='NonExprAsExprVal' param = 'ConditionalEntityDeclsSet'/> .
+<EBNFCDECL name='ConditionalEntityDecl'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='ConditionalEntityIdentifier'/> "(" <EBNFC name='LogicalSentenceExpr'/> ")" ";" .
 </gr>
 
 <h3 class='center-h' data-href="Call-block_chapter">
@@ -938,7 +938,7 @@ Conditional entity
 
 <gr>
 <EBNFCDECL name='CallBlocksSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'CallBlock'/> .
-<EBNFCDECL name='CallBlock'/> = [ <EBNFC name='AnnotationsList'/> ] "call" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] .
+<EBNFCDECL name='CallBlock'/> = [ <EBNFC name='AnnotationsList'/> ] "call" "{" [ <EBNFC name='StatementsSet'/> ] "}" [ <EBNFC name='ModalitiesSet'/> ] ";" .
 </gr>
 
 <h3 class='center-h' data-href="Synonym_chapter">
@@ -1770,7 +1770,7 @@ Object expression
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DataSourceExpr' groups='Expr'/> = <EBNFC name='DataSourceIdentifier'/> .
+<EBNFCDECL name='DataSourceExpr' groups='Expr'/> = ( [ "let" ] [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='DataSourceIdentifier'/> ) | ( <EBNFC name='TypeIdentifier'/> [ <EBNFC name='AnnotationsList'/> ] "::" <EBNFC name='DataSourceIdentifier'/> ) .
 </gr>
 
 <h3 class='center-h' data-href="Operators_chapter">
