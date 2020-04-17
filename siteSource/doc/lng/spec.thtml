@@ -1773,6 +1773,16 @@ Object expression
 <EBNFCDECL name='DataSourceExpr' groups='Expr'/> = ( [ "let" ] [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='DataSourceIdentifier'/> ) | ( <EBNFC name='TypeIdentifier'/> [ <EBNFC name='AnnotationsList'/> ] "::" <EBNFC name='DataSourceIdentifier'/> ) .
 </gr>
 
+<h3 class='center-h' data-href='Conditional_entity_expression_chapter'>
+Conditional entity expression
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='ConditionalEntityExpr' groups='Expr'/> = [ <EBNFC name='AnnotationsList'/> ] ( ( ( "#@" | <EBNFC name='ConditionalEntityIdentifier'/> ) "(" <EBNFC name='LogicalSentenceExpr'/> ")" ) | <EBNFC name='ShortConditionalEntityIdentifier'/> ) .
+</gr>
+
 <h3 class='center-h' data-href="Operators_chapter">
     Operators
 </h3>
@@ -2555,7 +2565,6 @@ select
 <EBNFCDECL name='SelectOpExpr' groups='DataSourceOpExpr' /> =  .
 <EBNFCDECL name='SelectSectionOfSelectOpExpr'/> = .
 <EBNFCDECL name='DataSourceSectionOfDataSourceOpExpr'/> = .
-<EBNFCDECL name='WhereSectionOfDataSourceOpExpr'/> = .
 <EBNFCDECL name='OrderBySectionOfDataSourceOpExpr'/> = .
 <EBNFCDECL name='SkipSectionOfDataSourceOpExpr'/> = .
 <EBNFCDECL name='TakeSectionOfDataSourceOpExpr'/> = .
@@ -2564,10 +2573,6 @@ select
 <div class='templates'>
     <TEBNFCDECL name='DataSourceSectionOfDataSourceOpExprTemplate'>
         [ <EBNFC name='AnnotationsList'/> ] "from" <EBNFC name='DataSourceSectionOfDataSourceOpExpr'/>
-    </TEBNFCDECL>
-
-    <TEBNFCDECL name='WhereSectionOfDataSourceOpExprTemplate'>
-	[ <EBNFC name='AnnotationsList'/> ] "where" <EBNFC name='WhereSectionOfSelectOpExpr'/>
     </TEBNFCDECL>
     
     <TEBNFCDECL name='OrderBySectionOfDataSourceOpExprTemplate'>
