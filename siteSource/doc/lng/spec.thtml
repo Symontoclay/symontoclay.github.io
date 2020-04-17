@@ -893,11 +893,9 @@ Event
 <EBNFCDECL name='ClausedScopeForTriggersSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForTriggersSet'/> .
 <EBNFCDECL name='ClausedScopeForTriggersSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForTrigger'/> .
 <EBNFCDECL name='ClausedScopeForTrigger'/> = <TEBNFC name='DefScope' param = 'TriggersContent'/> .
-<EBNFCDECL name='TriggersContent'/> = ( "on" <EBNFC name='TriggerOnExpression'/> "do" "{" <EBNFC name='StatementsSet'/> "}" ) | 
-                  ( "on" <EBNFC name='TriggerOnExpression'/> "except" <EBNFC name='TriggerExceptExpression'/> "do" "{" <EBNFC name='StatementsSet'/> "}" ) | 
+<EBNFCDECL name='TriggersContent'/> = ( "on" <EBNFC name='TriggerOnExpression'/> [ <EBNFC name='ModalitiesSet'/> ] "do" "{" <EBNFC name='StatementsSet'/> "}" ) | </br>                  
                   ( "on" <EBNFC name='TriggerOnExpression'/> "{" <EBNFC name='TriggersContent'/> "}" ) .
 <EBNFCDECL name='TriggerOnExpression'/> .
-<EBNFCDECL name='TriggerExceptExpression'/> .
 </gr>
 
 <h3 class='center-h' data-href="Instance_chapter">
@@ -2562,7 +2560,7 @@ select
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='SelectOpExpr' groups='DataSourceOpExpr' /> =  .
+<EBNFCDECL name='SelectOpExpr' groups='DataSourceOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "select" [ <EBNFC name='SelectSectionOfSelectOpExpr'/> ] <TEBNFC name='TailOfSelectOpExprTemplate'/> .
 <EBNFCDECL name='SelectSectionOfSelectOpExpr'/> = .
 <EBNFCDECL name='DataSourceSectionOfDataSourceOpExpr'/> = .
 <EBNFCDECL name='OrderBySectionOfDataSourceOpExpr'/> = .
@@ -2571,6 +2569,10 @@ select
 </gr>
 
 <div class='templates'>
+    <TEBNFCDECL name='TailOfSelectOpExprTemplate'>
+        <TEBNFC name='DataSourceSectionOfDataSourceOpExprTemplate'/> [ <EBNFC name='ModalitiesSet'/> ] [ <TEBNFC name='OrderBySectionOfDataSourceOpExprTemplate'/> ] [ <TEBNFC name='SkipSectionOfDataSourceOpExprTemplate'/> ] [ <TEBNFC name='TakeSectionOfDataSourceOpExprTemplate'/> ]
+    </TEBNFCDECL>
+
     <TEBNFCDECL name='DataSourceSectionOfDataSourceOpExprTemplate'>
         [ <EBNFC name='AnnotationsList'/> ] "from" <EBNFC name='DataSourceSectionOfDataSourceOpExpr'/>
     </TEBNFCDECL>
@@ -2595,10 +2597,16 @@ insert
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='InsertOpExpr' groups='DataSourceOpExpr' /> = .
+<EBNFCDECL name='InsertOpExpr' groups='DataSourceOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "insert" ( [ <EBNFC name='InsertSectionOfInsertOpExpr'/> ] <TEBNFC name='DestSectionOfInsertOpExprTemplate'/> ) | ( <TEBNFC name='DestSectionOfInsertOpExprTemplate'/> <TEBNFC name='TailOfSelectOpExprTemplate'/> ) .
 <EBNFCDECL name='InsertSectionOfInsertOpExpr'/> = .
 <EBNFCDECL name='DestSectionOfInsertOpExpr'/> = .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='DestSectionOfInsertOpExprTemplate'>
+        [ <EBNFC name='AnnotationsList'/> ] "into" <EBNFC name='DestSectionOfInsertOpExpr'/>
+    </TEBNFCDECL>
+</div>
 
 <h4 class='center-h' data-href='DeleteOp_chapter'>
 delete
@@ -2607,7 +2615,7 @@ delete
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='DeleteOpExpr' groups='DataSourceOpExpr' /> = .
+<EBNFCDECL name='DeleteOpExpr' groups='DataSourceOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "delete" <TEBNFC name='TailOfSelectOpExprTemplate'/> .
 </gr>
 
 <h4 class='center-h' data-href='MergeOp_chapter'>
