@@ -240,6 +240,9 @@ The following keywords are reserved and may not be used as identifiers which are
 <span class='keyword'>desc</span>
 <span class='keyword'>let</span>
 <span class='keyword'>const</span>
+<span class='keyword'>up</span>
+<span class='keyword'>down</span>
+<span class='keyword'>timeout</span>
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
@@ -493,6 +496,18 @@ Member-variable
 <EBNFCDECL name='EventMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'EventMemberDecl'/> .
 <EBNFCDECL name='EventMemberDecl'/> = <TEBNFC name='EventDeclTemplate'/> ";" .
 <EBNFCDECL name='EventMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'EventMemberDecl'/> .
+</gr>
+
+<h4 class='center-h' data-href="Data_source_member_chapter">
+    Data source member
+</h4>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='DataSourceMemberDeclSet' groups="ObjectMembers"/> = <TEBNFC name='DeclSet' param = 'DataSourceMemberDecl'/> .
+<EBNFCDECL name='DataSourceMemberDecl'/> = [ <EBNFC name='AnnotationsList'/> ] <EBNFC name='DataSourceIdentifier'/> ";" .
+<EBNFCDECL name='DataSourceMemberDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'DataSourceMemberDecl'/> .
 </gr>
 
 <h4 class='center-h' data-href="Map_to_NPC_on_game_level_chapter">
