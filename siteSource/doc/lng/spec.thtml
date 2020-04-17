@@ -2313,8 +2313,18 @@ Operator "?()"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='IndexerOpExpr' groups='IndexingOpExpr' /> = <EBNFC name='Expr'/> [ "~" ] "[" <EBNFC name='Expr'/> "]" .
+<EBNFCDECL name='IndexerOpExpr' groups='IndexingOpExpr' /> = <EBNFC name='Expr'/> [ "~" ] <TEBNFC name='InputChainOfIndexerOpExprTemplate'/> .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='InputChainOfIndexerOpExprTemplate'>
+         <TEBNFC name='InputOfIndexerOpExprTemplate'/> [{ <TEBNFC name='InputOfIndexerOpExprTemplate'/> }]
+    </TEBNFCDECL>
+
+    <TEBNFCDECL name='InputOfIndexerOpExprTemplate'>
+	"[" <EBNFC name='Expr'/> "]"
+    </TEBNFCDECL>
+</div>
 
 <h4 class='center-h' data-href='CoalesceIndexerOp_chapter'>
 Operator "?[]"
@@ -2323,7 +2333,7 @@ Operator "?[]"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CoalesceIndexerOpExpr' groups='IndexingOpExpr' /> = <EBNFC name='Expr'/> "?" [ "~" ] "[" <EBNFC name='Expr'/> "]" .
+<EBNFCDECL name='CoalesceIndexerOpExpr' groups='IndexingOpExpr' /> = <EBNFC name='Expr'/> "?" [ "~" ] <TEBNFC name='InputChainOfIndexerOpExprTemplate'/> .
 </gr>
 
 <h3 class='center-h' data-href="ObjectCreationOp_chapter">
@@ -2343,7 +2353,7 @@ new
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='NewOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp' param = 'new'/>.
+<EBNFCDECL name='NewOpExpr' groups='ObjectCreationOpExpr' /> = <TEBNFC name='UnaryOp' param = 'new'/> .
 </gr>
 
 <h4 class='center-h' data-href='CloneOp_chapter'>
@@ -2527,31 +2537,33 @@ select
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='SelectOpExpr' groups='DataSourceOpExpr' /> = <EBNFC name='FullSelectOpExpr'/> | <EBNFC name='ShortSelectOpExpr'/> .
-<EBNFCDECL name='FullSelectOpExpr'/> = .
-<EBNFCDECL name='ShortSelectOpExpr'/> = .
+<EBNFCDECL name='SelectOpExpr' groups='DataSourceOpExpr' /> =  .
 <EBNFCDECL name='SelectSectionOfSelectOpExpr'/> = .
-<EBNFCDECL name='FromSectionOfSelectOpExpr'/> = .
-<EBNFCDECL name='WhereSectionOfSelectOpExpr'/> = .
-<EBNFCDECL name='OrderBySectionOfSelectOpExpr'/> = .
-<EBNFCDECL name='SkipSectionOfSelectOpExpr'/> = .
-<EBNFCDECL name='TakeSectionOfSelectOpExpr'/> = .
+<EBNFCDECL name='DataSourceSectionOfDataSourceOpExpr'/> = .
+<EBNFCDECL name='WhereSectionOfDataSourceOpExpr'/> = .
+<EBNFCDECL name='OrderBySectionOfDataSourceOpExpr'/> = .
+<EBNFCDECL name='SkipSectionOfDataSourceOpExpr'/> = .
+<EBNFCDECL name='TakeSectionOfDataSourceOpExpr'/> = .
 </gr>
 
 <div class='templates'>
-    <TEBNFCDECL name='WhereSectionOfSelectOpExprTemplate'>
+    <TEBNFCDECL name='DataSourceSectionOfDataSourceOpExprTemplate'>
+        [ <EBNFC name='AnnotationsList'/> ] "from" <EBNFC name='DataSourceSectionOfDataSourceOpExpr'/>
+    </TEBNFCDECL>
+
+    <TEBNFCDECL name='WhereSectionOfDataSourceOpExprTemplate'>
 	[ <EBNFC name='AnnotationsList'/> ] "where" <EBNFC name='WhereSectionOfSelectOpExpr'/>
     </TEBNFCDECL>
     
-    <TEBNFCDECL name='OrderBySectionOfSelectOpExprTemplate'>
+    <TEBNFCDECL name='OrderBySectionOfDataSourceOpExprTemplate'>
 	[ <EBNFC name='AnnotationsList'/> ] "order" "by" <EBNFC name='OrderBySectionOfSelectOpExpr'/>
     </TEBNFCDECL>
     
-    <TEBNFCDECL name='SkipSectionOfSelectOpExprTemplate'>
+    <TEBNFCDECL name='SkipSectionOfDataSourceOpExprTemplate'>
 	[ <EBNFC name='AnnotationsList'/> ] "skip" <EBNFC name='SkipSectionOfSelectOpExpr'/>
     </TEBNFCDECL>
     
-    <TEBNFCDECL name='TakeSectionOfSelectOpExprTemplate'>
+    <TEBNFCDECL name='TakeSectionOfDataSourceOpExprTemplate'>
 	[ <EBNFC name='AnnotationsList'/> ] "take" <EBNFC name='TakeSectionOfSelectOpExpr'/>
     </TEBNFCDECL>
 </div>
@@ -2564,6 +2576,8 @@ insert
 
 <gr>
 <EBNFCDECL name='InsertOpExpr' groups='DataSourceOpExpr' /> = .
+<EBNFCDECL name='InsertSectionOfInsertOpExpr'/> = .
+<EBNFCDECL name='DestSectionOfInsertOpExpr'/> = .
 </gr>
 
 <h4 class='center-h' data-href='DeleteOp_chapter'>
