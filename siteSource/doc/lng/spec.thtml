@@ -884,9 +884,8 @@ Event
 
 <gr>
 <EBNFCDECL name='TriggerDeclsSet' groups="ObjectTypeDecls"/> = <TEBNFC name='DeclSet' param = 'TriggerDecl'/> .
-<EBNFCDECL name='TriggerName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='TriggerName'/> .
-<EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerName'/> [ <EBNFC name='InheritanceDecl'/> ] 
+<EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
+<EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] 
                   "{" { <br/> <GEBNFC name='TriggerMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ) | <EBNFC name='TriggersContent'/> ) 
                   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='TriggerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TriggerDeclsSet'/> .
@@ -896,9 +895,10 @@ Event
 <EBNFCDECL name='TriggersContent' groups='TriggerMembers'/> = [ ( "up" | "down" ) ] "on" <EBNFC name='TriggerOnExpression'/> [ <EBNFC name='ModalitiesSet'/> ] <br/> "do" "{" <EBNFC name='StatementsSet'/> "}" <br/> [ "def" "{" <EBNFC name='TriggersContent'/> "}" ] .
 <EBNFCDECL name='TriggerOnExpression'/> = <GEBNFC name='TriggerOnExpression' kind='or'/> .
 <EBNFCDECL name='ConditionalTriggerOnExpression' groups='TriggerOnExpression'/> = "{" <EBNFC name='LogicalSentenceExpr'/> "}" .
-<EBNFCDECL name='EventTriggerOnExpression' groups='TriggerOnExpression'/> = .
+<EBNFCDECL name='EventTriggerOnExpression' groups='TriggerOnExpression'/> = <EBNFC name='EventExpr'/> .
 <EBNFCDECL name='MetaObjectTriggerOnExpression' groups='TriggerOnExpression'/> = .
 <EBNFCDECL name='HookTriggerOnExpression' groups='TriggerOnExpression'/> = .
+<EBNFCDECL name='TriggerExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='Expr'/> "::" <EBNFC name='TriggerIdentifier'/> .
 </gr>
 
 <h3 class='center-h' data-href="Instance_chapter">
@@ -1182,7 +1182,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='FuzzyLogicTypeIdentifier' groups="TypeIdentifier"/> = "fuzzy" | "Fuzzy" | "fuz" .
-<EBNFCDECL name='FuzzyLogicTypeExpr' groups="Expr;LogicalSentenceExpr"/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
+<EBNFCDECL name='FuzzyLogicTypeExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
 </gr>
 	
 <h3 class='center-h' data-href="Numeric_type_chapter">
@@ -1496,14 +1496,14 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ChannelSection' groups="Modality"/> =  <EBNFC name='ChannelSection'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='ChannelSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ChannelSection'/> .
 <EBNFCDECL name='ChannelSectionMark' groups='ModalityMark'/> = "@>:" | "channel" | "chan" | "canal" | "cn" | "channel:" | "chan:" | "canal:" | "cn:" .
 <EBNFCDECL name='AdditionalChannelSection' groups="Modality"/> =  <EBNFC name='AdditionalChannelSectionMark'/> <EBNFC name='TypeIdentifier'/> .
 <EBNFCDECL name='AdditionalChannelSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalChannelSection'/> .
 <EBNFCDECL name='AdditionalChannelSectionMark' groups='ModalityMark'/> = "[@>:]" | "[channel]" | "[chan]" | "[canal]" | "[cn]" | "[channel:]" | "[chan:]" | "[canal:]" | "[cn:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Clauses_section_chapter">
     Clauses section
@@ -1511,7 +1511,7 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='ClausesSection' groups="Modality"/> = <EBNFC name='ClausesSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='ClausesSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausesSection'/> .
 <EBNFCDECL name='ClausesSectionMark' groups='ModalityMark'/> = "&:" | "where" | "w" | "where:" | "w:" .
@@ -1519,7 +1519,22 @@ Channel section
 <EBNFCDECL name='AdditionalClausesSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalClausesSection'/> .
 <EBNFCDECL name='AdditionalClausesSectionMark' groups='ModalityMark'/> = "[&:]" | "[where]" | "[w]" | "[where:]" | "[w:]" .
 <EBNFCDECL name='LogicalSentenceValOfModality'/> = <TEBNFC name='ModalitiesExprVal' param = 'LogicalSentence'/> .
-</pre>
+</gr>
+
+<h3 class='center-h' data-href="Except_section_chapter">
+    Except section
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='ExceptSection' groups="Modality"/> = <EBNFC name='ExceptSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
+<EBNFCDECL name='ExceptSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ExceptSection'/> .
+<EBNFCDECL name='ExceptSectionMark' groups='ModalityMark'/> = "except" | "except:" .
+<EBNFCDECL name='AdditionalExceptSection' groups="Modality"/> = <EBNFC name='AdditionalExceptSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
+<EBNFCDECL name='AdditionalExceptSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalExceptSection'/> .
+<EBNFCDECL name='AdditionalExceptSectionMark' groups='ModalityMark'/> = "[except:]" | "[except]" .
+</gr>
 
 <h3 class='center-h' data-href="No_contradict_section_chapter">
     No contradict section
@@ -1527,14 +1542,14 @@ Channel section
 
 <LinkToContent/>	
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='NoContradictSection' groups="Modality"/> = <EBNFC name='NoContradictSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='NoContradictSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'NoContradictSection'/> .
 <EBNFCDECL name='NoContradictSectionMark' groups='ModalityMark'/> = "^:" .
 <EBNFCDECL name='AdditionalNoContradictSection' groups="Modality"/> = <EBNFC name='AdditionalNoContradictSectionMark'/> <EBNFC name='LogicalSentenceValOfModality'/> .
 <EBNFCDECL name='AdditionalNoContradictSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AdditionalNoContradictSection'/> .
 <EBNFCDECL name='AdditionalNoContradictSectionMark' groups='ModalityMark'/> = "[^:]" .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Access_section_chapter">
     Access section
@@ -1542,7 +1557,7 @@ Channel section
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='AccessSection' groups="Modality"/> = <EBNFC name='AccessSectionMark'/> <EBNFC name='ValOfAccessSection'/> .
 <EBNFCDECL name='AccessSectionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AccessSection'/> .
 <EBNFCDECL name='AccessSectionMark' groups='ModalityMark'/> = "!!:" | "access" | "permissions" | "allow" | "permit" | "a" | "access:" | "permissions:" | "allow:" | "permit:" | "a:" .
@@ -1553,7 +1568,7 @@ Channel section
                         "public" | "internal" | "protected" | "private" ) ":" .
 <EBNFCDECL name='AccessModifierPublishJustForCondition'/> = <EBNFC name='LogicalSentence'/> .
 <EBNFCDECL name='ValOfAccessSection'/> = <TEBNFC name='ModalitiesExprVal' param = 'AccessModifierDescription'/> .
-</pre>
+</gr>
 
 <h3 class='center-h' data-href="Reason_section_chapter">
     Reason section
@@ -1762,6 +1777,16 @@ Object expression
 
 <gr>
 <EBNFCDECL name='ObjExpr' groups='Expr;LogicalSentenceExpr'/> = <TEBNFC name='ShortObjDeclTemplate'/> .
+</gr>
+
+<h3 class='center-h' data-href='Event_expression_chapter'>
+    Event expression
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='EventExpr'/> = <EBNFC name='Expr'/> "::" <EBNFC name='EventIdentifier'/> .
 </gr>
 
 <h3 class='center-h' data-href='DataSource_chapter'>
