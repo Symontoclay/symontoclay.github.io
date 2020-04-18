@@ -887,15 +887,18 @@ Event
 <EBNFCDECL name='TriggerName'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='TriggerName'/> .
 <EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerName'/> [ <EBNFC name='InheritanceDecl'/> ] 
-                  "{" [ [ <EBNFC name='ClausedScopeForTriggersSet'/> ] <EBNFC name='TriggersContent'/> ] [ <EBNFC name='ClausedScopeForTriggersSet'/> ] "}" ) | <EBNFC name='TriggersContent'/> ) 
+                  "{" { <br/> <GEBNFC name='TriggerMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ) | <EBNFC name='TriggersContent'/> ) 
                   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='TriggerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TriggerDeclsSet'/> .
 <EBNFCDECL name='ClausedScopeForTriggersSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForTriggersSet'/> .
-<EBNFCDECL name='ClausedScopeForTriggersSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForTrigger'/> .
-<EBNFCDECL name='ClausedScopeForTrigger'/> = <TEBNFC name='DefScope' param = 'TriggersContent'/> .
-<EBNFCDECL name='TriggersContent'/> = ( "on" <EBNFC name='TriggerOnExpression'/> [ <EBNFC name='ModalitiesSet'/> ] "do" "{" <EBNFC name='StatementsSet'/> "}" ) | </br>                  
-                  ( "on" <EBNFC name='TriggerOnExpression'/> "{" <EBNFC name='TriggersContent'/> "}" ) .
-<EBNFCDECL name='TriggerOnExpression'/> .
+<EBNFCDECL name='ClausedScopeForTriggersSet' groups='TriggerMembers'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForTrigger'/> .
+<EBNFCDECL name='ClausedScopeForTrigger'/> = <TEBNFC name='DefScope_2' param = "{ <br/> <GEBNFC name='TriggerMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> }"/> .
+<EBNFCDECL name='TriggersContent' groups='TriggerMembers'/> = [ ( "up" | "down" ) ] "on" <EBNFC name='TriggerOnExpression'/> [ <EBNFC name='ModalitiesSet'/> ] <br/> "do" "{" <EBNFC name='StatementsSet'/> "}" <br/> [ "def" "{" <EBNFC name='TriggersContent'/> "}" ] .
+<EBNFCDECL name='TriggerOnExpression'/> = <GEBNFC name='TriggerOnExpression' kind='or'/> .
+<EBNFCDECL name='ConditionalTriggerOnExpression' groups='TriggerOnExpression'/> = "{" <EBNFC name='LogicalSentenceExpr'/> "}" .
+<EBNFCDECL name='EventTriggerOnExpression' groups='TriggerOnExpression'/> = .
+<EBNFCDECL name='MetaObjectTriggerOnExpression' groups='TriggerOnExpression'/> = .
+<EBNFCDECL name='HookTriggerOnExpression' groups='TriggerOnExpression'/> = .
 </gr>
 
 <h3 class='center-h' data-href="Instance_chapter">
