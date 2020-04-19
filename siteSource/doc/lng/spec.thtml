@@ -155,94 +155,97 @@ Read more about Namespaces <a href="#Namespaces_chapter">here</a>.
 The following keywords are reserved and may not be used as identifiers which are defined by classic way. 
 </p>
 
+<keywords cols='4'>
+    <kw name='obj'/>
+	<kw name='app'/>
+	<kw name='class'/>
+	<kw name='namespace'/>
+	<kw name='module'/>
+	<kw name='on'/>
+	<kw name='except'/>
+	<kw name='do'/>
+	<kw name='trigger'/>
+	<kw name='func'/>
+	<kw name='prop'/>
+	<kw name='process'/>
+	<kw name='state'/>
+	<kw name='inst'/>
+	<kw name='supervisor'/>
+	<kw name='value'/>
+	<kw name='range'/>
+	<kw name='dim'/>
+	<kw name='fuzzy'/>
+	<kw name='set'/>
+	<kw name='terms'/>
+	<kw name='operators'/>
+	<kw name='using'/>
+	<kw name='import'/>
+	<kw name='public'/>
+	<kw name='published'/>
+	<kw name='protected'/>
+	<kw name='internal'/>
+	private
+    just
+    for
+    of
+    with
+    def
+    is
+    while
+    foreach
+    break
+    continue
+    return
+    yield
+    if
+    elif
+    else
+    try
+    catch
+    finally
+    error
+    type
+    select
+    insert
+    delete
+    merge
+    unmerge
+    new
+    clone
+    deep
+    as
+    modal
+    wait
+    lock
+    exclusive
+    delm
+    dels
+    delsm
+    make
+    in
+    synonym
+    call
+    where
+    default
+    <span class='keyword'>switch
+    <span class='keyword'>case
+    <span class='keyword'>into
+    <span class='keyword'>from
+    <span class='keyword'>take
+    <span class='keyword'>skip
+    <span class='keyword'>order
+    by
+    <span class='keyword'>asc
+    <span class='keyword'>desc
+    <span class='keyword'>let
+    const
+    <span class='keyword'>up
+    down
+    timeout
+</keywords>
+
 <pre class='ebnf-code'>
-<span class='keyword'>obj</span>
-<span class='keyword'>app</span>
-<span class='keyword'>class</span>
-<span class='keyword'>namespace</span>
-<span class='keyword'>module</span>
-<span class='keyword'>using</span>
-<span class='keyword'>on</span>
-<span class='keyword'>except</span>
-<span class='keyword'>do</span>
-<span class='keyword'>trigger</span>
-<span class='keyword'>func</span>
-<span class='keyword'>prop</span>
-<span class='keyword'>process</span>
-<span class='keyword'>state</span>
-<span class='keyword'>inst</span>
-<span class='keyword'>supervisor</span>
-<span class='keyword'>value</span>
-<span class='keyword'>range</span>
-<span class='keyword'>dim</span>
-<span class='keyword'>fuzzy</span>
-<span class='keyword'>set</span>
-<span class='keyword'>terms</span>
-<span class='keyword'>operators</span>
-<span class='keyword'>using</span>
-<span class='keyword'>import</span>
-<span class='keyword'>public</span>
-<span class='keyword'>published</span>
-<span class='keyword'>protected</span>
-<span class='keyword'>internal</span>
-<span class='keyword'>private</span>
-<span class='keyword'>just</span>
-<span class='keyword'>for</span>
-<span class='keyword'>of</span>
-<span class='keyword'>with</span>
-<span class='keyword'>def</span>
-<span class='keyword'>is</span>
-<span class='keyword'>while</span>
-<span class='keyword'>foreach</span>
-<span class='keyword'>break</span>
-<span class='keyword'>continue</span>
-<span class='keyword'>return</span>
-<span class='keyword'>yield</span>
-<span class='keyword'>if</span>
-<span class='keyword'>elif</span>
-<span class='keyword'>else</span>
-<span class='keyword'>try</span>
-<span class='keyword'>catch</span>
-<span class='keyword'>finally</span>
-<span class='keyword'>error</span>
-<span class='keyword'>type</span>
-<span class='keyword'>select</span>
-<span class='keyword'>insert</span>
-<span class='keyword'>delete</span>
-<span class='keyword'>merge</span>
-<span class='keyword'>unmerge</span>
-<span class='keyword'>new</span>
-<span class='keyword'>clone</span>
-<span class='keyword'>deep</span>
-<span class='keyword'>as</span>
-<span class='keyword'>modal</span>
-<span class='keyword'>wait</span>
-<span class='keyword'>lock</span>
-<span class='keyword'>exclusive</span>
-<span class='keyword'>delm</span>
-<span class='keyword'>dels</span>
-<span class='keyword'>delsm</span>
-<span class='keyword'>make</span>
-<span class='keyword'>in</span>
-<span class='keyword'>synonym</span>
-<span class='keyword'>call</span>
-<span class='keyword'>where</span>
-<span class='keyword'>default</span>
-<span class='keyword'>switch</span>
-<span class='keyword'>case</span>
-<span class='keyword'>into</span>
-<span class='keyword'>from</span>
-<span class='keyword'>take</span>
-<span class='keyword'>skip</span>
-<span class='keyword'>order</span>
-<span class='keyword'>by</span>
-<span class='keyword'>asc</span>
-<span class='keyword'>desc</span>
-<span class='keyword'>let</span>
-<span class='keyword'>const</span>
-<span class='keyword'>up</span>
-<span class='keyword'>down</span>
-<span class='keyword'>timeout</span>
+
 </pre>
 
 <h3 class='center-h' data-href="Operators_and_punctuation_chapter">
