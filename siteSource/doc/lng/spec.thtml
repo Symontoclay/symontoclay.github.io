@@ -96,6 +96,7 @@ Identifiers name program entities such as variables and types.
 <EBNFCDECL name='InstanceIdentifier' groups="Identifier;TypeIdentifier;Expr;LogicalSentenceExpr"/> = "#"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='ShortConditionalEntityIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = "##"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='QueryVarIdentifier' groups='Identifier;Expr;LogicalSentenceExpr'/> = "?"<EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='QueryResultVarIdentifier' groups='Identifier;Expr'/> = "@?"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='DataSourceIdentifier' groups='Identifier;Expr'/> = "@:"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='EventIdentifier' groups='Identifier;Expr'/> = "@>"<EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='ScopeTargetIdentifier' groups='Identifier;Expr'/> = ":::"<EBNFC name='ConceptIdentifier'/> .
@@ -184,64 +185,64 @@ The following keywords are reserved and may not be used as identifiers which are
 	<kw name='published'/>
 	<kw name='protected'/>
 	<kw name='internal'/>
-	private
-    just
-    for
-    of
-    with
-    def
-    is
-    while
-    foreach
-    break
-    continue
-    return
-    yield
-    if
-    elif
-    else
-    try
-    catch
-    finally
-    error
-    type
-    select
-    insert
-    delete
-    merge
-    unmerge
-    new
-    clone
-    deep
-    as
-    modal
-    wait
-    lock
-    exclusive
-    delm
-    dels
-    delsm
-    make
-    in
-    synonym
-    call
-    where
-    default
-    <span class='keyword'>switch
-    <span class='keyword'>case
-    <span class='keyword'>into
-    <span class='keyword'>from
-    <span class='keyword'>take
-    <span class='keyword'>skip
-    <span class='keyword'>order
-    by
-    <span class='keyword'>asc
-    <span class='keyword'>desc
-    <span class='keyword'>let
-    const
-    <span class='keyword'>up
-    down
-    timeout
+	<kw name='private'/>
+    <kw name='just'/>
+    <kw name='for'/>
+    <kw name='of'/>
+    <kw name='with'/>
+    <kw name='def'/>
+    <kw name='is'/>
+    <kw name='while'/>
+    <kw name='foreach'/>
+    <kw name='break'/>
+    <kw name='continue'/>
+    <kw name='return'/>
+    <kw name='yield'/>
+    <kw name='if'/>
+    <kw name='elif'/>
+    <kw name='else'/>
+    <kw name='try'/>
+    <kw name='catch'/>
+    <kw name='finally'/>
+    <kw name='error'/>
+    <kw name='type'/>
+    <kw name='select'/>
+    <kw name='insert'/>
+    <kw name='delete'/>
+    <kw name='merge'/>
+    <kw name='unmerge'/>
+    <kw name='new'/>
+    <kw name='clone'/>
+    <kw name='deep'/>
+    <kw name='as'/>
+    <kw name='modal'/>
+    <kw name='wait'/>
+    <kw name='lock'/>
+    <kw name='exclusive'/>
+    <kw name='delm'/>
+    <kw name='dels'/>
+    <kw name='delsm'/>
+    <kw name='make'/>
+    <kw name='in'/>
+    <kw name='synonym'/>
+    <kw name='call'/>
+    <kw name='where'/>
+    <kw name='default'/>
+    <kw name='switch'/>
+    <kw name='case'/>
+    <kw name='into'/>
+    <kw name='from'/>
+    <kw name='take'/>
+    <kw name='skip'/>
+    <kw name='order'/>
+    <kw name='by'/>
+    <kw name='asc'/>
+    <kw name='desc'/>
+    <kw name='let'/>
+    <kw name='const'/>
+    <kw name='up'/>
+    <kw name='down'/>
+    <kw name='timeout'/>
 </keywords>
 
 <pre class='ebnf-code'>
@@ -1770,9 +1771,20 @@ Variable
 
 <gr>
 <EBNFCDECL name='VarExpr' groups='Expr;LogicalSentenceExpr'/> = [ ( "const" | "let" ) ] <TEBNFC name='VariableExpr'/> .
+<EBNFCDECL name='SysVarExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='SysVarOrOpIdentifier'/> .
 </gr>
 
 <h3 class='center-h' data-href='_chapter'>
+Query result variable
+</h3>
+
+<LinkToContent/>
+
+<gr>
+<EBNFCDECL name='QueryResultVarExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='QueryResultVarIdentifier'/> .
+</gr>
+
+<h3 class='center-h' data-href='Object_expression_chapter'>
 Object expression
 </h3>
 
