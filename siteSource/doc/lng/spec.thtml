@@ -1715,7 +1715,7 @@ Logical sentence predicate
 
 <gr>
 <EBNFCDECL name='PredicateLogicalSentenceExpr' groups='LogicalSentenceExpr'/> = [ <EBNFC name='AnnotationsList'/> ] [ "?" ] <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='ParemeterOfPredicateLogicalSentenceExpr'/> [{ "," <EBNFC name='ParemeterOfPredicateLogicalSentenceExpr'/> }] ")" .
-<EBNFCDECL name='ParemeterOfPredicateLogicalSentenceExpr'/> = .
+<EBNFCDECL name='ParemeterOfPredicateLogicalSentenceExpr'/> = "*" | <EBNFC name='LogicalSentenceExpr'/> | <EBNFC name='Expr'/> .
 </gr>
 
 <h4 class='center-h' data-href='Logical_sentence_Logical_operators_chapter'>
