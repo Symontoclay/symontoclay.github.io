@@ -2349,8 +2349,16 @@ Operator "()"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CallOpExpr' groups='CallingOpExpr' /> = .
+<EBNFCDECL name='CallOpExpr' groups='CallingOpExpr' /> = <TEBNFC name='CallOpExprTemplate' parameter=''/> .
+<EBNFCDECL name='PositionalParameterOfCallOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='NamedParameterOfCallOpExpr'/> = <EBNFC name='VarIdentifier'/> ":" <EBNFC name='Expr'/> .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='CallOpExprTemplate' parameter='CoalesceMark'>
+	CoalesceMark (( ["~"] "(" <EBNFC name='PositionalParameterOfCallOpExpr'/> [{ "," <EBNFC name='PositionalParameterOfCallOpExpr'/> }] ")" ) | ( ["~"] "(" <EBNFC name='NamedParameterOfCallOpExpr'/> [{ "," <EBNFC name='NamedParameterOfCallOpExpr'/> }] ")" ) | ( [ ["~"] "#" "(" <EBNFC name='Expr'/> ")" ] ))
+    </TEBNFCDECL>
+</div>
 
 <h4 class='center-h' data-href='CoalesceCallOp_chapter'>
 Operator "?()"
@@ -2359,7 +2367,7 @@ Operator "?()"
 <LinkToContent/>
 
 <gr>
-<EBNFCDECL name='CoalesceCallOpExpr' groups='CallingOpExpr' /> = .
+<EBNFCDECL name='CoalesceCallOpExpr' groups='CallingOpExpr' /> = <TEBNFC name='CallOpExprTemplate' parameter='"?"'/> .
 </gr>
 
 <h3 class='center-h' data-href="IndexingOp_chapter">
