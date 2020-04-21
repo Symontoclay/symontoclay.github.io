@@ -2612,11 +2612,12 @@ select
 
 <gr>
 <EBNFCDECL name='SelectOpExpr' groups='DataSourceOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "select" [ <EBNFC name='SelectSectionOfSelectOpExpr'/> ] <TEBNFC name='TailOfSelectOpExprTemplate'/> .
-<EBNFCDECL name='SelectSectionOfSelectOpExpr'/> = .
-<EBNFCDECL name='DataSourceSectionOfDataSourceOpExpr'/> = .
-<EBNFCDECL name='OrderBySectionOfDataSourceOpExpr'/> = .
-<EBNFCDECL name='SkipSectionOfDataSourceOpExpr'/> = .
-<EBNFCDECL name='TakeSectionOfDataSourceOpExpr'/> = .
+<EBNFCDECL name='SelectSectionOfSelectOpExpr'/> = "{" <EBNFC name='LogicalSentenceExpr'/> "}" .
+<EBNFCDECL name='DataSourceSectionOfDataSourceOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='OrderBySectionOfDataSourceOpExpr'/> = ( "{" <EBNFC name='ItemOfOrderBySectionOfDataSourceOpExpr'/> [{ "," <EBNFC name='ItemOfOrderBySectionOfDataSourceOpExpr'/> }] "}" ) | ( <EBNFC name='ItemOfOrderBySectionOfDataSourceOpExpr'/> ) .
+<EBNFCDECL name='ItemOfOrderBySectionOfDataSourceOpExpr'/> = ( <EBNFC name='Modality'/> | <EBNFC name='LogicalSentenceExpr'/> ) [( "asc" | "desc" )] .
+<EBNFCDECL name='SkipSectionOfDataSourceOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='TakeSectionOfDataSourceOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <div class='templates'>
@@ -2650,7 +2651,7 @@ insert
 <gr>
 <EBNFCDECL name='InsertOpExpr' groups='DataSourceOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "insert" ( [ <EBNFC name='InsertSectionOfInsertOpExpr'/> ] <TEBNFC name='DestSectionOfInsertOpExprTemplate'/> ) | ( <TEBNFC name='DestSectionOfInsertOpExprTemplate'/> <TEBNFC name='TailOfSelectOpExprTemplate'/> ) .
 <EBNFCDECL name='InsertSectionOfInsertOpExpr'/> = .
-<EBNFCDECL name='DestSectionOfInsertOpExpr'/> = .
+<EBNFCDECL name='DestSectionOfInsertOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <div class='templates'>
