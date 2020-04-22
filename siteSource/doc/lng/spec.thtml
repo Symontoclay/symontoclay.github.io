@@ -893,7 +893,7 @@ Event
 <gr>
 <EBNFCDECL name='TriggerDeclsSet' groups="ObjectTypeDecls"/> = <TEBNFC name='DeclSet' param = 'TriggerDecl'/> .
 <EBNFCDECL name='TriggerIdentifier' groups="TypeIdentifier"/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
-<EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] 
+<EBNFCDECL name='TriggerDecl'/> = [ <EBNFC name='AnnotationsList'/> ] (( "trigger" <EBNFC name='TriggerIdentifier'/> [ "timeout" "(" <EBNFC name='DateTimeTypeExpr'/> ")" ] [ <EBNFC name='InheritanceDecl'/> ] 
                   "{" { <br/> <GEBNFC name='TriggerMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ) | <EBNFC name='TriggersContent'/> ) 
                   [ <EBNFC name='ModalitiesSet'/> ] ";" .
 <EBNFCDECL name='TriggerDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'TriggerDeclsSet'/> .
@@ -1192,7 +1192,7 @@ Defuzzification method is not defined yet!
 
 <gr>
 <EBNFCDECL name='FuzzyLogicTypeIdentifier' groups="TypeIdentifier"/> = "fuzzy" | "Fuzzy" | "fuz" .
-<EBNFCDECL name='FuzzyLogicTypeExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
+<EBNFCDECL name='FuzzyLogicTypeExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='FuzzyTermExpr'/> | <EBNFC name='FuzzyLogicLiteral'/> | <EBNFC name='NullTypeExpr'/> | <EBNFC name='TriggerExpr'/> | <EBNFC name='FuzzyLogicTypeExpr'/> .
 </gr>
 	
 <h3 class='center-h' data-href="Numeric_type_chapter">
