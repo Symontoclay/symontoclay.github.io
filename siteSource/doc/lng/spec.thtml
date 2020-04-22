@@ -2656,18 +2656,18 @@ insert
 
 <gr>
 <EBNFCDECL name='InsertOpExpr' groups='DataSourceOpExpr' /> = [ <EBNFC name='AnnotationsList'/> ] "insert" ( [ <EBNFC name='InsertSectionOfInsertOpExpr'/> ] <TEBNFC name='DestSectionOfInsertOpExprTemplate'/> ) | ( <TEBNFC name='DestSectionOfInsertOpExprTemplate'/> <TEBNFC name='TailOfSelectOpExprTemplate'/> ) .
-<EBNFCDECL name='InsertSectionOfInsertOpExpr'/> = .
+<EBNFCDECL name='InsertSectionOfInsertOpExpr'/> = ( "{" <EBNFC name='Expr'/> "}" ) | <TEBNFC name='InsertSectionItemGroupOfInsertOpExprTemplate'/> .
 <EBNFCDECL name='InsertSectionItemGroupOfInsertOpExpr'/> = <TEBNFC name='InsertSectionItemGroupOfInsertOpExprTemplate'/> .
 <EBNFCDECL name='DestSectionOfInsertOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <div class='templates'>
     <TEBNFCDECL name='InsertSectionItemGroupOfInsertOpExprTemplate'>
-         
+        ( <TEBNFC name='ContentOfInsertSectionItemGroupOfInsertOpExprTemplate'/> ) | ( "{" "{" <EBNFC name='InsertSectionItemGroupOfInsertOpExpr'/> "}" [{ "," "{" <EBNFC name='InsertSectionItemGroupOfInsertOpExpr'/> "}" }] "}" )
     </TEBNFCDECL>
     
     <TEBNFCDECL name='ContentOfInsertSectionItemGroupOfInsertOpExprTemplate'>
-         
+        ( "{" <EBNFC name='LogicalSentenceExpr'/> "}" ) | <EBNFC name='FactDecl'/> | <EBNFC name='LogicalRuleDecl'/>
     </TEBNFCDECL>
 
     <TEBNFCDECL name='DestSectionOfInsertOpExprTemplate'>
