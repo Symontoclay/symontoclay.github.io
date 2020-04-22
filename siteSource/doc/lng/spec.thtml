@@ -814,7 +814,7 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='LogicalRuleIdentifier' groups="TypeIdentifier"/> = <EBNFC name='InstanceIdentifier'/> | <EBNFC name='instance_identifier_with_namespace'/> .
 <EBNFCDECL name='LogicalRuleDecl'/> = "{:" <EBNFC name='LogicalRuleIdentifier'/> <TEBNFC name='FactStartBodyDecl'/> <EBNFC name='ImplicationSymbol'/> <TEBNFC name='LogicalRuleImplicationGroupItem'/> [ <EBNFC name='ModalitiesSet'/> ] ":}" .
 <EBNFCDECL name='LogicalRuleDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'LogicalRuleDeclsSet'/> .
-<EBNFCDECL name='LogicalRuleImplicationGroup'/> = "{" <TEBNFC name='LogicalRuleImplicationGroupItem'/> [{ "," <TEBNFC name='LogicalRuleImplicationGroupItem'/> }] "}" .
+<EBNFCDECL name='LogicalRuleImplicationGroup'/> = <TEBNFC name='LogicalRuleImplicationGroupItem'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRulesSetExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'ClausedScopeForLogicalRulesSet'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRulesSet'/> = <TEBNFC name='DeclSet' param = 'ClausedScopeForLogicalRule'/> .
 <EBNFCDECL name='ClausedScopeForLogicalRule'/> = <TEBNFC name='DefScope' param = "<TEBNFC name='LogicalRuleImplicationGroupItem'/>"/> .
@@ -841,6 +841,10 @@ If identifiers are in different namespaces we can use identifier with namespace 
     </TEBNFCDECL>
     
     <TEBNFCDECL name='LogicalRuleImplicationGroupItem'>
+	( <TEBNFC name='ContentOfLogicalRuleImplicationGroupItem'/> ) | ( "{" "{" <EBNFC name='LogicalRuleImplicationGroup'/> "}" [{ "," "{" <EBNFC name='LogicalRuleImplicationGroup'/> "}" }] "}" )
+    </TEBNFCDECL>
+	
+    <TEBNFCDECL name='ContentOfLogicalRuleImplicationGroupItem'>
         ( ( ( <TEBNFC name='LogicalSentence'/> | <EBNFC name='LogicalRuleImplicationGroup'/> ) | ( "{" <EBNFC name='ClausedScopeForLogicalRule'/> "}" ) [ <EBNFC name='ModalitiesSet'/> ] ) | <EBNFC name='ClausedScopeForLogicalRule'/> )
     </TEBNFCDECL>
 </div>
@@ -1034,6 +1038,7 @@ Intersection type
 
 <gr>
 <EBNFCDECL name='RangeDeclsSet' groups="ObjectTypeDecls;SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'RangeDecl'/> . 
+<EBNFCDECL name='RangeTypeIdentifier' groups='TypeIdentifier'/> = "range" [ "of" <EBNFC name='OrderedTypeIdentifier'/> ] <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ] .
 <EBNFCDECL name='RangeIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='RangeDecl' groups="OrderedTypeDecl"/> = [ <EBNFC name='AnnotationsList'/> ] "range" <EBNFC name='RangeIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> <EBNFC name='RangeDescDecl'/> [ <EBNFC name='DimDecl'/> ]
               [ <EBNFC name='InheritanceDecl'/> ] <br/>
@@ -1052,6 +1057,7 @@ Intersection type
 
 <gr>
 <EBNFCDECL name='ValueDeclsSet' groups='ObjectTypeDecls;SourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ValueDecl'/> .
+<EBNFCDECL name='ValueTypeIdentifier' groups='TypeIdentifier'/> = "value" "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ] .
 <EBNFCDECL name='ValueIdentifier' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='ValueDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "value" <EBNFC name='ValueIdentifier'/> "of" <EBNFC name='OrderedTypeIdentifier'/> [ <EBNFC name='DimDecl'/> ]
               [ <EBNFC name='InheritanceDecl'/> ] <br/>
