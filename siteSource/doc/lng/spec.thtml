@@ -112,14 +112,14 @@ In defining by classic way identifier must start by letter or underscore charact
 For example:
 </p>
 
-<pre class='ebnf-code'>
+<example>
 a
 _a
 a2
 aB
 ab_1
 Great_Britain
-</pre>
+</example>
 
 <p>
 The second way is defining identifier between two grave accents like It is in MySQL.
@@ -3106,6 +3106,9 @@ Synchronization statement
 </gr>
 
 <EBNFC name=''/>
+
+<example>
+</example>
 
 <pre class='tmp_tchn' title='It is just tech remark for creating this spec!'>
 
