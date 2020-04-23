@@ -243,6 +243,9 @@ The following keywords are reserved and may not be used as identifiers which are
     <kw name='up'/>
     <kw name='down'/>
     <kw name='timeout'/>
+    <kw name='op'/>
+    <kw name='require'/>
+    <kw name='ensure'/>
 </keywords>
 
 <pre class='ebnf-code'>
@@ -397,6 +400,9 @@ The ways of doing this will be described below in here section and in describing
          "is" ( <EBNFC name='InheritanceDeclItem'/> [{ "," <EBNFC name='InheritanceDeclItem'/> }] ) | ( "{(" <EBNFC name='InheritanceDeclItem'/> [ ";" { <EBNFC name='InheritanceDeclItem'/> ";" } ] ")}" )
     </TEBNFCDECL>
 </div>
+
+<example>
+</example>
 
 <h4 class='center-h' data-href="Method_chapter">
     Methods
@@ -772,20 +778,37 @@ If identifiers are in different namespaces we can use identifier with namespace 
 <EBNFCDECL name='FunctionDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
 <EBNFCDECL name='FunctionName' groups='TypeIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='identifier_with_namespace'/> .
 <EBNFCDECL name='FunctionSignature' groups='TypeIdentifier'/> = "(" <EBNFC name='FunctionParamsDeclaration'/> ")" [ "(|" <EBNFC name='FunctionAdditionalParamsSetDeclaration'/> "|)" ] ":" <EBNFC name='FunctionReturnDeclaration'/> .
-<EBNFCDECL name='FunctionDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "func" <EBNFC name='FunctionName'/> <EBNFC name='FunctionSignature'/> [ <EBNFC name='InheritanceDecl'/> ]
-           [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
-		   "=>" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" .
+<EBNFCDECL name='FunctionDecl'/> = <TEBNFC name='FunctionDeclTemplate' param='"func" <EBNFC name="FunctionName"/>'/> ";" .
 <EBNFCDECL name='FunctionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'FunctionDecl' /> .
-<EBNFCDECL name='AnonymousFunction'/> = [ <EBNFC name='AnnotationsList'/> ] [ "func" ] <EBNFC name='FunctionSignature'/> [ "is" <EBNFC name='InheritanceDecl'/> ]
-           [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ] <br/>
-		   "=>" "{" [ <EBNFC name='StatementsSet'/> ] "}" ] [ <EBNFC name='ModalitiesSet'/> ] ";" . 
+<EBNFCDECL name='AnonymousFunction'/> = <TEBNFC name='FunctionDeclTemplate' param='[ "func" ]'/> ";" . 
 <EBNFCDECL name='AnonymousFunctionDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'AnonymousFunction' /> .
 <EBNFCDECL name='FunctionParamsSetDeclaration'/> = <EBNFC name='FunctionParamDeclaration'/> [{ "," <EBNFC name='FunctionParamDeclaration'/> }] .
 <EBNFCDECL name='FunctionParamDeclaration'/> = <TEBNFC name='VariableExpr'/> .
 <EBNFCDECL name='FunctionAdditionalParamsSetDeclaration'/> = <EBNFC name='FunctionAdditionalParamDeclaration'/> [{ "," <EBNFC name='FunctionAdditionalParamDeclaration'/> }] .
 <EBNFCDECL name='FunctionAdditionalParamDeclaration'/> = <TEBNFC name='VariableExpr'/>.
 <EBNFCDECL name='FunctionReturnDeclaration'/> = <EBNFC name='TypeIdentifier'/> .
+<EBNFCDECL name='RequireSectionOfFunction'/> = .
+<EBNFCDECL name='EnsureSectionOfFunction'/> = .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='FunctionDeclTemplate' param='_FuncHeader'>
+	    [ <EBNFC name='AnnotationsList'/> ] _FuncHeader <EBNFC name='FunctionSignature'/> [ <EBNFC name='InheritanceDecl'/> ]
+        <TEBNFC name='FunctionObjBodyDeclTemplate'/> <br/>
+		"require" "{" <EBNFC name='RequireSectionOfFunction'/> "}" <br/>
+		"ensure" "{" <EBNFC name='EnsureSectionOfFunction'/> "}" <br/>
+		<TEBNFC name='FunctionBodyDeclTemplate'/> <br/>
+		[ <EBNFC name='ModalitiesSet'/> ]
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='FunctionObjBodyDeclTemplate'>
+	    [ "{" { <br/> <GEBNFC name='ObjectMembers' kind='op_and'/> <br/> <GEBNFC name='ObjectTypeDecls' kind='op_and'/> } <br/> "}" ]
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='FunctionBodyDeclTemplate'>
+	    "=>" "{" [ <EBNFC name='StatementsSet'/> ] "}" ]
+	</TEBNFCDECL>
+</div>
 
 <h3 class='center-h' data-href="OpOverloading_chapter">
     Operator overloading
@@ -795,9 +818,24 @@ If identifiers are in different namespaces we can use identifier with namespace 
 
 <gr>
 <EBNFCDECL name='OpOverloadingDeclsSet' groups="SourceCodeFileContent"/> = <TEBNFC name='DeclSet' param = 'OpOverloadingDecl'/> .
-<EBNFCDECL name='OpOverloadingDecl'/> .
+<EBNFCDECL name='OpOverloadingDecl'/> = <GEBNFC name='OpOverloadingDecl' kind='or' /> .
+<EBNFCDECL name='BinaryOverloadedOpMark'/> = "+" | "-" | "*" | "/" | "%" | "**" | "//" | "+%" | "-%" | "*%" | "/%" | "|" | "&" | "is" | "as" | ">" | "<" .
+<EBNFCDECL name='BinaryOpOverloadingDecl' groups='OpOverloadingDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "op" <EBNFC name='BinaryOverloadedOpMark'/>  "(" <EBNFC name='FunctionParamDeclaration'/> "," <EBNFC name='FunctionParamDeclaration'/> ")" <TEBNFC name='OpOverloadingBodyTemplate'/> ";" .
+<EBNFCDECL name='UnaryOverloadedOpMark'/> = "!" | "++" | "--" .
+<EBNFCDECL name='UnaryOpOverloadingDecl' groups='OpOverloadingDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "op" <EBNFC name='UnaryOverloadedOpMark'/>  "(" <EBNFC name='FunctionParamDeclaration'/> ")" <TEBNFC name='OpOverloadingBodyTemplate'/> ";" .
+<EBNFCDECL name='CallOpOverloadingDecl' groups='OpOverloadingDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "op" "()" "(" <EBNFC name='FunctionParamsSetDeclaration'/> ")" <TEBNFC name='OpOverloadingBodyTemplate'/> ";" .
+<EBNFCDECL name='IndexerOpOverloadingDecl' groups='OpOverloadingDecl'/> = [ <EBNFC name='AnnotationsList'/> ] "op" "[]" "(" <EBNFC name='FunctionParamsSetDeclaration'/> ")" <TEBNFC name='OpOverloadingBodyTemplate'/> ";" .
 <EBNFCDECL name='OpOverloadingDeclExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'OpOverloadingDecl'/> .
 </gr>
+
+<div class='templates'>
+    <TEBNFCDECL name='OpOverloadingBodyTemplate'>
+        [ "(|" <EBNFC name='FunctionAdditionalParamsSetDeclaration'/> "|)" ] ":" <EBNFC name='FunctionReturnDeclaration'/> <br/>
+        <TEBNFC name='FunctionObjBodyDeclTemplate'/> <br/>
+		<TEBNFC name='FunctionBodyDeclTemplate'/> <br/>
+		[ <EBNFC name='ModalitiesSet'/> ]
+    </TEBNFCDECL>
+</div>
 
 <h3 class='center-h' data-href="Fact_and_logical_rule_chapter">
     Fact and logical rule
