@@ -7,6 +7,10 @@
     "menu" : {
         "items": [
 		    {
+			    "href" : "/index.html",
+				"label" : "Main"
+			},
+		    {
 			    "href" : "/doc/index.html",
 				"label" : "Documentation"
 			}
