@@ -943,7 +943,8 @@ Event
 <EBNFCDECL name='ConditionalTriggerOnExpression' groups='TriggerOnExpression'/> = "{" <EBNFC name='LogicalSentenceExpr'/> "}" .
 <EBNFCDECL name='EventTriggerOnExpression' groups='TriggerOnExpression'/> = <EBNFC name='EventExpr'/> .
 <EBNFCDECL name='MetaObjectTriggerOnExpression' groups='TriggerOnExpression'/> = .
-<EBNFCDECL name='HookTriggerOnExpression' groups='TriggerOnExpression'/> = .
+<EBNFCDECL name='ObjectHookTriggerOnExpression' groups='TriggerOnExpression'/> = <EBNFC name='HookName'/> .
+<EBNFCDECL name='ObjectHookName'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='TriggerExpr' groups='Expr;LogicalSentenceExpr'/> = <EBNFC name='Expr'/> "::" <EBNFC name='TriggerIdentifier'/> .
 </gr>
 
