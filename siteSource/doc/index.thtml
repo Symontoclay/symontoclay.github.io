@@ -18,12 +18,46 @@ Language
 	</a>
 </p>
 
-<h2>
+<p>
+    <a href="/doc/lng/std_lib/index.html">
+	    Standard library
+	</a>
+</p>
+
+<h2 class='center-h'>
 Core
 </h2>
 
 <p>
+	<a href='/doc/core/architecture.html'>
+	    Core architecture
+	</a>
+</p>
+
+<p>
+    <a href='/doc/core/api/index.html'>
+	    Core API
+	</a>
+</p>
+
+<p>
     <a href='https://github.com/Symontoclay/SymOntoClay'>Source code</a>
+</p>
+
+<h2 class='center-h'>
+Unity3D asset
+</h2>
+
+<p>
+    <a href="/doc/unity3d_asset/architecture.html">
+	    Unity3D asset architecture
+	</a>
+</p>
+
+<p>
+    <a href="/doc/unity3d_asset/api/index.html">
+	    Unity3D asset API
+	</a>
 </p>
 
 <p>
