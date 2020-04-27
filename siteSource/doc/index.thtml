@@ -2,7 +2,7 @@
 Documentation
 </h1>
 
-<h2>
+<h2 class='center-h'>
 Language
 </h2>
 
@@ -58,6 +58,10 @@ Unity3D asset
     <a href="/doc/unity3d_asset/api/index.html">
 	    Unity3D asset API
 	</a>
+</p>
+
+<p>
+    <a href='https://github.com/Symontoclay/SymOntoClayAsset'>Source code</a>
 </p>
 
 <p>
