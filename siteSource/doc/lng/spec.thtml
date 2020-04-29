@@ -2429,9 +2429,9 @@ The following table is ordered from highest (_) to lowest (1) precedence.
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='IncrementOpExpr' groups='ArithmeticOpExpr'/> = <TEBNFC name='PostfixUnaryOp' param = '++'/> .
-</pre>
+</gr>
 
 <h4 class='center-h' data-href="DecrementOp_chapter">
     Operator "--"
