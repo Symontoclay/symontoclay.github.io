@@ -3235,10 +3235,10 @@ Synchronization statement
 
 <LinkToContent/>
 
-<pre class='ebnf-code'>
+<gr>
 <EBNFCDECL name='SynchronizationStatement' groups="Statement"/> = [ <EBNFC name='AnnotationsList'/> ] ( "exclusive" | "lock" ) [ "(" <EBNFC name='Identifier'/> [{ "," <EBNFC name='Identifier'/> }] ")" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" .
 <EBNFCDECL name='SynchronizationStatementExpr' groups="Expr"/> = <TEBNFC name='NonExprAsExprVal' param = 'SynchronizationStatement'/> .
-</pre>
+</gr>
 
 <h2 class='center-h' data-href="Source_code_file_chapter">
     Source code file
