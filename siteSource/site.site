@@ -4,6 +4,7 @@
     "enableFavicon": true,
     "logo": "/favicon.png",
 	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/roadMap.json",
+	"CSharpApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApi.json",
     "menu" : {
         "items": [
 		    {
