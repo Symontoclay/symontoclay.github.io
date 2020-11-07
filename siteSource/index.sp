@@ -1,5 +1,5 @@
 {
     "breadcrumbTitle" : "Main",
     "isReady": true,
-	"description" : "GNU Clay is an experiment to creating a very small and simple AI."
+	"description" : "SymOntoClay is game artificial intelligence experimental open source indie-framework with its own domain specific language."
 }
