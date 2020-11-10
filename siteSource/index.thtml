@@ -1,18 +1,24 @@
 ﻿<i class="fas fa-user"></i>
 
-<pre><code data-language="csharp">var a = 12;
-        static PageProcessor()
-        {
+<p>
+<code data-language="c#">
+var a = 12;
+    static PageProcessor()
+    {
 #if DEBUG
-            _logger.Info("Begin");
+        _logger.Info("Begin");
 #endif
 
-            SetUpBootstrap();
-            SetUpFontAwesome();
-            SetUpCodeHighlighter();
-        }</code></pre>
-		
-<pre><code data-language="soc">npc PeaceKeeper is [0.5] exampleClass
+        SetUpBootstrap();
+        SetUpFontAwesome();
+        SetUpCodeHighlighter();
+    }
+</code>
+</p>
+
+<p>		
+<code data-language="soc">
+npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => {
 	    "Begin" >> @>log;
@@ -20,4 +26,5 @@
 	    "End" >> @>log;
 	}
 }
-</code></pre>
+</code>
+</p>
