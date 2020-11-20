@@ -4,7 +4,10 @@
     "enableFavicon": true,
     "logo": "/favicon.png",
 	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/roadMap.json",
-	"CSharpApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApi.json",
+	"CSharpUserApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApi.json",
+	"BaseCSharpUserApiPath" : "%SITE_SOURCE_PATH%/csharp_user_api",
+	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
+	"BaseReleaseNotesPath" : "%SITE_SOURCE_PATH%/downloads/arch",
     "menu" : {
         "items": [
 		    {

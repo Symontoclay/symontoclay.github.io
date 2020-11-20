@@ -9,9 +9,9 @@
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "",
+    "Description": "Download SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": ""
+    "Title": "Downloads"
   }
 }

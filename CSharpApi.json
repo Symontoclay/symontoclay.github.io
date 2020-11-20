@@ -1,0 +1,13 @@
+{
+  "SolutionDir": "%SITE_SOURCE_PATH%/CSharpApiFiles",
+  "XmlDocFiles": [
+    "SymOntoClay.CoreHelper.xml",
+    "SymOntoClay.Core.xml",
+    "SymOntoClay.UnityAsset.Core.xml"
+  ],
+  "UnityAssetCoreRootTypes": [
+    "SymOntoClay.UnityAsset.Core.IWorld"
+  ],
+  "PublicMembersOnly": true,
+  "IgnoreErrors": true
+}

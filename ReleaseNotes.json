@@ -1,0 +1,89 @@
+[
+  {
+    "Date": "2020-10-04T00:00:00",
+    "Version": "0.2.1",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.1.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.1.0.tar.gz"
+      },
+    ],
+    "Description": "* Basic logical database implementation
+* Registration information about inheritance by writing fact
+* Using inheritance during logical resolution
+* Basic implementation of logical select-query
+* Basic implementation of logical insert-query
+* Placing logical facts and rules in the body of a file, class, app, world and host.
+* Basic implementation of variables.
+* Single-line comment
+* Multi-lines comment
+* Architecture improvements",
+    "IsMarkdown": true
+  },
+  {
+    "Date": "2020-08-29T00:00:00",
+    "Version": "0.2.0",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.0.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.0.0.tar.gz"
+      },
+    ],
+    "Description": "* Host endpoints
+* @@host system variable
+* Synchronous calling host method in SymOntoClay script
+* Asynchronous calling host method in SymOntoClay script",
+    "IsMarkdown": true
+  },
+  {
+    "Date": "2020-07-30T00:00:00",
+    "Version": "0.1.2",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.2.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.2.0.tar.gz"
+      },
+    ],
+    "Description": "* Adding inheritance 
+* @@self system variable",
+    "IsMarkdown": true
+  },
+  {
+    "Date": "2020-07-26T00:00:00",
+    "Version": "0.1.1",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.1.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.1.0.tar.gz"
+      },
+    ],
+    "Description": "* Creation Architecture 
+* Init trigger, bases of code execution
+* writing 'Hello world!' into log-channel",
+    "IsMarkdown": true
+  }
+]
