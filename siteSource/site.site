@@ -5,7 +5,7 @@
     "logo": "/favicon.png",
 	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/roadMap.json",
 	"CSharpUserApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApi.json",
-	"BaseCSharpUserApiPath" : "%SITE_SOURCE_PATH%/csharp_user_api",
+	"BaseCSharpUserApiPath" : "%SITE_SOURCE_PATH%/engine_api",
 	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
 	"BaseReleaseNotesPath" : "%SITE_SOURCE_PATH%/downloads/arch",
     "menu" : {

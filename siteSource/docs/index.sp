@@ -9,7 +9,7 @@
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "",
+    "Description": "Documentation of SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
     "Title": "Documentation"
