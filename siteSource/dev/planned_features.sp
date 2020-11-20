@@ -1,17 +1,17 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "Developing",
-  "BreadcrumbTitle": "Developing",
+  "Title": "Planned features",
+  "BreadcrumbTitle": "Planned features",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "Developing SymOntoClay",
+    "Description": "Planned features of SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": "Developing"
+    "Title": "Planned features"
   }
 }

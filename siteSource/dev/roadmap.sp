@@ -1,17 +1,17 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "Developing",
-  "BreadcrumbTitle": "Developing",
+  "Title": "Roadmap",
+  "BreadcrumbTitle": "Roadmap",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "Developing SymOntoClay",
+    "Description": "Roadmap of SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": "Developing"
+    "Title": "Roadmap"
   }
 }
