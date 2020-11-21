@@ -7,17 +7,14 @@
     "KindOfExpectedDuration": 0,
     "KindOfCompeltion": 0,
     "Name": "Step 7",
-    "Version": "0.2.3",
-    "Description": "* Basic logical database implementation
-* Registration information about inheritance by writing fact
-* Using inheritance during logical resolution
-* Basic implementation of logical select-query
-* Basic implementation of logical insert-query
-* Placing logical facts and rules in the body of a file, class, app, world and host.
-* Basic implementation of variables.
-* Single-line comment
-* Multi-lines comment
-* Architecture improvements",
+    "Version": "0.2.2",
+    "Description": "* Refactoring file structure of source code of project on SymOntoClay DSL.
+* CLI:
+  * Show help
+  * Show version info
+  * Creating new project (worldspace)
+  * Adding <abbr title='Non-Player Character'>NPC</abbr> into existing project (worldspace)
+* Internal CLI improvement",
     "IsMarkdown": true
   },
   {
@@ -28,82 +25,11 @@
     "KindOfExpectedDuration": 0,
     "KindOfCompeltion": 0,
     "Name": "Step 8",
-    "Version": "0.2.4",
-    "Description": "",
+    "Version": "0.2.3",
+    "Description": "* Simple conditional trigger
+* Composite conditional trigger",
     "IsMarkdown": false
   },
-  {
-    "Kind": 0,
-    "Start": null,
-    "End": null,
-    "ExpectedDuration": null,
-    "KindOfExpectedDuration": 0,
-    "KindOfCompeltion": 0,
-    "Name": "Step 9",
-    "Version": "0.2.5",
-    "Description": "",
-    "IsMarkdown": false
-  },
-  {
-    "Kind": 0,
-    "Start": null,
-    "End": null,
-    "ExpectedDuration": null,
-    "KindOfExpectedDuration": 0,
-    "KindOfCompeltion": 0,
-    "Name": "Step 10",
-    "Version": "0.3.0",
-    "Description": "",
-    "IsMarkdown": false
-  },
-  {
-    "Kind": 0,
-    "Start": null,
-    "End": null,
-    "ExpectedDuration": null,
-    "KindOfExpectedDuration": 0,
-    "KindOfCompeltion": 0,
-    "Name": "Step 11",
-    "Version": "0.3.1",
-    "Description": "",
-    "IsMarkdown": false
-  },
-  {
-    "Kind": 0,
-    "Start": null,
-    "End": null,
-    "ExpectedDuration": null,
-    "KindOfExpectedDuration": 0,
-    "KindOfCompeltion": 0,
-    "Name": "Step 12",
-    "Version": "0.3.2",
-    "Description": "",
-    "IsMarkdown": false
-  },
-  {
-    "Kind": 0,
-    "Start": null,
-    "End": null,
-    "ExpectedDuration": null,
-    "KindOfExpectedDuration": 0,
-    "KindOfCompeltion": 0,
-    "Name": "Step 13",
-    "Version": "0.3.3",
-    "Description": "",
-    "IsMarkdown": false
-  },
-  {
-    "Kind": 0,
-    "Start": null,
-    "End": null,
-    "ExpectedDuration": null,
-    "KindOfExpectedDuration": 0,
-    "KindOfCompeltion": 0,
-    "Name": "Step 14",
-    "Version": "0.3.4",
-    "Description": "",
-    "IsMarkdown": false
-  }  ,
   {
     "Kind": 3,
     "Start": null,
@@ -113,16 +39,7 @@
     "KindOfCompeltion": 0,
     "Name": "",
     "Version": "",
-    "Description": "* Basic logical database implementation
-* Registration information about inheritance by writing fact
-* Using inheritance during logical resolution
-* Basic implementation of logical select-query
-* Basic implementation of logical insert-query
-* Placing logical facts and rules in the body of a file, class, app, world and host.
-* Basic implementation of variables.
-* Single-line comment
-* Multi-lines comment
-* Architecture improvements",
+    "Description": "",
     "IsMarkdown": true
   }
 ]

@@ -1,14 +1,14 @@
 ﻿<h1 class='center-h'>SymOntoClay project</h1>
 
 <p>
-SymOntoClay is game artificial intelligence experimental open source indie-framework with its own domain specific language.
+SymOntoClay is game artificial intelligence experimental open source engine with its own domain-specific language.
 </p>
 
 <p>
 The project is planned as open source asset for Unity3D.
 </p>
 
-<h3 class='center-h'>Name and pronunciation</h3>
+<h3 class='center-h'>Name meaning and pronunciation</h3>
 
 <p>
 It's abbreviation of &quot;<b>Sym</b>bolic <b>onto</b>logical <b>clay</b>&quot;.
@@ -16,4 +16,80 @@ It's abbreviation of &quot;<b>Sym</b>bolic <b>onto</b>logical <b>clay</b>&quot;.
 
 <p>
 Pronunciation: &lbrack;sim äntə klā&rbrack;.
+</p>
+
+<dl>
+    <dt>Symbolic</dt>
+	
+    <dd>
+	    I've been focusing on Symbolic artificial intelligence. 
+        It will allow us to define <abbr title='Non-Player Character'>NPC</abbr> behavior in more determined way. 
+        I think It's important for game plot and gameplay.
+    </dd>
+	
+    <dt>Ontological</dt>
+	
+    <dd>
+	I've been focusing on explicitly describing knowledge.
+	</dd>
+	
+    <dt>Clay</dt>
+	
+    <dd>
+	It's a reference to the clay from which God created Adam.
+	</dd>
+</dl>
+
+<h2 class='center-h'>Aim</h2>
+
+<p>
+The main aim of the project is experimenting on using various symbolic artificial intelligence approaches in game developing.
+First of all It's logic programming, fuzzy logic, fuzzy inheritance and natural language processing (NLP).
+</p>
+
+<p>
+Of course these features are not new and used long (even too long) time in many areas.
+Some of them is not mainstream. 
+Sometimes It's like walking on forgotten path in old forest.
+</p>
+
+<p>
+But I think It will be interesting to use these approaches in game development.
+</p>
+
+<p>
+It will be game <abbr title='Artificial Intelligence'>AI</abbr>, that is less strict, than <abbr title='Artificial Intelligence'>AI</abbr> for other areas.
+</p>
+
+<p>
+Now SymOntoClay is focused on pure experimenting.
+But in the future I hope to give a tool to indie game developers for creating games with more powerful <abbr title='Artificial Intelligence'>AI</abbr> then It's available them now.
+I will be very glad If It helps to increase amount of cool games, happy users and game developers.
+</p>
+
+<h2 class='center-h'>Domain-specific language (DSL)</h2>
+
+<p>
+SymOntoClay has own Domain-specific language (DSL).
+</p>
+
+<p>
+It helps using interesting <abbr title='Artificial Intelligence'>AI</abbr> features in more convenient way.
+Some features are difficult to add for existing languages, for example, multiple fuzzy inheritance.
+</p>
+
+<p>
+The language is also called SymOntoClay like the engine.
+</p>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+<p>
+
 </p>

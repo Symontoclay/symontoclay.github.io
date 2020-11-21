@@ -1,6 +1,6 @@
 {
     "mainTitle": "SymOntoClay - ",
-    "title": "The game artificial intelligence experimental open source indie-framework with its own domain specific language.",
+    "title": "The game artificial intelligence experimental open source engine with its own domain specific language.",
     "enableFavicon": true,
     "logo": "/favicon.png",
 	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/roadMap.json",
