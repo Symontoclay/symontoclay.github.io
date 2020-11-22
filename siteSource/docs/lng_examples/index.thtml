@@ -1,1 +1,51 @@
 <h1 class='center-h'>Code examples</h1>
+
+<ContentsPlace/>
+
+<h2 class='center-h' data-href="Hello_world">
+Hello world!
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href="Comments">
+Comments
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href="Variables">
+Variables
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href="Inheritance">
+Inheritance
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href="Calling_host_method">
+Calling host method
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href="Logic_queries">
+Logic queries
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
