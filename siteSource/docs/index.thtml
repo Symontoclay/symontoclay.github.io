@@ -7,12 +7,10 @@ Here is information about implemented and released features.
 <h2 class='center-h'>Getting started</h2>
 
 <h3>
-<a href='/docs/licensing.html'>Licensing</a>
+Licensing
 </h3>
 
-<p>
-SymOntoClay engine is under LGPL-2.1 License.
-</p>
+<license_info/>
 
 <h3>
 <a href='/docs/getting_started.html'>Getting started</a>
