@@ -8,6 +8,17 @@ Hello world!
 
 <LinkToContent/>
 
+<code data-lng="soc">
+npc PeaceKeeper
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+	      "End" >> @>log;
+	}
+}
+</code>
+
 <complete_me/>
 
 <h2 class='center-h' data-href="Comments">
@@ -15,6 +26,48 @@ Comments
 </h2>
 
 <LinkToContent/>
+
+<h3 class='center-h' data-href='Single_line_comment'>
+Single line comment
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 //@r = @b = 1;
+		 @bx >> @>log;
+
+		 "End" >> @>log;
+	}
+}
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Multi_line_comment'>
+Multi line comment
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 /*@r = @b = 1;
+		 @bx >> @>log;*/
+
+		 "End" >> @>log;
+	}
+}
+</code>
 
 <complete_me/>
 
@@ -24,6 +77,48 @@ Variables
 
 <LinkToContent/>
 
+<h3 class='center-h' data-href='Variables_Example_1'>
+Example 1
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 @r = @b = 1;
+		 @b >> @>log;
+
+		 "End" >> @>log;
+	}
+}
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Variables_Example_2'>
+Example 2
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 @r = @b = 1;
+		 @bx >> @>log;
+
+		 "End" >> @>log;
+	}
+}
+</code>
+
 <complete_me/>
 
 <h2 class='center-h' data-href="Inheritance">
@@ -31,6 +126,37 @@ Inheritance
 </h2>
 
 <LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 exampleClass is human >> @>log;
+
+		 exampleClass is not human >> @>log;
+
+		 use exampleClass is [0.5] human;
+
+		 exampleClass is human >> @>log;
+
+		 exampleClass is not human >> @>log;
+
+		 use exampleClass is not human;
+
+		 exampleClass is human >> @>log;
+
+		 exampleClass is not human >> @>log;
+
+		 use @@self is linux;
+
+		 @@self is linux >> @>log;
+
+		 "End" >> @>log;
+	}
+}
+</code>
 
 <complete_me/>
 
@@ -40,6 +166,47 @@ Calling host method
 
 <LinkToContent/>
 
+<h3 class='center-h' data-href='Calling_host_method_Synchronous'>
+Synchronous
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+                  @@host.`go`(to: #@[25, 30]);
+
+	       "End" >> @>log;
+	}
+}
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Calling_host_method_Asynchronous'>
+Asynchronous
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+                   @@host.`go`~(to: #@[25, 30]);
+	       @@host.`go`~(to: #@[20, 30]);
+
+	        "End" >> @>log;
+	}
+}
+</code>
+
 <complete_me/>
 
 <h2 class='center-h' data-href="Logic_queries">
@@ -47,5 +214,78 @@ Logic queries
 </h2>
 
 <LinkToContent/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_1'>
+Example 1
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+class exampleClass is human, [0.1] animal
+{
+	{: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+	{: { love($x, $y) } -> { help($x, $y) } :}
+}
+
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 select {: son(?x, ?y) :} >> @>log;
+
+		 "End" >> @>log;
+	}
+}
+</code>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;
+
+		 ? {: son(?x, ?y) :} >> @>log;
+
+		 "End" >> @>log;
+	}
+}
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_2'>
+Example 2
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_3'>
+Example 3
+</h3>
+
+<LinkToContent/>
+
+<code data-lng="soc">
+npc PeaceKeeper is [0.5] exampleClass
+{
+    on Init => {
+	     "Begin" >> @>log;		 
+
+		 insert {: >: { bird (#1234) } :};
+
+		 "End" >> @>log;
+	}
+}
+</code>
 
 <complete_me/>
