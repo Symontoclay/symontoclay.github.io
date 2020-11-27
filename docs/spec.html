@@ -36,6 +36,461 @@
 <article>
 <h1 class='center-h'>Language Specification</h1>
 
+<h1 class="center-h">    Content
+    <a href='https://symontoclay.github.io/docs/spec.html#Contents' name='Contents' class='permalink' title='The link to the section'>
+        <i class='fas fa-link'></i>
+    </a></h1><p><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Introduction_chapter">Introduction</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Notation_chapter">Notation</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Source_code_representation_chapter">Source code representation</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Symbols_chapter">Symbols</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Characters_chapter">Characters</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Letters_and_digits_chapter">Letters and digits</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Kind_of_source_code_files_chapter">Kind of source code files</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#World_source_code_file_chapter">World source code file</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Npc_source_code_file_chapter">Npc source code file</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Host_source_code_file_chapter">Host source code file</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Class_source_code_file_chapter">Class source code file</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Lexical_elements_chapter">Lexical elements</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Comments_chapter">Comments</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Tokens_chapter">Tokens</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Identifiers_chapter">Identifiers</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Keywords_chapter">Keywords</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Operators_and_punctuation_chapter">Operators and punctuation</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Integer_literals_chapter">Integer literals</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Floating_point_literals_chapter">Floating-point literals</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#String_literals_chapter">String literals</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Objects_declaration_chapter">Objects declaration</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Class_chapter">Class</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#NPC_chapter">NPC</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#World_chapter">World</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Host_chapter">Host</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Waypoint_chapter">Waypoint</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Fact_chapter">Fact</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Logic_rule_chapter">Logic rule</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Common_objects_parts_chapter">Common objects’ parts</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Inheritance_chapter">Inheritance</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Trigger_chapter">Trigger</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Lifecycle_triggers_chapter">Lifecycle triggers</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Expressions_chapter">Expressions</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Constant_expression_chapter">Constant expression</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Variable_chapter">Variable</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#System_variable_chapter">System variable</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Available_system_variables_chapter">Available system variables</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Channel_chapter">Channel</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Available_system_channels_chapter">Available system channels</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Operators_chapter">Operators</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Assignment_operators_chapter">Assignment operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#AssignmentOp_chapter">Operator "="</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Member_access_operators_chapter">Member access operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#PointerOp_chapter">Operator "."</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Call_operators_chapter">Call operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#CallOp_chapter">Operator "()"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Inheritance_operators_chapter">Inheritance operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#IsOp_chapter">Operator "is"</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#UseIsOp_chapter">Operator "use is"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Data_source_operators_chapter">Data source operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#StreamOp_chapter">Operators ">>>" "<<<"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Logic_operators_chapter">Logic operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#SelectOp_chapter">select
+Operator "?"</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#InsertOp_chapter">insert</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Statements_chapter">Statements</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Expression_statement_chapter">Expression statement</a></li></ul></li></ul>
+
+<h2 class='center-h' data-href='Introduction_chapter'>
+Introduction
+<a href="https://symontoclay.github.io/docs/spec.html#Introduction_chapter" name="Introduction_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Notation_chapter'>
+Notation
+<a href="https://symontoclay.github.io/docs/spec.html#Notation_chapter" name="Notation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Source_code_representation_chapter'>
+Source code representation
+<a href="https://symontoclay.github.io/docs/spec.html#Source_code_representation_chapter" name="Source_code_representation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Symbols_chapter'>
+Symbols
+<a href="https://symontoclay.github.io/docs/spec.html#Symbols_chapter" name="Symbols_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Characters_chapter'>
+Characters
+<a href="https://symontoclay.github.io/docs/spec.html#Characters_chapter" name="Characters_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Letters_and_digits_chapter'>
+Letters and digits
+<a href="https://symontoclay.github.io/docs/spec.html#Letters_and_digits_chapter" name="Letters_and_digits_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Kind_of_source_code_files_chapter'>
+Kind of source code files
+<a href="https://symontoclay.github.io/docs/spec.html#Kind_of_source_code_files_chapter" name="Kind_of_source_code_files_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='World_source_code_file_chapter'>
+World source code file
+<a href="https://symontoclay.github.io/docs/spec.html#World_source_code_file_chapter" name="World_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Npc_source_code_file_chapter'>
+Npc source code file
+<a href="https://symontoclay.github.io/docs/spec.html#Npc_source_code_file_chapter" name="Npc_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Host_source_code_file_chapter'>
+Host source code file
+<a href="https://symontoclay.github.io/docs/spec.html#Host_source_code_file_chapter" name="Host_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Class_source_code_file_chapter'>
+Class source code file
+<a href="https://symontoclay.github.io/docs/spec.html#Class_source_code_file_chapter" name="Class_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Lexical_elements_chapter'>
+Lexical elements
+<a href="https://symontoclay.github.io/docs/spec.html#Lexical_elements_chapter" name="Lexical_elements_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Comments_chapter'>
+Comments
+<a href="https://symontoclay.github.io/docs/spec.html#Comments_chapter" name="Comments_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Tokens_chapter'>
+Tokens
+<a href="https://symontoclay.github.io/docs/spec.html#Tokens_chapter" name="Tokens_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Identifiers_chapter'>
+Identifiers
+<a href="https://symontoclay.github.io/docs/spec.html#Identifiers_chapter" name="Identifiers_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Keywords_chapter'>
+Keywords
+<a href="https://symontoclay.github.io/docs/spec.html#Keywords_chapter" name="Keywords_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
+Operators and punctuation
+<a href="https://symontoclay.github.io/docs/spec.html#Operators_and_punctuation_chapter" name="Operators_and_punctuation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Integer_literals_chapter'>
+Integer literals
+<a href="https://symontoclay.github.io/docs/spec.html#Integer_literals_chapter" name="Integer_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Floating_point_literals_chapter'>
+Floating-point literals
+<a href="https://symontoclay.github.io/docs/spec.html#Floating_point_literals_chapter" name="Floating_point_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='String_literals_chapter'>
+String literals
+<a href="https://symontoclay.github.io/docs/spec.html#String_literals_chapter" name="String_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Objects_declaration_chapter'>
+Objects declaration
+<a href="https://symontoclay.github.io/docs/spec.html#Objects_declaration_chapter" name="Objects_declaration_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Class_chapter'>
+Class
+<a href="https://symontoclay.github.io/docs/spec.html#Class_chapter" name="Class_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='NPC_chapter'>
+NPC
+<a href="https://symontoclay.github.io/docs/spec.html#NPC_chapter" name="NPC_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='World_chapter'>
+World
+<a href="https://symontoclay.github.io/docs/spec.html#World_chapter" name="World_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Host_chapter'>
+Host
+<a href="https://symontoclay.github.io/docs/spec.html#Host_chapter" name="Host_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Waypoint_chapter'>
+Waypoint
+<a href="https://symontoclay.github.io/docs/spec.html#Waypoint_chapter" name="Waypoint_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Fact_chapter'>
+Fact
+<a href="https://symontoclay.github.io/docs/spec.html#Fact_chapter" name="Fact_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Logic_rule_chapter'>
+Logic rule
+<a href="https://symontoclay.github.io/docs/spec.html#Logic_rule_chapter" name="Logic_rule_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Common_objects_parts_chapter'>
+Common objects’ parts
+<a href="https://symontoclay.github.io/docs/spec.html#Common_objects_parts_chapter" name="Common_objects_parts_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Inheritance_chapter'>
+Inheritance
+<a href="https://symontoclay.github.io/docs/spec.html#Inheritance_chapter" name="Inheritance_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Trigger_chapter'>
+Trigger
+<a href="https://symontoclay.github.io/docs/spec.html#Trigger_chapter" name="Trigger_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
+Lifecycle triggers
+<a href="https://symontoclay.github.io/docs/spec.html#Lifecycle_triggers_chapter" name="Lifecycle_triggers_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Expressions_chapter'>
+Expressions
+<a href="https://symontoclay.github.io/docs/spec.html#Expressions_chapter" name="Expressions_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Constant_expression_chapter'>
+Constant expression
+<a href="https://symontoclay.github.io/docs/spec.html#Constant_expression_chapter" name="Constant_expression_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Variable_chapter'>
+Variable
+<a href="https://symontoclay.github.io/docs/spec.html#Variable_chapter" name="Variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='System_variable_chapter'>
+System variable
+<a href="https://symontoclay.github.io/docs/spec.html#System_variable_chapter" name="System_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Available_system_variables_chapter'>
+Available system variables
+<a href="https://symontoclay.github.io/docs/spec.html#Available_system_variables_chapter" name="Available_system_variables_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Channel_chapter'>
+Channel
+<a href="https://symontoclay.github.io/docs/spec.html#Channel_chapter" name="Channel_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='Available_system_channels_chapter'>
+Available system channels
+<a href="https://symontoclay.github.io/docs/spec.html#Available_system_channels_chapter" name="Available_system_channels_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Operators_chapter'>
+Operators
+<a href="https://symontoclay.github.io/docs/spec.html#Operators_chapter" name="Operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Assignment_operators_chapter'>
+Assignment operators
+<a href="https://symontoclay.github.io/docs/spec.html#Assignment_operators_chapter" name="Assignment_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='AssignmentOp_chapter'>
+Operator "="
+<a href="https://symontoclay.github.io/docs/spec.html#AssignmentOp_chapter" name="AssignmentOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Member_access_operators_chapter'>
+Member access operators
+<a href="https://symontoclay.github.io/docs/spec.html#Member_access_operators_chapter" name="Member_access_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='PointerOp_chapter'>
+Operator "."
+<a href="https://symontoclay.github.io/docs/spec.html#PointerOp_chapter" name="PointerOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Call_operators_chapter'>
+Call operators
+<a href="https://symontoclay.github.io/docs/spec.html#Call_operators_chapter" name="Call_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='CallOp_chapter'>
+Operator "()"
+<a href="https://symontoclay.github.io/docs/spec.html#CallOp_chapter" name="CallOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Inheritance_operators_chapter'>
+Inheritance operators
+<a href="https://symontoclay.github.io/docs/spec.html#Inheritance_operators_chapter" name="Inheritance_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='IsOp_chapter'>
+Operator "is"
+<a href="https://symontoclay.github.io/docs/spec.html#IsOp_chapter" name="IsOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='UseIsOp_chapter'>
+Operator "use is"
+<a href="https://symontoclay.github.io/docs/spec.html#UseIsOp_chapter" name="UseIsOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Data_source_operators_chapter'>
+Data source operators
+<a href="https://symontoclay.github.io/docs/spec.html#Data_source_operators_chapter" name="Data_source_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='StreamOp_chapter'>
+Operators ">>>" "<<<"
+<a href="https://symontoclay.github.io/docs/spec.html#StreamOp_chapter" name="StreamOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Logic_operators_chapter'>
+Logic operators
+<a href="https://symontoclay.github.io/docs/spec.html#Logic_operators_chapter" name="Logic_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='SelectOp_chapter'>
+select<br>
+Operator "?"
+<a href="https://symontoclay.github.io/docs/spec.html#SelectOp_chapter" name="SelectOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h4 class='center-h' data-href='InsertOp_chapter'>
+insert
+<a href="https://symontoclay.github.io/docs/spec.html#InsertOp_chapter" name="InsertOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h2 class='center-h' data-href='Statements_chapter'>
+Statements
+<a href="https://symontoclay.github.io/docs/spec.html#Statements_chapter" name="Statements_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<h3 class='center-h' data-href='Expression_statement_chapter'>
+Expression statement
+<a href="https://symontoclay.github.io/docs/spec.html#Expression_statement_chapter" name="Expression_statement_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
 </article>
 </div>
 </div>
@@ -43,7 +498,7 @@
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 26 November 2020<br>
+This page was last modified on 27 November 2020<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 </div>

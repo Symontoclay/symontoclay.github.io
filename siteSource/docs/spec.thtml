@@ -1,1 +1,452 @@
 <h1 class='center-h'>Language Specification</h1>
+
+<ContentsPlace/>
+
+<h2 class='center-h' data-href='Introduction_chapter'>
+Introduction
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Notation_chapter'>
+Notation
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Source_code_representation_chapter'>
+Source code representation
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Symbols_chapter'>
+Symbols
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Characters_chapter'>
+Characters
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Letters_and_digits_chapter'>
+Letters and digits
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Kind_of_source_code_files_chapter'>
+Kind of source code files
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='World_source_code_file_chapter'>
+World source code file
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Npc_source_code_file_chapter'>
+Npc source code file
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Host_source_code_file_chapter'>
+Host source code file
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Class_source_code_file_chapter'>
+Class source code file
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Lexical_elements_chapter'>
+Lexical elements
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Comments_chapter'>
+Comments
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Tokens_chapter'>
+Tokens
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Identifiers_chapter'>
+Identifiers
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Keywords_chapter'>
+Keywords
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
+Operators and punctuation
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Integer_literals_chapter'>
+Integer literals
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Floating_point_literals_chapter'>
+Floating-point literals
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='String_literals_chapter'>
+String literals
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Objects_declaration_chapter'>
+Objects declaration
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Class_chapter'>
+Class
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='NPC_chapter'>
+NPC
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='World_chapter'>
+World
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Host_chapter'>
+Host
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Waypoint_chapter'>
+Waypoint
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Fact_chapter'>
+Fact
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_rule_chapter'>
+Logic rule
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Common_objects_parts_chapter'>
+Common objects’ parts
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Inheritance_chapter'>
+Inheritance
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Trigger_chapter'>
+Trigger
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
+Lifecycle triggers
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Expressions_chapter'>
+Expressions
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Constant_expression_chapter'>
+Constant expression
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Variable_chapter'>
+Variable
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='System_variable_chapter'>
+System variable
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Available_system_variables_chapter'>
+Available system variables
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Channel_chapter'>
+Channel
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Available_system_channels_chapter'>
+Available system channels
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Operators_chapter'>
+Operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Assignment_operators_chapter'>
+Assignment operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='AssignmentOp_chapter'>
+Operator "="
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Member_access_operators_chapter'>
+Member access operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='PointerOp_chapter'>
+Operator "."
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Call_operators_chapter'>
+Call operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='CallOp_chapter'>
+Operator "()"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Inheritance_operators_chapter'>
+Inheritance operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='IsOp_chapter'>
+Operator "is"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='UseIsOp_chapter'>
+Operator "use is"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Data_source_operators_chapter'>
+Data source operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='StreamOp_chapter'>
+Operators ">>>" "<<<"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_operators_chapter'>
+Logic operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='SelectOp_chapter'>
+select</br>
+Operator "?"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='InsertOp_chapter'>
+insert
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Statements_chapter'>
+Statements
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Expression_statement_chapter'>
+Expression statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
