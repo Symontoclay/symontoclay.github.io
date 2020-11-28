@@ -181,7 +181,7 @@ Concept identifier
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier;ConstExpr'/> = <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr'/> = <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -205,7 +205,7 @@ Instance identifier
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='InstanceIdentifier' groups='Identifier;Expr'/> = "#" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='InstanceIdentifier' groups='Identifier;TypeIdentifier;ConstExpr'/> = "#" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -223,7 +223,7 @@ Variable identifier
 <complete_me/>
 
 </gr>
-<EBNFCDECL name='VarIdentifier' groups='Identifier;Expr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='VarIdentifier' groups='Identifier;ConstExpr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -243,7 +243,7 @@ System variable identifier
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='SysVarIdentifier' groups='Identifier;Expr'/> = "@@" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='SysVarIdentifier' groups='Identifier;ConstExpr'/> = "@@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -283,7 +283,7 @@ Channel identifier
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ChannelIdentifier' groups='Identifier;Expr'/> = "@&gt;" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='ChannelIdentifier' groups='Identifier;ConstExpr'/> = "@&gt;" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -334,6 +334,7 @@ Integer literals
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='IntegerLiteral' groups='ConstExpr'/> = <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] .
 </gr>
 
 <complete_me/>
@@ -347,6 +348,7 @@ Floating-point literals
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='FloatPointLiteral' groups='ConstExpr'/> = (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) "." (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) .
 </gr>
 
 <complete_me/>
@@ -360,6 +362,7 @@ String literals
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='StringLiteral' groups='ConstExpr'/> = (""" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] """) | ("'" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] "'") .
 </gr>
 
 <complete_me/>
@@ -382,7 +385,11 @@ Class
 
 <gr>
 <EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> =  .
+<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/>
+    "{"<br/>
+	 [ <TEBNFC name='DeclSet' param = 'ClassBodyContent'/> ] <br/>
+	"}" .
+<EBNFCDECL name='ClassBodyContent'/> = <GEBNFC name='ClassBodyContent' kind='op_and'/> .
 </gr>
 
 <complete_me/>
@@ -396,7 +403,12 @@ NPC
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='NPCDecl' groups='NPCSourceCodeFileContent'/> =  .
+<EBNFCDECL name='NPCIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
+<EBNFCDECL name='NPCDecl' groups='NPCSourceCodeFileContent'/> = "npc" <EBNFC name='NPCIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> 
+    "{"<br/>
+	 [ <TEBNFC name='DeclSet' param = 'NPCBodyContent'/> ] <br/>
+	"}" .
+<EBNFCDECL name='NPCBodyContent'/> = [ <GEBNFC name='NPCBodyContent' kind='op_and'/> ] .
 </gr>
 
 <complete_me/>
@@ -410,7 +422,12 @@ World
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='WorldDecl'  groups='WorldSourceCodeFileContent'/> =  .
+<EBNFCDECL name='WorldIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
+<EBNFCDECL name='WorldDecl' groups='WorldSourceCodeFileContent'/> = "world" <EBNFC name='WorldIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> 
+    "{"<br/>
+	 [ <TEBNFC name='DeclSet' param = 'WorldBodyContent'/> ] <br/>
+	"}" .
+<EBNFCDECL name='WorldBodyContent'/> = <GEBNFC name='WorldBodyContent' kind='op_and'/> .
 </gr>
 
 <complete_me/>
@@ -424,7 +441,12 @@ Host
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='HostDecl'  groups='HostSourceCodeFileContent'/> =  .
+<EBNFCDECL name='HostIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
+<EBNFCDECL name='HostDecl' groups='HostSourceCodeFileContent'/> = "host" <EBNFC name='HostIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> 
+    "{"<br/>
+	 [ <TEBNFC name='DeclSet' param = 'HostBodyContent'/> ] <br/>
+	"}" .
+<EBNFCDECL name='HostBodyContent'/> = <GEBNFC name='HostBodyContent' kind='op_and'/> .
 </gr>
 
 <complete_me/>
@@ -446,7 +468,7 @@ Fact
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl'/> =  .
 </gr>
 
@@ -461,7 +483,7 @@ Logic rule
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> =  .
 </gr>
 
@@ -483,6 +505,13 @@ Inheritance
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='InheritanceDecl'/> = "is" <EBNFC name='InheritanceDeclItem'/> [ { "," <EBNFC name='InheritanceDeclItem'/> } ] .
+<EBNFCDECL name='InheritanceDeclItem'/> =  .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
 </h3>
@@ -492,6 +521,10 @@ Trigger
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" <EBNFC name='LifecycleTriggerIdentifier'/> "=>" <br/>
+    "{" <br/>
+	<EBNFC name='StatementsSet'/> <br/>
+    "}" .
 </gr>
 
 <complete_me/>
@@ -504,11 +537,23 @@ Lifecycle triggers
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='LifecycleTriggerIdentifier'/> = <GEBNFC name='LifecycleTriggerIdentifier' kind='or' /> .
+</gr>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Init_Lifecycle_trigger_chapter'>
 Init
 </h5>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='InitLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Init" .
+</gr>
 
 <complete_me/>
 
@@ -817,7 +862,7 @@ Expression statement
     <TEBNFCDECL name='BaseIdentifier'>
 	    (( <EBNFC name='Letter'/> { <EBNFC name='Letter'/> | <EBNFC name='DecimalDigit'/> } ) | ( "`" { <EBNFC name='UnicodeChar'/> } "`"))
 	</TEBNFCDECL>
-
+	
 	<TEBNFCDECL name="DeclSet" param='_ExprType'>
 	    <EBNFC name='_ExprType'/> [{ <EBNFC name='_ExprType'/> }]
 	</TEBNFCDECL>
