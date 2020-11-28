@@ -8,7 +8,7 @@ Hello world!
 
 <LinkToContent/>
 
-<code data-lng="soc">
+<code data-lng='soc'>
 npc PeaceKeeper
 {
     on Init => {
@@ -38,7 +38,7 @@ Single line comment
 
 <LinkToContent/>
 
-<code data-lng="soc">
+<code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => {

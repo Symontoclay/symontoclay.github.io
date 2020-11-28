@@ -42,11 +42,25 @@ Characters
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='Newline'/> = /* the Unicode code point U+000A */ .
+<EBNFCDECL name='UnicodeChar'/> = /* an arbitrary Unicode code point except <EBNFC name='Newline'/> */ .
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Letters_and_digits_chapter'>
 Letters and digits
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='Letter'/> = "A" ... "Z" | "a" ... "z" | "_" .
+<EBNFCDECL name='DecimalDigit'/> = "0" … "9" .
+</gr>
 
 <complete_me/>
 
@@ -58,6 +72,12 @@ Kind of source code files
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='SourceCodeFileContent'/> = <GEBNFC name='SourceCodeFileContent' kind='or'/> .
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='World_source_code_file_chapter'>
 World source code file
 </h4>
@@ -66,11 +86,23 @@ World source code file
 
 <complete_me/>
 
-<h4 class='center-h' data-href='Npc_source_code_file_chapter'>
-Npc source code file
+<gr>
+<EBNFCDECL name='WorldSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='WorldSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='NPC_source_code_file_chapter'>
+NPC source code file
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='NPCSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='NPCSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
+</gr>
 
 <complete_me/>
 
@@ -82,11 +114,23 @@ Host source code file
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='HostSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='HostSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Class_source_code_file_chapter'>
 Class source code file
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ClassSourceCodeFileContent' groups='SourceCodeFileContent'/> = <GEBNFC name='ClassSourceCodeFileContent' kind='op_and'/> .
+</gr>
 
 <complete_me/>
 
@@ -122,11 +166,154 @@ Identifiers
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='Identifier'/> = <GEBNFC name='Identifier' kind='or' /> .
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='ConceptIdentifier_chapter'>
+Concept identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;ConstExpr'/> = <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<code data-lng='soc'>
+a
+_a
+a2
+aB
+ab_1
+Great_Britain
+`Great Britain`
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='InstanceIdentifier_chapter'>
+Instance identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='InstanceIdentifier' groups='Identifier;Expr'/> = "#" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+#123
+</code>
+
+<h4 class='center-h' data-href='VarIdentifier_chapter'>
+Variable identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+</gr>
+<EBNFCDECL name='VarIdentifier' groups='Identifier;Expr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+@a
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='SysVarIdentifier_chapter'>
+System variable identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='SysVarIdentifier' groups='Identifier;Expr'/> = "@@" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+@@host
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='QueryVarIdentifier_chapter'>
+Query variable identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='QueryVarIdentifier' groups='Identifier'/> = "?" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+?x
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='ChannelIdentifier_chapter'>
+Channel identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ChannelIdentifier' groups='Identifier;Expr'/> = "@&gt;" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+@>log
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Keywords_chapter'>
 Keywords
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<keywords cols='4'>
+    <kw name='npc'/>
+	<kw name='class'/>
+	<kw name='world'/>
+	<kw name='host'/>
+	<kw name='is'/>
+	<kw name='on'/>
+	<kw name='use'/>
+	<kw name='not'/>
+	<kw name='select'/>
+	<kw name='insert'/>
+</keywords>
 
 <complete_me/>
 
@@ -146,6 +333,11 @@ Integer literals
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Floating_point_literals_chapter'>
 Floating-point literals
 </h3>
@@ -154,11 +346,21 @@ Floating-point literals
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='String_literals_chapter'>
 String literals
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+</gr>
 
 <complete_me/>
 
@@ -178,11 +380,24 @@ Class
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
+<EBNFCDECL name='ClassDecl'/> =  .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='NPC_chapter'>
 NPC
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='NPCDecl' groups='NPCSourceCodeFileContent'/> =  .
+</gr>
 
 <complete_me/>
 
@@ -194,11 +409,23 @@ World
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='WorldDecl'  groups='WorldSourceCodeFileContent'/> =  .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Host_chapter'>
 Host
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='HostDecl'  groups='HostSourceCodeFileContent'/> =  .
+</gr>
 
 <complete_me/>
 
@@ -218,11 +445,25 @@ Fact
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDecl'/> =  .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Logic_rule_chapter'>
 Logic rule
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDecl'/> =  .
+</gr>
 
 <complete_me/>
 
@@ -250,6 +491,11 @@ Trigger
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
 Lifecycle triggers
 </h4>
@@ -266,11 +512,23 @@ Expressions
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='Expr'/> = <GEBNFC name='Expr' kind='or'/> .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Constant_expression_chapter'>
 Constant expression
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ConstExpr' groups='Expr'/> = <GEBNFC name='ConstExpr' kind='or'/> .
+</gr>
 
 <complete_me/>
 
@@ -282,6 +540,11 @@ Variable
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='System_variable_chapter'>
 System variable
 </h3>
@@ -290,9 +553,30 @@ System variable
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Available_system_variables_chapter'>
 Available system variables
 </h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Self_system_variable_chapter'>
+@@self
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Host_system_variable_chapter'>
+@@host
+</h5>
 
 <LinkToContent/>
 
@@ -306,9 +590,22 @@ Channel
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Available_system_channels_chapter'>
 Available system channels
 </h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Log_system_channel_chapter'>
+@>log
+</h5>
 
 <LinkToContent/>
 
@@ -338,6 +635,11 @@ Operator "="
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
 </h3>
@@ -351,6 +653,11 @@ Operator "."
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+</gr>
 
 <complete_me/>
 
@@ -370,6 +677,11 @@ Operator "()"
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Inheritance_operators_chapter'>
 Inheritance operators
 </h3>
@@ -386,11 +698,21 @@ Operator "is"
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='UseIsOp_chapter'>
 Operator "use is"
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+</gr>
 
 <complete_me/>
 
@@ -407,6 +729,11 @@ Operators ">>>" "<<<"
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+</gr>
 
 <complete_me/>
 
@@ -427,11 +754,21 @@ Operator "?"
 
 <complete_me/>
 
+<gr>
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+</gr>
 
 <complete_me/>
 
@@ -443,6 +780,13 @@ Statements
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='StatementsSet'/> = <TEBNFC name='DeclSet' param = 'Statement'/> .
+<EBNFCDECL name='Statement'/> = <GEBNFC name='Statement' kind='or' /> .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Expression_statement_chapter'>
 Expression statement
 </h3>
@@ -450,3 +794,23 @@ Expression statement
 <LinkToContent/>
 
 <complete_me/>
+
+<gr>
+<EBNFCDECL name='ExpressionStatement' groups='Statement'/> = <EBNFC name='Expr'/> ";" .
+</gr>
+
+<complete_me/>
+
+<p>
+	&nbsp;
+</p>
+
+<div class='templates'>
+    <TEBNFCDECL name='BaseIdentifier'>
+	    (( <EBNFC name='Letter'/> { <EBNFC name='Letter'/> | <EBNFC name='DecimalDigit'/> } ) | ( "`" { <EBNFC name='UnicodeChar'/> } "`"))
+	</TEBNFCDECL>
+
+	<TEBNFCDECL name="DeclSet" param='_ExprType'>
+	    <EBNFC name='_ExprType'/> [{ <EBNFC name='_ExprType'/> }]
+	</TEBNFCDECL>
+</div>
