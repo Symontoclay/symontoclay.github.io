@@ -263,7 +263,7 @@ Query variable identifier
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='QueryVarIdentifier' groups='Identifier'/> = "?" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='QuestionVarIdentifier' groups='Identifier'/> = "?" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -354,7 +354,7 @@ Integer literals
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='IntegerLiteral' groups='ConstExpr'/> = <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] .
+<EBNFCDECL name='IntegerLiteral' groups='NumberExpr'/> = <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] .
 </gr>
 
 <complete_me/>
@@ -368,7 +368,7 @@ Floating-point literals
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='FloatPointLiteral' groups='ConstExpr'/> = (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) "." (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) .
+<EBNFCDECL name='FloatPointLiteral' groups='NumberExpr'/> = (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) "." (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) .
 </gr>
 
 <complete_me/>
@@ -476,6 +476,20 @@ Waypoint
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='WaypointDecl' groups='Expr'/> = "#@" "[" <EBNFC name='WaypointDistance'/> "," <EBNFC name='WaypointAngleInDegrees'/> "]" .
+<EBNFCDECL name='WaypointDistance'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='WaypointAngleInDegrees'/> = <EBNFC name='NumberExpr'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+#@[25, 30]
+</code>
 
 <complete_me/>
 
@@ -611,6 +625,7 @@ Constant expression
 
 <gr>
 <EBNFCDECL name='ConstExpr' groups='Expr'/> = <GEBNFC name='ConstExpr' kind='or'/> .
+<EBNFCDECL name='NumberExpr' groups='ConstExpr'/> = <GEBNFC name='NumberExpr' kind='or'/> .
 </gr>
 
 <complete_me/>
@@ -766,6 +781,9 @@ Operator "()"
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" <EBNFC name='NamedParamsOfCallOpExprSet'/> ")" .
+<EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
+<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  <EBNFC name='ConceptIdentifier'/> ":" <EBNFC name='Expr'/> .
 </gr>
 
 <complete_me/>
@@ -848,6 +866,12 @@ Operator "?"
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='SelectOpExpr' groups='Expr'/> = ( "select" | "?" ) ( <EBNFC name='FactDecl'/> | <EBNFC name='SelectQuery'/> ) .
+<EBNFCDECL name='SelectQuery'/> = "{:" ( <EBNFC name='SelectQuerySection'/> | <EBNFC name='SelectQuerySentence'/> ) ":}" .
+<EBNFCDECL name='SelectQuerySection'/> = ">:" "{" <EBNFC name='SelectQuerySentence'/> "}" .
+<EBNFCDECL name='SelectQuerySentence'/> = <EBNFC name='SelectQueryPredicate'/> .
+<EBNFCDECL name='SelectQueryPredicate'/> = ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='QuestionVarIdentifier'/> ) "(" <EBNFC name='SelectQueryPredicateParam'/> [ { "," <EBNFC name='SelectQueryPredicateParam'/> } ] ")" .
+<EBNFCDECL name='SelectQueryPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='QuestionVarIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -921,7 +945,7 @@ Expression statement
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='InheritanceDeclItem'>
-	    [ "[" ( <EBNFC name='IntegerLiteral'/> | <EBNFC name='FloatPointLiteral'/> ) "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
+	    [ "[" <EBNFC name='NumberExpr'/> "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='IsOpExprBody'>
