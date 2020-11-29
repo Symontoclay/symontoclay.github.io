@@ -343,6 +343,24 @@ Operators and punctuation
 
 <LinkToContent/>
 
+<items cols='4'>
+    <item value='?'/>
+	<item value='='/>
+	<item value='>>'/>
+	<item value='<<'/>
+	<item value='=>'/>
+	<item value=':'/>
+	<item value=';'/>
+	<item value=','/>
+	<item value='('/>
+	<item value=')'/>
+	<item value='['/>
+	<item value=']'/>
+	<item value='{'/>
+	<item value='}'/>
+</items>
+
+
 <complete_me/>
 
 <h3 class='center-h' data-href='Integer_literals_chapter'>
