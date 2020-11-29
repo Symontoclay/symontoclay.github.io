@@ -274,6 +274,26 @@ Query variable identifier
 
 <complete_me/>
 
+<h4 class='center-h' data-href='LogicSentenceVarIdentifier_chapter'>
+Logic setence variable identifier
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LogicSentenceVarIdentifier' groups='Identifier'/> = "$" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+$x
+</code>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='ChannelIdentifier_chapter'>
 Channel identifier
 </h4>
@@ -469,7 +489,11 @@ Fact
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl'/> =  .
+<EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
+<EBNFCDECL name='FactSection'/> = ">:" "{" <EBNFC name='FactSentence'/> "}" .
+<EBNFCDECL name='FactSentence'/> = <EBNFC name='FactPredicate'/> .
+<EBNFCDECL name='FactPredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='FactPredicateParam'/> [ { "," <EBNFC name='FactPredicateParam'/> } ] ")" .
+<EBNFCDECL name='FactPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
 </gr>
 
 <complete_me/>
@@ -484,7 +508,13 @@ Logic rule
 
 <gr>
 <EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
-<EBNFCDECL name='LogicRuleDecl'/> =  .
+<EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
+<EBNFCDECL name='LogicRulePrimarySection'/> = ">:" "{" <EBNFC name='LogicRuleSentence'/> "}" .
+<EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
+<EBNFCDECL name='ImplicationSymbol'/> = "->" .
+<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { "&" <EBNFC name='LogicRulePredicate'/> } ] .
+<EBNFCDECL name='LogicRulePredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='LogicRulePredicateParam'/> [ { "," <EBNFC name='LogicRulePredicateParam'/> } ] ")" .
+<EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicSentenceVarIdentifier'/> .
 </gr>
 
 <complete_me/>
