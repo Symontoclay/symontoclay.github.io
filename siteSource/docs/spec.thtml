@@ -283,7 +283,7 @@ Channel identifier
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ChannelIdentifier' groups='Identifier;ConstExpr'/> = "@&gt;" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='ChannelIdentifier' groups='Identifier;ConstExpr'/> = "@>" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -507,7 +507,7 @@ Inheritance
 
 <gr>
 <EBNFCDECL name='InheritanceDecl'/> = "is" <EBNFC name='InheritanceDeclItem'/> [ { "," <EBNFC name='InheritanceDeclItem'/> } ] .
-<EBNFCDECL name='InheritanceDeclItem'/> =  .
+<EBNFCDECL name='InheritanceDeclItem'/> = <TEBNFC name='InheritanceDeclItem'/> .
 </gr>
 
 <complete_me/>
@@ -594,6 +594,7 @@ Variable
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='VarExpr' groups='Expr'/> = <EBNFC name='VarIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -607,6 +608,7 @@ System variable
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='SysVarExpr' groups='Expr'/> = <EBNFC name='SysVarIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -644,6 +646,7 @@ Channel
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='ChannelExpr' groups='Expr'/> = <EBNFC name='ChannelIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -689,6 +692,7 @@ Operator "="
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='AssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '='/> .
 </gr>
 
 <complete_me/>
@@ -710,6 +714,7 @@ Operator "."
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='PointerOpExpr' groups='Expr' /> = <TEBNFC name='BinaryOp' param = '.'/> .
 </gr>
 
 <complete_me/>
@@ -752,6 +757,7 @@ Operator "is"
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
 </gr>
 
 <complete_me/>
@@ -765,6 +771,7 @@ Operator "use is"
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='UseIsOpExpr' groups='Expr'/> = "use" <TEBNFC name='IsOpExprBody'/> .
 </gr>
 
 <complete_me/>
@@ -778,7 +785,7 @@ Data source operators
 <complete_me/>
 
 <h4 class='center-h' data-href='StreamOp_chapter'>
-Operators ">>>" "<<<"
+Operators ">>" "<<"
 </h4>
 
 <LinkToContent/>
@@ -786,6 +793,9 @@ Operators ">>>" "<<<"
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='SourceOfStreamOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='DestOfStreamOpExpr'/> = <EBNFC name='Expr'/> .
+<EBNFCDECL name='StreamOpExpr' groups='Expr'/> = ( <EBNFC name='SourceOfStreamOpExpr'/> ">>" <EBNFC name='DestOfStreamOpExpr'/> ) | ( <EBNFC name='DestOfStreamOpExpr'/> "<<" <EBNFC name='SourceOfStreamOpExpr'/> ) .
 </gr>
 
 <complete_me/>
@@ -821,6 +831,7 @@ insert
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='InsertOpExpr' groups='Expr'/> = "insert" <EBNFC name='FactDecl'/> .
 </gr>
 
 <complete_me/>
@@ -863,7 +874,27 @@ Expression statement
 	    (( <EBNFC name='Letter'/> { <EBNFC name='Letter'/> | <EBNFC name='DecimalDigit'/> } ) | ( "`" { <EBNFC name='UnicodeChar'/> } "`"))
 	</TEBNFCDECL>
 	
-	<TEBNFCDECL name="DeclSet" param='_ExprType'>
+	<TEBNFCDECL name='DeclSet' param='_ExprType'>
 	    <EBNFC name='_ExprType'/> [{ <EBNFC name='_ExprType'/> }]
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='BinaryOp' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='BinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='Expr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='BinaryOp_base' param='_OpLiteral' param2='_ExpType'>
+	    _ExpType _OpLiteral _ExpType
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='InheritanceDeclItem'>
+	    [ "[" ( <EBNFC name='IntegerLiteral'/> | <EBNFC name='FloatPointLiteral'/> ) "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='IsOpExprBody'>
+	    ( <GEBNFC name='TypeIdentifier' kind='or'/> ) "is" [ "not" ] <TEBNFC name='InheritanceDeclItem'/>
 	</TEBNFCDECL>
 </div>
