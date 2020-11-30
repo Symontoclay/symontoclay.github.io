@@ -677,10 +677,7 @@ Trigger
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" <EBNFC name='LifecycleTriggerIdentifier'/> "=>" <br/>
-    "{" <br/>
-	<EBNFC name='StatementsSet'/> <br/>
-    "}" .
+<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" <EBNFC name='LifecycleTriggerIdentifier'/> "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <complete_me/>
@@ -835,12 +832,12 @@ Operators
 <p>
 <table class='std-table' style='width: 400px;' border='1' cellspacing='0'>
     <tr>
-	    <th>Precedence</th>
-		<th>Operators</th>
-		<th>Associativity</th>
+	    <th class='center-h'>Precedence</th>
+		<th class='center-h'>Operators</th>
+		<th class='center-h'>Associativity</th>
     </tr>
 	<tr>
-	    <th rowspan='5'>
+	    <th rowspan='5' class='center-h'>
 		2
 		<p><small>highest</small></p>
 		</th>
@@ -860,7 +857,7 @@ Operators
 	    <td>insert</td>
 	</tr>
 	<tr>
-	    <th rowspan='3'>10</th>
+	    <th rowspan='3' class='center-h'>10</th>
 	    <td>is</td>
 	    <td rowspan='3'>Left-to-right</td>
 	</tr>
@@ -871,22 +868,22 @@ Operators
 	    <td>use is</td>
 	</tr>
 	<tr>
-	    <th>14</th>
+	    <th class='center-h'>14</th>
 	    <td>&amp;</td>
 		<td>Left-to-right</td>
 	</tr>
 	<tr>
-	    <th>15</th>
+	    <th class='center-h'>15</th>
 	    <td>&gt;&gt;</td>
 	    <td>Left-to-right</td>
 	</tr>
 	<tr>
-	    <th>16</th>
+	    <th class='center-h'>16</th>
 	    <td>=</td>
 	    <td>Right-to-left</td>
 	</tr>
 	<tr>
-	    <th>17</th>
+	    <th class='center-h'>17</th>
 	    <td>,</td>
 	    <td>Left-to-right</td>
 	</tr>	

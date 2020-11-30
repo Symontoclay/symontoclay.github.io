@@ -6,29 +6,29 @@
 <meta property='og:type' content='article'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta property='og:title' content='Language Specification'>
-<meta property='og:url' content='http://localhost/docs/spec.html'>
+<meta property='og:url' content='https://symontoclay.github.io/docs/spec.html'>
 <meta name='description' content='Language Specification of SymOntoClay' s="" dsl'="">
 <title>SymOntoClay - Language Specification</title>
-<link rel='icon' href='http://localhost/favicon.png' type='image/png'>
+<link rel='icon' href='https://symontoclay.github.io/favicon.png' type='image/png'>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous'>
 <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx' crossorigin='anonymous'></script>
-<script src='http://localhost/assets/fontawesome_5.15.1/all.js'></script>
-<script src='http://localhost/assets/rainbow-custom.min.js'></script>
-<link rel='stylesheet' href='http://localhost/site.css'>
+<script src='https://symontoclay.github.io/assets/fontawesome_5.15.1/all.js'></script>
+<script src='https://symontoclay.github.io/assets/rainbow-custom.min.js'></script>
+<link rel='stylesheet' href='https://symontoclay.github.io/site.css'>
 </head>
 <body>
 <div class='container main-container'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
 <header role='banner'>
-<p><a href='http://localhost/'><img src='http://localhost/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>is game AI experimental open source engine.</span></p>
+<p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>is game AI experimental open source engine.</span></p>
 </header>
 <nav role='navigation'>
-<a href='http://localhost/index.html'>Main</a>&nbsp;|&nbsp;<a href='http://localhost/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='http://localhost/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='http://localhost/dev/index.html'>Developing</a>&nbsp;|&nbsp;<a href='http://localhost/contact_me.html'>Contact me</a></nav>
+<a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Developing</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/contact_me.html'>Contact me</a></nav>
 <hr style='border-bottom-color: #e2e2e2;'>
 <nav class='bread-crumb-nav'>
-<a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='http://localhost/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='http://localhost/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>Language Specification</a></nav>
+<a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>Language Specification</a></nav>
 </div>
 </div>
 <div class='row justify-content-center'>
@@ -37,15 +37,15 @@
 <h1 class='center-h'>Language Specification</h1>
 
 <h2 class="center-h">    Contens
-    <a href='http://localhost/docs/spec.html#Contents' name='Contents' class='permalink' title='The link to the section'>
+    <a href='https://symontoclay.github.io/docs/spec.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="http://localhost/docs/spec.html#Introduction_chapter">Introduction</a></li><li><a href="http://localhost/docs/spec.html#Notation_chapter">Notation</a></li><li><a href="http://localhost/docs/spec.html#Source_code_representation_chapter">Source code representation</a><ul><li><a href="http://localhost/docs/spec.html#Symbols_chapter">Symbols</a><ul><li><a href="http://localhost/docs/spec.html#Characters_chapter">Characters</a></li><li><a href="http://localhost/docs/spec.html#Letters_and_digits_chapter">Letters and digits</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Kind_of_source_code_files_chapter">Kind of source code files</a><ul><li><a href="http://localhost/docs/spec.html#World_source_code_file_chapter">World source code file</a></li><li><a href="http://localhost/docs/spec.html#NPC_source_code_file_chapter">NPC source code file</a></li><li><a href="http://localhost/docs/spec.html#Host_source_code_file_chapter">Host source code file</a></li><li><a href="http://localhost/docs/spec.html#Class_source_code_file_chapter">Class source code file</a></li></ul></li></ul></li><li><a href="http://localhost/docs/spec.html#Lexical_elements_chapter">Lexical elements</a><ul><li><a href="http://localhost/docs/spec.html#Comments_chapter">Comments</a></li><li><a href="http://localhost/docs/spec.html#Tokens_chapter">Tokens</a></li><li><a href="http://localhost/docs/spec.html#Identifiers_chapter">Identifiers</a><ul><li><a href="http://localhost/docs/spec.html#ConceptIdentifier_chapter">Concept identifier</a></li><li><a href="http://localhost/docs/spec.html#InstanceIdentifier_chapter">Instance identifier</a></li><li><a href="http://localhost/docs/spec.html#VarIdentifier_chapter">Variable identifier</a></li><li><a href="http://localhost/docs/spec.html#SysVarIdentifier_chapter">System variable identifier</a></li><li><a href="http://localhost/docs/spec.html#QuestionVarIdentifier_chapter">Question variable identifier</a></li><li><a href="http://localhost/docs/spec.html#LogicRuleVarIdentifier_chapter">Logic rule variable identifier</a></li><li><a href="http://localhost/docs/spec.html#ChannelIdentifier_chapter">Channel identifier</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Keywords_chapter">Keywords</a></li><li><a href="http://localhost/docs/spec.html#Operators_and_punctuation_chapter">Operators and punctuation</a></li><li><a href="http://localhost/docs/spec.html#Integer_literals_chapter">Integer literals</a></li><li><a href="http://localhost/docs/spec.html#Floating_point_literals_chapter">Floating-point literals</a></li><li><a href="http://localhost/docs/spec.html#String_literals_chapter">String literals</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Objects_declaration_chapter">Objects declaration</a><ul><li><a href="http://localhost/docs/spec.html#Class_chapter">Class</a></li><li><a href="http://localhost/docs/spec.html#NPC_chapter">NPC</a></li><li><a href="http://localhost/docs/spec.html#World_chapter">World</a></li><li><a href="http://localhost/docs/spec.html#Host_chapter">Host</a></li><li><a href="http://localhost/docs/spec.html#Waypoint_chapter">Waypoint</a></li><li><a href="http://localhost/docs/spec.html#Fact_chapter">Fact</a></li><li><a href="http://localhost/docs/spec.html#Logic_rule_chapter">Logic rule</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Common_objects_parts_chapter">Common objects’ parts</a><ul><li><a href="http://localhost/docs/spec.html#Inheritance_chapter">Inheritance</a></li><li><a href="http://localhost/docs/spec.html#Trigger_chapter">Trigger</a><ul><li><a href="http://localhost/docs/spec.html#Lifecycle_triggers_chapter">Lifecycle triggers</a><ul><li><a href="http://localhost/docs/spec.html#Init_Lifecycle_trigger_chapter">Init</a></li></ul></li></ul></li></ul></li><li><a href="http://localhost/docs/spec.html#Expressions_chapter">Expressions</a><ul><li><a href="http://localhost/docs/spec.html#Constant_expression_chapter">Constant expression</a></li><li><a href="http://localhost/docs/spec.html#Variable_chapter">Variable</a></li><li><a href="http://localhost/docs/spec.html#System_variable_chapter">System variable</a><ul><li><a href="http://localhost/docs/spec.html#Available_system_variables_chapter">Available system variables</a><ul><li><a href="http://localhost/docs/spec.html#Self_system_variable_chapter">@@self</a></li><li><a href="http://localhost/docs/spec.html#Host_system_variable_chapter">@@host</a></li></ul></li></ul></li><li><a href="http://localhost/docs/spec.html#Channel_chapter">Channel</a><ul><li><a href="http://localhost/docs/spec.html#Available_system_channels_chapter">Available system channels</a><ul><li><a href="http://localhost/docs/spec.html#Log_system_channel_chapter">@>log</a></li></ul></li></ul></li><li><a href="http://localhost/docs/spec.html#Operators_chapter">Operators</a></li><li><a href="http://localhost/docs/spec.html#Assignment_operators_chapter">Assignment operators</a><ul><li><a href="http://localhost/docs/spec.html#AssignmentOp_chapter">Operator "="</a></li></ul></li><li><a href="http://localhost/docs/spec.html#LogicOp_chapter">Logic operators</a><ul><li><a href="http://localhost/docs/spec.html#AndOp_chapter">Operator "&"</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Member_access_operators_chapter">Member access operators</a><ul><li><a href="http://localhost/docs/spec.html#PointerOp_chapter">Operator "."</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Call_operators_chapter">Call operators</a><ul><li><a href="http://localhost/docs/spec.html#CallOp_chapter">Operator "()"</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Inheritance_operators_chapter">Inheritance operators</a><ul><li><a href="http://localhost/docs/spec.html#IsOp_chapter">Operator "is"</a></li><li><a href="http://localhost/docs/spec.html#UseIsOp_chapter">Operator "use is"</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Stream_operators_chapter">Stream operators</a><ul><li><a href="http://localhost/docs/spec.html#StreamOp_chapter">Operator ">>"</a></li></ul></li><li><a href="http://localhost/docs/spec.html#Logic_operators_chapter">Logic operators</a><ul><li><a href="http://localhost/docs/spec.html#SelectOp_chapter">select (Operator "?")</a></li><li><a href="http://localhost/docs/spec.html#InsertOp_chapter">insert</a></li></ul></li></ul></li><li><a href="http://localhost/docs/spec.html#Statements_chapter">Statements</a><ul><li><a href="http://localhost/docs/spec.html#Expression_statement_chapter">Expression statement</a></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Introduction_chapter">Introduction</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Notation_chapter">Notation</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Source_code_representation_chapter">Source code representation</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Symbols_chapter">Symbols</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Characters_chapter">Characters</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Letters_and_digits_chapter">Letters and digits</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Kind_of_source_code_files_chapter">Kind of source code files</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#World_source_code_file_chapter">World source code file</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#NPC_source_code_file_chapter">NPC source code file</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Host_source_code_file_chapter">Host source code file</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Class_source_code_file_chapter">Class source code file</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Lexical_elements_chapter">Lexical elements</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Comments_chapter">Comments</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Tokens_chapter">Tokens</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Identifiers_chapter">Identifiers</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier_chapter">Concept identifier</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier_chapter">Instance identifier</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#VarIdentifier_chapter">Variable identifier</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#SysVarIdentifier_chapter">System variable identifier</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#QuestionVarIdentifier_chapter">Question variable identifier</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#LogicRuleVarIdentifier_chapter">Logic rule variable identifier</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#ChannelIdentifier_chapter">Channel identifier</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Keywords_chapter">Keywords</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Operators_and_punctuation_chapter">Operators and punctuation</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Integer_literals_chapter">Integer literals</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Floating_point_literals_chapter">Floating-point literals</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#String_literals_chapter">String literals</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Objects_declaration_chapter">Objects declaration</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Class_chapter">Class</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#NPC_chapter">NPC</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#World_chapter">World</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Host_chapter">Host</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Waypoint_chapter">Waypoint</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Fact_chapter">Fact</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Logic_rule_chapter">Logic rule</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Common_objects_parts_chapter">Common objects’ parts</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Inheritance_chapter">Inheritance</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Trigger_chapter">Trigger</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Lifecycle_triggers_chapter">Lifecycle triggers</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Init_Lifecycle_trigger_chapter">Init</a></li></ul></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Expressions_chapter">Expressions</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Constant_expression_chapter">Constant expression</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Variable_chapter">Variable</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#System_variable_chapter">System variable</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Available_system_variables_chapter">Available system variables</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Self_system_variable_chapter">@@self</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Host_system_variable_chapter">@@host</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Channel_chapter">Channel</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Available_system_channels_chapter">Available system channels</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Log_system_channel_chapter">@>log</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Operators_chapter">Operators</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#Assignment_operators_chapter">Assignment operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#AssignmentOp_chapter">Operator "="</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#LogicOp_chapter">Logic operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#AndOp_chapter">Operator "&"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Member_access_operators_chapter">Member access operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#PointerOp_chapter">Operator "."</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Call_operators_chapter">Call operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#CallOp_chapter">Operator "()"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Inheritance_operators_chapter">Inheritance operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#IsOp_chapter">Operator "is"</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#UseIsOp_chapter">Operator "use is"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Stream_operators_chapter">Stream operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#StreamOp_chapter">Operator ">>"</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Logic_operators_chapter">Logic operators</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#SelectOp_chapter">select (Operator "?")</a></li><li><a href="https://symontoclay.github.io/docs/spec.html#InsertOp_chapter">insert</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/spec.html#Statements_chapter">Statements</a><ul><li><a href="https://symontoclay.github.io/docs/spec.html#Expression_statement_chapter">Expression statement</a></li></ul></li></ul>
 
 <h2 class='center-h' data-href='Introduction_chapter'>
 Introduction
-<a href="http://localhost/docs/spec.html#Introduction_chapter" name="Introduction_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Introduction_chapter" name="Introduction_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 This is manual for SymOntoClay DSL.
@@ -64,9 +64,9 @@ I will try to do this as soon as possible.
 
 <h2 class='center-h' data-href='Notation_chapter'>
 Notation
-<a href="http://localhost/docs/spec.html#Notation_chapter" name="Notation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Notation_chapter" name="Notation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 The syntax is specified using <i class="fab fa-wikipedia-w" title="Wikipedia"></i><a href='https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form'>Extended Backus-Naur Form (EBNF)</a>.
@@ -74,9 +74,9 @@ The syntax is specified using <i class="fab fa-wikipedia-w" title="Wikipedia"></
 
 <h2 class='center-h' data-href='Source_code_representation_chapter'>
 Source code representation
-<a href="http://localhost/docs/spec.html#Source_code_representation_chapter" name="Source_code_representation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Source_code_representation_chapter" name="Source_code_representation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 Source code is Unicode text encoded in <i class="fab fa-wikipedia-w" title="Wikipedia"></i><a href='https://en.wikipedia.org/wiki/UTF-8'>UTF-8</a>.
@@ -84,49 +84,49 @@ Source code is Unicode text encoded in <i class="fab fa-wikipedia-w" title="Wiki
 
 <h3 class='center-h' data-href='Symbols_chapter'>
 Symbols
-<a href="http://localhost/docs/spec.html#Symbols_chapter" name="Symbols_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Symbols_chapter" name="Symbols_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <h4 class='center-h' data-href='Characters_chapter'>
 Characters
-<a href="http://localhost/docs/spec.html#Characters_chapter" name="Characters_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Characters_chapter" name="Characters_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Newline" ebnf-kind="decl" href="http://localhost/docs/spec.html#Newline" name="Newline">Newline</a> = /* the Unicode code point U+000A */ .</div><div class="ebnf-code-item"><a ebnf-type="UnicodeChar" ebnf-kind="decl" href="http://localhost/docs/spec.html#UnicodeChar" name="UnicodeChar">UnicodeChar</a> = /* an arbitrary Unicode code point except <a ebnf-type="Newline" ebnf-kind="use" href="http://localhost/docs/spec.html#Newline">Newline</a> */ .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Newline" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#Newline" name="Newline">Newline</a> = /* the Unicode code point U+000A */ .</div><div class="ebnf-code-item"><a ebnf-type="UnicodeChar" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar" name="UnicodeChar">UnicodeChar</a> = /* an arbitrary Unicode code point except <a ebnf-type="Newline" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Newline">Newline</a> */ .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Letters_and_digits_chapter'>
 Letters and digits
-<a href="http://localhost/docs/spec.html#Letters_and_digits_chapter" name="Letters_and_digits_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Letters_and_digits_chapter" name="Letters_and_digits_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 The underscore character _ (U+005F) is considered a letter.
 </p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Letter" ebnf-kind="decl" href="http://localhost/docs/spec.html#Letter" name="Letter">Letter</a> = "A" ... "Z" | "a" ... "z" | "_" .</div><div class="ebnf-code-item"><a ebnf-type="DecimalDigit" ebnf-kind="decl" href="http://localhost/docs/spec.html#DecimalDigit" name="DecimalDigit">DecimalDigit</a> = "0" … "9" .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Letter" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#Letter" name="Letter">Letter</a> = "A" ... "Z" | "a" ... "z" | "_" .</div><div class="ebnf-code-item"><a ebnf-type="DecimalDigit" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit" name="DecimalDigit">DecimalDigit</a> = "0" … "9" .</div></div>
 
 <h3 class='center-h' data-href='Kind_of_source_code_files_chapter'>
 Kind of source code files
-<a href="http://localhost/docs/spec.html#Kind_of_source_code_files_chapter" name="Kind_of_source_code_files_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Kind_of_source_code_files_chapter" name="Kind_of_source_code_files_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 There are different kinds of source code files which can contain different elements.
 </p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SourceCodeFileContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#SourceCodeFileContent" name="SourceCodeFileContent">SourceCodeFileContent</a> = <a ebnf-type="WorldSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#WorldSourceCodeFileContent">WorldSourceCodeFileContent</a> | <a ebnf-type="NPCSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#NPCSourceCodeFileContent">NPCSourceCodeFileContent</a> | <a ebnf-type="HostSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#HostSourceCodeFileContent">HostSourceCodeFileContent</a> | <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SourceCodeFileContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SourceCodeFileContent" name="SourceCodeFileContent">SourceCodeFileContent</a> = <a ebnf-type="WorldSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WorldSourceCodeFileContent">WorldSourceCodeFileContent</a> | <a ebnf-type="NPCSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NPCSourceCodeFileContent">NPCSourceCodeFileContent</a> | <a ebnf-type="HostSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#HostSourceCodeFileContent">HostSourceCodeFileContent</a> | <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> .</div></div>
 
 <h4 class='center-h' data-href='World_source_code_file_chapter'>
 World source code file
-<a href="http://localhost/docs/spec.html#World_source_code_file_chapter" name="World_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#World_source_code_file_chapter" name="World_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -134,15 +134,15 @@ World source code file
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="WorldSourceCodeFileContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#WorldSourceCodeFileContent" name="WorldSourceCodeFileContent">WorldSourceCodeFileContent</a> = [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] [ <a ebnf-type="WorldDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#WorldDecl">WorldDecl</a> ] [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="WorldSourceCodeFileContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WorldSourceCodeFileContent" name="WorldSourceCodeFileContent">WorldSourceCodeFileContent</a> = [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] [ <a ebnf-type="WorldDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WorldDecl">WorldDecl</a> ] [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='NPC_source_code_file_chapter'>
 NPC source code file
-<a href="http://localhost/docs/spec.html#NPC_source_code_file_chapter" name="NPC_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#NPC_source_code_file_chapter" name="NPC_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -150,15 +150,15 @@ NPC source code file
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="NPCSourceCodeFileContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#NPCSourceCodeFileContent" name="NPCSourceCodeFileContent">NPCSourceCodeFileContent</a> = [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] [ <a ebnf-type="NPCDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#NPCDecl">NPCDecl</a> ] [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="NPCSourceCodeFileContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NPCSourceCodeFileContent" name="NPCSourceCodeFileContent">NPCSourceCodeFileContent</a> = [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] [ <a ebnf-type="NPCDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NPCDecl">NPCDecl</a> ] [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Host_source_code_file_chapter'>
 Host source code file
-<a href="http://localhost/docs/spec.html#Host_source_code_file_chapter" name="Host_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Host_source_code_file_chapter" name="Host_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -166,15 +166,15 @@ Host source code file
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="HostSourceCodeFileContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#HostSourceCodeFileContent" name="HostSourceCodeFileContent">HostSourceCodeFileContent</a> = [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] [ <a ebnf-type="HostDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#HostDecl">HostDecl</a> ] [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="HostSourceCodeFileContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#HostSourceCodeFileContent" name="HostSourceCodeFileContent">HostSourceCodeFileContent</a> = [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] [ <a ebnf-type="HostDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#HostDecl">HostDecl</a> ] [ <a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Class_source_code_file_chapter'>
 Class source code file
-<a href="http://localhost/docs/spec.html#Class_source_code_file_chapter" name="Class_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Class_source_code_file_chapter" name="Class_source_code_file_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
@@ -182,35 +182,35 @@ Class source code file
 
 </p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#ClassSourceCodeFileContent" name="ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> = [ <a ebnf-type="ClassDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassDeclSet">ClassDeclSet</a> ] [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ClassSourceCodeFileContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ClassSourceCodeFileContent" name="ClassSourceCodeFileContent">ClassSourceCodeFileContent</a> = [ <a ebnf-type="ClassDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassDeclSet">ClassDeclSet</a> ] [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h2 class='center-h' data-href='Lexical_elements_chapter'>
 Lexical elements
-<a href="http://localhost/docs/spec.html#Lexical_elements_chapter" name="Lexical_elements_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Lexical_elements_chapter" name="Lexical_elements_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <h3 class='center-h' data-href='Comments_chapter'>
 Comments
-<a href="http://localhost/docs/spec.html#Comments_chapter" name="Comments_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Comments_chapter" name="Comments_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SingleLineComment" ebnf-kind="decl" href="http://localhost/docs/spec.html#SingleLineComment" name="SingleLineComment">SingleLineComment</a> = "//" [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> }] <a ebnf-type="NewLine" ebnf-kind="use" href="http://localhost/docs/spec.html#NewLine">NewLine</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SingleLineComment" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SingleLineComment" name="SingleLineComment">SingleLineComment</a> = "//" [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> }] <a ebnf-type="NewLine" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NewLine">NewLine</a> .</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id868ce6f4_1447_4681_b34f_db0476e21608">Copy</button></div><script>$('#id868ce6f4_1447_4681_b34f_db0476e21608').click(function() {navigator.clipboard.writeText(atob('Ly9AciA9IEBiID0gMTsNCg=='));});</script><div class="code-viewer-line"><span class='code-viewer-comment'>//@r = @b = 1;</span></div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="ide3252e33_a36a_4efa_a0b0_50075db5c56b">Copy</button></div><script>$('#ide3252e33_a36a_4efa_a0b0_50075db5c56b').click(function() {navigator.clipboard.writeText(atob('Ly9AciA9IEBiID0gMTsNCg=='));});</script><div class="code-viewer-line"><span class='code-viewer-comment'>//@r = @b = 1;</span></div></div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="MultiLineComment" ebnf-kind="decl" href="http://localhost/docs/spec.html#MultiLineComment" name="MultiLineComment">MultiLineComment</a> = "/*" [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> }] "*/" .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="MultiLineComment" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#MultiLineComment" name="MultiLineComment">MultiLineComment</a> = "/*" [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> }] "*/" .</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="ide342daaa_e884_49cb_884c_25bf1f4886ee">Copy</button></div><script>$('#ide342daaa_e884_49cb_884c_25bf1f4886ee').click(function() {navigator.clipboard.writeText(atob('LypAciA9IEBiID0gMTtAYnggPj4gQD5sb2c7Ki8NCg=='));});</script><div class="code-viewer-line"><span class='code-viewer-comment'>/*@r = @b = 1;@bx >> @>log;*/</span></div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idc74d8f76_2396_403e_b68f_7469b177e761">Copy</button></div><script>$('#idc74d8f76_2396_403e_b68f_7469b177e761').click(function() {navigator.clipboard.writeText(atob('LypAciA9IEBiID0gMTsNCkBieCA+PiBAPmxvZzsqLw0K'));});</script><div class="code-viewer-line"><span class='code-viewer-comment'>/*@r = @b = 1;</span></div><div class="code-viewer-line"><span class='code-viewer-comment'>@bx >> @>log;*/</span></div></div>
 
 <h3 class='center-h' data-href='Tokens_chapter'>
 Tokens
-<a href="http://localhost/docs/spec.html#Tokens_chapter" name="Tokens_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Tokens_chapter" name="Tokens_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 Tokens form the vocabulary of the SymOntoClay DSL.
@@ -219,9 +219,9 @@ There are four classes: identifiers, keywords, operators and punctuation, and li
 
 <h3 class='center-h' data-href='Identifiers_chapter'>
 Identifiers
-<a href="http://localhost/docs/spec.html#Identifiers_chapter" name="Identifiers_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Identifiers_chapter" name="Identifiers_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -233,15 +233,15 @@ Identifiers
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Identifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#Identifier" name="Identifier">Identifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="VarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#VarIdentifier">VarIdentifier</a> | <a ebnf-type="SysVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#SysVarIdentifier">SysVarIdentifier</a> | <a ebnf-type="QuestionVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#QuestionVarIdentifier">QuestionVarIdentifier</a> | <a ebnf-type="LogicRuleVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleVarIdentifier">LogicRuleVarIdentifier</a> | <a ebnf-type="ChannelIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ChannelIdentifier">ChannelIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Identifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#Identifier" name="Identifier">Identifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="VarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#VarIdentifier">VarIdentifier</a> | <a ebnf-type="SysVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SysVarIdentifier">SysVarIdentifier</a> | <a ebnf-type="QuestionVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#QuestionVarIdentifier">QuestionVarIdentifier</a> | <a ebnf-type="LogicRuleVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleVarIdentifier">LogicRuleVarIdentifier</a> | <a ebnf-type="ChannelIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ChannelIdentifier">ChannelIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='ConceptIdentifier_chapter'>
 Concept identifier
-<a href="http://localhost/docs/spec.html#ConceptIdentifier_chapter" name="ConceptIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier_chapter" name="ConceptIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -249,17 +249,17 @@ Concept identifier
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ConceptIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#ConceptIdentifier" name="ConceptIdentifier">ConceptIdentifier</a> = (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ConceptIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier" name="ConceptIdentifier">ConceptIdentifier</a> = (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="iddcad89e6_355e_4e07_9892_70b264d3922b">Copy</button></div><script>$('#iddcad89e6_355e_4e07_9892_70b264d3922b').click(function() {navigator.clipboard.writeText(atob('YV9hYTJhQmFiXzFHcmVhdF9Ccml0YWluYEdyZWF0IEJyaXRhaW5gDQo='));});</script><div class="code-viewer-line">a_aa2aBab_1Great_Britain`Great Britain`</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id804269dd_e305_4dc4_ab87_c5506f560e48">Copy</button></div><script>$('#id804269dd_e305_4dc4_ab87_c5506f560e48').click(function() {navigator.clipboard.writeText(atob('YQ0KX2ENCmEyDQphQg0KYWJfMQ0KR3JlYXRfQnJpdGFpbg0KYEdyZWF0IEJyaXRhaW5gDQo='));});</script><div class="code-viewer-line">a</div><div class="code-viewer-line">_a</div><div class="code-viewer-line">a2</div><div class="code-viewer-line">aB</div><div class="code-viewer-line">ab_1</div><div class="code-viewer-line">Great_Britain</div><div class="code-viewer-line">`Great Britain`</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
 Instance identifier
-<a href="http://localhost/docs/spec.html#InstanceIdentifier_chapter" name="InstanceIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier_chapter" name="InstanceIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -267,17 +267,17 @@ Instance identifier
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InstanceIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = "#" (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InstanceIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier" name="InstanceIdentifier">InstanceIdentifier</a> = "#" (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id7c1a3f64_f5f8_4fdb_9633_a9f3af926a64">Copy</button></div><script>$('#id7c1a3f64_f5f8_4fdb_9633_a9f3af926a64').click(function() {navigator.clipboard.writeText(atob('IzEyMw0K'));});</script><div class="code-viewer-line">#123</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id7b2ece35_b15f_49be_86c2_57f143f52b7a">Copy</button></div><script>$('#id7b2ece35_b15f_49be_86c2_57f143f52b7a').click(function() {navigator.clipboard.writeText(atob('IzEyMw0K'));});</script><div class="code-viewer-line">#123</div></div>
 
 <h4 class='center-h' data-href='VarIdentifier_chapter'>
 Variable identifier
-<a href="http://localhost/docs/spec.html#VarIdentifier_chapter" name="VarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#VarIdentifier_chapter" name="VarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -286,20 +286,20 @@ Variable identifier
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 
-<a ebnf-type="VarIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#VarIdentifier" name="VarIdentifier">VarIdentifier</a> = "@" (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .
+<a ebnf-type="VarIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#VarIdentifier" name="VarIdentifier">VarIdentifier</a> = "@" (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .
 
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id4958621a_db8c_4b21_a7f4_65a251587f0a">Copy</button></div><script>$('#id4958621a_db8c_4b21_a7f4_65a251587f0a').click(function() {navigator.clipboard.writeText(atob('QGENCg=='));});</script><div class="code-viewer-line">@a</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="ida9527ee9_ff08_4096_802d_4b296c5db090">Copy</button></div><script>$('#ida9527ee9_ff08_4096_802d_4b296c5db090').click(function() {navigator.clipboard.writeText(atob('QGENCg=='));});</script><div class="code-viewer-line">@a</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='SysVarIdentifier_chapter'>
 System variable identifier
-<a href="http://localhost/docs/spec.html#SysVarIdentifier_chapter" name="SysVarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#SysVarIdentifier_chapter" name="SysVarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -307,19 +307,19 @@ System variable identifier
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SysVarIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#SysVarIdentifier" name="SysVarIdentifier">SysVarIdentifier</a> = "@@" (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SysVarIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SysVarIdentifier" name="SysVarIdentifier">SysVarIdentifier</a> = "@@" (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id15fcf4a6_6384_45ab_accf_f45fc926fb3b">Copy</button></div><script>$('#id15fcf4a6_6384_45ab_accf_f45fc926fb3b').click(function() {navigator.clipboard.writeText(atob('QEBob3N0DQo='));});</script><div class="code-viewer-line">@@<span class='code-viewer-keyword'>host</span></div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id055c2d69_ce64_485f_9194_e2128fcec2c4">Copy</button></div><script>$('#id055c2d69_ce64_485f_9194_e2128fcec2c4').click(function() {navigator.clipboard.writeText(atob('QEBob3N0DQo='));});</script><div class="code-viewer-line">@@<span class='code-viewer-keyword'>host</span></div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='QuestionVarIdentifier_chapter'>
 Question variable identifier
-<a href="http://localhost/docs/spec.html#QuestionVarIdentifier_chapter" name="QuestionVarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#QuestionVarIdentifier_chapter" name="QuestionVarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -327,19 +327,19 @@ Question variable identifier
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="QuestionVarIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#QuestionVarIdentifier" name="QuestionVarIdentifier">QuestionVarIdentifier</a> = "?" (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="QuestionVarIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#QuestionVarIdentifier" name="QuestionVarIdentifier">QuestionVarIdentifier</a> = "?" (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id15208e53_a1f9_443f_9dfb_3a28865a13a0">Copy</button></div><script>$('#id15208e53_a1f9_443f_9dfb_3a28865a13a0').click(function() {navigator.clipboard.writeText(atob('P3gNCg=='));});</script><div class="code-viewer-line">?x</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idf5d28b79_eea5_4e1a_8b97_9dcb85053d6b">Copy</button></div><script>$('#idf5d28b79_eea5_4e1a_8b97_9dcb85053d6b').click(function() {navigator.clipboard.writeText(atob('P3gNCg=='));});</script><div class="code-viewer-line">?x</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='LogicRuleVarIdentifier_chapter'>
 Logic rule variable identifier
-<a href="http://localhost/docs/spec.html#LogicRuleVarIdentifier_chapter" name="LogicRuleVarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#LogicRuleVarIdentifier_chapter" name="LogicRuleVarIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -347,19 +347,19 @@ Logic rule variable identifier
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="LogicRuleVarIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRuleVarIdentifier" name="LogicRuleVarIdentifier">LogicRuleVarIdentifier</a> = "$" (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="LogicRuleVarIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRuleVarIdentifier" name="LogicRuleVarIdentifier">LogicRuleVarIdentifier</a> = "$" (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id87c69a0c_0a5b_419b_b2a3_8d0404492b84">Copy</button></div><script>$('#id87c69a0c_0a5b_419b_b2a3_8d0404492b84').click(function() {navigator.clipboard.writeText(atob('JHgNCg=='));});</script><div class="code-viewer-line">$x</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id84ad394e_9613_4c3e_aad3_4f27a4511fee">Copy</button></div><script>$('#id84ad394e_9613_4c3e_aad3_4f27a4511fee').click(function() {navigator.clipboard.writeText(atob('JHgNCg=='));});</script><div class="code-viewer-line">$x</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='ChannelIdentifier_chapter'>
 Channel identifier
-<a href="http://localhost/docs/spec.html#ChannelIdentifier_chapter" name="ChannelIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#ChannelIdentifier_chapter" name="ChannelIdentifier_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -367,19 +367,19 @@ Channel identifier
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ChannelIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#ChannelIdentifier" name="ChannelIdentifier">ChannelIdentifier</a> = "@>" (( <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="http://localhost/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ChannelIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ChannelIdentifier" name="ChannelIdentifier">ChannelIdentifier</a> = "@>" (( <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> { <a ebnf-type="Letter" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Letter">Letter</a> | <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ) | ( "`" { <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> } "`")) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idc299a576_4686_46da_81e5_4682f6d94270">Copy</button></div><script>$('#idc299a576_4686_46da_81e5_4682f6d94270').click(function() {navigator.clipboard.writeText(atob('QD5sb2cNCg=='));});</script><div class="code-viewer-line">@>log</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idfd2b2d57_3d91_4217_830a_630241b6261c">Copy</button></div><script>$('#idfd2b2d57_3d91_4217_830a_630241b6261c').click(function() {navigator.clipboard.writeText(atob('QD5sb2cNCg=='));});</script><div class="code-viewer-line">@>log</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Keywords_chapter'>
 Keywords
-<a href="http://localhost/docs/spec.html#Keywords_chapter" name="Keywords_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Keywords_chapter" name="Keywords_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 Some words is used as keywords in syntax.
@@ -390,12 +390,12 @@ But the words can be used as identifiers in other places.
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
 Operators and punctuation
-<a href="http://localhost/docs/spec.html#Operators_and_punctuation_chapter" name="Operators_and_punctuation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Operators_and_punctuation_chapter" name="Operators_and_punctuation_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
-The following character sequences represent <a href='http://localhost/docs/spec.html#Operators_chapter'>operators</a> and punctuation:
+The following character sequences represent <a href='https://symontoclay.github.io/docs/spec.html#Operators_chapter'>operators</a> and punctuation:
 </p>
 
 <items cols='4'>
@@ -417,57 +417,57 @@ The following character sequences represent <a href='http://localhost/docs/spec.
 
 <h3 class='center-h' data-href='Integer_literals_chapter'>
 Integer literals
-<a href="http://localhost/docs/spec.html#Integer_literals_chapter" name="Integer_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Integer_literals_chapter" name="Integer_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="IntegerLiteral" ebnf-kind="decl" href="http://localhost/docs/spec.html#IntegerLiteral" name="IntegerLiteral">IntegerLiteral</a> = <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> [ { <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ] .</div></div>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id9f8cb019_83ac_41e7_b6b1_b3e014782080">Copy</button></div><script>$('#id9f8cb019_83ac_41e7_b6b1_b3e014782080').click(function() {navigator.clipboard.writeText(atob('NDINCg=='));});</script><div class="code-viewer-line">42</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="IntegerLiteral" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#IntegerLiteral" name="IntegerLiteral">IntegerLiteral</a> = <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> [ { <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ] .</div></div>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id1fa61c36_7f22_450d_b2f3_bb0c6d3e06b0">Copy</button></div><script>$('#id1fa61c36_7f22_450d_b2f3_bb0c6d3e06b0').click(function() {navigator.clipboard.writeText(atob('NDINCg=='));});</script><div class="code-viewer-line">42</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Floating_point_literals_chapter'>
 Floating-point literals
-<a href="http://localhost/docs/spec.html#Floating_point_literals_chapter" name="Floating_point_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Floating_point_literals_chapter" name="Floating_point_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="FloatPointLiteral" ebnf-kind="decl" href="http://localhost/docs/spec.html#FloatPointLiteral" name="FloatPointLiteral">FloatPointLiteral</a> = (  <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> [ { <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ] ) "." (  <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> [ { <a ebnf-type="DecimalDigit" ebnf-kind="use" href="http://localhost/docs/spec.html#DecimalDigit">DecimalDigit</a> } ] ) .</div></div>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id5a12fe66_d10b_4e72_9baa_c42106c92284">Copy</button></div><script>$('#id5a12fe66_d10b_4e72_9baa_c42106c92284').click(function() {navigator.clipboard.writeText(atob('MzYuNg0K'));});</script><div class="code-viewer-line">36.6</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="FloatPointLiteral" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FloatPointLiteral" name="FloatPointLiteral">FloatPointLiteral</a> = (  <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> [ { <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ] ) "." (  <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> [ { <a ebnf-type="DecimalDigit" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DecimalDigit">DecimalDigit</a> } ] ) .</div></div>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id1298689c_6243_49ad_8203_57382bc3a2e0">Copy</button></div><script>$('#id1298689c_6243_49ad_8203_57382bc3a2e0').click(function() {navigator.clipboard.writeText(atob('MzYuNg0K'));});</script><div class="code-viewer-line">36.6</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='String_literals_chapter'>
 String literals
-<a href="http://localhost/docs/spec.html#String_literals_chapter" name="String_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#String_literals_chapter" name="String_literals_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="StringLiteral" ebnf-kind="decl" href="http://localhost/docs/spec.html#StringLiteral" name="StringLiteral">StringLiteral</a> = (""" <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> }] """) | ("'" <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="http://localhost/docs/spec.html#UnicodeChar">UnicodeChar</a> }] "'") .</div></div>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idfb12d52c_2b74_427e_a95c_97832008b037">Copy</button></div><script>$('#idfb12d52c_2b74_427e_a95c_97832008b037').click(function() {navigator.clipboard.writeText(atob('ImFiYyInYWJjJw0K'));});</script><div class="code-viewer-line">"abc"'abc'</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="StringLiteral" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#StringLiteral" name="StringLiteral">StringLiteral</a> = (""" <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> }] """) | ("'" <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> [{ <a ebnf-type="UnicodeChar" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UnicodeChar">UnicodeChar</a> }] "'") .</div></div>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id88a18bdc_4e67_49ea_9e2e_09ce06fabeaa">Copy</button></div><script>$('#id88a18bdc_4e67_49ea_9e2e_09ce06fabeaa').click(function() {navigator.clipboard.writeText(atob('ImFiYyINCidhYmMnDQo='));});</script><div class="code-viewer-line">"abc"</div><div class="code-viewer-line">'abc'</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
-<a href="http://localhost/docs/spec.html#Objects_declaration_chapter" name="Objects_declaration_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Objects_declaration_chapter" name="Objects_declaration_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 
@@ -477,265 +477,265 @@ Objects declaration
 
 <h3 class='center-h' data-href='Class_chapter'>
 Class
-<a href="http://localhost/docs/spec.html#Class_chapter" name="Class_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Class_chapter" name="Class_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ClassDeclSet" ebnf-kind="decl" href="http://localhost/docs/spec.html#ClassDeclSet" name="ClassDeclSet">ClassDeclSet</a> = <a ebnf-type="ClassDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassDecl">ClassDecl</a> [{ <a ebnf-type="ClassDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassDecl">ClassDecl</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="ClassDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#ClassDecl" name="ClassDecl">ClassDecl</a> = "class" <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="ClassBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassBodyContent">ClassBodyContent</a> [{ <a ebnf-type="ClassBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#ClassBodyContent">ClassBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="ClassBodyContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#ClassBodyContent" name="ClassBodyContent">ClassBodyContent</a> = [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] [ <a ebnf-type="TriggersContent" ebnf-kind="use" href="http://localhost/docs/spec.html#TriggersContent">TriggersContent</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ClassDeclSet" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ClassDeclSet" name="ClassDeclSet">ClassDeclSet</a> = <a ebnf-type="ClassDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassDecl">ClassDecl</a> [{ <a ebnf-type="ClassDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassDecl">ClassDecl</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="ClassDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ClassDecl" name="ClassDecl">ClassDecl</a> = "class" <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="ClassBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassBodyContent">ClassBodyContent</a> [{ <a ebnf-type="ClassBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ClassBodyContent">ClassBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="ClassBodyContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ClassBodyContent" name="ClassBodyContent">ClassBodyContent</a> = [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] [ <a ebnf-type="TriggersContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#TriggersContent">TriggersContent</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='NPC_chapter'>
 NPC
-<a href="http://localhost/docs/spec.html#NPC_chapter" name="NPC_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#NPC_chapter" name="NPC_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="NPCIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#NPCIdentifier" name="NPCIdentifier">NPCIdentifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div><div class="ebnf-code-item"><a ebnf-type="NPCDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#NPCDecl" name="NPCDecl">NPCDecl</a> = "npc" <a ebnf-type="NPCIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#NPCIdentifier">NPCIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="NPCBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#NPCBodyContent">NPCBodyContent</a> [{ <a ebnf-type="NPCBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#NPCBodyContent">NPCBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="NPCBodyContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#NPCBodyContent" name="NPCBodyContent">NPCBodyContent</a> = [ [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] [ <a ebnf-type="TriggersContent" ebnf-kind="use" href="http://localhost/docs/spec.html#TriggersContent">TriggersContent</a> ] ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="NPCIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NPCIdentifier" name="NPCIdentifier">NPCIdentifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div><div class="ebnf-code-item"><a ebnf-type="NPCDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NPCDecl" name="NPCDecl">NPCDecl</a> = "npc" <a ebnf-type="NPCIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NPCIdentifier">NPCIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="NPCBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NPCBodyContent">NPCBodyContent</a> [{ <a ebnf-type="NPCBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NPCBodyContent">NPCBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="NPCBodyContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NPCBodyContent" name="NPCBodyContent">NPCBodyContent</a> = [ [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] [ <a ebnf-type="TriggersContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#TriggersContent">TriggersContent</a> ] ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='World_chapter'>
 World
-<a href="http://localhost/docs/spec.html#World_chapter" name="World_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#World_chapter" name="World_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="WorldIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#WorldIdentifier" name="WorldIdentifier">WorldIdentifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div><div class="ebnf-code-item"><a ebnf-type="WorldDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#WorldDecl" name="WorldDecl">WorldDecl</a> = "world" <a ebnf-type="WorldIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#WorldIdentifier">WorldIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="WorldBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#WorldBodyContent">WorldBodyContent</a> [{ <a ebnf-type="WorldBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#WorldBodyContent">WorldBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="WorldBodyContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#WorldBodyContent" name="WorldBodyContent">WorldBodyContent</a> = [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="WorldIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WorldIdentifier" name="WorldIdentifier">WorldIdentifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div><div class="ebnf-code-item"><a ebnf-type="WorldDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WorldDecl" name="WorldDecl">WorldDecl</a> = "world" <a ebnf-type="WorldIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WorldIdentifier">WorldIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="WorldBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WorldBodyContent">WorldBodyContent</a> [{ <a ebnf-type="WorldBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WorldBodyContent">WorldBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="WorldBodyContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WorldBodyContent" name="WorldBodyContent">WorldBodyContent</a> = [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Host_chapter'>
 Host
-<a href="http://localhost/docs/spec.html#Host_chapter" name="Host_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Host_chapter" name="Host_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="HostIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#HostIdentifier" name="HostIdentifier">HostIdentifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div><div class="ebnf-code-item"><a ebnf-type="HostDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#HostDecl" name="HostDecl">HostDecl</a> = "host" <a ebnf-type="HostIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#HostIdentifier">HostIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="HostBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#HostBodyContent">HostBodyContent</a> [{ <a ebnf-type="HostBodyContent" ebnf-kind="use" href="http://localhost/docs/spec.html#HostBodyContent">HostBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="HostBodyContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#HostBodyContent" name="HostBodyContent">HostBodyContent</a> = [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="HostIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#HostIdentifier" name="HostIdentifier">HostIdentifier</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div><div class="ebnf-code-item"><a ebnf-type="HostDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#HostDecl" name="HostDecl">HostDecl</a> = "host" <a ebnf-type="HostIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#HostIdentifier">HostIdentifier</a> [ <a ebnf-type="InheritanceDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InheritanceDecl">InheritanceDecl</a> ] <br> "{"<br> [ <a ebnf-type="HostBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#HostBodyContent">HostBodyContent</a> [{ <a ebnf-type="HostBodyContent" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#HostBodyContent">HostBodyContent</a> }] ] <br> "}" .</div><div class="ebnf-code-item"><a ebnf-type="HostBodyContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#HostBodyContent" name="HostBodyContent">HostBodyContent</a> = [ <a ebnf-type="FactDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDeclSet">FactDeclSet</a> ] [ <a ebnf-type="LogicRuleDeclSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDeclSet">LogicRuleDeclSet</a> ] .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Waypoint_chapter'>
 Waypoint
-<a href="http://localhost/docs/spec.html#Waypoint_chapter" name="Waypoint_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Waypoint_chapter" name="Waypoint_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="WaypointDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#WaypointDecl" name="WaypointDecl">WaypointDecl</a> = "#@" "[" <a ebnf-type="WaypointDistance" ebnf-kind="use" href="http://localhost/docs/spec.html#WaypointDistance">WaypointDistance</a> "," <a ebnf-type="WaypointAngleInDegrees" ebnf-kind="use" href="http://localhost/docs/spec.html#WaypointAngleInDegrees">WaypointAngleInDegrees</a> "]" .</div><div class="ebnf-code-item"><a ebnf-type="WaypointDistance" ebnf-kind="decl" href="http://localhost/docs/spec.html#WaypointDistance" name="WaypointDistance">WaypointDistance</a> = <a ebnf-type="NumberExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NumberExpr">NumberExpr</a> .</div><div class="ebnf-code-item"><a ebnf-type="WaypointAngleInDegrees" ebnf-kind="decl" href="http://localhost/docs/spec.html#WaypointAngleInDegrees" name="WaypointAngleInDegrees">WaypointAngleInDegrees</a> = <a ebnf-type="NumberExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NumberExpr">NumberExpr</a> .</div></div>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id256273a9_db24_4f35_8363_b69afb260ede">Copy</button></div><script>$('#id256273a9_db24_4f35_8363_b69afb260ede').click(function() {navigator.clipboard.writeText(atob('I0BbMjUsIDMwXQ0K'));});</script><div class="code-viewer-line">#@[25, 30]</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="WaypointDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WaypointDecl" name="WaypointDecl">WaypointDecl</a> = "#@" "[" <a ebnf-type="WaypointDistance" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WaypointDistance">WaypointDistance</a> "," <a ebnf-type="WaypointAngleInDegrees" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WaypointAngleInDegrees">WaypointAngleInDegrees</a> "]" .</div><div class="ebnf-code-item"><a ebnf-type="WaypointDistance" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WaypointDistance" name="WaypointDistance">WaypointDistance</a> = <a ebnf-type="NumberExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NumberExpr">NumberExpr</a> .</div><div class="ebnf-code-item"><a ebnf-type="WaypointAngleInDegrees" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#WaypointAngleInDegrees" name="WaypointAngleInDegrees">WaypointAngleInDegrees</a> = <a ebnf-type="NumberExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NumberExpr">NumberExpr</a> .</div></div>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id94be4825_cba0_4369_9f64_35f4b65d6ec3">Copy</button></div><script>$('#id94be4825_cba0_4369_9f64_35f4b65d6ec3').click(function() {navigator.clipboard.writeText(atob('I0BbMjUsIDMwXQ0K'));});</script><div class="code-viewer-line">#@[25, 30]</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Fact_chapter'>
 Fact
-<a href="http://localhost/docs/spec.html#Fact_chapter" name="Fact_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Fact_chapter" name="Fact_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="FactDeclSet" ebnf-kind="decl" href="http://localhost/docs/spec.html#FactDeclSet" name="FactDeclSet">FactDeclSet</a> = <a ebnf-type="FactDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDecl">FactDecl</a> [{ <a ebnf-type="FactDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDecl">FactDecl</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="FactDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#FactDecl" name="FactDecl">FactDecl</a> = "{:" ( <a ebnf-type="FactSection" ebnf-kind="use" href="http://localhost/docs/spec.html#FactSection">FactSection</a> | <a ebnf-type="FactSentence" ebnf-kind="use" href="http://localhost/docs/spec.html#FactSentence">FactSentence</a> ) ":}" .</div><div class="ebnf-code-item"><a ebnf-type="FactSection" ebnf-kind="decl" href="http://localhost/docs/spec.html#FactSection" name="FactSection">FactSection</a> = ">:" "{" <a ebnf-type="FactSentence" ebnf-kind="use" href="http://localhost/docs/spec.html#FactSentence">FactSentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="FactSentence" ebnf-kind="decl" href="http://localhost/docs/spec.html#FactSentence" name="FactSentence">FactSentence</a> = <a ebnf-type="FactPredicate" ebnf-kind="use" href="http://localhost/docs/spec.html#FactPredicate">FactPredicate</a> .</div><div class="ebnf-code-item"><a ebnf-type="FactPredicate" ebnf-kind="decl" href="http://localhost/docs/spec.html#FactPredicate" name="FactPredicate">FactPredicate</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> "(" <a ebnf-type="FactPredicateParam" ebnf-kind="use" href="http://localhost/docs/spec.html#FactPredicateParam">FactPredicateParam</a> [ { "," <a ebnf-type="FactPredicateParam" ebnf-kind="use" href="http://localhost/docs/spec.html#FactPredicateParam">FactPredicateParam</a> } ] ")" .</div><div class="ebnf-code-item"><a ebnf-type="FactPredicateParam" ebnf-kind="decl" href="http://localhost/docs/spec.html#FactPredicateParam" name="FactPredicateParam">FactPredicateParam</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="FactDeclSet" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FactDeclSet" name="FactDeclSet">FactDeclSet</a> = <a ebnf-type="FactDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDecl">FactDecl</a> [{ <a ebnf-type="FactDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDecl">FactDecl</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="FactDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FactDecl" name="FactDecl">FactDecl</a> = "{:" ( <a ebnf-type="FactSection" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactSection">FactSection</a> | <a ebnf-type="FactSentence" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactSentence">FactSentence</a> ) ":}" .</div><div class="ebnf-code-item"><a ebnf-type="FactSection" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FactSection" name="FactSection">FactSection</a> = ">:" "{" <a ebnf-type="FactSentence" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactSentence">FactSentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="FactSentence" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FactSentence" name="FactSentence">FactSentence</a> = <a ebnf-type="FactPredicate" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactPredicate">FactPredicate</a> .</div><div class="ebnf-code-item"><a ebnf-type="FactPredicate" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FactPredicate" name="FactPredicate">FactPredicate</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> "(" <a ebnf-type="FactPredicateParam" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactPredicateParam">FactPredicateParam</a> [ { "," <a ebnf-type="FactPredicateParam" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactPredicateParam">FactPredicateParam</a> } ] ")" .</div><div class="ebnf-code-item"><a ebnf-type="FactPredicateParam" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#FactPredicateParam" name="FactPredicateParam">FactPredicateParam</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Logic_rule_chapter'>
 Logic rule
-<a href="http://localhost/docs/spec.html#Logic_rule_chapter" name="Logic_rule_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Logic_rule_chapter" name="Logic_rule_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="LogicRuleDeclSet" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRuleDeclSet" name="LogicRuleDeclSet">LogicRuleDeclSet</a> = <a ebnf-type="LogicRuleDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDecl">LogicRuleDecl</a> [{ <a ebnf-type="LogicRuleDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleDecl">LogicRuleDecl</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="LogicRuleDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRuleDecl" name="LogicRuleDecl">LogicRuleDecl</a> = "{:" <a ebnf-type="LogicRulePrimarySection" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRulePrimarySection">LogicRulePrimarySection</a> <a ebnf-type="ImplicationSymbol" ebnf-kind="use" href="http://localhost/docs/spec.html#ImplicationSymbol">ImplicationSymbol</a> <a ebnf-type="LogicRuleSecondarySection" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleSecondarySection">LogicRuleSecondarySection</a> ":}" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRulePrimarySection" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRulePrimarySection" name="LogicRulePrimarySection">LogicRulePrimarySection</a> = ">:" "{" <a ebnf-type="LogicRuleSentence" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleSentence">LogicRuleSentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRuleSecondarySection" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRuleSecondarySection" name="LogicRuleSecondarySection">LogicRuleSecondarySection</a> = "{" <a ebnf-type="LogicRuleSentence" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleSentence">LogicRuleSentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="ImplicationSymbol" ebnf-kind="decl" href="http://localhost/docs/spec.html#ImplicationSymbol" name="ImplicationSymbol">ImplicationSymbol</a> = "->" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRuleSentence" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRuleSentence" name="LogicRuleSentence">LogicRuleSentence</a> = <a ebnf-type="LogicRulePredicate" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRulePredicate">LogicRulePredicate</a> [ { <a ebnf-type="AndOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#AndOpExpr">AndOpExpr</a> <a ebnf-type="LogicRulePredicate" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRulePredicate">LogicRulePredicate</a> } ] .</div><div class="ebnf-code-item"><a ebnf-type="LogicRulePredicate" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRulePredicate" name="LogicRulePredicate">LogicRulePredicate</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> "(" <a ebnf-type="LogicRulePredicateParam" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRulePredicateParam">LogicRulePredicateParam</a> [ { "," <a ebnf-type="LogicRulePredicateParam" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRulePredicateParam">LogicRulePredicateParam</a> } ] ")" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRulePredicateParam" ebnf-kind="decl" href="http://localhost/docs/spec.html#LogicRulePredicateParam" name="LogicRulePredicateParam">LogicRulePredicateParam</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="LogicRuleVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#LogicRuleVarIdentifier">LogicRuleVarIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="LogicRuleDeclSet" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDeclSet" name="LogicRuleDeclSet">LogicRuleDeclSet</a> = <a ebnf-type="LogicRuleDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDecl">LogicRuleDecl</a> [{ <a ebnf-type="LogicRuleDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDecl">LogicRuleDecl</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="LogicRuleDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRuleDecl" name="LogicRuleDecl">LogicRuleDecl</a> = "{:" <a ebnf-type="LogicRulePrimarySection" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRulePrimarySection">LogicRulePrimarySection</a> <a ebnf-type="ImplicationSymbol" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ImplicationSymbol">ImplicationSymbol</a> <a ebnf-type="LogicRuleSecondarySection" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleSecondarySection">LogicRuleSecondarySection</a> ":}" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRulePrimarySection" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRulePrimarySection" name="LogicRulePrimarySection">LogicRulePrimarySection</a> = ">:" "{" <a ebnf-type="LogicRuleSentence" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleSentence">LogicRuleSentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRuleSecondarySection" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRuleSecondarySection" name="LogicRuleSecondarySection">LogicRuleSecondarySection</a> = "{" <a ebnf-type="LogicRuleSentence" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleSentence">LogicRuleSentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="ImplicationSymbol" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ImplicationSymbol" name="ImplicationSymbol">ImplicationSymbol</a> = "->" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRuleSentence" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRuleSentence" name="LogicRuleSentence">LogicRuleSentence</a> = <a ebnf-type="LogicRulePredicate" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRulePredicate">LogicRulePredicate</a> [ { <a ebnf-type="AndOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#AndOpExpr">AndOpExpr</a> <a ebnf-type="LogicRulePredicate" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRulePredicate">LogicRulePredicate</a> } ] .</div><div class="ebnf-code-item"><a ebnf-type="LogicRulePredicate" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRulePredicate" name="LogicRulePredicate">LogicRulePredicate</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> "(" <a ebnf-type="LogicRulePredicateParam" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRulePredicateParam">LogicRulePredicateParam</a> [ { "," <a ebnf-type="LogicRulePredicateParam" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRulePredicateParam">LogicRulePredicateParam</a> } ] ")" .</div><div class="ebnf-code-item"><a ebnf-type="LogicRulePredicateParam" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LogicRulePredicateParam" name="LogicRulePredicateParam">LogicRulePredicateParam</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="LogicRuleVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LogicRuleVarIdentifier">LogicRuleVarIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
-<a href="http://localhost/docs/spec.html#Common_objects_parts_chapter" name="Common_objects_parts_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Common_objects_parts_chapter" name="Common_objects_parts_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Inheritance_chapter'>
 Inheritance
-<a href="http://localhost/docs/spec.html#Inheritance_chapter" name="Inheritance_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Inheritance_chapter" name="Inheritance_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InheritanceDecl" ebnf-kind="decl" href="http://localhost/docs/spec.html#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = "is" <a ebnf-type="InheritanceDeclItem" ebnf-kind="use" href="http://localhost/docs/spec.html#InheritanceDeclItem">InheritanceDeclItem</a> [ { "," <a ebnf-type="InheritanceDeclItem" ebnf-kind="use" href="http://localhost/docs/spec.html#InheritanceDeclItem">InheritanceDeclItem</a> } ] .</div><div class="ebnf-code-item"><a ebnf-type="InheritanceDeclItem" ebnf-kind="decl" href="http://localhost/docs/spec.html#InheritanceDeclItem" name="InheritanceDeclItem">InheritanceDeclItem</a> = [ "[" <a ebnf-type="NumberExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NumberExpr">NumberExpr</a> "]" ] ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InheritanceDecl" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#InheritanceDecl" name="InheritanceDecl">InheritanceDecl</a> = "is" <a ebnf-type="InheritanceDeclItem" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InheritanceDeclItem">InheritanceDeclItem</a> [ { "," <a ebnf-type="InheritanceDeclItem" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InheritanceDeclItem">InheritanceDeclItem</a> } ] .</div><div class="ebnf-code-item"><a ebnf-type="InheritanceDeclItem" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#InheritanceDeclItem" name="InheritanceDeclItem">InheritanceDeclItem</a> = [ "[" <a ebnf-type="NumberExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NumberExpr">NumberExpr</a> "]" ] ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
-<a href="http://localhost/docs/spec.html#Trigger_chapter" name="Trigger_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Trigger_chapter" name="Trigger_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="TriggersContent" ebnf-kind="decl" href="http://localhost/docs/spec.html#TriggersContent" name="TriggersContent">TriggersContent</a> = "on" <a ebnf-type="LifecycleTriggerIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#LifecycleTriggerIdentifier">LifecycleTriggerIdentifier</a> "=>" <br>.</div><div class="ebnf-code-item">"{" <br>.</div><div class="ebnf-code-item"><a ebnf-type="StatementsSet" ebnf-kind="use" href="http://localhost/docs/spec.html#StatementsSet">StatementsSet</a> <br>.</div><div class="ebnf-code-item">"}" .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="TriggersContent" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#TriggersContent" name="TriggersContent">TriggersContent</a> = "on" <a ebnf-type="LifecycleTriggerIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LifecycleTriggerIdentifier">LifecycleTriggerIdentifier</a> "=>" <br> "{" <br> <a ebnf-type="StatementsSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#StatementsSet">StatementsSet</a> <br> "}" .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
 Lifecycle triggers
-<a href="http://localhost/docs/spec.html#Lifecycle_triggers_chapter" name="Lifecycle_triggers_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Lifecycle_triggers_chapter" name="Lifecycle_triggers_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="LifecycleTriggerIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#LifecycleTriggerIdentifier" name="LifecycleTriggerIdentifier">LifecycleTriggerIdentifier</a> = <a ebnf-type="InitLifecycleTriggerIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InitLifecycleTriggerIdentifier">InitLifecycleTriggerIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="LifecycleTriggerIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LifecycleTriggerIdentifier" name="LifecycleTriggerIdentifier">LifecycleTriggerIdentifier</a> = <a ebnf-type="InitLifecycleTriggerIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InitLifecycleTriggerIdentifier">InitLifecycleTriggerIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h5 class='center-h' data-href='Init_Lifecycle_trigger_chapter'>
 Init
-<a href="http://localhost/docs/spec.html#Init_Lifecycle_trigger_chapter" name="Init_Lifecycle_trigger_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
+<a href="https://symontoclay.github.io/docs/spec.html#Init_Lifecycle_trigger_chapter" name="Init_Lifecycle_trigger_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InitLifecycleTriggerIdentifier" ebnf-kind="decl" href="http://localhost/docs/spec.html#InitLifecycleTriggerIdentifier" name="InitLifecycleTriggerIdentifier">InitLifecycleTriggerIdentifier</a> = "Init" .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InitLifecycleTriggerIdentifier" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#InitLifecycleTriggerIdentifier" name="InitLifecycleTriggerIdentifier">InitLifecycleTriggerIdentifier</a> = "Init" .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
-<a href="http://localhost/docs/spec.html#Expressions_chapter" name="Expressions_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Expressions_chapter" name="Expressions_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Expr" ebnf-kind="decl" href="http://localhost/docs/spec.html#Expr" name="Expr">Expr</a> = <a ebnf-type="WaypointDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#WaypointDecl">WaypointDecl</a> | <a ebnf-type="ConstExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#ConstExpr">ConstExpr</a> | <a ebnf-type="VarExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#VarExpr">VarExpr</a> | <a ebnf-type="SysVarExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#SysVarExpr">SysVarExpr</a> | <a ebnf-type="ChannelExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#ChannelExpr">ChannelExpr</a> | <a ebnf-type="AssignmentOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#AssignmentOpExpr">AssignmentOpExpr</a> | <a ebnf-type="PointerOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#PointerOpExpr">PointerOpExpr</a> | <a ebnf-type="IsOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#IsOpExpr">IsOpExpr</a> | <a ebnf-type="UseIsOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#UseIsOpExpr">UseIsOpExpr</a> | <a ebnf-type="LeftRightStreamOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#LeftRightStreamOpExpr">LeftRightStreamOpExpr</a> | <a ebnf-type="SelectOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectOpExpr">SelectOpExpr</a> | <a ebnf-type="InsertOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#InsertOpExpr">InsertOpExpr</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="Expr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#Expr" name="Expr">Expr</a> = <a ebnf-type="WaypointDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#WaypointDecl">WaypointDecl</a> | <a ebnf-type="ConstExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConstExpr">ConstExpr</a> | <a ebnf-type="VarExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#VarExpr">VarExpr</a> | <a ebnf-type="SysVarExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SysVarExpr">SysVarExpr</a> | <a ebnf-type="ChannelExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ChannelExpr">ChannelExpr</a> | <a ebnf-type="AssignmentOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#AssignmentOpExpr">AssignmentOpExpr</a> | <a ebnf-type="PointerOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#PointerOpExpr">PointerOpExpr</a> | <a ebnf-type="IsOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#IsOpExpr">IsOpExpr</a> | <a ebnf-type="UseIsOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#UseIsOpExpr">UseIsOpExpr</a> | <a ebnf-type="LeftRightStreamOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#LeftRightStreamOpExpr">LeftRightStreamOpExpr</a> | <a ebnf-type="SelectOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectOpExpr">SelectOpExpr</a> | <a ebnf-type="InsertOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InsertOpExpr">InsertOpExpr</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Constant_expression_chapter'>
 Constant expression
-<a href="http://localhost/docs/spec.html#Constant_expression_chapter" name="Constant_expression_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Constant_expression_chapter" name="Constant_expression_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ConstExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#ConstExpr" name="ConstExpr">ConstExpr</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="VarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#VarIdentifier">VarIdentifier</a> | <a ebnf-type="SysVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#SysVarIdentifier">SysVarIdentifier</a> | <a ebnf-type="ChannelIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ChannelIdentifier">ChannelIdentifier</a> | <a ebnf-type="StringLiteral" ebnf-kind="use" href="http://localhost/docs/spec.html#StringLiteral">StringLiteral</a> | <a ebnf-type="NumberExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NumberExpr">NumberExpr</a> .</div><div class="ebnf-code-item"><a ebnf-type="NumberExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#NumberExpr" name="NumberExpr">NumberExpr</a> = <a ebnf-type="IntegerLiteral" ebnf-kind="use" href="http://localhost/docs/spec.html#IntegerLiteral">IntegerLiteral</a> | <a ebnf-type="FloatPointLiteral" ebnf-kind="use" href="http://localhost/docs/spec.html#FloatPointLiteral">FloatPointLiteral</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ConstExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ConstExpr" name="ConstExpr">ConstExpr</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="VarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#VarIdentifier">VarIdentifier</a> | <a ebnf-type="SysVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SysVarIdentifier">SysVarIdentifier</a> | <a ebnf-type="ChannelIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ChannelIdentifier">ChannelIdentifier</a> | <a ebnf-type="StringLiteral" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#StringLiteral">StringLiteral</a> | <a ebnf-type="NumberExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NumberExpr">NumberExpr</a> .</div><div class="ebnf-code-item"><a ebnf-type="NumberExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NumberExpr" name="NumberExpr">NumberExpr</a> = <a ebnf-type="IntegerLiteral" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#IntegerLiteral">IntegerLiteral</a> | <a ebnf-type="FloatPointLiteral" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FloatPointLiteral">FloatPointLiteral</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Variable_chapter'>
 Variable
-<a href="http://localhost/docs/spec.html#Variable_chapter" name="Variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Variable_chapter" name="Variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="VarExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#VarExpr" name="VarExpr">VarExpr</a> = <a ebnf-type="VarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#VarIdentifier">VarIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="VarExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#VarExpr" name="VarExpr">VarExpr</a> = <a ebnf-type="VarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#VarIdentifier">VarIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='System_variable_chapter'>
 System variable
-<a href="http://localhost/docs/spec.html#System_variable_chapter" name="System_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#System_variable_chapter" name="System_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SysVarExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#SysVarExpr" name="SysVarExpr">SysVarExpr</a> = <a ebnf-type="SysVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#SysVarIdentifier">SysVarIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SysVarExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SysVarExpr" name="SysVarExpr">SysVarExpr</a> = <a ebnf-type="SysVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SysVarIdentifier">SysVarIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Available_system_variables_chapter'>
 Available system variables
-<a href="http://localhost/docs/spec.html#Available_system_variables_chapter" name="Available_system_variables_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Available_system_variables_chapter" name="Available_system_variables_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h5 class='center-h' data-href='Self_system_variable_chapter'>
 @@self
-<a href="http://localhost/docs/spec.html#Self_system_variable_chapter" name="Self_system_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
+<a href="https://symontoclay.github.io/docs/spec.html#Self_system_variable_chapter" name="Self_system_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h5 class='center-h' data-href='Host_system_variable_chapter'>
 @@host
-<a href="http://localhost/docs/spec.html#Host_system_variable_chapter" name="Host_system_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
+<a href="https://symontoclay.github.io/docs/spec.html#Host_system_variable_chapter" name="Host_system_variable_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Channel_chapter'>
 Channel
-<a href="http://localhost/docs/spec.html#Channel_chapter" name="Channel_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Channel_chapter" name="Channel_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ChannelExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#ChannelExpr" name="ChannelExpr">ChannelExpr</a> = <a ebnf-type="ChannelIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ChannelIdentifier">ChannelIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ChannelExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ChannelExpr" name="ChannelExpr">ChannelExpr</a> = <a ebnf-type="ChannelIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ChannelIdentifier">ChannelIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Available_system_channels_chapter'>
 Available system channels
-<a href="http://localhost/docs/spec.html#Available_system_channels_chapter" name="Available_system_channels_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#Available_system_channels_chapter" name="Available_system_channels_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h5 class='center-h' data-href='Log_system_channel_chapter'>
 @>log
-<a href="http://localhost/docs/spec.html#Log_system_channel_chapter" name="Log_system_channel_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
+<a href="https://symontoclay.github.io/docs/spec.html#Log_system_channel_chapter" name="Log_system_channel_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Operators_chapter'>
 Operators
-<a href="http://localhost/docs/spec.html#Operators_chapter" name="Operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Operators_chapter" name="Operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <p>
 <table class='std-table' style='width: 400px;' border='1' cellspacing='0'>
     <tr>
-	    <th>Precedence</th>
-		<th>Operators</th>
-		<th>Associativity</th>
+	    <th class='center-h'>Precedence</th>
+		<th class='center-h'>Operators</th>
+		<th class='center-h'>Associativity</th>
     </tr>
 	<tr>
-	    <th rowspan='5'>
+	    <th rowspan='5' class='center-h'>
 		2
 		<p><small>highest</small></p>
 		</th>
@@ -755,7 +755,7 @@ Operators
 	    <td>insert</td>
 	</tr>
 	<tr>
-	    <th rowspan='3'>10</th>
+	    <th rowspan='3' class='center-h'>10</th>
 	    <td>is</td>
 	    <td rowspan='3'>Left-to-right</td>
 	</tr>
@@ -766,22 +766,22 @@ Operators
 	    <td>use is</td>
 	</tr>
 	<tr>
-	    <th>14</th>
+	    <th class='center-h'>14</th>
 	    <td>&amp;</td>
 		<td>Left-to-right</td>
 	</tr>
 	<tr>
-	    <th>15</th>
+	    <th class='center-h'>15</th>
 	    <td>&gt;&gt;</td>
 	    <td>Left-to-right</td>
 	</tr>
 	<tr>
-	    <th>16</th>
+	    <th class='center-h'>16</th>
 	    <td>=</td>
 	    <td>Right-to-left</td>
 	</tr>
 	<tr>
-	    <th>17</th>
+	    <th class='center-h'>17</th>
 	    <td>,</td>
 	    <td>Left-to-right</td>
 	</tr>	
@@ -792,187 +792,187 @@ Operators
 
 <h3 class='center-h' data-href='Assignment_operators_chapter'>
 Assignment operators
-<a href="http://localhost/docs/spec.html#Assignment_operators_chapter" name="Assignment_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Assignment_operators_chapter" name="Assignment_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='AssignmentOp_chapter'>
 Operator "="
-<a href="http://localhost/docs/spec.html#AssignmentOp_chapter" name="AssignmentOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#AssignmentOp_chapter" name="AssignmentOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="AssignmentOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#AssignmentOpExpr" name="AssignmentOpExpr">AssignmentOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> "=" <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="AssignmentOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#AssignmentOpExpr" name="AssignmentOpExpr">AssignmentOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> "=" <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='LogicOp_chapter'>
     Logic operators
-<a href="http://localhost/docs/spec.html#LogicOp_chapter" name="LogicOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#LogicOp_chapter" name="LogicOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='AndOp_chapter'>
     Operator "&"
-<a href="http://localhost/docs/spec.html#AndOp_chapter" name="AndOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#AndOp_chapter" name="AndOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="AndOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#AndOpExpr" name="AndOpExpr">AndOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> "&" <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a>.</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="AndOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#AndOpExpr" name="AndOpExpr">AndOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> "&" <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a>.</div></div>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
-<a href="http://localhost/docs/spec.html#Member_access_operators_chapter" name="Member_access_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Member_access_operators_chapter" name="Member_access_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='PointerOp_chapter'>
 Operator "."
-<a href="http://localhost/docs/spec.html#PointerOp_chapter" name="PointerOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#PointerOp_chapter" name="PointerOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="PointerOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#PointerOpExpr" name="PointerOpExpr">PointerOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> "." <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="PointerOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#PointerOpExpr" name="PointerOpExpr">PointerOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> "." <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Call_operators_chapter'>
 Call operators
-<a href="http://localhost/docs/spec.html#Call_operators_chapter" name="Call_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Call_operators_chapter" name="Call_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='CallOp_chapter'>
 Operator "()"
-<a href="http://localhost/docs/spec.html#CallOp_chapter" name="CallOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#CallOp_chapter" name="CallOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="CallOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#CallOpExpr" name="CallOpExpr">CallOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> [ "~" ] "(" <a ebnf-type="NamedParamsOfCallOpExprSet" ebnf-kind="use" href="http://localhost/docs/spec.html#NamedParamsOfCallOpExprSet">NamedParamsOfCallOpExprSet</a> ")" .</div><div class="ebnf-code-item"><a ebnf-type="NamedParamsOfCallOpExprSet" ebnf-kind="decl" href="http://localhost/docs/spec.html#NamedParamsOfCallOpExprSet" name="NamedParamsOfCallOpExprSet">NamedParamsOfCallOpExprSet</a> = <a ebnf-type="NamedParamOfCallOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NamedParamOfCallOpExpr">NamedParamOfCallOpExpr</a> [ { "," <a ebnf-type="NamedParamOfCallOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NamedParamOfCallOpExpr">NamedParamOfCallOpExpr</a> } ] .</div><div class="ebnf-code-item"><a ebnf-type="NamedParamOfCallOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#NamedParamOfCallOpExpr" name="NamedParamOfCallOpExpr">NamedParamOfCallOpExpr</a> =  <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> ":" <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="CallOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#CallOpExpr" name="CallOpExpr">CallOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> [ "~" ] "(" <a ebnf-type="NamedParamsOfCallOpExprSet" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NamedParamsOfCallOpExprSet">NamedParamsOfCallOpExprSet</a> ")" .</div><div class="ebnf-code-item"><a ebnf-type="NamedParamsOfCallOpExprSet" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NamedParamsOfCallOpExprSet" name="NamedParamsOfCallOpExprSet">NamedParamsOfCallOpExprSet</a> = <a ebnf-type="NamedParamOfCallOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NamedParamOfCallOpExpr">NamedParamOfCallOpExpr</a> [ { "," <a ebnf-type="NamedParamOfCallOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NamedParamOfCallOpExpr">NamedParamOfCallOpExpr</a> } ] .</div><div class="ebnf-code-item"><a ebnf-type="NamedParamOfCallOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#NamedParamOfCallOpExpr" name="NamedParamOfCallOpExpr">NamedParamOfCallOpExpr</a> =  <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> ":" <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Inheritance_operators_chapter'>
 Inheritance operators
-<a href="http://localhost/docs/spec.html#Inheritance_operators_chapter" name="Inheritance_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Inheritance_operators_chapter" name="Inheritance_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='IsOp_chapter'>
 Operator "is"
-<a href="http://localhost/docs/spec.html#IsOp_chapter" name="IsOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#IsOp_chapter" name="IsOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="IsOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#IsOpExpr" name="IsOpExpr">IsOpExpr</a> = ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) "is" [ "not" ] [ "[" <a ebnf-type="NumberExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NumberExpr">NumberExpr</a> "]" ] ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="IsOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#IsOpExpr" name="IsOpExpr">IsOpExpr</a> = ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) "is" [ "not" ] [ "[" <a ebnf-type="NumberExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NumberExpr">NumberExpr</a> "]" ] ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='UseIsOp_chapter'>
 Operator "use is"
-<a href="http://localhost/docs/spec.html#UseIsOp_chapter" name="UseIsOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#UseIsOp_chapter" name="UseIsOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="UseIsOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#UseIsOpExpr" name="UseIsOpExpr">UseIsOpExpr</a> = "use" ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) "is" [ "not" ] [ "[" <a ebnf-type="NumberExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#NumberExpr">NumberExpr</a> "]" ] ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="UseIsOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#UseIsOpExpr" name="UseIsOpExpr">UseIsOpExpr</a> = "use" ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) "is" [ "not" ] [ "[" <a ebnf-type="NumberExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#NumberExpr">NumberExpr</a> "]" ] ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> ) .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Stream_operators_chapter'>
 Stream operators
-<a href="http://localhost/docs/spec.html#Stream_operators_chapter" name="Stream_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Stream_operators_chapter" name="Stream_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='StreamOp_chapter'>
 Operator ">>"
-<a href="http://localhost/docs/spec.html#StreamOp_chapter" name="StreamOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#StreamOp_chapter" name="StreamOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SourceOfStreamOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#SourceOfStreamOpExpr" name="SourceOfStreamOpExpr">SourceOfStreamOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> .</div><div class="ebnf-code-item"><a ebnf-type="DestOfStreamOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#DestOfStreamOpExpr" name="DestOfStreamOpExpr">DestOfStreamOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> .</div><div class="ebnf-code-item"><a ebnf-type="LeftRightStreamOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#LeftRightStreamOpExpr" name="LeftRightStreamOpExpr">LeftRightStreamOpExpr</a> = <a ebnf-type="SourceOfStreamOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#SourceOfStreamOpExpr">SourceOfStreamOpExpr</a> ">>" <a ebnf-type="DestOfStreamOpExpr" ebnf-kind="use" href="http://localhost/docs/spec.html#DestOfStreamOpExpr">DestOfStreamOpExpr</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SourceOfStreamOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SourceOfStreamOpExpr" name="SourceOfStreamOpExpr">SourceOfStreamOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> .</div><div class="ebnf-code-item"><a ebnf-type="DestOfStreamOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#DestOfStreamOpExpr" name="DestOfStreamOpExpr">DestOfStreamOpExpr</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> .</div><div class="ebnf-code-item"><a ebnf-type="LeftRightStreamOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#LeftRightStreamOpExpr" name="LeftRightStreamOpExpr">LeftRightStreamOpExpr</a> = <a ebnf-type="SourceOfStreamOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SourceOfStreamOpExpr">SourceOfStreamOpExpr</a> ">>" <a ebnf-type="DestOfStreamOpExpr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#DestOfStreamOpExpr">DestOfStreamOpExpr</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Logic_operators_chapter'>
 Logic operators
-<a href="http://localhost/docs/spec.html#Logic_operators_chapter" name="Logic_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Logic_operators_chapter" name="Logic_operators_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='SelectOp_chapter'>
 select (Operator "?")
-<a href="http://localhost/docs/spec.html#SelectOp_chapter" name="SelectOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#SelectOp_chapter" name="SelectOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SelectOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#SelectOpExpr" name="SelectOpExpr">SelectOpExpr</a> = ( "select" | "?" ) ( <a ebnf-type="FactDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDecl">FactDecl</a> | <a ebnf-type="SelectQuery" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQuery">SelectQuery</a> ) .</div><div class="ebnf-code-item"><a ebnf-type="SelectQuery" ebnf-kind="decl" href="http://localhost/docs/spec.html#SelectQuery" name="SelectQuery">SelectQuery</a> = "{:" ( <a ebnf-type="SelectQuerySection" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQuerySection">SelectQuerySection</a> | <a ebnf-type="SelectQuerySentence" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQuerySentence">SelectQuerySentence</a> ) ":}" .</div><div class="ebnf-code-item"><a ebnf-type="SelectQuerySection" ebnf-kind="decl" href="http://localhost/docs/spec.html#SelectQuerySection" name="SelectQuerySection">SelectQuerySection</a> = ">:" "{" <a ebnf-type="SelectQuerySentence" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQuerySentence">SelectQuerySentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="SelectQuerySentence" ebnf-kind="decl" href="http://localhost/docs/spec.html#SelectQuerySentence" name="SelectQuerySentence">SelectQuerySentence</a> = <a ebnf-type="SelectQueryPredicate" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQueryPredicate">SelectQueryPredicate</a> .</div><div class="ebnf-code-item"><a ebnf-type="SelectQueryPredicate" ebnf-kind="decl" href="http://localhost/docs/spec.html#SelectQueryPredicate" name="SelectQueryPredicate">SelectQueryPredicate</a> = ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="QuestionVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#QuestionVarIdentifier">QuestionVarIdentifier</a> ) "(" <a ebnf-type="SelectQueryPredicateParam" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQueryPredicateParam">SelectQueryPredicateParam</a> [ { "," <a ebnf-type="SelectQueryPredicateParam" ebnf-kind="use" href="http://localhost/docs/spec.html#SelectQueryPredicateParam">SelectQueryPredicateParam</a> } ] ")" .</div><div class="ebnf-code-item"><a ebnf-type="SelectQueryPredicateParam" ebnf-kind="decl" href="http://localhost/docs/spec.html#SelectQueryPredicateParam" name="SelectQueryPredicateParam">SelectQueryPredicateParam</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="QuestionVarIdentifier" ebnf-kind="use" href="http://localhost/docs/spec.html#QuestionVarIdentifier">QuestionVarIdentifier</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="SelectOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SelectOpExpr" name="SelectOpExpr">SelectOpExpr</a> = ( "select" | "?" ) ( <a ebnf-type="FactDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDecl">FactDecl</a> | <a ebnf-type="SelectQuery" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQuery">SelectQuery</a> ) .</div><div class="ebnf-code-item"><a ebnf-type="SelectQuery" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SelectQuery" name="SelectQuery">SelectQuery</a> = "{:" ( <a ebnf-type="SelectQuerySection" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQuerySection">SelectQuerySection</a> | <a ebnf-type="SelectQuerySentence" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQuerySentence">SelectQuerySentence</a> ) ":}" .</div><div class="ebnf-code-item"><a ebnf-type="SelectQuerySection" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SelectQuerySection" name="SelectQuerySection">SelectQuerySection</a> = ">:" "{" <a ebnf-type="SelectQuerySentence" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQuerySentence">SelectQuerySentence</a> "}" .</div><div class="ebnf-code-item"><a ebnf-type="SelectQuerySentence" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SelectQuerySentence" name="SelectQuerySentence">SelectQuerySentence</a> = <a ebnf-type="SelectQueryPredicate" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQueryPredicate">SelectQueryPredicate</a> .</div><div class="ebnf-code-item"><a ebnf-type="SelectQueryPredicate" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SelectQueryPredicate" name="SelectQueryPredicate">SelectQueryPredicate</a> = ( <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="QuestionVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#QuestionVarIdentifier">QuestionVarIdentifier</a> ) "(" <a ebnf-type="SelectQueryPredicateParam" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQueryPredicateParam">SelectQueryPredicateParam</a> [ { "," <a ebnf-type="SelectQueryPredicateParam" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#SelectQueryPredicateParam">SelectQueryPredicateParam</a> } ] ")" .</div><div class="ebnf-code-item"><a ebnf-type="SelectQueryPredicateParam" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#SelectQueryPredicateParam" name="SelectQueryPredicateParam">SelectQueryPredicateParam</a> = <a ebnf-type="ConceptIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ConceptIdentifier">ConceptIdentifier</a> | <a ebnf-type="InstanceIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#InstanceIdentifier">InstanceIdentifier</a> | <a ebnf-type="QuestionVarIdentifier" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#QuestionVarIdentifier">QuestionVarIdentifier</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
-<a href="http://localhost/docs/spec.html#InsertOp_chapter" name="InsertOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<a href="https://symontoclay.github.io/docs/spec.html#InsertOp_chapter" name="InsertOp_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InsertOpExpr" ebnf-kind="decl" href="http://localhost/docs/spec.html#InsertOpExpr" name="InsertOpExpr">InsertOpExpr</a> = "insert" <a ebnf-type="FactDecl" ebnf-kind="use" href="http://localhost/docs/spec.html#FactDecl">FactDecl</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="InsertOpExpr" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#InsertOpExpr" name="InsertOpExpr">InsertOpExpr</a> = "insert" <a ebnf-type="FactDecl" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#FactDecl">FactDecl</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h2 class='center-h' data-href='Statements_chapter'>
 Statements
-<a href="http://localhost/docs/spec.html#Statements_chapter" name="Statements_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<a href="https://symontoclay.github.io/docs/spec.html#Statements_chapter" name="Statements_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="StatementsSet" ebnf-kind="decl" href="http://localhost/docs/spec.html#StatementsSet" name="StatementsSet">StatementsSet</a> = <a ebnf-type="Statement" ebnf-kind="use" href="http://localhost/docs/spec.html#Statement">Statement</a> [{ <a ebnf-type="Statement" ebnf-kind="use" href="http://localhost/docs/spec.html#Statement">Statement</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="Statement" ebnf-kind="decl" href="http://localhost/docs/spec.html#Statement" name="Statement">Statement</a> = <a ebnf-type="ExpressionStatement" ebnf-kind="use" href="http://localhost/docs/spec.html#ExpressionStatement">ExpressionStatement</a> .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="StatementsSet" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#StatementsSet" name="StatementsSet">StatementsSet</a> = <a ebnf-type="Statement" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Statement">Statement</a> [{ <a ebnf-type="Statement" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Statement">Statement</a> }] .</div><div class="ebnf-code-item"><a ebnf-type="Statement" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#Statement" name="Statement">Statement</a> = <a ebnf-type="ExpressionStatement" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#ExpressionStatement">ExpressionStatement</a> .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Expression_statement_chapter'>
 Expression statement
-<a href="http://localhost/docs/spec.html#Expression_statement_chapter" name="Expression_statement_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/spec.html#Expression_statement_chapter" name="Expression_statement_chapter" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
-<p><a href="http://localhost/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+<p><a href="https://symontoclay.github.io/docs/spec.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
-<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ExpressionStatement" ebnf-kind="decl" href="http://localhost/docs/spec.html#ExpressionStatement" name="ExpressionStatement">ExpressionStatement</a> = <a ebnf-type="Expr" ebnf-kind="use" href="http://localhost/docs/spec.html#Expr">Expr</a> ";" .</div></div>
+<div class="ebnf-code"><div class="ebnf-code-item"><a ebnf-type="ExpressionStatement" ebnf-kind="decl" href="https://symontoclay.github.io/docs/spec.html#ExpressionStatement" name="ExpressionStatement">ExpressionStatement</a> = <a ebnf-type="Expr" ebnf-kind="use" href="https://symontoclay.github.io/docs/spec.html#Expr">Expr</a> ";" .</div></div>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
