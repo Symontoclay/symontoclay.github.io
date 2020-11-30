@@ -43,6 +43,16 @@ hr{
 	display:inline-block;
 }
 
+.std-table td 
+{
+    padding: 3px;
+}
+
+.std-table th 
+{
+    padding: 3px;
+}
+
 .tab1{
 	margin-left: 40px;
 }

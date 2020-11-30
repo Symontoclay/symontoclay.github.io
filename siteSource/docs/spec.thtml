@@ -8,7 +8,20 @@ Introduction
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+This is manual for SymOntoClay DSL.
+</p>
+
+<p>
+This document contains all implemented grammar. 
+You can use It.
+</p>
+
+<p>
+SymOntoClay DSL is in development now. 
+So new parts will be added here right after implementation and internal testing. 
+I will try to do this as soon as possible.
+</p>
 
 <h2 class='center-h' data-href='Notation_chapter'>
 Notation
@@ -16,7 +29,9 @@ Notation
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The syntax is specified using <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form'>Extended Backus-Naur Form (EBNF)</a>.
+</p>
 
 <h2 class='center-h' data-href='Source_code_representation_chapter'>
 Source code representation
@@ -24,7 +39,9 @@ Source code representation
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Source code is Unicode text encoded in <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/UTF-8'>UTF-8</a>.
+</p>
 
 <h3 class='center-h' data-href='Symbols_chapter'>
 Symbols
@@ -32,15 +49,11 @@ Symbols
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='Characters_chapter'>
 Characters
 </h4>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='Newline'/> = /* the Unicode code point U+000A */ .
@@ -55,14 +68,14 @@ Letters and digits
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The underscore character _ (U+005F) is considered a letter.
+</p>
 
 <gr>
 <EBNFCDECL name='Letter'/> = "A" ... "Z" | "a" ... "z" | "_" .
 <EBNFCDECL name='DecimalDigit'/> = "0" … "9" .
 </gr>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Kind_of_source_code_files_chapter'>
 Kind of source code files
@@ -70,19 +83,23 @@ Kind of source code files
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+There are different kinds of source code files which can contain different elements.
+</p>
 
 <gr>
 <EBNFCDECL name='SourceCodeFileContent'/> = <GEBNFC name='SourceCodeFileContent' kind='or'/> .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='World_source_code_file_chapter'>
 World source code file
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -98,6 +115,10 @@ NPC source code file
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -111,6 +132,10 @@ Host source code file
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -128,6 +153,10 @@ Class source code file
 
 <complete_me/>
 
+<p>
+
+</p>
+
 <gr>
 <EBNFCDECL name='ClassSourceCodeFileContent' groups='SourceCodeFileContent'/> = <GEBNFC name='ClassSourceCodeFileContent' kind='op_and'/> .
 </gr>
@@ -140,15 +169,28 @@ Lexical elements
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Comments_chapter'>
 Comments
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+<EBNFCDECL name='SingleLineComment'/> = "//" [{ <EBNFC name='UnicodeChar'/> }] <EBNFC name='NewLine'/> .
+</gr>
+
+<code data-lng='soc'>
+//@r = @b = 1;
+</code>
+
+<gr>
+<EBNFCDECL name='MultiLineComment'/> = "/*" [{ <EBNFC name='UnicodeChar'/> }] "*/" .
+</gr>
+
+<code data-lng='soc'>
+ /*@r = @b = 1;
+@bx >> @>log;*/
+</code>
 
 <h3 class='center-h' data-href='Tokens_chapter'>
 Tokens
@@ -156,13 +198,24 @@ Tokens
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Tokens form the vocabulary of the SymOntoClay DSL.
+There are four classes: identifiers, keywords, operators and punctuation, and literals. 
+</p>
 
 <h3 class='center-h' data-href='Identifiers_chapter'>
 Identifiers
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -177,6 +230,10 @@ Concept identifier
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -202,6 +259,10 @@ Instance identifier
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -219,6 +280,10 @@ Variable identifier
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -240,6 +305,10 @@ System variable identifier
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -254,11 +323,15 @@ System variable identifier
 
 <complete_me/>
 
-<h4 class='center-h' data-href='QueryVarIdentifier_chapter'>
-Query variable identifier
+<h4 class='center-h' data-href='QuestionVarIdentifier_chapter'>
+Question variable identifier
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -274,16 +347,20 @@ Query variable identifier
 
 <complete_me/>
 
-<h4 class='center-h' data-href='LogicSentenceVarIdentifier_chapter'>
-Logic setence variable identifier
+<h4 class='center-h' data-href='LogicRuleVarIdentifier_chapter'>
+Logic rule variable identifier
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='LogicSentenceVarIdentifier' groups='Identifier'/> = "$" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='LogicRuleVarIdentifier' groups='Identifier'/> = "$" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -299,6 +376,10 @@ Channel identifier
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -320,7 +401,10 @@ Keywords
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Some words is used as keywords in syntax.
+But the words can be used as identifiers in other places. 
+</p>
 
 <keywords cols='4'>
     <kw name='npc'/>
@@ -335,19 +419,21 @@ Keywords
 	<kw name='insert'/>
 </keywords>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
 Operators and punctuation
 </h3>
 
 <LinkToContent/>
 
+<p>
+The following character sequences represent <a href='#Operators_chapter'>operators</a> and punctuation:
+</p>
+
 <items cols='4'>
     <item value='?'/>
 	<item value='='/>
+	<item value='&'/>
 	<item value='>>'/>
-	<item value='<<'/>
 	<item value='=>'/>
 	<item value=':'/>
 	<item value=';'/>
@@ -360,9 +446,6 @@ Operators and punctuation
 	<item value='}'/>
 </items>
 
-
-<complete_me/>
-
 <h3 class='center-h' data-href='Integer_literals_chapter'>
 Integer literals
 </h3>
@@ -374,6 +457,12 @@ Integer literals
 <gr>
 <EBNFCDECL name='IntegerLiteral' groups='NumberExpr'/> = <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+42
+</code>
 
 <complete_me/>
 
@@ -391,6 +480,12 @@ Floating-point literals
 
 <complete_me/>
 
+<code data-lng='soc'>
+36.6
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='String_literals_chapter'>
 String literals
 </h3>
@@ -405,11 +500,22 @@ String literals
 
 <complete_me/>
 
+<code data-lng='soc'>
+"abc"
+'abc'
+</code>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
 </h2>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -423,10 +529,7 @@ Class
 
 <gr>
 <EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/>
-    "{"<br/>
-	 [ <TEBNFC name='DeclSet' param = 'ClassBodyContent'/> ] <br/>
-	"}" .
+<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ClassBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='ClassBodyContent'/> = <GEBNFC name='ClassBodyContent' kind='op_and'/> .
 </gr>
 
@@ -442,10 +545,7 @@ NPC
 
 <gr>
 <EBNFCDECL name='NPCIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='NPCDecl' groups='NPCSourceCodeFileContent'/> = "npc" <EBNFC name='NPCIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> 
-    "{"<br/>
-	 [ <TEBNFC name='DeclSet' param = 'NPCBodyContent'/> ] <br/>
-	"}" .
+<EBNFCDECL name='NPCDecl' groups='NPCSourceCodeFileContent'/> = "npc" <EBNFC name='NPCIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'NPCBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='NPCBodyContent'/> = [ <GEBNFC name='NPCBodyContent' kind='op_and'/> ] .
 </gr>
 
@@ -461,10 +561,7 @@ World
 
 <gr>
 <EBNFCDECL name='WorldIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='WorldDecl' groups='WorldSourceCodeFileContent'/> = "world" <EBNFC name='WorldIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> 
-    "{"<br/>
-	 [ <TEBNFC name='DeclSet' param = 'WorldBodyContent'/> ] <br/>
-	"}" .
+<EBNFCDECL name='WorldDecl' groups='WorldSourceCodeFileContent'/> = "world" <EBNFC name='WorldIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'WorldBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='WorldBodyContent'/> = <GEBNFC name='WorldBodyContent' kind='op_and'/> .
 </gr>
 
@@ -480,10 +577,7 @@ Host
 
 <gr>
 <EBNFCDECL name='HostIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='HostDecl' groups='HostSourceCodeFileContent'/> = "host" <EBNFC name='HostIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> 
-    "{"<br/>
-	 [ <TEBNFC name='DeclSet' param = 'HostBodyContent'/> ] <br/>
-	"}" .
+<EBNFCDECL name='HostDecl' groups='HostSourceCodeFileContent'/> = "host" <EBNFC name='HostIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'HostBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='HostBodyContent'/> = <GEBNFC name='HostBodyContent' kind='op_and'/> .
 </gr>
 
@@ -544,9 +638,9 @@ Logic rule
 <EBNFCDECL name='LogicRulePrimarySection'/> = ">:" "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" .
-<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { "&" <EBNFC name='LogicRulePredicate'/> } ] .
+<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { <EBNFC name='AndOpExpr'/> <EBNFC name='LogicRulePredicate'/> } ] .
 <EBNFCDECL name='LogicRulePredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='LogicRulePredicateParam'/> [ { "," <EBNFC name='LogicRulePredicateParam'/> } ] ")" .
-<EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicSentenceVarIdentifier'/> .
+<EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicRuleVarIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -738,6 +832,69 @@ Operators
 
 <complete_me/>
 
+<p>
+<table class='std-table' style='width: 400px;' border='1' cellspacing='0'>
+    <tr>
+	    <th>Precedence</th>
+		<th>Operators</th>
+		<th>Associativity</th>
+    </tr>
+	<tr>
+	    <th rowspan='5'>
+		2
+		<p><small>highest</small></p>
+		</th>
+	    <td>.</td>
+	    <td rowspan='5'>Left-to-right</td>	
+	</tr>
+	<tr>
+	    <td>()</td>
+	</tr>
+	<tr>
+	    <td>select</td>
+	</tr>
+	<tr>
+	    <td>?</td>
+	</tr>
+	<tr>
+	    <td>insert</td>
+	</tr>
+	<tr>
+	    <th rowspan='3'>10</th>
+	    <td>is</td>
+	    <td rowspan='3'>Left-to-right</td>
+	</tr>
+	<tr>
+	    <td>is not</td>
+	</tr>
+	<tr>
+	    <td>use is</td>
+	</tr>
+	<tr>
+	    <th>14</th>
+	    <td>&amp;</td>
+		<td>Left-to-right</td>
+	</tr>
+	<tr>
+	    <th>15</th>
+	    <td>&gt;&gt;</td>
+	    <td>Left-to-right</td>
+	</tr>
+	<tr>
+	    <th>16</th>
+	    <td>=</td>
+	    <td>Right-to-left</td>
+	</tr>
+	<tr>
+	    <th>17</th>
+	    <td>,</td>
+	    <td>Left-to-right</td>
+	</tr>	
+</table>
+<p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Assignment_operators_chapter'>
 Assignment operators
 </h3>
@@ -759,6 +916,26 @@ Operator "="
 </gr>
 
 <complete_me/>
+
+<h3 class='center-h' data-href='LogicOp_chapter'>
+    Logic operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='AndOp_chapter'>
+    Operator "&"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='AndOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '"&"'/>
+</gr>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
@@ -842,8 +1019,8 @@ Operator "use is"
 
 <complete_me/>
 
-<h3 class='center-h' data-href='Data_source_operators_chapter'>
-Data source operators
+<h3 class='center-h' data-href='Stream_operators_chapter'>
+Stream operators
 </h3>
 
 <LinkToContent/>
@@ -851,7 +1028,7 @@ Data source operators
 <complete_me/>
 
 <h4 class='center-h' data-href='StreamOp_chapter'>
-Operators ">>" "<<"
+Operator ">>"
 </h4>
 
 <LinkToContent/>
@@ -861,7 +1038,7 @@ Operators ">>" "<<"
 <gr>
 <EBNFCDECL name='SourceOfStreamOpExpr'/> = <EBNFC name='Expr'/> .
 <EBNFCDECL name='DestOfStreamOpExpr'/> = <EBNFC name='Expr'/> .
-<EBNFCDECL name='StreamOpExpr' groups='Expr'/> = ( <EBNFC name='SourceOfStreamOpExpr'/> ">>" <EBNFC name='DestOfStreamOpExpr'/> ) | ( <EBNFC name='DestOfStreamOpExpr'/> "<<" <EBNFC name='SourceOfStreamOpExpr'/> ) .
+<EBNFCDECL name='LeftRightStreamOpExpr' groups='Expr'/> = <EBNFC name='SourceOfStreamOpExpr'/> ">>" <EBNFC name='DestOfStreamOpExpr'/> .
 </gr>
 
 <complete_me/>
@@ -875,8 +1052,7 @@ Logic operators
 <complete_me/>
 
 <h4 class='center-h' data-href='SelectOp_chapter'>
-select</br>
-Operator "?"
+select (Operator "?")
 </h4>
 
 <LinkToContent/>
