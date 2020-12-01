@@ -40,7 +40,7 @@ Source code representation
 <LinkToContent/>
 
 <p>
-Source code is Unicode text encoded in <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/UTF-8'>UTF-8</a>.
+There are two views of source code file: as set of characters and as set of code entities.
 </p>
 
 <h3 class='center-h' data-href='Symbols_chapter'>
@@ -55,12 +55,14 @@ Characters
 
 <LinkToContent/>
 
+<p>
+Source code is Unicode text encoded in <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/UTF-8'>UTF-8</a>.
+</p>
+
 <gr>
 <EBNFCDECL name='Newline'/> = /* the Unicode code point U+000A */ .
 <EBNFCDECL name='UnicodeChar'/> = /* an arbitrary Unicode code point except <EBNFC name='Newline'/> */ .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Letters_and_digits_chapter'>
 Letters and digits
@@ -84,7 +86,7 @@ Kind of source code files
 <LinkToContent/>
 
 <p>
-There are different kinds of source code files which can contain different elements.
+There are different kinds of source code files which can contain different code entities.
 </p>
 
 <gr>
@@ -98,16 +100,14 @@ World source code file
 <LinkToContent/>
 
 <p>
-
+The file contains <a href='#World_chapter'>World declaration</a>.
+There can be only one World declaration in the file.
+Also this file can contain other content which is allowed in <a href='#Class_source_code_file_chapter'>Class source code file</a>.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='WorldSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='WorldSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='NPC_source_code_file_chapter'>
 NPC source code file
@@ -116,16 +116,14 @@ NPC source code file
 <LinkToContent/>
 
 <p>
-
+The file contains <a href='#NPC_chapter'>NPC declaration</a>.
+There can be only one NPC declaration in the file.
+Also this file can contain other content which is allowed in <a href='#Class_source_code_file_chapter'>Class source code file</a>.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='NPCSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='NPCSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Host_source_code_file_chapter'>
 Host source code file
@@ -134,16 +132,14 @@ Host source code file
 <LinkToContent/>
 
 <p>
-
+The file contains <a href='#Host_chapter'>Host declaration</a>.
+There can be only one Host declaration in the file.
+Also this file can contain other content which is allowed in <a href='#Class_source_code_file_chapter'>Class source code file</a>.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='HostSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='HostSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Class_source_code_file_chapter'>
 Class source code file
@@ -151,17 +147,15 @@ Class source code file
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+The file contains all possible code entities, except <a href='#World_chapter'>World</a>, <a href='#NPC_chapter'>NPC</a> and <a href='#Host_chapter'>Host</a> declarations.
+There exist special source code files for these code entities.
+But content of Class source code file can be included into <a href='#World_source_code_file_chapter'>World</a>, <a href='#NPC_source_code_file_chapter'>NPC</a> and <a href='#Host_source_code_file_chapter'>Host</a> source code files.
 </p>
 
 <gr>
 <EBNFCDECL name='ClassSourceCodeFileContent' groups='SourceCodeFileContent'/> = <GEBNFC name='ClassSourceCodeFileContent' kind='op_and'/> .
 </gr>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Lexical_elements_chapter'>
 Lexical elements
@@ -174,6 +168,12 @@ Comments
 </h3>
 
 <LinkToContent/>
+
+<p>
+SymOntoClay supports both single and multiline comments.
+It is a programmer-readable explanation or annotation of source code like in many other programming languages.
+Also It helps to cut temporarily unused code fragments.
+</p>
 
 <gr>
 <EBNFCDECL name='SingleLineComment'/> = "//" [{ <EBNFC name='UnicodeChar'/> }] <EBNFC name='NewLine'/> .
@@ -210,20 +210,18 @@ Identifiers
 <LinkToContent/>
 
 <p>
-
+Identifiers name code entities.
 </p>
 
 <p>
-
+Since SymOntoClay has many kinds of code entities, I have decided It will be better to recognize kind of code entity by identifier.
+So SymOntoClay has many kinds of identifiers with different prefixes.
+Each of these identifiers has Its own meaning in code. 
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='Identifier'/> = <GEBNFC name='Identifier' kind='or' /> .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='ConceptIdentifier_chapter'>
 Concept identifier
@@ -232,10 +230,8 @@ Concept identifier
 <LinkToContent/>
 
 <p>
-
+Names a concept.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr'/> = <TEBNFC name='BaseIdentifier'/> .
@@ -251,8 +247,6 @@ Great_Britain
 `Great Britain`
 </code>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
 Instance identifier
 </h4>
@@ -260,16 +254,12 @@ Instance identifier
 <LinkToContent/>
 
 <p>
-
+Names an instance of concept.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='InstanceIdentifier' groups='Identifier;TypeIdentifier;ConstExpr'/> = "#" <TEBNFC name='BaseIdentifier'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 #123
@@ -282,22 +272,16 @@ Variable identifier
 <LinkToContent/>
 
 <p>
-
+Names a <a href='#Variable_chapter'>variable</a>.
 </p>
-
-<complete_me/>
 
 </gr>
 <EBNFCDECL name='VarIdentifier' groups='Identifier;ConstExpr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 @a
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='SysVarIdentifier_chapter'>
 System variable identifier
@@ -306,22 +290,16 @@ System variable identifier
 <LinkToContent/>
 
 <p>
-
+Names a <a href='#System_variable_chapter'>system variable</a>
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='SysVarIdentifier' groups='Identifier;ConstExpr'/> = "@@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 @@host
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='QuestionVarIdentifier_chapter'>
 Question variable identifier
@@ -330,22 +308,17 @@ Question variable identifier
 <LinkToContent/>
 
 <p>
-
+Names a variable for describing select-pattern in <a href='#SelectOp_chapter'>select query</a>.
+This variable represents information which should be found in the select query.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='QuestionVarIdentifier' groups='Identifier'/> = "?" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 ?x
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='LogicRuleVarIdentifier_chapter'>
 Logic rule variable identifier
@@ -354,22 +327,16 @@ Logic rule variable identifier
 <LinkToContent/>
 
 <p>
-
+Names special variable for <a href='#Logic_rule_chapter'>Logic rule</a>.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='LogicRuleVarIdentifier' groups='Identifier'/> = "$" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 $x
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='ChannelIdentifier_chapter'>
 Channel identifier
@@ -378,22 +345,16 @@ Channel identifier
 <LinkToContent/>
 
 <p>
-
+Names <a href='#Channel_chapter'>Channel</a>.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='ChannelIdentifier' groups='Identifier;ConstExpr'/> = "@>" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 @>log
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Keywords_chapter'>
 Keywords
@@ -446,66 +407,66 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 	<item value='}'/>
 </items>
 
-<h3 class='center-h' data-href='Integer_literals_chapter'>
-Integer literals
+<h3 class='center-h' data-href='Integer_literal_chapter'>
+Integer literal
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+An integer literal is a sequence of digits representing an <a href='#Constant_expression_chapter'>integer constant</a>.
+Now integer literal has only decimal base.
+</p>
 
 <gr>
 <EBNFCDECL name='IntegerLiteral' groups='NumberExpr'/> = <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 42
 </code>
 
-<complete_me/>
-
-<h3 class='center-h' data-href='Floating_point_literals_chapter'>
-Floating-point literals
+<h3 class='center-h' data-href='Floating_point_literal_chapter'>
+Floating-point literal
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A floating-point literal is a decimal or hexadecimal representation of a <a href='#Constant_expression_chapter'>floating-point constant</a>.
+</p>
+
+<p>
+A floating-point literal consists of an integer part (decimal digits), a decimal point and a fractional part (decimal digits).
+Now floating-point literal has only decimal base.
+</p>
 
 <gr>
 <EBNFCDECL name='FloatPointLiteral' groups='NumberExpr'/> = (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) "." (  <EBNFC name='DecimalDigit'/> [ { <EBNFC name='DecimalDigit'/> } ] ) .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 36.6
 </code>
 
-<complete_me/>
-
-<h3 class='center-h' data-href='String_literals_chapter'>
-String literals
+<h3 class='center-h' data-href='String_literal_chapter'>
+String literal
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A string literal represents a <a href='#Constant_expression_chapter'>string constant</a> obtained from concatenating a sequence of characters.
+</p>
 
 <gr>
 <EBNFCDECL name='StringLiteral' groups='ConstExpr'/> = (""" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] """) | ("'" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] "'") .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 "abc"
 'abc'
 </code>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
