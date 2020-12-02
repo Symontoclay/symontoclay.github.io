@@ -475,10 +475,18 @@ Objects declaration
 <LinkToContent/>
 
 <p>
-
+Everything is an object.
+The classical type-instance relationship is using, but there is not strict and fundamental distinction between the two.
 </p>
 
-<complete_me/>
+<p>
+Some objects have a special meaning.
+So Class represents a general concept which can have many instances.
+</p>
+
+<p>
+Some objects have special engine support to make writing code easier and faster, or as entry point locators.
+</p>
 
 <h3 class='center-h' data-href='Class_chapter'>
 Class
@@ -486,7 +494,13 @@ Class
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Represents a general concept which can have many instances.
+</p>
+
+<p>
+In general, It is similar to the concept 'class' in other OOP languages.
+</p>
 
 <gr>
 <EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
@@ -494,7 +508,17 @@ Class
 <EBNFCDECL name='ClassBodyContent'/> = <GEBNFC name='ClassBodyContent' kind='op_and'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+class exampleClass
+{
+}
+</code>
+
+<code data-lng='soc'>
+class exampleClass is human, [0.1] animal
+{
+}
+</code>
 
 <h3 class='center-h' data-href='NPC_chapter'>
 NPC
@@ -502,7 +526,9 @@ NPC
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It is root object and entry point of <a href='/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a>.
+</p>
 
 <gr>
 <EBNFCDECL name='NPCIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
@@ -510,7 +536,23 @@ NPC
 <EBNFCDECL name='NPCBodyContent'/> = [ <GEBNFC name='NPCBodyContent' kind='op_and'/> ] .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+npc PeaceKeeper
+{
+    on Init => 
+	{
+    }
+}
+</code>
+
+<code data-lng='soc'>
+npc PeaceKeeper is human
+{
+    on Init => 
+	{
+    }
+}
+</code>
 
 <h3 class='center-h' data-href='World_chapter'>
 World
@@ -518,7 +560,9 @@ World
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_World'>World</a>.
+</p>
 
 <gr>
 <EBNFCDECL name='WorldIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
@@ -526,7 +570,11 @@ World
 <EBNFCDECL name='WorldBodyContent'/> = <GEBNFC name='WorldBodyContent' kind='op_and'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+world `Lost town`
+{
+}
+</code>
 
 <h3 class='center-h' data-href='Host_chapter'>
 Host
@@ -534,7 +582,9 @@ Host
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_Host'>Host</a>.
+</p>
 
 <gr>
 <EBNFCDECL name='HostIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
@@ -542,13 +592,21 @@ Host
 <EBNFCDECL name='HostBodyContent'/> = <GEBNFC name='HostBodyContent' kind='op_and'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+host `Crazy 1`
+{
+}
+</code>
 
 <h3 class='center-h' data-href='Waypoint_chapter'>
 Waypoint
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -572,6 +630,10 @@ Fact
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -585,11 +647,21 @@ Fact
 
 <complete_me/>
 
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Logic_rule_chapter'>
 Logic rule
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -606,13 +678,21 @@ Logic rule
 
 <complete_me/>
 
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
 </h2>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The following parts can be in all or almost all kinds of objects.
+</p>
 
 <h3 class='center-h' data-href='Inheritance_chapter'>
 Inheritance
@@ -677,13 +757,9 @@ Expressions
 
 <LinkToContent/>
 
-<complete_me/>
-
 <gr>
 <EBNFCDECL name='Expr'/> = <GEBNFC name='Expr' kind='or'/> .
 </gr>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Constant_expression_chapter'>
 Constant expression
@@ -734,8 +810,6 @@ Available system variables
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h5 class='center-h' data-href='Self_system_variable_chapter'>
 @@self
 </h5>
@@ -771,8 +845,6 @@ Available system channels
 </h4>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <h5 class='center-h' data-href='Log_system_channel_chapter'>
 @>log
@@ -859,8 +931,6 @@ Assignment operators
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='AssignmentOp_chapter'>
 Operator "="
 </h4>
@@ -881,8 +951,6 @@ Operator "="
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='AndOp_chapter'>
     Operator "&"
 </h4>
@@ -900,8 +968,6 @@ Member access operators
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='PointerOp_chapter'>
 Operator "."
@@ -922,8 +988,6 @@ Call operators
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='CallOp_chapter'>
 Operator "()"
@@ -946,8 +1010,6 @@ Inheritance operators
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='IsOp_chapter'>
 Operator "is"
@@ -983,8 +1045,6 @@ Stream operators
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='StreamOp_chapter'>
 Operator ">>"
 </h4>
@@ -1001,13 +1061,11 @@ Operator ">>"
 
 <complete_me/>
 
-<h3 class='center-h' data-href='Logic_operators_chapter'>
-Logic operators
+<h3 class='center-h' data-href='Data_source_operators_chapter'>
+Data source operators
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='SelectOp_chapter'>
 select (Operator "?")
@@ -1048,14 +1106,10 @@ Statements
 
 <LinkToContent/>
 
-<complete_me/>
-
 <gr>
 <EBNFCDECL name='StatementsSet'/> = <TEBNFC name='DeclSet' param = 'Statement'/> .
 <EBNFCDECL name='Statement'/> = <GEBNFC name='Statement' kind='or' /> .
 </gr>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Expression_statement_chapter'>
 Expression statement
