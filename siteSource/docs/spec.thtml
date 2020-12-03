@@ -396,6 +396,8 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 	<item value='&'/>
 	<item value='>>'/>
 	<item value='=>'/>
+	<item value='->'/>
+	<item value=':>'/>
 	<item value=':'/>
 	<item value=';'/>
 	<item value=','/>
@@ -405,6 +407,8 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 	<item value=']'/>
 	<item value='{'/>
 	<item value='}'/>
+	<item value='{:'/>
+	<item value=':}'/>
 </items>
 
 <h3 class='center-h' data-href='Integer_literal_chapter'>
@@ -605,10 +609,22 @@ Waypoint
 <LinkToContent/>
 
 <p>
-
+Represents a point in space, abstracting from the game engine's coordinate system.
 </p>
 
-<complete_me/>
+<p>
+Coordinates of points are presented in a more convenient way, similar to that is used by people in everyday life.
+</p>
+
+<p>
+Now It is supported the coordinate system what is similar to Polar coordinate system.
+The radial coordinate is the distance from center of <a href='#NPC_chapter'>NPC</a> to target.
+And the angular coordinate (in degrees only) starts from the sagittal plane of <a href='#NPC_chapter'>NPC</a> in front of the NPC.
+</p>
+
+<p>
+SymOntoClay engine provides mapping to the game engine's coordinate system.
+</p>
 
 <gr>
 <EBNFCDECL name='WaypointDecl' groups='Expr'/> = "#@" "[" <EBNFC name='WaypointDistance'/> "," <EBNFC name='WaypointAngleInDegrees'/> "]" .
@@ -616,13 +632,9 @@ Waypoint
 <EBNFCDECL name='WaypointAngleInDegrees'/> = <EBNFC name='NumberExpr'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 #@[25, 30]
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Fact_chapter'>
 Fact
@@ -639,19 +651,17 @@ Fact
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
-<EBNFCDECL name='FactSection'/> = ">:" "{" <EBNFC name='FactSentence'/> "}" .
+<EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='FactPredicate'/> .
 <EBNFCDECL name='FactPredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='FactPredicateParam'/> [ { "," <EBNFC name='FactPredicateParam'/> } ] ")" .
 <EBNFCDECL name='FactPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+{: male(#Tom) :}
+{: >:{ male(#Tom) } :}
+{: parent(#Piter, #Tom) :}
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_rule_chapter'>
 Logic rule
@@ -668,7 +678,7 @@ Logic rule
 <gr>
 <EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
-<EBNFCDECL name='LogicRulePrimarySection'/> = ">:" "{" <EBNFC name='LogicRuleSentence'/> "}" .
+<EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" .
 <EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { <EBNFC name='AndOpExpr'/> <EBNFC name='LogicRulePredicate'/> } ] .
@@ -676,13 +686,10 @@ Logic rule
 <EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicRuleVarIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+{: >: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
 </code>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -715,27 +722,32 @@ Trigger
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A trigger is a code that is automatically executed in response to certain events.
+</p>
+
+<p>
+Now only Lifecycle triggers are available. 
+But in the future I am going to develop other kinds of triggers.
+</p>
 
 <gr>
 <EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" <EBNFC name='LifecycleTriggerIdentifier'/> "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
-Lifecycle triggers
+Life cycle triggers
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Every object has a life cycle.
+</p>
 
 <gr>
 <EBNFCDECL name='LifecycleTriggerIdentifier'/> = <GEBNFC name='LifecycleTriggerIdentifier' kind='or' /> .
 </gr>
-
-<complete_me/>
 
 <h5 class='center-h' data-href='Init_Lifecycle_trigger_chapter'>
 Init
@@ -743,19 +755,29 @@ Init
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Initializes an object. 
+It is like a constructor in other programming languages.
+</p>
+
+<p>
+Init trigger of <a href='#NPC_chapter'>NPC</a> is a first code which is executed for the NPC.
+So It is an entrypoint of the NPC.
+</p>
 
 <gr>
 <EBNFCDECL name='InitLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Init" .
 </gr>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
 </h2>
 
 <LinkToContent/>
+
+<p>
+An expression specifies the computation of a value by applying operators and methods to operands.
+</p>
 
 <gr>
 <EBNFCDECL name='Expr'/> = <GEBNFC name='Expr' kind='or'/> .
@@ -767,14 +789,20 @@ Constant expression
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Constant expressions may contain only literals and are evaluated at compile time.
+</p>
 
 <gr>
 <EBNFCDECL name='ConstExpr' groups='Expr'/> = <GEBNFC name='ConstExpr' kind='or'/> .
 <EBNFCDECL name='NumberExpr' groups='ConstExpr'/> = <GEBNFC name='NumberExpr' kind='or'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+25
+30.2
+"abc"
+</code>
 
 <h3 class='center-h' data-href='Variable_chapter'>
 Variable
@@ -816,7 +844,9 @@ Available system variables
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Contains a link to the current object.
+</p>
 
 <h5 class='center-h' data-href='Host_system_variable_chapter'>
 @@host
@@ -824,7 +854,17 @@ Available system variables
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Contains a link to the C# methods of this <a href='#NPC_chapter'>NPC</a> which are defined at the Unity3D level of the NPC logic.
+</p>
+
+<p>
+Allows to call low-level C# methods for interaction with Unity3D.
+</p>
+
+<p>
+It does nothing when It launched with the "CLI run".
+</p>
 
 <h3 class='center-h' data-href='Channel_chapter'>
 Channel
@@ -832,13 +872,17 @@ Channel
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Channels are a conduit through which you can send and receive values with the stream operator.
+</p>
+
+<p>
+Now only sending has been implemented.
+</p>
 
 <gr>
 <EBNFCDECL name='ChannelExpr' groups='Expr'/> = <EBNFC name='ChannelIdentifier'/> .
 </gr>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Available_system_channels_chapter'>
 Available system channels
@@ -852,7 +896,13 @@ Available system channels
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A channel for writing information to the log in text form.
+</p>
+
+<p>
+Logging targets are determined by the engine settings.
+</p>
 
 <h3 class='center-h' data-href='Operators_chapter'>
 Operators
@@ -1106,6 +1156,10 @@ Statements
 
 <LinkToContent/>
 
+<p>
+Statements control execution.
+</p>
+
 <gr>
 <EBNFCDECL name='StatementsSet'/> = <TEBNFC name='DeclSet' param = 'Statement'/> .
 <EBNFCDECL name='Statement'/> = <GEBNFC name='Statement' kind='or' /> .
@@ -1117,13 +1171,17 @@ Expression statement
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Executes an expression line.
+</p>
 
 <gr>
 <EBNFCDECL name='ExpressionStatement' groups='Statement'/> = <EBNFC name='Expr'/> ";" .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+@@host.`go`~(to: #@[25, 30]);
+</code>
 
 <p>
 	&nbsp;

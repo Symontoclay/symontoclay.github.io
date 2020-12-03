@@ -204,7 +204,7 @@ npc PeaceKeeper is [0.5] exampleClass
     on Init => {
 	     "Begin" >> @>log;
 
-                   @@host.`go`~(to: #@[25, 30]);
+           @@host.`go`~(to: #@[25, 30]);
 	       @@host.`go`~(to: #@[20, 30]);
 
 	        "End" >> @>log;
