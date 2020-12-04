@@ -687,8 +687,8 @@ Logic rule
 </gr>
 
 <code data-lng='soc'>
-{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
-{: >: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+{: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
+{: >: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
 </code>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
@@ -810,13 +810,26 @@ Variable
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A variable is a storage location for holding a value.
+</p>
+
+<p>
+Both reading and writing are allowed for variables.
+</p>
+
+<p>
+Default value of variable is <b>NULL</b>.
+</p>
 
 <gr>
 <EBNFCDECL name='VarExpr' groups='Expr'/> = <EBNFC name='VarIdentifier'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+@x
+@`target value`
+</code>
 
 <h3 class='center-h' data-href='System_variable_chapter'>
 System variable
@@ -824,13 +837,21 @@ System variable
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It's a special variable, which value is only written by engine.
+</p>
+
+<p>
+Only reading is allowed for system variables.
+</p>
 
 <gr>
 <EBNFCDECL name='SysVarExpr' groups='Expr'/> = <EBNFC name='SysVarIdentifier'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+@@host
+</code>
 
 <h4 class='center-h' data-href='Available_system_variables_chapter'>
 Available system variables
@@ -845,7 +866,7 @@ Available system variables
 <LinkToContent/>
 
 <p>
-Contains a link to the current object.
+Contains a link to the current <a href='#NPC_chapter'>NPC</a>.
 </p>
 
 <h5 class='center-h' data-href='Host_system_variable_chapter'>
@@ -910,7 +931,15 @@ Operators
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Operators combine operands into expressions.
+</p>
+
+<h4 class='center-h' data-href='OperatorPrecedence_chapter'>
+Operator precedence
+</h4>
+
+<LinkToContent/>
 
 <p>
 <table class='std-table' style='width: 400px;' border='1' cellspacing='0'>
@@ -973,8 +1002,6 @@ Operators
 </table>
 <p>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Assignment_operators_chapter'>
 Assignment operators
 </h3>
@@ -987,11 +1014,21 @@ Operator "="
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
 <EBNFCDECL name='AssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '='/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -1007,11 +1044,17 @@ Operator "="
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Оperator of logical conjunction.
+</p>
 
 <gr>
 <EBNFCDECL name='AndOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '"&"'/>
 </gr>
+
+<code data-lng='soc'>
+male($x) & parent($y, $x)
+</code>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
@@ -1025,11 +1068,21 @@ Operator "."
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
 <EBNFCDECL name='PointerOpExpr' groups='Expr' /> = <TEBNFC name='BinaryOp' param = '.'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -1045,6 +1098,10 @@ Operator "()"
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -1052,6 +1109,12 @@ Operator "()"
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
 <EBNFCDECL name='NamedParamOfCallOpExpr'/> =  <EBNFC name='ConceptIdentifier'/> ":" <EBNFC name='Expr'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -1067,11 +1130,21 @@ Operator "is"
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
 <EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -1081,11 +1154,21 @@ Operator "use is"
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
 <EBNFCDECL name='UseIsOpExpr' groups='Expr'/> = "use" <TEBNFC name='IsOpExprBody'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -1101,6 +1184,10 @@ Operator ">>"
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -1108,6 +1195,12 @@ Operator ">>"
 <EBNFCDECL name='DestOfStreamOpExpr'/> = <EBNFC name='Expr'/> .
 <EBNFCDECL name='LeftRightStreamOpExpr' groups='Expr'/> = <EBNFC name='SourceOfStreamOpExpr'/> ">>" <EBNFC name='DestOfStreamOpExpr'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -1123,6 +1216,10 @@ select (Operator "?")
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
@@ -1136,17 +1233,33 @@ select (Operator "?")
 
 <complete_me/>
 
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
 <EBNFCDECL name='InsertOpExpr' groups='Expr'/> = "insert" <EBNFC name='FactDecl'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
