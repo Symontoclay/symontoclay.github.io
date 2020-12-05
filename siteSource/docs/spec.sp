@@ -5,7 +5,7 @@
   "BreadcrumbTitle": "Language Specification",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
-  "EnableMathML": false,
+  "EnableMathML": true,
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {

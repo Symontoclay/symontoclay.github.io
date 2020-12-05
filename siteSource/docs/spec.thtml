@@ -643,10 +643,22 @@ Fact
 <LinkToContent/>
 
 <p>
-
+Represents knowledge in declarative way.
+It is an element of Logic programming.
 </p>
 
-<complete_me/>
+<p>
+Now the fact is a predicate record with small syntactic sugar for better inclusion into SymOntoClay DSL.
+</p>
+
+<p>
+For example, expression &quot;cat (#Alisa)&quot; is equivalent to &quot;#Alisa is a cat&quot;.
+</p>
+
+<p>
+In the future, I plan to move away from the predicate form to a more human-readable one.
+In this case, the predicate form will be saved as an alternative way of describing.
+</p>
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
@@ -707,12 +719,53 @@ Inheritance
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <gr>
 <EBNFCDECL name='InheritanceDecl'/> = "is" <EBNFC name='InheritanceDeclItem'/> [ { "," <EBNFC name='InheritanceDeclItem'/> } ] .
 <EBNFCDECL name='InheritanceDeclItem'/> = <TEBNFC name='InheritanceDeclItem'/> .
 </gr>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+  <mrow>
+   <msub>
+   <mi>Rank</mi>
+   <mi>total</mi>
+   </msub>
+  </mrow>
+  <mo>=</mo>
+  <mrow>
+   <munderover>
+   <mo>∏</mo>
+   <mrow>
+   <mi>i</mi>
+   <mo>=</mo>
+   <mn>1</mn>
+   </mrow>
+    <mi>n</mi>
+   </munderover>
+  </mrow>
+   <msub>
+   <mi>Rank</mi>
+   <mi>i</mi>
+   </msub>
+   </mrow>
+  </mrow>
+</mrow>
+</math>
+</p>
 
 <complete_me/>
 
@@ -1295,10 +1348,6 @@ Executes an expression line.
 <code data-lng='soc'>
 @@host.`go`~(to: #@[25, 30]);
 </code>
-
-<p>
-	&nbsp;
-</p>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
