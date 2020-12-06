@@ -648,7 +648,7 @@ It is an element of Logic programming.
 </p>
 
 <p>
-Now the fact is a predicate record with small syntactic sugar for better inclusion into SymOntoClay DSL.
+Now the fact is a predicate sentence with small syntactic sugar for better inclusion into SymOntoClay DSL.
 </p>
 
 <p>
@@ -656,7 +656,7 @@ For example, expression &quot;cat (#Alisa)&quot; is equivalent to &quot;#Alisa i
 </p>
 
 <p>
-In the future, I plan to move away from the predicate form to a more human-readable one.
+In the future, I am going to move away from the predicate form to a more human-readable one.
 In this case, the predicate form will be saved as an alternative way of describing.
 </p>
 
@@ -696,14 +696,25 @@ Logic searching uses depth-first search (DFS) with backtracking.
 </p>
 
 <p>
-
+A rule consists of head (<EBNFC name='LogicRulePrimarySection'/>) and body (<EBNFC name='LogicRuleSecondarySection'/>).
+The head is true if the body is true.
+Both head and body are predicate sentences with small syntactic sugar for better inclusion into SymOntoClay DSL.
 </p>
 
 <p>
-
+In the future, I am going to move away from the predicate form to a more human-readable one.
+In this case, the predicate form will be saved as an alternative way of describing.
 </p>
 
-<complete_me/>
+<p>
+Conjunctions can only appear in the body, not in the head of a rule.
+Only special <a href='#LogicRuleVarIdentifier_chapter'>variables</a> can be used in the rule, the scope of which is limited by this rule.
+</p>
+
+<p>
+Now logic searching happens when the <a href='#SelectOp_chapter'>select operator</a> is only called explicitly.
+In the future, the area of using logic searching (conclusion) in SymOntoClay will be significantly expanded.
+</p>
 
 <gr>
 <EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
