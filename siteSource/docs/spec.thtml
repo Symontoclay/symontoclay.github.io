@@ -817,10 +817,12 @@ is inheritance rank of one link in the entire inheritance chain between two obje
 </p>
 
 <p>
-
+If inheritance has formed a rhombus, and there are several chains with different rank, then rank of chain with the minimum count of chain elements is taken.
 </p>
 
-<complete_me/>
+<p>
+Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with operator <a href='#UseIsOp_chapter'>&quot;use is&quot;</a>.
+</p>
 
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
