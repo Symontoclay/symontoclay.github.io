@@ -682,6 +682,24 @@ Logic rule
 <LinkToContent/>
 
 <p>
+Represents a logic conclusion rule.
+It allows to find and use facts which are not defined explicitly.
+It is an element of Logic programming.
+</p>
+
+<p>
+A rule defines relation between two sets of facts during logic conclusion.
+</p>
+
+<p>
+Logic searching uses depth-first search (DFS) with backtracking.
+</p>
+
+<p>
+
+</p>
+
+<p>
 
 </p>
 
@@ -718,6 +736,10 @@ Inheritance
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <p>
 
@@ -1068,22 +1090,25 @@ Operator "="
 <LinkToContent/>
 
 <p>
-
+Associativity: Right-to-left.
 </p>
 
-<complete_me/>
+<p>
+Writes a value from the right operand to the left operand and returns the value of the right operand, which can be used in further calculations.
+</p>
+
+<p>
+The left operand must be a variable.
+</p>
 
 <gr>
 <EBNFCDECL name='AssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '='/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+@x = 1;
+@r = @b = 1;
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='LogicOp_chapter'>
     Logic operators
