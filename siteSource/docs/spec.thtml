@@ -749,14 +749,13 @@ Inheritance
 <LinkToContent/>
 
 <p>
-
+SymOntoClay DSL has multiple fuzzy prototype-based inheritance.
 </p>
 
 <p>
-
+That is, one object can have many “is a” relationships with other objects.
+A descendant object is related to a base object by the “is a” relationship, and is not its clone.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='InheritanceDecl'/> = "is" <EBNFC name='InheritanceDeclItem'/> [ { "," <EBNFC name='InheritanceDeclItem'/> } ] .
@@ -764,10 +763,14 @@ Inheritance
 </gr>
 
 <p>
-
+Additionally each relation has a float-point rank in range from 0 to 1.
+1 is the highest rank, and 0 indicates the total absence of an "is a" relationship between these objects.
+By default the inheritance rank equals 1.
 </p>
 
-<complete_me/>
+<p>
+In operations using inheritance, the total inheritance rank between two objects is calculated by formula:
+</p>
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
@@ -798,6 +801,23 @@ Inheritance
   </mrow>
 </mrow>
 </math>
+</p>
+
+<p>
+In this formula
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+<mrow>
+   <msub>
+   <mi>Rank</mi>
+   <mi>i</mi>
+   </msub>
+</mrow>
+</math>
+is inheritance rank of one link in the entire inheritance chain between two objects.
+</p>
+
+<p>
+
 </p>
 
 <complete_me/>
