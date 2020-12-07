@@ -821,7 +821,7 @@ If inheritance has formed a rhombus, and there are several chains with different
 </p>
 
 <p>
-Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with operator <a href='#UseIsOp_chapter'>&quot;use is&quot;</a>.
+Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with <a href='#UseIsStatement_chapter'>&quot;use is&quot; statement</a>.
 </p>
 
 <h3 class='center-h' data-href='Trigger_chapter'>
@@ -1143,6 +1143,40 @@ The left operand must be a variable.
 @r = @b = 1;
 </code>
 
+<h3 class='center-h' data-href='Relational_operators_chapter'>
+Relational operators
+</h3>
+
+<LinkToContent/>
+
+<h4 class='center-h' data-href='IsOp_chapter'>
+Operator "is"
+</h4>
+
+<LinkToContent/>
+
+<p>
+Returns <a href='#Inheritance_chapter'>inheritance rank</a>.
+The left operand contains a checked object.
+The right-hand operand contains a possible base object.
+</p>
+
+<gr>
+<EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
+</gr>
+
+<code data-lng='soc'>
+exampleClass is human >> @>log;
+</code>
+
+<p>
+Using "not" returns 1 if inheritance relationship is not exist between two operands otherwise returns 0.
+</p>
+
+<code data-lng='soc'>
+exampleClass is not human >> @>log;
+</code>
+
 <h3 class='center-h' data-href='LogicOp_chapter'>
     Logic operators
 </h3>
@@ -1180,22 +1214,20 @@ Operator "."
 <LinkToContent/>
 
 <p>
-
+Gets a reference to a member (specified in the right operand) of an object (specified in the left operand).
 </p>
 
-<complete_me/>
+<p>
+The right-hand operand must contain the member's identifier.
+</p>
 
 <gr>
 <EBNFCDECL name='PointerOpExpr' groups='Expr' /> = <TEBNFC name='BinaryOp' param = '.'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+@@host.`go`
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Call_operators_chapter'>
 Call operators
@@ -1210,78 +1242,37 @@ Operator "()"
 <LinkToContent/>
 
 <p>
-
+Calls an object (or member reference) with parameters specified in round brackets.
 </p>
 
-<complete_me/>
+<p>
+Whether a call is synchronous or asynchronous is determined by the presence of a &quot;~&quot; before the opening round bracket of the parameter list.
+</p>
 
 <gr>
-<EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" <EBNFC name='NamedParamsOfCallOpExprSet'/> ")" .
+<EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" [ <EBNFC name='NamedParamsOfCallOpExprSet'/> ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
 <EBNFCDECL name='NamedParamOfCallOpExpr'/> =  <EBNFC name='ConceptIdentifier'/> ":" <EBNFC name='Expr'/> .
 </gr>
 
-<complete_me/>
-
-<code data-lng='soc'>
-
-</code>
-
-<complete_me/>
-
-<h3 class='center-h' data-href='Inheritance_operators_chapter'>
-Inheritance operators
-</h3>
-
-<LinkToContent/>
-
-<h4 class='center-h' data-href='IsOp_chapter'>
-Operator "is"
-</h4>
-
-<LinkToContent/>
-
 <p>
-
+A synchronous call is made when there is no &quot;~&quot;.
+In this case, the operator returns directly the result of the called method.
 </p>
 
-<complete_me/>
-
-<gr>
-<EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
-</gr>
-
-<complete_me/>
-
 <code data-lng='soc'>
-
+@@host.`go`(to: #@[25, 30]);
 </code>
-
-<complete_me/>
-
-<h4 class='center-h' data-href='UseIsOp_chapter'>
-Operator "use is"
-</h4>
-
-<LinkToContent/>
 
 <p>
-
+An asynchronous call is made when &quot;~&quot; is present.
+In this case, the operator returns a reference to the object representing the asynchronous operation.
+Working with asynchronous operations will be designed in details in the future.
 </p>
 
-<complete_me/>
-
-<gr>
-<EBNFCDECL name='UseIsOpExpr' groups='Expr'/> = "use" <TEBNFC name='IsOpExprBody'/> .
-</gr>
-
-<complete_me/>
-
 <code data-lng='soc'>
-
+@@host.`go`~(to: #@[25, 30]);
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Stream_operators_chapter'>
 Stream operators
@@ -1296,10 +1287,17 @@ Operator ">>"
 <LinkToContent/>
 
 <p>
-
+Copies data from a source (<EBNFC name='SourceOfStreamOpExpr'/>) to a destination <EBNFC name='DestOfStreamOpExpr'/>.
 </p>
 
-<complete_me/>
+<p>
+The source (<EBNFC name='SourceOfStreamOpExpr'/>) cannot be a <a href='#Channel_chapter'>channel</a>.
+The destination (<EBNFC name='DestOfStreamOpExpr'/>) must only be a <a href='#Channel_chapter'>channel</a>.
+</p>
+
+<p>
+In the future I am going to extend the functionality of this operator.
+</p>
 
 <gr>
 <EBNFCDECL name='SourceOfStreamOpExpr'/> = <EBNFC name='Expr'/> .
@@ -1307,13 +1305,10 @@ Operator ">>"
 <EBNFCDECL name='LeftRightStreamOpExpr' groups='Expr'/> = <EBNFC name='SourceOfStreamOpExpr'/> ">>" <EBNFC name='DestOfStreamOpExpr'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+"End" >> @>log;
+select {: son(?x, ?y) :} >> @>log;
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Data_source_operators_chapter'>
 Data source operators
@@ -1328,10 +1323,13 @@ select (Operator "?")
 <LinkToContent/>
 
 <p>
-
+Performs a logical search and returns an object which contains the results of the search.
 </p>
 
-<complete_me/>
+<p>
+Now the result of a logical search can only be logged for demonstrating this search.
+In the future, I am going to develop means for practical using results of logical searching in game development.
+</p>
 
 <gr>
 <EBNFCDECL name='SelectOpExpr' groups='Expr'/> = ( "select" | "?" ) ( <EBNFC name='FactDecl'/> | <EBNFC name='SelectQuery'/> ) .
@@ -1342,13 +1340,52 @@ select (Operator "?")
 <EBNFCDECL name='SelectQueryPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='QuestionVarIdentifier'/> .
 </gr>
 
-<complete_me/>
+<p>
+Searched values are defined by the <a href='#QuestionVarIdentifier_chapter'>question variables</a> in the searching query.
+</p>
 
 <code data-lng='soc'>
-
+select {: son(?x, ?y) :} >> @>log;
 </code>
 
-<complete_me/>
+<console>
+&lt;yes&gt;
+?y = #piter; ?x = #tom
+</console>
+
+<code data-lng='soc'>
+? {: son(?x, ?y) :} >> @>log;
+</code>
+
+<console>
+&lt;yes&gt;
+?y = #piter; ?x = #tom
+</console>
+
+<p>
+<a href='#QuestionVarIdentifier_chapter'>Question variables</a> can be used for searching <a href='#Fact_chapter'>predicates</a>.
+</p>
+
+<code data-lng='soc'>
+? {: ?z(#Alisa_12, ?x) :} >> @>log;
+</code>
+
+<console>
+&lt;yes&gt;
+?z = can(bird,fly); ?x = fly
+</console>
+
+<p>
+In the absence of <a href='#QuestionVarIdentifier_chapter'>question variables</a>, only general result will be obtained: is it possible or not to find such facts in the knowledge database.
+</p>
+
+<code data-lng='soc'>
+? {: can(#Alisa_12, fly) :} >> @>log;
+</code>
+
+<console>
+&lt;yes&gt;
+</console>
 
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
@@ -1357,22 +1394,17 @@ insert
 <LinkToContent/>
 
 <p>
-
+Writes a <a href='#Fact_chapter'>fact</a> into the knowledge storage of current <a href='#NPC_chapter'>NPC</a>. 
+Returns the added fact.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='InsertOpExpr' groups='Expr'/> = "insert" <EBNFC name='FactDecl'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+insert {: >: { bird (#1234) } :};
 </code>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Statements_chapter'>
 Statements
@@ -1407,6 +1439,35 @@ Executes an expression line.
 @@host.`go`~(to: #@[25, 30]);
 </code>
 
+<h3 class='center-h' data-href='UseIsStatement_chapter'>
+"use is" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+Sets an inheritance relationship (&quot;is a&quot;) between two objects.
+</p>
+
+<gr>
+<EBNFCDECL name='UseIsOpExpr' groups='Statement'/> = "use" <TEBNFC name='IsOpExprBody'/> .
+</gr>
+
+<code data-lng='soc'>
+use @@self is linux;
+use exampleClass is human;
+use exampleClass is [0.5] human;
+use #`Alisa 12` is [0.6] human;
+</code>
+
+<p>
+Using &quot;not&quot; removes the inheritance relationship.
+</p>
+
+<code data-lng='soc'>
+use exampleClass is not human;
+</code>
+
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
 	    (( <EBNFC name='Letter'/> { <EBNFC name='Letter'/> | <EBNFC name='DecimalDigit'/> } ) | ( "`" { <EBNFC name='UnicodeChar'/> } "`"))
@@ -1433,6 +1494,6 @@ Executes an expression line.
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='IsOpExprBody'>
-	    ( <GEBNFC name='TypeIdentifier' kind='or'/> ) "is" [ "not" ] <TEBNFC name='InheritanceDeclItem'/>
+	    ( <GEBNFC name='TypeIdentifier' kind='or'/> ) "is" ( ( <TEBNFC name='InheritanceDeclItem'/> ) | ( [ "not" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> ) ) )
 	</TEBNFCDECL>
 </div>
