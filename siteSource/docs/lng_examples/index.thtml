@@ -8,10 +8,11 @@ Hello world!
 
 <LinkToContent/>
 
-<code data-lng='soc'>
+<code data-lng='soc' example-href='/docs/lng_examples/HelloWorld_Example1.zip'>
 npc PeaceKeeper
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 	      "End" >> @>log;
@@ -41,7 +42,8 @@ Single line comment
 <code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 //@r = @b = 1;
@@ -63,7 +65,8 @@ Multi line comment
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 /*@r = @b = 1;
@@ -91,7 +94,8 @@ Example 1
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 @r = @b = 1;
@@ -113,7 +117,8 @@ Example 2
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 @r = @b = 1;
@@ -135,7 +140,8 @@ Inheritance
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 exampleClass is human >> @>log;
@@ -180,7 +186,8 @@ Synchronous
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
                   @@host.`go`(to: #@[25, 30]);
@@ -201,7 +208,8 @@ Asynchronous
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
            @@host.`go`~(to: #@[25, 30]);
@@ -237,7 +245,8 @@ class exampleClass is human, [0.1] animal
 
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 select {: son(?x, ?y) :} >> @>log;
@@ -250,7 +259,8 @@ npc PeaceKeeper is [0.5] exampleClass
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;
 
 		 ? {: son(?x, ?y) :} >> @>log;
@@ -283,7 +293,8 @@ Example 3
 <code data-lng="soc">
 npc PeaceKeeper is [0.5] exampleClass
 {
-    on Init => {
+    on Init => 
+	{
 	     "Begin" >> @>log;		 
 
 		 insert {: >: { bird (#1234) } :};

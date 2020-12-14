@@ -38,15 +38,28 @@
 <h2 class="center-h">    Contens
     <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_information">Common information</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts">Common concepts</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC">NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_Host">Host</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation">Implementation</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities">Main entities</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_NPC">NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_Player">Player</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_GameObject">GameObject</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_Place">Place</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Images">Images</a></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#General_information">General information</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts">Common concepts</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC">NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_Host">Host</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation">Implementation</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities">Main entities</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_NPC">NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_Player">Player</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_GameObject">GameObject</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_Place">Place</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Images">Images</a></li></ul></li></ul>
 
-<h2 class='center-h' data-href='Common_information'>
-Common information
-<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_information" name="Common_information" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<h2 class='center-h' data-href='General_information'>
+General information
+<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#General_information" name="General_information" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+SymOntoClay is an experimental open source game AI engine.
+</p>
+
+<p>
+SymOntoClay will be an asset for Unity3d.
+It has not yet been implemented.
+</p>
+
+<p>
+In SymOntoClay a game AI will be written using special SymOntoClay's domain-specific language (DSL).
+The DSL is needed for more convenient integration various interesting AI features into the syntax.
+It promises more speedy and convenient development game AI.
+</p>
 
 <h2 class='center-h' data-href='Common_concepts'>
 Common concepts
@@ -54,19 +67,56 @@ Common concepts
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
+<p>
+DSL level concepts are described here.
+</p>
+
 <h3 class='center-h' data-href='Common_concepts_World'>
 World
 <a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World" name="Common_concepts_World" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+Contains general information for all objects in a game.
+</p>
+
+<p>
+In the <b>world</b> it is possible to define <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> and <a href='https://symontoclay.github.io/docs/spec.html#Logic_rule_chapter'>logical rules</a> that will be known to all <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a> of the game.
+</p>
+
+<p>
+Also, the name "<b>worldspace</b>" can be applied to <b>world</b>, as analogy with the concept "<b>workspace</b>".
+</p>
+
+<p>
+Not active.
+But it can define methods which are available to any <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a> in a game.
+</p>
+
+<p>
+There exists special <a href='https://symontoclay.github.io/docs/spec.html#World_chapter'>syntax construction</a> for the root code entity of <b>world</b>.
+</p>
 
 <h3 class='center-h' data-href='Common_concepts_NPC'>
 NPC
 <a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC" name="Common_concepts_NPC" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+It's abbreviation of <b>Non-Player Character</b>.
+This is any game object that can react to the environment, so It is an active game object.
+Mainly, it is a moving character, primarily It is a human.
+</p>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
@@ -76,6 +126,10 @@ Host
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
+<p>
+
+</p>
+
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h2 class='center-h' data-href='Implementation'>
@@ -84,11 +138,21 @@ Implementation
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
+<p>
+
+</p>
+
+<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+
 <h3 class='center-h' data-href='Implementation_Main_entities'>
 Main entities
 <a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities" name="Implementation_Main_entities" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+
+</p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
@@ -98,6 +162,10 @@ World
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
+<p>
+
+</p>
+
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Implementation_Main_entities_NPC'>
@@ -105,6 +173,10 @@ NPC
 <a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_NPC" name="Implementation_Main_entities_NPC" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+
+</p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
@@ -114,6 +186,10 @@ Player
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
+<p>
+
+</p>
+
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h4 class='center-h' data-href='Implementation_Main_entities_GameObject'>
@@ -121,6 +197,10 @@ GameObject
 <a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_GameObject" name="Implementation_Main_entities_GameObject" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+
+</p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
@@ -130,6 +210,10 @@ Place
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
+<p>
+
+</p>
+
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
 <h3 class='center-h' data-href='Implementation_Images'>
@@ -137,6 +221,10 @@ Images
 <a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Images" name="Implementation_Images" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+
+</p>
 
 <div style="font-weight: bold; color: red;">COMPLETE ME!</div>
 
@@ -150,7 +238,7 @@ Images
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 07 December 2020<br>
+This page was last modified on 14 December 2020<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 </div>

@@ -2,13 +2,26 @@
 
 <ContentsPlace/>
 
-<h2 class='center-h' data-href='Common_information'>
-Common information
+<h2 class='center-h' data-href='General_information'>
+General information
 </h2>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+SymOntoClay is an experimental open source game AI engine.
+</p>
+
+<p>
+SymOntoClay will be an asset for Unity3d.
+It has not yet been implemented.
+</p>
+
+<p>
+In SymOntoClay a game AI will be written using special SymOntoClay's domain-specific language (DSL).
+The DSL is needed for more convenient integration various interesting AI features into the syntax.
+It promises more speedy and convenient development game AI.
+</p>
 
 <h2 class='center-h' data-href='Common_concepts'>
 Common concepts
@@ -16,19 +29,56 @@ Common concepts
 
 <LinkToContent/>
 
+<p>
+DSL level concepts are described here.
+</p>
+
 <h3 class='center-h' data-href='Common_concepts_World'>
 World
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Contains general information for all objects in a game.
+</p>
+
+<p>
+In the <b>world</b> it is possible to define <a href='/docs/spec.html#Fact_chapter'>facts</a> and <a href='/docs/spec.html#Logic_rule_chapter'>logical rules</a> that will be known to all <a href='#Common_concepts_NPC'>NPC</a> of the game.
+</p>
+
+<p>
+Also, the name "<b>worldspace</b>" can be applied to <b>world</b>, as analogy with the concept "<b>workspace</b>".
+</p>
+
+<p>
+Not active.
+But it can define methods which are available to any <a href='#Common_concepts_NPC'>NPC</a> in a game.
+</p>
+
+<p>
+There exists special <a href='/docs/spec.html#World_chapter'>syntax construction</a> for the root code entity of <b>world</b>.
+</p>
 
 <h3 class='center-h' data-href='Common_concepts_NPC'>
 NPC
 </h3>
 
 <LinkToContent/>
+
+<p>
+It's abbreviation of <b>Non-Player Character</b>.
+This is any game object that can react to the environment, so It is an active game object.
+Mainly, it is a moving character, primarily It is a human.
+</p>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -38,6 +88,10 @@ Host
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='Implementation'>
@@ -46,11 +100,21 @@ Implementation
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Implementation_Main_entities'>
 Main entities
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -60,6 +124,10 @@ World
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <h4 class='center-h' data-href='Implementation_Main_entities_NPC'>
@@ -67,6 +135,10 @@ NPC
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -76,6 +148,10 @@ Player
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <h4 class='center-h' data-href='Implementation_Main_entities_GameObject'>
@@ -83,6 +159,10 @@ GameObject
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -92,6 +172,10 @@ Place
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
 <h3 class='center-h' data-href='Implementation_Images'>
@@ -99,5 +183,9 @@ Images
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
 
 <complete_me/>

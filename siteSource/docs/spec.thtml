@@ -275,7 +275,7 @@ Variable identifier
 Names a <a href='#Variable_chapter'>variable</a>.
 </p>
 
-</gr>
+<gr>
 <EBNFCDECL name='VarIdentifier' groups='Identifier;ConstExpr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
