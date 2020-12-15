@@ -39,8 +39,8 @@ Single line comment
 
 <LinkToContent/>
 
-<code data-lng='soc'>
-npc PeaceKeeper is [0.5] exampleClass
+<code data-lng='soc' example-href='/docs/lng_examples/SingleLineComment.zip'>
+npc PeaceKeeper
 {
     on Init => 
 	{
@@ -56,14 +56,22 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+Begin
+NULL
+End
+</console>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Multi_line_comment'>
 Multi line comment
 </h3>
 
 <LinkToContent/>
 
-<code data-lng="soc">
-npc PeaceKeeper is [0.5] exampleClass
+<code data-lng='soc' example-href='/docs/lng_examples/MultiLineComment.zip'>
+npc PeaceKeeper
 {
     on Init => 
 	{
@@ -79,6 +87,13 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+Begin
+End
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Variables">
 Variables
 </h2>
@@ -91,8 +106,8 @@ Example 1
 
 <LinkToContent/>
 
-<code data-lng="soc">
-npc PeaceKeeper is [0.5] exampleClass
+<code data-lng='soc' example-href='/docs/lng_examples/Variables_Example1.zip'>
+npc PeaceKeeper
 {
     on Init => 
 	{
@@ -108,14 +123,22 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+Begin
+1
+End
+</console>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Variables_Example_2'>
 Example 2
 </h3>
 
 <LinkToContent/>
 
-<code data-lng="soc">
-npc PeaceKeeper is [0.5] exampleClass
+<code data-lng='soc' example-href='/docs/lng_examples/Variables_Example2.zip'>
+npc PeaceKeeper
 {
     on Init => 
 	{
@@ -131,13 +154,23 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+Begin
+NULL
+End
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Inheritance">
 Inheritance
 </h2>
 
 <LinkToContent/>
 
-<code data-lng="soc">
+example-href='/docs/lng_examples/'
+
+<code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -171,6 +204,12 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>
@@ -183,19 +222,27 @@ Synchronous
 
 <LinkToContent/>
 
-<code data-lng="soc">
+example-href='/docs/lng_examples/'
+
+<code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
-	     "Begin" >> @>log;
+	    "Begin" >> @>log;
 
-                  @@host.`go`(to: #@[25, 30]);
+        @@host.`go`(to: #@[25, 30]);
 
-	       "End" >> @>log;
+	    "End" >> @>log;
 	}
 }
 </code>
+
+<complete_me/>
+
+<console>
+
+</console>
 
 <complete_me/>
 
@@ -205,7 +252,9 @@ Asynchronous
 
 <LinkToContent/>
 
-<code data-lng="soc">
+example-href='/docs/lng_examples/'
+
+<code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -222,6 +271,12 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Logic_queries">
 Logic queries
 </h2>
@@ -234,7 +289,9 @@ Example 1
 
 <LinkToContent/>
 
-<code data-lng="soc">
+example-href='/docs/lng_examples/'
+
+<code data-lng='soc'>
 class exampleClass is human, [0.1] animal
 {
 	{: male(#Tom) :}
@@ -256,7 +313,15 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<code data-lng="soc">
+<console>
+
+</console>
+
+<complete_me/>
+
+example-href='/docs/lng_examples/'
+
+<code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -272,15 +337,27 @@ npc PeaceKeeper is [0.5] exampleClass
 
 <complete_me/>
 
+<console>
+
+</console>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Logic_queries_Example_2'>
 Example 2
 </h3>
 
 <LinkToContent/>
 
-<code data-lng="soc">
+<code data-lng='soc'>
 
 </code>
+
+<complete_me/>
+
+<console>
+
+</console>
 
 <complete_me/>
 
@@ -290,7 +367,9 @@ Example 3
 
 <LinkToContent/>
 
-<code data-lng="soc">
+example-href='/docs/lng_examples/'
+
+<code data-lng='soc'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -303,5 +382,11 @@ npc PeaceKeeper is [0.5] exampleClass
 	}
 }
 </code>
+
+<complete_me/>
+
+<console>
+
+</console>
 
 <complete_me/>
