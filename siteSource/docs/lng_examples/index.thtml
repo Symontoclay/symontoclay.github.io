@@ -226,6 +226,8 @@ Calling host method
 Synchronous
 </h3>
 
+CallingHostMethodSynchronousExample1
+
 <LinkToContent/>
 
 example-href='/docs/lng_examples/'
@@ -257,6 +259,8 @@ Asynchronous
 </h3>
 
 <LinkToContent/>
+
+CallingHostMethodAsynchronousExample1
 
 example-href='/docs/lng_examples/'
 
