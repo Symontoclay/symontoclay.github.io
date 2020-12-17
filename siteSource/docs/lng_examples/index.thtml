@@ -324,11 +324,7 @@ End
 
 <complete_me/>
 
-LogicQueriesExample_1_b
-
-example-href='/docs/lng_examples/'
-
-<code data-lng='soc'>
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_b.zip'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -345,7 +341,11 @@ npc PeaceKeeper is [0.5] exampleClass
 <complete_me/>
 
 <console>
+Begin
+&lt;yes&gt;
+?y = #piter; ?x = #tom
 
+End
 </console>
 
 <complete_me/>
@@ -356,16 +356,47 @@ Example 2
 
 <LinkToContent/>
 
-LogicQueriesExample_2_
-
 <code data-lng='soc'>
+{: can(bird, fly) :}
+{: bird(#Alisa_12) :}
+</code>
 
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_a.zip'>
+{: can(#Alisa_12, ?x) :}
 </code>
 
 <complete_me/>
 
 <console>
+&lt;yes&gt;
+?x = fly
+</console>
 
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_b.zip'>
+{: can(#Alisa_12, fly) :}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_c.zip'>
+{: ?z(#Alisa_12, ?x) :}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+?z = can(bird,fly); ?x = fly
 </console>
 
 <complete_me/>
