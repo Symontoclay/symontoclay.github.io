@@ -226,13 +226,9 @@ Calling host method
 Synchronous
 </h3>
 
-CallingHostMethodSynchronousExample1
-
 <LinkToContent/>
 
-example-href='/docs/lng_examples/'
-
-<code data-lng='soc'>
+<code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodSynchronousExample1.zip'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -249,7 +245,8 @@ npc PeaceKeeper is [0.5] exampleClass
 <complete_me/>
 
 <console>
-
+Begin
+End
 </console>
 
 <complete_me/>
@@ -260,11 +257,7 @@ Asynchronous
 
 <LinkToContent/>
 
-CallingHostMethodAsynchronousExample1
-
-example-href='/docs/lng_examples/'
-
-<code data-lng='soc'>
+<code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodAsynchronousExample1.zip'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -272,7 +265,6 @@ npc PeaceKeeper is [0.5] exampleClass
 	     "Begin" >> @>log;
 
            @@host.`go`~(to: #@[25, 30]);
-	       @@host.`go`~(to: #@[20, 30]);
 
 	        "End" >> @>log;
 	}
@@ -282,7 +274,8 @@ npc PeaceKeeper is [0.5] exampleClass
 <complete_me/>
 
 <console>
-
+Begin
+End
 </console>
 
 <complete_me/>
@@ -299,9 +292,7 @@ Example 1
 
 <LinkToContent/>
 
-example-href='/docs/lng_examples/'
-
-<code data-lng='soc'>
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_a.zip'>
 class exampleClass is human, [0.1] animal
 {
 	{: male(#Tom) :}
@@ -324,10 +315,16 @@ npc PeaceKeeper is [0.5] exampleClass
 </code>
 
 <console>
+Begin
+&lt;yes&gt;
+?y = #piter; ?x = #tom
 
+End
 </console>
 
 <complete_me/>
+
+LogicQueriesExample_1_b
 
 example-href='/docs/lng_examples/'
 
@@ -359,6 +356,8 @@ Example 2
 
 <LinkToContent/>
 
+LogicQueriesExample_2_
+
 <code data-lng='soc'>
 
 </code>
@@ -377,9 +376,7 @@ Example 3
 
 <LinkToContent/>
 
-example-href='/docs/lng_examples/'
-
-<code data-lng='soc'>
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_3.zip'>
 npc PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -396,7 +393,8 @@ npc PeaceKeeper is [0.5] exampleClass
 <complete_me/>
 
 <console>
-
+Begin
+End
 </console>
 
 <complete_me/>
