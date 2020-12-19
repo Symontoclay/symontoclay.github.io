@@ -20,12 +20,14 @@ npc PeaceKeeper
 }
 </code>
 
+<p>
+<a href='/docs/spec.html#Init_Lifecycle_trigger_chapter'>Init life cycle trigger</a> is executed. <a href='/docs/spec.html#String_literal_chapter'>Strings</a> are wrritten into <a href='/docs/spec.html#Log_system_channel_chapter'>log channel</a>.
+</p>
+
 <console>
 Begin
 End
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Comments">
 Comments
@@ -429,3 +431,5 @@ End
 </console>
 
 <complete_me/>
+
+<a href='/docs/spec.html#'></a>

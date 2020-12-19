@@ -754,7 +754,7 @@ SymOntoClay DSL has multiple fuzzy prototype-based inheritance.
 
 <p>
 That is, one object can have many “is a” relationships with other objects.
-A descendant object is related to a base object by the “is a” relationship, and is not its clone.
+A <b>descendant object</b> is related to a <b>base object</b> by the “is a” relationship, and is not its clone.
 </p>
 
 <gr>
@@ -851,6 +851,10 @@ Life cycle triggers
 
 <p>
 Every object has a life cycle.
+</p>
+
+<p>
+If there exist inheritance relation between object, then life cycle triggers of base object execute before the life cycle triggers of descendant object.
 </p>
 
 <gr>
