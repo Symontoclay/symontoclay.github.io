@@ -41,6 +41,10 @@ Single line comment
 
 <LinkToContent/>
 
+<p>
+Read more about Single line comment <a href='/docs/spec.html#Comments_chapter'>here</a>.
+</p>
+
 <code data-lng='soc' example-href='/docs/lng_examples/SingleLineComment.zip'>
 npc PeaceKeeper
 {
@@ -56,21 +60,21 @@ npc PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 NULL
 End
 </console>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Multi_line_comment'>
 Multi line comment
 </h3>
 
 <LinkToContent/>
+
+<p>
+Read more about Multi line comment <a href='/docs/spec.html#Comments_chapter'>here</a>.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/MultiLineComment.zip'>
 npc PeaceKeeper
@@ -87,14 +91,10 @@ npc PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 End
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Variables">
 Variables
@@ -102,11 +102,20 @@ Variables
 
 <LinkToContent/>
 
+<p>
+Read more about Variables <a href='/docs/spec.html#Variable_chapter'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='Variables_Example_1'>
 Example 1
 </h3>
 
 <LinkToContent/>
+
+<p>
+Here 1 is alternately assigned to variables <b>@r</b> and <b>@b</b>.
+So the variable <b>@b</b> will contain 1.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/Variables_Example1.zip'>
 npc PeaceKeeper
@@ -123,21 +132,21 @@ npc PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 1
 End
 </console>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Variables_Example_2'>
 Example 2
 </h3>
 
 <LinkToContent/>
+
+<p>
+A variable <b>@bx</b> has never been being assigned. So It contains default value <b>NULL</b>.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/Variables_Example2.zip'>
 npc PeaceKeeper
@@ -154,21 +163,25 @@ npc PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 NULL
 End
 </console>
 
-<complete_me/>
-
 <h2 class='center-h' data-href="Inheritance">
 Inheritance
 </h2>
 
 <LinkToContent/>
+
+<p>
+Here It is example of changin relationship run time using operator <a href='/docs/spec.html#IsOp_chapter'>"is"</a> and statement <a href='/docs/spec.html#UseIsStatement_chapter'>"use is"</a>.
+</p>
+
+<p>
+Read more <a href='/docs/spec.html#Inheritance_chapter'>here</a> about inheritance in SymOntoClay DSL.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample1.zip'>
 npc PeaceKeeper is [0.5] exampleClass
@@ -202,8 +215,6 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 0
@@ -216,13 +227,19 @@ Begin
 End
 </console>
 
-<complete_me/>
-
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>
 
 <LinkToContent/>
+
+<p>
+Read more <a href='/docs/engine_concepts/index.html#Common_concepts_Host'>host</a> about <b>Host</b>.
+</p>
+
+<p>
+Read more <a href='/docs/spec.html#CallOp_chapter'>here</a> about calling methods.
+</p>
 
 <h3 class='center-h' data-href='Calling_host_method_Synchronous'>
 Synchronous
@@ -244,14 +261,10 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 End
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Calling_host_method_Asynchronous'>
 Asynchronous
@@ -273,14 +286,10 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 End
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Logic_queries">
 Logic queries
@@ -293,6 +302,18 @@ Example 1
 </h3>
 
 <LinkToContent/>
+
+<p>
+Read more about operator "select" <a href='/docs/spec.html#SelectOp_chapter'>here</a>.
+</p>
+
+<p>
+Read more about facts <a href='/docs/spec.html#Fact_chapter'>here</a>.
+</p>
+
+<p>
+Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_a.zip'>
 class exampleClass is human, [0.1] animal
@@ -316,6 +337,10 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
+<p>
+The result of this query:
+</p>
+
 <console>
 Begin
 &lt;yes&gt;
@@ -323,8 +348,6 @@ Begin
 
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_b.zip'>
 npc PeaceKeeper is [0.5] exampleClass
@@ -340,7 +363,9 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<complete_me/>
+<p>
+The result of this query:
+</p>
 
 <console>
 Begin
@@ -350,64 +375,117 @@ Begin
 End
 </console>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Logic_queries_Example_2'>
 Example 2
 </h3>
 
 <LinkToContent/>
 
+<p>
+Read more about operator "select" <a href='/docs/spec.html#SelectOp_chapter'>here</a>.
+</p>
+
+<p>
+Read more about facts <a href='/docs/spec.html#Fact_chapter'>here</a>.
+</p>
+
+<p>
+Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>.
+</p>
+
+<p>
+Using inheritance in logic searching.
+</p>
+
+<p>
+Read more <a href='/docs/spec.html#Inheritance_chapter'>here</a> about inheritance in SymOntoClay DSL.
+</p>
+
+<p>
+For set of facts:
+</p>
+
 <code data-lng='soc'>
 {: can(bird, fly) :}
 {: bird(#Alisa_12) :}
 </code>
 
-<complete_me/>
+<p>
+The query:
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_a.zip'>
 {: can(#Alisa_12, ?x) :}
 </code>
 
-<complete_me/>
+<p>
+returns:
+</p>
 
 <console>
 &lt;yes&gt;
 ?x = fly
 </console>
 
-<complete_me/>
+<p>
+The query:
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_b.zip'>
 {: can(#Alisa_12, fly) :}
 </code>
 
-<complete_me/>
+<p>
+returns:
+</p>
 
 <console>
 &lt;yes&gt;
 </console>
 
-<complete_me/>
+<p>
+The query:
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_c.zip'>
 {: ?z(#Alisa_12, ?x) :}
 </code>
 
-<complete_me/>
+<p>
+returns:
+</p>
 
 <console>
 &lt;yes&gt;
 ?z = can(bird,fly); ?x = fly
 </console>
 
-<complete_me/>
+<p>
+The relationship beween concepts '<b>#Alisa_12</b>' and '<b>fly</b>' is set by inheritance, not by direct fact or rule.
+</p>
 
 <h3 class='center-h' data-href='Logic_queries_Example_3'>
 Example 3
 </h3>
 
 <LinkToContent/>
+
+<p>
+Inserts fact <b>{: >: { bird (#1234) } :}</p> into main storage of current <a href='/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a> and returns inserted fact into expression's stack.
+The fact is not displayed here.
+</p>
+
+<p>
+Read more about operator "insert" <a href='/docs/spec.html#InsertOp_chapter'>here</a>.
+</p>
+
+<p>
+Read more about facts <a href='/docs/spec.html#Fact_chapter'>here</a>.
+</p>
+
+<p>
+Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_3.zip'>
 npc PeaceKeeper is [0.5] exampleClass
@@ -423,13 +501,7 @@ npc PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 End
 </console>
-
-<complete_me/>
-
-<a href='/docs/spec.html#'></a>

@@ -192,6 +192,10 @@ Also It helps to cut temporarily unused code fragments.
 @bx >> @>log;*/
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Comments'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='Tokens_chapter'>
 Tokens
 </h3>
@@ -472,6 +476,10 @@ A string literal represents a <a href='#Constant_expression_chapter'>string cons
 'abc'
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
+</p>
+
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
 </h2>
@@ -524,6 +532,10 @@ class exampleClass is human, [0.1] animal
 }
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_1'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='NPC_chapter'>
 NPC
 </h3>
@@ -557,6 +569,10 @@ npc PeaceKeeper is human
     }
 }
 </code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='World_chapter'>
 World
@@ -636,6 +652,10 @@ SymOntoClay engine provides mapping to the game engine's coordinate system.
 #@[25, 30]
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='Fact_chapter'>
 Fact
 </h3>
@@ -674,6 +694,10 @@ In this case, the predicate form will be saved as an alternative way of describi
 {: >:{ male(#Tom) } :}
 {: parent(#Piter, #Tom) :}
 </code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Logic_rule_chapter'>
 Logic rule
@@ -731,6 +755,10 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 {: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
 {: >: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
 </code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -881,6 +909,10 @@ So It is an entrypoint of the NPC.
 <EBNFCDECL name='InitLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Init" .
 </gr>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
+</p>
+
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
 </h2>
@@ -943,6 +975,10 @@ Default value of variable is <b>NULL</b>.
 @`target value`
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Variables'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='System_variable_chapter'>
 System variable
 </h3>
@@ -981,6 +1017,10 @@ Available system variables
 Contains a link to the current <a href='#NPC_chapter'>NPC</a>.
 </p>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a>.
+</p>
+
 <h5 class='center-h' data-href='Host_system_variable_chapter'>
 @@host
 </h5>
@@ -997,6 +1037,10 @@ Allows to call low-level C# methods for interaction with Unity3D.
 
 <p>
 It does nothing when It launched with the "CLI run".
+</p>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Channel_chapter'>
@@ -1035,6 +1079,10 @@ A channel for writing information to the log in text form.
 
 <p>
 Logging targets are determined by the engine settings.
+</p>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Operators_chapter'>
@@ -1181,6 +1229,10 @@ Using "not" returns 1 if inheritance relationship is not exist between two opera
 exampleClass is not human >> @>log;
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='LogicOp_chapter'>
     Logic operators
 </h3>
@@ -1269,6 +1321,10 @@ In this case, the operator returns directly the result of the called method.
 </code>
 
 <p>
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
+</p>
+
+<p>
 An asynchronous call is made when &quot;~&quot; is present.
 In this case, the operator returns a reference to the object representing the asynchronous operation.
 Working with asynchronous operations will be designed in details in the future.
@@ -1277,6 +1333,10 @@ Working with asynchronous operations will be designed in details in the future.
 <code data-lng='soc'>
 @@host.`go`~(to: #@[25, 30]);
 </code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Asynchronous'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Stream_operators_chapter'>
 Stream operators
@@ -1357,6 +1417,10 @@ select {: son(?x, ?y) :} >> @>log;
 ?y = #piter; ?x = #tom
 </console>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_1'>here</a>.
+</p>
+
 <code data-lng='soc'>
 ? {: son(?x, ?y) :} >> @>log;
 </code>
@@ -1365,6 +1429,10 @@ select {: son(?x, ?y) :} >> @>log;
 &lt;yes&gt;
 ?y = #piter; ?x = #tom
 </console>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_1'>here</a>.
+</p>
 
 <p>
 <a href='#QuestionVarIdentifier_chapter'>Question variables</a> can be used for searching <a href='#Fact_chapter'>predicates</a>.
@@ -1380,6 +1448,10 @@ select {: son(?x, ?y) :} >> @>log;
 </console>
 
 <p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_2'>here</a>.
+</p>
+
+<p>
 In the absence of <a href='#QuestionVarIdentifier_chapter'>question variables</a>, only general result will be obtained: is it possible or not to find such facts in the knowledge database.
 </p>
 
@@ -1390,6 +1462,10 @@ In the absence of <a href='#QuestionVarIdentifier_chapter'>question variables</a
 <console>
 &lt;yes&gt;
 </console>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_2'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='InsertOp_chapter'>
 insert
@@ -1409,6 +1485,10 @@ Returns the added fact.
 <code data-lng='soc'>
 insert {: >: { bird (#1234) } :};
 </code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_3'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Statements_chapter'>
 Statements
@@ -1472,6 +1552,10 @@ Using &quot;not&quot; removes the inheritance relationship.
 use exampleClass is not human;
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a>.
+</p>
+
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
 	    (( <EBNFC name='Letter'/> { <EBNFC name='Letter'/> | <EBNFC name='DecimalDigit'/> } ) | ( "`" { <EBNFC name='UnicodeChar'/> } "`"))
@@ -1501,3 +1585,5 @@ use exampleClass is not human;
 	    ( <GEBNFC name='TypeIdentifier' kind='or'/> ) "is" ( ( <TEBNFC name='InheritanceDeclItem'/> ) | ( [ "not" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> ) ) )
 	</TEBNFCDECL>
 </div>
+
+<a href='/docs/lng_examples/index.html#'></a>
