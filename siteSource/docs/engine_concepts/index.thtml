@@ -73,7 +73,8 @@ Mainly, it is a moving character, primarily It is a human.
 </p>
 
 <p>
-
+NPC only knows Its own personal information and general information defined in <a href='#Common_concepts_World'>world</a>.
+It helps us to prevent “cheating AI” on the engine level without writing any additional code on the <a href='/docs/spec.html'>DSL</a> level.
 </p>
 
 <p>
