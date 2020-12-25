@@ -78,10 +78,8 @@ It helps us to prevent “cheating AI” on the engine level without writing any
 </p>
 
 <p>
-
+There exists special <a href='/docs/spec.html#NPC_chapter'>syntax construction</a> for the root code entity of <b>NPC</b>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Common_concepts_Host'>
 Host
@@ -90,10 +88,21 @@ Host
 <LinkToContent/>
 
 <p>
-
+Allows to define information about any object in a game.
 </p>
 
-<complete_me/>
+<p>
+Not active.
+But It can define methods which are available for calling from the <a href='#Common_concepts_NPC'>NPC</a> with which <b>host</b> is linked.
+</p>
+
+<p>
+Some of the information is updated automatically, depending on the state of an <a href='#Common_concepts_NPC'>NPC</a> or <a href='#Implementation_Main_entities_GameObject'>game object</a> with which it is linked.
+</p>
+
+<p>
+There exists special <a href='/docs/spec.html#Host_chapter'>syntax construction</a> for the root code entity of <b>host</b>.
+</p>
 
 <h2 class='center-h' data-href='Implementation'>
 Implementation
@@ -102,28 +111,200 @@ Implementation
 <LinkToContent/>
 
 <p>
-
+SymOntoClay is implemented on C#.
 </p>
 
-<complete_me/>
+<p>
+SymOntoClay is planned as an AI asset for Unity3D.
+Now only implementation of engine core has been started.
+And this asset has not been created yet.
+</p>
 
-<h3 class='center-h' data-href='Implementation_Main_entities'>
-Main entities
+<p>
+SymOntoClay's core is separated from code to support integration with Unity3D.
+It opens possibilities for integrating SymOntoClay with other platforms in the future.
+</p>
+
+<h3 class='center-h' data-href='Common_architecture'>
+Common architecture
 </h3>
 
 <LinkToContent/>
 
 <p>
-
+SymOntoClay is created primarily for game development.
+The first implementation is created for Unity3D.
+But I hope we will able to use SymOntoClay in other cases.
 </p>
 
-<complete_me/>
+<p>
+SymOntoClay exists only for describing behaviour logic.
+And It can not replace complex game engine like Unity3D.
+</p>
+
+<p>
+The main components of SymOntoClay for integrating with Unity3D:
+</p>
+
+<figure class="figure">
+  <img src="/docs/engine_concepts/common_architecture.png" class="img-fluid" alt="Common architecture diagram">
+  <figcaption class="figure-caption">1 Common architecture diagram</figcaption>
+</figure>
+
+<h4 class='center-h' data-href='Native_platform'>
+Native platform
+</h4>
+
+<LinkToContent/>
+
+<p>
+Native platform provides interaction with hardware, special required services and APIs.
+Also it menages life time of instance of SymOntoClay.
+</p>
+
+<p>
+Now there exists only one available native platform - Unity3D.
+But I hope there will be many available platforms for SymOntoClay in the future.
+My dream is availability SymOntoClay for Unreal engine and robots.
+</p>
+
+<h4 class='center-h' data-href='Common_bus'>
+Common bus
+</h4>
+
+<LinkToContent/>
+
+<p>
+The common bus aggregates all entities in one cluster, provides interaction between them and caches of common components.
+It provides simultaneity of NPC's actions and saves resources of computer. 
+</p>
+
+<p>
+It may contain user's code on special language which describes common facts or another logic of the game or level.
+</p>
+
+<p>
+One bus should be used for one game or one level of the game and It can menage many NPCs.
+Menaged NPCs can interact with the information as if It is described into the NPCs.
+</p>
+
+<p>
+Common bus is specified for concrete platform. 
+</p>
+
+<h4 class='center-h' data-href='Common_architecture_Host'>
+Host
+</h4>
+
+<LinkToContent/>
+
+<p>
+Firstly Host provides facts or another logic specified for this NPC on the game or level.
+So even inactive game entities have an own hosts to be perceived by active NPCs.
+Player also can perceive this information by special UI means.
+</p>
+
+<p>
+Secondly Host provides interaction between Logical engine of active NPC and Common bus. 
+</p>
+
+<p>
+When NPC was died its host continues own existence as inactive game entity and can be perceived.
+</p>
+
+<p>
+Host is specified for concrete platform. 
+</p>
+
+<h4 class='center-h' data-href='Logical_engine_of_active_NPC'>
+Logical engine of active NPC
+</h4>
+
+<LinkToContent/>
+
+<p>
+It provides behavior of active NPC.
+All process of NPC are executed here.
+</p>
+
+<p>
+Logical engine of active NPC are independent of concrete platform.
+</p>
+
+<h4 class='center-h' data-href='Users_code'>
+User's code
+</h4>
+
+<LinkToContent/>
+
+<p>
+It describes behavior of an active NPC and logical information of the NPC or game level by special programming language.
+</p>
+
+<p>
+All files of the language are merged into SymOntoClay applications.
+These applications can be attached to Logical engine of active NPC, Host or Common bus.
+</p>
+
+<p>
+Special languages are created quite often.
+Of course we need a good reason for creating a new programming language.
+And I think this language will be able to implement helpful features directly and will help to create more complex game logic faster.
+</p>
+
+<p>
+One more purpose of <a href='/docs/spec.html'>SymOntoClay DSL</a> is to separate game logic of NPS from other code.
+In this case we can get more concentration on behaviour of NPC and divide it from other game code.
+</p>
+
+<p>
+Also logic of NPC will become portable and can be realized on different platforms.
+</p>
+
+<p>
+The special language will contain helpful constructions for more faster creating target features of a game.
+</p>
+
+<p>
+You can read more about SymOntoClay DSL <a href='/docs/spec.html'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='Implementation_Main_entities'>
+Main entities on User's view
+</h3>
+
+<LinkToContent/>
+
+<p>
+User will meet this entities on Unity3D asset's level.
+</p>
 
 <h4 class='center-h' data-href='Implementation_Main_entities_World'>
 World
 </h4>
 
 <LinkToContent/>
+
+<p>
+Represents a game world.
+</p>
+
+<p>
+Responsibility:
+</p>
+
+<ol>
+    <li>
+	</li>
+    <li>
+	</li>
+    <li>
+	</li>	
+</ol>
+
+<p>
+
+</p>
 
 <p>
 
@@ -148,6 +329,23 @@ Player
 </h4>
 
 <LinkToContent/>
+
+<p>
+
+</p>
+
+<p>
+Responsibility:
+</p>
+
+<ol>
+    <li>
+	</li>
+    <li>
+	</li>
+    <li>
+	</li>	
+</ol>
 
 <p>
 
