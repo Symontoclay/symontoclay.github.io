@@ -3,9 +3,9 @@
     "title": "The game artificial intelligence experimental open source engine with its own domain specific language.",
     "enableFavicon": true,
     "logo": "/favicon.png",
-	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/roadMap.json",
-	"CSharpUserApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApi.json",
-	"BaseCSharpUserApiPath" : "%SITE_SOURCE_PATH%/engine_api",
+	"roadMapJsonPath" : null,
+	"CSharpUserApiJsonPath": null,
+	"BaseCSharpUserApiPath" : null,
 	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
 	"BaseReleaseNotesPath" : "%SITE_SOURCE_PATH%/downloads/arch",
     "menu" : {

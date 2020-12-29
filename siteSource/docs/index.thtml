@@ -12,22 +12,6 @@ Licensing
 
 <license_info/>
 
-<h3>
-<a href='/docs/getting_started.html'>Getting started</a>
-</h3>
-
-<p>
-Quick tutorial about installing SymOntoClay engine, creating and running easy projects.
-</p>
-
-<h3>
-<a href='/docs/features.html'>Features</a>
-</h3>
-
-<p>
-Imlemented and released features.
-</p>
-
 <h2 class='center-h'>Learning SymOntoClay</h2>
 
 <h3>
@@ -70,14 +54,6 @@ Documentation about main concepts and approaches of SymOntoClay Engine.
 
 <p>
 Documentation about file structure of SymOntoClay DSL source code.
-</p>
-
-<h3>
-<a href='/engine_api/index.html'>Engine API</a>
-</h3>
-
-<p>
-Documentation how to use SymOntoClay in your C# code.
 </p>
 
 <h3>
