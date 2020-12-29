@@ -1,1 +1,93 @@
-<h1 class='center-h'>CLI</h1>
+<h1 class='center-h'>SymOntoClay CLI</h1>
+
+<ContentsPlace/>
+
+<p>
+A command line interface for SymOntoClay.
+</p>
+
+<h3 class='center-h' data-href='help'>
+soc help
+</h3>
+
+<p>
+Prints help.
+</p>
+
+<p>
+soc <b>help</b></br>
+soc <b>h</b>
+</p>
+
+<h3 class='center-h' data-href='run'>
+soc run
+</h3>
+
+<p>
+Runs target NPC and waits when you write 'exit' for exit.
+</p>
+
+<p>
+soc <b>run</b> &lt;NPC file name&gt;</br>
+soc <b>run</b>
+</p>
+
+<h4 class='center-h' data-href='run_arguments'>Arguments</h4>
+
+<dl>
+  <dt>&lt;NPC file name&gt;</dt>
+  <dd>
+      File name of target NPC.
+	  This argument is optional.
+	  Without this argument the target NPC is detected by locators.
+  </dd>
+</dl>
+
+<h3 class='center-h' data-href='exit'>
+soc exit
+</h3>
+
+<p>
+Ends running NPC.
+</p>
+
+<p>
+soc <b>exit</b> 
+</p>
+
+<h3 class='center-h' data-href='new'>
+soc new
+</h3>
+
+<p>
+Creates new NPC in new or existing worldspace.
+</p>
+
+<p>
+soc <b>new</b> &lt;NPC name&gt;</br>
+soc <b>n</b> &lt;NPC name&gt;
+</p>
+
+<h4 class='center-h' data-href='new_arguments'>Arguments</h4>
+
+<dl>
+  <dt>&lt;NPC name&gt;</dt>
+  <dd>Name of new NPC</dd>
+</dl>
+
+<p>
+For creating NPC in existing worldspace run command <b>new</b> in worldspace directory.
+</p>
+
+<h3 class='center-h' data-href='version'>
+soc version
+</h3>
+
+<p>
+Prints current version of SymOntoClay.
+</p>
+
+<p>
+soc <b>version</b></br>
+soc <b>v</b>
+</p>

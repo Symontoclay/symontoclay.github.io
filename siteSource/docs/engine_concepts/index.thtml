@@ -295,15 +295,20 @@ Responsibility:
 
 <ol>
     <li>
+	Provides communication between game objects controlled by SymOntoClay.</br>
+	For example: interaction between <a href='#Implementation_Main_entities_NPC'>NPC</a> and <a href='#Implementation_Main_entities_GameObject'>GameObject</a>, NPC perception of the surrounding world, passing messages between <a href='#Implementation_Main_entities_NPC'>NPCs</a>.
 	</li>
     <li>
+	Contains information about game world. The information is common to all <a href='#Implementation_Main_entities_NPC'>NPCs</a>.
 	</li>
     <li>
+	Controls life cycle of <a href='#Implementation_Main_entities_NPC'>NPCs</a>.</br>
+	For example: simultaneous initialization, start and stop. 
 	</li>	
 </ol>
 
 <p>
-
+In C# code, It is represented by the type <a href=''/>.
 </p>
 
 <p>
@@ -320,6 +325,12 @@ NPC
 
 <p>
 
+</p>
+
+<complete_me/>
+
+<p>
+In C# code, It is represented by the type <a href=''/>.
 </p>
 
 <complete_me/>
@@ -353,6 +364,12 @@ Responsibility:
 
 <complete_me/>
 
+<p>
+In C# code, It is represented by the type <a href=''/>.
+</p>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Implementation_Main_entities_GameObject'>
 GameObject
 </h4>
@@ -365,7 +382,11 @@ GameObject
 
 <complete_me/>
 
-<a href='T:SymOntoClay.UnityAsset.Core.IGameObject'/>
+<p>
+In C# code, It is represented by the type <a href='T:SymOntoClay.UnityAsset.Core.IGameObject'/>.
+</p>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='Implementation_Main_entities_Place'>
 Place
@@ -375,6 +396,12 @@ Place
 
 <p>
 
+</p>
+
+<complete_me/>
+
+<p>
+In C# code, It is represented by the type <a href=''/>.
 </p>
 
 <complete_me/>
