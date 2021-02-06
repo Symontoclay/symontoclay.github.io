@@ -9,7 +9,7 @@ Hello world!
 <LinkToContent/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/HelloWorld_Example1.zip'>
-npc PeaceKeeper
+app PeaceKeeper
 {
     on Init => 
 	{
@@ -46,7 +46,7 @@ Read more about Single line comment <a href='/docs/spec.html#Comments_chapter'>h
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/SingleLineComment.zip'>
-npc PeaceKeeper
+app PeaceKeeper
 {
     on Init => 
 	{
@@ -77,7 +77,7 @@ Read more about Multi line comment <a href='/docs/spec.html#Comments_chapter'>he
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/MultiLineComment.zip'>
-npc PeaceKeeper
+app PeaceKeeper
 {
     on Init => 
 	{
@@ -118,7 +118,7 @@ So the variable <b>@b</b> will contain 1.
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/Variables_Example1.zip'>
-npc PeaceKeeper
+app PeaceKeeper
 {
     on Init => 
 	{
@@ -149,7 +149,7 @@ A variable <b>@bx</b> has never been being assigned. So It contains default valu
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/Variables_Example2.zip'>
-npc PeaceKeeper
+app PeaceKeeper
 {
     on Init => 
 	{
@@ -184,7 +184,7 @@ Read more <a href='/docs/spec.html#Inheritance_chapter'>here</a> about inheritan
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample1.zip'>
-npc PeaceKeeper is [0.5] exampleClass
+app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
@@ -248,7 +248,7 @@ Synchronous
 <LinkToContent/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodSynchronousExample1.zip'>
-npc PeaceKeeper is [0.5] exampleClass
+app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
@@ -273,7 +273,7 @@ Asynchronous
 <LinkToContent/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodAsynchronousExample1.zip'>
-npc PeaceKeeper is [0.5] exampleClass
+app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
@@ -324,7 +324,7 @@ class exampleClass is human, [0.1] animal
 	{: { love($x, $y) } -> { help($x, $y) } :}
 }
 
-npc PeaceKeeper is [0.5] exampleClass
+app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
@@ -350,7 +350,7 @@ End
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_b.zip'>
-npc PeaceKeeper is [0.5] exampleClass
+app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
@@ -488,7 +488,7 @@ Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_3.zip'>
-npc PeaceKeeper is [0.5] exampleClass
+app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{

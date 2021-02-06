@@ -372,10 +372,9 @@ But the words can be used as identifiers in other places.
 </p>
 
 <keywords cols='4'>
-    <kw name='npc'/>
+    <kw name='app'/>
 	<kw name='class'/>
 	<kw name='world'/>
-	<kw name='host'/>
 	<kw name='is'/>
 	<kw name='on'/>
 	<kw name='use'/>
@@ -643,13 +642,14 @@ SymOntoClay engine provides mapping to the game engine's coordinate system.
 </p>
 
 <gr>
-<EBNFCDECL name='WaypointDecl' groups='Expr'/> = "#@" "[" <EBNFC name='WaypointDistance'/> "," <EBNFC name='WaypointAngleInDegrees'/> "]" .
+<EBNFCDECL name='WaypointDecl' groups='Expr'/> = "#@" "[" ( <EBNFC name='WaypointDistance'/> "," <EBNFC name='WaypointAngleInDegrees'/> ) | ( <EBNFC name='WaypointDistance'/> ) "]" .
 <EBNFCDECL name='WaypointDistance'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='WaypointAngleInDegrees'/> = <EBNFC name='NumberExpr'/> .
 </gr>
 
 <code data-lng='soc'>
 #@[25, 30]
+#@[25]
 </code>
 
 <p>

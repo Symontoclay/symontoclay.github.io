@@ -1,5 +1,24 @@
 [
   {
+    "Date": "2021-01-28T00:00:00",
+    "Version": "0.2.5",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.5.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.tar.gz)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.5.0.tar.gz"
+      },
+    ],
+    "Description": "* Small improvements for integration with Unity3D
+* Fixing issues",
+    "IsMarkdown": true 
+  },
+  {
     "Date": "2021-01-14T00:00:00",
     "Version": "0.2.4",
     "AssetsList": [
