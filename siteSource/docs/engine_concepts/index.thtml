@@ -60,48 +60,39 @@ But it can define methods which are available to any <a href='#Common_concepts_N
 There exists special <a href='/docs/spec.html#World_chapter'>syntax construction</a> for the root code entity of <b>world</b>.
 </p>
 
-<h3 class='center-h' data-href='Common_concepts_NPC'>
-NPC
+<h3 class='center-h' data-href='Common_concepts_App'>
+App
 </h3>
 
 <LinkToContent/>
 
 <p>
-It's abbreviation of <b>Non-Player Character</b>.
-This is any game object that can react to the environment, so It is an active game object.
-Mainly, it is a moving character, primarily It is a human.
+It's a root entity of a game object.
 </p>
 
 <p>
-NPC only knows Its own personal information and general information defined in <a href='#Common_concepts_World'>world</a>.
+App can be active or not.
+It depends on using in Unity.
+</p>
+
+<p>
+Active NPC has executing code and can react to the environment.
+Also It allows to define information about any object in a game.
+NPC knows only Its own personal information and general information defined in <a href='#Common_concepts_World'>world</a>.
 It helps us to prevent “cheating AI” on the engine level without writing any additional code on the <a href='/docs/spec.html'>DSL</a> level.
 </p>
 
 <p>
-There exists special <a href='/docs/spec.html#NPC_chapter'>syntax construction</a> for the root code entity of <b>NPC</b>.
-</p>
-
-<h3 class='center-h' data-href='Common_concepts_Host'>
-Host
-</h3>
-
-<LinkToContent/>
-
-<p>
-Allows to define information about any object in a game.
+Died NPC or thing don't have executing code and can't react to the environment.
+It only allows to define information about any object in a game.
 </p>
 
 <p>
-Not active.
-But It can define methods which are available for calling from the <a href='#Common_concepts_NPC'>NPC</a> with which <b>host</b> is linked.
+Some of the information is updated automatically, depending on the state of an game object with which it is linked.
 </p>
 
 <p>
-Some of the information is updated automatically, depending on the state of an <a href='#Common_concepts_NPC'>NPC</a> or <a href='#Implementation_Main_entities_GameObject'>game object</a> with which it is linked.
-</p>
-
-<p>
-There exists special <a href='/docs/spec.html#Host_chapter'>syntax construction</a> for the root code entity of <b>host</b>.
+There exists special <a href='/docs/spec.html#App_chapter'>syntax construction</a> for the root code entity of <b>app</b>.
 </p>
 
 <h2 class='center-h' data-href='Implementation'>

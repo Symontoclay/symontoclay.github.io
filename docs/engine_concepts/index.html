@@ -38,7 +38,7 @@
 <h2 class="center-h">    Contens
     <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#General_information">General information</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts">Common concepts</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC">NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_Host">Host</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation">Implementation</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture">Common architecture</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Native_platform">Native platform</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_bus">Common bus</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture_Host">Host</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Logical_engine_of_active_NPC">Logical engine of active NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Users_code">User's code</a></li></ul></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#General_information">General information</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts">Common concepts</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_App">App</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation">Implementation</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture">Common architecture</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Native_platform">Native platform</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_bus">Common bus</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture_Host">Host</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Logical_engine_of_active_NPC">Logical engine of active NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Users_code">User's code</a></li></ul></li></ul></li></ul>
 
 <h2 class='center-h' data-href='General_information'>
 General information
@@ -98,48 +98,39 @@ But it can define methods which are available to any <a href='https://symontocla
 There exists special <a href='https://symontoclay.github.io/docs/spec.html#World_chapter'>syntax construction</a> for the root code entity of <b>world</b>.
 </p>
 
-<h3 class='center-h' data-href='Common_concepts_NPC'>
-NPC
-<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC" name="Common_concepts_NPC" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<h3 class='center-h' data-href='Common_concepts_App'>
+App
+<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_App" name="Common_concepts_App" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
-It's abbreviation of <b>Non-Player Character</b>.
-This is any game object that can react to the environment, so It is an active game object.
-Mainly, it is a moving character, primarily It is a human.
+It's a root entity of a game object.
 </p>
 
 <p>
-NPC only knows Its own personal information and general information defined in <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World'>world</a>.
+App can be active or not.
+It depends on using in Unity.
+</p>
+
+<p>
+Active NPC has executing code and can react to the environment.
+Also It allows to define information about any object in a game.
+NPC knows only Its own personal information and general information defined in <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World'>world</a>.
 It helps us to prevent “cheating AI” on the engine level without writing any additional code on the <a href='https://symontoclay.github.io/docs/spec.html'>DSL</a> level.
 </p>
 
 <p>
-There exists special <a href='https://symontoclay.github.io/docs/spec.html#NPC_chapter'>syntax construction</a> for the root code entity of <b>NPC</b>.
-</p>
-
-<h3 class='center-h' data-href='Common_concepts_Host'>
-Host
-<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_Host" name="Common_concepts_Host" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
-
-<p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
-<p>
-Allows to define information about any object in a game.
+Died NPC or thing don't have executing code and can't react to the environment.
+It only allows to define information about any object in a game.
 </p>
 
 <p>
-Not active.
-But It can define methods which are available for calling from the <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a> with which <b>host</b> is linked.
+Some of the information is updated automatically, depending on the state of an game object with which it is linked.
 </p>
 
 <p>
-Some of the information is updated automatically, depending on the state of an <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a> or <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation_Main_entities_GameObject'>game object</a> with which it is linked.
-</p>
-
-<p>
-There exists special <a href='https://symontoclay.github.io/docs/spec.html#Host_chapter'>syntax construction</a> for the root code entity of <b>host</b>.
+There exists special <a href='https://symontoclay.github.io/docs/spec.html#App_chapter'>syntax construction</a> for the root code entity of <b>app</b>.
 </p>
 
 <h2 class='center-h' data-href='Implementation'>
