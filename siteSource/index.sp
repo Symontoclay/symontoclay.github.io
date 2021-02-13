@@ -9,7 +9,7 @@
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "SymOntoClay is game artificial intelligence experimental open source indie-framework with its own domain specific language.",
+    "Description": "SymOntoClay is a hybrid language with logic programming and fuzzy logic for defining game characters behavior.",
     "ImageUrl": "",
     "ImageAlt": "",
     "Title": ""

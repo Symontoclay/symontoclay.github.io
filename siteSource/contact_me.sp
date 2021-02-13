@@ -9,7 +9,7 @@
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "",
+    "Description": "Contact me about SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
     "Title": "Contact me"
