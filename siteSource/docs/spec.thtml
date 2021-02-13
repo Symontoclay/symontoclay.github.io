@@ -109,36 +109,20 @@ Also this file can contain other content which is allowed in <a href='#Class_sou
 <EBNFCDECL name='WorldSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='WorldSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
 </gr>
 
-<h4 class='center-h' data-href='NPC_source_code_file_chapter'>
-NPC source code file
+<h4 class='center-h' data-href='App_source_code_file_chapter'>
+App source code file
 </h4>
 
 <LinkToContent/>
 
 <p>
-The file contains <a href='#NPC_chapter'>NPC declaration</a>.
-There can be only one NPC declaration in the file.
+The file contains <a href='#App_chapter'>App declaration</a>.
+There can be only one App declaration in the file.
 Also this file can contain other content which is allowed in <a href='#Class_source_code_file_chapter'>Class source code file</a>.
 </p>
 
 <gr>
-<EBNFCDECL name='NPCSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='NPCSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
-</gr>
-
-<h4 class='center-h' data-href='Host_source_code_file_chapter'>
-Host source code file
-</h4>
-
-<LinkToContent/>
-
-<p>
-The file contains <a href='#Host_chapter'>Host declaration</a>.
-There can be only one Host declaration in the file.
-Also this file can contain other content which is allowed in <a href='#Class_source_code_file_chapter'>Class source code file</a>.
-</p>
-
-<gr>
-<EBNFCDECL name='HostSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='HostSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
+<EBNFCDECL name='AppSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='AppSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
 </gr>
 
 <h4 class='center-h' data-href='Class_source_code_file_chapter'>
@@ -148,9 +132,9 @@ Class source code file
 <LinkToContent/>
 
 <p>
-The file contains all possible code entities, except <a href='#World_chapter'>World</a>, <a href='#NPC_chapter'>NPC</a> and <a href='#Host_chapter'>Host</a> declarations.
+The file contains all possible code entities, except <a href='#World_chapter'>World</a> and <a href='#App_chapter'>App</a> declarations.
 There exist special source code files for these code entities.
-But content of Class source code file can be included into <a href='#World_source_code_file_chapter'>World</a>, <a href='#NPC_source_code_file_chapter'>NPC</a> and <a href='#Host_source_code_file_chapter'>Host</a> source code files.
+But content of Class source code file can be included into <a href='#World_source_code_file_chapter'>World</a> and <a href='#App_source_code_file_chapter'>App</a> source code files.
 </p>
 
 <gr>
@@ -535,24 +519,24 @@ class exampleClass is human, [0.1] animal
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_1'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='NPC_chapter'>
-NPC
+<h3 class='center-h' data-href='App_chapter'>
+App
 </h3>
 
 <LinkToContent/>
 
 <p>
-It is root object and entry point of <a href='/docs/engine_concepts/index.html#Common_concepts_NPC'>NPC</a>.
+It is root object and entry point of <a href='/docs/engine_concepts/index.html#Common_concepts_App'>App</a>.
 </p>
 
 <gr>
-<EBNFCDECL name='NPCIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='NPCDecl' groups='NPCSourceCodeFileContent'/> = "npc" <EBNFC name='NPCIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'NPCBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='NPCBodyContent'/> = [ <GEBNFC name='NPCBodyContent' kind='op_and'/> ] .
+<EBNFCDECL name='AppIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
+<EBNFCDECL name='AppDecl' groups='AppSourceCodeFileContent'/> = "app" <EBNFC name='AppIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'AppBodyContent'/> ] <br/> "}" .
+<EBNFCDECL name='AppBodyContent'/> = [ <GEBNFC name='AppBodyContent' kind='op_and'/> ] .
 </gr>
 
 <code data-lng='soc'>
-npc PeaceKeeper
+app PeaceKeeper
 {
     on Init => 
 	{
@@ -561,7 +545,7 @@ npc PeaceKeeper
 </code>
 
 <code data-lng='soc'>
-npc PeaceKeeper is human
+app PeaceKeeper is human
 {
     on Init => 
 	{
@@ -595,28 +579,6 @@ world `Lost town`
 }
 </code>
 
-<h3 class='center-h' data-href='Host_chapter'>
-Host
-</h3>
-
-<LinkToContent/>
-
-<p>
-It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_Host'>Host</a>.
-</p>
-
-<gr>
-<EBNFCDECL name='HostIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='HostDecl' groups='HostSourceCodeFileContent'/> = "host" <EBNFC name='HostIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'HostBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='HostBodyContent'/> = <GEBNFC name='HostBodyContent' kind='op_and'/> .
-</gr>
-
-<code data-lng='soc'>
-host `Crazy 1`
-{
-}
-</code>
-
 <h3 class='center-h' data-href='Waypoint_chapter'>
 Waypoint
 </h3>
@@ -633,8 +595,8 @@ Coordinates of points are presented in a more convenient way, similar to that is
 
 <p>
 Now It is supported the coordinate system what is similar to Polar coordinate system.
-The radial coordinate is the distance from center of <a href='#NPC_chapter'>NPC</a> to target.
-And the angular coordinate (in degrees only) starts from the sagittal plane of <a href='#NPC_chapter'>NPC</a> in front of the NPC.
+The radial coordinate is the distance from center of NPC to target.
+And the angular coordinate (in degrees only) starts from the sagittal plane of NPC in front of the NPC.
 </p>
 
 <p>
@@ -901,8 +863,8 @@ It is like a constructor in other programming languages.
 </p>
 
 <p>
-Init trigger of <a href='#NPC_chapter'>NPC</a> is a first code which is executed for the NPC.
-So It is an entrypoint of the NPC.
+Init trigger of <a href='#App_chapter'>App</a> is a first code which is executed for the App.
+So It is an entrypoint of the App.
 </p>
 
 <gr>
@@ -1014,7 +976,7 @@ Available system variables
 <LinkToContent/>
 
 <p>
-Contains a link to the current <a href='#NPC_chapter'>NPC</a>.
+Contains a link to the current <a href='#App_chapter'>App</a>.
 </p>
 
 <p>
@@ -1028,7 +990,7 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <LinkToContent/>
 
 <p>
-Contains a link to the C# methods of this <a href='#NPC_chapter'>NPC</a> which are defined at the Unity3D level of the NPC logic.
+Contains a link to the C# methods of this <a href='#App_chapter'>App</a> which are defined at the Unity3D level of the NPC logic or Thing.
 </p>
 
 <p>
@@ -1474,7 +1436,7 @@ insert
 <LinkToContent/>
 
 <p>
-Writes a <a href='#Fact_chapter'>fact</a> into the knowledge storage of current <a href='#NPC_chapter'>NPC</a>. 
+Writes a <a href='#Fact_chapter'>fact</a> into the knowledge storage of current <a href='#App_chapter'>App</a>. 
 Returns the added fact.
 </p>
 
