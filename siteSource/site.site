@@ -1,6 +1,6 @@
 {
     "mainTitle": "SymOntoClay - ",
-    "title": "The game artificial intelligence experimental open source engine with its own domain specific language.",
+    "title": "A hybrid language with logic programming and fuzzy logic for defining game characters behavior.",
     "enableFavicon": true,
     "logo": "/favicon.png",
 	"roadMapJsonPath" : null,
