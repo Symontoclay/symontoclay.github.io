@@ -875,6 +875,14 @@ So It is an entrypoint of the App.
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
 
+<h4 class='center-h' data-href='Logic_сonditional_triggers_chapter'>
+Logic сonditional triggers
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
 </h2>
