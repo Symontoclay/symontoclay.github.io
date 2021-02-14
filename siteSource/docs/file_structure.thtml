@@ -2,21 +2,162 @@
 
 <ContentsPlace/>
 
-<h2 class='center-h' data-href=''>
-G
+<h2 class='center-h' data-href='Overview'>
+Overview
 </h2>
 
 <LinkToContent/>
+
+<complete_me/>
 
 <p>
 
 </p>
 
-<h2 class='center-h' data-href=''>
-
+<h2 class='center-h' data-href='General_file_structure'>
+General file structure
 </h2>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<pre>
+my-worldspace/
+&nbsp;&nbsp;&nbsp;&nbsp;Modules/
+&nbsp;&nbsp;&nbsp;&nbsp;Things/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Npcs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC.soc
+&nbsp;&nbsp;&nbsp;&nbsp;World/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my-world.world
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my-world.soc
+&nbsp;&nbsp;&nbsp;&nbsp;my-worldspace.wspace
+</pre>
+
+<h2 class='center-h' data-href='Files_and_directories_meaning'>
+Files and directories meaning
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='my-worldspace'>
+my-worldspace/
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='Modules'>
+Modules/
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='Things'>
+Things/
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='Npcs'>
+Npcs/
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='World'>
+World/
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='.wspace'>
+.wspace
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='.world'>
+.world
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='.sobj'>
+.sobj
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<h3 class='center-h' data-href='.soc'>
+.soc
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <p>
 
