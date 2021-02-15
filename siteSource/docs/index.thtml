@@ -22,6 +22,7 @@ Licensing
 SymOntoClay DSL specification.
 </p>
 
+<!--
 <h3>
 <a href='/std_lib/index.html'>Old spec (Synopsis)</a>
 </h3>
@@ -29,6 +30,7 @@ SymOntoClay DSL specification.
 <p>
 Documentation about SymOntoClay DSL standard library.
 </p>
+-->
 
 <h3>
 <a href='/docs/lng_examples/index.html'>Code examples</a>

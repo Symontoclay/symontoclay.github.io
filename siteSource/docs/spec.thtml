@@ -825,12 +825,12 @@ A trigger is a code that is automatically executed in response to certain events
 </p>
 
 <p>
-Now only Lifecycle triggers are available. 
-But in the future I am going to develop other kinds of triggers.
+Now both Logic coditional and Lifecycle triggers are available. 
+In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" <EBNFC name='LifecycleTriggerIdentifier'/> "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
@@ -881,7 +881,18 @@ Logic сonditional triggers
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Logic сonditional trigger fires when logic condition is <b>true</b> and trigger is reset.
+Trigger resets when the logic condition is <b>false</b>.
+</p>
+
+<gr>
+<EBNFCDECL name='TriggersLogicСondition'/> = <EBNFC name='LogicRuleDecl'/> .
+</gr>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
