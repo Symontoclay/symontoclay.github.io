@@ -1,4 +1,4 @@
-<h1 class='center-h'>File structure</h1>
+<h1 class='center-h'>Worldspace and project file structure</h1>
 
 <ContentsPlace/>
 
@@ -8,10 +8,23 @@ Overview
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+You develop applications in the context of an SymOntoClay <a href='/docs/engine_concepts/index.html#Common_concepts_World'>worldspace</a>.
+A worldspace contains the files for one or more projects.
+The project is a collection of files which defines behavior or information of NPC and information about Thing, Place or Player.
+The project is unit which is linked to Unity Game object with special asset.
+</p>
 
 <p>
+The SymOntoClay CLI <b>soc</b> <b>new</b> create new worldspace.
+</p>
 
+<console>
+soc <b>new</b> &lt;Project name&gt;
+</console>
+
+<p>
+The created worldspace contains an initial skeleton and is ready to run and easy to modify.
 </p>
 
 <h2 class='center-h' data-href='General_file_structure'>
@@ -20,10 +33,8 @@ General file structure
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Here is general project file structure.
 </p>
 
 <pre style='width: 100%; background-color: #f8f9fa;'>
@@ -53,22 +64,24 @@ Files and directories meaning
 
 <LinkToContent/>
 
-<complete_me/>
-
-<p>
-
-</p>
-
 <h3 class='center-h' data-href='my-worldspace'>
 my-worldspace/
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It is a root directory of your worldspace.
+The name of the root directory can be whatever you want. 
+</p>
 
 <p>
+Directories <a href='#Modules'><b>Modules</b></a> and <a href='#World'><b>World</b></a> are required.
+</p>
 
+<p>
+Another directories can be in any count and can have any names.
+The meaning of these directories - grouping projects.
 </p>
 
 <h3 class='center-h' data-href='Modules'>
@@ -77,10 +90,20 @@ Modules/
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+<b>Required</b>
+</p>
 
 <p>
+This directory will contain shared modules.
+</p>
 
+<p>
+Now this directory is not used.
+</p>
+
+<p>
+This name of directory is reserved for future.
 </p>
 
 <h3 class='center-h' data-href='Things'>
@@ -89,10 +112,8 @@ Things/
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Groups projects which are defining information about things.
 </p>
 
 <h3 class='center-h' data-href='Npcs'>
@@ -101,10 +122,8 @@ Npcs/
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Groups projects which are defining NPCs' behavior and information.
 </p>
 
 <h3 class='center-h' data-href='Players'>
@@ -113,10 +132,8 @@ Players/
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Groups projects which are defining information about players.
 </p>
 
 <h3 class='center-h' data-href='World'>
@@ -125,10 +142,12 @@ World/
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Defines general information about world.
 </p>
 
 <h3 class='center-h' data-href='.wspace'>
@@ -137,10 +156,12 @@ World/
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Locator of worldspace.
 </p>
 
 <h3 class='center-h' data-href='.world'>
@@ -149,10 +170,12 @@ World/
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Locator of world's project.
 </p>
 
 <h3 class='center-h' data-href='.sobj'>
@@ -161,10 +184,12 @@ World/
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Locator of project.
 </p>
 
 <h3 class='center-h' data-href='.soc'>
@@ -173,8 +198,6 @@ World/
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Source code on <a href='/docs/spec.html'>SymOntoClay DSL<a>.
 </p>

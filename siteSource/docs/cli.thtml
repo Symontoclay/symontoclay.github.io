@@ -24,22 +24,22 @@ soc run
 </h3>
 
 <p>
-Runs target NPC and waits when you write 'exit' for exit.
+Runs target project(NPC) and waits when you write 'exit' for exit.
 </p>
 
 <p>
-soc <b>run</b> &lt;NPC file name&gt;</br>
+soc <b>run</b> &lt;Project file name&gt;</br>
 soc <b>run</b>
 </p>
 
 <h4 class='center-h' data-href='run_arguments'>Arguments</h4>
 
 <dl>
-  <dt>&lt;NPC file name&gt;</dt>
+  <dt>&lt;Project file name&gt;</dt>
   <dd>
-      File name of target NPC.
+      File name of target project.
 	  This argument is optional.
-	  Without this argument the target NPC is detected by locators.
+	  Without this argument the target project is detected by locators.
   </dd>
 </dl>
 
@@ -48,7 +48,7 @@ soc exit
 </h3>
 
 <p>
-Ends running NPC.
+Ends running project(NPC).
 </p>
 
 <p>
@@ -60,23 +60,23 @@ soc new
 </h3>
 
 <p>
-Creates new NPC in new or existing worldspace.
+Creates new project(NPC, Thing, Player, Place) in new or existing worldspace.
 </p>
 
 <p>
-soc <b>new</b> &lt;NPC name&gt;</br>
-soc <b>n</b> &lt;NPC name&gt;
+soc <b>new</b> &lt;Project name&gt;</br>
+soc <b>n</b> &lt;Project name&gt;
 </p>
 
 <h4 class='center-h' data-href='new_arguments'>Arguments</h4>
 
 <dl>
-  <dt>&lt;NPC name&gt;</dt>
-  <dd>Name of new NPC</dd>
+  <dt>&lt;Project name&gt;</dt>
+  <dd>Name of new Project</dd>
 </dl>
 
 <p>
-For creating NPC in existing worldspace run command <b>new</b> in worldspace directory.
+For creating project in existing worldspace run command <b>new</b> in worldspace directory.
 </p>
 
 <h3 class='center-h' data-href='version'>

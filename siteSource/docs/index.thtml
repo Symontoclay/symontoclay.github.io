@@ -51,11 +51,11 @@ Documentation about main concepts and approaches of SymOntoClay Engine.
 <h2 class='center-h'>References</h2>
 
 <h3>
-<a href='/docs/file_structure.html'>File structure</a>
+<a href='/docs/file_structure.html'>Worldspace and project file structure</a>
 </h3>
 
 <p>
-Documentation about file structure of SymOntoClay DSL source code.
+Documentation about project file structure on SymOntoClay DSL.
 </p>
 
 <h3>

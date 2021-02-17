@@ -33,7 +33,7 @@
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
 <article>
-<h1 class='center-h'>File structure</h1>
+<h1 class='center-h'>Worldspace and project file structure</h1>
 
 <h2 class="center-h">    Contens
     <a href='https://symontoclay.github.io/docs/file_structure.html#Contents' name='Contents' class='permalink' title='The link to the section'>
@@ -46,10 +46,21 @@ Overview
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+You develop applications in the context of an SymOntoClay <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World'>worldspace</a>.
+A worldspace contains the files for one or more projects.
+The project is a collection of files which defines behavior or information of NPC and information about Thing, Place or Player.
+The project is unit which is linked to Unity Game object with special asset.
+</p>
 
 <p>
+The SymOntoClay CLI <b>soc</b> <b>new</b> create new worldspace.
+</p>
 
+<div class="console-viewer"><div>soc  &lt;Project name&gt;</div></div>
+
+<p>
+The created worldspace contains an initial skeleton and is ready to run and easy to modify.
 </p>
 
 <h2 class='center-h' data-href='General_file_structure'>
@@ -58,10 +69,8 @@ General file structure
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
 <p>
-
+Here is general project file structure.
 </p>
 
 <pre style='width: 100%; background-color: #f8f9fa;'>
@@ -91,22 +100,24 @@ Files and directories meaning
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
-<p>
-
-</p>
-
 <h3 class='center-h' data-href='my-worldspace'>
 my-worldspace/
 <a href="https://symontoclay.github.io/docs/file_structure.html#my-worldspace" name="my-worldspace" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+It is a root directory of your worldspace.
+The name of the root directory can be whatever you want. 
+</p>
 
 <p>
+Directories <a href='https://symontoclay.github.io/docs/file_structure.html#Modules'><b>Modules</b></a> and <a href='https://symontoclay.github.io/docs/file_structure.html#World'><b>World</b></a> are required.
+</p>
 
+<p>
+Another directories can be in any count and can have any names.
+The meaning of these directories - grouping projects.
 </p>
 
 <h3 class='center-h' data-href='Modules'>
@@ -115,10 +126,20 @@ Modules/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+<b>Required</b>
+</p>
 
 <p>
+This directory will contain shared modules.
+</p>
 
+<p>
+Now this directory is not used.
+</p>
+
+<p>
+This name of directory is reserved for future.
 </p>
 
 <h3 class='center-h' data-href='Things'>
@@ -127,10 +148,8 @@ Things/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
 <p>
-
+Groups projects which are defining information about things.
 </p>
 
 <h3 class='center-h' data-href='Npcs'>
@@ -139,10 +158,8 @@ Npcs/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
 <p>
-
+Groups projects which are defining NPCs' behavior and information.
 </p>
 
 <h3 class='center-h' data-href='Players'>
@@ -151,10 +168,8 @@ Players/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
 <p>
-
+Groups projects which are defining information about players.
 </p>
 
 <h3 class='center-h' data-href='World'>
@@ -163,10 +178,12 @@ World/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Defines general information about world.
 </p>
 
 <h3 class='center-h' data-href='.wspace'>
@@ -175,10 +192,12 @@ World/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Locator of worldspace.
 </p>
 
 <h3 class='center-h' data-href='.world'>
@@ -187,10 +206,12 @@ World/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Locator of world's project.
 </p>
 
 <h3 class='center-h' data-href='.sobj'>
@@ -199,10 +220,12 @@ World/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
+<p>
+<b>Required</b>
+</p>
 
 <p>
-
+Locator of project.
 </p>
 
 <h3 class='center-h' data-href='.soc'>
@@ -211,11 +234,9 @@ World/
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div style="font-weight: bold; color: red;">COMPLETE ME!</div>
-
 <p>
-
-</p>
+Source code on <a href='https://symontoclay.github.io/docs/spec.html'>SymOntoClay DSL<a>.
+</a></p>
 
 </article>
 <p>
@@ -227,7 +248,7 @@ World/
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 15 February 2021<br>
+This page was last modified on 17 February 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 </div>
