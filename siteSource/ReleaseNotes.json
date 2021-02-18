@@ -1,5 +1,24 @@
 [
   {
+    "Date": "2021-02-18T00:00:00",
+    "Version": "0.2.6",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.6.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.tar.gz)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.6.0.tar.gz"
+      },
+    ],
+    "Description": "* Logic сonditional trigger - basic implementation
+* Fixing issues",
+    "IsMarkdown": true 
+  },
+  {
     "Date": "2021-01-28T00:00:00",
     "Version": "0.2.5",
     "AssetsList": [

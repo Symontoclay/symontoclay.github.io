@@ -512,4 +512,41 @@ Logic сonditional triggers
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+In this example trigger fires and writes "Logic condition fired!!!!" after insert fact.
+</p>
+
+<p>
+In Unity scene facts are provided by perception channels.
+</p>
+
+<p>
+Read more about Logic сonditional triggers <a href='/docs/spec.html#Logic_сonditional_triggers_chapter'>here</a>.
+</p>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicConditional_Trigger_Example_1.zip'>
+app MyNPC
+{
+    {: barrel(#`Barel 1`) :}
+
+    on Init =>
+    {
+	    "Begin" >> @>log;
+		
+		insert {: see(I, #`Barel 1`) :};
+		
+	    "End" >> @>log;
+    }
+	
+	on {: see(I, barrel) :} => 
+	{
+	    "Logic condition fired!!!!" >> @>log;
+	}
+}
+</code>
+
+<console>
+Begin
+End
+Logic condition fired!!!!
+</console>
