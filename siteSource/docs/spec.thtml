@@ -487,6 +487,12 @@ NULL literal
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='NullLiteral' groups='ConstExpr'/> = "null" .
+</gr>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
 </h2>
@@ -770,24 +776,24 @@ Predefined membership functions
 
 <complete_me/>
 
-<h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_ _chapter'>
-
+<h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_L_Function_chapter'>
+L Function
 </h5>
 
 <LinkToContent/>
 
 <complete_me/>
 
-<h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_ _chapter'>
-
+<h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_Trapezoid_Function_chapter'>
+Trapezoid Function
 </h5>
 
 <LinkToContent/>
 
 <complete_me/>
 
-<h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_ _chapter'>
-
+<h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_S_Function_chapter'>
+S Function
 </h5>
 
 <LinkToContent/>
@@ -802,8 +808,8 @@ Predefined operators
 
 <complete_me/>
 
-<h5 class='center-h' data-href='Linguistic_variable_Predefined_operator_ _chapter'>
-
+<h5 class='center-h' data-href='Linguistic_variable_Predefined_operator_Very_chapter'>
+Very
 </h5>
 
 <LinkToContent/>
@@ -998,6 +1004,14 @@ Trigger resets when the logic condition is <b>false</b>.
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers'>here</a>.
 </p>
 
+<h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
+Binding variables
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
 </h2>
@@ -1032,6 +1046,20 @@ Constant expressions may contain only literals and are evaluated at compile time
 30.2
 "abc"
 </code>
+
+<h3 class='center-h' data-href='Logic_expression_chapter'>
+Logic expression
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LogicExpr'/> = <GEBNFC name='LogicExpr' kind='or'/> .
+</gr>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Variable_chapter'>
 Variable
@@ -1217,8 +1245,7 @@ Operator precedence
 	    <th class='center-h'>3</th>
 	    <td>!</td>
 		<td>Left-to-right</td>
-	</tr>
-	
+	</tr>	
 	<tr>
 	    <th rowspan='4' class='center-h'>9</th>
 	    <td>&gt;</td>
@@ -1232,8 +1259,7 @@ Operator precedence
 	</tr>
 	<tr>
 	    <td>&lt;=</td>
-	</tr>
-	
+	</tr>	
 	<tr>
 	    <th rowspan='3' class='center-h'>10</th>
 	    <td>is</td>
@@ -1344,6 +1370,76 @@ exampleClass is not human >> @>log;
 You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a>.
 </p>
 
+<h4 class='center-h' data-href='PredicateOp_chapter'>
+Predicate
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='PredicateOp' groups='LogicExpr'/> =  .
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='MoreOp_chapter'>
+Operator "&gt;"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='MoreOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&gt;"'/>
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='MoreOrEqvOp_chapter'>
+Operator "&gt;="
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='MoreOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&gt;="'/>
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='LessOp_chapter'>
+Operator "&lt;"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LessOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&lt;"'/>
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='LessOrEqvOp_chapter'>
+Operator "&lt;="
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LessOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&lt;="'/>
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='LogicOp_chapter'>
     Logic operators
 </h3>
@@ -1361,12 +1457,40 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 </p>
 
 <gr>
-<EBNFCDECL name='AndOpExpr'/> = <TEBNFC name='BinaryOp_2' param = '"&"'/>
+<EBNFCDECL name='AndOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&"'/>
 </gr>
 
 <code data-lng='soc'>
 male($x) & parent($y, $x)
 </code>
+
+<h4 class='center-h' data-href='OrOp_chapter'>
+Operator "|"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"|"'/>
+</gr>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='NotOp_chapter'>
+Operator "!"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='NotOp' groups='LogicExpr'/> =  .
+</gr>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
@@ -1684,9 +1808,19 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='Expr'/>"/>
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='LogicBinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
+	</TEBNFCDECL>
+	
 	<TEBNFCDECL name='BinaryOp_base' param='_OpLiteral' param2='_ExpType'>
 	    _ExpType _OpLiteral _ExpType
 	</TEBNFCDECL>
+	
+	
+	
+	<TEBNFCDECL name='UnaryOp_base' param='_OpLiteral' param2='_ExpType'>
+	    _OpLiteral _ExpType
+	</TEBNFCDECL>	
 	
 	<TEBNFCDECL name='InheritanceDeclItem'>
 	    [ "[" <EBNFC name='NumberExpr'/> "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
@@ -1739,5 +1873,15 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <console>
 
 </console>
+
+<gr>
+<EBNFCDECL name='' groups=''/> =  .
+</gr>
+
+<GEBNFC name='' kind=''/>
+
+<EBNFC name=''/>
+
+<TEBNFC name=''/>
 
 -->
