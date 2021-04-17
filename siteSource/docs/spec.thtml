@@ -365,6 +365,16 @@ But the words can be used as identifiers in other places.
 	<kw name='not'/>
 	<kw name='select'/>
 	<kw name='insert'/>
+	<kw name='linvar'/>
+	<kw name='for'/>
+	<kw name='range'/>
+	<kw name='terms'/>
+	<kw name='constraints'/>
+	<kw name='inheritance'/>
+	<kw name='relation'/>
+	<kw name='inh'/>
+	<kw name='rel'/>
+	<kw name='null'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -381,6 +391,12 @@ The following character sequences represent <a href='#Operators_chapter'>operato
     <item value='?'/>
 	<item value='='/>
 	<item value='&'/>
+	<item value='|'/>
+	<item value='!'/>
+	<item value='>'/>
+	<item value='>='/>
+	<item value='<'/>
+	<item value='<='/>
 	<item value='>>'/>
 	<item value='=>'/>
 	<item value='->'/>
@@ -462,6 +478,12 @@ A string literal represents a <a href='#Constant_expression_chapter'>string cons
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='_chapter'>
+
+</h3>
+
+<LinkToContent/>
 
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
@@ -1109,6 +1131,27 @@ Operator precedence
 	<tr>
 	    <td>insert</td>
 	</tr>
+		<tr>
+	    <th class='center-h'>3</th>
+	    <td>!</td>
+		<td>Left-to-right</td>
+	</tr>
+	
+	<tr>
+	    <th rowspan='4' class='center-h'>9</th>
+	    <td>&gt;</td>
+	    <td rowspan='4'>Left-to-right</td>
+	</tr>
+	<tr>
+	    <td>&gt;=</td>
+	</tr>
+	<tr>
+	    <td>&lt;</td>
+	</tr>
+	<tr>
+	    <td>&lt;=</td>
+	</tr>
+	
 	<tr>
 	    <th rowspan='3' class='center-h'>10</th>
 	    <td>is</td>
@@ -1127,16 +1170,21 @@ Operator precedence
 	</tr>
 	<tr>
 	    <th class='center-h'>15</th>
+	    <td>|</td>
+		<td>Left-to-right</td>
+	</tr>
+	<tr>
+	    <th class='center-h'>16</th>
 	    <td>&gt;&gt;</td>
 	    <td>Left-to-right</td>
 	</tr>
 	<tr>
-	    <th class='center-h'>16</th>
+	    <th class='center-h'>17</th>
 	    <td>=</td>
 	    <td>Right-to-left</td>
 	</tr>
 	<tr>
-	    <th class='center-h'>17</th>
+	    <th class='center-h'>18</th>
 	    <td>,</td>
 	    <td>Left-to-right</td>
 	</tr>	
@@ -1568,3 +1616,11 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 </div>
 
 <a href='/docs/lng_examples/index.html#'></a>
+
+<!--
+<h3 class='center-h' data-href='_chapter'>
+
+</h3>
+
+<LinkToContent/>
+-->
