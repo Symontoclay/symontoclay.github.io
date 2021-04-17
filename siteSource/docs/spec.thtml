@@ -479,11 +479,13 @@ A string literal represents a <a href='#Constant_expression_chapter'>string cons
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='_chapter'>
-
+<h3 class='center-h' data-href='NULL_literal_chapter'>
+NULL literal
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
@@ -743,6 +745,46 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='Linguistic_variable_chapter'>
+Linguistic variable
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_Terms_chapter'>
+Terms
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_functions_chapter'>
+Predefined membership functions
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_  _chapter'>
+
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_  _chapter'>
+
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -1618,11 +1660,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <a href='/docs/lng_examples/index.html#'></a>
 
 <!--
+<h2 class='center-h' data-href=''>
+
+</h2>
+
+<h2 class='center-h' data-href='_chapter'>
+
+</h2>
+
 <h3 class='center-h' data-href='_chapter'>
 
 </h3>
 
 <LinkToContent/>
+
+<h4 class='center-h' data-href='_chapter'>
+
+</h4>
 
 <p>
 
@@ -1633,5 +1687,13 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <code data-lng='soc'>
 
 </code>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<console>
+
+</console>
 
 -->
