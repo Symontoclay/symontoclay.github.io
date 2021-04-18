@@ -308,18 +308,18 @@ This variable represents information which should be found in the select query.
 ?x
 </code>
 
-<h4 class='center-h' data-href='LogicRuleVarIdentifier_chapter'>
-Logic rule variable identifier
+<h4 class='center-h' data-href='LogicVarIdentifier_chapter'>
+Logic variable identifier
 </h4>
 
 <LinkToContent/>
 
 <p>
-Names special variable for <a href='#Logic_rule_chapter'>Logic rule</a>.
+Names special variable for <a href='#Logic_rule_chapter'>Logic rule</a> or <a href='#Fact_chapter'>Fact</a>.
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleVarIdentifier' groups='Identifier'/> = "$" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='LogicVarIdentifier' groups='Identifier'/> = "$" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -647,8 +647,6 @@ SymOntoClay engine provides mapping to the game engine's coordinate system.
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
 </p>
-
-
 
 <h3 class='center-h' data-href='Linguistic_variable_chapter'>
 Linguistic variable
@@ -1186,6 +1184,20 @@ It does nothing when It launched with the "CLI run".
 You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='Logic_variable_chapter'>
+Logic variable
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LogicVar'/> = <EBNFC name='LogicVarIdentifier'/> .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Channel_chapter'>
 Channel
 </h3>
@@ -1382,6 +1394,7 @@ The right-hand operand contains a possible base object.
 
 <gr>
 <EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
+<EBNFCDECL name='LogicIsOpExpr' groups='LogicExpr'/> = <EBNFC name='LogicExpr'/> "is" [ "not" ] <EBNFC name='LogicExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1409,7 +1422,9 @@ Predicate
 <complete_me/>
 
 <gr>
+<EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='PredicateOp' groups='LogicExpr'/> =  .
+<EBNFCDECL name='PredicateParameter'/> =  .
 </gr>
 
 <complete_me/>
