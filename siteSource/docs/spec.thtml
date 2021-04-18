@@ -648,109 +648,7 @@ SymOntoClay engine provides mapping to the game engine's coordinate system.
 You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='Fact_chapter'>
-Fact
-</h3>
 
-<LinkToContent/>
-
-<p>
-Represents knowledge in declarative way.
-It is an element of Logic programming.
-</p>
-
-<p>
-Now the fact is a predicate sentence with small syntactic sugar for better inclusion into SymOntoClay DSL.
-</p>
-
-<p>
-For example, expression &quot;cat (#Alisa)&quot; is equivalent to &quot;#Alisa is a cat&quot;.
-</p>
-
-<p>
-In the future, I am going to move away from the predicate form to a more human-readable one.
-In this case, the predicate form will be saved as an alternative way of describing.
-</p>
-
-<gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
-<EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
-<EBNFCDECL name='FactSentence'/> = <EBNFC name='FactPredicate'/> .
-<EBNFCDECL name='FactPredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='FactPredicateParam'/> [ { "," <EBNFC name='FactPredicateParam'/> } ] ")" .
-<EBNFCDECL name='FactPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-</gr>
-
-<code data-lng='soc'>
-{: male(#Tom) :}
-{: >:{ male(#Tom) } :}
-{: parent(#Piter, #Tom) :}
-</code>
-
-<p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
-</p>
-
-<h3 class='center-h' data-href='Logic_rule_chapter'>
-Logic rule
-</h3>
-
-<LinkToContent/>
-
-<p>
-Represents a logic conclusion rule.
-It allows to find and use facts which are not defined explicitly.
-It is an element of Logic programming.
-</p>
-
-<p>
-A rule defines relation between two sets of facts during logic conclusion.
-</p>
-
-<p>
-Logic searching uses depth-first search (DFS) with backtracking.
-</p>
-
-<p>
-A rule consists of head (<EBNFC name='LogicRulePrimarySection'/>) and body (<EBNFC name='LogicRuleSecondarySection'/>).
-The head is true if the body is true.
-Both head and body are predicate sentences with small syntactic sugar for better inclusion into SymOntoClay DSL.
-</p>
-
-<p>
-In the future, I am going to move away from the predicate form to a more human-readable one.
-In this case, the predicate form will be saved as an alternative way of describing.
-</p>
-
-<p>
-Conjunctions can only appear in the body, not in the head of a rule.
-Only special <a href='#LogicRuleVarIdentifier_chapter'>variables</a> can be used in the rule, the scope of which is limited by this rule.
-</p>
-
-<p>
-Now logic searching happens when the <a href='#SelectOp_chapter'>select operator</a> is only called explicitly.
-In the future, the area of using logic searching (conclusion) in SymOntoClay will be significantly expanded.
-</p>
-
-<gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
-<EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
-<EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
-<EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
-<EBNFCDECL name='ImplicationSymbol'/> = "->" .
-<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { <EBNFC name='AndOpExpr'/> <EBNFC name='LogicRulePredicate'/> } ] .
-<EBNFCDECL name='LogicRulePredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='LogicRulePredicateParam'/> [ { "," <EBNFC name='LogicRulePredicateParam'/> } ] ")" .
-<EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicRuleVarIdentifier'/> .
-</gr>
-
-<code data-lng='soc'>
-{: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
-{: >: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
-</code>
-
-<p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
-</p>
 
 <h3 class='center-h' data-href='Linguistic_variable_chapter'>
 Linguistic variable
@@ -831,6 +729,16 @@ Constraints
 <LinkToContent/>
 
 <complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_defuzzification_chapter'>
+Defuzzification
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -1007,6 +915,126 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_t
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
 Binding variables
 </h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Logic_programming_chapter'>
+Logic programming
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Fact_chapter'>
+Fact
+</h3>
+
+<LinkToContent/>
+
+<p>
+Represents knowledge in declarative way.
+It is an element of Logic programming.
+</p>
+
+<p>
+Now the fact is a predicate sentence with small syntactic sugar for better inclusion into SymOntoClay DSL.
+</p>
+
+<p>
+For example, expression &quot;cat (#Alisa)&quot; is equivalent to &quot;#Alisa is a cat&quot;.
+</p>
+
+<p>
+In the future, I am going to move away from the predicate form to a more human-readable one.
+In this case, the predicate form will be saved as an alternative way of describing.
+</p>
+
+<gr>
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
+<EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
+<EBNFCDECL name='FactSentence'/> = <EBNFC name='FactPredicate'/> .
+<EBNFCDECL name='FactPredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='FactPredicateParam'/> [ { "," <EBNFC name='FactPredicateParam'/> } ] ")" .
+<EBNFCDECL name='FactPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
+</gr>
+
+<code data-lng='soc'>
+{: male(#Tom) :}
+{: >:{ male(#Tom) } :}
+{: parent(#Piter, #Tom) :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='Logic_rule_chapter'>
+Logic rule
+</h3>
+
+<LinkToContent/>
+
+<p>
+Represents a logic conclusion rule.
+It allows to find and use facts which are not defined explicitly.
+It is an element of Logic programming.
+</p>
+
+<p>
+A rule defines relation between two sets of facts during logic conclusion.
+</p>
+
+<p>
+Logic searching uses depth-first search (DFS) with backtracking.
+</p>
+
+<p>
+A rule consists of head (<EBNFC name='LogicRulePrimarySection'/>) and body (<EBNFC name='LogicRuleSecondarySection'/>).
+The head is true if the body is true.
+Both head and body are predicate sentences with small syntactic sugar for better inclusion into SymOntoClay DSL.
+</p>
+
+<p>
+In the future, I am going to move away from the predicate form to a more human-readable one.
+In this case, the predicate form will be saved as an alternative way of describing.
+</p>
+
+<p>
+Conjunctions can only appear in the body, not in the head of a rule.
+Only special <a href='#LogicRuleVarIdentifier_chapter'>variables</a> can be used in the rule, the scope of which is limited by this rule.
+</p>
+
+<p>
+Now logic searching happens when the <a href='#SelectOp_chapter'>select operator</a> is only called explicitly.
+In the future, the area of using logic searching (conclusion) in SymOntoClay will be significantly expanded.
+</p>
+
+<gr>
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
+<EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
+<EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
+<EBNFCDECL name='ImplicationSymbol'/> = "->" .
+<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { <EBNFC name='AndOpExpr'/> <EBNFC name='LogicRulePredicate'/> } ] .
+<EBNFCDECL name='LogicRulePredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='LogicRulePredicateParam'/> [ { "," <EBNFC name='LogicRulePredicateParam'/> } ] ")" .
+<EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicRuleVarIdentifier'/> .
+</gr>
+
+<code data-lng='soc'>
+{: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
+{: >: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='Semantic_of_Logic_sentence_chapter'>
+Semantic of Logic sentence
+</h3>
 
 <LinkToContent/>
 
