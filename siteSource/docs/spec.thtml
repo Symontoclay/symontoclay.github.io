@@ -738,7 +738,13 @@ Defuzzification
 
 <complete_me/>
 
+<h5 class='center-h' data-href='Linguistic_variable_defuzzification_Centre_of_Gravity_chapter'>
+Centre of Gravity (CoG)
+</h5>
 
+<LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -956,9 +962,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
-<EBNFCDECL name='FactSentence'/> = <EBNFC name='FactPredicate'/> .
-<EBNFCDECL name='FactPredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='FactPredicateParam'/> [ { "," <EBNFC name='FactPredicateParam'/> } ] ")" .
-<EBNFCDECL name='FactPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
+<EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1018,9 +1022,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" .
-<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicRulePredicate'/> [ { <EBNFC name='AndOpExpr'/> <EBNFC name='LogicRulePredicate'/> } ] .
-<EBNFCDECL name='LogicRulePredicate'/> = <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='LogicRulePredicateParam'/> [ { "," <EBNFC name='LogicRulePredicateParam'/> } ] ")" .
-<EBNFCDECL name='LogicRulePredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='LogicRuleVarIdentifier'/> .
+<EBNFCDECL name='LogicRuleSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1421,7 +1423,7 @@ Operator "&gt;"
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='MoreOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&gt;"'/>
+<EBNFCDECL name='MoreOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&gt;'/> .
 </gr>
 
 <complete_me/>
@@ -1435,7 +1437,7 @@ Operator "&gt;="
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='MoreOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&gt;="'/>
+<EBNFCDECL name='MoreOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&gt;='/> .
 </gr>
 
 <complete_me/>
@@ -1449,7 +1451,7 @@ Operator "&lt;"
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='LessOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&lt;"'/>
+<EBNFCDECL name='LessOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&lt;'/> .
 </gr>
 
 <complete_me/>
@@ -1463,7 +1465,7 @@ Operator "&lt;="
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='LessOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&lt;="'/>
+<EBNFCDECL name='LessOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&lt;='/> .
 </gr>
 
 <complete_me/>
@@ -1485,7 +1487,7 @@ Operator "&lt;="
 </p>
 
 <gr>
-<EBNFCDECL name='AndOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"&"'/>
+<EBNFCDECL name='AndOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1501,7 +1503,7 @@ Operator "|"
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp_2' param = '"|"'/>
+<EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '|'/> .
 </gr>
 
 <complete_me/>
@@ -1515,7 +1517,7 @@ Operator "!"
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='NotOp' groups='LogicExpr'/> =  .
+<EBNFCDECL name='NotOp' groups='LogicExpr'/> = <TEBNFC name='LogicUnaryOp' param = '!'/> .
 </gr>
 
 <complete_me/>
@@ -1836,6 +1838,10 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='Expr'/>"/>
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='LogicBinaryOp' param='_OpLiteral'>
+	    <TEBNFC name='LogicBinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
 	<TEBNFCDECL name='LogicBinaryOp_2' param='_OpLiteral'>
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
 	</TEBNFCDECL>
@@ -1844,7 +1850,13 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 	    _ExpType _OpLiteral _ExpType
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='LogicUnaryOp' param='_OpLiteral'>
+	    <TEBNFC name='LogicUnaryOp_2' param = '"_OpLiteral"' param2="<EBNFC name='LogicExpr'/>"/>
+	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='LogicUnaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
+	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='UnaryOp_base' param='_OpLiteral' param2='_ExpType'>
 	    _OpLiteral _ExpType
