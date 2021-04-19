@@ -1666,12 +1666,12 @@ Searched values are defined by the <a href='#QuestionVarIdentifier_chapter'>ques
 </p>
 
 <code data-lng='soc'>
-select {: son(?x, ?y) :} >> @>log;
+select {: son($x, $y) :} >> @>log;
 </code>
 
 <console>
 &lt;yes&gt;
-?y = #piter; ?x = #tom
+$y = #piter; $x = #tom
 </console>
 
 <p>
@@ -1679,12 +1679,12 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Exampl
 </p>
 
 <code data-lng='soc'>
-? {: son(?x, ?y) :} >> @>log;
+? {: son($x, $y) :} >> @>log;
 </code>
 
 <console>
 &lt;yes&gt;
-?y = #piter; ?x = #tom
+$y = #piter; $x = #tom
 </console>
 
 <p>
@@ -1696,12 +1696,12 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Exampl
 </p>
 
 <code data-lng='soc'>
-? {: ?z(#Alisa_12, ?x) :} >> @>log;
+? {: $z(#Alisa_12, $x) :} >> @>log;
 </code>
 
 <console>
 &lt;yes&gt;
-?z = can(bird,fly); ?x = fly
+$z = can(bird,fly); $x = fly
 </console>
 
 <p>
