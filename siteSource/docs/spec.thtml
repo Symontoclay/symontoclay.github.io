@@ -289,25 +289,6 @@ Names a <a href='#System_variable_chapter'>system variable</a>
 @@host
 </code>
 
-<h4 class='center-h' data-href='QuestionVarIdentifier_chapter'>
-Question variable identifier
-</h4>
-
-<LinkToContent/>
-
-<p>
-Names a variable for describing select-pattern in <a href='#SelectOp_chapter'>select query</a>.
-This variable represents information which should be found in the select query.
-</p>
-
-<gr>
-<EBNFCDECL name='QuestionVarIdentifier' groups='Identifier'/> = "?" <TEBNFC name='BaseIdentifier'/> .
-</gr>
-
-<code data-lng='soc'>
-?x
-</code>
-
 <h4 class='center-h' data-href='LogicVarIdentifier_chapter'>
 Logic variable identifier
 </h4>
@@ -1193,7 +1174,7 @@ Logic variable
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='LogicVar'/> = <EBNFC name='LogicVarIdentifier'/> .
+<EBNFCDECL name='LogicVarExpr'/> = <EBNFC name='LogicVarIdentifier'/> .
 </gr>
 
 <complete_me/>
@@ -1394,7 +1375,8 @@ The right-hand operand contains a possible base object.
 
 <gr>
 <EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
-<EBNFCDECL name='LogicIsOpExpr' groups='LogicExpr'/> = <EBNFC name='LogicExpr'/> "is" [ "not" ] <EBNFC name='LogicExpr'/> .
+<EBNFCDECL name='LogicIsOpExpr' groups='LogicExpr'/> = <EBNFC name='LogicIsOpExprBranch'/> "is" [ "not" ] <EBNFC name='LogicIsOpExprBranch'/> .
+<EBNFCDECL name='LogicIsOpExprBranch'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> | <EBNFC name='LogicVarExpr'/> | <EBNFC name='NumberExpr'/> | <EBNFC name='StringLiteral'/> | <EBNFC name='NullLiteral'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1422,8 +1404,8 @@ Predicate
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='PredicateOp' groups='LogicExpr'/> =  .
+<EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
+<EBNFCDECL name='PredicateOp' groups='LogicExpr'/> = <EBNFC name='PredicateIdentifier'/> "(" <EBNFC name='PredicateParameter'/> [ { "," <EBNFC name='PredicateParameter'/> } ] ")" .
 <EBNFCDECL name='PredicateParameter'/> =  .
 </gr>
 
@@ -1676,12 +1658,7 @@ In the future, I am going to develop means for practical using results of logica
 </p>
 
 <gr>
-<EBNFCDECL name='SelectOpExpr' groups='Expr'/> = ( "select" | "?" ) ( <EBNFC name='FactDecl'/> | <EBNFC name='SelectQuery'/> ) .
-<EBNFCDECL name='SelectQuery'/> = "{:" ( <EBNFC name='SelectQuerySection'/> | <EBNFC name='SelectQuerySentence'/> ) ":}" .
-<EBNFCDECL name='SelectQuerySection'/> = ">:" "{" <EBNFC name='SelectQuerySentence'/> "}" .
-<EBNFCDECL name='SelectQuerySentence'/> = <EBNFC name='SelectQueryPredicate'/> .
-<EBNFCDECL name='SelectQueryPredicate'/> = ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='QuestionVarIdentifier'/> ) "(" <EBNFC name='SelectQueryPredicateParam'/> [ { "," <EBNFC name='SelectQueryPredicateParam'/> } ] ")" .
-<EBNFCDECL name='SelectQueryPredicateParam'/> = <GEBNFC name='TypeIdentifier' kind='or'/> | <EBNFC name='QuestionVarIdentifier'/> .
+<EBNFCDECL name='SelectOpExpr' groups='Expr'/> = ( "select" | "?" ) ( <EBNFC name='FactDecl'/> ) .
 </gr>
 
 <p>
@@ -1931,6 +1908,10 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 
 <gr>
 <EBNFCDECL name='' groups=''/> =  .
+</gr>
+
+<gr>
+<EBNFCDECL name=''/> =  .
 </gr>
 
 <GEBNFC name='' kind=''/>
