@@ -642,11 +642,19 @@ Linguistic variable
 <EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='ConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
 <EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
-<EBNFCDECL name='LinguisticVariableFullBodyContent' groups='LinguisticVariableBodyContent'/> =  .
-<EBNFCDECL name='LinguisticVariableShortBodyContent' groups='LinguisticVariableBodyContent'/> =  .
-
-
+<EBNFCDECL name='LinguisticVariableFullBodyContent' groups='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableFullBodyContent' kind='op_and'/> .
+<EBNFCDECL name='LinguisticVariableShortBodyContent' groups='LinguisticVariableBodyContent'/> = <EBNFC name='LinguisticVariableTermsItemsSet'/> .
 <EBNFCDECL name='LinguisticVariableTermIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='LinguisticVariableTermsDeclSet' groups='LinguisticVariableFullBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableTermsDecl'/> .
+<EBNFCDECL name='LinguisticVariableTermsDecl'/> = "terms" ":"<br/> <EBNFC name='LinguisticVariableTermsItemsSet'/> .
+<EBNFCDECL name='LinguisticVariableTermsItemsSet'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableTermsItem'/> .
+<EBNFCDECL name='LinguisticVariableTermsItem'/> = <EBNFC name='LinguisticVariableTermIdentifier'/> "=" <EBNFC name='PredefinedFuzzyMembershipFunction'/> ";" .
+<EBNFCDECL name='LinguisticVariableConstraintsDeclSet' groups='LinguisticVariableFullBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableConstraintsDecl'/> .
+<EBNFCDECL name='LinguisticVariableConstraintsDecl'/> = "constraints" ":"<br/> <EBNFC name='LinguisticVariableConstraintsItemsSet'/> .
+<EBNFCDECL name='LinguisticVariableConstraintsItemsSet'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableConstraintsItem'/> .
+<EBNFCDECL name='LinguisticVariableConstraintsItem'/> = "for" ( <EBNFC name='LinguisticVariableConstraintsItemForInheritance'/> | <EBNFC name='LinguisticVariableConstraintsItemForRelation'/> ) ";" .
+<EBNFCDECL name='LinguisticVariableConstraintsItemForInheritance'/> = "inheritance" | "inh" .
+<EBNFCDECL name='LinguisticVariableConstraintsItemForRelation'/> = ( "relation" | "rel" ) <EBNFC name='ConceptIdentifier'/> .
 </gr>
 
 <h4 class='center-h' data-href='Linguistic_variable_Terms_chapter'>
@@ -666,7 +674,7 @@ Predefined membership functions
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='PredefinedFuzzyMembershipFunctions'/> = <GEBNFC name='PredefinedFuzzyMembershipFunctions' kind='or'/> .
+<EBNFCDECL name='PredefinedFuzzyMembershipFunction'/> = <GEBNFC name='PredefinedFuzzyMembershipFunctions' kind='or'/> .
 </gr>
 
 <complete_me/>
@@ -1142,6 +1150,20 @@ Logic expression
 
 <gr>
 <EBNFCDECL name='LogicExpr'/> = <GEBNFC name='LogicExpr' kind='or'/> .
+</gr>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Grouping_expression_chapter'>
+Grouping
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 </gr>
 
 <complete_me/>
