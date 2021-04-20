@@ -222,7 +222,7 @@ Names a concept.
 </p>
 
 <gr>
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr'/> = <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr'/> = <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -246,7 +246,7 @@ Names an instance of concept.
 </p>
 
 <gr>
-<EBNFCDECL name='InstanceIdentifier' groups='Identifier;TypeIdentifier;ConstExpr'/> = "#" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='InstanceIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr'/> = "#" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -264,7 +264,7 @@ Names a <a href='#Variable_chapter'>variable</a>.
 </p>
 
 <gr>
-<EBNFCDECL name='VarIdentifier' groups='Identifier;ConstExpr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='VarIdentifier' groups='Identifier;ValueExpr'/> = "@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -282,7 +282,7 @@ Names a <a href='#System_variable_chapter'>system variable</a>
 </p>
 
 <gr>
-<EBNFCDECL name='SysVarIdentifier' groups='Identifier;ConstExpr'/> = "@@" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='SysVarIdentifier' groups='Identifier;ValueExpr'/> = "@@" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -318,7 +318,7 @@ Names <a href='#Channel_chapter'>Channel</a>.
 </p>
 
 <gr>
-<EBNFCDECL name='ChannelIdentifier' groups='Identifier;ConstExpr'/> = "@>" <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='ChannelIdentifier' groups='Identifier;ValueExpr'/> = "@>" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -448,7 +448,7 @@ A string literal represents a <a href='#Constant_expression_chapter'>string cons
 </p>
 
 <gr>
-<EBNFCDECL name='StringLiteral' groups='ConstExpr'/> = (""" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] """) | ("'" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] "'") .
+<EBNFCDECL name='StringLiteral' groups='ConstExpr;ValueExpr'/> = (""" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] """) | ("'" <EBNFC name='UnicodeChar'/> [{ <EBNFC name='UnicodeChar'/> }] "'") .
 </gr>
 
 <code data-lng='soc'>
@@ -469,7 +469,7 @@ NULL literal
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='NullLiteral' groups='ConstExpr'/> = "null" .
+<EBNFCDECL name='NullLiteral' groups='ConstExpr;ValueExpr'/> = "null" .
 </gr>
 
 <complete_me/>
@@ -637,6 +637,18 @@ Linguistic variable
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
+<EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='ConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
+<EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
+<EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
+<EBNFCDECL name='LinguisticVariableFullBodyContent' groups='LinguisticVariableBodyContent'/> =  .
+<EBNFCDECL name='LinguisticVariableShortBodyContent' groups='LinguisticVariableBodyContent'/> =  .
+
+
+<EBNFCDECL name='LinguisticVariableTermIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+</gr>
+
 <h4 class='center-h' data-href='Linguistic_variable_Terms_chapter'>
 Terms
 </h4>
@@ -653,11 +665,25 @@ Predefined membership functions
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='PredefinedFuzzyMembershipFunctions'/> = <GEBNFC name='PredefinedFuzzyMembershipFunctions' kind='or'/> .
+</gr>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_L_Function_chapter'>
 L Function
 </h5>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LFuzzyMembershipFunction' groups='PredefinedFuzzyMembershipFunctions'/> = "L" "(" <EBNFC name='A_LFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_LFuzzyMembershipFunctionParameter'/> ")" .
+<EBNFCDECL name='A_LFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='B_LFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+</gr>
 
 <complete_me/>
 
@@ -669,11 +695,30 @@ Trapezoid Function
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='TrapezoidFuzzyMembershipFunction' groups='PredefinedFuzzyMembershipFunctions'/> = "Trapezoid" "(" <EBNFC name='A_TrapezoidFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_TrapezoidFuzzyMembershipFunctionParameter'/> "," <EBNFC name='C_TrapezoidFuzzyMembershipFunctionParameter'/> "," <EBNFC name='D_TrapezoidFuzzyMembershipFunctionParameter'/> ")" .
+<EBNFCDECL name='A_TrapezoidFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='B_TrapezoidFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='C_TrapezoidFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='D_TrapezoidFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+</gr>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_S_Function_chapter'>
 S Function
 </h5>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='SFuzzyMembershipFunction' groups='PredefinedFuzzyMembershipFunctions'/> = "S" "(" (( <EBNFC name='A_SFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_SFuzzyMembershipFunctionParameter'/> ) | ( <EBNFC name='A_SFuzzyMembershipFunctionParameter'/> "," <EBNFC name='M_SFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_SFuzzyMembershipFunctionParameter'/> ) ")" .
+<EBNFCDECL name='A_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='M_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='B_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
+</gr>
 
 <complete_me/>
 
@@ -685,11 +730,23 @@ Predefined operators
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='PredefinedFuzzyOpsIdentifier'/> = <GEBNFC name='PredefinedFuzzyOpsIdentifier' kind='or'/> .
+</gr>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_operator_Very_chapter'>
 Very
 </h5>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='VeryFuzzyOpIdentifier' groups='PredefinedFuzzyOpsIdentifier'/> = "very" .
+</gr>
 
 <complete_me/>
 
@@ -833,7 +890,7 @@ In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;NPCBodyContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;AppSourceCodeFileContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
@@ -890,7 +947,11 @@ Trigger resets when the logic condition is <b>false</b>.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersLogicСondition'/> = <EBNFC name='LogicRuleDecl'/> .
+<EBNFCDECL name='TriggersLogicСondition'/> = <EBNFC name='LogicRuleDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
+<EBNFCDECL name='BindingVariablesDecl'/> = "(" <EBNFC name='BindingVariableItemDecl'/> [ { "," <EBNFC name='BindingVariableItemDecl'/> } ] ")" .
+<EBNFCDECL name='BindingVariableItemDecl'/> = <EBNFC name='SourceBoundVariable'/> ">>" <EBNFC name='DestBoundVariable'/> .
+<EBNFCDECL name='SourceBoundVariable'/> = <EBNFC name='LogicVarExpr'/> .
+<EBNFCDECL name='DestBoundVariable'/> = <EBNFC name='VarExpr'/> .
 </gr>
 
 <p>
@@ -938,7 +999,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 </p>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
@@ -996,7 +1057,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;NPCBodyContent;WorldBodyContent;HostBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
@@ -1033,6 +1094,7 @@ An expression specifies the computation of a value by applying operators and met
 
 <gr>
 <EBNFCDECL name='Expr'/> = <GEBNFC name='Expr' kind='or'/> .
+<EBNFCDECL name='ValueExpr'/> = <GEBNFC name='ValueExpr' kind='or'/> .
 </gr>
 
 <h3 class='center-h' data-href='Constant_expression_chapter'>
@@ -1047,7 +1109,7 @@ Constant expressions may contain only literals and are evaluated at compile time
 
 <gr>
 <EBNFCDECL name='ConstExpr' groups='Expr'/> = <GEBNFC name='ConstExpr' kind='or'/> .
-<EBNFCDECL name='NumberExpr' groups='ConstExpr'/> = <GEBNFC name='NumberExpr' kind='or'/> .
+<EBNFCDECL name='NumberExpr' groups='ConstExpr;ValueExpr'/> = <GEBNFC name='NumberExpr' kind='or'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1055,6 +1117,20 @@ Constant expressions may contain only literals and are evaluated at compile time
 30.2
 "abc"
 </code>
+
+<h3 class='center-h' data-href='Fuzzy_expression_chapter'>
+Fuzzy expression
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='FuzzyExpr' groups='ConstExpr;ValueExpr'/> = <GEBNFC name='FuzzyExpr' kind='or'/> .
+<EBNFCDECL name='NumericFuzzyExpr' groups='FuzzyExpr'/> = <EBNFC name='NumberExpr'/> .
+<EBNFCDECL name='NonNumericFuzzyExpr' groups='FuzzyExpr'/> = [ { <EBNFC name='PredefinedFuzzyOpsIdentifier'/> } ] <EBNFC name='LinguisticVariableTermIdentifier'/> .
+</gr>
 
 <h3 class='center-h' data-href='Logic_expression_chapter'>
 Logic expression
@@ -1376,7 +1452,7 @@ The right-hand operand contains a possible base object.
 <gr>
 <EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
 <EBNFCDECL name='LogicIsOpExpr' groups='LogicExpr'/> = <EBNFC name='LogicIsOpExprBranch'/> "is" [ "not" ] <EBNFC name='LogicIsOpExprBranch'/> .
-<EBNFCDECL name='LogicIsOpExprBranch'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> | <EBNFC name='LogicVarExpr'/> | <EBNFC name='NumberExpr'/> | <EBNFC name='StringLiteral'/> | <EBNFC name='NullLiteral'/> .
+<EBNFCDECL name='LogicIsOpExprBranch'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1406,7 +1482,7 @@ Predicate
 <gr>
 <EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
 <EBNFCDECL name='PredicateOp' groups='LogicExpr'/> = <EBNFC name='PredicateIdentifier'/> "(" <EBNFC name='PredicateParameter'/> [ { "," <EBNFC name='PredicateParameter'/> } ] ")" .
-<EBNFCDECL name='PredicateParameter'/> =  .
+<EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
 </gr>
 
 <complete_me/>
@@ -1633,7 +1709,7 @@ In the future I am going to extend the functionality of this operator.
 
 <code data-lng='soc'>
 "End" >> @>log;
-select {: son(?x, ?y) :} >> @>log;
+select {: son($x, $y) :} >> @>log;
 </code>
 
 <h3 class='center-h' data-href='Data_source_operators_chapter'>
@@ -1855,7 +1931,7 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 	</TEBNFCDECL>	
 	
 	<TEBNFCDECL name='InheritanceDeclItem'>
-	    [ "[" <EBNFC name='NumberExpr'/> "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
+	    [ "[" <EBNFC name='FuzzyExpr'/> "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='IsOpExprBody'>
