@@ -722,8 +722,22 @@ L Function
 			</mrow>
 			<mo> ) </mo>
 	    </mrow>
-		<mo>=</mo>
-		
+		<mo>=</mo>		
+		<math xmlns='http://www.w3.org/1998/Math/MathML'>
+		    <mo>{</mo>
+		    <mtable>
+		    <mtr>
+		    <mtd>
+		    <mi> x </mi>
+		</mtd>
+        </mtr>
+        <mtr>
+        <mtd>
+		<mi> t </mi>
+		</mtd>
+		</mtr>
+		</mtable>
+		</math>
     </mrow>
 </math>
 </p>
