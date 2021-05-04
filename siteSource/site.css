@@ -157,3 +157,9 @@ hr{
 	border-radius: 5px;
 	margin-bottom: 5px;
 }
+
+img.centered-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

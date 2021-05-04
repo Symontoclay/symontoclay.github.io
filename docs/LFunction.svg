@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="600" height="400" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clipPath1">
+      <rect x="0" y="0" width="600" height="400" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clipPath1)">
+    <polyline points="55.1612,370.947 55.1612,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="73.3753,370.947 73.3753,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="91.5895,370.947 91.5895,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="109.8036,370.947 109.8036,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="146.2319,370.947 146.2319,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="164.446,370.947 164.446,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="182.6602,370.947 182.6602,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="200.8743,370.947 200.8743,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="237.3026,370.947 237.3026,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="255.5168,370.947 255.5168,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="273.7309,370.947 273.7309,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="291.9451,370.947 291.9451,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="328.3734,370.947 328.3734,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="346.5875,370.947 346.5875,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="364.8016,370.947 364.8016,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="383.0158,370.947 383.0158,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="419.4441,370.947 419.4441,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="437.6582,370.947 437.6582,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="455.8724,370.947 455.8724,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="474.0865,370.947 474.0865,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="510.5148,370.947 510.5148,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="528.7289,370.947 528.7289,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="546.9431,370.947 546.9431,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="565.1572,370.947 565.1572,374.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,349.8929 27.501,349.8929" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,332.3477 27.501,332.3477" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,314.8026 27.501,314.8026" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,279.7124 27.501,279.7124" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,262.1672 27.501,262.1672" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,244.6221 27.501,244.6221" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,209.5319 27.501,209.5319" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,191.9868 27.501,191.9868" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,174.4416 27.501,174.4416" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,139.3514 27.501,139.3514" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,121.8063 27.501,121.8063" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,104.2611 27.501,104.2611" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,69.1709 27.501,69.1709" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,51.6258 27.501,51.6258" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,34.0806 27.501,34.0806" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(36.947,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(128.0178,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">5</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(219.0885,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">10</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(310.1592,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">15</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(401.2299,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">20</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(492.3007,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">25</text>
+    <text dominant-baseline="hanging" text-anchor="middle" transform="translate(583.3714,381.947)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">30</text>
+    <polyline points="36.947,370.947 36.947,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="128.0178,370.947 128.0178,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="219.0885,370.947 219.0885,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="310.1592,370.947 310.1592,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="401.2299,370.947 401.2299,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="492.3007,370.947 492.3007,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="583.3714,370.947 583.3714,377.947" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(20.501,367.438)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(20.501,297.2575)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0,2</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(20.501,227.077)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0,4</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(20.501,156.8965)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0,6</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(20.501,86.716)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">0,8</text>
+    <text dominant-baseline="middle" text-anchor="end" transform="translate(20.501,16.5355)" font-family="Segoe UI" font-size="12" font-weight="400" fill="black">1</text>
+    <polyline points="31.501,367.438 24.501,367.438" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,297.2575 24.501,297.2575" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,227.077 24.501,227.077" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,156.8965 24.501,156.8965" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,86.716 24.501,86.716" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+    <polyline points="31.501,16.5355 24.501,16.5355" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+  </g>
+  <defs>
+    <clipPath id="clipPath2">
+      <rect x="31.501" y="13.0265" width="555.495" height="357.9205" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clipPath2)">
+    <polyline points="36.947,16.5355 40.5899,16.5355 44.2327,16.5355 47.8755,16.5355 51.5183,16.5355 55.1612,16.5355 58.804,16.5355 62.4468,16.5355 66.0897,16.5355 69.7325,16.5355 73.3753,16.5355 77.0181,16.5355 80.661,16.5355 84.3038,16.5355 87.9466,16.5355 91.5895,16.5355 95.2323,16.5355 98.8751,16.5355 102.518,16.5355 106.1608,16.5355 109.8036,16.5355 113.4464,16.5355 117.0893,16.5355 120.7321,16.5355 124.3749,16.5355 128.0178,16.5355 129.8392,23.5536 131.6606,30.5716 133.482,37.5897 135.3034,44.6077 137.1248,51.6258 138.9462,58.6438 140.7677,65.6619 142.5891,72.6799 144.4105,79.698 146.2319,86.716 148.0533,93.7341 149.8747,100.7521 151.6961,107.7702 153.5176,114.7882 155.339,121.8063 157.1604,128.8243 158.9818,135.8424 160.8032,142.8604 162.6246,149.8785 164.446,156.8965 166.2675,163.9146 168.0889,170.9326 169.9103,177.9507 171.7317,184.9687 173.5531,191.9867 175.3745,199.0048 177.1959,206.0228 179.0174,213.0409 180.8388,220.0589 182.6602,227.077 184.4816,234.095 186.303,241.1131 188.1244,248.1311 189.9458,255.1492 191.7673,262.1672 193.5887,269.1853 195.4101,276.2033 197.2315,283.2214 199.0529,290.2394 200.8743,297.2575 202.6958,304.2755 204.5172,311.2936 206.3386,318.3116 208.16,325.3297 209.9814,332.3477 211.8028,339.3658 213.6242,346.3838 215.4457,353.4019 217.2671,360.4199 219.0885,367.438 222.7313,367.438 226.3741,367.438 230.017,367.438 233.6598,367.438 237.3026,367.438 240.9455,367.438 244.5883,367.438 248.2311,367.438 251.8739,367.438 255.5168,367.438 259.1596,367.438 262.8024,367.438 266.4453,367.438 270.0881,367.438 273.7309,367.438 277.3737,367.438 281.0166,367.438 284.6594,367.438 288.3022,367.438 291.9451,367.438 295.5879,367.438 299.2307,367.438 302.8735,367.438 306.5164,367.438 310.1592,367.438 313.802,367.438 317.4449,367.438 321.0877,367.438 324.7305,367.438 328.3734,367.438 332.0162,367.438 335.659,367.438 339.3018,367.438 342.9447,367.438 346.5875,367.438 350.2303,367.438 353.8732,367.438 357.516,367.438 361.1588,367.438 364.8016,367.438 368.4445,367.438 372.0873,367.438 375.7301,367.438 379.373,367.438 383.0158,367.438 386.6586,367.438 390.3014,367.438 393.9443,367.438 397.5871,367.438 401.2299,367.438 404.8728,367.438 408.5156,367.438 412.1584,367.438 415.8012,367.438 419.4441,367.438 423.0869,367.438 426.7297,367.438 430.3726,367.438 434.0154,367.438 437.6582,367.438 441.3011,367.438 444.9439,367.438 448.5867,367.438 452.2295,367.438 455.8724,367.438 459.5152,367.438 463.158,367.438 466.8009,367.438 470.4437,367.438 474.0865,367.438 477.7293,367.438 481.3722,367.438 485.015,367.438 488.6578,367.438 492.3007,367.438 495.9435,367.438 499.5863,367.438 503.2291,367.438 506.872,367.438 510.5148,367.438 514.1576,367.438 517.8005,367.438 521.4433,367.438 525.0861,367.438 528.7289,367.438 532.3718,367.438 536.0146,367.438 539.6574,367.438 543.3003,367.438 546.9431,367.438 550.5859,367.438 554.2288,367.438 557.8716,367.438 561.5144,367.438 565.1572,367.438 568.8001,367.438 572.4429,367.438 576.0857,367.438 579.7286,367.438 581.55,367.438" style="fill:none;stroke:rgb(78,154,6);stroke-width:2;stroke-linejoin:bevel" />
+  </g>
+  <defs>
+    <clipPath id="clipPath3">
+      <rect x="0" y="0" width="600" height="400" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clipPath3)">
+    <rect x="31.501" y="13.0265" width="555.495" height="357.9205" style="fill:none;stroke:black;stroke-width:1" shape-rendering="crispEdges" />
+  </g>
+</svg>

@@ -466,13 +466,21 @@ NULL literal
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The <b>NULL</b> literal represents special value which means unknown or undefined data.
+</p>
 
 <gr>
 <EBNFCDECL name='NullLiteral' groups='ConstExpr;ValueExpr'/> = "null" .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+@a = null;
+</code>
+
+<code data-lng='soc'>
+{: age(#Tom, null) :}
+</code>
 
 <h2 class='center-h' data-href='Objects_declaration_chapter'>
 Objects declaration
@@ -695,6 +703,37 @@ L Function
 
 <complete_me/>
 
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+        <mrow>
+		    <mrow>
+		       <mi> S </mi>
+		    </mrow>
+			<mo> ( </mo>
+			<mrow>
+			    <mi> x </mi>
+				<mo> , </mo>
+				<mi> a </mi>
+				<mo> , </mo>
+				<mi> m </mi>
+				<mo> , </mo>
+				<mi> b </mi>
+			</mrow>
+			<mo> ) </mo>
+	    </mrow>
+		<mo>=</mo>
+		
+    </mrow>
+</math>
+</p>
+
+<complete_me/>
+
+<img src='/docs/LFunction.svg' alt='L Function graph' class='centered-img'>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_Trapezoid_Function_chapter'>
 Trapezoid Function
 </h5>
@@ -713,6 +752,10 @@ Trapezoid Function
 
 <complete_me/>
 
+<img src='/docs/TrapezoidFunction.svg' alt='Trapezoid Function graph' class='centered-img'>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_S_Function_chapter'>
 S Function
 </h5>
@@ -727,6 +770,10 @@ S Function
 <EBNFCDECL name='M_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='B_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 </gr>
+
+<complete_me/>
+
+<img src='/docs/SFunction.svg' alt='S Function graph' class='centered-img'>
 
 <complete_me/>
 
