@@ -106,14 +106,25 @@ NULL
 
 <complete_me/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/NullExample.zip'>
+app Example
+{
+    on Init =>
+    {
+	    'Begin' >> @>log;
+		@x = NULL;
+		@x >> @>log;
+		'End' >> @>log;
+    }
+}
 </code>
 
 <complete_me/>
 
 <console>
-
+Begin
+NULL
+End
 </console>
 
 <complete_me/>
@@ -144,12 +155,12 @@ app PeaceKeeper
 {
     on Init => 
 	{
-	     "Begin" >> @>log;
+	    "Begin" >> @>log;
 
-		 @r = @b = 1;
-		 @b >> @>log;
+		@r = @b = 1;
+		@b >> @>log;
 
-		 "End" >> @>log;
+		"End" >> @>log;
 	}
 }
 </code>
@@ -190,6 +201,214 @@ Begin
 NULL
 End
 </console>
+
+<h2 class='center-h' data-href='Linguistic_variable'>
+Linguistic variable
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Linguistic_variable_Full_declaration'>
+Full declaration
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Linguistic_variable_Minimal_declaration'>
+Minimal declaration
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Linguistic_variable_Ranges'>
+With ranges
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Linguistic_variable_With_constraints'>
+With constraints
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+
+</code>
+
+<complete_me/>
+
+<console>
+
+</console>
+
+<complete_me/>
 
 <h2 class='center-h' data-href="Inheritance">
 Inheritance
@@ -249,6 +468,108 @@ Begin
 End
 </console>
 
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample2.zip'>
+linvar logic for range [0, 1]
+{
+    constraints:
+	    for inheritance;
+
+	terms:
+		minimal = L(0, 0.1);
+		low = Trapezoid(0, 0.05, 0.3, 0.45);
+		middle = Trapezoid(0.3, 0.4, 0.6, 0.7);
+		high = Trapezoid(0.55, 0.7, 0.95, 1);
+		maximal = S(0.9, 1);
+}
+
+app PeaceKeeper is [middle] exampleClass
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        exampleClass is human >> @>log;
+        exampleClass is not human >> @>log;
+        use exampleClass is [middle] human;
+        exampleClass is human >> @>log;
+        exampleClass is not human >> @>log;
+        use exampleClass is not human;
+        exampleClass is human >> @>log;
+        exampleClass is not human >> @>log;
+        use @@self is linux;
+        @@self is linux >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+0
+1
+0.5
+0.5
+0
+1
+1
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample3.zip'>
+linvar logic for range [0, 1]
+{
+    constraints:
+	    for inheritance;
+
+	terms:
+		minimal = L(0, 0.1);
+		low = Trapezoid(0, 0.05, 0.3, 0.45);
+		middle = Trapezoid(0.3, 0.4, 0.6, 0.7);
+		high = Trapezoid(0.55, 0.7, 0.95, 1);
+		maximal = S(0.9, 1);
+}
+
+app PeaceKeeper is [very middle] exampleClass
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        exampleClass is human >> @>log;
+        exampleClass is not human >> @>log;
+        use exampleClass is [very middle] human;
+        exampleClass is human >> @>log;
+        exampleClass is not human >> @>log;
+        use exampleClass is not human;
+        exampleClass is human >> @>log;
+        exampleClass is not human >> @>log;
+        use @@self is linux;
+        @@self is linux >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+0
+1
+0.5
+0.5
+0
+1
+1
+End
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>
@@ -299,11 +620,11 @@ app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
 	{
-	     "Begin" >> @>log;
+	    "Begin" >> @>log;
 
-           @@host.`go`~(to: #@[25, 30]);
+        @@host.`go`~(to: #@[25, 30]);
 
-	        "End" >> @>log;
+	    "End" >> @>log;
 	}
 }
 </code>
@@ -352,7 +673,7 @@ app PeaceKeeper is [0.5] exampleClass
 	{
 	     "Begin" >> @>log;
 
-		 select {: son(?x, ?y) :} >> @>log;
+		 select {: son($x, $y) :} >> @>log;
 
 		 "End" >> @>log;
 	}
@@ -366,7 +687,7 @@ The result of this query:
 <console>
 Begin
 &lt;yes&gt;
-?y = #piter; ?x = #tom
+$y = #piter; $x = #tom
 
 End
 </console>
@@ -378,7 +699,7 @@ app PeaceKeeper is [0.5] exampleClass
 	{
 	     "Begin" >> @>log;
 
-		 ? {: son(?x, ?y) :} >> @>log;
+		 ? {: son($x, $y) :} >> @>log;
 
 		 "End" >> @>log;
 	}
@@ -392,7 +713,7 @@ The result of this query:
 <console>
 Begin
 &lt;yes&gt;
-?y = #piter; ?x = #tom
+$y = #piter; $x = #tom
 
 End
 </console>
@@ -437,7 +758,7 @@ The query:
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_a.zip'>
-{: can(#Alisa_12, ?x) :}
+{: can(#Alisa_12, $x) :}
 </code>
 
 <p>
@@ -446,7 +767,7 @@ returns:
 
 <console>
 &lt;yes&gt;
-?x = fly
+$x = fly
 </console>
 
 <p>
@@ -470,7 +791,7 @@ The query:
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_c.zip'>
-{: ?z(#Alisa_12, ?x) :}
+{: $z(#Alisa_12, $x) :}
 </code>
 
 <p>
@@ -479,7 +800,7 @@ returns:
 
 <console>
 &lt;yes&gt;
-?z = can(bird,fly); ?x = fly
+$z = can(bird,fly); $x = fly
 </console>
 
 <p>
