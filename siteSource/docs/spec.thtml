@@ -707,9 +707,7 @@ L Function
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
     <mrow>
         <mrow>
-		    <mrow>
-		       <mi> F </mi>
-		    </mrow>
+		    <mi> F </mi>
 			<mo> ( </mo>
 			<mrow>
 			    <mi> x </mi>
@@ -811,9 +809,7 @@ Trapezoid Function
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
     <mrow>
         <mrow>
-		    <mrow>
-		       <mi> F </mi>
-		    </mrow>
+		    <mi> F </mi>
 			<mo> ( </mo>
 			<mrow>
 			    <mi> x </mi>
@@ -954,9 +950,7 @@ S Function
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
     <mrow>
         <mrow>
-		    <mrow>
-		       <mi> F </mi>
-		    </mrow>
+            <mi> F </mi>
 			<mo> ( </mo>
 			<mrow>
 			    <mi> x </mi>
@@ -975,45 +969,101 @@ S Function
 		    <mtable>
 		        <mtr>
 		            <mtd>
-		                <mi> x </mi>
+		                <mn> 0 </mn>
 		            </mtd>
 					<mtd>
                         <mtext>&nbsp;if&nbsp;</mtext>
 						<mrow>
-						
+                            <mi>x</mi>
+                            <mo>&le;</mo>
+                            <mi>a</mi>						
 						</mrow>						
 		            </mtd>					
                 </mtr>
                 <mtr>
                     <mtd>
-		                <mi> t </mi>
+					    <mrow>
+		                    <mn> 2 </mn>							
+							<msup>
+							    <mfenced>
+							        <mfrac>
+								        <mrow>
+									        <mi>x</mi>
+                                            <mo>-</mo>
+                                            <mi>a</mi>
+                                        </mrow>
+								        <mrow>
+									        <mi>b</mi>
+                                            <mo>-</mo>
+                                            <mi>a</mi>									
+                                        </mrow>									
+								    </mfrac>
+								</mfenced>
+								<mn>2</mn>
+							</msup>
+						</mrow>
 		            </mtd>
 					<mtd>
                         <mtext>&nbsp;if&nbsp;</mtext>
 						<mrow>
-						
+						    <mi>x</mi>
+							<mo>&isin;</mo>
+							<mfenced close="]">
+                                <mi> a </mi>
+                                <mi> m </mi>
+                            </mfenced>						
 						</mrow>						
 		            </mtd>					
 		        </mtr>
 				<mtr>
                     <mtd>
-		                <mi> t </mi>
+		                <mrow>
+  						    <mn> 1 </mn>
+							<mo>-</mo>
+					        <mrow>
+		                        <mn> 2 </mn>							
+							    <msup>
+							        <mfenced>
+							            <mfrac>
+								            <mrow>
+									            <mi>x</mi>
+                                                <mo>-</mo>
+                                                <mi>a</mi>
+                                            </mrow>
+								            <mrow>
+									            <mi>b</mi>
+                                                <mo>-</mo>
+                                                <mi>a</mi>									
+                                            </mrow>									
+								        </mfrac>
+								    </mfenced>
+								    <mn>2</mn>
+							    </msup>
+						    </mrow>							
+						</mrow>
 		            </mtd>
 					<mtd>
                         <mtext>&nbsp;if&nbsp;</mtext>
 						<mrow>
-						
+						    <mi>x</mi>
+							<mo>&isin;</mo>
+							<mfenced>
+                                <mi> m </mi>
+                                <mi> b </mi>
+                            </mfenced>
 						</mrow>						
 		            </mtd>					
 		        </mtr>
 				<mtr>
                     <mtd>
-		                <mi> t </mi>
+		                <mn> 1 </mn>
 		            </mtd>
 					<mtd>
                         <mtext>&nbsp;if&nbsp;</mtext>
 						<mrow>
-						
+                            <mi>x</mi>
+                            <mo>&ge;</mo>
+                            <mi>b</mi>
 						</mrow>						
 		            </mtd>					
 		        </mtr>
@@ -1022,6 +1072,46 @@ S Function
     </mrow>
 </math>
 </p>
+
+<complete_me/>
+
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+        <mi> F </mi>
+		<mo> ( </mo>
+		<mrow>
+			<mi> x </mi>
+			<mo> , </mo>
+			<mi> a </mi>
+			<mo> , </mo>
+			<mi> b </mi>
+		</mrow>
+		<mo> ) </mo>	
+	</mrow>
+</math>
+</p>
+
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+	    <mi> m </mi>
+		<mo> = </mo>
+		<mfrac>
+		    <mrow>
+			    <mi> a </mi>
+			    <mo> + </mo>
+			    <mi> b </mi>
+			</mrow>
+		    <mrow>
+			    <mn>2</mn>
+			</mrow>			
+		</mfrac>
+	</mrow>
+</math>
+</p>
+
+<complete_me/>
 
 <img src='/docs/SFunction.svg' alt='S Function graph' class='centered-img'>
 
@@ -1055,6 +1145,26 @@ Very
 
 <complete_me/>
 
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+	    <mrow>
+	        <mi> F </mi>
+		    <mo> ( </mo>
+			<mi> x </mi>
+			<mo> ) </mo>
+		</mrow>
+		<mo> = </mo>
+		<msup>
+		    <mi>x</mi>
+			<mn>2</mn>
+		</msup>
+	</mrow>
+</math>
+</p>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Linguistic_variable_Domain_of_a_linguistic_variable_chapter'>
 Domain of a linguistic variable
 </h4>
@@ -1084,6 +1194,48 @@ Centre of Gravity (CoG)
 </h5>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+	    <mi> y </mi>
+		<mo> = </mo>
+		<mfrac>
+		    <mrow>
+                <mrow>
+                    <munderover>
+                        <mo>&int;</mo>
+                        <mi>max</mi>
+                        <mi>min</mi>
+                    </munderover>
+                </mrow>
+				<mi>x</mi>
+				<mi>&mu;</mi>
+				<mfenced>
+				    <mi>x</mi>
+				</mfenced>
+				<mi>dx</mi>
+			</mrow>
+		    <mrow>
+                <mrow>
+                    <munderover>
+                        <mo>&int;</mo>
+                        <mi>max</mi>
+                        <mi>min</mi>
+                    </munderover>
+                </mrow>
+				<mi>&mu;</mi>
+				<mfenced>
+				    <mi>x</mi>
+				</mfenced>
+				<mi>dx</mi>
+			</mrow>
+		</mfrac>
+	</mrow>
+</math>
+</p>
 
 <complete_me/>
 
@@ -1129,44 +1281,42 @@ In operations using inheritance, the total inheritance rank between two objects 
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
-<mrow>
-  <mrow>
-   <msub>
-   <mi>Rank</mi>
-   <mi>total</mi>
-   </msub>
-  </mrow>
-  <mo>=</mo>
-  <mrow>
-   <munderover>
-   <mo>∏</mo>
-   <mrow>
-   <mi>i</mi>
-   <mo>=</mo>
-   <mn>1</mn>
-   </mrow>
-    <mi>n</mi>
-   </munderover>
-  </mrow>
-   <msub>
-   <mi>Rank</mi>
-   <mi>i</mi>
-   </msub>
-   </mrow>
-  </mrow>
-</mrow>
+    <mrow>
+        <mrow>
+            <msub>
+                <mi>Rank</mi>
+                <mi>total</mi>
+            </msub>
+        </mrow>
+        <mo>=</mo>
+        <mrow>
+            <munderover>
+                <mo>∏</mo>
+                <mrow>
+                    <mi>i</mi>
+                    <mo>=</mo>
+                    <mn>1</mn>
+                </mrow>
+                <mi>n</mi>
+            </munderover>
+        </mrow>
+        <msub>
+            <mi>Rank</mi>
+            <mi>i</mi>
+        </msub>
+    </mrow>
 </math>
 </p>
 
 <p>
 In this formula
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
-<mrow>
-   <msub>
-   <mi>Rank</mi>
-   <mi>i</mi>
-   </msub>
-</mrow>
+    <mrow>
+        <msub>
+            <mi>Rank</mi>
+            <mi>i</mi>
+        </msub>
+    </mrow>
 </math>
 is inheritance rank of one link in the entire inheritance chain between two objects.
 </p>
