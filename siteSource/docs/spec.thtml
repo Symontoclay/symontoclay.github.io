@@ -708,15 +708,13 @@ L Function
     <mrow>
         <mrow>
 		    <mrow>
-		       <mi> S </mi>
+		       <mi> F </mi>
 		    </mrow>
 			<mo> ( </mo>
 			<mrow>
 			    <mi> x </mi>
 				<mo> , </mo>
 				<mi> a </mi>
-				<mo> , </mo>
-				<mi> m </mi>
 				<mo> , </mo>
 				<mi> b </mi>
 			</mrow>
@@ -726,17 +724,60 @@ L Function
 		<math xmlns='http://www.w3.org/1998/Math/MathML'>
 		    <mo>{</mo>
 		    <mtable>
-		    <mtr>
-		    <mtd>
-		    <mi> x </mi>
-		</mtd>
-        </mtr>
-        <mtr>
-        <mtd>
-		<mi> t </mi>
-		</mtd>
-		</mtr>
-		</mtable>
+		        <mtr>
+		            <mtd>
+		            	<mn>1</mn>
+		            </mtd>
+					<mtd>
+						<mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+                            <mi>x</mi>
+                            <mo>&le;</mo>
+                            <mi>a</mi>
+                        </mrow>
+					</mtd>
+                </mtr>
+                <mtr>
+                    <mtd>
+		                <mfrac>
+						    <mrow>
+							    <mi>b</mi>
+							    <mo> - </mo>
+								<mi>x</mi>
+							</mrow>
+						    <mrow>
+								<mi>b</mi>
+							    <mo> - </mo>
+							    <mi>a</mi>
+							</mrow>						
+						</mfrac>
+	
+		            </mtd>
+					<mtd>
+						<mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+							<mi>a</mi>
+							<mo>&lt;</mo>
+                            <mi>x</mi>
+                            <mo>&le;</mo>
+                            <mi>b</mi>
+                        </mrow>
+					</mtd>
+		        </mtr>
+				<mtr>
+                    <mtd>
+					    <mn>0</mn>
+		            </mtd>
+					<mtd>
+						<mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+                            <mi>x</mi>
+                            <mo>&gt;</mo>
+                            <mi>b</mi>
+                        </mrow>					
+					</mtd>					
+		        </mtr>
+		    </mtable>
 		</math>
     </mrow>
 </math>
@@ -766,6 +807,128 @@ Trapezoid Function
 
 <complete_me/>
 
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+        <mrow>
+		    <mrow>
+		       <mi> F </mi>
+		    </mrow>
+			<mo> ( </mo>
+			<mrow>
+			    <mi> x </mi>
+				<mo> , </mo>
+				<mi> a </mi>
+				<mo> , </mo>
+				<mi> b </mi>
+				<mo> , </mo>
+				<mi> c </mi>
+				<mo> , </mo>
+				<mi> d </mi>
+			</mrow>
+			<mo> ) </mo>
+	    </mrow>
+		<mo>=</mo>		
+		<math xmlns='http://www.w3.org/1998/Math/MathML'>
+		    <mo>{</mo>
+		    <mtable>
+		        <mtr>
+		            <mtd>
+                        <mn> 0 </mn>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+                            <mi>x</mi>
+                            <mo>&le;</mo>
+                            <mi>a</mi>						    
+						</mrow>
+						<mtext>&nbsp;or&nbsp;</mtext>
+						<mrow>
+						    <mi>x</mi>
+                            <mo>&ge;</mo>
+                            <mi>d</mi>
+						</mrow>						
+		            </mtd>
+                </mtr>
+                <mtr>
+                    <mtd>
+		                <mfrac>
+						    <mrow>
+							    <mi>x</mi>
+                                <mo>-</mo>
+                                <mi>a</mi>
+							</mrow>
+						    <mrow>
+							    <mi>b</mi>
+                                <mo>-</mo>
+                                <mi>a</mi>							
+							</mrow>							
+						</mfrac>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						    <mi>x</mi>
+							<mo>&isin;</mo>
+							<mfenced close="]">
+                                <mi> a </mi>
+                                <mi> b </mi>
+                            </mfenced>
+						</mrow>						
+		            </mtd>					
+		        </mtr>
+				<mtr>
+                    <mtd>
+		                <mn> 1 </mn>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						    <mi>x</mi>
+							<mo>&isin;</mo>
+							<mfenced>
+                                <mi> b </mi>
+                                <mi> c </mi>
+                            </mfenced>						
+						</mrow>						
+		            </mtd>					
+		        </mtr>
+				<mtr>
+                    <mtd>
+		                <mfrac>
+						    <mrow>
+							    <mi>d</mi>
+                                <mo>-</mo>
+                                <mi>x</mi>
+							</mrow>
+						    <mrow>
+							    <mi>d</mi>
+                                <mo>-</mo>
+                                <mi>c</mi>
+							</mrow>							
+						</mfrac>		                
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						    <mi>x</mi>
+							<mo>&isin;</mo>
+							<mfenced>
+                                <mi> c </mi>
+                                <mi> d </mi>
+                            </mfenced>						
+						</mrow>						
+		            </mtd>
+		        </mtr>
+		    </mtable>
+		</math>
+    </mrow>
+</math>
+</p>
+
+<complete_me/>
+
 <img src='/docs/TrapezoidFunction.svg' alt='Trapezoid Function graph' class='centered-img'>
 
 <complete_me/>
@@ -786,6 +949,79 @@ S Function
 </gr>
 
 <complete_me/>
+
+<p>
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+        <mrow>
+		    <mrow>
+		       <mi> F </mi>
+		    </mrow>
+			<mo> ( </mo>
+			<mrow>
+			    <mi> x </mi>
+				<mo> , </mo>
+				<mi> a </mi>
+				<mo> , </mo>
+				<mi> m </mi>
+				<mo> , </mo>
+				<mi> b </mi>
+			</mrow>
+			<mo> ) </mo>
+	    </mrow>
+		<mo>=</mo>		
+		<math xmlns='http://www.w3.org/1998/Math/MathML'>
+		    <mo>{</mo>
+		    <mtable>
+		        <mtr>
+		            <mtd>
+		                <mi> x </mi>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						
+						</mrow>						
+		            </mtd>					
+                </mtr>
+                <mtr>
+                    <mtd>
+		                <mi> t </mi>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						
+						</mrow>						
+		            </mtd>					
+		        </mtr>
+				<mtr>
+                    <mtd>
+		                <mi> t </mi>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						
+						</mrow>						
+		            </mtd>					
+		        </mtr>
+				<mtr>
+                    <mtd>
+		                <mi> t </mi>
+		            </mtd>
+					<mtd>
+                        <mtext>&nbsp;if&nbsp;</mtext>
+						<mrow>
+						
+						</mrow>						
+		            </mtd>					
+		        </mtr>
+		    </mtable>
+		</math>
+    </mrow>
+</math>
+</p>
 
 <img src='/docs/SFunction.svg' alt='S Function graph' class='centered-img'>
 
