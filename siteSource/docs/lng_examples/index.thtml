@@ -218,15 +218,34 @@ Full declaration
 
 <complete_me/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableFullDeclaration1.zip'>
+linvar age for range (0, 150]
+{
+    constraints:
+	    for inheritance;
+	    for relation age;
 
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableFullDeclaration2.zip'>
+linvar logic for range [0, 1]
+{
+    constraints:
+	    for inheritance;
 
-</console>
+	terms:
+		minimal = L(0, 0.1);
+		low = Trapezoid(0, 0.05, 0.3, 0.45);
+		middle = Trapezoid(0.3, 0.4, 0.6, 0.7);
+		high = Trapezoid(0.55, 0.7, 0.95, 1);
+		maximal = S(0.9, 1);
+}
+</code>
 
 <complete_me/>
 
@@ -238,31 +257,26 @@ Minimal declaration
 
 <complete_me/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableMinimalDeclaration1.zip'>
+linvar age
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableMinimalDeclaration2.zip'>
+linvar age
+{
+    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<h3 class='center-h' data-href='Linguistic_variable_Ranges'>
+<h3 class='center-h' data-href='Linguistic_variable_With_Ranges'>
 With ranges
 </h3>
 
@@ -270,75 +284,63 @@ With ranges
 
 <complete_me/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange1.zip'>
+linvar age for range (-∞, +∞)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange2.zip'>
+linvar age for range (*, *)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange3.zip'>
+linvar age for range (0, 150)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange4.zip'>
+linvar age for range [0, 150]
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange5.zip'>
+linvar age for range (0, 150]
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
-
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange6.zip'>
+linvar age for range [0, 150)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
-
-<complete_me/>
-
-<console>
-
-</console>
 
 <complete_me/>
 
@@ -350,63 +352,149 @@ With constraints
 
 <complete_me/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints1.zip'>
+linvar age
+{
+    constraints:
+	    for inheritance;
+	    for relation age;
 
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints2.zip'>
+linvar age
+{
+    constraints:
+        for inh;
+        for rel age;
 
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints3.zip'>
+linvar age for range (0, 150]
+{
+    constraints:
+	    for relation age;
 
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints4.zip'>
+linvar age for range (0, 150]
+{
+    constraints:
+        for rel age;
 
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints5.zip'>
+linvar age for range (0, 150]
+{
+    constraints:
+	    for inheritance;
 
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/.zip'>
-
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
 </code>
 
 <complete_me/>
 
-<console>
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints6.zip'>
+linvar age for range (0, 150]
+{
+    constraints:
+        for inh;
 
-</console>
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Linguistic_variable_Predefined_membership_functions'>
+Predefined membership functions
+</h3>
+
+<LinkToContent/>
+
+<h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_L_Function'>
+L Function
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionLFunction1.zip'>
+linvar age for range (0, 150]
+{
+	`teenager` = L(5, 10);
+}
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_Trapezoid_Function'>
+Trapezoid Function
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionTrapezoidFunction1.zip'>
+linvar age for range (0, 150]
+{
+    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_S_Function'>
+S Function
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionSFunction1.zip'>
+linvar age for range (0, 150]
+{
+    `teenager` = S(12, 17, 22);
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionSFunction2.zip'>
+linvar age for range (0, 150]
+{
+    `teenager` = S(12, 22);
+}
+</code>
 
 <complete_me/>
 
@@ -849,6 +937,527 @@ Begin
 End
 </console>
 
+<h3 class='center-h' data-href='Logic_queries_Example_4'>
+Example 4
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_a.zip'>
+app PeaceKeeper
+{
+    {: animal(cat) :}
+
+    on Init =>
+    {
+        select {: { cat is animal } :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_b.zip'>
+app PeaceKeeper
+{
+    {: animal(cat) :}
+
+    on Init =>
+    {
+        select {: cat is animal :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_c.zip'>
+app PeaceKeeper
+{
+    {: animal(cat) :}
+
+    on Init =>
+    {
+        select {: >: { cat is animal } :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_5'>
+Example 5
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_a.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, 15) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, `teenager`) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_b.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, 12) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, very `teenager`) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_c.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, 12) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, very teenager) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_d.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, 12) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, `very` `teenager`) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_e.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, very `teenager`) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, 12) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_f.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, `teenager`) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, 12) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_6'>
+Example 6
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample6.zip'>
+app PeaceKeeper
+{
+    {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
+    {: age(#Tom, 50) :}
+    {: distance(I, #Tom, 12) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, $x) & distance(#Tom, $y) & $x is not $y :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$y = 12; $x = 50
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_7'>
+Example 7
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample7.zip'>
+app PeaceKeeper
+{
+    {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
+    {: distance(I, #Tom, 12) :}
+
+    on Init =>
+    {
+        select {: distance(#Tom, $x) & $x is 12 :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 12
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_8'>
+Example 8
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_a.zip'>
+app PeaceKeeper
+{
+    {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
+    {: distance(I, #Tom, 50) :}
+
+    on Init =>
+    {
+        select {: distance(#Tom, $x) & $x > 5 :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 50
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_b.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, 50) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, $x) & $x > `teenager` :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 50
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_c.zip'>
+linvar age for range (0, 150]
+{
+	constraints:
+		for relation age;
+
+	terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+
+app PeaceKeeper
+{
+    {: age(#Tom, 50) :}
+
+    on Init =>
+    {
+        select {: age(#Tom, $x) & $x > very `teenager` :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 50
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_9'>
+Example 9
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample9.zip'>
+app PeaceKeeper
+{
+    {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
+    {: distance(I, #Tom, 50) :}
+
+    on Init =>
+    {
+        select {: distance(#Tom, $x) & $x >= 5 :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 50
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_10'>
+Example 10
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample10.zip'>
+app PeaceKeeper
+{
+    {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
+    {: distance(I, #Tom, 4) :}
+
+    on Init =>
+    {
+        select {: distance(#Tom, $x) & $x < 5 :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 4
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_11'>
+Example 11
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample11.zip'>
+app PeaceKeeper
+{
+    {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
+    {: distance(I, #Tom, 5) :}
+
+    on Init =>
+    {
+        select {: distance(#Tom, $x) & $x <= 5 :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = 5
+</console>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Logic_queries_Example_12'>
+Example 12
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample12.zip'>
+app PeaceKeeper
+{
+    {: barrel(#a) :}
+    {: see(I, #a) :}
+
+    on Init =>
+    {
+        select {: see(I, $x) & barrel($x) & !focus(I, friend) :} >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+&lt;yes&gt;
+$x = #a
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Logic_сonditional_triggers'>
 Logic сonditional triggers
 </h2>
@@ -893,3 +1502,26 @@ Begin
 End
 Logic condition fired!!!!
 </console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/LogicConditional_Trigger_Example_2.zip'>
+app PeaceKeeper
+{
+    {: barrel(#a) :}
+    {: see(I, #a) :}
+
+    on {: see(I, $x) & barrel($x) & !focus(I, friend) :} ($x >> @x) => 
+    {
+	    @x >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+#a
+</console>
+
+<complete_me/>
