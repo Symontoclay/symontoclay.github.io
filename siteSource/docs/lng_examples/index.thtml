@@ -101,10 +101,8 @@ NULL
 </h2>
 
 <p>
-
+Read more about <b>NULL</b> <a href='/docs/spec.html#NULL_literal_chapter'>here</a>.
 </p>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/NullExample.zip'>
 app Example
@@ -119,15 +117,11 @@ app Example
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 NULL
 End
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Variables">
 Variables
@@ -208,15 +202,15 @@ Linguistic variable
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more about Linguistic variable <a href='/docs/spec.html#Linguistic_variable_chapter'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Linguistic_variable_Full_declaration'>
 Full declaration
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableFullDeclaration1.zip'>
 linvar age for range (0, 150]
@@ -229,8 +223,6 @@ linvar age for range (0, 150]
         `teenager` = Trapezoid(10, 12, 17, 20);
 }
 </code>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableFullDeclaration2.zip'>
 linvar logic for range [0, 1]
@@ -247,15 +239,11 @@ linvar logic for range [0, 1]
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Linguistic_variable_Minimal_declaration'>
 Minimal declaration
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableMinimalDeclaration1.zip'>
 linvar age
@@ -265,8 +253,6 @@ linvar age
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableMinimalDeclaration2.zip'>
 linvar age
 {
@@ -274,15 +260,11 @@ linvar age
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Linguistic_variable_With_Ranges'>
 With ranges
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange1.zip'>
 linvar age for range (-∞, +∞)
@@ -292,7 +274,9 @@ linvar age for range (-∞, +∞)
 }
 </code>
 
-<complete_me/>
+<p>
+This range is also from negative infinity to positive infinity:
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange2.zip'>
 linvar age for range (*, *)
@@ -302,7 +286,9 @@ linvar age for range (*, *)
 }
 </code>
 
-<complete_me/>
+<p>
+This range is open.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange3.zip'>
 linvar age for range (0, 150)
@@ -312,7 +298,9 @@ linvar age for range (0, 150)
 }
 </code>
 
-<complete_me/>
+<p>
+This range is closed.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange4.zip'>
 linvar age for range [0, 150]
@@ -322,7 +310,9 @@ linvar age for range [0, 150]
 }
 </code>
 
-<complete_me/>
+<p>
+This range is left-open and right-closed.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange5.zip'>
 linvar age for range (0, 150]
@@ -332,7 +322,9 @@ linvar age for range (0, 150]
 }
 </code>
 
-<complete_me/>
+<p>
+This range is left-closed and right-open.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange6.zip'>
 linvar age for range [0, 150)
@@ -342,15 +334,11 @@ linvar age for range [0, 150)
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Linguistic_variable_With_constraints'>
 With constraints
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints1.zip'>
 linvar age
@@ -364,8 +352,6 @@ linvar age
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints2.zip'>
 linvar age
 {
@@ -378,8 +364,6 @@ linvar age
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints3.zip'>
 linvar age for range (0, 150]
 {
@@ -390,8 +374,6 @@ linvar age for range (0, 150]
         `teenager` = Trapezoid(10, 12, 17, 20);
 }
 </code>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints4.zip'>
 linvar age for range (0, 150]
@@ -404,8 +386,6 @@ linvar age for range (0, 150]
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints5.zip'>
 linvar age for range (0, 150]
 {
@@ -417,8 +397,6 @@ linvar age for range (0, 150]
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints6.zip'>
 linvar age for range (0, 150]
 {
@@ -429,8 +407,6 @@ linvar age for range (0, 150]
         `teenager` = Trapezoid(10, 12, 17, 20);
 }
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Linguistic_variable_Predefined_membership_functions'>
 Predefined membership functions
@@ -444,8 +420,6 @@ L Function
 
 <LinkToContent/>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionLFunction1.zip'>
 linvar age for range (0, 150]
 {
@@ -453,15 +427,11 @@ linvar age for range (0, 150]
 }
 </code>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_Trapezoid_Function'>
 Trapezoid Function
 </h4>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionTrapezoidFunction1.zip'>
 linvar age for range (0, 150]
@@ -470,15 +440,11 @@ linvar age for range (0, 150]
 }
 </code>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_S_Function'>
 S Function
 </h4>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionSFunction1.zip'>
 linvar age for range (0, 150]
@@ -487,16 +453,12 @@ linvar age for range (0, 150]
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionSFunction2.zip'>
 linvar age for range (0, 150]
 {
     `teenager` = S(12, 22);
 }
 </code>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Inheritance">
 Inheritance
@@ -556,7 +518,9 @@ Begin
 End
 </console>
 
-<complete_me/>
+<p>
+Using non-numeric fuzzy value:
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample2.zip'>
 linvar logic for range [0, 1]
@@ -592,8 +556,6 @@ app PeaceKeeper is [middle] exampleClass
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 0
@@ -605,8 +567,6 @@ Begin
 1
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample3.zip'>
 linvar logic for range [0, 1]
@@ -642,8 +602,6 @@ app PeaceKeeper is [very middle] exampleClass
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 0
@@ -655,8 +613,6 @@ Begin
 1
 End
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
@@ -943,8 +899,6 @@ Example 4
 
 <LinkToContent/>
 
-<complete_me/>
-
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_a.zip'>
 app PeaceKeeper
 {
@@ -957,13 +911,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_b.zip'>
 app PeaceKeeper
@@ -977,13 +927,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_c.zip'>
 app PeaceKeeper
@@ -997,21 +943,15 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_5'>
 Example 5
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_a.zip'>
 linvar age for range (0, 150]
@@ -1034,13 +974,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_b.zip'>
 linvar age for range (0, 150]
@@ -1063,13 +999,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_c.zip'>
 linvar age for range (0, 150]
@@ -1092,13 +1024,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_d.zip'>
 linvar age for range (0, 150]
@@ -1121,13 +1049,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_e.zip'>
 linvar age for range (0, 150]
@@ -1150,13 +1074,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_f.zip'>
 linvar age for range (0, 150]
@@ -1179,21 +1099,15 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_6'>
 Example 6
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample6.zip'>
 app PeaceKeeper
@@ -1209,22 +1123,16 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $y = 12; $x = 50
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_7'>
 Example 7
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample7.zip'>
 app PeaceKeeper
@@ -1239,22 +1147,16 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 12
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_8'>
 Example 8
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_a.zip'>
 app PeaceKeeper
@@ -1269,14 +1171,10 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 50
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_b.zip'>
 linvar age for range (0, 150]
@@ -1299,14 +1197,10 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 50
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_c.zip'>
 linvar age for range (0, 150]
@@ -1329,22 +1223,16 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 50
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_9'>
 Example 9
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample9.zip'>
 app PeaceKeeper
@@ -1359,22 +1247,16 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 50
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_10'>
 Example 10
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample10.zip'>
 app PeaceKeeper
@@ -1389,22 +1271,16 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 4
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_11'>
 Example 11
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample11.zip'>
 app PeaceKeeper
@@ -1419,22 +1295,16 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = 5
 </console>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Logic_queries_Example_12'>
 Example 12
 </h3>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample12.zip'>
 app PeaceKeeper
@@ -1449,14 +1319,10 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 &lt;yes&gt;
 $x = #a
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Logic_сonditional_triggers'>
 Logic сonditional triggers
@@ -1503,7 +1369,13 @@ End
 Logic condition fired!!!!
 </console>
 
-<complete_me/>
+<p>
+This trigger binds captured in logic variable value with imperative variable.
+</p>
+
+<p>
+Read more about binding variables <a href='/docs/spec.html#Logic_сonditional_triggers_Binding_variables_chapter'>here</a>.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicConditional_Trigger_Example_2.zip'>
 app PeaceKeeper
@@ -1518,10 +1390,6 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 #a
 </console>
-
-<complete_me/>
