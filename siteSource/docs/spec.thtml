@@ -1759,7 +1759,30 @@ Binding variables
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Conditional trigger can bind captured in logic variable value with imperative variable.
+</p>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    {: barrel(#a) :}
+    {: see(I, #a) :}
+
+    on {: see(I, $x) & barrel($x) & !focus(I, friend) :} ($x >> @x) => 
+    {
+	    @x >> @>log;
+    }
+}
+</code>
+
+<console>
+#a
+</console>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
@@ -1767,7 +1790,38 @@ Logic programming
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+SymOntoClay provides Logic programming means.
+</p>
+
+<p>
+SymOntoClay's Logic programming are parallel to imperative programming.
+</p>
+
+<p>
+Logic and imperative means connect by
+    <ul>
+        <li>
+		    <a href='#Inheritance_chapter'>set inheritance during Objects declaration</a>
+		</li>
+		
+		<li>
+		    <a href='#Logic_сonditional_triggers_chapter'>Logic сonditional triggers</a>
+		</li>
+		
+		<li>
+		    <a href='#SelectOp_chapter'>select (Operator "?")</a>
+		</li>
+		
+		<li>
+		    <a href='#InsertOp_chapter'>insert</a>
+		</li>
+		
+		<li>
+		    <a href='#UseIsStatement_chapter'>"use is" statement</a>
+		</li>
+    </ul>
+</p>
 
 <h3 class='center-h' data-href='Fact_chapter'>
 Fact
@@ -1869,13 +1923,129 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='Semantic_of_Logic_sentence_chapter'>
-Semantic of Logic sentence
+<h3 class='center-h' data-href='Semantics_of_Logic_sentence_chapter'>
+Semantics of Logic sentence
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Predicate calculus is very flexible way.
+But we must keep in our mind the meaning of predicate's parameters.
+</p>
+
+<p>
+Here the meaning of predicate's parameters for SymOntoClay will be described.
+</p>
+
+<p>
+In the future I am going to make logic sentences closer to natural language phrases.
+</p>
+
+<h4 class='center-h' data-href='Semantics_of_unary_predicate_chapter'>
+Semantics of unary predicate
+</h4>
+
+<LinkToContent/>
+
+<p>
+Unary predicate discribes <a href='#Inheritance_chapter'>inheritance relationship</a>.
+</p>
+
+<code data-lng='soc'>
+{: barrel(#`Barel 1`) :}
+</code>
+
+<p>
+Backgroundly the unary predicate transforms to <a href='#Semantics_of_predicate_is_chapter'>predicate "is"</a>.
+</p>
+
+<code data-lng='soc'>
+{: is(#`Barel 1`, barrel, 1) :}
+</code>
+
+<h4 class='center-h' data-href='Semantics_of_binary_predicate_chapter'>
+Semantics of binary predicate
+</h4>
+
+<LinkToContent/>
+
+<p>
+In many cases binary predicate means relation between an object and its property.
+</p>
+
+<code data-lng='soc'>
+{: color(#dog1, black) :}
+</code>
+
+<p>
+It equals phrase "#dog1 has black color".
+</p>
+
+<p>
+Also binary predicate means relation between two objects.
+</p>
+
+<code data-lng='soc'>
+{: parent(#Piter, #Tom) :}
+</code>
+
+<p>
+It equals phrase "#Piter is a parent of #Tom".
+</p>
+
+<p>
+The <a href='#Semantics_of_predicate_is_chapter'>predicate "is"</a> has special meaning for defining <a href='#Inheritance_chapter'>inheritance relationship</a>.
+</p>
+
+<h4 class='center-h' data-href='Semantics_of_ternary_predicate_chapter'>
+Semantics of ternary predicate
+</h4>
+
+<LinkToContent/>
+
+<p>
+Meaning of ternary predicate is close to <a href='#Semantics_of_binary_predicate_chapter'>binary predicate</a>.
+</p>
+
+<p>
+The third parameter of ternary predicate means a value linked to the relation.
+</p>
+
+<code data-lng='soc'>
+{: distance(I, enemy, 15) :}
+</code>
+
+It equals phrase "Distance between me and enemy is 15".
+
+<h4 class='center-h' data-href='Semantics_of_predicate_is_chapter'>
+Semantics of predicate "is"
+</h4>
+
+<LinkToContent/>
+
+<p>
+The <a href='#Semantics_of_predicate_is_chapter'>predicate "is"</a> has special meaning for defining <a href='#Inheritance_chapter'>inheritance relationship</a>.
+</p>
+
+<p>
+"is" is a ternary predicate.
+The third parameter means <a href='#Inheritance_chapter'>rank of inheritance</a>.
+</p>
+
+<code data-lng='soc'>
+{: is (cat, animal, 1) :}
+{: is (cat, pet, 0.75) :}
+</code>
+
+<p>
+Predicate "is" can be used as <a href='#Semantics_of_binary_predicate_chapter'>binary predicate</a>.
+In this case <a href='#Inheritance_chapter'>rank of inheritance</a> will be implicit and equal 1.
+</p>
+
+<code data-lng='soc'>
+{: is (cat, animal) :}
+</code>
 
 <h2 class='center-h' data-href='Expressions_chapter'>
 Expressions
@@ -1919,7 +2089,9 @@ Fuzzy expression
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Fuzzy expression can be <EBNFC name='NumberExpr'/> in range [0, 1] or <a href='#Linguistic_variable_chapter'>term of linguistic variable</a>.
+</p>
 
 <gr>
 <EBNFCDECL name='FuzzyExpr' groups='ConstExpr;ValueExpr'/> = <GEBNFC name='FuzzyExpr' kind='or'/> .
@@ -1927,19 +2099,23 @@ Fuzzy expression
 <EBNFCDECL name='NonNumericFuzzyExpr' groups='FuzzyExpr'/> = [ { <EBNFC name='PredefinedFuzzyOpsIdentifier'/> } ] <EBNFC name='LinguisticVariableTermIdentifier'/> .
 </gr>
 
+<code data-lng='soc'>
+0
+0.5
+1
+teenager
+very teenager
+</code>
+
 <h3 class='center-h' data-href='Logic_expression_chapter'>
 Logic expression
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
-
 <gr>
 <EBNFCDECL name='LogicExpr'/> = <GEBNFC name='LogicExpr' kind='or'/> .
 </gr>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Grouping_expression_chapter'>
 Grouping
@@ -1947,13 +2123,17 @@ Grouping
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Expressions in round brackets executes as single expression.
+</p>
 
 <gr>
 <EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+{: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
+</code>
 
 <h3 class='center-h' data-href='Variable_chapter'>
 Variable
@@ -2056,13 +2236,18 @@ Logic variable
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Logic variable can be used only in <a href='#Logic_expression_chapter'>Logic expression</a> and <a href='#Logic_сonditional_triggers_Binding_variables_chapter'>Binding variables</a> in <a href='#Logic_сonditional_triggers_chapter'>Logic сonditional triggers</a>.
+</p>
 
 <gr>
 <EBNFCDECL name='LogicVarExpr'/> = <EBNFC name='LogicVarIdentifier'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+$x
+$y
+</code>
 
 <h3 class='center-h' data-href='Channel_chapter'>
 Channel
@@ -2280,11 +2465,35 @@ exampleClass is not human >> @>log;
 You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a>.
 </p>
 
+<p>
+Operator "is" is used in <a href='#Logic_expression_chapter'>Logic expressions</a> for comparison.
+The comparison uses <a href='#Inheritance_chapter'>inheritance relationship</a>.
+Also operator "is" can compare <EBNFC name='NumericFuzzyExpr'/> and <EBNFC name='NonNumericFuzzyExpr'/>.
+</p>
+
+<code data-lng='soc'>
+{: age(#Tom, $x) & distance(#Tom, $y) & $x is $y :}
+{: age(#Tom, $x) & distance(#Tom, $y) & $x is not $y :}
+{: distance(#Tom, $x) & $x is 12 :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
 <h4 class='center-h' data-href='PredicateOp_chapter'>
 Predicate
 </h4>
 
 <LinkToContent/>
+
+<p>
+Represents relations between objects or objects and values.
+</p>
+
+<p>
+Predicate can be only used in <a href='#Logic_expression_chapter'>Logic expression</a>.
+</p>
 
 <complete_me/>
 
@@ -2387,6 +2596,12 @@ Operator "|"
 <gr>
 <EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '|'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+{: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
+</code>
 
 <complete_me/>
 
@@ -2780,6 +2995,8 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <h5 class='center-h' data-href='_chapter'>
 
 </h5>
+
+<a href=''></a>
 
 <p>
 
