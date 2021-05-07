@@ -1339,7 +1339,105 @@ Domain of a linguistic variable
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Defines base set for linguistic variable.
+Thems are mapped to the set by membership functions.
+</p>
+
+<p>
+Each linguistic variable has its own domain.
+</p>
+
+<p>
+If linguistic variable doesn't have explicitly defined domain, the linguistic variable has implicit domain from -∞ to +∞.
+</p>
+
+<p>
+You can define domain of linguistic variable explicitly by keyword <b>range</b>.
+See <EBNFC name='LinguisticVariableDomainDecl'/> in SymOntoClay's garammar description.
+</p>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Linguistic_variable_With_Ranges'>here</a>.
+</p>
+
+<p>
+Defining custom domain (range) for linguistic variable will be helpful for using terms of different linguistic variables with the same mames but different membership functions.
+For example, the term <b>near</b> can be different for distances on a table, in a room and in Space.
+Domain (range) allows us using term <b>near</b> as pure name without namespaces or something else.
+</p>
+
+<p>
+This range is from negative infinity to positive infinity (Unbounded at both ends):
+</p>
+
+<code data-lng='soc'>
+linvar age for range (-∞, +∞)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+This range is also from negative infinity to positive infinity:
+</p>
+
+<code data-lng='soc'>
+linvar age for range (*, *)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+This range is open.
+</p>
+
+<code data-lng='soc'>
+linvar age for range (0, 150)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+This range is closed.
+</p>
+
+<code data-lng='soc'>
+linvar age for range [0, 150]
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+This range is left-open and right-closed.
+</p>
+
+<code data-lng='soc'>
+linvar age for range (0, 150]
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+This range is left-closed and right-open.
+</p>
+
+<code data-lng='soc'>
+linvar age for range [0, 150)
+{
+    terms:
+	    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
 
 <h4 class='center-h' data-href='Linguistic_variable_constraints_chapter'>
 Constraints
@@ -1347,7 +1445,57 @@ Constraints
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Defines conditions when the linguistic variable should be used.
+</p>
+
+<p>
+Now you can define:
+    <ul>
+	    <li>
+		    Using terms of linguistic variable for operations with inheritance.
+		</li>
+        <li>
+		    Using terms of linguistic variable only in concrete <a href='#PredicateOp_chapter'>logic relations</a>.
+		</li>
+	</ul>
+</p>
+
+<code data-lng='soc'>
+linvar age
+{
+    constraints:
+	    for inheritance;
+	    for relation age;
+
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<code data-lng='soc'>
+linvar age
+{
+    constraints:
+        for inh;
+        for rel age;
+
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Linguistic_variable_With_constraints'>here</a>.
+</p>
+
+<p>
+Constraint for inheritance also generates constraint for relation "is" automatically.
+</p>
+
+<p>
+Constraint for for relation "is" also generates constraint for inheritance automatically.
+</p>
 
 <h4 class='center-h' data-href='Linguistic_variable_defuzzification_chapter'>
 Defuzzification
@@ -1355,7 +1503,18 @@ Defuzzification
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Defuzzification transforms term of lingiustic variables (non numeric value) into numeric value.
+</p>
+
+<p>
+You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/Defuzzification'>here</a>.
+</p>
+
+<p>
+There are many different methods of defuzzification.
+SymOntoClay uses Centre of Gravity (CoG) for defuzzification.
+</p>
 
 <h5 class='center-h' data-href='Linguistic_variable_defuzzification_Centre_of_Gravity_chapter'>
 Centre of Gravity (CoG)
@@ -1363,7 +1522,9 @@ Centre of Gravity (CoG)
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Centre of Gravity (CoG) calculates by formula:
+</p>
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
@@ -1405,7 +1566,18 @@ Centre of Gravity (CoG)
 </math>
 </p>
 
-<complete_me/>
+<p>
+If term of linguistic variable is used with fuzzy operators,
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <mrow>
+		<mi>&mu;</mi>
+		<mfenced>
+			<mi>x</mi>
+		</mfenced>
+	</mrow>
+</math> 
+must be combination of membership function and opertors.
+</p>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
