@@ -2495,7 +2495,9 @@ Represents relations between objects or objects and values.
 Predicate can be only used in <a href='#Logic_expression_chapter'>Logic expression</a>.
 </p>
 
-<complete_me/>
+<p>
+You can read <a href='#Semantics_of_Logic_sentence_chapter'>here</a> about semantics of predicates.
+</p>
 
 <gr>
 <EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
@@ -2503,7 +2505,18 @@ Predicate can be only used in <a href='#Logic_expression_chapter'>Logic expressi
 <EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+male(#Tom)
+parent(#Piter, #Tom)
+son($x, $y)
+age(#Tom, 12)
+distance(I, #Tom, 12)
+$z(#Alisa_12, $x)
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='MoreOp_chapter'>
 Operator "&gt;"
@@ -2511,13 +2524,21 @@ Operator "&gt;"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if left-hand operand is greater than its right-hand operand, otherwise fail.
+</p>
 
 <gr>
 <EBNFCDECL name='MoreOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&gt;'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+{: distance(#Tom, $x) & $x > 5 :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='MoreOrEqvOp_chapter'>
 Operator "&gt;="
@@ -2525,13 +2546,21 @@ Operator "&gt;="
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if left-hand operand is greater than or equal to its right-hand operand, otherwise fail.
+</p>
 
 <gr>
 <EBNFCDECL name='MoreOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&gt;='/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+{: distance(#Tom, $x) & $x >= 5 :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='LessOp_chapter'>
 Operator "&lt;"
@@ -2539,13 +2568,21 @@ Operator "&lt;"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if left-hand operand is less than its right-hand operand, otherwise fail.
+</p>
 
 <gr>
 <EBNFCDECL name='LessOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&lt;'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+{: distance(#Tom, $x) & $x < 5 :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='LessOrEqvOp_chapter'>
 Operator "&lt;="
@@ -2553,13 +2590,21 @@ Operator "&lt;="
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if left-hand operand is less than or equal to its right-hand operand, otherwise fail.
+</p>
 
 <gr>
 <EBNFCDECL name='LessOrEqvOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&lt;='/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+{: distance(#Tom, $x) & $x <= 5 :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='LogicOp_chapter'>
     Logic operators
@@ -2574,7 +2619,7 @@ Operator "&lt;="
 <LinkToContent/>
 
 <p>
-Оperator of logical conjunction.
+Оperator of logical conjunction (logical <b>and</b>).
 </p>
 
 <gr>
@@ -2585,25 +2630,31 @@ Operator "&lt;="
 male($x) & parent($y, $x)
 </code>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
 <h4 class='center-h' data-href='OrOp_chapter'>
 Operator "|"
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Оperator of logical disjunction (logical <b>or</b>).
+</p>
 
 <gr>
 <EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '|'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 {: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
 </code>
 
-<complete_me/>
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='NotOp_chapter'>
 Operator "!"
@@ -2611,13 +2662,21 @@ Operator "!"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Оperator of logical negation (logical <b>not</b>).
+</p>
 
 <gr>
 <EBNFCDECL name='NotOp' groups='LogicExpr'/> = <TEBNFC name='LogicUnaryOp' param = '!'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+{: see(I, $x) & barrel($x) & !focus(I, friend) :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
