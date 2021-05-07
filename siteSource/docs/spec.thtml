@@ -643,7 +643,13 @@ Linguistic variable
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Provides non-numeric fuzzy values.
+</p>
+
+<p>
+You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/Fuzzy_logic#Linguistic_variables'>here</a>.
+</p>
 
 <gr>
 <EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
@@ -665,13 +671,124 @@ Linguistic variable
 <EBNFCDECL name='LinguisticVariableConstraintsItemForRelation'/> = ( "relation" | "rel" ) <EBNFC name='ConceptIdentifier'/> .
 </gr>
 
+<code data-lng='soc'>
+linvar age for range (0, 150]
+{
+    constraints:
+	    for inheritance;
+	    for relation age;
+
+    terms:
+        `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<code data-lng='soc'>
+linvar logic for range [0, 1]
+{
+    constraints:
+	    for inheritance;
+
+	terms:
+		minimal = L(0, 0.1);
+		low = Trapezoid(0, 0.05, 0.3, 0.45);
+		middle = Trapezoid(0.3, 0.4, 0.6, 0.7);
+		high = Trapezoid(0.55, 0.7, 0.95, 1);
+		maximal = S(0.9, 1);
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Linguistic_variable'>here</a>.
+</p>
+
 <h4 class='center-h' data-href='Linguistic_variable_Terms_chapter'>
 Terms
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Terms are non-numeric fuzzy values.
+</p>
+
+<p>
+Term combines its name and membership function.
+See <EBNFC name='LinguisticVariableTermsItem'/> in SymOntoClay's garammar description.
+</p>
+
+<p>
+SymOntoClay still doesn't contain means for full defining function's body.
+The means will be added in the future, but now you can use <a href='#Linguistic_variable_Predefined_membership_functions_chapter'>Predefined membership functions</a> instead of manual defining.
+</p>
+
+<p>
+Each term must be terminated by ";".
+</p>
+
+<code data-lng='soc'>
+linvar logic
+{
+	terms:
+		minimal = L(0, 0.1);
+		low = Trapezoid(0, 0.05, 0.3, 0.45);
+		middle = Trapezoid(0.3, 0.4, 0.6, 0.7);
+		high = Trapezoid(0.55, 0.7, 0.95, 1);
+		maximal = S(0.9, 1);
+}
+</code>
+
+<p>
+If Linguistic variable consists only of terms, the terms can be put directly into body of the Linguistic variable.
+</p>
+
+<code data-lng='soc'>
+linvar logic
+{
+	minimal = L(0, 0.1);
+	low = Trapezoid(0, 0.05, 0.3, 0.45);
+	middle = Trapezoid(0.3, 0.4, 0.6, 0.7);
+	high = Trapezoid(0.55, 0.7, 0.95, 1);
+	maximal = S(0.9, 1);
+}
+</code>
+
+<p>
+A term can be used in <EBNFC name='FuzzyExpr'/> as <EBNFC name='NonNumericFuzzyExpr'/>.
+It looks as using usual <a href='#ConceptIdentifier'>concept</a> instead of <a href='#NumberExpr'>numeric value</a>.
+</p>
+
+<code data-lng='soc'>
+app PeaceKeeper is [middle] exampleClass
+{
+}
+</code>
+
+<code data-lng='soc'>
+{: age(#Tom, `teenager`) :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a> and <a href='/docs/lng_examples/index.html#Logic_queries_Example_5'>here</a>.
+</p>
+
+<p>
+Terms can be combined with <a href='#Linguistic_variable_Predefined_operators_chapter'>fuzzy operators</a>.
+</p> 
+
+<code data-lng='soc'>
+app PeaceKeeper is [very middle] exampleClass
+{
+}
+</code>
+
+<code data-lng='soc'>
+{: age(#Tom, very `teenager`) :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a> and <a href='/docs/lng_examples/index.html#Logic_queries_Example_5'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='Linguistic_variable_Predefined_membership_functions_chapter'>
 Predefined membership functions
@@ -679,13 +796,19 @@ Predefined membership functions
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+SymOntoClay still doesn't contain means for full defining function's body.
+The means will be added in the future, but now you can use <a href='#Linguistic_variable_Predefined_membership_functions_chapter'>Predefined membership functions</a> instead of manual defining.
+</p>
 
 <gr>
 <EBNFCDECL name='PredefinedFuzzyMembershipFunction'/> = <GEBNFC name='PredefinedFuzzyMembershipFunctions' kind='or'/> .
 </gr>
 
-<complete_me/>
+<p>
+There exist few predefined standard membership functions in the SymOntoClay.
+I am going to add more functions in the future.
+</p>
 
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_L_Function_chapter'>
 L Function
@@ -693,15 +816,11 @@ L Function
 
 <LinkToContent/>
 
-<complete_me/>
-
 <gr>
 <EBNFCDECL name='LFuzzyMembershipFunction' groups='PredefinedFuzzyMembershipFunctions'/> = "L" "(" <EBNFC name='A_LFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_LFuzzyMembershipFunctionParameter'/> ")" .
 <EBNFCDECL name='A_LFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='B_LFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 </gr>
-
-<complete_me/>
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
@@ -781,19 +900,24 @@ L Function
 </math>
 </p>
 
-<complete_me/>
-
 <img src='/docs/LFunction.svg' alt='L Function graph' class='centered-img'>
 
-<complete_me/>
+<code data-lng='soc'>
+linvar age
+{
+	`teenager` = L(5, 10);
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Linguistic_variable_Predefined_membership_function_L_Function'>here</a>.
+</p>
 
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_Trapezoid_Function_chapter'>
 Trapezoid Function
 </h5>
 
 <LinkToContent/>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='TrapezoidFuzzyMembershipFunction' groups='PredefinedFuzzyMembershipFunctions'/> = "Trapezoid" "(" <EBNFC name='A_TrapezoidFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_TrapezoidFuzzyMembershipFunctionParameter'/> "," <EBNFC name='C_TrapezoidFuzzyMembershipFunctionParameter'/> "," <EBNFC name='D_TrapezoidFuzzyMembershipFunctionParameter'/> ")" .
@@ -802,8 +926,6 @@ Trapezoid Function
 <EBNFCDECL name='C_TrapezoidFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='D_TrapezoidFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 </gr>
-
-<complete_me/>
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
@@ -923,11 +1045,18 @@ Trapezoid Function
 </math>
 </p>
 
-<complete_me/>
-
 <img src='/docs/TrapezoidFunction.svg' alt='Trapezoid Function graph' class='centered-img'>
 
-<complete_me/>
+<code data-lng='soc'>
+linvar age
+{
+    `teenager` = Trapezoid(10, 12, 17, 20);
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Linguistic_variable_Predefined_membership_function_Trapezoid_Function'>here</a>.
+</p>
 
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_membership_function_S_Function_chapter'>
 S Function
@@ -935,16 +1064,12 @@ S Function
 
 <LinkToContent/>
 
-<complete_me/>
-
 <gr>
 <EBNFCDECL name='SFuzzyMembershipFunction' groups='PredefinedFuzzyMembershipFunctions'/> = "S" "(" (( <EBNFC name='A_SFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_SFuzzyMembershipFunctionParameter'/> ) | ( <EBNFC name='A_SFuzzyMembershipFunctionParameter'/> "," <EBNFC name='M_SFuzzyMembershipFunctionParameter'/> "," <EBNFC name='B_SFuzzyMembershipFunctionParameter'/> ) ")" .
 <EBNFCDECL name='A_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='M_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='B_SFuzzyMembershipFunctionParameter'/> = <EBNFC name='NumberExpr'/> .
 </gr>
-
-<complete_me/>
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
@@ -1073,9 +1198,8 @@ S Function
 </math>
 </p>
 
-<complete_me/>
-
 <p>
+The count of params can be reduced to 
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
     <mrow>
         <mi> F </mi>
@@ -1089,10 +1213,8 @@ S Function
 		</mrow>
 		<mo> ) </mo>	
 	</mrow>
-</math>
-</p>
-
-<p>
+</math>.
+In this case 
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
     <mrow>
 	    <mi> m </mi>
@@ -1108,14 +1230,28 @@ S Function
 			</mrow>			
 		</mfrac>
 	</mrow>
-</math>
+</math>.
 </p>
-
-<complete_me/>
 
 <img src='/docs/SFunction.svg' alt='S Function graph' class='centered-img'>
 
-<complete_me/>
+<code data-lng='soc'>
+linvar age
+{
+    `teenager` = S(12, 17, 22);
+}
+</code>
+
+<code data-lng='soc'>
+linvar age
+{
+    `teenager` = S(12, 22);
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Linguistic_variable_Predefined_membership_function_S_Function'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='Linguistic_variable_Predefined_operators_chapter'>
 Predefined operators
@@ -1123,13 +1259,37 @@ Predefined operators
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Fuzzy logic allows us to add special logic operators to usual logic operators <a href='#AndOp_chapter'><b>and</b></a>, <a href='#OrOp_chapter'><b>or</b></a>, <a href='#NotOp_chapter'><b>not</b></a>.
+The additional unary operators modify result of membership function.
+</p>
+
+<p>
+SymOntoClay still doesn't contain means for full defining function's body.
+The means will be added in the future, but now you can use Predefined operators instead of manual defining.
+</p>
 
 <gr>
 <EBNFCDECL name='PredefinedFuzzyOpsIdentifier'/> = <GEBNFC name='PredefinedFuzzyOpsIdentifier' kind='or'/> .
 </gr>
 
-<complete_me/>
+<p>
+Operators can be used only in combination with <a href='#Linguistic_variable_Terms_chapter'>terms</a>.
+</p>
+
+<code data-lng='soc'>
+app PeaceKeeper is [very middle] exampleClass
+{
+}
+</code>
+
+<code data-lng='soc'>
+{: age(#Tom, very `teenager`) :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a> and <a href='/docs/lng_examples/index.html#Logic_queries_Example_5'>here</a>.
+</p>
 
 <h5 class='center-h' data-href='Linguistic_variable_Predefined_operator_Very_chapter'>
 Very
@@ -1137,13 +1297,9 @@ Very
 
 <LinkToContent/>
 
-<complete_me/>
-
 <gr>
 <EBNFCDECL name='VeryFuzzyOpIdentifier' groups='PredefinedFuzzyOpsIdentifier'/> = "very" .
 </gr>
-
-<complete_me/>
 
 <p>
 <math xmlns='http://www.w3.org/1998/Math/MathML'>
@@ -1163,7 +1319,19 @@ Very
 </math>
 </p>
 
-<complete_me/>
+<code data-lng='soc'>
+app PeaceKeeper is [very middle] exampleClass
+{
+}
+</code>
+
+<code data-lng='soc'>
+{: age(#Tom, very `teenager`) :}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a> and <a href='/docs/lng_examples/index.html#Logic_queries_Example_5'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='Linguistic_variable_Domain_of_a_linguistic_variable_chapter'>
 Domain of a linguistic variable
