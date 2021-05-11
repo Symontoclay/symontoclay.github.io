@@ -1,5 +1,43 @@
 [
   {
+    "Date": "2021-05-11T00:00:00",
+    "Version": "0.2.7",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.7.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.tar.gz)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.7.0.tar.gz"
+      },
+    ],
+    "Description": "* Improving logic engine
+    *  Using Value in facts, rules and queries
+    * Predicate in predicate
+    *  Added logic operators:
+        * OR
+        * NOT
+        * IS
+        * IS NOT
+        * \\>
+        * \\>=
+        * <
+       * <=
+    * Grouping by round brackets
+* Non numeric values in fuzzy logic
+    * Linguistic variable
+    * Using non numeric values in inheritance
+    * Using non numeric values in logic engine
+* Binding logic and imperative variables in conditional triggers
+* Null value
+* Fixing issues
+",
+    "IsMarkdown": true 
+  },
+  {
     "Date": "2021-02-18T00:00:00",
     "Version": "0.2.6",
     "AssetsList": [
