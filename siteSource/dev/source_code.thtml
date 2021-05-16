@@ -129,16 +129,12 @@ Project: SymOntoClayCoreHelper
 <LinkToContent/>
 
 <p>
-
+Provides helpers for <a href='#Repository_SymOntoClay_Main_projects_SymOntoClayCore'>SymOntoClayCore</a>.
 </p>
-
-<complete_me/>
 
 <p>
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCoreHelper'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCoreHelper</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayDefaultCLIEnvironment'>
 Project: SymOntoClayDefaultCLIEnvironment
@@ -147,16 +143,12 @@ Project: SymOntoClayDefaultCLIEnvironment
 <LinkToContent/>
 
 <p>
-
+Provides default implementation interfaces for using <a href='#Repository_SymOntoClay_Main_projects_SymOntoClayCore'>SymOntoClayCore</a> and <a href='#Repository_SymOntoClay_Main_projects_SymOntoClayUnityAssetCore'>SymOntoClayUnityAssetCore</a> in <a href='#Repository_SymOntoClay_Main_projects_SymOntoClayCLI'>SymOntoClayCLI</a>.
 </p>
-
-<complete_me/>
 
 <p>
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayDefaultCLIEnvironment'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayDefaultCLIEnvironment</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayProjectFiles'>
 Project: SymOntoClayProjectFiles
