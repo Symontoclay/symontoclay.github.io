@@ -2,11 +2,18 @@
 
 <ContentsPlace/>
 
-<complete_me/>
+<p>
+Here is the short documentation about SymOntoClay's source code: where it's paced and what is the meaning of projects.
+</p>
 
-https://github.com/Symontoclay
+<p>
+SymOntoClay is on its own organization <a href='https://github.com/Symontoclay'>https://github.com/Symontoclay</a>.
+</p>
 
-https://github.com/metatypeman/Game1
+<p>
+But part for Unity and demo scene are still on repository <a href='https://github.com/metatypeman/Game1'>https://github.com/metatypeman/Game1</a>.
+In the future I am going to move It to <a href='https://github.com/Symontoclay/SymOntoClayAsset'>https://github.com/Symontoclay/SymOntoClayAsset</a>.
+</p>
 
 <h2 class='center-h' data-href='Repository_SymOntoClay'>
 Repository: SymOntoClay
@@ -14,9 +21,17 @@ Repository: SymOntoClay
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The SymOntoClay engine's repository.
+</p>
 
-https://github.com/Symontoclay/SymOntoClay
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay'>https://github.com/Symontoclay/SymOntoClay</a>.
+</p>
+
+<p>
+It's without part for Unity. The part for Unity is placed on <a href='https://github.com/metatypeman/Game1'>https://github.com/metatypeman/Game1</a>.
+</p>
 
 <h3 class='center-h' data-href='Repository_SymOntoClay_Main_projects'>
 Main projects
@@ -24,40 +39,59 @@ Main projects
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It's the core of SymOntoClay engine and <a href='/docs/cli.html'>CLI</a>.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Main_projects_ '>
-Project: 
+<p>
+It will be supplied to user.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Main_projects_SymOntoClayCore'>
+Project: SymOntoClayCore
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The core of SymOntoClay engine.
+</p>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCore
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCore'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCore</a>.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Main_projects_ '>
-Project: 
+<h4 class='center-h' data-href='Repository_SymOntoClay_Main_projects_SymOntoClayUnityAssetCore'>
+Project: SymOntoClayUnityAssetCore
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Integrates SymOntoClay engine with Unity.
+</p>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnityAssetCore
+<p>
+Provides bus for integration NPC in holistic system.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Main_projects_ '>
-Project: 
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnityAssetCore'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnityAssetCore</a>.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Main_projects_SymOntoClayCLI'>
+Project: SymOntoClayCLI
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The <a href='/docs/cli.html'>CLI</a>.
+</p>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI
-
-
-
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI</a>.
+</p>
 
 <h3 class='center-h' data-href='Repository_SymOntoClay_Additional_projects'>
 Additional projects
@@ -65,49 +99,82 @@ Additional projects
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The projects which are dependencies for main projects.
+The projects are created to prevent code duplication.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_ '>
-Project: 
+<p>
+It will be supplied to user.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayUnity3DAssetTest'>
+Project: SymOntoClayUnity3DAssetTest
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The tests.
+</p>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest</a>.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_ '>
-Project: 
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayCoreHelper'>
+Project: SymOntoClayCoreHelper
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCoreHelper
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCoreHelper'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCoreHelper</a>.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_ '>
-Project: 
+<complete_me/>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayDefaultCLIEnvironment'>
+Project: SymOntoClayDefaultCLIEnvironment
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayDefaultCLIEnvironment
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayDefaultCLIEnvironment'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayDefaultCLIEnvironment</a>.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_ '>
-Project: 
+<complete_me/>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayProjectFiles'>
+Project: SymOntoClayProjectFiles
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayProjectFiles
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayProjectFiles'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayProjectFiles</a>.
+</p>
 
-
+<complete_me/>
 
 <h3 class='center-h' data-href='Repository_SymOntoClay_Internal_projects'>
 Internal projects
@@ -115,28 +182,49 @@ Internal projects
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+It is definitely internal projects for help in development.
+</p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Internal_projects_ '>
-Project: 
+<p>
+It will not be supplied to user.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Internal_projects_LinguisticVariableViewer'>
+Project: LinguisticVariableViewer
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/LinguisticVariableViewer
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/LinguisticVariableViewer'>https://github.com/Symontoclay/SymOntoClay/tree/master/LinguisticVariableViewer</a>.
+</p>
 
+<complete_me/>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Internal_projects_ '>
-Project: 
+<h4 class='center-h' data-href='Repository_SymOntoClay_Internal_projects_TestSandbox'>
+Project: TestSandbox
 </h4>
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/Symontoclay/SymOntoClay/tree/master/TestSandbox
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/TestSandbox'>https://github.com/Symontoclay/SymOntoClay/tree/master/TestSandbox</a>.
+</p>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Repository_SymOntoClayAsset'>
 Repository: SymOntoClayAsset
@@ -144,9 +232,17 @@ Repository: SymOntoClayAsset
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/Symontoclay/SymOntoClayAsset
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClayAsset'>https://github.com/Symontoclay/SymOntoClayAsset</a>.
+</p>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Repository_Game1'>
 Repository: Game1
@@ -154,6 +250,14 @@ Repository: Game1
 
 <LinkToContent/>
 
+<p>
+
+</p>
+
 <complete_me/>
 
-https://github.com/metatypeman/Game1
+<p>
+Placed on <a href='https://github.com/metatypeman/Game1'>https://github.com/metatypeman/Game1</a>.
+</p>
+
+<complete_me/>
