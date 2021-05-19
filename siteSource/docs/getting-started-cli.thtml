@@ -32,7 +32,7 @@ Get started with "Hello, World".
 	</li>
 	
 	<li>
-	    Create new worldspace.
+	    Create new <a href='#worldspace'><b>worldspace</b></a>.
 		
 		<console>
         soc new Example

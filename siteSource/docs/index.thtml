@@ -33,15 +33,14 @@ Getting started game development with SymOntoClay
 </h3>
 
 <p>
-  The main goal of SymOntoClay is writing game AI.
-  But now integration with Unity is in development and I cannot write any documentation in this area.
+   The main goal of SymOntoClay is to be used in development game AI.  
 </p>
 
-<console>
+<p>
+    But now integration with Unity is in development and I cannot write any documentation in this area.
+</p>
 
-</console>
-
-<complete_me/>
+<work_in_progress/>
 
 <h2 class='center-h'>Learning SymOntoClay</h2>
 
