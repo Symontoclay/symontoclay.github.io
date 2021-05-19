@@ -47,7 +47,7 @@ You can also download source code archive from:
 </ol>
 
 <p>
-Change your working directory to <b>SymOntoClayCLI</b>.
+Cd to <b>SymOntoClayCLI</b>.
 </p>
 
 <console>
@@ -67,7 +67,7 @@ dotnet publish --self-contained --runtime win-x64
 </console>
 
 <p>
-Change your working directory to directory with built result.
+Cd to directory with built result.
 </p>
 
 <console>

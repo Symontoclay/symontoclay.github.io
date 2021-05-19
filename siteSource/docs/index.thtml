@@ -21,12 +21,27 @@ Instructions for downloading and installing SymOntoClay.
 </p>
 
 <h3>
-<a href='/docs/getting-started.html'>Getting started with SymOntoClay</a>
+<a href='/docs/getting-started-cli.html'>Getting started with SymOntoClay's CLI</a>
 </h3>
 
 <p>
-A brief "Hello, World" tutorial to get started.
+A brief "Hello, World" tutorial to get started with CLI.
 </p>
+
+<h3>
+Getting started game development with SymOntoClay
+</h3>
+
+<p>
+  The main goal of SymOntoClay is writing game AI.
+  But now integration with Unity is in development and I cannot write any documentation in this area.
+</p>
+
+<console>
+
+</console>
+
+<complete_me/>
 
 <h2 class='center-h'>Learning SymOntoClay</h2>
 
