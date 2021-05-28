@@ -614,6 +614,443 @@ Begin
 End
 </console>
 
+<h2 class='center-h' data-href='Function'>
+Function and Method
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_1.zip'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a();
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+
+<console>
+Begin
+`a` has been called!
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_1_a.zip'>
+app PeaceKeeper
+{
+    fun a()
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a();
+        'End' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+`a` has been called!
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_2.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(1);
+        'End' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+`a` has been called!
+1
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_2_a.zip'>
+fun a(@param_1)
+{
+    '`a` (any) has been called!' >> @>log;
+    @param_1 >> @>log;
+}
+
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(param_1: 1);
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+ 
+<console>
+Begin
+`a` (any) has been called!
+1
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_3.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(@param_1: 1);
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/> 
+
+<console>
+Begin
+`a` has been called!
+1
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_4.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(param_1: 1);
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+ 
+<console>
+Begin
+`a` has been called!
+1
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_5.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        @param_1 = 12;
+
+        a(@param_1);
+        'End' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+`a` has been called!
+12
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_6.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` (1) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    fun a(@param_1, @param_2)
+    {
+        '`a` (2) has been called!' >> @>log;
+        @param_1 >> @>log;
+        @param_2 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        @param_1 = 12;
+
+        a(@param_1);
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+ 
+<console>
+Begin
+`a` (1) has been called!
+12
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_7.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` (1) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    fun a(@param_1, @param_2)
+    {
+        '`a` (2) has been called!' >> @>log;
+        @param_1 >> @>log;
+        @param_2 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        @param_1 = 12;
+
+        a(@param_1);
+        a(3, 'Hi');
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+ 
+<console>
+Begin
+`a` (1) has been called!
+12
+`a` (2) has been called!
+3
+Hi
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_8.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1, @param_2 = 15)
+    {
+        '`a` (2) has been called!' >> @>log;
+        @param_1 >> @>log;
+        @param_2 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        @param_1 = 12;
+
+        a(@param_1);
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+ 
+<console>
+Begin
+`a` (2) has been called!
+12
+15
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_9.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` (any) has been called!' >> @>log;
+    }
+
+    fun a(@param_1: string)
+    {
+        '`a` (string) has been called!' >> @>log;
+    }
+
+    fun a(@param_1: number)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(param_1: 1);
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/> 
+
+<console>
+Begin
+`a` has been called!
+1
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_a.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` (any) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    fun a(@param_1: (number | string))
+    {
+        '`a` (number | string) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(param_1: 1);
+        a(param_1: 'Hi');
+        'End' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+`a` (number | string) has been called!
+1
+`a` (number | string) has been called!
+Hi
+End
+</console>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_b.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` (any) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    fun a(@param_1: number | string)
+    {
+        '`a` (number | string) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a(param_1: 1);
+        a(param_1: 'Hi');
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<complete_me/>
+ 
+<console>
+Begin
+`a` (number | string) has been called!
+1
+`a` (number | string) has been called!
+Hi
+End
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>

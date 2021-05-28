@@ -218,7 +218,7 @@ Concept identifier
 <LinkToContent/>
 
 <p>
-Names a concept.
+Names a concept (or type).
 </p>
 
 <gr>
@@ -234,6 +234,54 @@ ab_1
 Great_Britain
 `Great Britain`
 </code>
+
+<h5 class='center-h' data-href='Predefined_concept_identifiers_chapter'>
+Predefined concept identifiers
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<ul>
+    <li>
+	    <b>app</b>
+	
+	    <complete_me/>
+	</li>
+	
+    <li>
+	    <b>class</b>
+	
+	    <complete_me/>
+	</li>
+
+    <li>
+	    <b>world</b>
+	
+	    <complete_me/>
+	</li>
+
+    <li>
+	    <b>fuzzy</b>
+	
+	    <complete_me/>
+	</li>
+
+    <li>
+	    <b>number</b>
+	
+	    <complete_me/>
+	</li>
+
+    <li>
+	    <b>string</b>
+	
+	    <complete_me/>
+	</li>
+</ul>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
 Instance identifier
@@ -356,6 +404,7 @@ But the words can be used as identifiers in other places.
 	<kw name='inh'/>
 	<kw name='rel'/>
 	<kw name='null'/>
+	<kw name='fun'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -495,7 +544,7 @@ The classical type-instance relationship is using, but there is not strict and f
 
 <p>
 Some objects have a special meaning.
-So Class represents a general concept which can have many instances.
+For example <b>Class</b> represents a general concept which can have many instances.
 </p>
 
 <p>
@@ -1579,6 +1628,14 @@ If term of linguistic variable is used with fuzzy operators,
 must be combination of membership function and opertors.
 </p>
 
+<h3 class='center-h' data-href='Function_chapter'>
+Function
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
 </h2>
@@ -1668,6 +1725,14 @@ If inheritance has formed a rhombus, and there are several chains with different
 <p>
 Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with <a href='#UseIsStatement_chapter'>&quot;use is&quot; statement</a>.
 </p>
+
+<h3 class='center-h' data-href='Method_chapter'>
+Method
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
