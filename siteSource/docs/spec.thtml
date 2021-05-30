@@ -241,47 +241,35 @@ Predefined concept identifiers
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Some concepts are predefined and reperesent code entities.
+</p>
 
 <ul>
     <li>
-	    <b>app</b>
-	
-	    <complete_me/>
+	    <b><a href='#App_chapter'>app</a></b>
 	</li>
 	
     <li>
-	    <b>class</b>
-	
-	    <complete_me/>
+	    <b><a href='#Class_chapter'>class</a></b>
 	</li>
 
     <li>
-	    <b>world</b>
-	
-	    <complete_me/>
+	    <b><a href='#World_chapter'>world</a></b>
 	</li>
 
     <li>
-	    <b>fuzzy</b>
-	
-	    <complete_me/>
+	    <b><a href='#Fuzzy_expression_chapter'>fuzzy</a></b>
 	</li>
 
     <li>
-	    <b>number</b>
-	
-	    <complete_me/>
+	    <b><a href='#NumberExpr'>number</a></b>
 	</li>
 
     <li>
-	    <b>string</b>
-	
-	    <complete_me/>
+	    <b><a href='#String_literal_chapter'>string</a></b>
 	</li>
 </ul>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
 Instance identifier
@@ -2794,8 +2782,21 @@ Whether a call is synchronous or asynchronous is determined by the presence of a
 <gr>
 <EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" [ <EBNFC name='NamedParamsOfCallOpExprSet'/> ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
-<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  <EBNFC name='ConceptIdentifier'/> ":" <EBNFC name='Expr'/> .
+<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
 </gr>
+
+<p>
+Named parameter:
+</p>
+
+<code data-lng='soc'>
+a(param_1: 1);
+a(param_1: 1, to: #@[25, 30]);
+a(@param_1: 1);
+a(@param_1: 1, @to: #@[25, 30]);
+</code>
+
+<complete_me/>
 
 <p>
 A synchronous call is made when there is no &quot;~&quot;.
@@ -3121,6 +3122,8 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 </h5>
 
 <a href=''></a>
+
+<a href='#'></a>
 
 <p>
 
