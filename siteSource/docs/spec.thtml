@@ -2782,11 +2782,13 @@ Whether a call is synchronous or asynchronous is determined by the presence of a
 <gr>
 <EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" [ <EBNFC name='NamedParamsOfCallOpExprSet'/> ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
-<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
+<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
+<EBNFCDECL name='PosParamsOfCallOpExprSet'/> =  <EBNFC name='PosParamOfCallOpExpr'/> [ { "," <EBNFC name='PosParamOfCallOpExpr'/> } ] .
+<EBNFCDECL name='PosParamOfCallOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
 
 <p>
-Named parameter:
+<b>Named parameter</b>:
 </p>
 
 <code data-lng='soc'>
@@ -2796,10 +2798,25 @@ a(@param_1: 1);
 a(@param_1: 1, @to: #@[25, 30]);
 </code>
 
-<complete_me/>
+<p>
+<b>Positional parameters</b>:
+</p>
+
+<code data-lng='soc'>
+a(1);
+a(1, dog);
+</code>
 
 <p>
-A synchronous call is made when there is no &quot;~&quot;.
+<b>Without parameters</b>:
+</p>
+
+<code data-lng='soc'>
+a();
+</code>
+
+<p>
+A <b>synchronous call</b> is made when there is no &quot;~&quot;.
 In this case, the operator returns directly the result of the called method.
 </p>
 
@@ -2808,11 +2825,11 @@ In this case, the operator returns directly the result of the called method.
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a> and <a href='/docs/lng_examples/index.html#Function'>here</a>.
 </p>
 
 <p>
-An asynchronous call is made when &quot;~&quot; is present.
+An <b>asynchronous call</b> is made when &quot;~&quot; is present.
 In this case, the operator returns a reference to the object representing the asynchronous operation.
 Working with asynchronous operations will be designed in details in the future.
 </p>
@@ -2822,7 +2839,7 @@ Working with asynchronous operations will be designed in details in the future.
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Asynchronous'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Asynchronous'>here</a> and <a href='/docs/lng_examples/index.html#Function'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Stream_operators_chapter'>
