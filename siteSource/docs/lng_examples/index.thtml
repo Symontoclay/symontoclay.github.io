@@ -620,7 +620,13 @@ Function and Method
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more about Function <a href='/docs/spec.html#Function_chapter'>here</a>.
+</p>
+
+<p>
+Read more about Method <a href='/docs/spec.html#Method_chapter'>here</a>.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_1.zip'>
 app PeaceKeeper
@@ -639,15 +645,11 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
-
 <console>
 Begin
 `a` has been called!
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_1_a.zip'>
 app PeaceKeeper
@@ -666,15 +668,11 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 `a` has been called!
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_2.zip'>
 app PeaceKeeper
@@ -694,16 +692,12 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 `a` has been called!
 1
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_2_a.zip'>
 fun a(@param_1)
@@ -723,16 +717,12 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
- 
 <console>
 Begin
 `a` (any) has been called!
 1
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_3.zip'>
 app PeaceKeeper
@@ -752,16 +742,12 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/> 
-
 <console>
 Begin
 `a` has been called!
 1
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_4.zip'>
 app PeaceKeeper
@@ -781,16 +767,12 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
- 
 <console>
 Begin
 `a` has been called!
 1
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_5.zip'>
 app PeaceKeeper
@@ -812,16 +794,12 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 `a` has been called!
 12
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_6.zip'>
 app PeaceKeeper
@@ -850,16 +828,12 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
- 
 <console>
 Begin
 `a` (1) has been called!
 12
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_7.zip'>
 app PeaceKeeper
@@ -889,8 +863,6 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
- 
 <console>
 Begin
 `a` (1) has been called!
@@ -900,8 +872,6 @@ Begin
 Hi
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_8.zip'>
 app PeaceKeeper
@@ -924,8 +894,6 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
- 
 <console>
 Begin
 `a` (2) has been called!
@@ -933,8 +901,6 @@ Begin
 15
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_9.zip'>
 app PeaceKeeper
@@ -964,16 +930,12 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/> 
-
 <console>
 Begin
 `a` has been called!
 1
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_a.zip'>
 app PeaceKeeper
@@ -1000,8 +962,6 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 `a` (number | string) has been called!
@@ -1010,8 +970,6 @@ Begin
 Hi
 End
 </console>
-
-<complete_me/>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_b.zip'>
 app PeaceKeeper
@@ -1038,8 +996,6 @@ app PeaceKeeper
 }
 </code>
  
-<complete_me/>
- 
 <console>
 Begin
 `a` (number | string) has been called!
@@ -1048,8 +1004,6 @@ Begin
 Hi
 End
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method

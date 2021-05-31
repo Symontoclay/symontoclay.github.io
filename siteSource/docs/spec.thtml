@@ -1622,7 +1622,161 @@ Function
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Function is <ico t='w'/><a href='https://en.wikipedia.org/wiki/First-class_function'>first-class object</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
+<EBNFCDECL name='FunctionDecl'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='FunctionParamsDeclSet'/> = <EBNFC name='FunctionParamDecl'/> [ { "," <EBNFC name='FunctionParamDecl'/> } ] .
+<EBNFCDECL name='FunctionParamName'/> = <EBNFC name='VarIdentifier'/> .
+<EBNFCDECL name='FunctionParamDecl'/> = <EBNFC name='FunctionParamName'/> [ ":" ( <EBNFC name='FunctionParamType'/> | <EBNFC name='TupleOfFunctionParamTypes'/> ) ] [ "=" <EBNFC name='DefaultValueOfFunctionParam'/> ] .
+<EBNFCDECL name='FunctionParamType'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='TupleOfFunctionParamTypes'/> = ( "(" <EBNFC name='FunctionParamType'/> [ { "|" <EBNFC name='FunctionParamType'/> }] ")" ) | ( <EBNFC name='FunctionParamType'/> [ { "|" <EBNFC name='FunctionParamType'/> }] ) .
+<EBNFCDECL name='DefaultValueOfFunctionParam'/> = <EBNFC name='ConstExpr'/> .
+</gr>
+
+<p>
+<b>Without parameters:</b>
+</p>
+
+<code data-lng='soc'>
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a() 
+    {
+        '`a` has been called!' >> @>log;
+    }
+</code>
+
+<p>
+<b>Minimal parameters declaration:</b>
+</p>
+
+<code data-lng='soc'>
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param_1, @param_2)
+    {
+        '`a` (2) has been called!' >> @>log;
+        @param_1 >> @>log;
+        @param_2 >> @>log;
+    }
+</code>
+
+<p>
+<b>Type of parameter:</b>
+</p>
+
+<p>
+Parameter's type uses in dispatching: what function should be used in this case.
+</p>
+
+<p>
+It allows us to have many functions with the same name and count of parameters but with different types of parameters.
+</p>
+
+<code data-lng='soc'>
+    fun a(@param_1: string)
+    {
+        '`a` (string) has been called!' >> @>log;
+    }
+</code>
+
+<p>
+Also the type of parameter can be tuple of types.
+</p>
+
+<code data-lng='soc'>
+    fun a(@param_1: (number | string))
+    {
+        '`a` (number | string) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param_1: number | string)
+    {
+        '`a` (number | string) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+</code>
+
+<p>
+Ypu can combine different ways.
+</p>
+
+<code data-lng='soc'>
+    fun a(@param_1: string, @param_2: number | string, @param_3: (number | string), @param_4)
+    {
+        '`a` (string) has been called!' >> @>log;
+    }
+</code>
+
+<p>
+<b>Default value of parameter:</b>
+</p>
+
+<p>
+A value can be associated with parameter.
+The value is used when parameter is missed in function call.
+</p>
+
+<code data-lng='soc'>
+    fun a(@param_1 = 12)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param_1: string = 'Hi!')
+    {
+        '`a` (string) has been called!' >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param_1: (number | string) = 42)
+    {
+        '`a` (number | string) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param_1: number | string = 42)
+    {
+        '`a` (number | string) has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param_1: string, @param_2: number | string = 'Hi!', @param_3: (number | string) = 10, @param_4)
+    {
+        '`a` (string) has been called!' >> @>log;
+    }
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Function'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -1720,7 +1874,51 @@ Method
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A <b>method</b> is a <a href='#Function_chapter'><b>function</b></a> associated with a message and an <a href='#Objects_declaration_chapter'><b>object</b></a>.
+</p>
+
+<p>
+In another point of view, a <b>method</b> is an <a href='#Objects_declaration_chapter'><b>object's</b></a> behavior.
+</p>
+
+<p>
+Technically a method is an <a href='#Objects_declaration_chapter'><b>object's</b></a> named slot which contains a pointer to a <a href='#Function_chapter'><b>function</b></a>.
+</p>
+
+<gr>
+<EBNFCDECL name='MethodDeclSet'  groups='ClassBodyContent;AppBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
+<EBNFCDECL name='MethodDecl'/> = <EBNFC name='FunctionDecl'/> .
+</gr>
+
+<p>
+In details the method's declaration grammar is described in <a href='#Function_chapter'><b>function's chapter </b></a>.
+</p>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    fun a()
+    {
+        '`a` has been called!' >> @>log;
+    }
+}
+</code>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Function'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
@@ -1738,7 +1936,8 @@ In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContent' groups='ClassBodyContent;AppSourceCodeFileContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
+<EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
@@ -1901,7 +2100,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 </p>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
@@ -1959,7 +2158,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .

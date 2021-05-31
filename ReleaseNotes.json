@@ -1,5 +1,27 @@
 [
   {
+    "Date": "2021-05-31T00:00:00",
+    "Version": "0.3.0",
+    "AssetsList": [
+      {
+        "Kind": 1,
+        "Title": "Source code (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.3.0.0.zip"
+      },
+	  {
+        "Kind": 1,
+        "Title": "Source code (.tar.gz)",
+        "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.3.0.0.tar.gz"
+      },
+    ],
+    "Description": "* Function
+* Method
+* Calling function with position parameters
+* Improving calling function with named parameters
+* Fixing issues",
+    "IsMarkdown": true 
+  },
+  {
     "Date": "2021-05-11T00:00:00",
     "Version": "0.2.7",
     "AssetsList": [
