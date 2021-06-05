@@ -393,6 +393,12 @@ But the words can be used as identifiers in other places.
 	<kw name='rel'/>
 	<kw name='null'/>
 	<kw name='fun'/>
+	<kw name='error'/>
+	<kw name='try'/>
+	<kw name='catch'/>
+	<kw name='where'/>
+	<kw name='else'/>
+	<kw name='ensure'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -2036,6 +2042,14 @@ app PeaceKeeper
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='#Error_processing_chapter'>
+Error processing
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
 </h2>
@@ -3220,6 +3234,22 @@ Executes an expression line.
 <code data-lng='soc'>
 @@host.`go`~(to: #@[25, 30]);
 </code>
+
+<h3 class='center-h' data-href='ErrorStatement_chapter'>
+"error" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='TryCatchStatement_chapter'>
+"try-catch" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='UseIsStatement_chapter'>
 "use is" statement
