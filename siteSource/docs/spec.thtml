@@ -3241,11 +3241,25 @@ Executes an expression line.
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Signals the occurrence of an error during program execution.
+</p>
 
 <gr>
 <EBNFCDECL name='ErrorStatement' groups='Statement'/> = "error" <EBNFC name='FactDecl'/> .
 </gr>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
+</p>
+
+<complete_me/>
+
+<p>
+In details the error processing is described in the chapter <a href='#Error_processing_chapter'>"Error processing"</a>.
+</p>
 
 <complete_me/>
 
@@ -3264,6 +3278,18 @@ Executes an expression line.
 <EBNFCDECL name='ElseSectionOfTryCatchStatement'/> = "else" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='EnsureSectionOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
+
+<complete_me/>
+
+<p>
+In details the error processing is described in the chapter <a href='#Error_processing_chapter'>"Error processing"</a>.
+</p>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
+</p>
 
 <complete_me/>
 
