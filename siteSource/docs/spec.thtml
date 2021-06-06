@@ -3243,11 +3243,27 @@ Executes an expression line.
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ErrorStatement' groups='Statement'/> = "error" <EBNFC name='FactDecl'/> .
+</gr>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='TryCatchStatement_chapter'>
 "try-catch" statement
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='TryCatchStatement' groups='Statement'/> = <EBNFC name='TrySectionOfTryCatchStatement'/> <br/> [ <EBNFC name='CatchSectionOfTryCatchStatement'/> [{ <EBNFC name='CatchSectionOfTryCatchStatement'/> }]] <br/> [ <EBNFC name='ElseSectionOfTryCatchStatement'/> ] <br/> [ <EBNFC name='EnsureSectionOfTryCatchStatement'/> ] .
+<EBNFCDECL name='TrySectionOfTryCatchStatement'/> = "try" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='CatchSectionOfTryCatchStatement'/> = "catch" [ "(" <EBNFC name='VarIdentifier'/> ")" [ "where" <EBNFC name='FactDecl'/> ] ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='ElseSectionOfTryCatchStatement'/> = "else" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='EnsureSectionOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+</gr>
 
 <complete_me/>
 
