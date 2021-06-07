@@ -1791,4 +1791,388 @@ Error processing
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more about error processing <a href='/docs/spec.html#Error_processing_chapter'>here</a>.
+</p>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_1.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+        catch(@e)
+        {
+            'catch(@e)' >> @>log;
+            @e >> @>log;
+        }
+        catch(@e) where {: hit(enemy, I) :}
+        {
+            'catch(@e) where {: hit(enemy, I) :}' >> @>log;
+        }
+        catch(@e) where {: see(I, $x) :}
+        {
+            'catch(@e) where {: see(I, $x) :}' >> @>log;
+            @e >> @>log;
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+catch(@e) where {: see(I, $x) :}
+ERROR: {: #ffe7cbb0-7db0-439b-81f4-0d036b8410e8 &gt;: { see(i,#a) } :}
+ensure
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_2.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+        catch(@e)
+        {
+            'catch(@e)' >> @>log;
+            @e >> @>log;
+        }
+        catch(@e) where {: hit(enemy, I) :}
+        {
+            'catch(@e) where {: hit(enemy, I) :}' >> @>log;
+        }
+        catch(@e) where {: see(I, $x) :}
+        {
+            'catch(@e) where {: see(I, $x) :}' >> @>log;
+            @e >> @>log;
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+
+    on {: see(I, $x) :} ($x >> @x) => 
+    {
+        'on Fired' >> @>log;
+        @x >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+catch(@e) where {: see(I, $x) :}
+ERROR: {: #a7fe49fa-2dbe-4192-94fc-390d444c428b &gt;: { see(i,#a) } :}
+on Fired
+ensure
+#a
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_3.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+catch
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_4.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+catch
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_5.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+catch
+ensure
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_6.zip'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_7.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            error {: see(I, #a) :};
+            'End' >> @>log;        
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_8.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            error {: see(I, #a) :};
+            'End' >> @>log;        
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+ensure
+End of `Init`
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_9.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            error {: see(I, #a) :};
+            'End' >> @>log;        
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+ensure
+End of `Init`
+</console>

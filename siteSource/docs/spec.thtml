@@ -3249,19 +3249,27 @@ Signals the occurrence of an error during program execution.
 <EBNFCDECL name='ErrorStatement' groups='Statement'/> = "error" <EBNFC name='FactDecl'/> .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+error {: see(I, #a) :};
+</code>
 
-<p>
-You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
-</p>
-
-<complete_me/>
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        error {: see(I, #a) :};
+    }
+}
+</code>
 
 <p>
 In details the error processing is described in the chapter <a href='#Error_processing_chapter'>"Error processing"</a>.
 </p>
 
-<complete_me/>
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='TryCatchStatement_chapter'>
 "try-catch" statement
@@ -3278,6 +3286,197 @@ In details the error processing is described in the chapter <a href='#Error_proc
 <EBNFCDECL name='ElseSectionOfTryCatchStatement'/> = "else" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='EnsureSectionOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
+
+<complete_me/>
+
+<p>
+<b>Full statement (try-catch-else-ensure):</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+        catch(@e)
+        {
+            'catch(@e)' >> @>log;
+            @e >> @>log;
+        }
+        catch(@e) where {: hit(enemy, I) :}
+        {
+            'catch(@e) where {: hit(enemy, I) :}' >> @>log;
+        }
+        catch(@e) where {: see(I, $x) :}
+        {
+            'catch(@e) where {: see(I, $x) :}' >> @>log;
+            @e >> @>log;
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<p>
+<b>try-catch:</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<p>
+<b>try-catch-ensure:</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+        catch
+        {
+            'catch' >> @>log;
+        }
+		ensure
+        {
+            'ensure' >> @>log;
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<p>
+<b>try-ensure:</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+<b>try-else:</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+<b>try-else-ensure:</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+<b>try:</b>
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
