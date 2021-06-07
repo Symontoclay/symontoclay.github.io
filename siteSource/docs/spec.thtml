@@ -3309,6 +3309,117 @@ If the currently executing method does not contain such a <b>catch</b> block, th
 If no <b>catch</b> block is found, then the engine stops execution of the trigger.
 </p>
 
+<p>
+The <b>else</b> block runs when <b>try</b> block finished without error.
+</p>
+
+<p>
+The <b>ensure</b> block is guaranteed to be run.
+</p>
+
+<p>
+The order of execution of blocks:
+    <ul>
+	    <li>
+		    <b>try</b>-<b>catch</b>-<b>else</b>-<b>ensure</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>
+		
+	    <li>
+		    <b>try</b>-<b>catch</b>-<b>ensure</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>
+
+	    <li>
+		    <b>try</b>-<b>catch</b>-<b>else</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>
+
+	    <li>
+		    <b>try</b>-<b>catch</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>
+
+	    <li>
+		    <b>try</b>-<b>else</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>
+
+	    <li>
+		    <b>try</b>-<b>ensure</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>
+
+	    <li>
+		    <b>try</b>-<b>else</b>-<b>ensure</b>:
+			
+			<ul>
+			    <li>
+				    with error: <complete_me/>
+				</li>
+				
+				<li>
+				    without error: <complete_me/>
+				</li>
+			</ul>
+		</li>		
+	</ul>
+</p>
+
 <complete_me/>
 
 <p>
