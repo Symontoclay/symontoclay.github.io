@@ -3277,15 +3277,37 @@ You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>he
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+This statement provides safe code execution, catching errors and blocks of guaranteed code execution.
+</p>
+
+<p>
+The full statement contains <b>try</b>, <b>catch</b>, <b>else</b> and <b>ensure</b> blocks.
+</p>
+
+<p>
+The statement can be call by blocks which It consists of.
+For example, <b>try</b>-<b>catch</b>, <b>try</b>-<b>catch</b>-<b>else</b>-<b>ensure</b>, <b>try</b>-<b>ensure</b>.
+</p>
 
 <gr>
-<EBNFCDECL name='TryCatchStatement' groups='Statement'/> = <EBNFC name='TrySectionOfTryCatchStatement'/> <br/> [ <EBNFC name='CatchSectionOfTryCatchStatement'/> [{ <EBNFC name='CatchSectionOfTryCatchStatement'/> }]] <br/> [ <EBNFC name='ElseSectionOfTryCatchStatement'/> ] <br/> [ <EBNFC name='EnsureSectionOfTryCatchStatement'/> ] .
-<EBNFCDECL name='TrySectionOfTryCatchStatement'/> = "try" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='CatchSectionOfTryCatchStatement'/> = "catch" [ "(" <EBNFC name='VarIdentifier'/> ")" [ "where" <EBNFC name='FactDecl'/> ] ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='ElseSectionOfTryCatchStatement'/> = "else" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='EnsureSectionOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TryCatchStatement' groups='Statement'/> = <EBNFC name='TryBlockOfTryCatchStatement'/> <br/> [ <EBNFC name='CatchBlockOfTryCatchStatement'/> [{ <EBNFC name='CatchBlockOfTryCatchStatement'/> }]] <br/> [ <EBNFC name='ElseBlockOfTryCatchStatement'/> ] <br/> [ <EBNFC name='EnsureBlockOfTryCatchStatement'/> ] .
+<EBNFCDECL name='TryBlockOfTryCatchStatement'/> = "try" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='CatchBlockOfTryCatchStatement'/> = "catch" [ "(" <EBNFC name='VarIdentifier'/> ")" [ "where" <EBNFC name='FactDecl'/> ] ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='ElseBlockOfTryCatchStatement'/> = "else" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='EnsureBlockOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
+
+<p>
+The <b>try</b> block contains the guarded code that may cause the error. 
+The block is executed until an error is fired or it is completed successfully.
+</p>
+
+<p>
+When an error is fired, the engine looks for the <b>catch</b> statement that handles this error. 
+If the currently executing method does not contain such a <b>catch</b> block, the engine looks at the method that called the current method, and so on up the call stack. 
+If no <b>catch</b> block is found, then the engine stops execution of the trigger.
+</p>
 
 <complete_me/>
 
@@ -3439,7 +3461,24 @@ app PeaceKeeper
 <complete_me/>
 
 <code data-lng='soc'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            error {: see(I, #a) :};
+            'End' >> @>log;        
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
 
+        'End of `Init`' >> @>log;
+    }
+}
 </code>
 
 <complete_me/>
@@ -3451,7 +3490,24 @@ app PeaceKeeper
 <complete_me/>
 
 <code data-lng='soc'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            error {: see(I, #a) :};
+            'End' >> @>log;        
+        }
+        else
+        {
+            'else' >> @>log;
+        }
 
+        'End of `Init`' >> @>log;
+    }
+}
 </code>
 
 <complete_me/>
@@ -3463,7 +3519,28 @@ app PeaceKeeper
 <complete_me/>
 
 <code data-lng='soc'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            error {: see(I, #a) :};
+            'End' >> @>log;        
+        }
+        else
+        {
+            'else' >> @>log;
+        }
+        ensure
+        {
+            'ensure' >> @>log;
+        }
 
+        'End of `Init`' >> @>log;
+    }
+}
 </code>
 
 <complete_me/>
@@ -3475,22 +3552,39 @@ app PeaceKeeper
 <complete_me/>
 
 <code data-lng='soc'>
+app PeaceKeeper
+{
+    fun a(@param_1) =>
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
 
+        error {: see(I, #a) :};
+
+        'End of `a`' >> @>log;
+    }
+
+    on Init =>
+    {
+        try
+        {
+            'Begin' >> @>log;
+            a(param_1: 1);
+            'End' >> @>log;        
+        }
+
+        'End of `Init`' >> @>log;
+    }
+}
 </code>
-
-<complete_me/>
 
 <p>
 In details the error processing is described in the chapter <a href='#Error_processing_chapter'>"Error processing"</a>.
 </p>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='UseIsStatement_chapter'>
 "use is" statement
