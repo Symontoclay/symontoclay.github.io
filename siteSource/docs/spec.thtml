@@ -3325,11 +3325,11 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b> &rarr; <b>catch</b> &rarr; <b>ensure</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b> &rarr; <b>else</b> &rarr; <b>ensure</b>
 				</li>
 			</ul>
 		</li>
@@ -3339,11 +3339,11 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b> &rarr; <b>catch</b> &rarr; <b>ensure</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b> &rarr; <b>ensure</b>
 				</li>
 			</ul>
 		</li>
@@ -3353,11 +3353,11 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b> &rarr; <b>catch</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b> &rarr; <b>else</b>
 				</li>
 			</ul>
 		</li>
@@ -3367,11 +3367,11 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b> &rarr; <b>catch</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b>
 				</li>
 			</ul>
 		</li>
@@ -3381,11 +3381,11 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b> &rarr; <b>else</b>
 				</li>
 			</ul>
 		</li>
@@ -3395,11 +3395,11 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b> &rarr; <b>ensure</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b> &rarr; <b>ensure</b>
 				</li>
 			</ul>
 		</li>
@@ -3409,24 +3409,20 @@ The order of execution of blocks:
 			
 			<ul>
 			    <li>
-				    with error: <complete_me/>
+				    with error: <b>try</b> &rarr; <b>ensure</b>
 				</li>
 				
 				<li>
-				    without error: <complete_me/>
+				    without error: <b>try</b> &rarr; <b>else</b> &rarr; <b>ensure</b>
 				</li>
 			</ul>
 		</li>		
 	</ul>
 </p>
 
-<complete_me/>
-
 <p>
 <b>Full statement (try-catch-else-ensure):</b>
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -3481,13 +3477,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <p>
 <b>try-catch:</b>
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -3520,13 +3512,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <p>
 <b>try-catch-ensure:</b>
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -3563,13 +3551,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <p>
 <b>try-ensure:</b>
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -3591,15 +3575,11 @@ app PeaceKeeper
     }
 }
 </code>
-
-<complete_me/>
 
 <p>
 <b>try-else:</b>
 </p>
 
-<complete_me/>
-
 <code data-lng='soc'>
 app PeaceKeeper
 {
@@ -3621,13 +3601,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <p>
 <b>try-else-ensure:</b>
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -3654,13 +3630,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
-
 <p>
 <b>try:</b>
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
