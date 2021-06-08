@@ -2042,13 +2042,44 @@ app PeaceKeeper
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='#Error_processing_chapter'>
-Error processing
+<h3 class='center-h' data-href='#Error_handling_chapter'>
+Error handling
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Error is special situation what breaks the normal way of code execution.
+It is assumed the fired error cannot be handled and resolved in the place of occurrence.
+So error firing is an alternative way of execution from place of occurrence to handler which can react to the occured error. 
+</p>
+
+<p>
+Error handling makes NPC's logic and behaviour closer to human's logic and behaviour.
+For instance in some situations a human understands something like "It's error!", "It's definitely wrong way!", "It's obstacle!", stops wrong action and makes another decision.
+Congratulate! It's error handling!
+</p>
+
+<p>
+The root of error handling is a fact what describes error, obstacle or danger situation.
+</p>
+
+<p>
+<a href='#ErrorStatement_chapter'>Error statement</a> captures the fact and fires error based on the fact. 
+The normal way of execution brakes.
+</p>
+
+<p>
+The error value combains the reason fact and information about execution during error: stack trace and place where this error occurred.
+But I think It will be better and convenient consider the error as usual fact on syntax level.
+</p>
+
+<p>
+The fired error can be caught or ignored by <a href='#TryCatchStatement_chapter'>try-catch statement</a>. 
+Otherwise the execution async function or trigger will be stopped.
+</p>
+
+As parallel the NPC can react to the error by <a href='#Logic_сonditional_triggers_chapter'>conditional trigger</a>.
 
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
@@ -3264,11 +3295,11 @@ app PeaceKeeper
 </code>
 
 <p>
-In details the error processing is described in the chapter <a href='#Error_processing_chapter'>"Error processing"</a>.
+In details the error handling is described in the chapter <a href='#Error_handling_chapter'>"Error handling"</a>.
 </p>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Error_handling'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='TryCatchStatement_chapter'>
@@ -3662,11 +3693,11 @@ app PeaceKeeper
 </code>
 
 <p>
-In details the error processing is described in the chapter <a href='#Error_processing_chapter'>"Error processing"</a>.
+In details the error handling is described in the chapter <a href='#Error_handling_chapter'>"Error handling"</a>.
 </p>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Error_processing'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Error_handling'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='UseIsStatement_chapter'>

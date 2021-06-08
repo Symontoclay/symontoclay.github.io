@@ -1785,14 +1785,14 @@ app PeaceKeeper
 #a
 </console>
 
-<h2 class='center-h' data-href='Error_processing'>
-Error processing
+<h2 class='center-h' data-href='Error_handling'>
+Error handling
 </h2>
 
 <LinkToContent/>
 
 <p>
-Read more about error processing <a href='/docs/spec.html#Error_processing_chapter'>here</a>.
+Read more about error handling <a href='/docs/spec.html#Error_handling_chapter'>here</a>.
 </p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_1.zip'>
