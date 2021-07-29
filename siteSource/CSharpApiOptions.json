@@ -1,0 +1,13 @@
+{
+  "XmlDocFiles": [
+    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.CoreHelper.xml",
+    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.Core.xml",
+    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.UnityAsset.Core.xml"
+  ],
+  "UnityAssetCoreRootTypes": [
+    "T:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute",
+	"T:SymOntoClay.UnityAsset.Core.EndpointParamAttribute"
+  ],
+  "PublicMembersOnly": true,
+  "IgnoreErrors": true
+}

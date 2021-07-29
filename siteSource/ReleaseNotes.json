@@ -1,5 +1,23 @@
 [
   {
+    "Date": "2021-07-29T00:00:00+03:00",
+    "Version": "0.3.2",
+    "AssetsList": [
+      {
+        "Kind": 11,
+        "Title": "Unity package",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.2/SymOntoClay-0.3.2.unitypackage"
+      },
+      {
+        "Kind": 8,
+        "Title": "Portable CLI (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.2/SymOntoClay-CLI-0.3.2-x64.zip"
+      }
+    ],
+    "Description": "* Fixing issues",
+    "IsMarkdown": true
+  },
+  {
     "Date": "2021-06-08T00:00:00",
     "Version": "0.3.1",
     "AssetsList": [
@@ -8,16 +26,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.3.1.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.3.1.tar.gz"
-      },
+      }
     ],
-    "Description": "* &quot;error&quot; statement
-* &quot;try-catch&quot; statement
-* Fixing issues",
-    "IsMarkdown": true 
+    "Description": "* &quot;error&quot; statement\r\n* &quot;try-catch&quot; statement\r\n* Fixing issues",
+    "IsMarkdown": true
   },
   {
     "Date": "2021-05-31T00:00:00",
@@ -28,18 +44,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.3.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.3.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Function
-* Method
-* Calling function with position parameters
-* Improving calling function with named parameters
-* Fixing issues",
-    "IsMarkdown": true 
+    "Description": "* Function\r\n* Method\r\n* Calling function with position parameters\r\n* Improving calling function with named parameters\r\n* Fixing issues",
+    "IsMarkdown": true
   },
   {
     "Date": "2021-05-11T00:00:00",
@@ -50,34 +62,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.7.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.7.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Improving logic engine
-    *  Using Value in facts, rules and queries
-    * Predicate in predicate
-    *  Added logic operators:
-        * OR
-        * NOT
-        * IS
-        * IS NOT
-        * \\>
-        * \\>=
-        * <
-       * <=
-    * Grouping by round brackets
-* Non numeric values in fuzzy logic
-    * Linguistic variable
-    * Using non numeric values in inheritance
-    * Using non numeric values in logic engine
-* Binding logic and imperative variables in conditional triggers
-* Null value
-* Fixing issues
-",
-    "IsMarkdown": true 
+    "Description": "* Improving logic engine\r\n    *  Using Value in facts, rules and queries\r\n    * Predicate in predicate\r\n    *  Added logic operators:\r\n        * OR\r\n        * NOT\r\n        * IS\r\n        * IS NOT\r\n        * \\>\r\n        * \\>=\r\n        * <\r\n       * <=\r\n    * Grouping by round brackets\r\n* Non numeric values in fuzzy logic\r\n    * Linguistic variable\r\n    * Using non numeric values in inheritance\r\n    * Using non numeric values in logic engine\r\n* Binding logic and imperative variables in conditional triggers\r\n* Null value\r\n* Fixing issues\r\n",
+    "IsMarkdown": true
   },
   {
     "Date": "2021-02-18T00:00:00",
@@ -88,15 +80,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.6.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.6.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Logic сonditional trigger - basic implementation
-* Fixing issues",
-    "IsMarkdown": true 
+    "Description": "* Logic сonditional trigger - basic implementation\r\n* Fixing issues",
+    "IsMarkdown": true
   },
   {
     "Date": "2021-01-28T00:00:00",
@@ -107,15 +98,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.5.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.5.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Small improvements for integration with Unity3D
-* Fixing issues",
-    "IsMarkdown": true 
+    "Description": "* Small improvements for integration with Unity3D\r\n* Fixing issues",
+    "IsMarkdown": true
   },
   {
     "Date": "2021-01-14T00:00:00",
@@ -126,16 +116,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.4.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.4.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Small improvements for integration with Unity3D
-* Fixing issues
-* Parsing negative numbers",
-    "IsMarkdown": true 
+    "Description": "* Small improvements for integration with Unity3D\r\n* Fixing issues\r\n* Parsing negative numbers",
+    "IsMarkdown": true
   },
   {
     "Date": "2021-01-08T00:00:00",
@@ -146,14 +134,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.3.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.3.0.tar.gz"
-      },
+      }
     ],
     "Description": "* Small improvements for integration with Unity3D",
-    "IsMarkdown": true 
+    "IsMarkdown": true
   },
   {
     "Date": "2020-12-29T00:00:00",
@@ -164,15 +152,14 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.2.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.2.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Reorganizing source code file structure
-* CLI (initial release)",
-    "IsMarkdown": true 
+    "Description": "* Reorganizing source code file structure\r\n* CLI (initial release)",
+    "IsMarkdown": true
   },
   {
     "Date": "2020-10-04T00:00:00",
@@ -183,22 +170,13 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.1.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.1.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Basic logical database implementation
-* Registration information about inheritance by writing fact
-* Using inheritance during logical resolution
-* Basic implementation of logical select-query
-* Basic implementation of logical insert-query
-* Placing logical facts and rules in the body of a file, class, app, world and host.
-* Basic implementation of variables.
-* Single-line comment
-* Multi-lines comment
-* Architecture improvements",
+    "Description": "* Basic logical database implementation\r\n* Registration information about inheritance by writing fact\r\n* Using inheritance during logical resolution\r\n* Basic implementation of logical select-query\r\n* Basic implementation of logical insert-query\r\n* Placing logical facts and rules in the body of a file, class, app, world and host.\r\n* Basic implementation of variables.\r\n* Single-line comment\r\n* Multi-lines comment\r\n* Architecture improvements",
     "IsMarkdown": true
   },
   {
@@ -210,16 +188,13 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.0.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.2.0.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Host endpoints
-* @@host system variable
-* Synchronous calling host method in SymOntoClay script
-* Asynchronous calling host method in SymOntoClay script",
+    "Description": "* Host endpoints\r\n* @@host system variable\r\n* Synchronous calling host method in SymOntoClay script\r\n* Asynchronous calling host method in SymOntoClay script",
     "IsMarkdown": true
   },
   {
@@ -231,14 +206,13 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.2.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.2.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Adding inheritance 
-* @@self system variable",
+    "Description": "* Adding inheritance \r\n* @@self system variable",
     "IsMarkdown": true
   },
   {
@@ -250,15 +224,13 @@
         "Title": "Source code (.zip)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.1.0.zip"
       },
-	  {
+      {
         "Kind": 1,
         "Title": "Source code (.tar.gz)",
         "Href": "https://github.com/Symontoclay/SymOntoClay/archive/0.1.1.0.tar.gz"
-      },
+      }
     ],
-    "Description": "* Creation Architecture 
-* Init trigger, bases of code execution
-* writing 'Hello world!' into log-channel",
+    "Description": "* Creation Architecture \r\n* Init trigger, bases of code execution\r\n* writing 'Hello world!' into log-channel",
     "IsMarkdown": true
   }
 ]

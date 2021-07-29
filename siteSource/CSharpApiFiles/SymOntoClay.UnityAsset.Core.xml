@@ -36,19 +36,62 @@
         <member name="M:SymOntoClay.UnityAsset.Core.BaseStoredGameComponentSettings.PropertiesToString(System.UInt32)">
             <inheritdoc/>
         </member>
-        <member name="T:SymOntoClay.UnityAsset.Core.BipedNPCSettings">
+        <member name="T:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute">
             <summary>
-            Biped NPC (Non-Player Character) setting.
+            Marks C# method as external method for SymOntoClay DSL.
             </summary>
         </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.BipedNPCSettings.LogicFile">
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor">
             <summary>
-            Gets or sets file name of SymOntoClay logic file.
-            The file describes active logic which will be executed on the NPC.
+            Initializes a new instance of the class with default properties.
             </summary>
         </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.BipedNPCSettings.PropertiesToString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="useMainThread"><b>true</b> if marked method requires calling in the main thread only. <b>false</b> if the marked method can be called in any thread.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(SymOntoClay.UnityAsset.Core.DeviceOfBiped[])">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="devices">Describes parts of body which will be used during execution of the marked method.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(System.Boolean,SymOntoClay.UnityAsset.Core.DeviceOfBiped[])">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="useMainThread"><b>true</b> if marked method requires calling in the main thread only. <b>false</b> if the marked method can be called in any thread.</param>
+            <param name="devices">Describes parts of body which will be used during execution of the marked method.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="methodName">Alias of the marked method in SymOntoClay DSL.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="methodName"></param>
+            <param name="useMainThread"><b>true</b> if marked method requires calling in the main thread only. <b>false</b> if the marked method can be called in any thread.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(System.String,SymOntoClay.UnityAsset.Core.DeviceOfBiped[])">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="methodName">Alias of the marked method in SymOntoClay DSL.</param>
+            <param name="devices">Describes parts of body which will be used during execution of the marked method.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute.#ctor(System.String,System.Boolean,SymOntoClay.UnityAsset.Core.DeviceOfBiped[])">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="methodName">Alias of the marked method in SymOntoClay DSL.</param>
+            <param name="useMainThread"><b>true</b> if marked method requires calling in the main thread only. <b>false</b> if the marked method can be called in any thread.</param>
+            <param name="devices">Describes parts of body which will be used during execution of the marked method.</param>
         </member>
         <member name="T:SymOntoClay.UnityAsset.Core.DeviceOfBiped">
             <summary>
@@ -80,6 +123,30 @@
             Represents the left leg  of the NPC or Player.
             </summary>
         </member>
+        <member name="T:SymOntoClay.UnityAsset.Core.EndpointParamAttribute">
+            <summary>
+            Marks parameter of C# external method for SymOntoClay DSL.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.EndpointParamAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="name">Alias of the marked parameter in SymOntoClay DSL.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.EndpointParamAttribute.#ctor(SymOntoClay.UnityAsset.Core.KindOfEndpointParam)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="kindOfParameter">Describes a tip about conversion between C# and SymOntoclay DSL types.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.EndpointParamAttribute.#ctor(System.String,SymOntoClay.UnityAsset.Core.KindOfEndpointParam)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="name">Alias of the marked parameter in SymOntoClay DSL.</param>
+            <param name="kindOfParameter">Describes a tip about conversion between C# and SymOntoclay DSL types.</param>
+        </member>
         <member name="T:SymOntoClay.UnityAsset.Core.GameObjectSettings">
             <summary>
             Game object settings.
@@ -93,35 +160,49 @@
         <member name="M:SymOntoClay.UnityAsset.Core.GameObjectSettings.PropertiesToString(System.UInt32)">
             <inheritdoc/>
         </member>
-        <member name="T:SymOntoClay.UnityAsset.Core.IBipedManualControlledObject">
+        <member name="T:SymOntoClay.UnityAsset.Core.HumanoidNPCSettings">
             <summary>
-            Repseresents manual controlled game object.
+            Biped NPC (Non-Player Character) setting.
             </summary>
         </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.IBipedManualControlledObject.GameObject">
+        <member name="P:SymOntoClay.UnityAsset.Core.HumanoidNPCSettings.LogicFile">
             <summary>
-            Gets  manual controlled game object.
+            Gets or sets file name of SymOntoClay logic file.
+            The file describes active logic which will be executed on the NPC.
             </summary>
         </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.IBipedManualControlledObject.Devices">
-            <summary>
-            Gets list of devices of the NPC or Player which are using the game object.
-            </summary>
-        </member>
-        <member name="T:SymOntoClay.UnityAsset.Core.IBipedNPC">
-            <summary>
-            Represents biped NPC (Non-Player Character)
-            </summary>
-        </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.IBipedNPC.EnableLogging">
-            <summary>
-            Gets or sets value of enable logging.
-            It alows enable or disable logging or remote connection for the NPC.
-            </summary>
+        <member name="M:SymOntoClay.UnityAsset.Core.HumanoidNPCSettings.PropertiesToString(System.UInt32)">
+            <inheritdoc/>
         </member>
         <member name="T:SymOntoClay.UnityAsset.Core.IGameObject">
             <summary>
             Represents each game object which is not NPC, Player or Place.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.UnityAsset.Core.IHumanoidManualControlledObject">
+            <summary>
+            Repseresents manual controlled game object.
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.IHumanoidManualControlledObject.GameObject">
+            <summary>
+            Gets  manual controlled game object.
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.IHumanoidManualControlledObject.Devices">
+            <summary>
+            Gets list of devices of the NPC or Player which are using the game object.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.UnityAsset.Core.IHumanoidNPC">
+            <summary>
+            Represents biped NPC (Non-Player Character)
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.IHumanoidNPC.EnableLogging">
+            <summary>
+            Gets or sets value of enable logging.
+            It alows enable or disable logging or remote connection for the NPC.
             </summary>
         </member>
         <member name="T:SymOntoClay.UnityAsset.Core.IManualControlling">
@@ -158,58 +239,40 @@
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BaseManualControllingGameComponent.CreateProcess(SymOntoClay.Core.ICommand)">
             <inheritdoc/>
         </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BaseStoredGameComponent.PublicFactsStorage">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BaseStoredGameComponent.IdForFacts">
+            <inheritdoc/>
+        </member>
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BaseStoredGameComponent.LoadFromSourceCode">
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BaseStoredGameComponent.OnDisposed">
             <inheritdoc/>
         </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedManualControlledObject.GameObject">
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectGameComponent.InsertPublicFact(System.String)">
             <inheritdoc/>
         </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedManualControlledObject.Devices">
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectGameComponent.RemovePublicFact(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCGameComponent.LoadFromSourceCode">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCGameComponent.BeginStarting">
-            <inheritdoc/>
-        </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCGameComponent.IsWaited">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCGameComponent.OnDisposed">
-            <inheritdoc/>
-        </member>
-        <member name="T:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation">
-            <inheritdoc/>
-        </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.EnableLogging">
-            <inheritdoc/>
-        </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.Logger">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.AddToManualControl(SymOntoClay.UnityAsset.Core.IGameObject,SymOntoClay.UnityAsset.Core.DeviceOfBiped)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.AddToManualControl(SymOntoClay.UnityAsset.Core.IGameObject,System.Collections.Generic.IList{SymOntoClay.UnityAsset.Core.DeviceOfBiped})">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.RemoveFromManualControl(SymOntoClay.UnityAsset.Core.IGameObject)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.GetManualControlledObjects">
-            <inheritdoc/>
-        </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.IsDisposed">
-            <inheritdoc/>
-        </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.BipedNPC.BipedNPCImplementation.Dispose">
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectGameComponent.IsWaited">
             <inheritdoc/>
         </member>
         <member name="T:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation.RunInMainThread(System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation.RunInMainThread``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation.InsertPublicFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation.RemovePublicFact(System.String)">
             <inheritdoc/>
         </member>
         <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation.EndpointsRegistry">
@@ -222,6 +285,78 @@
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.GameObject.GameObjectImplementation.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidManualControlledObject.GameObject">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidManualControlledObject.Devices">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCGameComponent.PublicFactsStorage">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCGameComponent.IdForFacts">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCGameComponent.LoadFromSourceCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCGameComponent.BeginStarting">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCGameComponent.IsWaited">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCGameComponent.OnDisposed">
+            <inheritdoc/>
+        </member>
+        <member name="T:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.EnableLogging">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.Logger">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.RunInMainThread(System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.RunInMainThread``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.AddToManualControl(SymOntoClay.UnityAsset.Core.IGameObject,SymOntoClay.UnityAsset.Core.DeviceOfBiped)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.AddToManualControl(SymOntoClay.UnityAsset.Core.IGameObject,System.Collections.Generic.IList{SymOntoClay.UnityAsset.Core.DeviceOfBiped})">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.RemoveFromManualControl(SymOntoClay.UnityAsset.Core.IGameObject)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.GetManualControlledObjects">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.InsertPublicFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.RemovePublicFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.InsertFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.RemoveFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.Die">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.IsDisposed">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.HumanoidNPC.HumanoidNPCImplementation.Dispose">
             <inheritdoc/>
         </member>
         <member name="T:SymOntoClay.UnityAsset.Core.InternalImplementations.IInternalManualControlledObject">
@@ -254,6 +389,18 @@
         <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.Place.PlaceImplementation.IsDisposed">
             <inheritdoc/>
         </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Place.PlaceImplementation.RunInMainThread(System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Place.PlaceImplementation.RunInMainThread``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Place.PlaceImplementation.InsertPublicFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Place.PlaceImplementation.RemovePublicFact(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Place.PlaceImplementation.Dispose">
             <inheritdoc/>
         </member>
@@ -261,6 +408,12 @@
             <inheritdoc/>
         </member>
         <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.Logger">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.RunInMainThread(System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.RunInMainThread``1(System.Func{``0})">
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.AddToManualControl(SymOntoClay.UnityAsset.Core.IGameObject,SymOntoClay.UnityAsset.Core.DeviceOfBiped)">
@@ -273,6 +426,12 @@
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.GetManualControlledObjects">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.InsertPublicFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.RemovePublicFact(System.String)">
             <inheritdoc/>
         </member>
         <member name="P:SymOntoClay.UnityAsset.Core.InternalImplementations.Player.PlayerImlementation.IsDisposed">
@@ -293,7 +452,13 @@
         <member name="P:SymOntoClay.UnityAsset.Core.World.WorldCore.Logger">
             <inheritdoc/>
         </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.GetBipedNPC(SymOntoClay.UnityAsset.Core.BipedNPCSettings)">
+        <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.RunInMainThread(System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.RunInMainThread``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.GetHumanoidNPC(SymOntoClay.UnityAsset.Core.HumanoidNPCSettings)">
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.GetPlayer(SymOntoClay.UnityAsset.Core.PlayerSettings)">
@@ -303,6 +468,12 @@
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.GetPlace(SymOntoClay.UnityAsset.Core.PlaceSettings)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.InsertPublicFact(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.RemovePublicFact(System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.World.WorldCore.Load(SymOntoClay.UnityAsset.Core.IRunTimeImageInfo)">
@@ -347,7 +518,22 @@
         <member name="P:SymOntoClay.UnityAsset.Core.World.WorldCore.IsDisposed">
             <inheritdoc/>
         </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.InstanceId">
+            <inheritdoc/>
+        </member>
         <member name="P:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.EnableLogging">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.RunInMainThread(System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.RunInMainThread``1(System.Func{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.PublicFactsStorage">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.IdForFacts">
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.Internal.BaseGameComponent.LoadFromSourceCode">
@@ -566,7 +752,7 @@
         <member name="M:SymOntoClay.UnityAsset.Core.Internal.EndPoints.ProcessCreatingResult.SymOntoClay#CoreHelper#DebugHelpers#IObjectToBriefString#PropertiesToBriefString(System.UInt32)">
             <inheritdoc/>
         </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.Internal.HostSupport.HostSupportComponent.ConvertFromRelativeToAbsolute(System.Numerics.Vector2)">
+        <member name="M:SymOntoClay.UnityAsset.Core.Internal.HostSupport.HostSupportComponent.ConvertFromRelativeToAbsolute(SymOntoClay.Core.RelativeCoordinate)">
             <inheritdoc/>
         </member>
         <member name="P:SymOntoClay.UnityAsset.Core.Internal.ILoggerContext.Enable">
@@ -625,10 +811,13 @@
         <member name="P:SymOntoClay.UnityAsset.Core.Internal.Logging.LoggerContext.Enable">
             <inheritdoc/>
         </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.Internal.LogicQueryParsingAndCache.LogicQueryParseAndCache.GetLogicRuleOrFact(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="P:SymOntoClay.UnityAsset.Core.Internal.Threads.ThreadsCoreComponent.SymOntoClay#Core#Internal#Threads#IActivePeriodicObjectCommonContext#IsNeedWating">
             <inheritdoc/>
         </member>
-        <member name="P:SymOntoClay.UnityAsset.Core.Internal.Threads.ThreadsCoreComponent.SymOntoClay#Core#Internal#Threads#IActivePeriodicObjectCommonContext#AutoResetEvent">
+        <member name="P:SymOntoClay.UnityAsset.Core.Internal.Threads.ThreadsCoreComponent.SymOntoClay#Core#Internal#Threads#IActivePeriodicObjectCommonContext#WaitEvent">
             <inheritdoc/>
         </member>
         <member name="P:SymOntoClay.UnityAsset.Core.Internal.TypesConvertors.DefaultConvertors.FloatAndNumberValueConvertor.PlatformType">
@@ -730,6 +919,9 @@
         <member name="M:SymOntoClay.UnityAsset.Core.Internal.TypesConvertors.PlatformTypesConvertorsRegistry.Convert(System.Type,System.Type,System.Object)">
             <inheritdoc/>
         </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.Internal.Vision.VisionComponent.OnDisposed">
+            <inheritdoc/>
+        </member>
         <member name="P:SymOntoClay.UnityAsset.Core.Internal.WorldContext.InvokerInMainThread">
             <inheritdoc/>
         </member>
@@ -793,6 +985,13 @@
             </summary>
             <param name="settings">Instance of settings.</param>
         </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.IWorld.AddConvertor(SymOntoClay.UnityAsset.Core.IPlatformTypesConvertor)">
+            <summary>
+            Adds platform type convertor manually.
+            You should add platform type convertor manually using Unity3d, bacause automatic loading convertors provoces exception on Unity3d.
+            </summary>
+            <param name="convertor">An instance of platform type convertor.</param>
+        </member>
         <member name="P:SymOntoClay.UnityAsset.Core.IWorld.EnableLogging">
             <summary>
             Gets or sets value of enable logging.
@@ -806,7 +1005,7 @@
             It doesn't touch local logging.
             </summary>
         </member>
-        <member name="M:SymOntoClay.UnityAsset.Core.IWorld.GetBipedNPC(SymOntoClay.UnityAsset.Core.BipedNPCSettings)">
+        <member name="M:SymOntoClay.UnityAsset.Core.IWorld.GetHumanoidNPC(SymOntoClay.UnityAsset.Core.HumanoidNPCSettings)">
             <summary>
             Registers an instance of NPC by passed settings.
             Returned agent provides communication between game level in Unity3D and logical core.
@@ -907,6 +1106,21 @@
             </summary>
             <param name="id">Image id.</param>
         </member>
+        <member name="T:SymOntoClay.UnityAsset.Core.KindOfEndpointParam">
+            <summary>
+            Describes a tip about conversion between C# and SymOntoclay DSL types.
+            </summary>
+        </member>
+        <member name="F:SymOntoClay.UnityAsset.Core.KindOfEndpointParam.Unknown">
+            <summary>
+            The type is unknown.
+            </summary>
+        </member>
+        <member name="F:SymOntoClay.UnityAsset.Core.KindOfEndpointParam.Position">
+            <summary>
+            The type is absolute position.
+            </summary>
+        </member>
         <member name="T:SymOntoClay.UnityAsset.Core.LoggingSettings">
             <summary>
             Logging settings.
@@ -977,6 +1191,26 @@
             <inheritdoc/>
         </member>
         <member name="M:SymOntoClay.UnityAsset.Core.RunTimeImageSettings.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.VisibleItem.InstanceId">
+            <summary>
+            InstanceId in Unity Engine.
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Core.VisibleItem.Position">
+            <summary>
+            Position of this GameObject in Unity Engine.
+            This position will be used for prevention chitering AI.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.VisibleItem.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.VisibleItem.ToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Core.VisibleItem.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
             <inheritdoc/>
         </member>
         <member name="P:SymOntoClay.UnityAsset.Core.WorldFactory.WorldInstance">

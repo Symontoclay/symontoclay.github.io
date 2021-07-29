@@ -4,8 +4,8 @@
     "enableFavicon": true,
     "logo": "/favicon.png",
 	"roadMapJsonPath" : null,
-	"CSharpUserApiJsonPath": null,
-	"BaseCSharpUserApiPath" : null,
+	"CSharpUserApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApiOptions.json",
+	"DestCSharpUserApiPath" : "dotnet_api",
 	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
 	"BaseReleaseNotesPath" : "%SITE_SOURCE_PATH%/downloads/arch",
     "menu" : {
