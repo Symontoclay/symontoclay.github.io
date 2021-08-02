@@ -1,3 +1,8 @@
 <h1>Engine API</h1>
 
+<p>
+This API describes source code which requires for defining endpoints of <a href='/docs/spec.html#Host_system_variable_chapter'>host methods</a>.
+It allows us to organize interaction between user's code on SymOntoClay DSL and C#.
+</p>
+
 <csharp_user_api_contents/>

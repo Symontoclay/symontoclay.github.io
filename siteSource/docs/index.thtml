@@ -29,20 +29,22 @@ A brief "Hello, World" tutorial to get started with CLI.
 </p>
 
 <h3>
-Getting started game development with SymOntoClay
+<a href='/docs/getting-started-unity.html'>Getting started game development with SymOntoClay</a>
 </h3>
 
 <p>
-   The main goal of SymOntoClay is to be used in development game AI.  
+A brief "Hello, World" tutorial to get started game development on Unity.
 </p>
-
-<p>
-    But now integration with Unity is in development and I cannot write any documentation in this area.
-</p>
-
-<work_in_progress/>
 
 <h2 class='center-h'>Learning SymOntoClay</h2>
+
+<h3>
+<a href='/docs/unity_components.html'>Unity components</a>
+</h3>
+
+<p>
+Documentation about SymOntoClay's components for Unity.
+</p>
 
 <h3>
 <a href='/docs/spec.html'>Language Specification</a>
