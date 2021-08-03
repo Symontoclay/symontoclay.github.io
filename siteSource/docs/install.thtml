@@ -74,14 +74,40 @@ SymOntoClay requires installed NET 5.0.
 
     <li>
 	    Add the target directory to the PATH system variable. Read the instruction <a href='#Setting_the_PATH_environment_variable'>here</a>.
-	</li>	
+	</li>
 </ol>
 
 <h2 class='center-h' data-href='Installing_CLI_from_archive'>
 Installing CLI from archive
 </h2>
 
-<complete_me/>
+<ol>
+    <li>
+	    Download archive with built CLI to your computer.
+		
+        <p>
+        You can download this from:
+        </p>
+
+        <ul>
+            <li>
+	            <a href='https://github.com/Symontoclay/SymOntoClay/releases'>https://github.com/Symontoclay/SymOntoClay/releases</a>
+	        </li>
+	
+	        <li>
+	            <a href='/downloads/index.html'>https://symontoclay.github.io/downloads/index.html</a>
+	        </li>
+        </ul>		
+	</li>
+	
+	<li>
+	    Unpack downloaded archive to target directory.
+	</li>
+	
+    <li>
+	    Add the target directory to the PATH system variable. Read the instruction <a href='#Setting_the_PATH_environment_variable'>here</a>.
+	</li>
+</ol>
 
 <h2 class='center-h' data-href='Setting_the_PATH_environment_variable'>
 Setting the PATH environment variable
