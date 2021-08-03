@@ -1,18 +1,22 @@
 <h1 class='center-h'>Getting started with CLI</h1>
 
-<LinkToContent/>
+<ContentsPlace/>
 
-<h2 class='center-h' data-href='Installing_SymOntoClay'>
-Installing SymOntoClay
+<h2 class='center-h' data-href='Install_SymOntoClay_CLI'>
+Install SymOntoClay CLI
 </h2>
 
+<LinkToContent/>
+
 <p>
-<a href='/docs/install.html'>Instructions for downloading and installing SymOntoClay</a>.
+    See <a href='/docs/install.html#Installing_CLI_from_source_code'>here</a> or <a href='/docs/install.html#Installing_CLI_from_archive'>here</a>.
 </p>
 
 <h2 class='center-h' data-href='Write_some_code'>
 Write some code
 </h2>
+
+<LinkToContent/>
 
 <p>
 Get started with "Hello, World".
@@ -94,8 +98,10 @@ app Example
 Write more code
 </h2>
 
+<LinkToContent/>
+
 <p>
-<a href='/docs/spec.html'>Lern more</a> about SymOntoClay DSL.
+<a href='/docs/spec.html'>Learn more</a> about SymOntoClay DSL.
 </p>
 
 <p>

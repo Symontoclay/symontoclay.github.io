@@ -1,0 +1,93 @@
+<h1 class='center-h'>Getting started game development on Unity with SymOntoClay</h1>
+
+<ContentsPlace/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Install_SymOntoClay_CLI'>
+Install SymOntoClay CLI
+</h2>
+
+<LinkToContent/>
+
+<p>
+    See <a href='/docs/install.html#Installing_CLI_from_source_code'>here</a> or <a href='/docs/install.html#Installing_CLI_from_archive'>here</a>.
+</p>
+
+<h2 class='center-h' data-href='Create_new_project_on_Unity'>
+Create new project on Unity
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Install_SymOntoClay_components_for_Unity'>
+Install SymOntoClay components for Unity
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Write_SymOntoClay_DSL_code'>
+Write SymOntoClay DSL code
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Set_up_scene_for_using_SymOntoClay_components_for_Unity'>
+Set up scene for using SymOntoClay components for Unity
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Set_up_world'>
+Set up world
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Set_up_Humanoid_NPC'>
+Set up Humanoid NPC
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Add_host_endpoints_to_Humanoid_NPC'>
+Add host endpoints to Humanoid NPC
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Run_scene'>
+Run scene
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Write_more_code'>
+Write more code
+</h2>
+
+<LinkToContent/>
+
+<p>
+<a href='/docs/spec.html'>Learn more</a> about SymOntoClay DSL.
+</p>
+
+<p>
+Try <a href='/docs/lng_examples/index.html'>examples</a>.
+</p>

@@ -95,6 +95,46 @@ Some of the information is updated automatically, depending on the state of an g
 There exists special <a href='/docs/spec.html#App_chapter'>syntax construction</a> for the root code entity of <b>app</b>.
 </p>
 
+<h2 class='center-h' data-href='On_unity_scene'>
+On unity scene
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='World_on_unity_scene'>
+World
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Humanoid_NPC_on_unity_scene'>
+Humanoid NPC
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Thing_on_unity_scene'>
+Thing
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='HostEndpoint_on_unity_scene'>
+Host endpoint
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Implementation'>
 Implementation
 </h2>

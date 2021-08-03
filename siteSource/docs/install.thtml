@@ -5,10 +5,6 @@
 <license_info/>
 
 <p>
-Now only installing from source code is available.
-</p>
-
-<p>
 SymOntoClay is developed and tested only on Windows 10.
 </p>
 
@@ -16,8 +12,8 @@ SymOntoClay is developed and tested only on Windows 10.
 In the future I am going to add another kinds of installers and support other platforms.
 </p>
 
-<h2 class='center-h' data-href='Installing_from_source_code'>
-Installing from source code
+<h2 class='center-h' data-href='Installing_CLI_from_source_code'>
+Installing CLI from source code
 </h2>
 
 <p>
@@ -77,38 +73,56 @@ SymOntoClay requires installed NET 5.0.
 	</li>
 
     <li>
-	    Add the target directory to the PATH system variable.
-		
-		<p>
-            For <b>Windows 10</b> and <b>Windows 8</b>:
-        </p>
-
-        <ol>
-            <li>
-	            In Search, search for and then select: "System".
-	        </li>
-	        <li>
-	            Click <b>Advanced system settings</b>.
-	        </li>
-	        <li>
-	            Click <b>Environment Variables</b>. 
-	        </li>
-	        <li>
-	            In the section <b>System Variables</b> find the PATH environment variable and select it. Click <b>Edit</b>. If the PATH environment variable does not exist, click <b>New</b>.
-	        </li>
-	        <li>
-	            In the <b>Edit System Variable</b> (or <b>New System Variable</b>) window, specify the value of the PATH environment variable.
-		        Please check: there should be semicolon (<b>;</b>) between added and exising paths in the PATH environment variable!
-	        </li>
-	        <li>
-	            Click <b>OK</b>. 
-	        </li>
-	        <li>
-	            Close all remaining windows by clicking <b>OK</b>.
-	        </li>
-	        <li>
-	            Restart your terminal and use <a href='/docs/cli.html'>SymOntoClay's CLI</a>. 
-	        </li>
-        </ol>
+	    Add the target directory to the PATH system variable. Read the instruction <a href='#Setting_the_PATH_environment_variable'>here</a>.
 	</li>	
 </ol>
+
+<h2 class='center-h' data-href='Installing_CLI_from_archive'>
+Installing CLI from archive
+</h2>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Setting_the_PATH_environment_variable'>
+Setting the PATH environment variable
+</h2>
+
+<p>
+    For <b>Windows 10</b> and <b>Windows 8</b>:
+</p>
+
+<ol>
+    <li>
+	    In Search, search for and then select: "System".
+	</li>
+	<li>
+	    Click <b>Advanced system settings</b>.
+	</li>
+	<li>
+	    Click <b>Environment Variables</b>.
+	</li>
+	<li>
+	    In the section <b>System Variables</b> find the PATH environment variable and select it. 
+		Click <b>Edit</b>. 
+		If the PATH environment variable does not exist, click <b>New</b>.
+	</li>
+	<li>
+	    In the <b>Edit System Variable</b> (or <b>New System Variable</b>) window, specify the value of the PATH environment variable.
+		Please check: there should be semicolon (<b>;</b>) between added and exising paths in the PATH environment variable!
+	</li>
+	<li>
+	    Click <b>OK</b>. 
+	</li>
+	<li>
+	    Close all remaining windows by clicking <b>OK</b>.
+	</li>
+	<li>
+	    Restart your terminal and use <a href='/docs/cli.html'>SymOntoClay's CLI</a>. 
+	</li>
+</ol>
+
+<h2 class='center-h' data-href='Installing_components_for_Unity'>
+Installing components for Unity
+</h2>
+
+<complete_me/>
