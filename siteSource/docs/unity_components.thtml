@@ -18,6 +18,10 @@ Humanoid NPC
 
 <LinkToContent/>
 
+<p>
+Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_concepts/index.html#Common_concepts_App'>app on SymOntoClay DSL</a>.
+</p>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='Thing'>

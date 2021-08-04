@@ -40,7 +40,7 @@ World
 <LinkToContent/>
 
 <p>
-Contains general information for all objects in a game.
+Contains general information for all objects of a game.
 </p>
 
 <p>
@@ -53,7 +53,7 @@ Also, the name "<b>worldspace</b>" can be applied to <b>world</b>, as analogy wi
 
 <p>
 Not active.
-But it can define methods which are available to any <a href='#Common_concepts_NPC'>NPC</a> in a game.
+But it can define methods which are available to any <a href='#Common_concepts_NPC'>NPC</a> of a game.
 </p>
 
 <p>
@@ -101,7 +101,9 @@ On unity scene
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Unity scene level concepts are described here.
+</p>
 
 <h3 class='center-h' data-href='World_on_unity_scene'>
 World
@@ -109,7 +111,14 @@ World
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+As <a href='/docs/engine_concepts/index.html#Common_concepts_World'>the concept <b>World</b> on DSL level</a> the concept <b>World</b> of Unity scene level represents general information for all objects of a game.
+</p>
+
+<p>
+The <a href='/docs/unity_components.html#World'>component <b>World</b></a> links <a href='/docs/file_structure.html#.world'>world file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_World'>DSL world</a> to a <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+I recommend to add the component to <b>Terrain</b>.
+</p>
 
 <h3 class='center-h' data-href='Humanoid_NPC_on_unity_scene'>
 Humanoid NPC
@@ -117,7 +126,13 @@ Humanoid NPC
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Represents Humanoid NPC on unity scene.
+</p>
+
+<p>
+The <a href='/docs/unity_components.html#Humanoid_NPC'>component <b>Humanoid NPC</b></a> links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_App'>behavior</a> to a NPC's <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+</p>
 
 <h3 class='center-h' data-href='Thing_on_unity_scene'>
 Thing
@@ -125,13 +140,33 @@ Thing
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Represents Thing on unity scene.
+</p>
+
+<p>
+It is a <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> which has never been active.
+</p>
+
+<p>
+The <a href='/docs/unity_components.html#Thing'>component <b>Thing</b></a> links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the thing and perform an action if it needs.
+</p>
 
 <h3 class='center-h' data-href='HostEndpoint_on_unity_scene'>
 Host endpoint
 </h3>
 
 <LinkToContent/>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
 
 <complete_me/>
 

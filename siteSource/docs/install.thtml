@@ -151,4 +151,37 @@ Setting the PATH environment variable
 Installing components for Unity
 </h2>
 
-<complete_me/>
+<p>
+SymOntoClay's components for Unity is supplied as custom unity package and hosted on Github.
+This is due to current project status as Proof of concept.
+In the future I am going to use Unity asset store.
+</p>
+
+<p>
+SymOntoClay's components for Unity don't require installed CLI for run time.
+But CLI helps to create new projects on DSL.
+</p>
+
+<ol>
+    <li>
+	    Download components for Unity to your computer as <b>.unitypackage</b>.
+		
+        <p>
+        You can download this from:
+        </p>
+
+        <ul>
+            <li>
+	            <a href='https://github.com/Symontoclay/SymOntoClay/releases'>https://github.com/Symontoclay/SymOntoClay/releases</a>
+	        </li>
+	
+	        <li>
+	            <a href='/downloads/index.html'>https://symontoclay.github.io/downloads/index.html</a>
+	        </li>
+        </ul>		
+	</li>
+	
+	<li>
+	    Install downloaded package to your project using <ico t='unity'/><a href='https://docs.unity3d.com/Manual/AssetPackagesImport.html'>Unity's instructions</a>.
+	</li>
+</ol>
