@@ -161,14 +161,21 @@ Host endpoint
 <LinkToContent/>
 
 <p>
-
+It is endpoint of external C# method for SymOntoClay engine.
 </p>
 
 <p>
-
+Host endpoint provides Unity-specific or game-specific implementation of behavior.
+It allows us interaction with Unity Game object, navigation, animations, visual effects or something else like this.
 </p>
 
-<complete_me/>
+<p>
+Methods implemented by Host endpoints are available to call by using <a href='/docs/spec.html#Host_system_variable_chapter'>system variable <b>@@host</b></a>.
+</p>
+
+<p>
+In details writing a Host endpoint is described in <a href='/docs/getting-started-unity.html#Add_host_endpoints_to_Humanoid_NPC'>Getting started game development on Unity with SymOntoClay</a>.
+</p>
 
 <h2 class='center-h' data-href='Implementation'>
 Implementation
