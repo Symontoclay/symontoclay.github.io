@@ -8,6 +8,7 @@
 	"DestCSharpUserApiPath" : "docs/engine_api",
 	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
 	"BaseReleaseNotesPath" : "%SITE_SOURCE_PATH%/downloads/arch",
+	"DestKeyFeaturesPath": "docs/key-features.html",
 	"IgnoredDirs" : [
 	    "%SITE_SOURCE_PATH%/CSharpApiFiles",
 		"%SITE_SOURCE_PATH%/CommonReadmies"
