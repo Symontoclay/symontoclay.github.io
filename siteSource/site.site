@@ -11,7 +11,7 @@
 	"DestKeyFeaturesPath": "docs/key-features.html",
 	"IgnoredDirs" : [
 	    "%SITE_SOURCE_PATH%/CSharpApiFiles",
-		"%SITE_SOURCE_PATH%/CommonReadmies"
+		"%SITE_SOURCE_PATH%/CommonReadmes"
 	],
     "menu" : {
         "items": [

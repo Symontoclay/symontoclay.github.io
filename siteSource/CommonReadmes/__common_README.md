@@ -14,3 +14,5 @@ You can build and install the project from source code.
 * [CLI](https://symontoclay.github.io/docs/cli.html)
 
 Feel free to contact me about the project.
+
+:)
