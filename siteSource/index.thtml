@@ -1,67 +1,14 @@
 ﻿<h1 class='center-h'>SymOntoClay project</h1>
 
-<p>
-SymOntoClay is a hybrid language with logic programming and fuzzy logic for defining game characters behavior.
-</p>
-
-<p>
-The project is planned as open source asset for Unity3D.
-</p>
+<general_description_content/>
 
 <h4 class='center-h'>Name meaning and pronunciation</h4>
 
-<p>
-It's abbreviation of &quot;<b>Sym</b>bolic <b>onto</b>logical <b>clay</b>&quot;.
-</p>
-
-<p>
-Pronunciation: &lbrack;sim äntə klā&rbrack;.
-</p>
-
-<dl>
-    <dt>Symbolic</dt>
-	
-    <dd>
-	    I've been focusing on Symbolic artificial intelligence. 
-        It will allow us to define <abbr title='Non-Player Character'>NPC</abbr> behavior in more determined way. 
-        I think It's important for game plot and gameplay.
-    </dd>
-	
-    <dt>Ontological</dt>
-	
-    <dd>
-	I've been focusing on explicitly describing knowledge.
-	</dd>
-	
-    <dt>Clay</dt>
-	
-    <dd>
-	It's a reference to the clay from which God created Adam.
-	</dd>
-</dl>
+<name_meaning_and_pronunciation_content/>
 
 <h2 class='center-h'>Aim</h2>
 
-<p>
-The main aim of the project is experimenting on using various symbolic artificial intelligence approaches in game developing.
-First of all It's logic programming, fuzzy logic, fuzzy inheritance and natural language processing (NLP).
-</p>
-
-<p>
-I think symbolic logic will help to do indie-game developing better.
-There are many interesting things in symbolic artificial intelligence approaches.
-And It is very interesting for me to use and see them in gaming.
-</p>
-
-<p>
-It will be game <abbr title='Artificial Intelligence'>AI</abbr>, that is less strict, than AI for other areas.
-</p>
-
-<p>
-Now SymOntoClay is focused on pure experimenting.
-But in the future I hope to give a tool to indie game developers for creating games with more powerful AI then It's available them now.
-I will be very glad If It helps to increase amount of cool games, happy users and game developers.
-</p>
+<aim_content/>
 
 <h2 class='center-h'>Key features</h2>
 
@@ -69,51 +16,11 @@ I will be very glad If It helps to increase amount of cool games, happy users an
 
 <h2 class='center-h'>Domain-specific language (DSL)</h2>
 
-<p>
-SymOntoClay has own Domain-specific language (DSL).
-</p>
-
-<p>
-It helps using interesting AI features in more convenient way.
-Some features are difficult to add for existing languages, for example, multiple fuzzy inheritance.
-</p>
-
-<p>
-The language is also called SymOntoClay like the engine.
-</p>
-
-<p>
-I'm completely free in my experiments with syntax.
-</p>
-
-<p>
-My main criterion in SymOntoClay's syntax decisions is including interesting features into the syntax as gracefully as possible and making using them convenient in game development.
-</p>
+<dsl_preview_content/>
 
 <h2 class='center-h'>Project status</h2>
 
-<p>
-I've making SymOntoClay alone in my free time since 2016. 
-So It's not fast.
-</p>
-
-<p>
-I've made two prototypes: first implementation of domain-specific language and integration with Unity3D.
-I've posted the second prototype's demo-video into an Indie game developers group on Facebook. 
-You can see this demo <ico t='f'/><a href='https://www.facebook.com/groups/IndieGameDevs/permalink/10155707420791573/'>here</a>.
-</p>
-
-<p>
-I'm focusing on key features (the interesting features from AI). 
-Other features is being added only for support working or demonstrating the key features.
-So there can be absent necessary for practical using  but non key features on the DSL or engine.
-Also stability and performance are not in focus - I don't have time for these sides while key features have not been implemented.
-</p>
-
-<p>
-I'm going to continue my experiments.
-And I hope this project will become useful for many indie game developers in the future.
-</p>
+<project_status_content/>
 
 <p>
 Feel free contact to me about the project. 

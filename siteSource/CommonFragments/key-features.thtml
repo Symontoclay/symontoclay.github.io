@@ -1,0 +1,111 @@
+<ul>
+    <li>
+        <gist>Simple, clear and clean code</gist>
+		
+		<p>
+		    My main goal: to enable game developers to write simple, clear and clean code in the shortest possible time and with minimum effort.
+		</p>
+		
+		<p>
+		    SymOntoClay reduces boilerplate code using domain-specific language.
+		</p>
+				
+		<p>
+            &nbsp;
+        </p>
+    </li>
+
+    <li>
+        <gist>Fuzzy logic</gist>
+		
+		<p>
+		    Fuzzy logic makes code closer to natural language.
+		</p>		
+		
+		<p>
+		    Specific numbers are replaced with more convenient human concepts: &quot;near&quot;, &quot;far&quot;, &quot;a lot&quot;, &quot;little&quot;, &quot;almost&quot;, &quot;maybe&quot;, &quot;cold&quot;, &quot;warm&quot;, &quot;hot&quot; and the like.
+		</p>		
+		
+		<p>
+		    It also greatly simplifies the code.
+			A complex condition can easily be replaced with a more elegant looking fuzzy value.
+		</p>
+		
+        <p>
+            <complete_me/>
+        </p>
+		
+		<p>
+            &nbsp;
+        </p>		
+    </li>
+	
+    <li>
+        <gist>Logical database</gist>
+		
+		<p>
+		    Allows to use a powerful logic programming paradigm in game development:
+			<ul>
+			    <li>
+				    
+				<li/>
+			</ul>
+		</p>		
+		
+        <p>
+            <complete_me/>
+        </p>
+		
+		<p>
+            &nbsp;
+        </p>		
+    </li>
+
+    <li>
+        <gist>Triggers</gist>
+		
+		<p>
+		
+		</p>		
+		
+        <p>
+            <complete_me/>
+        </p>
+		
+		<p>
+            &nbsp;
+        </p>		
+    </li>
+
+    <li>
+        <gist>Multiple fuzzy inheritance</gist>
+		
+		<p>
+		
+		</p>
+		
+        <p>
+            <complete_me/>
+        </p>
+		
+		<p>
+            &nbsp;
+        </p>		
+    </li>
+
+    <li>
+        <gist>NPC isolation</gist>
+		
+		<p>
+		
+		</p>		
+		
+        <p>
+            <complete_me/>
+        </p>
+		
+		<p>
+            &nbsp;
+        </p>		
+    </li>	
+</ul>
