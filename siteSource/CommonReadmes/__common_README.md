@@ -1,5 +1,5 @@
 <p align="center"><a href="https://symontoclay.github.io" target="_blank">
-    <img src="https://symontoclay.github.io/favicon.png">
+    <img src="https://symontoclay.github.io/favicon.png"> SymOntoClay
 </a></p>
 
 [SymOntoClay][1]
