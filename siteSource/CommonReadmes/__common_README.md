@@ -14,6 +14,10 @@
 
 <key_features_preview/>
 
+## Domain-specific language (DSL)
+
+<dsl_preview_content/>
+
 ## Project status
 
 <project_status_content/>
