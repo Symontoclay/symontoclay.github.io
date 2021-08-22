@@ -12,6 +12,23 @@ World
 
 <complete_me/>
 
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 200px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>World File</th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Humanoid_NPC'>
 Humanoid NPC
 </h2>
@@ -24,10 +41,74 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
 
 <complete_me/>
 
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 200px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+	  <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+	  <td></td>
+    </tr>	
+  </tbody>
+</table>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Head_locator'>
+Head locator
+</h2>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Thing'>
 Thing
 </h2>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 200px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+	  <td></td>
+    </tr>
+  </tbody>
+</table>
 
 <complete_me/>
