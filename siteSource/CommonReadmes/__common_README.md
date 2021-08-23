@@ -22,6 +22,17 @@
 
 <project_status_content/>
 
+## Requirements
+<p>
+SymOntoClay CLI requires:
+    <cli_requirements/>
+</p>
+
+<p>
+SymOntoClay's components for Unity require:
+    <unity_requirements/>
+</p>
+
 ## Installation
 You can build and install the project from source code.
 

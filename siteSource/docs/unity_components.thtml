@@ -4,6 +4,18 @@
 
 <complete_me/>
 
+<p>
+    <img src='/docs/components-in-main-menu.jpg'/>
+</p>
+
+<complete_me/>
+
+<p>
+    <img src='/docs/components-in-context-menu.jpg'/>
+</p>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='World'>
 World
 </h2>
@@ -12,22 +24,30 @@ World
 
 <complete_me/>
 
+<p>
+    <img src='/docs/world-component.jpg'/>
+</p>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='World_Properties'>Properties</h3>
+
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col" style='width: 200px;'>Property:</th>
+      <th scope="col" style='width: 250px;'>Property:</th>
       <th scope="col">Function:</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>World File</th>
-      <td></td>
+      <td>
+	      Reference to <a href='/docs/file_structure.html#.world'>world file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_World'>DSL world</a>.
+	  </td>
     </tr>
   </tbody>
 </table>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Humanoid_NPC'>
 Humanoid NPC
@@ -41,42 +61,114 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
 
 <complete_me/>
 
+<p>
+    <img src='/docs/humanoid-npc-component.jpg'/>
+</p>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Humanoid_NPC_Properties'>Properties</h3>
+
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col" style='width: 200px;'>Property:</th>
+      <th scope="col" style='width: 250px;'>Property:</th>
       <th scope="col">Function:</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row"></th>
-      <td></td>
+      <th>App File</th>
+      <td>
+	     Reference to <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_App'>behavior</a>.
+	  </td>
     </tr>
     <tr>
-      <th scope="row"></th>
-      <td></td>
+      <th>Id</th>
+      <td>
+	     Unique identifier.
+	  </td>
     </tr>
     <tr>
-      <th scope="row"></th>
-	  <td></td>
+      <th>Vision</th>
+	  <td>
+	      Vision simulation options. SymOntoClay uses ray scanning go vision simulation.
+	  </td>
     </tr>
     <tr>
-      <th scope="row"></th>
-      <td></td>
+      <th>- Head</th>
+      <td>
+	      Reference to NPC's head for placing ray scanner.
+		  You can place <a href='/docs/unity_components.thtml#Head_locator'>Head locator</a> to NPC's head istead of direct linking by the property.
+	  </td>
     </tr>
     <tr>
-      <th scope="row"></th>
-	  <td></td>
+      <th>- Distance</th>
+	  <td>
+	     The max distance which from the game object can be seen.
+	  </td>
+    </tr>
+    <tr>
+      <th>- Field of view</th>
+	  <td>
+	      Field of view options.
+	  </td>
+    </tr>
+    <tr>
+      <th>&nbsp;&nbsp;- Angle</th>
+	  <td>
+	      Angle of view.
+	  </td>
+    </tr>
+    <tr>
+      <th>&nbsp;&nbsp;- Angle between rays</th>
+	  <td>
+	      Angle between rays describes how often will be the scanning rays.
+	  </td>
+    </tr>
+    <tr>
+      <th>- Field of focus</th>
+	  <td>
+	      Field of focus options. Field of focus is a central area in field of view.
+		  It has more scanning rays then in peripheral part of field of view.
+	  </td>
+    </tr>
+    <tr>
+      <th>&nbsp;&nbsp;- Angle</th>
+	  <td>
+	      Angle of focus.
+	  </td>
+    </tr>
+    <tr>
+      <th>&nbsp;&nbsp;- Angle between rays</th>
+	  <td>
+	      Angle between rays describes how often will be the scanning rays.
+	  </td>
+    </tr>	
+    <tr>
+      <th>Gizmos</th>
+	  <td>
+	      Gizmos related to SymOntoClay.
+	  </td>
+    </tr>
+    <tr>
+      <th>- Show RayCast Gizmo</th>
+	  <td>
+	      Show or hide vision simulation gizmo.
+	  </td>
     </tr>	
   </tbody>
 </table>
 
-<complete_me/>
-
 <h2 class='center-h' data-href='Head_locator'>
 Head locator
 </h2>
+
+<complete_me/>
+
+<p>
+    <img src='/docs/head-locator-component.jpg'/>
+</p>
 
 <complete_me/>
 
@@ -88,27 +180,33 @@ Thing
 
 <complete_me/>
 
+<p>
+    <img src='/docs/thing-component.jpg'/>
+</p>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='_Properties'>Properties</h3>
+
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col" style='width: 200px;'>Property:</th>
+      <th scope="col" style='width: 250px;'>Property:</th>
       <th scope="col">Function:</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row"></th>
-      <td></td>
+      <th>App File</th>
+      <td>
+	      Reference to <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing.
+	  </td>
     </tr>
     <tr>
-      <th scope="row"></th>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-	  <td></td>
+      <th>Id</th>
+      <td>
+	      Unique identifier.
+	  </td>
     </tr>
   </tbody>
 </table>
-
-<complete_me/>

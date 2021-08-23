@@ -4,6 +4,18 @@
 
 <license_info/>
 
+<h2>Requirements</h2>
+
+<p>
+SymOntoClay CLI requires:
+    <cli_requirements/>
+</p>
+
+<p>
+SymOntoClay's components for Unity require:
+    <unity_requirements/>
+</p>
+
 <a href='/docs/install.html'>How to install SymOntoClay</a>.
 
 <release/>

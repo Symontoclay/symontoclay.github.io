@@ -17,7 +17,8 @@ Installing CLI from source code
 </h2>
 
 <p>
-SymOntoClay requires installed NET 5.0.
+SymOntoClay CLI requires:
+    <cli_requirements/>
 </p>
 
 <ol>
@@ -150,6 +151,11 @@ Setting the PATH environment variable
 <h2 class='center-h' data-href='Installing_components_for_Unity'>
 Installing components for Unity
 </h2>
+
+<p>
+SymOntoClay's components for Unity require:
+    <unity_requirements/>
+</p>
 
 <p>
 SymOntoClay's components for Unity is supplied as custom unity package and hosted on Github.
