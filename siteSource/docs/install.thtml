@@ -16,10 +16,7 @@ In the future I am going to add another kinds of installers and support other pl
 Installing CLI from source code
 </h2>
 
-<p>
-SymOntoClay CLI requires:
-    <cli_requirements/>
-</p>
+<cli_requirements_content/>
 
 <ol>
     <li>
@@ -152,10 +149,7 @@ Setting the PATH environment variable
 Installing components for Unity
 </h2>
 
-<p>
-SymOntoClay's components for Unity require:
-    <unity_requirements/>
-</p>
+<unity_requirements_content/>
 
 <p>
 SymOntoClay's components for Unity is supplied as custom unity package and hosted on Github.

@@ -22,13 +22,14 @@ World
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Links <a href='/docs/file_structure.html#.world'>world file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_World'>DSL world</a> to a <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+I recommend to add the component to <b>Terrain</b>.
+</p>
 
 <p>
     <img src='/docs/world-component.jpg'/>
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='World_Properties'>Properties</h3>
 

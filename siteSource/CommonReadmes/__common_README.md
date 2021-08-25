@@ -1,37 +1,24 @@
 <spec_readme/>
 
 # SymOntoClay
-
 <gen_badges/><spec_badges/>
 
 <general_description_content/>
 
 ## Aim
-
 <aim_content/>
 
 ## Key features
-
 <key_features_preview/>
 
 ## Domain-specific language (DSL)
-
 <dsl_preview_content/>
 
 ## Project status
-
 <project_status_content/>
 
 ## Requirements
-<p>
-SymOntoClay CLI requires:
-    <cli_requirements/>
-</p>
-
-<p>
-SymOntoClay's components for Unity require:
-    <unity_requirements/>
-</p>
+<requirements_content/>
 
 ## Installation
 You can build and install the project from source code.
@@ -41,7 +28,6 @@ You can build and install the project from source code.
 * [Getting started game development with SymOntoClay](https://symontoclay.github.io/docs/getting-started-unity.html)
 
 ## Documentation
-
 * [Home page](https://symontoclay.github.io/)
 * [Documentation](https://symontoclay.github.io/docs/index.html)
 * [Unity components](https://symontoclay.github.io/docs/unity_components.html)
@@ -49,7 +35,6 @@ You can build and install the project from source code.
 * [CLI](https://symontoclay.github.io/docs/cli.html)
 
 ## Examples
-
 * [DSL code examples](https://symontoclay.github.io/docs/lng_examples/index.html)
 * [Unity examples](https://symontoclay.github.io/docs/unity-examples.html)
 
