@@ -2,19 +2,17 @@
 
 <ContentsPlace/>
 
-<complete_me/>
+<p>
+SymOntoClay's unity components are available at the main menu and using button <b>Add Component</b>.
+</p>
 
 <p>
     <img src='/docs/components-in-main-menu.jpg'/>
 </p>
 
-<complete_me/>
-
 <p>
-    <img src='/docs/components-in-context-menu.jpg'/>
+    <img src='/docs/components-in-add-component-menu.jpg'/>
 </p>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='World'>
 World
@@ -60,13 +58,13 @@ Humanoid NPC
 Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_concepts/index.html#Common_concepts_App'>app on SymOntoClay DSL</a>.
 </p>
 
-<complete_me/>
+<p>
+    It links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_App'>behavior</a> to a NPC's <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+</p>
 
 <p>
     <img src='/docs/humanoid-npc-component.jpg'/>
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Humanoid_NPC_Properties'>Properties</h3>
 
@@ -165,13 +163,17 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
 Head locator
 </h2>
 
-<complete_me/>
+<p>
+Head locator helps to find NPC's head for NPC's ray scanner instead of direct linking by property <b>Head</b>.
+<p/>
+
+<p>
+Just add the components to target head's <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a>.
+</p>
 
 <p>
     <img src='/docs/head-locator-component.jpg'/>
 </p>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Thing'>
 Thing
@@ -179,13 +181,15 @@ Thing
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the thing and perform an action if it needs.
+</p>
 
 <p>
     <img src='/docs/thing-component.jpg'/>
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='_Properties'>Properties</h3>
 
