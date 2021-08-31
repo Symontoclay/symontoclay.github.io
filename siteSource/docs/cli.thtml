@@ -64,15 +64,31 @@ Creates new project(NPC, Thing, Player, Place) in new or existing worldspace.
 </p>
 
 <p>
-soc <b>new</b> &lt;Project name&gt;</br>
-soc <b>n</b> &lt;Project name&gt;
+soc <b>new</b> &lt;NPC Project name&gt;</br>
+soc <b>n</b> &lt;NPC Project name&gt;</br>
+soc <b>new</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
+soc <b>n</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
+</br>
+soc <b>new</b> <b>-world</b> &lt;Worldspace name&gt;</br>
+soc <b>n</b> <b>-world</b> &lt;Worldspace name&gt;</br>
+soc <b>new</b> <b>-w</b> &lt;Worldspace name&gt;</br>
+soc <b>n</b> <b>-w</b> &lt;Worldspace name&gt;</br>
+</br>
+soc <b>new</b> <b>-thing</b> &lt;Thing Project name&gt;</br>
+soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
 </p>
 
 <h4 class='center-h' data-href='new_arguments'>Arguments</h4>
 
 <dl>
-  <dt>&lt;Project name&gt;</dt>
-  <dd>Name of new Project</dd>
+  <dt>&lt;NPC Project name&gt;</dt>
+  <dd>Name of new NPC Project</dd>
+  
+  <dt>&lt;Worldspace name&gt;</dt>
+  <dd>Name of new Worldspace</dd>
+  
+  <dt>&lt;Thing Project name&gt;</dt>
+  <dd>Name of new Thing Project</dd>
 </dl>
 
 <p>

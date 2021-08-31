@@ -2,30 +2,45 @@
 
 <ContentsPlace/>
 
-<h2 class='center-h' data-href=''>
+<h2 class='center-h' data-href='Demo1_Linear_code'>
 Demo 1: Linear code
 </h2>
 
-<complete_me/>
+<LinkToContent/>
 
+<p>
+In the demoscene you can see a simplest NPC behaviour. An NPC walks by a path which is defined on SymOntoClay DSL.
+</p>
 
+<div>
+<ico t='git'/> <a href='https://github.com/Symontoclay/demo1_linear_code'>https://github.com/Symontoclay/demo1_linear_code</a>
+</div>
 
-https://github.com/Symontoclay/demo1_linear_code
+<div>
+<ico t='YouTube'/> <a href='https://youtu.be/XB80vRnGoy4'>https://youtu.be/XB80vRnGoy4</a>
+</div>
 
-https://youtu.be/XB80vRnGoy4
+<p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XB80vRnGoy4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XB80vRnGoy4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<h2 class='center-h' data-href=''>
-
+<h2 class='center-h' data-href='Demo2_Simple_trigger'>
+Demo 2: Simple trigger
 </h2>
 
-Simple trigger
+<LinkToContent/>
 
-https://github.com/Symontoclay/demo2_simple_trigger
+<p>
+In the demoscene you can see a simple trigger. An NPC walks, and go back after seeing a barrel.
+</p>
 
-https://youtu.be/1eTGPQGkDY8
+<div>
+<ico t='git'/> <a href='https://github.com/Symontoclay/demo2_simple_trigger'>https://github.com/Symontoclay/demo2_simple_trigger</a>
+</div>
+<div>
+<ico t='YouTube'/> <a href='https://youtu.be/1eTGPQGkDY8'>https://youtu.be/1eTGPQGkDY8</a>
+</div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1eTGPQGkDY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<complete_me/>
+<p>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/1eTGPQGkDY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
