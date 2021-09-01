@@ -174,7 +174,7 @@ Methods implemented by Host endpoints are available to call by using <a href='/d
 </p>
 
 <p>
-In details writing a Host endpoint is described in <a href='/docs/getting-started-unity.html#Add_host_endpoints_to_Humanoid_NPC'>Getting started game development on Unity with SymOntoClay</a>.
+In details writing a Host endpoint is described in <ico t='git'/><a href='https://github.com/Symontoclay/demo1_linear_code/blob/master/Assets/ExamplesOfSymOntoClay/ExampleSymOntoClayHumanoidNPC.cs'>ExampleSymOntoClayHumanoidNPC.cs</a>.
 </p>
 
 <h2 class='center-h' data-href='Implementation'>

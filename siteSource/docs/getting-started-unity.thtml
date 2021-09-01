@@ -2,7 +2,13 @@
 
 <ContentsPlace/>
 
-<complete_me/>
+<p>
+   Here is a tutorial how to use SymOntoClay in Unity scene.
+</p>
+
+<p>
+   You can see, learn and run this example in repository <ico target='git'/><a href='https://github.com/Symontoclay/demo1_linear_code'>https://github.com/Symontoclay/demo1_linear_code</a>.
+</p>
 
 <h2 class='center-h' data-href='Install_SymOntoClay_CLI'>
 Install SymOntoClay CLI
@@ -44,7 +50,76 @@ Write SymOntoClay DSL code
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+   Get started with writing simple code for walking NPC by a path.
+</p>
+
+<ol>
+    <li>
+	    Open a command prompt and navigate to <b>Asset</a> directory of your game.
+	</li>
+	
+    <li>
+	    Create new SymOntoClay <a href='/docs/getting-started-cli.html#worldspace'>worldspace</a> <b>SymOntoClayDSLCode</b>.
+		
+		<console>
+        soc new -world SymOntoClayDSLCode
+        </console>
+	</li>
+	
+    <li>
+	    Navigate to directory <b>SymOntoClayDSLCode</b>.
+	</li>
+
+    <li>
+	    Create new NPC called <b>MyNPC</b>.
+		
+		<console>
+        soc new -npc MyNPC
+        </console>
+		
+		The NPC be created at path /Asset/SymOntoClayDSLCode/Npcs/MyNPC.
+	</li>
+
+    <li>
+	    Navigate to the created NPC and open file MyNPC.soc for editing.
+	</li>
+	
+	<li>
+	    Write code:
+		<code data-lng='soc'>
+		app MyNPC
+{
+    on Init =>
+    {
+		"Begin" >> @>log;
+        "The Beatles!" >> @>log;
+		@@host.`go`(to: #@[20, -45]);
+		"End of step 1" >> @>log;
+		@@host.`go`(to: #@[10, 90]);
+		"End of step 2" >> @>log;
+		@@host.`go`(to: #@[10, -20]);
+		"End of step 3" >> @>log;
+		@@host.`go`(to: #@[10, -10]);
+		"End of step 4" >> @>log;
+		@@host.`go`(to: #@[5, -20]);
+		"End of step 5" >> @>log;
+		@@host.`go`(to: #@[14, 2]);
+		"End of step 6" >> @>log;
+		@@host.`go`(to: #@[20, -90]);
+		"End of step 7" >> @>log;
+		@@host.`go`(to: #@[20]);
+		"End of step 8" >> @>log;
+	    "End" >> @>log;
+    }
+}
+		</code>
+	</li>
+	
+	<li>
+	    Save changes and close file MyNPC.soc.
+	</li>
+</ol>
 
 <h2 class='center-h' data-href='Set_up_scene_for_using_SymOntoClay_components_for_Unity'>
 Set up scene for using SymOntoClay components for Unity
@@ -52,15 +127,21 @@ Set up scene for using SymOntoClay components for Unity
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Set_up_world'>
 Set up world
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
+<ol>
+    <li>
+	    Add component <a href='/docs/unity_components.html#World'>World</a> to <b>Terrain</b>.
+	</li>
+	
+    <li>
+	    Choose <b>SymOntoClayDSLCode</b> in property <b>World File</b>.
+	</li>
+</ol>
 
 <h3 class='center-h' data-href='Set_up_Humanoid_NPC'>
 Set up Humanoid NPC
@@ -68,7 +149,15 @@ Set up Humanoid NPC
 
 <LinkToContent/>
 
-<complete_me/>
+<ol>
+    <li>
+	    Add component <a href='/docs/unity_components.html#Humanoid_NPC'>Humanoid NPC</a> to target NPC.
+	</li>
+	
+    <li>
+	    Choose <b>MyNPC</b> in property <b>App File</b>.
+	</li>
+</ol>
 
 <h3 class='center-h' data-href='Add_host_endpoints_to_Humanoid_NPC'>
 Add host endpoints to Humanoid NPC
@@ -76,7 +165,18 @@ Add host endpoints to Humanoid NPC
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Elementary (basic) actions are Unity ar even game specific because It could require interaction with animation, visual effects or something else.
+</p>
+
+<p>
+You should implement <a href='/docs/engine_concepts/index.html#HostEndpoint_on_unity_scene'>host endpoints</a>.
+</p>
+
+<p>
+You can use <ico t='git'/><a href='https://github.com/Symontoclay/demo1_linear_code/blob/master/Assets/ExamplesOfSymOntoClay/ExampleSymOntoClayHumanoidNPC.cs'>ExampleSymOntoClayHumanoidNPC.cs</a> as example.
+Copy and add this file to target NPC.
+</p>
 
 <h2 class='center-h' data-href='Run_scene'>
 Run scene
@@ -84,7 +184,27 @@ Run scene
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+    Use <b>Play</b> in <ico t='unity'/><a href='https://docs.unity3d.com/Manual/Toolbar.html'>Unity Toolbar</a>.
+</p>
+
+<p>
+    After starting Play mode you can see that NPC walks by defined in SymOntoClay DSL path.
+</p>
+
+<h2 class='center-h' data-href='Build_game'>
+Build game
+</h2>
+
+<LinkToContent/>
+
+<p>
+Use standard Unity tools for building game.
+</p>
+
+<p>
+SymOntoClay builds itself into Unity build pipeline.
+</p>
 
 <h2 class='center-h' data-href='Write_more_code'>
 Write more code

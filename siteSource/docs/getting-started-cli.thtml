@@ -24,7 +24,7 @@ Get started with "Hello, World".
 
 <ol>
     <li>
-	    Open a command prompt and cd to your home directory.
+	    Open a command prompt and navigate to your home directory.
 		
 		<p>
 		On Windows:
@@ -44,7 +44,7 @@ Get started with "Hello, World".
 	</li>
 	
 	<li>
-	    Cd to directory this your NPC.
+	    Navigate to directory with new NPC.
 		
 		<console>
         cd %HOMEPATH%/Example/Npcs/Example
@@ -85,7 +85,7 @@ app Example
 	</li>
 	
 	<li>
-	    Cd to root directory of the worldspace and run It.
+	    Navigate to root directory of the worldspace and run It.
 		
 		<console>
         cd %HOMEPATH%/Example
