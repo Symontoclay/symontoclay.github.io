@@ -42,9 +42,9 @@
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
 <article>
-<h1 class='center-h'>SymOntoClay CLI</h1>
+<h1 class='center-h' is-processed="true">SymOntoClay CLI</h1>
 
-<h2 class="center-h">    Contens
+<h2 class="center-h" is-processed="true">    Contens
     <a href='https://symontoclay.github.io/docs/cli.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
     </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/cli.html#help">soc help</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#run">soc run</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#run_arguments">Arguments</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#exit">soc exit</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#new">soc new</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#new_arguments">Arguments</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#version">soc version</a></li></ul>
@@ -53,7 +53,7 @@
 A command line interface for SymOntoClay.
 </p>
 
-<h3 class='center-h' data-href='help'>
+<h3 class='center-h' data-href='help' is-processed="true">
 soc help
 <a href="https://symontoclay.github.io/docs/cli.html#help" name="help" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
@@ -66,7 +66,7 @@ soc <b>help</b><br>
 soc <b>h</b>
 </p>
 
-<h3 class='center-h' data-href='run'>
+<h3 class='center-h' data-href='run' is-processed="true">
 soc run
 <a href="https://symontoclay.github.io/docs/cli.html#run" name="run" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
@@ -79,7 +79,7 @@ soc <b>run</b> &lt;Project file name&gt;<br>
 soc <b>run</b>
 </p>
 
-<h4 class='center-h' data-href='run_arguments'>Arguments<a href="https://symontoclay.github.io/docs/cli.html#run_arguments" name="run_arguments" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<h4 class='center-h' data-href='run_arguments' is-processed="true">Arguments<a href="https://symontoclay.github.io/docs/cli.html#run_arguments" name="run_arguments" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
 <dl>
   <dt>&lt;Project file name&gt;</dt>
@@ -90,7 +90,7 @@ soc <b>run</b>
   </dd>
 </dl>
 
-<h3 class='center-h' data-href='exit'>
+<h3 class='center-h' data-href='exit' is-processed="true">
 soc exit
 <a href="https://symontoclay.github.io/docs/cli.html#exit" name="exit" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
@@ -102,7 +102,7 @@ Ends running project(NPC).
 soc <b>exit</b> 
 </p>
 
-<h3 class='center-h' data-href='new'>
+<h3 class='center-h' data-href='new' is-processed="true">
 soc new
 <a href="https://symontoclay.github.io/docs/cli.html#new" name="new" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
@@ -111,22 +111,38 @@ Creates new project(NPC, Thing, Player, Place) in new or existing worldspace.
 </p>
 
 <p>
-soc <b>new</b> &lt;Project name&gt;<br>
-soc <b>n</b> &lt;Project name&gt;
+soc <b>new</b> &lt;NPC Project name&gt;<br>
+soc <b>n</b> &lt;NPC Project name&gt;</br>
+soc <b>new</b> <b>-npc</b> &lt;NPC Project name&gt;<br>
+soc <b>n</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
+<br>
+soc <b>new</b> <b>-world</b> &lt;Worldspace name&gt;</br>
+soc <b>n</b> <b>-world</b> &lt;Worldspace name&gt;<br>
+soc <b>new</b> <b>-w</b> &lt;Worldspace name&gt;</br>
+soc <b>n</b> <b>-w</b> &lt;Worldspace name&gt;<br>
+</br>
+soc <b>new</b> <b>-thing</b> &lt;Thing Project name&gt;<br>
+soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
 </p>
 
-<h4 class='center-h' data-href='new_arguments'>Arguments<a href="https://symontoclay.github.io/docs/cli.html#new_arguments" name="new_arguments" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+<h4 class='center-h' data-href='new_arguments' is-processed="true">Arguments<a href="https://symontoclay.github.io/docs/cli.html#new_arguments" name="new_arguments" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
 
 <dl>
-  <dt>&lt;Project name&gt;</dt>
-  <dd>Name of new Project</dd>
+  <dt>&lt;NPC Project name&gt;</dt>
+  <dd>Name of new NPC Project</dd>
+  
+  <dt>&lt;Worldspace name&gt;</dt>
+  <dd>Name of new Worldspace</dd>
+  
+  <dt>&lt;Thing Project name&gt;</dt>
+  <dd>Name of new Thing Project</dd>
 </dl>
 
 <p>
 For creating project in existing worldspace run command <b>new</b> in worldspace directory.
 </p>
 
-<h3 class='center-h' data-href='version'>
+<h3 class='center-h' data-href='version' is-processed="true">
 soc version
 <a href="https://symontoclay.github.io/docs/cli.html#version" name="version" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
@@ -149,9 +165,12 @@ soc <b>v</b>
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 08 June 2021<br>
+<span style='font-size: 16px;'><a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><i class='fab fa-youtube' title='SymOntoClay on Youtube'></i></a></span><br>
+</br>
+This page was last modified on 05 September 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+<br>&nbsp;
 </div>
 </div>
 </footer>

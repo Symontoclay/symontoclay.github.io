@@ -42,21 +42,17 @@
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
 <article>
-<h1 class='center-h'>Installing SymOntoClay</h1>
+<h1 class='center-h' is-processed="true">Installing SymOntoClay</h1>
 
 <p><a href="https://symontoclay.github.io/docs/install.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<div><p>
-SymOntoClay is released under <a href='https://github.com/Symontoclay/SymOntoClay/blob/master/LICENSE'>MIT License</a>.
+<div><div><p>
+    SymOntoClay is released under <a href='https://github.com/Symontoclay/SymOntoClay/blob/master/LICENSE'>MIT License</a>.
 </p>
-<p>
-Please read the license before downloading and using!
-</p>
-</div>
 
 <p>
-Now only installing from source code is available.
-</p>
+    Please read the license before downloading and using!
+</p></div></div>
 
 <p>
 SymOntoClay is developed and tested only on Windows 10.
@@ -66,13 +62,15 @@ SymOntoClay is developed and tested only on Windows 10.
 In the future I am going to add another kinds of installers and support other platforms.
 </p>
 
-<h2 class='center-h' data-href='Installing_from_source_code'>
-Installing from source code
-<a href="https://symontoclay.github.io/docs/install.html#Installing_from_source_code" name="Installing_from_source_code" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+<h2 class='center-h' data-href='Installing_CLI_from_source_code' is-processed="true">
+Installing CLI from source code
+<a href="https://symontoclay.github.io/docs/install.html#Installing_CLI_from_source_code" name="Installing_CLI_from_source_code" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
-<p>
-SymOntoClay requires installed NET 5.0.
-</p>
+<div><div><p>
+SymOntoClay CLI requires:
+    <ul><li>NET 5.0</li>
+</ul>
+</div></div>
 
 <ol>
     <li>
@@ -118,40 +116,124 @@ SymOntoClay requires installed NET 5.0.
 	</li>
 
     <li>
-	    Add the target directory to the PATH system variable.
+	    Add the target directory to the PATH system variable. Read the instruction <a href='https://symontoclay.github.io/docs/install.html#Setting_the_PATH_environment_variable'>here</a>.
+	</li>
+</ol>
+
+<h2 class='center-h' data-href='Installing_CLI_from_archive' is-processed="true">
+Installing CLI from archive
+<a href="https://symontoclay.github.io/docs/install.html#Installing_CLI_from_archive" name="Installing_CLI_from_archive" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<ol>
+    <li>
+	    Download archive with built CLI to your computer.
 		
-		<p>
-            For <b>Windows 10</b> and <b>Windows 8</b>:
+        <p>
+        You can download this from:
         </p>
 
-        <ol>
+        <ul>
             <li>
-	            In Search, search for and then select: "System".
+	            <a href='https://github.com/Symontoclay/SymOntoClay/releases'>https://github.com/Symontoclay/SymOntoClay/releases</a>
 	        </li>
+	
 	        <li>
-	            Click <b>Advanced system settings</b>.
+	            <a href='https://symontoclay.github.io/downloads/index.html'>https://symontoclay.github.io/downloads/index.html</a>
 	        </li>
+        </ul>		
+	</li>
+	
+	<li>
+	    Unpack downloaded archive to target directory.
+	</li>
+	
+    <li>
+	    Add the target directory to the PATH system variable. Read the instruction <a href='https://symontoclay.github.io/docs/install.html#Setting_the_PATH_environment_variable'>here</a>.
+	</li>
+</ol>
+
+<h2 class='center-h' data-href='Setting_the_PATH_environment_variable' is-processed="true">
+Setting the PATH environment variable
+<a href="https://symontoclay.github.io/docs/install.html#Setting_the_PATH_environment_variable" name="Setting_the_PATH_environment_variable" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p>
+    For <b>Windows 10</b> and <b>Windows 8</b>:
+</p>
+
+<ol>
+    <li>
+	    In Search, search for and then select: "System".
+	</li>
+	<li>
+	    Click <b>Advanced system settings</b>.
+	</li>
+	<li>
+	    Click <b>Environment Variables</b>.
+	</li>
+	<li>
+	    In the section <b>System Variables</b> find the PATH environment variable and select it. 
+		Click <b>Edit</b>. 
+		If the PATH environment variable does not exist, click <b>New</b>.
+	</li>
+	<li>
+	    In the <b>Edit System Variable</b> (or <b>New System Variable</b>) window, specify the value of the PATH environment variable.
+		Please check: there should be semicolon (<b>;</b>) between added and exising paths in the PATH environment variable!
+	</li>
+	<li>
+	    Click <b>OK</b>. 
+	</li>
+	<li>
+	    Close all remaining windows by clicking <b>OK</b>.
+	</li>
+	<li>
+	    Restart your terminal and use <a href='https://symontoclay.github.io/docs/cli.html'>SymOntoClay's CLI</a>. 
+	</li>
+</ol>
+
+<h2 class='center-h' data-href='Installing_components_for_Unity' is-processed="true">
+Installing components for Unity
+<a href="https://symontoclay.github.io/docs/install.html#Installing_components_for_Unity" name="Installing_components_for_Unity" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<div><div><p>
+SymOntoClay's components for Unity require:
+    <ul><li>Unity 2020.2.3f1</li>
+<li>NET 5.0</li>
+</ul>
+</div></div>
+
+<p>
+SymOntoClay's components for Unity is supplied as custom unity package and hosted on Github.
+This is due to current project status as Proof of concept.
+In the future I am going to use Unity asset store.
+</p>
+
+<p>
+SymOntoClay's components for Unity don't require installed CLI for run time.
+But CLI helps to create new projects on DSL.
+</p>
+
+<ol>
+    <li>
+	    Download components for Unity to your computer as <b>.unitypackage</b>.
+		
+        <p>
+        You can download this from:
+        </p>
+
+        <ul>
+            <li>
+	            <a href='https://github.com/Symontoclay/SymOntoClay/releases'>https://github.com/Symontoclay/SymOntoClay/releases</a>
+	        </li>
+	
 	        <li>
-	            Click <b>Environment Variables</b>. 
+	            <a href='https://symontoclay.github.io/downloads/index.html'>https://symontoclay.github.io/downloads/index.html</a>
 	        </li>
-	        <li>
-	            In the section <b>System Variables</b> find the PATH environment variable and select it. Click <b>Edit</b>. If the PATH environment variable does not exist, click <b>New</b>.
-	        </li>
-	        <li>
-	            In the <b>Edit System Variable</b> (or <b>New System Variable</b>) window, specify the value of the PATH environment variable.
-		        Please check: there should be semicolon (<b>;</b>) between added and exising paths in the PATH environment variable!
-	        </li>
-	        <li>
-	            Click <b>OK</b>. 
-	        </li>
-	        <li>
-	            Close all remaining windows by clicking <b>OK</b>.
-	        </li>
-	        <li>
-	            Restart your terminal and use <a href='https://symontoclay.github.io/docs/cli.html'>SymOntoClay's CLI</a>. 
-	        </li>
-        </ol>
-	</li>	
+        </ul>		
+	</li>
+	
+	<li>
+	    Install downloaded package to your project using <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/AssetPackagesImport.html'>Unity's instructions</a>.
+	</li>
 </ol>
 
 </article>
@@ -164,9 +246,12 @@ SymOntoClay requires installed NET 5.0.
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 08 June 2021<br>
+<span style='font-size: 16px;'><a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><i class='fab fa-youtube' title='SymOntoClay on Youtube'></i></a></span><br>
+</br>
+This page was last modified on 05 September 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+<br>&nbsp;
 </div>
 </div>
 </footer>

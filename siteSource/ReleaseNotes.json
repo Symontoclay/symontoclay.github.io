@@ -1,6 +1,6 @@
 [
   {
-    "Date": "2021-07-29T00:00:00+03:00",
+    "Date": "2021-09-05T00:00:00+03:00",
     "Version": "0.3.2",
     "AssetsList": [
       {
@@ -14,7 +14,7 @@
         "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.2/SymOntoClay-CLI-0.3.2-x64.zip"
       }
     ],
-    "Description": "* Fixing issues",
+    "Description": "* Fixing issues\r\n* CLI:\r\n  * new -world\r\n  * new -npc\r\n",
     "IsMarkdown": true
   },
   {

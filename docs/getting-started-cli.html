@@ -42,21 +42,28 @@
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
 <article>
-<h1 class='center-h'>Getting started with CLI</h1>
+<h1 class='center-h' is-processed="true">Getting started with CLI</h1>
+
+<h2 class="center-h" is-processed="true">    Contens
+    <a href='https://symontoclay.github.io/docs/getting-started-cli.html#Contents' name='Contents' class='permalink' title='The link to the section'>
+        <i class='fas fa-link'></i>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/getting-started-cli.html#Install_SymOntoClay_CLI">Install SymOntoClay CLI</a></li><li><a href="https://symontoclay.github.io/docs/getting-started-cli.html#Write_some_code">Write some code</a></li><li><a href="https://symontoclay.github.io/docs/getting-started-cli.html#Write_more_code">Write more code</a></li></ul>
+
+<h2 class='center-h' data-href='Install_SymOntoClay_CLI' is-processed="true">
+Install SymOntoClay CLI
+<a href="https://symontoclay.github.io/docs/getting-started-cli.html#Install_SymOntoClay_CLI" name="Install_SymOntoClay_CLI" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
 <p><a href="https://symontoclay.github.io/docs/getting-started-cli.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
-<h2 class='center-h' data-href='Installing_SymOntoClay'>
-Installing SymOntoClay
-<a href="https://symontoclay.github.io/docs/getting-started-cli.html#Installing_SymOntoClay" name="Installing_SymOntoClay" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
-
 <p>
-<a href='https://symontoclay.github.io/docs/install.html'>Instructions for downloading and installing SymOntoClay</a>.
+    See <a href='https://symontoclay.github.io/docs/install.html#Installing_CLI_from_source_code'>here</a> or <a href='https://symontoclay.github.io/docs/install.html#Installing_CLI_from_archive'>here</a> about installing SymOntoClay CLI.
 </p>
 
-<h2 class='center-h' data-href='Write_some_code'>
+<h2 class='center-h' data-href='Write_some_code' is-processed="true">
 Write some code
 <a href="https://symontoclay.github.io/docs/getting-started-cli.html#Write_some_code" name="Write_some_code" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/getting-started-cli.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
 Get started with "Hello, World".
@@ -64,7 +71,7 @@ Get started with "Hello, World".
 
 <ol>
     <li>
-	    Open a command prompt and cd to your home directory.
+	    Open a command prompt and navigate to your home directory.
 		
 		<p>
 		On Windows:
@@ -80,7 +87,7 @@ Get started with "Hello, World".
 	</li>
 	
 	<li>
-	    Cd to directory this your NPC.
+	    Navigate to directory with new NPC.
 		
 		<div class="console-viewer"><div>cd %HOMEPATH%/Example/Npcs/Example</div></div>
 	</li>
@@ -88,7 +95,7 @@ Get started with "Hello, World".
 	<li>
 	    Write some code in the file Example.soc.
 		
-		<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id3398b813_d4f9_497a_b901_dd9056398ce2">Copy</button></div><script>$('#id3398b813_d4f9_497a_b901_dd9056398ce2').click(function() {navigator.clipboard.writeText(atob('YXBwIEV4YW1wbGUNCnsNCiAgICBvbiBJbml0ID0+DQogICAgew0KICAgICAgICAiSGVsbywgV29ybGQhIiA+PiBAPmxvZzsNCiAgICB9DQp9DQo='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>app</span> Example</div><div class="code-viewer-line">{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-viewer-keyword'>on</span> Init =></div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Helo, World!" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div class="code-viewer-line">}</div></div>
+		<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idfbb7988c_d910_4bb9_9f7c_5187bf675ac1">Copy</button></div><script>$('#idfbb7988c_d910_4bb9_9f7c_5187bf675ac1').click(function() {navigator.clipboard.writeText(atob('YXBwIEV4YW1wbGUNCnsNCiAgICBvbiBJbml0ID0+DQogICAgew0KICAgICAgICAiSGVsbywgV29ybGQhIiA+PiBAPmxvZzsNCiAgICB9DQp9DQo='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>app</span> Example</div><div class="code-viewer-line">{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-viewer-keyword'>on</span> Init =></div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Helo, World!" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div class="code-viewer-line">}</div></div>
 		
 		<p>
             This is your SymOntoClay code. In this code, you:
@@ -111,18 +118,20 @@ Get started with "Hello, World".
 	</li>
 	
 	<li>
-	    Cd to root directory of the worldspace and run It.
+	    Navigate to root directory of the worldspace and run It.
 		
 		<div class="console-viewer"><div>cd %HOMEPATH%/Example</div><div>soc run</div></div>
 	</li>
 </ol>
   
-<h2 class='center-h' data-href='Write_more_code'>
+<h2 class='center-h' data-href='Write_more_code' is-processed="true">
 Write more code
 <a href="https://symontoclay.github.io/docs/getting-started-cli.html#Write_more_code" name="Write_more_code" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
+<p><a href="https://symontoclay.github.io/docs/getting-started-cli.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
 <p>
-<a href='https://symontoclay.github.io/docs/spec.html'>Lern more</a> about SymOntoClay DSL.
+<a href='https://symontoclay.github.io/docs/spec.html'>Learn more</a> about SymOntoClay DSL.
 </p>
 
 <p>
@@ -139,9 +148,12 @@ Try <a href='https://symontoclay.github.io/docs/lng_examples/index.html'>example
 <footer class='container' role='contentinfo'>
 <div class='row justify-content-center'>
 <div class='col col-md-10'>
-This page was last modified on 08 June 2021<br>
+<span style='font-size: 16px;'><a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><i class='fab fa-youtube' title='SymOntoClay on Youtube'></i></a></span><br>
+</br>
+This page was last modified on 05 September 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+<br>&nbsp;
 </div>
 </div>
 </footer>
