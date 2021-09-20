@@ -1784,6 +1784,18 @@ The value is used when parameter is missed in function call.
 You can see examples <a href='/docs/lng_examples/index.html#Function'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='Action_chapter'>
+Action
+</h3>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
 </h2>
@@ -1926,6 +1938,18 @@ app PeaceKeeper
 You can see examples <a href='/docs/lng_examples/index.html#Function'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='operator_overloading_chapter'>
+Operator overloading
+</h3>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
 </h3>
@@ -1983,6 +2007,8 @@ So It is an entrypoint of the App.
 <gr>
 <EBNFCDECL name='InitLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Init" .
 </gr>
+
+<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
@@ -3711,7 +3737,7 @@ Sets an inheritance relationship (&quot;is a&quot;) between two objects.
 </p>
 
 <gr>
-<EBNFCDECL name='UseIsOpExpr' groups='Statement'/> = "use" <TEBNFC name='IsOpExprBody'/> .
+<EBNFCDECL name='UseIsOpStatement' groups='Statement'/> = "use" <TEBNFC name='IsOpExprBody'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3732,6 +3758,78 @@ use exampleClass is not human;
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='AwaitStatement_chapter'>
+"await" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='AwaitStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='CompleteActionStatement_chapter'>
+"complete action" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='CompleteActionStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='BreakActionStatement_chapter'>
+"break action" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='BreakActionStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
