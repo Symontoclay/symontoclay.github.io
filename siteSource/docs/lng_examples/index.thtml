@@ -1005,6 +1005,60 @@ Hi
 End
 </console>
 
+<h2 class='center-h' data-href='Action'>
+Action
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ActionExample_1.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+ 
+        Go();
+
+        'End' >> @>log;
+    }
+}
+
+action Go 
+{
+    on Init =>
+    {
+        'Init Go' >> @>log;
+    }
+
+    op () => 
+    {
+        'Begin Go' >> @>log;
+        'End Go' >> @>log;
+    }
+
+    on {: see(I, $x) :} ($x >> @x) => 
+    {
+        'on Fired' >> @>log;
+        @x >> @>log;
+        complete action;
+    }
+}
+</code>
+
+<complete_me/>
+
+<console>
+Begin
+Begin Go
+End Go
+End
+</console>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>

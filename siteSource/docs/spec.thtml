@@ -399,6 +399,11 @@ But the words can be used as identifiers in other places.
 	<kw name='where'/>
 	<kw name='else'/>
 	<kw name='ensure'/>
+	<kw name='action'/>
+	<kw name='op'/>
+	<kw name='complete'/>
+	<kw name='break'/>
+	<kw name='await'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -1947,6 +1952,30 @@ Operator overloading
 <p>
 
 </p>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='function_call_overloading_chapter'>
+   Function call overloading
+</h4>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='' groups=''/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 

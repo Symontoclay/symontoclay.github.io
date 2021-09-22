@@ -1,0 +1,81 @@
+<h1 class='center-h'>Recommended vocabulary</h1>
+
+<ContentsPlace/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Current_actions'>
+Current actions 
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='walk'>
+Walk
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+act(#`CleanedNPC`, walk)
+
+<complete_me/>
+
+<h3 class='center-h' data-href='stop'>
+Stop
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+act(#`CleanedNPC`, stop)
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Perception'>
+Perception
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='see'>
+See
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+see(I, #`Cleaned Metal Barrel`)
+
+<complete_me/>
+
+<h3 class='center-h' data-href='focus'>
+Focus
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+focus(I, #`Cleaned Metal Barrel`)
+
+<complete_me/>
+
+<h3 class='center-h' data-href='distance'>
+Distance
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+distance(I, #`Cleaned Metal Barrel`, 14.71526)
+
+<complete_me/>
