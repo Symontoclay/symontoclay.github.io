@@ -2827,6 +2827,7 @@ Also operator "is" can compare <EBNFC name='NumericFuzzyExpr'/> and <EBNFC name=
 {: age(#Tom, $x) & distance(#Tom, $y) & $x is $y :}
 {: age(#Tom, $x) & distance(#Tom, $y) & $x is not $y :}
 {: distance(#Tom, $x) & $x is 12 :}
+{: see(I, $x) & $x is barrel & distance(I, $x, $y) :}
 </code>
 
 <p>
