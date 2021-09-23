@@ -1797,10 +1797,52 @@ Action
 <LinkToContent/>
 
 <p>
-
+Action it is an object which can be call as function or method.
 </p>
 
-<complete_me/>
+<p>
+It is similar to <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/Function_object'>C++ functor</a>.
+</p>
+
+<p>
+Action is automatically put into engine of method detection and can be called like usual method or function.
+Action doesn't require any manual initialization for call.
+</p>
+
+<p>
+During Action call the instance of the Action is implicitly created.
+So all calls of Action are isolated from each other.
+</p>
+
+<p>
+Entry point of action is <a href='#Function_call_overloading_chapter'>function call overloading</a>.
+One action can have many entry points with different parameters.
+Leaving entry point stops the action.
+Uncaught on action level <a href='#ErrorStatement_chapter'>Error</a> in entry point crash the action can be caught on code level which called the action.
+</p>
+
+<p>
+The main goal of <b>Actions</b> to provide triggers in context of the doing.
+Action's trigger starts when the Action is called.
+The triggers can check some condition and make additional doing related to main doing of the Action.
+Uncaught error in handlers of child triggers or functions which have been called from handlers of child triggers performs nothing on code level which called the action.
+When the action has been done then their triggers stop their activity and handlers which have been started previously.
+</p>
+
+<p>
+Any time the action can be terminated from handlers of child triggers or functions which have been called from the action's entry points or handlers of child triggers.
+</p>
+
+<p>
+The statement <b><a href='#CompleteActionStatement_chapter'>complete action</a></b> performs termination by the reason of achieving goal of the action.
+</p>
+
+<p>
+The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> performs crash of the action.
+It is similar to <a href='#ErrorStatement_chapter'>Error statement</a>.
+But "Error statement" can crash Action only in action's entry points or functions which have been called from the action's entry points.
+The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> can crash Action in any place of the Action.
+</p>
 
 <gr>
 <EBNFCDECL name='ActionIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
@@ -1809,8 +1851,6 @@ Action
 <EBNFCDECL name='ActionBodyContent'/> = <GEBNFC name='ActionBodyContent' kind='op_and'/> .
 <EBNFCDECL name='ActionAliasDecl'/> = "alias" <EBNFC name='ConceptIdentifier'/> [ { "," <EBNFC name='ConceptIdentifier'/> } ] .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 action Go
@@ -1827,8 +1867,6 @@ action Go
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 action Go is `some base action`
 {
@@ -1843,8 +1881,6 @@ action Go is `some base action`
 	}
 }
 </code>
-
-<complete_me/>
 
 <code data-lng='soc'>
 action `my Go 1` alias `Go`, Run
@@ -1861,8 +1897,6 @@ action `my Go 1` alias `Go`, Run
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 action `my Go 1` alias `Go`, Run is `some base action`
 {
@@ -1878,13 +1912,30 @@ action `my Go 1` alias `Go`, Run is `some base action`
 }
 </code>
 
-<complete_me/>
+<p>
+Sometime entry points of action mustn't do anything.
+In this case the action is only context for Its child triggers.
+Statement <b><a href='#AwaitStatement_chapter'>await</a></b> provides waiting in entry point of the Action for termination the Action by child triggers.
+</p>
+
+<code data-lng='soc'>
+action Go
+{
+    op () => 
+	{
+	    await;
+	}
+		
+	on {: see(I, barrel) :} => 
+	{
+		complete action;
+	}
+}
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -2110,7 +2161,7 @@ In the future I am going to develop other kinds of triggers.
 
 <gr>
 <EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
-<EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
@@ -2151,7 +2202,9 @@ So It is an entrypoint of the App.
 <EBNFCDECL name='InitLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Init" .
 </gr>
 
-<complete_me/>
+<p>
+In chain of inheritance each Init trigger of the chain will be called in order from the farthest item to the root item.
+</p>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.

@@ -20,7 +20,7 @@ Walk
 
 <complete_me/>
 
-act(#`CleanedNPC`, walk)
+act(I, walk)
 
 <complete_me/>
 
@@ -32,7 +32,7 @@ Stop
 
 <complete_me/>
 
-act(#`CleanedNPC`, stop)
+act(I, stop)
 
 <complete_me/>
 
