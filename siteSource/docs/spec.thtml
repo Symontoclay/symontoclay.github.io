@@ -404,6 +404,7 @@ But the words can be used as identifiers in other places.
 	<kw name='complete'/>
 	<kw name='break'/>
 	<kw name='await'/>
+	<kw name='alias'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -700,7 +701,7 @@ You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/
 </p>
 
 <gr>
-<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
+<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
 <EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='ConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
 <EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
@@ -1728,7 +1729,7 @@ Also the type of parameter can be tuple of types.
 </code>
 
 <p>
-Ypu can combine different ways.
+You can combine different ways.
 </p>
 
 <code data-lng='soc'>
@@ -1797,6 +1798,90 @@ Action
 
 <p>
 
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ActionIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ActionDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ActionDecl'/> .
+<EBNFCDECL name='ActionDecl'/> = "action" <EBNFC name='ActionIdentifier'/> [ <EBNFC name='ActionAliasDecl'/> ] [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" . .
+<EBNFCDECL name='ActionBodyContent'/> = <GEBNFC name='ActionBodyContent' kind='op_and'/> .
+<EBNFCDECL name='ActionAliasDecl'/> = "alias" <EBNFC name='ConceptIdentifier'/> [ { "," <EBNFC name='ConceptIdentifier'/> } ] .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+action Go
+{
+    op () => 
+	{
+	    @@host.`go`(to: #@[200]);
+	}
+		
+	on {: see(I, barrel) :} => 
+	{
+		complete action;
+	}
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+action Go is `some base action`
+{
+    op () => 
+	{
+	    @@host.`go`(to: #@[200]);
+	}
+		
+	on {: see(I, barrel) :} => 
+	{
+		complete action;
+	}
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+action `my Go 1` alias `Go`, Run
+{
+    op () => 
+	{
+	    @@host.`go`(to: #@[200]);
+	}
+		
+	on {: see(I, barrel) :} => 
+	{
+		complete action;
+	}
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+action `my Go 1` alias `Go`, Run is `some base action`
+{
+    op () => 
+	{
+	    @@host.`go`(to: #@[200]);
+	}
+		
+	on {: see(I, barrel) :} => 
+	{
+		complete action;
+	}
+}
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
 
 <complete_me/>
@@ -1910,7 +1995,7 @@ Technically a method is an <a href='#Objects_declaration_chapter'><b>object's</b
 </p>
 
 <gr>
-<EBNFCDECL name='MethodDeclSet'  groups='ClassBodyContent;AppBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
+<EBNFCDECL name='MethodDeclSet'  groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
 <EBNFCDECL name='MethodDecl'/> = <EBNFC name='FunctionDecl'/> .
 </gr>
 
@@ -1955,7 +2040,7 @@ Operator overloading
 
 <complete_me/>
 
-<h4 class='center-h' data-href='function_call_overloading_chapter'>
+<h4 class='center-h' data-href='Function_call_overloading_chapter'>
    Function call overloading
 </h4>
 
@@ -1968,16 +2053,45 @@ Operator overloading
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='' groups=''/> =  .
+<EBNFCDECL name='FunCallOverloadingDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FunCallOverloadingDecl'/> .
+<EBNFCDECL name='FunCallOverloadingDecl'/> = "op" "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <complete_me/>
 
 <code data-lng='soc'>
-
+    op () => 
+    {
+        @@host.`go`(to: #@[10]);
+        await;
+    }
 </code>
 
 <complete_me/>
+
+<code data-lng='soc'>
+    op (@param_1: string) => 
+    {
+        @@host.`go`(to: #@[10]);
+        await;
+    }
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+    op (@param_1: string, @param_2: number | string, @param_3: (number | string), @param_4 = 12) => 
+    {
+        @@host.`go`(to: #@[10]);
+        await;
+    }
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Trigger_chapter'>
 Trigger
@@ -1995,7 +2109,7 @@ In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
+<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
 <EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) "=>" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
@@ -2200,7 +2314,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 </p>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
@@ -2258,7 +2372,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
@@ -3802,13 +3916,26 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='AwaitStatement' groups='Statement'/> =  .
+<EBNFCDECL name='AwaitStatement' groups='Statement'/> = "await" .
 </gr>
 
 <complete_me/>
 
 <code data-lng='soc'>
+    op () => 
+    {
+        @@host.`go`(to: #@[10]);
+        await;
+    }
+</code>
 
+<complete_me/>
+
+<code data-lng='soc'>
+    op () => 
+    {
+        await;
+    }
 </code>
 
 <complete_me/>
@@ -3826,14 +3953,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='CompleteActionStatement' groups='Statement'/> =  .
+<EBNFCDECL name='CompleteActionStatement' groups='Statement'/> = "complete" "action" .
 </gr>
 
 <complete_me/>
 
 <code data-lng='soc'>
-
+    on {: see(I, enemy) :} => 
+    {
+        complete action;
+    }
 </code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -3850,14 +3986,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='BreakActionStatement' groups='Statement'/> =  .
+<EBNFCDECL name='BreakActionStatement' groups='Statement'/> = "break" "action" <EBNFC name='FactDecl'/> .
 </gr>
 
 <complete_me/>
 
 <code data-lng='soc'>
-
+    on {: see(I, enemy) :} => 
+    {
+        break action {: see(I, enemy) :};
+    }
 </code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
+</p>
 
 <complete_me/>
 
