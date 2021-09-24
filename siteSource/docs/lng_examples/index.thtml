@@ -1011,7 +1011,21 @@ Action
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more <a href='/docs/spec.html#Action_chapter'>here</a> about Action.
+</p>
+
+<p>
+Read more <a href='/docs/spec.html#Function_call_overloading_chapter'>here</a> about Function call overloading.
+</p>
+
+<p>
+Read more <a href='/docs/spec.html#CompleteActionStatement_chapter'>here</a> about "complete action" statement.
+</p>
+
+<p>
+Read more <a href='/docs/spec.html#BreakActionStatement_chapter'>here</a> about "break action" statement.
+</p>
 
 <code data-lng='soc' example-href='/docs/lng_examples/ActionExample_1.zip'>
 app PeaceKeeper
@@ -1048,32 +1062,12 @@ action Go
 }
 </code>
 
-<complete_me/>
-
 <console>
 Begin
 Begin Go
 End Go
 End
 </console>
-
-<complete_me/>
-
-<p>
-Read more <a href='/docs/spec.html#Action_chapter'>here</a> about Action.
-</p>
-
-<p>
-Read more <a href='/docs/spec.html#Function_call_overloading_chapter'>here</a> about Function call overloading.
-</p>
-
-<p>
-Read more <a href='/docs/spec.html#CompleteActionStatement_chapter'>here</a> about "complete action" statement.
-</p>
-
-<p>
-Read more <a href='/docs/spec.html#BreakActionStatement_chapter'>here</a> about "break action" statement.
-</p>
 
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method

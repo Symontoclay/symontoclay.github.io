@@ -2,15 +2,15 @@
 
 <ContentsPlace/>
 
-<complete_me/>
-
 <h2 class='center-h' data-href='Current_actions'>
 Current actions 
 </h2>
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Provides information about state of an NPC or a thing.
+</p>
 
 <h3 class='center-h' data-href='walk'>
 Walk
@@ -18,11 +18,17 @@ Walk
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+   "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "walk" ")"
+</gr>
 
-act(I, walk)
+<code data-lng='soc'>
+act(#`enemyNPC10345`, walk)
+</code>
 
-<complete_me/>
+<p>
+Describes human sentence: "#`enemyNPC10345` walks".
+</p>
 
 <h3 class='center-h' data-href='stop'>
 Stop
@@ -30,11 +36,17 @@ Stop
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+    "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "stop" ")"
+</gr>
 
-act(I, stop)
+<p>
+Describes human sentence: "#`enemyNPC10345` stops".
+</p>
 
-<complete_me/>
+<code data-lng='soc'>
+act(#`enemyNPC10345`, stop)
+</code>
 
 <h2 class='center-h' data-href='Perception'>
 Perception
@@ -42,7 +54,9 @@ Perception
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Describes the perceived information about world around NPC.
+</p>
 
 <h3 class='center-h' data-href='see'>
 See
@@ -50,11 +64,17 @@ See
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+    "see" "(" "I" "," <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> ")"
+</gr>
 
-see(I, #`Cleaned Metal Barrel`)
+<code data-lng='soc'>
+see(I, #`Barrel543534`)
+</code>
 
-<complete_me/>
+<p>
+Describes human sentence: "I am seeing #`Barrel543534`".
+</p>
 
 <h3 class='center-h' data-href='focus'>
 Focus
@@ -62,11 +82,17 @@ Focus
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+    "focus" "(" "I" "," <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> ")"
+</gr>
 
-focus(I, #`Cleaned Metal Barrel`)
+<code data-lng='soc'>
+focus(I, #`Barrel543534`)
+</code>
 
-<complete_me/>
+<p>
+Describes human sentence: "There is #`Barrel543534` in my focus right now".
+</p>
 
 <h3 class='center-h' data-href='distance'>
 Distance
@@ -74,8 +100,14 @@ Distance
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+    "distance" "(" "I" "," <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," <a href='/docs/spec.html#NumberExpr'>NumberExpr</a> ")"
+</gr>
 
-distance(I, #`Cleaned Metal Barrel`, 14.71526)
+<code data-lng='soc'>
+distance(I, #`Barrel543534`, 14.71526)
+</code>
 
-<complete_me/>
+<p>
+Describes human sentence: "Distance between me and #`Barrel543534` is 14.71526".
+</p>

@@ -1825,7 +1825,7 @@ Uncaught on action level <a href='#ErrorStatement_chapter'>Error</a> in entry po
 The main goal of <b>Actions</b> to provide triggers in context of the doing.
 Action's trigger starts when the Action is called.
 The triggers can check some condition and make additional doing related to main doing of the Action.
-Uncaught error in handlers of child triggers or functions which have been called from handlers of child triggers performs nothing on code level which called the action.
+Uncaught error in handlers of child triggers or functions which have been called from the handlers performs nothing on code level which called the action.
 When the action has been done then their triggers stop their activity and handlers which have been started previously.
 </p>
 
@@ -1834,14 +1834,14 @@ Any time the action can be terminated from handlers of child triggers or functio
 </p>
 
 <p>
-The statement <b><a href='#CompleteActionStatement_chapter'>complete action</a></b> performs termination by the reason of achieving goal of the action.
+The statement <b><a href='#CompleteActionStatement_chapter'>complete action</a></b> terminates action by the reason of achieving goal of the action.
 </p>
 
 <p>
-The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> performs crash of the action.
+The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> breakes the action.
 It is similar to <a href='#ErrorStatement_chapter'>Error statement</a>.
-But "Error statement" can crash Action only in action's entry points or functions which have been called from the action's entry points.
-The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> can crash Action in any place of the Action.
+But "Error statement" can break Action only in action's entry points or functions which have been called from the action's entry points.
+The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> can break Action in any place of the Action.
 </p>
 
 <gr>
@@ -2086,10 +2086,12 @@ Operator overloading
 <LinkToContent/>
 
 <p>
-
+A predefined SymOntoClay operator can be overloaded.
 </p>
 
-<complete_me/>
+<p>
+Now only function call can be overloaded.
+</p>
 
 <h4 class='center-h' data-href='Function_call_overloading_chapter'>
    Function call overloading
@@ -2098,17 +2100,13 @@ Operator overloading
 <LinkToContent/>
 
 <p>
-
+An object can declare an operator () function, which provides function call semantics for the object.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='FunCallOverloadingDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FunCallOverloadingDecl'/> .
 <EBNFCDECL name='FunCallOverloadingDecl'/> = "op" "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     op () => 
@@ -2118,8 +2116,6 @@ Operator overloading
     }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
     op (@param_1: string) => 
     {
@@ -2128,8 +2124,6 @@ Operator overloading
     }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
     op (@param_1: string, @param_2: number | string, @param_3: (number | string), @param_4 = 12) => 
     {
@@ -2137,8 +2131,6 @@ Operator overloading
         await;
     }
 </code>
-
-<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
@@ -3963,16 +3955,12 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <LinkToContent/>
 
 <p>
-
+The <b>await</b> statement suspends evaluation of the enclosing method until the <b><a href='#Action_chapter'>action</a></b> will be <a href='#CompleteActionStatement_chapter'>completed</a> or <a href='#BreakActionStatement_chapter'>broken</a> by handlers of child triggers or functions which have been called from the handlers.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='AwaitStatement' groups='Statement'/> = "await" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     op () => 
@@ -3982,16 +3970,12 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
     }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
     op () => 
     {
         await;
     }
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='CompleteActionStatement_chapter'>
 "complete action" statement
@@ -4000,16 +3984,12 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <LinkToContent/>
 
 <p>
-
+The statement <b>complete action</b> terminates <b><a href='#Action_chapter'>action</a></b> by the reason of achieving goal of the action.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='CompleteActionStatement' groups='Statement'/> = "complete" "action" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     on {: see(I, enemy) :} => 
@@ -4018,13 +3998,9 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
     }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='BreakActionStatement_chapter'>
 "break action" statement
@@ -4033,31 +4009,26 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 <LinkToContent/>
 
 <p>
-
+The statement <b>break action</b> breakes the <b><a href='#Action_chapter'>action</a></b>.
+It is similar to <a href='#ErrorStatement_chapter'>Error statement</a>.
+But "Error statement" can break <b><a href='#Action_chapter'>Action</a></b> only in action's entry points or functions which have been called from the action's entry points.
+The statement <b>break action</b> can break <b><a href='#Action_chapter'>Action</a></b> in any place of the Action.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='BreakActionStatement' groups='Statement'/> = "break" "action" <EBNFC name='FactDecl'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     on {: see(I, enemy) :} => 
     {
         break action {: see(I, enemy) :};
     }
-</code>
-
-<complete_me/>
+</cod
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
-
-<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
