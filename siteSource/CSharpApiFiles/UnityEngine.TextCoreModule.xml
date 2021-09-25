@@ -311,6 +311,22 @@ The FontEngine is also used to raster the visual representation of characters kn
         <para>Returns the FaceInfo of the currently loaded typeface.</para>
       </returns>
     </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.GetFontFaces">
+      <summary>
+        <para>Gets the font faces and styles for the currently loaded font.</para>
+      </summary>
+      <returns>
+        <para>An array that contains the names of the font faces and styles.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.GetSystemFontNames">
+      <summary>
+        <para>Gets the family names and styles of the system fonts.</para>
+      </summary>
+      <returns>
+        <para>The names and styles of the system fonts.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.InitializeFontEngine">
       <summary>
         <para>Initialize the Font Engine and required resources.</para>
@@ -325,8 +341,11 @@ The FontEngine is also used to raster the visual representation of characters kn
       </summary>
       <param name="filePath">The path of the source font file relative to the project.</param>
       <param name="pointSize">The point size used to scale the font face.</param>
-      <param name="sourceFontFile">An array that contains the font file.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
       <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
       <returns>
         <para>A value of zero (0) if the font face was loaded successfully.</para>
       </returns>
@@ -337,8 +356,26 @@ The FontEngine is also used to raster the visual representation of characters kn
       </summary>
       <param name="filePath">The path of the source font file relative to the project.</param>
       <param name="pointSize">The point size used to scale the font face.</param>
-      <param name="sourceFontFile">An array that contains the font file.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
       <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
+      <returns>
+        <para>A value of zero (0) if the font face was loaded successfully.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(UnityEngine.Font,System.Int32,System.Int32)">
+      <summary>
+        <para>Load a source font file.</para>
+      </summary>
+      <param name="filePath">The path of the source font file relative to the project.</param>
+      <param name="pointSize">The point size used to scale the font face.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
+      <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
       <returns>
         <para>A value of zero (0) if the font face was loaded successfully.</para>
       </returns>
@@ -349,8 +386,11 @@ The FontEngine is also used to raster the visual representation of characters kn
       </summary>
       <param name="filePath">The path of the source font file relative to the project.</param>
       <param name="pointSize">The point size used to scale the font face.</param>
-      <param name="sourceFontFile">An array that contains the font file.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
       <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
       <returns>
         <para>A value of zero (0) if the font face was loaded successfully.</para>
       </returns>
@@ -361,8 +401,26 @@ The FontEngine is also used to raster the visual representation of characters kn
       </summary>
       <param name="filePath">The path of the source font file relative to the project.</param>
       <param name="pointSize">The point size used to scale the font face.</param>
-      <param name="sourceFontFile">An array that contains the font file.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
       <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
+      <returns>
+        <para>A value of zero (0) if the font face was loaded successfully.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.Int32,System.Int32)">
+      <summary>
+        <para>Load a source font file.</para>
+      </summary>
+      <param name="filePath">The path of the source font file relative to the project.</param>
+      <param name="pointSize">The point size used to scale the font face.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
+      <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
       <returns>
         <para>A value of zero (0) if the font face was loaded successfully.</para>
       </returns>
@@ -373,8 +431,11 @@ The FontEngine is also used to raster the visual representation of characters kn
       </summary>
       <param name="filePath">The path of the source font file relative to the project.</param>
       <param name="pointSize">The point size used to scale the font face.</param>
-      <param name="sourceFontFile">An array that contains the font file.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
       <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
       <returns>
         <para>A value of zero (0) if the font face was loaded successfully.</para>
       </returns>
@@ -385,8 +446,56 @@ The FontEngine is also used to raster the visual representation of characters kn
       </summary>
       <param name="filePath">The path of the source font file relative to the project.</param>
       <param name="pointSize">The point size used to scale the font face.</param>
-      <param name="sourceFontFile">An array that contains the font file.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
       <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
+      <returns>
+        <para>A value of zero (0) if the font face was loaded successfully.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.Byte[],System.Int32,System.Int32)">
+      <summary>
+        <para>Load a source font file.</para>
+      </summary>
+      <param name="filePath">The path of the source font file relative to the project.</param>
+      <param name="pointSize">The point size used to scale the font face.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
+      <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
+      <returns>
+        <para>A value of zero (0) if the font face was loaded successfully.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.String)">
+      <summary>
+        <para>Load a source font file.</para>
+      </summary>
+      <param name="filePath">The path of the source font file relative to the project.</param>
+      <param name="pointSize">The point size used to scale the font face.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
+      <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
+      <returns>
+        <para>A value of zero (0) if the font face was loaded successfully.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.LoadFontFace(System.String,System.String,System.Int32)">
+      <summary>
+        <para>Load a source font file.</para>
+      </summary>
+      <param name="filePath">The path of the source font file relative to the project.</param>
+      <param name="pointSize">The point size used to scale the font face.</param>
+      <param name="sourceFontFile">The byte array that contains the source font file.</param>
+      <param name="font">The font to load the data from. The Unity font must be set to Dynamic mode with Include Font Data selected.</param>
+      <param name="faceIndex">The face index of the font face to load. When the font file is a TrueType collection (.TTC), this specifies the face index of the font face to load. If the font file is a TrueType Font (.TTF) or OpenType Font (.OTF) file, the face index is always zero (0).</param>
+      <param name="familyName">The family name of the font face to load.</param>
+      <param name="styleName">The style name of the font face to load.</param>
       <returns>
         <para>A value of zero (0) if the font face was loaded successfully.</para>
       </returns>
@@ -430,6 +539,22 @@ The FontEngine is also used to raster the visual representation of characters kn
       <param name="unicode">The Unicode value of the character whose glyph should be loaded.</param>
       <returns>
         <para>Returns true if a glyph exists for the given unicode value. Otherwise returns false.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.UnloadAllFontFaces">
+      <summary>
+        <para>Unloads all currently loaded font faces and removes them from the cache.</para>
+      </summary>
+      <returns>
+        <para>A value of zero (0) if the font faces were successfully unloaded and removed from the cache.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.UnloadFontFace">
+      <summary>
+        <para>Unloads current font face and removes it from the cache.</para>
+      </summary>
+      <returns>
+        <para>A value of zero (0) if the font face was successfully unloaded and removed from the cache.</para>
       </returns>
     </member>
     <member name="T:UnityEngine.TextCore.LowLevel.FontEngineError">

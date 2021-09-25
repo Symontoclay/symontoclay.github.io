@@ -14,6 +14,11 @@
         <para>Get the Analytics config endpoint.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Analytics.Analytics.dashboardUrl">
+      <summary>
+        <para>Get the Analytics dashboard endpoint.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Analytics.Analytics.deviceStatsEnabled">
       <summary>
         <para>Controls whether the sending of device stats at runtime is enabled.</para>

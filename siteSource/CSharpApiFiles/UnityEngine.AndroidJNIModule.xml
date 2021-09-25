@@ -4,9 +4,290 @@
     <assembly>
       <name>UnityEngine.AndroidJNIModule</name>
     </assembly>
+    <member name="T:UnityEngine.Android.AndroidAssetPackError">
+      <summary>
+        <para>Values that indicate the type of Android asset pack error when the status is either AndroidAssetPackStatus.Failed or AndroidAssetPackStatus.Unknown.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.AccessDenied">
+      <summary>
+        <para>Indicates that the application does not have permission to download asset packs under the current device circumstances.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.ApiNotAvailable">
+      <summary>
+        <para>Indicates that the Asset Delivery API is not available.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.AppNotOwned">
+      <summary>
+        <para>Indicates that the end user does not own the application on the device.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.AppUnavailable">
+      <summary>
+        <para>Indicates that this application is unavailable in the Google's Play Store.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.DownloadNotFound">
+      <summary>
+        <para>Indicates that the requested download is not found.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.InsufficientStorage">
+      <summary>
+        <para>Indicates that there is not enough storage space on the device to download the Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.InternalError">
+      <summary>
+        <para>Indicates that unknown error occured while downloading an asset pack.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.InvalidRequest">
+      <summary>
+        <para>Indicates that the request was invalid.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.NetworkError">
+      <summary>
+        <para>Indicates that the Android asset pack is not accessible because there was an error related to the network connection.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.NetworkUnrestricted">
+      <summary>
+        <para>Indicates that the app requested to use mobile data while there were no Android asset packs waiting for WiFi.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.NoError">
+      <summary>
+        <para>Indicates that there is no error.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.PackUnavailable">
+      <summary>
+        <para>Indicates that the requested Android asset pack is not available in the Google Play Store.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackError.PlayStoreNotFound">
+      <summary>
+        <para>Indicates that the device does not have the Play Store application installed or has an unofficial version.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Android.AndroidAssetPackInfo">
+      <summary>
+        <para>Represents the download progress of a single Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackInfo.bytesDownloaded">
+      <summary>
+        <para>The downloaded size of the Android asset pack in bytes.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackInfo.error">
+      <summary>
+        <para>Indicates an error which the device encountered when downloading the Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackInfo.name">
+      <summary>
+        <para>The name of the Android asset pack that the device is downloading.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackInfo.size">
+      <summary>
+        <para>The total size of the Android asset pack in bytes.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackInfo.status">
+      <summary>
+        <para>The status of the Android asset pack that the device is downloading.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackInfo.transferProgress">
+      <summary>
+        <para>The transfering progress of the downloaded Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Android.AndroidAssetPacks">
+      <summary>
+        <para>Provides methods for handling Android asset packs.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPacks.coreUnityAssetPacksDownloaded">
+      <summary>
+        <para>Checks if all core Unity asset packs are downloaded.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.CancelAssetPackDownload(System.String[])">
+      <summary>
+        <para>Cancels Android asset pack downloads.</para>
+      </summary>
+      <param name="assetPackNames">The array of names of the Android asset packs to cancel the download for.</param>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.DownloadAssetPackAsync(System.String[])">
+      <summary>
+        <para>Downloads Android asset packs.</para>
+      </summary>
+      <param name="assetPackNames">The array of names of Android asset packs to download.</param>
+      <returns>
+        <para>Returns an object that represents the download operation. If you yield this object inside a coroutine, the coroutine pauses until the operation is complete.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.DownloadAssetPackAsync(System.String[],System.Action`1&lt;UnityEngine.Android.AndroidAssetPackInfo&gt;)">
+      <summary>
+        <para>Downloads Android asset packs.</para>
+      </summary>
+      <param name="assetPackNames">The array of names of Android asset packs to download.</param>
+      <param name="callback">The callback method to inform about download progress. It gets called multiple times for each asset pack during its download. The callback method must have a parameter of AndroidAssetPackInfo type.
+The default value is null.</param>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.GetAssetPackPath(System.String)">
+      <summary>
+        <para>Gets the full path to the location where the device stores the assets for the Android asset pack.</para>
+      </summary>
+      <param name="assetPackName">The name of the Android asset pack to get path.</param>
+      <returns>
+        <para>Returns the full path to the location where the device stores the assets for the Android asset pack. If the asset pack you specify is not on the device, or if it does not use the fast-follow or on-demand delivery type, this returns an empty string.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.GetAssetPackStateAsync(System.String[])">
+      <summary>
+        <para>Queries the state of Android asset packs.</para>
+      </summary>
+      <param name="assetPackNames">The array of names of the Android asset packs to query the state of.</param>
+      <returns>
+        <para>Returns an object that represents the query operation. If you yield this object inside a coroutine, the coroutine pauses until the operation is complete.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.GetAssetPackStateAsync(System.String[],System.Action`2&lt;System.UInt64,UnityEngine.Android.AndroidAssetPackState[]&gt;)">
+      <summary>
+        <para>Queries the state of Android asset packs.</para>
+      </summary>
+      <param name="assetPackNames">The array of names of the Android asset packs to query the state of.</param>
+      <param name="callback">The callback method to get the result. Unity raises this callback once when the query is complete and the callback receives the state of queried Android asset packs. The callback method must have two parameters:
+
+* A ulong type parameter which indicates the total size of the queried asset packs.
+* An array of AndroidAssetPackState which contains the state of each queried asset pack.
+
+</param>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.GetCoreUnityAssetPackNames">
+      <summary>
+        <para>Gets the name of every core Unity asset pack built for this application that use either the fast-follow or on-demand delivery type.</para>
+      </summary>
+      <returns>
+        <para>Returns an array of asset pack names for core Unity asset packs with the fast-follow or on-demand delivery type. If Unity did not create any core asset packs for this application with previously mentioned delivery types, or if the PlayCore plugin is missing, this returns an empty array.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.RemoveAssetPack(System.String)">
+      <summary>
+        <para>Removes Android asset pack.</para>
+      </summary>
+      <param name="assetPackName">The name of the Android asset pack to remove.</param>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.RequestToUseMobileDataAsync">
+      <summary>
+        <para>Requests to use mobile data to download Android asset packs.</para>
+      </summary>
+      <returns>
+        <para>Returns an object that represents the request operation. If you yield this object inside a coroutine, the coroutine pauses until the operation is complete.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Android.AndroidAssetPacks.RequestToUseMobileDataAsync(System.Action`1&lt;UnityEngine.Android.AndroidAssetPackUseMobileDataRequestResult&gt;)">
+      <summary>
+        <para>Requests to use mobile data to download Android asset packs.</para>
+      </summary>
+      <param name="callback">The callback method to get the result. The callback method must have an AndroidAssetPackUseMobileDataRequestResult parameter. This contains the value that indicates the end user's choice. The application raises this callback a single time after the end user submits their decision.</param>
+    </member>
+    <member name="T:UnityEngine.Android.AndroidAssetPackState">
+      <summary>
+        <para>Represents the state of a single Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackState.error">
+      <summary>
+        <para>Indicates an error code that describes what happened when querying the Android asset pack state.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackState.name">
+      <summary>
+        <para>The name of the Android asset pack the status query is for.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackState.status">
+      <summary>
+        <para>The status of the Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Android.AndroidAssetPackStatus">
+      <summary>
+        <para>Values that indicate the status of an Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Canceled">
+      <summary>
+        <para>Indicates that the Android asset pack download is canceled.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Completed">
+      <summary>
+        <para>Indicates that the device has downloaded the Android asset pack and the asset pack is available to the application.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Downloading">
+      <summary>
+        <para>Indicates that the device is downloading the Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Failed">
+      <summary>
+        <para>Indicates that the device failed to download the Android asset pack.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.NotInstalled">
+      <summary>
+        <para>Indicates that the Android asset pack is not installed.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Pending">
+      <summary>
+        <para>Indicates that the Android asset pack status should soon change.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Transferring">
+      <summary>
+        <para>Indicates that the device has downloaded the Android asset pack and is unpacking the asset pack to its final location.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.Unknown">
+      <summary>
+        <para>Indicates that the Android asset pack is not available for the application.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidAssetPackStatus.WaitingForWifi">
+      <summary>
+        <para>Indicates that the device has paused the Android asset pack download until it connects to the WiFi network.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Android.AndroidAssetPackUseMobileDataRequestResult">
+      <summary>
+        <para>Represents the choice of an end user that indicates if your application can use mobile data to download Android asset packs.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidAssetPackUseMobileDataRequestResult.allowed">
+      <summary>
+        <para>Indicates if mobile data can be used to download Android asset packs.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.Android.AndroidDevice">
       <summary>
         <para>Interface into Android specific functionality.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.AndroidDevice.hardwareType">
+      <summary>
+        <para>When running on a Chrome OS device, hardwareType is set to AndroidHardwareType.ChromeOS. It is set to AndroidHardwareType.Generic in all other cases.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Android.AndroidDevice.SetSustainedPerformanceMode(System.Boolean)">
@@ -14,6 +295,76 @@
         <para>Set sustained performance mode. When enabled, sustained performance mode is intended to provide a consistent level of performance for a prolonged amount of time.</para>
       </summary>
       <param name="enabled"></param>
+    </member>
+    <member name="T:UnityEngine.Android.AndroidHardwareType">
+      <summary>
+        <para>AndroidHardwareType describes the type of Android device on which the app is running.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidHardwareType.ChromeOS">
+      <summary>
+        <para>ChromeOS devices are capable of running Android apps and typically have a laptop form factor.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Android.AndroidHardwareType.Generic">
+      <summary>
+        <para>The Generic category includes all other Android devices.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Android.DownloadAssetPackAsyncOperation">
+      <summary>
+        <para>Represents an asynchronous Android asset pack download operation. AndroidAssetPacks.DownloadAssetPackAsync returns an instance of this class.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.DownloadAssetPackAsyncOperation.downloadedAssetPacks">
+      <summary>
+        <para>Gets the names of Android asset packs downloaded by this operation.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.DownloadAssetPackAsyncOperation.downloadFailedAssetPacks">
+      <summary>
+        <para>Gets the names of Android asset packs that failed to download.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.DownloadAssetPackAsyncOperation.isDone">
+      <summary>
+        <para>Checks if the operation is finished.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.DownloadAssetPackAsyncOperation.keepWaiting">
+      <summary>
+        <para>Checks if the operation is still running.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.DownloadAssetPackAsyncOperation.progress">
+      <summary>
+        <para>Gets the progress of the operation.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Android.GetAssetPackStateAsyncOperation">
+      <summary>
+        <para>Represents an asynchronous Android asset pack state request operation. AndroidAssetPacks.GetAssetPackStateAsync returns an instance of this class.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.GetAssetPackStateAsyncOperation.isDone">
+      <summary>
+        <para>Checks if the operation is finished.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.GetAssetPackStateAsyncOperation.keepWaiting">
+      <summary>
+        <para>Checks if the operation is still running.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.GetAssetPackStateAsyncOperation.size">
+      <summary>
+        <para>Gets the total size in bytes of all Android asset packs that had their status checked by this operation.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.GetAssetPackStateAsyncOperation.states">
+      <summary>
+        <para>Gets the states of all Android asset packs that had their status checked by this operation.</para>
+      </summary>
     </member>
     <member name="T:UnityEngine.Android.Permission">
       <summary>
@@ -109,6 +460,26 @@
         <para>Executed when user chooses Allow when requesting permission.</para>
       </summary>
       <param name="value"></param>
+    </member>
+    <member name="T:UnityEngine.Android.RequestToUseMobileDataAsyncOperation">
+      <summary>
+        <para>Represents an asynchronous operation that requests to use mobile data to download Android asset packs.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.RequestToUseMobileDataAsyncOperation.isDone">
+      <summary>
+        <para>Checks if the operation is finished.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.RequestToUseMobileDataAsyncOperation.keepWaiting">
+      <summary>
+        <para>Checks if the operation is still running.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Android.RequestToUseMobileDataAsyncOperation.result">
+      <summary>
+        <para>Indicates whether the end user allowed the application to use mobile data to download Android asset packs.</para>
+      </summary>
     </member>
     <member name="T:UnityEngine.AndroidJavaClass">
       <summary>

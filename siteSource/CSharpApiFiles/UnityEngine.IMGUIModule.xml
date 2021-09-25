@@ -377,7 +377,7 @@
     </member>
     <member name="P:UnityEngine.GUI.color">
       <summary>
-        <para>Global tinting color for the GUI.</para>
+        <para>Applies a global tint to the GUI. The tint affects backgrounds and text colors.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.GUI.contentColor">

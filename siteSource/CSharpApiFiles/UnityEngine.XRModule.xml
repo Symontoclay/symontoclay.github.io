@@ -357,7 +357,7 @@
     </member>
     <member name="M:UnityEngine.XR.Eyes.TryGetFixationPoint(UnityEngine.Vector3&amp;)">
       <summary>
-        <para>Gets the point represents the convergence of the line of site for both eyes.</para>
+        <para>Gets the point represents the convergence of the line of sight for both eyes.</para>
       </summary>
       <param name="fixationPoint">A Vector3 struct that is filled in with the fixation position.</param>
       <returns>
@@ -997,7 +997,7 @@
     </member>
     <member name="T:UnityEngine.XR.InputTracking">
       <summary>
-        <para>A collection of methods and properties for interacting with the XR tracking system.</para>
+        <para>A collection of methods and properties for accessing XR input devices by their XR Node representation.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.XR.InputTracking.disablePositionalTracking">
@@ -1063,7 +1063,7 @@ Gets the rotation of a specific node.</para>
         <para>The name of the tracked node if the given 64-bit identifier maps to a currently tracked node. Empty string otherwise.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.XR.InputTracking.GetNodeStates">
+    <member name="M:UnityEngine.XR.InputTracking.GetNodeStates(System.Collections.Generic.List`1&lt;UnityEngine.XR.XRNodeState&gt;)">
       <summary>
         <para>Describes all currently connected XRNodes and provides available tracking states for each.</para>
       </summary>
@@ -1474,6 +1474,33 @@ Gets the rotation of a specific node.</para>
       <returns>
         <para>The render texture associated with that render pass, or null if not found.</para>
       </returns>
+    </member>
+    <member name="T:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode">
+      <summary>
+        <para>Type of node to be late latched.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode.Head">
+      <summary>
+        <para>Head node type for late latching. This represents the camera node in the pose hierarchy.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode.LeftHand">
+      <summary>
+        <para>Left hand node type for late latching. This represents the left hand anchor node in the pose hierarchy.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.XRDisplaySubsystem.LateLatchNode.RightHand">
+      <summary>
+        <para>Right hand node type for late latching. This represents the right hand anchor node in the pose hierarchy.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.XR.XRDisplaySubsystem.MarkTransformLateLatched(UnityEngine.Transform,UnityEngine.XR.XRDisplaySubsystem/LateLatchNode)">
+      <summary>
+        <para>This marks a given GameObject's transform to be late latched in the next frame. Once marked for late latching, the GameObject transform and its descendants will be updated with the latest VR pose updates before rendering is submitted to the GPU.</para>
+      </summary>
+      <param name="transform">The transform of the GameObject to be late latched.</param>
+      <param name="nodeType">The late latch node type to be associated with the transform.</param>
     </member>
     <member name="T:UnityEngine.XR.XRDisplaySubsystem.ReprojectionMode">
       <summary>

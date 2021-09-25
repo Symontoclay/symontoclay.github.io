@@ -349,6 +349,22 @@
         <para>Script interface for the VelocityOverLifetimeModule of a Particle System.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.ParticleSystem.AllocateAxisOfRotationAttribute">
+      <summary>
+        <para>Ensures that the ParticleSystemJobs.ParticleSystemJobData._axisOfRotations|axisOfRotations particle attribute array is allocated.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.AllocateCustomDataAttribute(UnityEngine.ParticleSystemCustomData)">
+      <summary>
+        <para>Ensures that the ParticleSystemJobs.ParticleSystemJobData.customData1|customData1 and ParticleSystemJobs.ParticleSystemJobData.customData1|customData2 particle attribute arrays are allocated.</para>
+      </summary>
+      <param name="stream">The custom data stream to allocate.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.AllocateMeshIndexAttribute">
+      <summary>
+        <para>Ensures that the ParticleSystemJobs.ParticleSystemJobData._meshIndices|meshIndices particle attribute array is allocated.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.ParticleSystem.Burst">
       <summary>
         <para>Script interface for a Burst.</para>
@@ -1217,7 +1233,7 @@
     </member>
     <member name="M:UnityEngine.ParticleSystem.GetPlaybackState">
       <summary>
-        <para>Returns all the data relating to the current internal state of the Particle System.</para>
+        <para>Returns all the data that relates to the current internal state of the Particle System.</para>
       </summary>
       <returns>
         <para>The current internal state of the Particle System.</para>
@@ -1467,6 +1483,11 @@
     <member name="P:UnityEngine.ParticleSystem.MainModule.duration">
       <summary>
         <para>The duration of the Particle System in seconds.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ParticleSystem.MainModule.emitterVelocity">
+      <summary>
+        <para>The current Particle System velocity.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ParticleSystem.MainModule.emitterVelocityMode">
@@ -3627,6 +3648,11 @@
         <para>Control how a Particle System calculates its velocity.</para>
       </summary>
     </member>
+    <member name="F:UnityEngine.ParticleSystemEmitterVelocityMode.Custom">
+      <summary>
+        <para>When the Particle System calculates its velocity, it instead uses the custom value set in ParticleSystem.MainModule.emitterVelocity.</para>
+      </summary>
+    </member>
     <member name="F:UnityEngine.ParticleSystemEmitterVelocityMode.Rigidbody">
       <summary>
         <para>Calculate the Particle System velocity by using a Rigidbody or Rigidbody2D component, if one exists on the GameObject.</para>
@@ -3868,6 +3894,11 @@
         <para>Specifies how long each particle has been alive.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.ParticleSystemJobs.ParticleSystemJobData.axisOfRotations">
+      <summary>
+        <para>Specifies an axis of rotation for each particles, in radians.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.ParticleSystemJobs.ParticleSystemJobData.count">
       <summary>
         <para>Specifies the number of particles alive in the Particle System.</para>
@@ -3886,6 +3917,11 @@
     <member name="P:UnityEngine.ParticleSystemJobs.ParticleSystemJobData.inverseStartLifetimes">
       <summary>
         <para>The lifetime of each particle, stored as 1.0f / lifetime.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ParticleSystemJobs.ParticleSystemJobData.meshIndices">
+      <summary>
+        <para>Specifies a mesh index for each particle.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ParticleSystemJobs.ParticleSystemJobData.positions">

@@ -139,6 +139,14 @@
       <param name="field">VisualElement field editing a property.</param>
       <param name="property">The SerializedProperty to bind.</param>
     </member>
+    <member name="M:UnityEditor.UIElements.BindingExtensions.TrackPropertyValue(UnityEngine.UIElements.VisualElement,UnityEditor.SerializedProperty,System.Action`1&lt;UnityEditor.SerializedProperty&gt;)">
+      <summary>
+        <para>Checks the property values for changes every frame and invokes a callback when the property value changes. If no callback is specified, a SerializedPropertyChangeEvent is sent to the target element.</para>
+      </summary>
+      <param name="element">VisualElement tracking a property.</param>
+      <param name="property">SerializedProperty to track.</param>
+      <param name="callback">Invoked when the tracked SerializedProperty value changes.</param>
+    </member>
     <member name="M:UnityEditor.UIElements.BindingExtensions.Unbind(UnityEngine.UIElements.VisualElement)">
       <summary>
         <para>Disconnects all properties bound to fields in the element's hierarchy.</para>
@@ -817,6 +825,78 @@
         <para>Constructor.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.UIElements.Hash128Field">
+      <summary>
+        <para>Creates a text field for entering a Hash128 value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Hash128Field.inputUssClassName">
+      <summary>
+        <para>The USS class name for input elements in elements of this type.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Hash128Field.labelUssClassName">
+      <summary>
+        <para>The USS class name for labels in elements of this type.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.UIElements.Hash128Field.ussClassName">
+      <summary>
+        <para>The USS class name for elements of this type.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.Hash128Field.value">
+      <summary>
+        <para>The value of the field.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.#ctor">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
+      <param name="maxLength">The maximum number of characters the field can accept.</param>
+      <param name="label">The label of the field.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.#ctor(System.Int32)">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
+      <param name="maxLength">The maximum number of characters the field can accept.</param>
+      <param name="label">The label of the field.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.#ctor(System.String,System.Int32)">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
+      <param name="maxLength">The maximum number of characters the field can accept.</param>
+      <param name="label">The label of the field.</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.SetValueWithoutNotify(UnityEngine.Hash128)">
+      <summary>
+        <para>Sets the value of the field, but does not notify the rest of the hierarchy of the change.</para>
+      </summary>
+      <param name="newValue">The new value to set.</param>
+    </member>
+    <member name="T:UnityEditor.UIElements.Hash128Field.UxmlFactory">
+      <summary>
+        <para>Instantiates a Hash128Field using the data from a UXML file.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.UxmlFactory.#ctor">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.UIElements.Hash128Field.UxmlTraits">
+      <summary>
+        <para>Defines UxmlTraits for the Hash128Field.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.Hash128Field.UxmlTraits.#ctor">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.UIElements.InspectorElement">
       <summary>
         <para>Create a VisualElement inspector from a SerializedObject.</para>
@@ -902,6 +982,14 @@
       </summary>
       <param name="obj">Create a SerializedObject from given obj and automatically Bind() to it.</param>
       <param name="mode">Determine whether to use normal Inspector generation or force a specific type of inspector (ie. force the default inspector).</param>
+    </member>
+    <member name="M:UnityEditor.UIElements.InspectorElement.FillDefaultInspector(UnityEngine.UIElements.VisualElement,UnityEditor.SerializedObject,UnityEditor.Editor)">
+      <summary>
+        <para>Adds default inspector property fields under a container VisualElement.</para>
+      </summary>
+      <param name="container">The parent VisualElement.</param>
+      <param name="serializedObject">The SerializedObject to inspect.</param>
+      <param name="editor">The editor currently used.</param>
     </member>
     <member name="T:UnityEditor.UIElements.InspectorElement.UxmlFactory">
       <summary>
@@ -1444,51 +1532,6 @@
       <param name="formatListItemCallback"></param>
       <param name="defaultIndex"></param>
     </member>
-    <member name="T:UnityEditor.UIElements.ProgressBar">
-      <summary>
-        <para>ProgressBar control using UIElements. Supports binding to float and int values.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.UIElements.ProgressBar.backgroundUssClassName">
-      <summary>
-        <para>Uss Class Name used to style the background of the ProgressBar.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.UIElements.ProgressBar.containerUssClassName">
-      <summary>
-        <para>Uss Class Name used to style the container of the ProgressBar.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.UIElements.ProgressBar.progressUssClassName">
-      <summary>
-        <para>Uss Class Name used to style the progress bar of the ProgressBar.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.UIElements.ProgressBar.title">
-      <summary>
-        <para>Sets the title of the ProgressBar which will be displayed in the center of the control.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.UIElements.ProgressBar.titleContainerUssClassName">
-      <summary>
-        <para>Uss Class Name used to style the container of the title of the ProgressBar.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.UIElements.ProgressBar.titleUssClassName">
-      <summary>
-        <para>Uss Class Name used to style the title of the ProgressBar.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.UIElements.ProgressBar.ussClassName">
-      <summary>
-        <para>Uss Class Name used to style the ProgressBar.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.UIElements.ProgressBar.value">
-      <summary>
-        <para>Bindable float value that can be bound to int and float properties. Setting this will change the current displayed progress of the ProgressBar.</para>
-      </summary>
-    </member>
     <member name="T:UnityEditor.UIElements.PropertyField">
       <summary>
         <para>A SerializedProperty wrapper VisualElement that, on Bind(), will generate the correct field elements with the correct bindingPaths.</para>
@@ -1826,15 +1869,6 @@
         <para>Indicates the user stopped the mouse dragging for text selection.</para>
       </summary>
     </member>
-    <member name="M:UnityEditor.UIElements.TextValueField_1.StringToValue(System.String)">
-      <summary>
-        <para>Converts a string to a value type.</para>
-      </summary>
-      <param name="str">The string to convert.</param>
-      <returns>
-        <para>The value parsed from the string.</para>
-      </returns>
-    </member>
     <member name="T:UnityEditor.UIElements.TextValueField`1.TextValueInput">
       <summary>
         <para>This is the inner representation of the Text input.</para>
@@ -1884,15 +1918,6 @@
       <param name="value">Value to convert.</param>
       <returns>
         <para>String representation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.UIElements.TextValueField_1.ValueToString(TValueType)">
-      <summary>
-        <para>Converts the given value to a string.</para>
-      </summary>
-      <param name="value">The value to be converted to string.</param>
-      <returns>
-        <para>The value as a string.</para>
       </returns>
     </member>
     <member name="T:UnityEditor.UIElements.TextValueFieldTraits`2">

@@ -185,6 +185,11 @@
         <para>Set the Analytics config end point.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.Analytics.AnalyticsSettings.dashboardUrl">
+      <summary>
+        <para>Get the Analytics dashboard endpoint.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.Analytics.AnalyticsSettings.deviceStatsEnabledInBuild">
       <summary>
         <para>Reports whether device stats are enabled at runtime.</para>
@@ -240,7 +245,7 @@
       <summary>
         <para>Implement this function to receive a callback after the Android Gradle project is generated and before building begins. It is not called when doing an Internal build.</para>
       </summary>
-      <param name="path">The path to the root of the Gradle project. Note: when exporting the project, this parameter holds the path to the folder specified for export.</param>
+      <param name="path">The path to the root of the Unity library Gradle project. Note: when exporting the project, this parameter holds the path to the Unity library in the folder specified for export.</param>
     </member>
     <member name="T:UnityEditor.AndroidArchitecture">
       <summary>
@@ -266,6 +271,29 @@
       <summary>
         <para>Invalid architecture.</para>
       </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidArchitecture.X86">
+      <summary>
+        <para>32-bit Intel architecture.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidArchitecture.X86_64">
+      <summary>
+        <para>64-bit Intel architecture.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.AndroidAssetPackImporter">
+      <summary>
+        <para>Represents an Android asset pack directory in a project.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.AndroidAssetPackImporter.GetAllImporters">
+      <summary>
+        <para>Gets all Android asset pack importers.</para>
+      </summary>
+      <returns>
+        <para>Returns an array with all Android asset pack importers.</para>
+      </returns>
     </member>
     <member name="T:UnityEditor.AndroidBlitType">
       <summary>
@@ -325,6 +353,26 @@
     <member name="F:UnityEditor.AndroidBuildType.Release">
       <summary>
         <para>Build configuration set to Release for the generated project.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.AndroidCreateSymbols">
+      <summary>
+        <para>Defines the options available for choosing the type of symbol file to create in an Android build.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidCreateSymbols.Debugging">
+      <summary>
+        <para>Create a zip package containing debugging symbols.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidCreateSymbols.Disabled">
+      <summary>
+        <para>Do not create a symbols package.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidCreateSymbols.Public">
+      <summary>
+        <para>Create a zip package containing public symbols.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.AndroidETC2Fallback">
@@ -575,6 +623,26 @@
     <member name="F:UnityEditor.AndroidTargetDevice.FAT">
       <summary>
         <para>All supported architectures.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.AndroidTargetDevices">
+      <summary>
+        <para>This property allows you to specify the devices on which your Android application is allowed to run.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidTargetDevices.AllDevices">
+      <summary>
+        <para>The Android build is allowed to run on all target devices.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidTargetDevices.ChromeOSDevicesOnly">
+      <summary>
+        <para>The Android build is only allowed to run on Chrome OS devices.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AndroidTargetDevices.PhonesTabletsAndTVDevicesOnly">
+      <summary>
+        <para>The Android build is only allowed to run on Android phones, tablets, and TV devices, not on any type of Chrome OS device.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.AnimatedValues.AnimBool">
@@ -985,20 +1053,22 @@
         <para>Parameters are used to communicate between scripting and the controller. They are used to drive transitions and blendtrees for example.</para>
       </summary>
     </member>
-    <member name="M:UnityEditor.Animations.AnimatorController.AddEffectiveStateMachineBehaviour(System.Type,UnityEditor.Animations.AnimatorState,System.Int32)">
-      <summary>
-        <para>Adds a state machine behaviour class of type stateMachineBehaviourType to the AnimatorState for layer layerIndex. This function should be used when you are dealing with synchronized layer and would like to add a state machine behaviour on a synchronized layer. C# Users can use a generic version.</para>
-      </summary>
-      <param name="stateMachineBehaviourType"></param>
-      <param name="state"></param>
-      <param name="layerIndex"></param>
-    </member>
     <member name="M:UnityEditor.Animations.AnimatorController.AddEffectiveStateMachineBehaviour(UnityEditor.Animations.AnimatorState,System.Int32)">
       <summary>
-        <para>Generic version. See the page for more details.</para>
+        <para>Adds a state machine behaviour class of a specific type to the AnimatorState for layer layerIndex.
+This method should be used when you are dealing with synchronized layer and would like to add a state machine behaviour on a synchronized layer.
+Note that there is no corresponding "Remove" method. To remove a state machine behaviour, use Object.Destroy.</para>
       </summary>
-      <param name="state"></param>
-      <param name="layerIndex"></param>
+      <param name="state">The AnimatorState to add the Behaviour to.</param>
+      <param name="layerIndex">The layer index.</param>
+    </member>
+    <member name="M:UnityEditor.Animations.AnimatorController.AddEffectiveStateMachineBehaviour(System.Type,UnityEditor.Animations.AnimatorState,System.Int32)">
+      <summary>
+        <para>The non-generic version of this method.</para>
+      </summary>
+      <param name="stateMachineBehaviourType">The type of state machine behaviour to add.</param>
+      <param name="state">The AnimatorState to add the Behaviour to.</param>
+      <param name="layerIndex">The layer index.</param>
     </member>
     <member name="M:UnityEditor.Animations.AnimatorController.AddLayer(System.String)">
       <summary>
@@ -1373,16 +1443,20 @@ Units is normalized time.</para>
         <para>The Animations.AnimatorStateTransition that was added.</para>
       </returns>
     </member>
-    <member name="M:UnityEditor.Animations.AnimatorState.AddStateMachineBehaviour(System.Type)">
-      <summary>
-        <para>Adds a state machine behaviour class of type stateMachineBehaviourType to the AnimatorState. C# Users can use a generic version.</para>
-      </summary>
-      <param name="stateMachineBehaviourType"></param>
-    </member>
     <member name="M:UnityEditor.Animations.AnimatorState.AddStateMachineBehaviour">
       <summary>
-        <para>Generic version. See the page for more details.</para>
+        <para>Adds a state machine behaviour class of type T to the AnimatorState.
+Note that there is no corresponding "Remove" method. To remove a state machine behaviour, use Object.Destroy.</para>
       </summary>
+      <returns>
+        <para>The type of state machine behaviour to add.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Animations.AnimatorState.AddStateMachineBehaviour(System.Type)">
+      <summary>
+        <para>Non-generic version of this method.</para>
+      </summary>
+      <param name="stateMachineBehaviourType"></param>
     </member>
     <member name="M:UnityEditor.Animations.AnimatorState.AddTransition(UnityEditor.Animations.AnimatorState)">
       <summary>
@@ -1561,16 +1635,17 @@ Units is normalized time.</para>
       <param name="stateMachine">The state machine to add.</param>
       <param name="position">The position of the state machine node.</param>
     </member>
-    <member name="M:UnityEditor.Animations.AnimatorStateMachine.AddStateMachineBehaviour(System.Type)">
-      <summary>
-        <para>Adds a state machine behaviour class of type stateMachineBehaviourType to the AnimatorStateMachine. C# Users can use a generic version.</para>
-      </summary>
-      <param name="stateMachineBehaviourType"></param>
-    </member>
     <member name="M:UnityEditor.Animations.AnimatorStateMachine.AddStateMachineBehaviour">
       <summary>
-        <para>Generic version. See the page for more details.</para>
+        <para>Adds a state machine behaviour class of type T to the AnimatorStateMachine.
+Note that there is no corresponding "Remove" method. To remove a state machine behaviour, use Object.Destroy.</para>
       </summary>
+    </member>
+    <member name="M:UnityEditor.Animations.AnimatorStateMachine.AddStateMachineBehaviour(System.Type)">
+      <summary>
+        <para>A non-generic version of this method.</para>
+      </summary>
+      <param name="stateMachineBehaviourType">The type of state machine behaviour class to add.</param>
     </member>
     <member name="M:UnityEditor.Animations.AnimatorStateMachine.AddStateMachineExitTransition(UnityEditor.Animations.AnimatorStateMachine)">
       <summary>
@@ -2771,6 +2846,12 @@ Transitions with exit times greater than one will be evaluated only once, so the
         <para>An Interface for accessing assets and performing operations on assets.</para>
       </summary>
     </member>
+    <member name="?:UnityEditor.AssetDatabase.cacheServerConnectionChanged(System.Action`1&lt;UnityEditor.CacheServerConnectionChangedParameters&gt;)">
+      <summary>
+        <para>Unity raises this event when Cache Server connection is changed.</para>
+      </summary>
+      <param name="value">Use CacheServerConnectionChangedParameters for this event.</param>
+    </member>
     <member name="?:UnityEditor.AssetDatabase.importPackageCancelled(UnityEditor.AssetDatabase/ImportPackageCallback)">
       <summary>
         <para>Callback raised whenever a package import is cancelled by the user.</para>
@@ -2824,6 +2905,17 @@ Transitions with exit times greater than one will be evaluated only once, so the
         <para>Get the GUID for the asset at path.</para>
       </summary>
       <param name="path">Filesystem path for the asset.</param>
+      <param name="options">Specifies whether this method should return a GUID for recently deleted assets. The default value is AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets.</param>
+      <returns>
+        <para>GUID.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.AssetPathToGUID(System.String,UnityEditor.AssetPathToGUIDOptions)">
+      <summary>
+        <para>Get the GUID for the asset at path.</para>
+      </summary>
+      <param name="path">Filesystem path for the asset.</param>
+      <param name="options">Specifies whether this method should return a GUID for recently deleted assets. The default value is AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets.</param>
       <returns>
         <para>GUID.</para>
       </returns>
@@ -2836,6 +2928,15 @@ Transitions with exit times greater than one will be evaluated only once, so the
       <param name="port">The Port number of the Cache Server.</param>
       <returns>
         <para>Returns true when Editor can connect to the Cache Server. Returns false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.CanOpenAssetInEditor(System.Int32)">
+      <summary>
+        <para>Checks if Unity can open an asset in the Editor.</para>
+      </summary>
+      <param name="instanceID">The instance ID of the asset.</param>
+      <returns>
+        <para>Returns true if Unity can successfully open the asset in the Editor, otherwise returns false.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.CanOpenForEdit(UnityEngine.Object,UnityEditor.StatusQueryOptions)">
@@ -2979,6 +3080,9 @@ Transitions with exit times greater than one will be evaluated only once, so the
       </summary>
       <param name="path">Filesystem path of the source asset.</param>
       <param name="newPath">Filesystem path of the new asset to create.</param>
+      <returns>
+        <para>Returns true if the copy operation is successful or false if part of the process fails.</para>
+      </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.CreateAsset(UnityEngine.Object,System.String)">
       <summary>
@@ -2989,12 +3093,14 @@ Transitions with exit times greater than one will be evaluated only once, so the
     </member>
     <member name="M:UnityEditor.AssetDatabase.CreateFolder(System.String,System.String)">
       <summary>
-        <para>Create a new folder.</para>
+        <para>Creates a new folder, in the specified parent folder.
+
+The parent folder string must start with the "Assets" folder, and all folders within the parent folder string must already exist. For example, when specifying "AssetsParentFolder1Parentfolder2/", the new folder will be created in "ParentFolder2" only if ParentFolder1 and ParentFolder2 already exist.</para>
       </summary>
-      <param name="parentFolder">The name of the parent folder.</param>
+      <param name="parentFolder">The path to the parent folder. Must start with "Assets/".</param>
       <param name="newFolderName">The name of the new folder.</param>
       <returns>
-        <para>The GUID of the newly created folder.</para>
+        <para>The GUID of the newly created folder, if the folder was created successfully. Otherwise returns an empty string.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.DeleteAsset(System.String)">
@@ -3074,7 +3180,7 @@ Transitions with exit times greater than one will be evaluated only once, so the
       <param name="filter">The filter string can contain search data.  See below for details about this string.</param>
       <param name="searchInFolders">The folders where the search will start.</param>
       <returns>
-        <para>Array of matching asset. Note that GUIDs will be returned.</para>
+        <para>Array of matching asset. Note that GUIDs will be returned. If no matching assets were found, returns empty array.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.FindAssets(System.String,System.String[])">
@@ -3084,7 +3190,7 @@ Transitions with exit times greater than one will be evaluated only once, so the
       <param name="filter">The filter string can contain search data.  See below for details about this string.</param>
       <param name="searchInFolders">The folders where the search will start.</param>
       <returns>
-        <para>Array of matching asset. Note that GUIDs will be returned.</para>
+        <para>Array of matching asset. Note that GUIDs will be returned. If no matching assets were found, returns empty array.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.ForceReserializeAssets">
@@ -3369,7 +3475,7 @@ Note: GetDependencies() gets the Assets that are referenced by other Assets. For
       </summary>
       <param name="path">The path to the asset.</param>
       <returns>
-        <para>The path to the .meta text file or empty string if the file does not exist.</para>
+        <para>The path to the .meta text file or an empty string if the file does not exist.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.GetTypeFromPathAndFileID(System.String,System.Int64)">
@@ -3472,6 +3578,14 @@ Note: GetDependencies() gets the Assets that are referenced by other Assets. For
       </summary>
       <returns>
         <para>Returns true when Editor is connected to the Cache Server. Returns false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsDirectoryMonitoringEnabled">
+      <summary>
+        <para>Reports whether Directory Monitoring is enabled.</para>
+      </summary>
+      <returns>
+        <para>Returns true when Directory Monitoring is enabled. Returns false otherwise.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.IsForeignAsset(UnityEngine.Object)">
@@ -3894,6 +4008,20 @@ The "main" Asset is the Asset at the root of a hierarchy (such as a Maya file wh
         <para>Resets the internal cache server connection reconnect timer values. The default delay timer value is 1 second, and the max delay value is 5 minutes. Everytime a connection attempt fails it will double the delay timer value, until a maximum time of the max value.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.AssetDatabase.SaveAssetIfDirty(UnityEngine.Object)">
+      <summary>
+        <para>Writes all unsaved changes to the specified asset to disk.</para>
+      </summary>
+      <param name="obj">The asset object to be saved, if dirty.</param>
+      <param name="guid">The guid of the asset to be saved, if dirty.</param>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.SaveAssetIfDirty(UnityEditor.GUID)">
+      <summary>
+        <para>Writes all unsaved changes to the specified asset to disk.</para>
+      </summary>
+      <param name="obj">The asset object to be saved, if dirty.</param>
+      <param name="guid">The guid of the asset to be saved, if dirty.</param>
+    </member>
     <member name="M:UnityEditor.AssetDatabase.SaveAssets">
       <summary>
         <para>Writes all unsaved asset changes to disk.</para>
@@ -4182,7 +4310,7 @@ either a try..catch block, or a try..finally block as needed.</para>
     </member>
     <member name="P:UnityEditor.AssetImporters.AssetImportContext.selectedBuildTarget">
       <summary>
-        <para>This indicates what platform the import event is targeting.</para>
+        <para>Returns the current build target and creates a dependency on the target platform within a scripted importer.</para>
       </summary>
     </member>
     <member name="M:UnityEditor.AssetImporters.AssetImportContext.AddObjectToAsset(System.String,UnityEngine.Object)">
@@ -4887,6 +5015,21 @@ either a try..catch block, or a try..finally block as needed.</para>
     <member name="F:UnityEditor.AssetMoveResult.FailedMove">
       <summary>
         <para>Tells the internal implementation that the script could not move the assets.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.AssetPathToGUIDOptions">
+      <summary>
+        <para>Asset path to GUID options.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets">
+      <summary>
+        <para>Return a GUID if the asset exists, or has recently been deleted.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.AssetPathToGUIDOptions.OnlyExistingAssets">
+      <summary>
+        <para>Return a GUID only if the asset exists on disk.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.AssetPipelineMode">
@@ -6551,12 +6694,12 @@ Amount of compression. The value roughly corresponds to the ratio between the re
     </member>
     <member name="?:UnityEditor.Build.IPostprocessBuild">
       <summary>
-        <para>Implement this interface to receive a callback after the build is complete.</para>
+        <para>This interface is obsolete. Use Build.IPostprocessBuildWithReport instead.</para>
       </summary>
     </member>
     <member name="M:UnityEditor.Build.IPostprocessBuild.OnPostprocessBuild(UnityEditor.BuildTarget,System.String)">
       <summary>
-        <para>Implement this function to receive a callback after the build is complete.</para>
+        <para>This method is obsolete. Use Build.IPostprocessBuildWithReport.OnPostprocessBuild instead.</para>
       </summary>
       <param name="target"></param>
       <param name="path"></param>
@@ -6574,12 +6717,12 @@ Amount of compression. The value roughly corresponds to the ratio between the re
     </member>
     <member name="?:UnityEditor.Build.IPreprocessBuild">
       <summary>
-        <para>Implement this interface to receive a callback before the build is started.</para>
+        <para>This interface is obsolete. Use Build.IPreprocessBuildWithReport instead.</para>
       </summary>
     </member>
     <member name="M:UnityEditor.Build.IPreprocessBuild.OnPreprocessBuild(UnityEditor.BuildTarget,System.String)">
       <summary>
-        <para>Implement this function to receive a callback before the build is started.</para>
+        <para>This method is obsolete. Use Build.IPreprocessBuildWithReport.OnPreprocessBuild instead.</para>
       </summary>
       <param name="target"></param>
       <param name="path"></param>
@@ -7264,7 +7407,7 @@ Amount of compression. The value roughly corresponds to the ratio between the re
     </member>
     <member name="F:UnityEditor.BuildAssetBundleOptions.UncompressedAssetBundle">
       <summary>
-        <para>Don't compress the data when creating the asset bundle.</para>
+        <para>Don't compress the data when creating the AssetBundle.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.BuildOptions">
@@ -8056,6 +8199,11 @@ In some cases the player directory path can be affected by BuildOptions.Developm
         <para>Microsoft Xbox One target.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.CacheServerConnectionChangedParameters">
+      <summary>
+        <para>Struct used for AssetDatabase.cacheServerConnectionChanged.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.CacheServerMode">
       <summary>
         <para>Selects the cache server configuration mode.</para>
@@ -8098,9 +8246,19 @@ In some cases the player directory path can be affected by BuildOptions.Developm
       </summary>
       <param name="callbackOrder">Order in which separate attributes will be processed.</param>
     </member>
-    <member name="T:UnityEditor.Callbacks.OnOpenAssetAttribute">
+    <member name="T:UnityEditor.Callbacks.OnOpenAssetAttributeMode">
       <summary>
-        <para>Callback attribute for opening an asset in Unity (e.g the callback is fired when double clicking an asset in the Project Browser).</para>
+        <para>Indicates whether OnOpenAssetAttribute decorated method is a validation function that checks if asset opening is handled by Unity or a custom script.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Callbacks.OnOpenAssetAttributeMode.Execute">
+      <summary>
+        <para>Indicates that OnOpenAssetAttribute decorated method is an opening function.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Callbacks.OnOpenAssetAttributeMode.Validate">
+      <summary>
+        <para>Indicates that OnOpenAssetAttribute decorated method is a validation function.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.Callbacks.PostProcessBuildAttribute">
@@ -9365,8 +9523,15 @@ See Also: AssemblyDefinitionPlatform.</para>
     </member>
     <member name="M:UnityEditor.Compilation.CompilationPipeline.RequestScriptCompilation">
       <summary>
-        <para>Use this function to make the Unity Editor recompile every Script in your Project asynchronously. When the compilation finishes, the Unity Editor then loads the compiled assemblies.</para>
+        <para>Allows you to request that the Editor recompile scripts in the project.</para>
       </summary>
+      <param name="options">Optional parameter to specify whether the Editor should clear the build cache before compilation.</param>
+    </member>
+    <member name="M:UnityEditor.Compilation.CompilationPipeline.RequestScriptCompilation(UnityEditor.Compilation.RequestScriptCompilationOptions)">
+      <summary>
+        <para>Allows you to request that the Editor recompile scripts in the project.</para>
+      </summary>
+      <param name="options">Optional parameter to specify whether the Editor should clear the build cache before compilation.</param>
     </member>
     <member name="T:UnityEditor.Compilation.CompilerMessage">
       <summary>
@@ -9408,6 +9573,11 @@ See Also: AssemblyDefinitionPlatform.</para>
         <para>Error message.</para>
       </summary>
     </member>
+    <member name="F:UnityEditor.Compilation.CompilerMessageType.Info">
+      <summary>
+        <para>Info message.</para>
+      </summary>
+    </member>
     <member name="F:UnityEditor.Compilation.CompilerMessageType.Warning">
       <summary>
         <para>Warning message.</para>
@@ -9443,6 +9613,21 @@ See Also: AssemblyDefinitionPlatform.</para>
     <member name="F:UnityEditor.Compilation.ReferencesOptions.UseEngineModules">
       <summary>
         <para>Use UnityEngine modules when compiling.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Compilation.RequestScriptCompilationOptions">
+      <summary>
+        <para>Options for specifying the behavior of CompilationPipeline.RequestScriptCompilation.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Compilation.RequestScriptCompilationOptions.CleanBuildCache">
+      <summary>
+        <para>Clear all cached build results, resulting in a full rebuild of all scripts.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Compilation.RequestScriptCompilationOptions.None">
+      <summary>
+        <para>The default behavior. Unity will only recompile scripts that have changed, or that need recompiling due to changes in settings that affect script compilation.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.Compilation.ResponseFileData">
@@ -10073,22 +10258,22 @@ See DecoratorDrawer for an example of how to use this.</para>
     </member>
     <member name="F:UnityEditor.DrawCameraMode.DeferredDiffuse">
       <summary>
-        <para>Draw diffuse color of Deferred Shading g-buffer.</para>
+        <para>Draw diffuse color of Deferred Shading G-buffer.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.DrawCameraMode.DeferredNormal">
       <summary>
-        <para>Draw world space normal of Deferred Shading g-buffer.</para>
+        <para>Draw world space normal of Deferred Shading G-buffer.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.DrawCameraMode.DeferredSmoothness">
       <summary>
-        <para>Draw smoothness value of Deferred Shading g-buffer.</para>
+        <para>Draw smoothness value of Deferred Shading G-buffer.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.DrawCameraMode.DeferredSpecular">
       <summary>
-        <para>Draw specular color of Deferred Shading g-buffer.</para>
+        <para>Draw specular color of Deferred Shading G-buffer.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.DrawCameraMode.Directionality">
@@ -11057,7 +11242,7 @@ See Also: EditorBuildSettingsScene, EditorBuildSettings.scenes.</para>
     </member>
     <member name="M:UnityEditor.EditorGUI.BeginChangeCheck">
       <summary>
-        <para>Check if any control was changed inside a block of code.</para>
+        <para>Starts a new code block to check for GUI changes.</para>
       </summary>
     </member>
     <member name="M:UnityEditor.EditorGUI.BeginDisabledGroup(System.Boolean)">
@@ -11806,10 +11991,10 @@ It sets material _Mip property.</param>
     </member>
     <member name="M:UnityEditor.EditorGUI.EndChangeCheck">
       <summary>
-        <para>Ends a change check started with BeginChangeCheck ().</para>
+        <para>Ends a code block and checks for any GUI changes.</para>
       </summary>
       <returns>
-        <para>True if GUI.changed was set to true, otherwise false.</para>
+        <para>Returns true if GUI state changed since the call to EditorGUI.BeginChangeCheck, otherwise false.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.EditorGUI.EndDisabledGroup">
@@ -12935,6 +13120,26 @@ Makes an enum popup selection field for a bitmask.</para>
       <param name="style">Optional GUIStyle.</param>
       <returns>
         <para>The layer selected by the user.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.EditorGUI.LinkButton(UnityEngine.Rect,System.String)">
+      <summary>
+        <para>Make a clickable link label.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the control. The underline is done with the bottom border so set the size accordingly.</param>
+      <param name="label">Label of the link.</param>
+      <returns>
+        <para>true when the user clicks the link.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.EditorGUI.LinkButton(UnityEngine.Rect,UnityEngine.GUIContent)">
+      <summary>
+        <para>Make a clickable link label.</para>
+      </summary>
+      <param name="position">Rectangle on the screen to use for the control. The underline is done with the bottom border so set the size accordingly.</param>
+      <param name="label">Label of the link.</param>
+      <returns>
+        <para>true when the user clicks the link.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.EditorGUI.LongField(UnityEngine.Rect,System.Int64)">
@@ -16423,6 +16628,30 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
         <para>The layer selected by the user.</para>
       </returns>
     </member>
+    <member name="M:UnityEditor.EditorGUILayout.LinkButton(System.String,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a clickable link label.</para>
+      </summary>
+      <param name="label">Label of the link.</param>
+      <param name="options">An optional list of layout options that specify extra layout properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the user clicks the link.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.EditorGUILayout.LinkButton(UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])">
+      <summary>
+        <para>Make a clickable link label.</para>
+      </summary>
+      <param name="label">Label of the link.</param>
+      <param name="options">An optional list of layout options that specify extra layout properties. Any values passed in here will override settings defined by the style.&lt;br&gt;
+See Also: GUILayout.Width, GUILayout.Height, GUILayout.MinWidth, GUILayout.MaxWidth, GUILayout.MinHeight,
+GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
+      <returns>
+        <para>true when the user clicks the link.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.EditorGUILayout.LongField(System.Int64,UnityEngine.GUILayoutOption[])">
       <summary>
         <para>Make a text field for entering long integers.</para>
@@ -17811,7 +18040,7 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
     </member>
     <member name="P:UnityEditor.EditorGUIUtility.currentViewWidth">
       <summary>
-        <para>The width of the GUI area for the current EditorWindow or other view.</para>
+        <para>The width of the GUI area for the current EditorWindow or other view. This Property should only be accessed within an OnGUI call.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.EditorGUIUtility.editingTextField">
@@ -18415,7 +18644,7 @@ This value is the number of screen pixels per point of interface space. For inst
     </member>
     <member name="P:UnityEditor.EditorSettings.cachingShaderPreprocessor">
       <summary>
-        <para>Enables the Caching Shader Preprocessor (experimental).</para>
+        <para>Enables the Caching Shader Preprocessor.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.EditorSettings.disableCookiesInLightmapper">
@@ -18471,11 +18700,6 @@ This value is the number of screen pixels per point of interface space. For inst
     <member name="P:UnityEditor.EditorSettings.prefabUIEnvironment">
       <summary>
         <para>Allows you to specify a Scene to use as the for UI Prefabs.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.EditorSettings.projectGenerationBuiltinExtensions">
-      <summary>
-        <para>Built-in list of extensions of files that will be included in the c# projects Unity generates.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.EditorSettings.projectGenerationRootNamespace">
@@ -18582,6 +18806,12 @@ This value is the number of screen pixels per point of interface space. For inst
       <summary>
         <para>Gets or sets whether grid snapping is enabled.</para>
       </summary>
+    </member>
+    <member name="?:UnityEditor.EditorSnapSettings.gridSnapEnabledChanged(System.Action)">
+      <summary>
+        <para>Callback triggered when the  grid snap enabled value changes.</para>
+      </summary>
+      <param name="value"></param>
     </member>
     <member name="P:UnityEditor.EditorSnapSettings.move">
       <summary>
@@ -18853,6 +19083,11 @@ This value is the number of screen pixels per point of interface space. For inst
         <para>Use this class to implement custom editor tools. This is the base class from which all editor tools are inherited.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.EditorTools.EditorTool.gridSnapEnabled">
+      <summary>
+        <para>Use this property to allow the current EditorTool to enable/disable grid snapping.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.EditorTools.EditorTool.target">
       <summary>
         <para>The object being inspected.</para>
@@ -19077,6 +19312,11 @@ This value is the number of screen pixels per point of interface space. For inst
     <member name="P:UnityEditor.EditorUserBuildSettings.androidBuildSubtarget">
       <summary>
         <para>Android platform options.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.EditorUserBuildSettings.androidCreateSymbols">
+      <summary>
+        <para>Specifies the type of symbol package to create.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.EditorUserBuildSettings.androidCreateSymbolsZip">
@@ -19368,6 +19608,18 @@ MYCOMPUTER\SHAREDFOLDER\.</para>
         <para>True if there are any compilation error messages in the log.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.EditorUtility.ClearDefaultParentObject(UnityEngine.SceneManagement.Scene)">
+      <summary>
+        <para>Clears the default parent GameObject from either a specific Scene or the active Scene.</para>
+      </summary>
+      <param name="scene">Specify a Scene to clear the default parent object for a specific Scene. If a Scene is not specified, this method clears the default parent object for the active Scene.</param>
+    </member>
+    <member name="M:UnityEditor.EditorUtility.ClearDefaultParentObject">
+      <summary>
+        <para>Clears the default parent GameObject from either a specific Scene or the active Scene.</para>
+      </summary>
+      <param name="scene">Specify a Scene to clear the default parent object for a specific Scene. If a Scene is not specified, this method clears the default parent object for the active Scene.</param>
+    </member>
     <member name="M:UnityEditor.EditorUtility.ClearDirty(UnityEngine.Object)">
       <summary>
         <para>Clear target's dirty flag.</para>
@@ -19653,6 +19905,12 @@ MYCOMPUTER\SHAREDFOLDER\.</para>
       <param name="folder"></param>
       <param name="defaultName"></param>
     </member>
+    <member name="M:UnityEditor.EditorUtility.OpenPropertyEditor(UnityEngine.Object)">
+      <summary>
+        <para>Open properties editor for an Object.</para>
+      </summary>
+      <param name="obj">The editor will should the properties of the Object.</param>
+    </member>
     <member name="M:UnityEditor.EditorUtility.RequestScriptReload">
       <summary>
         <para>The Unity Editor reloads script assemblies asynchronously on the next frame. This resets the state of all the scripts, but Unity does not compile any code that has changed since the previous compilation.</para>
@@ -19697,6 +19955,22 @@ MYCOMPUTER\SHAREDFOLDER\.</para>
       </summary>
       <param name="camera"></param>
       <param name="time"></param>
+    </member>
+    <member name="M:UnityEditor.EditorUtility.SetCustomDiffTool(System.String,System.String,System.String,System.String,System.Boolean)">
+      <summary>
+        <para>Set custom diff tool settings.</para>
+      </summary>
+      <param name="path">Diff tool path.</param>
+      <param name="twoWayDiff">Two - way diff command line.</param>
+      <param name="threeWayDiff">Three - way diff command line.</param>
+      <param name="mergeCommand">Merge command line.</param>
+      <param name="forceEnableCustomTool">Sets Custom Tool as current active Revision Control Diff/Merge tool.</param>
+    </member>
+    <member name="M:UnityEditor.EditorUtility.SetDefaultParentObject(UnityEngine.GameObject)">
+      <summary>
+        <para>Sets the default parent object for the active Scene.</para>
+      </summary>
+      <param name="defaultParentObject">The GameObject to set as the default parent object.</param>
     </member>
     <member name="M:UnityEditor.EditorUtility.SetDialogOptOutDecision(UnityEditor.DialogOptOutDecisionType,System.String,System.Boolean)">
       <summary>
@@ -22968,32 +23242,6 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
       </summary>
       <param name="position"></param>
     </member>
-    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean)">
-      <summary>
-        <para>Pick game object closest to specified position.</para>
-      </summary>
-      <param name="selectPrefabRoot">Select Prefab.</param>
-      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
-      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
-      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
-      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
-      <returns>
-        <para>The GameObject that is under the requested position.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean,UnityEngine.GameObject[],UnityEngine.GameObject[])">
-      <summary>
-        <para>Pick game object closest to specified position.</para>
-      </summary>
-      <param name="selectPrefabRoot">Select Prefab.</param>
-      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
-      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
-      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
-      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
-      <returns>
-        <para>The GameObject that is under the requested position.</para>
-      </returns>
-    </member>
     <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Int32&amp;)">
       <summary>
         <para>Pick game object closest to specified position.</para>
@@ -23003,19 +23251,7 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
       <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
       <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
       <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
-      <returns>
-        <para>The GameObject that is under the requested position.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean,UnityEngine.GameObject[])">
-      <summary>
-        <para>Pick game object closest to specified position.</para>
-      </summary>
-      <param name="selectPrefabRoot">Select Prefab.</param>
-      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
-      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
-      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
-      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
       <returns>
         <para>The GameObject that is under the requested position.</para>
       </returns>
@@ -23029,6 +23265,77 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
       <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
       <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
       <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
+      <returns>
+        <para>The GameObject that is under the requested position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,UnityEngine.GameObject[],UnityEngine.GameObject[],System.Int32&amp;)">
+      <summary>
+        <para>Pick game object closest to specified position.</para>
+      </summary>
+      <param name="selectPrefabRoot">Select Prefab.</param>
+      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
+      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
+      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
+      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
+      <returns>
+        <para>The GameObject that is under the requested position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean)">
+      <summary>
+        <para>Pick game object closest to specified position.</para>
+      </summary>
+      <param name="selectPrefabRoot">Select Prefab.</param>
+      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
+      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
+      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
+      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
+      <returns>
+        <para>The GameObject that is under the requested position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean,UnityEngine.GameObject[])">
+      <summary>
+        <para>Pick game object closest to specified position.</para>
+      </summary>
+      <param name="selectPrefabRoot">Select Prefab.</param>
+      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
+      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
+      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
+      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
+      <returns>
+        <para>The GameObject that is under the requested position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean,UnityEngine.GameObject[],UnityEngine.GameObject[])">
+      <summary>
+        <para>Pick game object closest to specified position.</para>
+      </summary>
+      <param name="selectPrefabRoot">Select Prefab.</param>
+      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
+      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
+      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
+      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
+      <returns>
+        <para>The GameObject that is under the requested position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.HandleUtility.PickGameObject(UnityEngine.Vector2,System.Boolean,UnityEngine.GameObject[],UnityEngine.GameObject[],System.Int32&amp;)">
+      <summary>
+        <para>Pick game object closest to specified position.</para>
+      </summary>
+      <param name="selectPrefabRoot">Select Prefab.</param>
+      <param name="materialIndex">Returns index into material array of the Renderer component that is closest to specified position.</param>
+      <param name="position">A position in GUI coordinates. The top-left of the window is (0,0), and the bottom-right is (Screen.width, Screen.height).</param>
+      <param name="ignore">An array of GameObjects that will not be considered when selecting the nearest GameObject.</param>
+      <param name="filter">An array of GameObjects to be exclusively considered for selection. If null, all GameObjects in open scenes are eligible for selection.</param>
+      <param name="selection"></param>
       <returns>
         <para>The GameObject that is under the requested position.</para>
       </returns>
@@ -23158,7 +23465,7 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
       </summary>
       <param name="obj">The object to retrieve documentation for.</param>
       <returns>
-        <para>The documentation URL for the object. Note that this could use the http: or file: schemas.</para>
+        <para>The documentation URL for the object. Note that this could use the https: or file: schemas.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.Help.HasHelpForObject(UnityEngine.Object)">
@@ -26961,11 +27268,11 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
     </member>
     <member name="M:UnityEditor.Lightmapping.Tetrahedralize(UnityEngine.Vector3[],System.Int32[]&amp;,UnityEngine.Vector3[]&amp;)">
       <summary>
-        <para>Calculates a Delaunay Tetrahedralization of the 'positions' point set - the same way the lightmapper.</para>
+        <para>Calculates tetrahderons from positions using Delaunay Tetrahedralization.</para>
       </summary>
-      <param name="positions"></param>
-      <param name="outIndices"></param>
-      <param name="outPositions"></param>
+      <param name="positions">An array of Light Probe positions.</param>
+      <param name="outIndices">An array that Unity populates with updated Light Probe indices.</param>
+      <param name="outPositions">An array that Unity populates with updated Light Probe positions.</param>
     </member>
     <member name="M:UnityEditor.Lightmapping.TryGetLightingSettings(UnityEngine.LightingSettings&amp;)">
       <summary>
@@ -27422,6 +27729,22 @@ Returns true if the UI is indeed displayed i.e. the material supports the Double
         <para>Returns true, if button was pressed.</para>
       </returns>
     </member>
+    <member name="M:UnityEditor.MaterialEditor.IntegerProperty(UnityEditor.MaterialProperty,System.String)">
+      <summary>
+        <para>Draw a property field for an integer shader property.</para>
+      </summary>
+      <param name="label">Label for the property.</param>
+      <param name="prop"></param>
+      <param name="position"></param>
+    </member>
+    <member name="M:UnityEditor.MaterialEditor.IntegerProperty(UnityEngine.Rect,UnityEditor.MaterialProperty,System.String)">
+      <summary>
+        <para>Draw a property field for an integer shader property.</para>
+      </summary>
+      <param name="label">Label for the property.</param>
+      <param name="prop"></param>
+      <param name="position"></param>
+    </member>
     <member name="M:UnityEditor.MaterialEditor.IsInstancingEnabled">
       <summary>
         <para>Determines whether the Enable Instancing checkbox is checked.</para>
@@ -27829,12 +28152,17 @@ See Also: MaterialLightmapFlags.</para>
     </member>
     <member name="P:UnityEditor.MaterialProperty.floatValue">
       <summary>
-        <para>Float vaue of the property.</para>
+        <para>Float value of the property.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.MaterialProperty.hasMixedValue">
       <summary>
         <para>Does this property have multiple different values? (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.MaterialProperty.intValue">
+      <summary>
+        <para>Int value of the property.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.MaterialProperty.name">
@@ -27930,6 +28258,11 @@ See Also: MaterialLightmapFlags.</para>
     <member name="F:UnityEditor.MaterialProperty.PropType.Float">
       <summary>
         <para>Float property.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.MaterialProperty.PropType.Int">
+      <summary>
+        <para>Int property.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.MaterialProperty.PropType.Range">
@@ -28416,7 +28749,7 @@ NOTE: Each snapshot consists of approximately one managed object per recorded ma
     </member>
     <member name="P:UnityEditor.MemoryProfiler.PackedNativeUnityEngineObject.isPersistent">
       <summary>
-        <para>Is this object persistent? (Assets are persistent, objects stored in Scenes are persistent,  dynamically created objects are not)</para>
+        <para>Is this object persistent? (Assets are persistent, objects stored in Scenes and dynamically created objects are not persistent).</para>
       </summary>
     </member>
     <member name="P:UnityEditor.MemoryProfiler.PackedNativeUnityEngineObject.name">
@@ -28693,6 +29026,58 @@ NOTE: Each snapshot consists of approximately one managed object per recorded ma
       <summary>
         <para>Optimize the order of vertices in the mesh to make better use of the GPUs internal caches to improve rendering performance.</para>
       </summary>
+    </member>
+    <member name="T:UnityEditor.MeshPreview">
+      <summary>
+        <para>Use this class to render an interactive preview of a mesh.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.MeshPreview.mesh">
+      <summary>
+        <para>The Mesh to display in the preview space.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.MeshPreview.#ctor(UnityEngine.Mesh)">
+      <summary>
+        <para>Creates a new MeshPreview instance with a Mesh target.</para>
+      </summary>
+      <param name="target">The Mesh to be displayed.</param>
+    </member>
+    <member name="M:UnityEditor.MeshPreview.Dispose">
+      <summary>
+        <para>Releases allocated resources associated with this object.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.MeshPreview.GetInfoString(UnityEngine.Mesh)">
+      <summary>
+        <para>Returns a short summary of the Mesh attributes (ex, does this mesh contain positions, normals, tangents, etc...).</para>
+      </summary>
+      <param name="mesh">The Mesh to build a summary phrase for.</param>
+      <returns>
+        <para>A short summary of the mesh attributes.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.MeshPreview.OnPreviewGUI(UnityEngine.Rect,UnityEngine.GUIStyle)">
+      <summary>
+        <para>Call this from an Editor.OnPreviewGUI or ObjectPreview.OnPreviewGUI to draw a mesh preview.</para>
+      </summary>
+      <param name="rect">Rectangle in which to draw the preview.</param>
+      <param name="background">The background style.</param>
+    </member>
+    <member name="M:UnityEditor.MeshPreview.OnPreviewSettings">
+      <summary>
+        <para>Call this from Editor.OnPreviewSettings or ObjectPreview.OnPreviewSettings to draw additional settings related to the mesh preview.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.MeshPreview.RenderStaticPreview(System.Int32,System.Int32)">
+      <summary>
+        <para>Creates a texture preview to override Editor.RenderStaticPreview. The current mesh will be drawn.</para>
+      </summary>
+      <param name="width">The width to render the texture.</param>
+      <param name="height">The height to render the texture.</param>
+      <returns>
+        <para>Returns a rendered texture of the current mesh with default settings.</para>
+      </returns>
     </member>
     <member name="T:UnityEditor.MeshUtility">
       <summary>
@@ -29051,7 +29436,7 @@ NOTE: Each snapshot consists of approximately one managed object per recorded ma
     </member>
     <member name="P:UnityEditor.ModelImporter.maxBonesPerVertex">
       <summary>
-        <para>Maximum bones per vertex.</para>
+        <para>The maximum number of bones per vertex stored in this mesh data.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.ModelImporter.meshCompression">
@@ -30500,17 +30885,17 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
     </member>
     <member name="T:UnityEditor.MPE.ProcessLevel">
       <summary>
-        <para>The type of the current process. It can be a Unity master instance, or a slave instance connected to the master.</para>
+        <para>The type of the current process. It can be a Unity master instance, or a secondary instance connected to the master.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.MPE.ProcessLevel.Master">
+    <member name="F:UnityEditor.MPE.ProcessLevel.Main">
       <summary>
-        <para>The current process is a master instance of UnityEditor.</para>
+        <para>The current process is a main instance of UnityEditor.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.MPE.ProcessLevel.Slave">
+    <member name="F:UnityEditor.MPE.ProcessLevel.Secondary">
       <summary>
-        <para>The current process is a slave instance of UnityEditor that is connected to a master instance.</para>
+        <para>The current process is a secondary instance of UnityEditor that is connected to a master instance.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.MPE.ProcessService">
@@ -30542,7 +30927,7 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
         <para>Greater than 0 if successful.</para>
       </returns>
     </member>
-    <member name="M:UnityEditor.MPE.ProcessService.GetSlaveProcessState(System.Int32)">
+    <member name="M:UnityEditor.MPE.ProcessService.GetProcessState(System.Int32)">
       <summary>
         <para>Gets the ProcessState of a given instance of UnityEditor.</para>
       </summary>
@@ -30568,15 +30953,21 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
         <para>True if the ChannelService is started. False otherwise.</para>
       </returns>
     </member>
-    <member name="M:UnityEditor.MPE.ProcessService.LaunchSlave(System.String,System.String[])">
+    <member name="M:UnityEditor.MPE.ProcessService.Launch(System.String,System.String[])">
       <summary>
-        <para>Launches a slave instance of UnityEditor on the same project as the master instance.</para>
+        <para>Launches a secondary instance of UnityEditor on the same project as the master instance.</para>
       </summary>
       <param name="roleName">The name that corresponds to the RoleProviderAttribute of the process to start.</param>
       <param name="keyValuePairs">Arguments passed to the slave process.</param>
       <returns>
         <para>The process ID of the slave process. A value of 0 means the slave process could not be started.</para>
       </returns>
+    </member>
+    <member name="?:UnityEditor.MPE.ProcessService.ProcessExitedEvent(System.Action`2&lt;System.Int32,UnityEditor.MPE.ProcessState&gt;)">
+      <summary>
+        <para>An event triggered in a master instance of UnityEditor when you start a slave instance with ProcessService.Launch exit.</para>
+      </summary>
+      <param name="value">The first parameter is the process ID (PID) of the slave process that exited. The second parameter is the ProcessState of the slave process.</param>
     </member>
     <member name="M:UnityEditor.MPE.ProcessService.ReadParameter(System.String)">
       <summary>
@@ -30593,11 +30984,11 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
       </summary>
       <param name="value">The first parameter is the process ID (PID) of the slave process that exited. The second parameter is the ProcessState of the slave process.</param>
     </member>
-    <member name="M:UnityEditor.MPE.ProcessService.TerminateSlave(System.Int32)">
+    <member name="M:UnityEditor.MPE.ProcessService.Terminate(System.Int32)">
       <summary>
-        <para>Terminates a slave process.</para>
+        <para>Terminates an editor process.</para>
       </summary>
-      <param name="pid">The process ID of the slave process to terminate.</param>
+      <param name="pid">The process ID of the process to terminate.</param>
     </member>
     <member name="T:UnityEditor.MPE.ProcessState">
       <summary>
@@ -31252,6 +31643,11 @@ If the target name is in the provided list of existing names, a unique name is g
         <para>The object currently being previewed.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.ObjectPreview.Cleanup">
+      <summary>
+        <para>Use this function to release resources allocated by the ObjectPreview implementation.</para>
+      </summary>
+    </member>
     <member name="M:UnityEditor.ObjectPreview.DrawPreview(UnityEngine.Rect)">
       <summary>
         <para>This is the first entry point for Preview Drawing.</para>
@@ -31347,24 +31743,26 @@ If the target name is in the provided list of existing names, a unique name is g
     </member>
     <member name="T:UnityEditor.PackageManager.Client">
       <summary>
-        <para>Use the Unity Package Manager Client class to manage the packages used in a Project.</para>
+        <para>Use the Unity Package Manager Client class to manage the packages used in a project.</para>
       </summary>
     </member>
     <member name="M:UnityEditor.PackageManager.Client.Add(System.String)">
       <summary>
-        <para>Adds a package dependency to the Project. This is the equivalent of installing a package.</para>
+        <para>Adds a package dependency to the project. Requesting a new or different dependency often leads to changing installed packages, but only after the Package Manager constructs a dependency graph to solve any version conflicts. For more information, see.</para>
       </summary>
-      <param name="identifier">A string representing the package to be added.
+      <param name="identifier">A string representing the package to be added:
                
-To install a specific version of a package, use a package identifier ("name@version").
+
                
-To install the latest compatible version of a package, specify only the package.
+- To install a specific version of a package, use a package identifier ("name@version"). This is the only way to install a version.
                
-To install a git package, specify a.
+- To install the latest compatible (.
                
-To install a local package, specify a value in the format "file:pathtopackagefolder".
+- To install a git package, specify a.
                
-To install a local tarball package, specify a value in the format "file:pathto/package-file.tgz".
+- To install a package, specify a value in the format "file:pathtopackagefolder".
+               
+- To install a package, specify a value in the format "file:pathto/package-file.tgz".
                
 
                
@@ -31376,39 +31774,42 @@ ArgumentException is thrown if identifier is null or empty.
     </member>
     <member name="M:UnityEditor.PackageManager.Client.Embed(System.String)">
       <summary>
-        <para> a package inside the Project.</para>
+        <para> a package inside the project.</para>
       </summary>
-      <param name="packageName">The name of the package to embed. This package must be a direct dependency of the Project. ArgumentException is thrown if packageName is null or empty.</param>
+      <param name="packageName">The name of the package to embed. This package must be a direct dependency of the project. ArgumentException is thrown if packageName is null or empty.</param>
       <returns>
         <para>An EmbedRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.PackageManager.Client.List">
       <summary>
-        <para>Lists the packages the Project depends on.</para>
+        <para>Lists the packages the project depends on.</para>
       </summary>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects in the PackageCollection returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
-      <param name="includeIndirectDependencies">Set to true to include indirect dependencies in the PackageCollection returned by the Package Manager. Indirect dependencies include packages referenced in the manifests of Project packages or in the manifests of other indirect dependencies. Set to false to include only the packages listed directly in the Project manifest.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects in the PackageCollection returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
+      <param name="includeIndirectDependencies">Set to true to include indirect dependencies in the PackageCollection returned by the Package Manager. Indirect dependencies include packages referenced in the manifests of project packages or in the manifests of other indirect dependencies. Set to false to include only the packages listed directly in the project manifest.
+Note: The version reported might not match the version requested in the project manifest. For more information, see.</param>
       <returns>
         <para>A ListRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.PackageManager.Client.List(System.Boolean)">
       <summary>
-        <para>Lists the packages the Project depends on.</para>
+        <para>Lists the packages the project depends on.</para>
       </summary>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects in the PackageCollection returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
-      <param name="includeIndirectDependencies">Set to true to include indirect dependencies in the PackageCollection returned by the Package Manager. Indirect dependencies include packages referenced in the manifests of Project packages or in the manifests of other indirect dependencies. Set to false to include only the packages listed directly in the Project manifest.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects in the PackageCollection returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
+      <param name="includeIndirectDependencies">Set to true to include indirect dependencies in the PackageCollection returned by the Package Manager. Indirect dependencies include packages referenced in the manifests of project packages or in the manifests of other indirect dependencies. Set to false to include only the packages listed directly in the project manifest.
+Note: The version reported might not match the version requested in the project manifest. For more information, see.</param>
       <returns>
         <para>A ListRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.PackageManager.Client.List(System.Boolean,System.Boolean)">
       <summary>
-        <para>Lists the packages the Project depends on.</para>
+        <para>Lists the packages the project depends on.</para>
       </summary>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects in the PackageCollection returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
-      <param name="includeIndirectDependencies">Set to true to include indirect dependencies in the PackageCollection returned by the Package Manager. Indirect dependencies include packages referenced in the manifests of Project packages or in the manifests of other indirect dependencies. Set to false to include only the packages listed directly in the Project manifest.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects in the PackageCollection returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
+      <param name="includeIndirectDependencies">Set to true to include indirect dependencies in the PackageCollection returned by the Package Manager. Indirect dependencies include packages referenced in the manifests of project packages or in the manifests of other indirect dependencies. Set to false to include only the packages listed directly in the project manifest.
+Note: The version reported might not match the version requested in the project manifest. For more information, see.</param>
       <returns>
         <para>A ListRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
@@ -31430,16 +31831,16 @@ ArgumentException is thrown if identifier is null or empty.
     </member>
     <member name="M:UnityEditor.PackageManager.Client.Remove(System.String)">
       <summary>
-        <para>Removes (uninstalls) a previously added package from the Project.</para>
+        <para>Removes a package dependency from the project. Removing a dependency often leads to changing installed packages, but only after the Package Manager constructs a dependency graph to solve any version conflicts. For more information, see.</para>
       </summary>
-      <param name="packageName">The name of the package to remove from the Project.  ArgumentException is thrown if packageName is null or empty.</param>
+      <param name="packageName">The name of the package to remove from the project.  ArgumentException is thrown if packageName is null or empty.</param>
       <returns>
         <para>A RemoveRequest instance, which you can use to monitor the status of the asynchronous operation.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.PackageManager.Client.ResetToEditorDefaults">
       <summary>
-        <para>Resets the list of packages installed for this Project to the editor's default configuration. This operation clears all packages added to the Project and keeps only the packages set for the current editor's default configuration.</para>
+        <para>Resets the list of packages installed for this project to the editor's default configuration. This operation clears all packages added to the project and keeps only the packages set for the current editor's default configuration.</para>
       </summary>
       <returns>
         <para>A ResetToEditorDefaultsRequest instance, which you can use to monitor the status of the asynchronous operation.</para>
@@ -31456,7 +31857,7 @@ ArgumentException is thrown if identifier is null or empty.
       </summary>
       <param name="packageIdOrName">The or ID of the package. ArgumentException is thrown if packageIdOrName is null or empty.
                 </param>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo object returned by the Package Manager contains information obtained from the local package cache, which could be out of date.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo object returned by the Package Manager contains information obtained from the local package cache, which could be out of date.</param>
       <returns>
         <para>A SearchRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
@@ -31467,7 +31868,7 @@ ArgumentException is thrown if identifier is null or empty.
       </summary>
       <param name="packageIdOrName">The or ID of the package. ArgumentException is thrown if packageIdOrName is null or empty.
                 </param>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo object returned by the Package Manager contains information obtained from the local package cache, which could be out of date.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo object returned by the Package Manager contains information obtained from the local package cache, which could be out of date.</param>
       <returns>
         <para>A SearchRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
@@ -31476,7 +31877,7 @@ ArgumentException is thrown if identifier is null or empty.
       <summary>
         <para>Searches the Unity package registry for all packages compatible with the current Unity version.</para>
       </summary>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
       <returns>
         <para>A SearchRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
@@ -31485,7 +31886,7 @@ ArgumentException is thrown if identifier is null or empty.
       <summary>
         <para>Searches the Unity package registry for all packages compatible with the current Unity version.</para>
       </summary>
-      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the Project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
+      <param name="offlineMode">Specifies whether or not the Package Manager requests the latest information about the project's packages from the remote Unity package registry. When offlineMode is true, the PackageManager.PackageInfo objects returned by the Package Manager contain information obtained from the local package cache, which could be out of date.</param>
       <returns>
         <para>A SearchRequest instance, which you can use to monitor the asynchronous operation, and retrieve the result when the operation is complete.</para>
       </returns>
@@ -31743,7 +32144,7 @@ ArgumentException is thrown if identifier is null or empty.
     </member>
     <member name="P:UnityEditor.PackageManager.PackageInfo.resolvedDependencies">
       <summary>
-        <para>An array of DependencyInfos listing all the packages this package directly or indirectly depends to and the versions they resolved to.</para>
+        <para>An array of DependencyInfo instances listing all the packages this package directly or indirectly depends on and the versions they resolved to.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PackageManager.PackageInfo.resolvedPath">
@@ -31754,11 +32155,6 @@ ArgumentException is thrown if identifier is null or empty.
     <member name="P:UnityEditor.PackageManager.PackageInfo.source">
       <summary>
         <para>Source of the package contents.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.PackageInfo.status">
-      <summary>
-        <para>The status of the package.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PackageManager.PackageInfo.type">
@@ -31778,45 +32174,53 @@ ArgumentException is thrown if identifier is null or empty.
     </member>
     <member name="M:UnityEditor.PackageManager.PackageInfo.FindForAssembly(System.Reflection.Assembly)">
       <summary>
-        <para>Retrieves information about the package containing an Assembly, or the Assembly Definition used to build that Assembly.</para>
+        <para>Retrieves information about the package containing an assembly, or the assembly definition used to build that assembly.</para>
       </summary>
-      <param name="assembly">The Assembly.</param>
+      <param name="assembly">The assembly.</param>
       <returns>
-        <para>The PackageInfo object describing the package, or null if the Assembly or its Assembly Definition is not in a package.</para>
+        <para>The PackageInfo instance describing the package, or null if the assembly or its assembly definition is not in a package.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.PackageManager.PackageInfo.FindForAssetPath(System.String)">
       <summary>
         <para>Retrieves information about the package containing an asset based on the path of that asset.</para>
       </summary>
-      <param name="assetPath">The file path of the Asset.</param>
+      <param name="assetPath">The file path of the asset.</param>
       <returns>
-        <para>The PackageInfo object describing the package, or null if the Asset is not in a package.</para>
+        <para>The PackageInfo instance describing the package, or null if the asset is not in a package.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages">
+      <summary>
+        <para>Retrieves information about all packages that are currently loaded.</para>
+      </summary>
+      <returns>
+        <para>The array of PackageInfo instances describing each package.</para>
       </returns>
     </member>
     <member name="T:UnityEditor.PackageManager.PackageRegistrationEventArgs">
       <summary>
-        <para>Structure describing the PackageInfo entries to register or unregister during the package manager registration process.</para>
+        <para>Structure describing the PackageManager.PackageInfo entries to register or unregister during the Package Manager registration process.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PackageManager.PackageRegistrationEventArgs.added">
       <summary>
-        <para>A collection of PackageInfo entries to add during the package manager registration process.</para>
+        <para>A collection of PackageManager.PackageInfo entries to add during the Package Manager registration process.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PackageManager.PackageRegistrationEventArgs.changedFrom">
       <summary>
-        <para>A collection of PackageInfo entries describing packages to be overridden by another version during the package manager registration process.</para>
+        <para>A collection of PackageManager.PackageInfo entries describing packages to be overridden by another version during the Package Manager registration process.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PackageManager.PackageRegistrationEventArgs.changedTo">
       <summary>
-        <para>A collection of PackageInfo entries describing packages that will override a previously registered version during the package manager registration process.</para>
+        <para>A collection of PackageManager.PackageInfo entries describing packages that will override a previously registered version during the Package Manager registration process.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PackageManager.PackageRegistrationEventArgs.removed">
       <summary>
-        <para>A collection of PackageInfo entries to remove during the package manager registration process.</para>
+        <para>A collection of PackageManager.PackageInfo entries to remove during the Package Manager registration process.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.PackageManager.PackageSource">
@@ -31857,36 +32261,6 @@ ArgumentException is thrown if identifier is null or empty.
     <member name="F:UnityEditor.PackageManager.PackageSource.Unknown">
       <summary>
         <para>The package source is unknown.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.PackageStatus">
-      <summary>
-        <para>Unity Package Manager package status.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.PackageStatus.Available">
-      <summary>
-        <para>The package and its dependencies are available on the local file system.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.PackageStatus.Error">
-      <summary>
-        <para>An error occurred while transfering the package or one of its dependencies to the local file system.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.PackageStatus.InProgress">
-      <summary>
-        <para>The package is being transferred into the local file system.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.PackageStatus.Unavailable">
-      <summary>
-        <para>The package or one of its dependencies cannot be found on the local file system.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.PackageStatus.Unknown">
-      <summary>
-        <para>The status of the package is unknown.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.PackageManager.PackOperationResult">
@@ -32105,6 +32479,11 @@ See Also: PhysicsVisualizationSettings.</para>
         <para>This class contains the settings controlling the Physics Debug Visualization.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.PhysicsVisualizationSettings.articulationBodyColor">
+      <summary>
+        <para>Color for Articulation Bodies.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.PhysicsVisualizationSettings.baseAlpha">
       <summary>
         <para>Alpha amount used for transparency blending.</para>
@@ -32206,6 +32585,11 @@ See Also: PhysicsVisualizationSettings.</para>
         <para>With ShowSelectedItems and the Select None button is it easy to monitor very specific Colliders.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.PhysicsVisualizationSettings.GetShowArticulationBodies">
+      <summary>
+        <para>Should Articulation Bodies be shown by the Physics Visualizer.</para>
+      </summary>
+    </member>
     <member name="M:UnityEditor.PhysicsVisualizationSettings.GetShowBoxColliders">
       <summary>
         <para>Should BoxColliders be shown.</para>
@@ -32303,6 +32687,12 @@ See Also: PhysicsVisualizationSettings.</para>
         <para>Resets the visualization options to their default state.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.PhysicsVisualizationSettings.SetShowArticulationBodies(System.Boolean)">
+      <summary>
+        <para>Should Articulation Bodies be shown by the Physics Visualizer.</para>
+      </summary>
+      <param name="show">Value to set.</param>
+    </member>
     <member name="M:UnityEditor.PhysicsVisualizationSettings.SetShowBoxColliders(System.Boolean)">
       <summary>
         <para>Should BoxColliders be shown.</para>
@@ -32369,7 +32759,7 @@ See Also: PhysicsVisualizationSettings.</para>
     </member>
     <member name="M:UnityEditor.PhysicsVisualizationSettings.SetShowSleepingBodies(System.Boolean)">
       <summary>
-        <para>Should the sleeping Rigidbodies be considered by the display filter.</para>
+        <para>Should sleeping Rigidbodies and Articulation Bodies be considered by the display filter.</para>
       </summary>
       <param name="show"></param>
     </member>
@@ -33012,7 +33402,12 @@ See Also: PhysicsVisualizationSettings.</para>
     </member>
     <member name="P:UnityEditor.PlayerSettings.Android.androidIsGame">
       <summary>
-        <para>Publish the build as a game rather than a regular application. This option affects devices running Android 5.0 Lollipop and later</para>
+        <para>Publish the build as a game rather than a regular application. This option affects devices running Android 5.0 Lollipop and later.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.androidTargetDevices">
+      <summary>
+        <para>Select which devices are allowed to run the Android application (all devices, mobile phones, tablets, and TV devices only, or Chrome OS devices only).</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.Android.androidTVCompatibility">
@@ -33035,6 +33430,21 @@ See Also: PhysicsVisualizationSettings.</para>
         <para>Android bundle version code.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.chromeosInputEmulation">
+      <summary>
+        <para>Un-check to disable Chrome OS's default behaviour of converting mouse and touchpad input events into touchscreen input events.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.defaultWindowHeight">
+      <summary>
+        <para>The default vertical size of the Android Player window in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.defaultWindowWidth">
+      <summary>
+        <para>The default horizontal size of the Android Player window in pixels.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.PlayerSettings.Android.disableDepthAndStencilBuffers">
       <summary>
         <para>Disable Depth and Stencil Buffers.</para>
@@ -33048,6 +33458,11 @@ See Also: PhysicsVisualizationSettings.</para>
     <member name="P:UnityEditor.PlayerSettings.Android.forceSDCardPermission">
       <summary>
         <para>Force SD card permission.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.fullscreenMode">
+      <summary>
+        <para>The display mode for Android Player builds of your application.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.Android.keyaliasName">
@@ -33095,9 +33510,24 @@ See Also: PhysicsVisualizationSettings.</para>
         <para>Use R8 to perform minification.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.minimumWindowHeight">
+      <summary>
+        <para>The minimum vertical size of the Android Player window in pixels.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.minimumWindowWidth">
+      <summary>
+        <para>The minimum horizontal size of the Android Player window in pixels.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.PlayerSettings.Android.minSdkVersion">
       <summary>
         <para>The minimum API level required for your application to run.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.optimizedFramePacing">
+      <summary>
+        <para>Enable optimized frame pacing.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.Android.preferredInstallLocation">
@@ -33108,6 +33538,11 @@ See Also: PhysicsVisualizationSettings.</para>
     <member name="P:UnityEditor.PlayerSettings.Android.renderOutsideSafeArea">
       <summary>
         <para>Extends rendering layout into display cutout area, utilizing all of the available screen space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.Android.resizableWindow">
+      <summary>
+        <para>Indicates whether Android Player build of your application support a resizable window.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.Android.showActivityIndicatorOnLoading">
@@ -35401,7 +35836,7 @@ See Also: PauseState, EditorApplication.playModeStateChanged, EditorApplication.
     </member>
     <member name="M:UnityEditor.PrefabUtility.SaveAsPrefabAssetAndConnect(UnityEngine.GameObject,System.String,UnityEditor.InteractionMode)">
       <summary>
-        <para>Use this function to create a Prefab Asset at the given path from the given GameObject including any children in the Scene and at the same time make the given GameObject into an instance of the new Prefab.</para>
+        <para>Use this function to create a Prefab Asset at the given path from the given GameObject, including any children in the Scene and at the same time make the given GameObject into an instance of the new Prefab.</para>
       </summary>
       <param name="instanceRoot">The GameObject to save as a Prefab and make into a Prefab instance.</param>
       <param name="assetPath">The path to save the Prefab at.</param>
@@ -35413,7 +35848,7 @@ See Also: PauseState, EditorApplication.playModeStateChanged, EditorApplication.
     </member>
     <member name="M:UnityEditor.PrefabUtility.SaveAsPrefabAssetAndConnect(UnityEngine.GameObject,System.String,UnityEditor.InteractionMode,System.Boolean&amp;)">
       <summary>
-        <para>Use this function to create a Prefab Asset at the given path from the given GameObject including any children in the Scene and at the same time make the given GameObject into an instance of the new Prefab.</para>
+        <para>Use this function to create a Prefab Asset at the given path from the given GameObject, including any children in the Scene and at the same time make the given GameObject into an instance of the new Prefab.</para>
       </summary>
       <param name="instanceRoot">The GameObject to save as a Prefab and make into a Prefab instance.</param>
       <param name="assetPath">The path to save the Prefab at.</param>
@@ -35813,6 +36248,55 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
         <para>Returns true if the PresetType is a valid default type. Returns false otherwise.</para>
       </returns>
     </member>
+    <member name="T:UnityEditor.ProfilerWindow">
+      <summary>
+        <para>Use the ProfilerWindow class for interactions with the Modules.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.ProfilerWindow.cpuModuleName">
+      <summary>
+        <para>The name of the.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.ProfilerWindow.firstAvailableFrameIndex">
+      <summary>
+        <para>The index of the first frame available in the Profiler Window, or -1 if no frames are available.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.ProfilerWindow.gpuModuleName">
+      <summary>
+        <para>The name of the.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.ProfilerWindow.lastAvailableFrameIndex">
+      <summary>
+        <para>The index of the last frame available in the Profiler Window, or -1 if no frames are available.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.ProfilerWindow.selectedFrameIndex">
+      <summary>
+        <para>The zero-based index of the frame currently selected in the Profiler Window.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.ProfilerWindow.selectedModuleName">
+      <summary>
+        <para>The name of the that is currently selected in the Profiler Window, or null if no Module is currently selected.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.ProfilerWindow.GetFrameTimeViewSampleSelectionController(System.String)">
+      <summary>
+        <para>Retrieves an IProfilerFrameTimeSampleSelectionController object that you can use to control the selection in.</para>
+      </summary>
+      <param name="moduleName">The name of the Profiler module whose selection controller you want to retrieve. Only ProfilerWindow.cpuModuleName and ProfilerWindow.gpuModuleName are currently valid, other options will throw and ArgumentException.</param>
+      <returns>
+        <para>An IProfilerFrameTimeSampleSelectionController object with which you can use to control the selection of the specified Profiler module.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.ProfilerWindow.SelectAndStayOnLatestFrame">
+      <summary>
+        <para>Selects the newest frame that was profiled and if newer frames are profiled or loaded into the profiler window, the Profiler Window will keep showing the newest frame of these.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.Profiling.FrameDataView">
       <summary>
         <para>Base funtionality for accessing the Profiler data.</para>
@@ -35861,6 +36345,16 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
     <member name="F:UnityEditor.Profiling.FrameDataView.invalidMarkerId">
       <summary>
         <para>Identifier of the invalid marker.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Profiling.FrameDataView.invalidThreadId">
+      <summary>
+        <para>This constant defines a thread id that does not match any valid thread's id.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Profiling.FrameDataView.invalidThreadIndex">
+      <summary>
+        <para>This constant defines a thread index that does not match any valid thread's index.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.Profiling.FrameDataView.maxDepth">
@@ -36462,6 +36956,13 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
       </summary>
       <param name="id">Hierarchy item identifier.</param>
     </member>
+    <member name="M:UnityEditor.Profiling.HierarchyFrameDataView.GetItemRawFrameDataViewIndices(System.Int32,System.Collections.Generic.List`1&lt;System.Int32&gt;)">
+      <summary>
+        <para>Retrieves the raw indices of all samples associated with this Hierarchy item identifier.</para>
+      </summary>
+      <param name="id">Hierarchy item identifier.</param>
+      <param name="outSampleIndices">List filled with all profiler sample indices represented by the hierarchy item.</param>
+    </member>
     <member name="M:UnityEditor.Profiling.HierarchyFrameDataView.GetRootItemID">
       <summary>
         <para>Gets the identifier for the root tree item.</para>
@@ -36472,6 +36973,16 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
         <para>Checks whether the tree item has children.</para>
       </summary>
       <param name="id">Hierarchy item identifier.</param>
+    </member>
+    <member name="M:UnityEditor.Profiling.HierarchyFrameDataView.ItemContainsRawFrameDataViewIndex(System.Int32,System.Int32)">
+      <summary>
+        <para>Checks if the provided raw sample index matches any of the raw sample indices associated with this Hierarchy item identifier.</para>
+      </summary>
+      <param name="id">Hierarchy item identifier.</param>
+      <param name="sampleIndex">The particular profiler sample index that should be checked if it is represented by this hierarchy item.</param>
+      <returns>
+        <para>True if the sample index is represented by this hierarchy item, false if it is not.</para>
+      </returns>
     </member>
     <member name="M:UnityEditor.Profiling.HierarchyFrameDataView.ResolveItemCallstack(System.Int32)">
       <summary>
@@ -36518,6 +37029,46 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
       <summary>
         <para>Merges and aggregates samples with the same name into a single hierarchy item.</para>
       </summary>
+    </member>
+    <member name="?:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController">
+      <summary>
+        <para>This Interface defines an IProfilerFrameTimeSampleSelectionController object that you can use to control the selection in.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController.focusedThreadIndex">
+      <summary>
+        <para>The index of the the thread selected to be displayed in the.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController.sampleNameSearchFilter">
+      <summary>
+        <para>This filters the samples displayed in Hierarchy view to only include the names that include this string.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController.selection">
+      <summary>
+        <para>Get the current selection in a frame time sample based.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController.selectionChanged(System.Action`2&lt;UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController,UnityEditor.Profiling.ProfilerTimeSampleSelection&gt;)">
+      <summary>
+        <para>Calls the methods in its invocation list when the selection in this changes. The first parameter contains the Profiler module the selection change occurred in, the second parameter is the new selection.</para>
+      </summary>
+      <param name="value">The first parameter contains the Profiler module the selection change occurred in, the second parameter is the new selection.</param>
+    </member>
+    <member name="M:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController.ClearSelection">
+      <summary>
+        <para>Call this method to clear the current selection in this frame time view based.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController.SetSelection(UnityEditor.Profiling.ProfilerTimeSampleSelection)">
+      <summary>
+        <para>Set the current selection in a frame time sample based Profiler Module, such as the.</para>
+      </summary>
+      <param name="selection">A fully described selection created via a the ProfilerTimeSampleSelection constructor or previously retrieved via ProfilerWindow.selection.</param>
+      <returns>
+        <para>Returns true if the selection was successfully set, false if it was rejected because no fitting sample could be found.</para>
+      </returns>
     </member>
     <member name="T:UnityEditor.Profiling.Memory.Experimental.ArrayEntries`1">
       <summary>
@@ -37269,9 +37820,156 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
         <para>The name used by Unity for the Category.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.Profiling.ProfilerEditorUtility">
+      <summary>
+        <para>A Utility class for Profiler tooling in the Unity Editor.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Profiling.ProfilerEditorUtility.SetSelection(UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController,System.String,System.Int64,System.String,System.String,System.UInt64)">
+      <summary>
+        <para>Set the current selection in a frame time sample based Profiler Module, such as the.</para>
+      </summary>
+      <param name="controller">The controller object of the Profiler module whose selection you want to set. When the value is null, Unity throws a NullArgumentException.</param>
+      <param name="markerNameOrMarkerNamePath">The name of the sample to be selected, or the names of all samples in the sample stack. Separate each name with a , ending on the sample that should be selected. Do not add a trailing . If Unity cannot find a sample that matches this name or sample stack, it does not set a selection and this method returns false. When this value is null or an empty string, Unity throws an ArgumentException.</param>
+      <param name="frameIndex">The 0 based frame index. This value defaults to -1 which means the selection is set on the currently shown frame. Note that the Profiler Window UI shows the frame index as n+1. When this value is outside of the range described by ProfilerWindow.firstAvailableFrameIndex and ProfilerWindow.lastAvailableFrameIndex, or not -1, Unity throws an ArgumentOutOfRangeException.</param>
+      <param name="threadGroupName">The name of the thread group. The parameter defaults to an empty string. Null or an empty string signify that the thread isn't part of a thread group. "Job", "Loading" and "Scripting Threads" are examples of such thread group names.</param>
+      <param name="threadName">The Name of the thread, e.g. "Main Thread", "Render Thread" or "Worker 0". This parameter defaults to "Main Thread". When this value is null or an empty string, Unity throws an ArgumentException.</param>
+      <param name="threadId">The ID of the thread. When the default value of FrameDataView.invalidThreadId is passed, Unity searches for the sample in the first thread matching the provided threadGroupName and threadName. Specify this threadId if there are multiple threads with the same name. Use a RawFrameDataView.threadId or HierarchyFrameDataView.threadId to retrieve the ID to a specific thread, if you need it to be specific.</param>
+      <returns>
+        <para>Returns true if the selection was successfully set, false if it was rejected because no fitting sample could be found.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Profiling.ProfilerEditorUtility.SetSelection(UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController,System.Int64,System.String,System.String,System.String,System.String,System.UInt64)">
+      <summary>
+        <para>Set the current selection in a frame time sample based Profiler Module, such as the.</para>
+      </summary>
+      <param name="controller">The controller object of the Profiler module whose selection you want to set. When the value is null, Unity throws a NullArgumentException.</param>
+      <param name="frameIndex">The 0 based frame index. Note that the Profiler Window UI shows the frame index as n+1. When this value is outside of the range described by ProfilerWindow.firstAvailableFrameIndex and ProfilerWindow.lastAvailableFrameIndex, or smaller than 0, Unity throws an ArgumentOutOfRangeException.</param>
+      <param name="threadGroupName">The name of the thread group. Null or an empty string signify that the thread isn't part of a thread group. "Job", "Loading" and "Scripting Threads" are examples of such thread group names.</param>
+      <param name="threadName">The Name of the thread, e.g. "Main Thread", "Render Thread" or "Worker 0". When this value is null or an empty string, Unity throws an ArgumentException.</param>
+      <param name="sampleName">The name of the sample to select. If Unity cannot find a sample that matches this name, it does not set a selection and this method returns false. When this value is null or an empty string, Unity throws an ArgumentNullException or ArgumentException respectively.</param>
+      <param name="markerNamePath">The names of all samples in the sample stack, each separated by a , that define the base path for the search. Similar to a file folder structure, this base path defines where Unity looks for a sample which matches the sampleName. The searched sampleName can be the last item in that marker path or any child sample of it. Do not add a trailing . If no sample can be found matching this sample stack path and the sampleName, no selection is set and this method returns false. This defaults to null which means no requirement is set on the sample's sample stack and the first sample fitting the sampleName is selected.</param>
+      <param name="threadId">The ID of the thread. When the default value of FrameDataView.invalidThreadId is passed, Unity searches for the sample in the first thread matching the provided threadGroupName and threadName. Specify this threadId if there are multiple threads with the same name. Use a RawFrameDataView.threadId or HierarchyFrameDataView.threadId to retrieve the ID to a specific thread, if you need it to be specific.</param>
+      <param name="sampleMarkerId">Use HierarchyFrameDataView or RawFrameDataView to get the Marker Ids. When no sample can be found matching this sample stack path and the sampleMarkerId, no selection is set and this method returns false.</param>
+      <param name="markerIdPath">A list of Profiler marker IDs for all samples in the sample stack, that define the base path for the search. Similar to a file folder structure, this base path defines where Unity looks for a sample which matches the sampleMarkerId. The searched sampleMarkerId can be the last item in that marker path or any child sample of it. If no sample can be found matching this sample stack path and the sampleMarkerId, no selection is set and this method returns false. This defaults to null which means no requirement is set on the sample's sample stack and the first sample fitting the sampleMarkerId is selected.</param>
+      <returns>
+        <para>Returns true if the selection was successfully set, false if it was rejected because no fitting sample could be found.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Profiling.ProfilerEditorUtility.SetSelection(UnityEditor.Profiling.IProfilerFrameTimeViewSampleSelectionController,System.Int64,System.String,System.String,System.Int32,System.Collections.Generic.List`1&lt;System.Int32&gt;,System.UInt64)">
+      <summary>
+        <para>Set the current selection in a frame time sample based Profiler Module, such as the.</para>
+      </summary>
+      <param name="controller">The controller object of the Profiler module whose selection you want to set. When the value is null, Unity throws a NullArgumentException.</param>
+      <param name="frameIndex">The 0 based frame index. Note that the Profiler Window UI shows the frame index as n+1. When this value is outside of the range described by ProfilerWindow.firstAvailableFrameIndex and ProfilerWindow.lastAvailableFrameIndex, or smaller than 0, Unity throws an ArgumentOutOfRangeException.</param>
+      <param name="threadGroupName">The name of the thread group. Null or an empty string signify that the thread isn't part of a thread group. "Job", "Loading" and "Scripting Threads" are examples of such thread group names.</param>
+      <param name="threadName">The Name of the thread, e.g. "Main Thread", "Render Thread" or "Worker 0". When this value is null or an empty string, Unity throws an ArgumentException.</param>
+      <param name="sampleName">The name of the sample to select. If Unity cannot find a sample that matches this name, it does not set a selection and this method returns false. When this value is null or an empty string, Unity throws an ArgumentNullException or ArgumentException respectively.</param>
+      <param name="markerNamePath">The names of all samples in the sample stack, each separated by a , that define the base path for the search. Similar to a file folder structure, this base path defines where Unity looks for a sample which matches the sampleName. The searched sampleName can be the last item in that marker path or any child sample of it. Do not add a trailing . If no sample can be found matching this sample stack path and the sampleName, no selection is set and this method returns false. This defaults to null which means no requirement is set on the sample's sample stack and the first sample fitting the sampleName is selected.</param>
+      <param name="threadId">The ID of the thread. When the default value of FrameDataView.invalidThreadId is passed, Unity searches for the sample in the first thread matching the provided threadGroupName and threadName. Specify this threadId if there are multiple threads with the same name. Use a RawFrameDataView.threadId or HierarchyFrameDataView.threadId to retrieve the ID to a specific thread, if you need it to be specific.</param>
+      <param name="sampleMarkerId">Use HierarchyFrameDataView or RawFrameDataView to get the Marker Ids. When no sample can be found matching this sample stack path and the sampleMarkerId, no selection is set and this method returns false.</param>
+      <param name="markerIdPath">A list of Profiler marker IDs for all samples in the sample stack, that define the base path for the search. Similar to a file folder structure, this base path defines where Unity looks for a sample which matches the sampleMarkerId. The searched sampleMarkerId can be the last item in that marker path or any child sample of it. If no sample can be found matching this sample stack path and the sampleMarkerId, no selection is set and this method returns false. This defaults to null which means no requirement is set on the sample's sample stack and the first sample fitting the sampleMarkerId is selected.</param>
+      <returns>
+        <para>Returns true if the selection was successfully set, false if it was rejected because no fitting sample could be found.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEditor.Profiling.ProfilerTimeSampleSelection">
+      <summary>
+        <para>An object describing a selection made in a frame time sample based.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.frameIndex">
+      <summary>
+        <para>The 0 based frame index. Note that the Profiler Window UI shows the frame index as n+1.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.markerNamePath">
+      <summary>
+        <para>A list of the names of all ProfilerMarker|ProfilerMarkers that make up the Sample Stack of this selection. Unity populates this list on a selection object if it was passed to IProfilerFrameTimeSampleSelectionController.SetSelection and was accepted as a valid selection.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.markerPathDepth">
+      <summary>
+        <para>A shorthand for _markerNamePath.Count. When _markerNamePath is null, this value is 0. </para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.rawSampleIndex">
+      <summary>
+        <para>The raw index of a sample, i.e. the index as if would be used with RawFrameDataView and NOT an Item ID as it would be used with HierarchyFrameDataView.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.rawSampleIndices">
+      <summary>
+        <para>A sample selected in Hierarchy view might correspond to multiple samples in RawFrameDataView. This is a list of all of these sample indices.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.sampleDisplayName">
+      <summary>
+        <para>The name of the Sample as it is displayed in the. This might be a shorter version than the last item in _markerNamePath.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.threadGroupName">
+      <summary>
+        <para>The name of the group of the thread this sample resides in. When the thread is not part of a thread group, this value is string.empty.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.threadId">
+      <summary>
+        <para>The ID of the thread this sample resides in.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Profiling.ProfilerTimeSampleSelection.threadName">
+      <summary>
+        <para>The name of the thread this sample resides in.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Profiling.ProfilerTimeSampleSelection.#ctor(System.Int64,System.String,System.String,System.UInt64,System.Int32,System.String)">
+      <summary>
+        <para>Constructs a selection object that can be passed to IProfilerFrameTimeSampleSelectionController.SetSelection to change the selection.</para>
+      </summary>
+      <param name="frameIndex">The 0 based index of the frame the sample exists in. Note that the Profiler Window UI shows the frame index as n+1. When this value is outside of the range described by ProfilerWindow.firstAvailableFrameIndex and ProfilerWindow.lastAvailableFrameIndex, or smaller than 0, Unity will throw an ArgumentOutOfRangeException.</param>
+      <param name="threadGroupName">The name of the thread group. An empty string, which means the thread isn't part of a thread group. "Job", "Loading" and "Scripting Threads" are examples of such thread group names.</param>
+      <param name="threadName">The name of the thread, e.g. "Main Thread", "Render Thread" or "Worker 0". When this value is null or an empty string, Unity will throw an ArgumentException.</param>
+      <param name="threadId">The ID of the thread. When the default value of FrameDataView.invalidThreadId is passed, Unity searches for the sample in the first thread matching the provided threadGroupName and threadName. Specify this threadId if there are multiple threads with the same name. Use a RawFrameDataView.threadId or HierarchyFrameDataView.threadId to retrieve the ID to a specific thread, if you need it to be specific.</param>
+      <param name="rawSampleIndex">The raw index of a sample, i.e. the index as if would be used with RawFrameDataView and NOT an Item ID as it would be used with HierarchyFrameDataView. Use HierarchyFrameDataView.ViewMode.MergeSamplesWithTheSameName to get raw sample indices when working with HierarchyFrameDataView.</param>
+      <param name="sampleName">The name of the sample. When this value is null or empty, it will be filled by Unity on making a valid selection by passing this object to IProfilerFrameTimeSampleSelectionController.SetSelection.</param>
+      <param name="rawSampleIndices">A list of sample indices as used with RawFrameDataView and NOT a list of Item ID as would be used with HierarchyFrameDataView. Use HierarchyFrameDataView.ViewMode.MergeSamplesWithTheSameName to get raw sample indices when working with HierarchyFrameDataView. When this list is empty, Unity throws an ArgumentException.</param>
+      <param name="selection">An existing selection to make a copy of. When this value is null, Unity throws an ArgumentNullException.</param>
+    </member>
+    <member name="M:UnityEditor.Profiling.ProfilerTimeSampleSelection.#ctor(System.Int64,System.String,System.String,System.UInt64,System.Collections.Generic.IList`1&lt;System.Int32&gt;,System.String)">
+      <summary>
+        <para>Constructs a selection object that can be passed to IProfilerFrameTimeSampleSelectionController.SetSelection to change the selection.</para>
+      </summary>
+      <param name="frameIndex">The 0 based index of the frame the sample exists in. Note that the Profiler Window UI shows the frame index as n+1. When this value is outside of the range described by ProfilerWindow.firstAvailableFrameIndex and ProfilerWindow.lastAvailableFrameIndex, or smaller than 0, Unity will throw an ArgumentOutOfRangeException.</param>
+      <param name="threadGroupName">The name of the thread group. An empty string, which means the thread isn't part of a thread group. "Job", "Loading" and "Scripting Threads" are examples of such thread group names.</param>
+      <param name="threadName">The name of the thread, e.g. "Main Thread", "Render Thread" or "Worker 0". When this value is null or an empty string, Unity will throw an ArgumentException.</param>
+      <param name="threadId">The ID of the thread. When the default value of FrameDataView.invalidThreadId is passed, Unity searches for the sample in the first thread matching the provided threadGroupName and threadName. Specify this threadId if there are multiple threads with the same name. Use a RawFrameDataView.threadId or HierarchyFrameDataView.threadId to retrieve the ID to a specific thread, if you need it to be specific.</param>
+      <param name="rawSampleIndex">The raw index of a sample, i.e. the index as if would be used with RawFrameDataView and NOT an Item ID as it would be used with HierarchyFrameDataView. Use HierarchyFrameDataView.ViewMode.MergeSamplesWithTheSameName to get raw sample indices when working with HierarchyFrameDataView.</param>
+      <param name="sampleName">The name of the sample. When this value is null or empty, it will be filled by Unity on making a valid selection by passing this object to IProfilerFrameTimeSampleSelectionController.SetSelection.</param>
+      <param name="rawSampleIndices">A list of sample indices as used with RawFrameDataView and NOT a list of Item ID as would be used with HierarchyFrameDataView. Use HierarchyFrameDataView.ViewMode.MergeSamplesWithTheSameName to get raw sample indices when working with HierarchyFrameDataView. When this list is empty, Unity throws an ArgumentException.</param>
+      <param name="selection">An existing selection to make a copy of. When this value is null, Unity throws an ArgumentNullException.</param>
+    </member>
+    <member name="M:UnityEditor.Profiling.ProfilerTimeSampleSelection.#ctor(UnityEditor.Profiling.ProfilerTimeSampleSelection)">
+      <summary>
+        <para>Constructs a selection object that can be passed to IProfilerFrameTimeSampleSelectionController.SetSelection to change the selection.</para>
+      </summary>
+      <param name="frameIndex">The 0 based index of the frame the sample exists in. Note that the Profiler Window UI shows the frame index as n+1. When this value is outside of the range described by ProfilerWindow.firstAvailableFrameIndex and ProfilerWindow.lastAvailableFrameIndex, or smaller than 0, Unity will throw an ArgumentOutOfRangeException.</param>
+      <param name="threadGroupName">The name of the thread group. An empty string, which means the thread isn't part of a thread group. "Job", "Loading" and "Scripting Threads" are examples of such thread group names.</param>
+      <param name="threadName">The name of the thread, e.g. "Main Thread", "Render Thread" or "Worker 0". When this value is null or an empty string, Unity will throw an ArgumentException.</param>
+      <param name="threadId">The ID of the thread. When the default value of FrameDataView.invalidThreadId is passed, Unity searches for the sample in the first thread matching the provided threadGroupName and threadName. Specify this threadId if there are multiple threads with the same name. Use a RawFrameDataView.threadId or HierarchyFrameDataView.threadId to retrieve the ID to a specific thread, if you need it to be specific.</param>
+      <param name="rawSampleIndex">The raw index of a sample, i.e. the index as if would be used with RawFrameDataView and NOT an Item ID as it would be used with HierarchyFrameDataView. Use HierarchyFrameDataView.ViewMode.MergeSamplesWithTheSameName to get raw sample indices when working with HierarchyFrameDataView.</param>
+      <param name="sampleName">The name of the sample. When this value is null or empty, it will be filled by Unity on making a valid selection by passing this object to IProfilerFrameTimeSampleSelectionController.SetSelection.</param>
+      <param name="rawSampleIndices">A list of sample indices as used with RawFrameDataView and NOT a list of Item ID as would be used with HierarchyFrameDataView. Use HierarchyFrameDataView.ViewMode.MergeSamplesWithTheSameName to get raw sample indices when working with HierarchyFrameDataView. When this list is empty, Unity throws an ArgumentException.</param>
+      <param name="selection">An existing selection to make a copy of. When this value is null, Unity throws an ArgumentNullException.</param>
+    </member>
     <member name="T:UnityEditor.Profiling.RawFrameDataView">
       <summary>
         <para>Provides access to the Profiler data for a specific frame and thread.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Profiling.RawFrameDataView.invalidSampleIndex">
+      <summary>
+        <para>This constant defines a sample index that does not match any valid Profiler Sample.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.Profiling.RawFrameDataView.FlowEvent">
@@ -38574,7 +39272,7 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
     </member>
     <member name="P:UnityEditor.Rendering.ShaderCompilerData.graphicsTier">
       <summary>
-        <para>Identifier to classify low, medium and high performance hardware.</para>
+        <para> A GraphicsTier classifies low, medium and high performance hardware. You can only set a Graphics Tier in the Built-in Render Pipeline. </para>
       </summary>
     </member>
     <member name="F:UnityEditor.Rendering.ShaderCompilerData.platformKeywordSet">
@@ -38876,7 +39574,7 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
     </member>
     <member name="T:UnityEditor.Rendering.TierSettings">
       <summary>
-        <para>Used to set up per-platorm per-shader-hardware-tier graphics settings.</para>
+        <para>Used to set up per-platorm, per-shader-hardware-tier graphics settings. You can only set Graphics Tiers in the Built-in Render Pipeline.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Rendering.TierSettings.cascadedShadowMaps">
@@ -38896,7 +39594,7 @@ See Preset.GetDefaultListForType and Preset.SetDefaultListForType for usage.</pa
     </member>
     <member name="F:UnityEditor.Rendering.TierSettings.hdr">
       <summary>
-        <para>Setting this field to true enables HDR rendering for this tier. Setting it to false disables HDR rendering for this tier.
+        <para>Setting this field to true enables HDR rendering for this tier. Setting it to false disables HDR rendering for this tier. You can only set Graphics Tiers in the Built-in Render Pipeline
 See Also:</para>
       </summary>
     </member>
@@ -39969,7 +40667,7 @@ Cameras will only render objects in Scenes that have the same bits set in their 
     </member>
     <member name="P:UnityEditor.SceneView.pivot">
       <summary>
-        <para>The center point, or pivot, of the Scene view.</para>
+        <para>The central point that the camera orbits within the Scene view.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.SceneView.renderMode">
@@ -40104,7 +40802,7 @@ Cameras will only render objects in Scenes that have the same bits set in their 
     </member>
     <member name="P:UnityEditor.SceneView.CameraSettings.fieldOfView">
       <summary>
-        <para>The height of the SceneView Camera's view angle. Measured in degrees vertically, or along the local Y axis.</para>
+        <para>The height of the view angle for the SceneView Camera. Measured in degrees vertically, or along the local Y axis.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.SceneView.CameraSettings.nearClip">
@@ -40207,6 +40905,15 @@ Cameras will only render objects in Scenes that have the same bits set in their 
       <param name="mode">A CameraMode to check.</param>
       <returns>
         <para>Returns true if the CameraMode is available in this SceneView. Returns false otherwise.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.SceneView.IsCameraDrawModeSupported(UnityEditor.SceneView/CameraMode)">
+      <summary>
+        <para>Checks if the current rendering configuration supports the CameraMode. The check includes custom validators. </para>
+      </summary>
+      <param name="mode">A CameraMode to check.</param>
+      <returns>
+        <para>Returns true if the current rendering configuration supports the CameraMode.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.SceneView.LookAt(UnityEngine.Vector3)">
@@ -41083,6 +41790,28 @@ Cameras will only render objects in Scenes that have the same bits set in their 
       </summary>
       <param name="attributeType">The attribute type.</param>
     </member>
+    <member name="T:UnityEditor.SearchService.ObjectSelectorSearch">
+      <summary>
+        <para>Use this API to select objects. Engines for this type of search implement the SearchService.IObjectSelectorEngine interface.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SearchService.ObjectSelectorSearch.EngineScope">
+      <summary>
+        <para>A enum that indicates the search scope of ObjectSelectorSearch engines. Used by ObjectSelectorSearchContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.SearchService.ObjectSelectorSearch.RegisterEngine(UnityEditor.SearchService.IObjectSelectorEngine)">
+      <summary>
+        <para>Registers an ObjectSelector search engine dynamically.</para>
+      </summary>
+      <param name="engine">The ObjectSelector search engine to register.</param>
+    </member>
+    <member name="M:UnityEditor.SearchService.ObjectSelectorSearch.UnregisterEngine(UnityEditor.SearchService.IObjectSelectorEngine)">
+      <summary>
+        <para>Unregisters a dynamically registered engine.</para>
+      </summary>
+      <param name="engine">The ObjectSelector search engine to unregister.</param>
+    </member>
     <member name="T:UnityEditor.SearchService.ObjectSelectorSearchContext">
       <summary>
         <para>A search context implementation for ObjectSelector search engines. All methods that are called on an ObjectSelector search engine, and expect a SearchService.ISearchContext, receive an object of this type.</para>
@@ -41191,6 +41920,28 @@ Cameras will only render objects in Scenes that have the same bits set in their 
       </summary>
       <param name="engine">The Project search engine to unregister.</param>
     </member>
+    <member name="T:UnityEditor.SearchService.ProjectSearch">
+      <summary>
+        <para>Use this API to perform searches in the Project. Engines for this type of search implement the SearchService.IProjectSearchEngine interface.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SearchService.ProjectSearch.EngineScope">
+      <summary>
+        <para>A enum that indicates the search scope for ProjectSearch engines. It is used by ProjectSearchContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.SearchService.ProjectSearch.RegisterEngine(UnityEditor.SearchService.IProjectSearchEngine)">
+      <summary>
+        <para>Registers a Project search engine dynamically.</para>
+      </summary>
+      <param name="engine">The Project search engine to register.</param>
+    </member>
+    <member name="M:UnityEditor.SearchService.ProjectSearch.UnregisterEngine(UnityEditor.SearchService.IProjectSearchEngine)">
+      <summary>
+        <para>Unregisters a dynamically registered engine.</para>
+      </summary>
+      <param name="engine">The Project search engine to unregister.</param>
+    </member>
     <member name="T:UnityEditor.SearchService.ProjectSearchContext">
       <summary>
         <para>A search context implementation for Project search engines. All methods that are called on a Project search engine, and expect a SearchService.ISearchContext, receive an object of this type.</para>
@@ -41238,6 +41989,28 @@ Cameras will only render objects in Scenes that have the same bits set in their 
       <param name="engine">The Scene search engine to register.</param>
     </member>
     <member name="M:UnityEditor.SearchService.Scene.UnregisterEngine(UnityEditor.SearchService.ISceneSearchEngine)">
+      <summary>
+        <para>Unregisters a dynamically registered engine.</para>
+      </summary>
+      <param name="engine">The Scene search engine to unregister.</param>
+    </member>
+    <member name="T:UnityEditor.SearchService.SceneSearch">
+      <summary>
+        <para>Use this API to perform searches in the Scene. Engines for this type of search implement the SearchService.ISceneSearchEngine interface.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SearchService.SceneSearch.EngineScope">
+      <summary>
+        <para>A enum that indicates the search scope for SceneSearch engines. It is used by SceneSearchContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.SearchService.SceneSearch.RegisterEngine(UnityEditor.SearchService.ISceneSearchEngine)">
+      <summary>
+        <para>Registers a Scene search engine dynamically.</para>
+      </summary>
+      <param name="engine">The Scene search engine to register.</param>
+    </member>
+    <member name="M:UnityEditor.SearchService.SceneSearch.UnregisterEngine(UnityEditor.SearchService.ISceneSearchEngine)">
       <summary>
         <para>Unregisters a dynamically registered engine.</para>
       </summary>
@@ -41482,6 +42255,11 @@ Cameras will only render objects in Scenes that have the same bits set in their 
         <para>The context used to store and resolve ExposedReference types. This is set by the SerializedObject constructor.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.SerializedObject.forceChildVisibility">
+      <summary>
+        <para>Controls the visibility of the child hidden fields.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.SerializedObject.hasModifiedProperties">
       <summary>
         <para>Is true when the SerializedObject has a modified property that has not been applied.</para>
@@ -41511,6 +42289,9 @@ Cameras will only render objects in Scenes that have the same bits set in their 
       <summary>
         <para>Apply property modifications.</para>
       </summary>
+      <returns>
+        <para>Returns true if any pending property changes were applied to the SerializedObject.</para>
+      </returns>
     </member>
     <member name="M:UnityEditor.SerializedObject.ApplyModifiedPropertiesWithoutUndo">
       <summary>
@@ -41603,7 +42384,7 @@ Cameras will only render objects in Scenes that have the same bits set in their 
     </member>
     <member name="P:UnityEditor.SerializedProperty.arraySize">
       <summary>
-        <para>The number of elements in the array. If the SerializedObject contains multiple objects it will return the smallest number of elements. So it is always possible to iterate through the SerializedObject and only get properties found in all objects.</para>
+        <para>The number of elements in the array.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.SerializedProperty.boolValue">
@@ -41681,6 +42462,11 @@ Cameras will only render objects in Scenes that have the same bits set in their 
         <para>Does it have child properties? (Read Only)</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.SerializedProperty.hash128Value">
+      <summary>
+        <para>The value of a Hash128 property.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.SerializedProperty.hasMultipleDifferentValues">
       <summary>
         <para>Does this property represent multiple different values due to multi-object editing? (Read Only)</para>
@@ -41743,6 +42529,11 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     <member name="P:UnityEditor.SerializedProperty.managedReferenceValue">
       <summary>
         <para>Sets the value of a managed reference.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.SerializedProperty.minArraySize">
+      <summary>
+        <para>The smallest number of elements in the array across all target objects. (Read Only)</para>
       </summary>
     </member>
     <member name="P:UnityEditor.SerializedProperty.name">
@@ -42008,6 +42799,11 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     <member name="F:UnityEditor.SerializedPropertyType.Gradient">
       <summary>
         <para>Gradient property.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.SerializedPropertyType.Hash128">
+      <summary>
+        <para>A Hash128 property.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.SerializedPropertyType.Integer">
@@ -42830,6 +43626,37 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
         <para>An array of ShaderMessage structs containing the generated messages.</para>
       </returns>
     </member>
+    <member name="M:UnityEditor.ShaderUtil.GetCurrentCustomEditor(UnityEngine.Shader)">
+      <summary>
+        <para>Gets the current custom editor for the shader you pass in.
+
+Depending on the render pipeline asset assigned in your Graphics Settings, the custom editor can change if the shader has a different custom editor for one or multiple render pipeline assets.</para>
+      </summary>
+      <param name="shader">The shader to check against.</param>
+      <returns>
+        <para>The current custom editor full class name.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.ShaderUtil.GetCustomEditorForRenderPipeline(UnityEngine.Shader,System.Type)">
+      <summary>
+        <para>Gets the shader's custom editor class name for a specific render pipeline asset type.</para>
+      </summary>
+      <param name="renderPipelineType">The render pipeline asset type.</param>
+      <param name="shader">The shader to check against.</param>
+      <returns>
+        <para>Returns the full class name of the custom editor.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.ShaderUtil.GetCustomEditorForRenderPipeline(UnityEngine.Shader,System.String)">
+      <summary>
+        <para>Gets the shader's custom editor class name for a specific render pipeline asset type.</para>
+      </summary>
+      <param name="renderPipelineType">The render pipeline asset type.</param>
+      <param name="shader">The shader to check against.</param>
+      <returns>
+        <para>Returns the full class name of the custom editor.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.ShaderUtil.GetMissShaderCount(UnityEngine.Experimental.Rendering.RayTracingShader)">
       <summary>
         <para>Returns the number of miss Shaders defined whitin a given RayTracingShader.</para>
@@ -42871,6 +43698,9 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
       </summary>
       <param name="s">The shader to check against.</param>
       <param name="propertyIdx">The property index to use.</param>
+      <returns>
+        <para>Returns the description of the given shader property.</para>
+      </returns>
     </member>
     <member name="M:UnityEditor.ShaderUtil.GetPropertyName(UnityEngine.Shader,System.Int32)">
       <summary>
@@ -42949,11 +43779,22 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
         <para>The number of errors and warnings generated by the Unity Shader Compiler.</para>
       </returns>
     </member>
+    <member name="M:UnityEditor.ShaderUtil.GetShaderMessages(UnityEngine.Shader,UnityEditor.Rendering.ShaderCompilerPlatform)">
+      <summary>
+        <para>Returns each error and warning generated by the Unity Shader Compiler for the given Shader.</para>
+      </summary>
+      <param name="s">The Shader instance to check for messages.</param>
+      <param name="platform">The ShaderCompilerPlatform to check for messages.</param>
+      <returns>
+        <para>An array of ShaderMessage structs containing the generated messages.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.ShaderUtil.GetShaderMessages(UnityEngine.Shader)">
       <summary>
         <para>Returns each error and warning generated by the Unity Shader Compiler for the given Shader.</para>
       </summary>
       <param name="s">The Shader instance to check for messages.</param>
+      <param name="platform">The ShaderCompilerPlatform to check for messages.</param>
       <returns>
         <para>An array of ShaderMessage structs containing the generated messages.</para>
       </returns>
@@ -43039,6 +43880,11 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     <member name="F:UnityEditor.ShaderUtil.ShaderPropertyType.Float">
       <summary>
         <para>Float Property.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.ShaderUtil.ShaderPropertyType.Int">
+      <summary>
+        <para>Int Property.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.ShaderUtil.ShaderPropertyType.Range">
@@ -43905,7 +44751,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="F:UnityEditor.Sprites.AtlasSettings.generateMipMaps">
       <summary>
-        <para>Should sprite atlas textures generate mip maps?</para>
+        <para>Detemines if sprite atlas textures generate mipmaps.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Sprites.AtlasSettings.maxHeight">
@@ -44080,7 +44926,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.ContributeGI">
       <summary>
-        <para>Include the GameObject when precomputing lighting data.</para>
+        <para>When you enable this property, Unity includes the target in Unity.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.LightmapStatic">
@@ -44501,7 +45347,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.borderMipmap">
       <summary>
-        <para>Keep texture borders the same when generating mipmaps?</para>
+        <para>Keeps texture borders the same when generating mipmaps.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.compressionQuality">
@@ -44511,7 +45357,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.convertToNormalmap">
       <summary>
-        <para>Convert heightmap to normal map?</para>
+        <para>Convert heightmap to normal map</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.crunchedCompression">
@@ -44521,7 +45367,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.fadeout">
       <summary>
-        <para>Fade out mip levels to gray color?</para>
+        <para>Fade out mip levels to gray color.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.filterMode">
@@ -44536,12 +45382,12 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.generateMipsInLinearSpace">
       <summary>
-        <para>Should mip maps be generated with gamma correction?</para>
+        <para>Generates mipmaps with gamma correction.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.grayscaleToAlpha">
       <summary>
-        <para>Generate alpha channel from intensity?</para>
+        <para>Generate alpha channel from intensity.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.heightmapScale">
@@ -44561,12 +45407,12 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.lightmap">
       <summary>
-        <para>Is this texture a lightmap?</para>
+        <para>Determines whether this texture is a lightmap.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.linearTexture">
       <summary>
-        <para>Is texture storing non-color data?</para>
+        <para>Determines whether this texture stores non-color data.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.maxTextureSize">
@@ -44601,12 +45447,12 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.mipMapsPreserveCoverage">
       <summary>
-        <para>Enables or disables coverage-preserving alpha MIP mapping.</para>
+        <para>Enables or disables coverage-preserving alpha mipmapping.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.normalmap">
       <summary>
-        <para>Is this texture a normal map?</para>
+        <para>Determines whether this texture is a normal map.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.normalmapFilter">
@@ -44666,7 +45512,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporter.sRGBTexture">
       <summary>
-        <para>Is texture storing color data?</para>
+        <para>Determines whether this texture stores color data.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporter.streamingMipmaps">
@@ -44812,23 +45658,23 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="M:UnityEditor.TextureImporter.IsDefaultPlatformTextureFormatValid(UnityEditor.TextureImporterType,UnityEditor.TextureImporterFormat)">
       <summary>
-        <para>Validates ref::TextureImporterFormat:: based on the type of the current format (ref::TextureImporterType::) and the default platform.</para>
+        <para>Validates TextureImporterFormat based on the type of the current format (TextureImporterType) and the default platform.</para>
       </summary>
       <param name="currentFormat">The TextureImporterType that the importer uses.</param>
       <param name="textureType">The TextureImporterFormat to validate.</param>
       <returns>
-        <para>Returns true if ref::TextureImporterFormat:: is valid and can be set. Returns false otherwise.</para>
+        <para>Returns true if TextureImporterFormat is valid and can be set. Returns false otherwise.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.TextureImporter.IsPlatformTextureFormatValid(UnityEditor.TextureImporterType,UnityEditor.BuildTarget,UnityEditor.TextureImporterFormat)">
       <summary>
-        <para>Validates ref::TextureImporterFormat:: based on a specified import type (ref::TextureImporterType::) and a specified build target (ref::BuildTarget::.).</para>
+        <para>Validates TextureImporterFormat based on a specified import type (TextureImporterType) and a specified build target (BuildTarget.).</para>
       </summary>
       <param name="textureType">The TextureImporterType that the importer uses.</param>
-      <param name="target">The platform that the setting targets, referred to as the ref::BuilTarget::.</param>
+      <param name="target">The platform that the setting targets, referred to as the BuilTarget.</param>
       <param name="currentFormat">The TextureImporterFormat to validate.</param>
       <returns>
-        <para>Returns true if ref::TextureImporterFormat:: is valid and can be set. Returns false otherwise.</para>
+        <para>Returns true if TextureImporterFormat is valid and can be set. Returns false otherwise.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.TextureImporter.ReadTextureImportInstructions">
@@ -45142,22 +45988,22 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="F:UnityEditor.TextureImporterFormat.DXT1">
       <summary>
-        <para>TextureFormat.DXT1 compressed texture format.</para>
+        <para>TextureFormat.DXT1 (BC1) compressed texture format.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.TextureImporterFormat.DXT1Crunched">
       <summary>
-        <para>DXT1 compressed texture format using Crunch compression for smaller storage sizes.</para>
+        <para>DXT1 (BC1) compressed texture format using Crunch compression for smaller storage sizes.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.TextureImporterFormat.DXT5">
       <summary>
-        <para>TextureFormat.DXT5 compressed texture format.</para>
+        <para>TextureFormat.DXT5 (BC3) compressed texture format.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.TextureImporterFormat.DXT5Crunched">
       <summary>
-        <para>DXT5 compressed texture format using Crunch compression for smaller storage sizes.</para>
+        <para>DXT5 (BC3) compressed texture format using Crunch compression for smaller storage sizes.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.TextureImporterFormat.EAC_R">
@@ -45538,12 +46384,12 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.cubemapConvolutionExponent">
       <summary>
-        <para>Defines how fast Phong exponent wears off in mip maps. Higher value will apply less blur to high resolution mip maps.</para>
+        <para>Defines how fast Phong exponent wears off in mipmaps. Higher value will apply less blur to high resolution mipmaps.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.cubemapConvolutionSteps">
       <summary>
-        <para>Defines how many different Phong exponents to store in mip maps. Higher value will give better transition between glossy and rough reflections, but will need higher texture resolution.</para>
+        <para>Defines how many different Phong exponents to store in mipmaps. Higher value will give better transition between glossy and rough reflections, but will need higher texture resolution.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.fadeOut">
@@ -45588,12 +46434,12 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.mipmapBias">
       <summary>
-        <para>Mip map bias of the texture.</para>
+        <para>Mipmap bias of the texture.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.mipmapEnabled">
       <summary>
-        <para>Generate mip maps for the texture?</para>
+        <para>Generate mipmaps for the texture?</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.mipmapFadeDistanceEnd">
@@ -45613,7 +46459,7 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.mipMapsPreserveCoverage">
       <summary>
-        <para>Enables or disables coverage-preserving alpha MIP mapping.</para>
+        <para>Enables or disables coverage-preserving alpha mipmapping.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.normalMapFilter">
@@ -45962,10 +46808,22 @@ Valid values are in the range [0-1], with higher values generating a tighter mes
         <para>Are we in Center or Pivot mode.</para>
       </summary>
     </member>
+    <member name="?:UnityEditor.Tools.pivotModeChanged(System.Action)">
+      <summary>
+        <para>Callback triggered when the pivot mode changes.</para>
+      </summary>
+      <param name="value"></param>
+    </member>
     <member name="P:UnityEditor.Tools.pivotRotation">
       <summary>
         <para>What's the rotation of the tool handle.</para>
       </summary>
+    </member>
+    <member name="?:UnityEditor.Tools.pivotRotationChanged(System.Action)">
+      <summary>
+        <para>Callback triggered when the pivot rotation changes.</para>
+      </summary>
+      <param name="value"></param>
     </member>
     <member name="P:UnityEditor.Tools.rectBlueprintMode">
       <summary>
@@ -45981,6 +46839,12 @@ Valid values are in the range [0-1], with higher values generating a tighter mes
       <summary>
         <para>Returns true if the active tool is a view or navigation tool.</para>
       </summary>
+    </member>
+    <member name="?:UnityEditor.Tools.viewToolChanged(System.Action)">
+      <summary>
+        <para>Callback triggered when the view tool changes.</para>
+      </summary>
+      <param name="value"></param>
     </member>
     <member name="P:UnityEditor.Tools.visibleLayers">
       <summary>
@@ -46553,11 +47417,27 @@ Valid values are in the range [0-1], with higher values generating a tighter mes
         <para>Gets the SpriteAtlasTextureSettings of packed Textures generated by this SpriteAtlasAsset.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.U2D.SpriteAtlasAsset.Load(System.String)">
+      <summary>
+        <para>Loads SpriteAtlasAsset at the given path. File extension of SpriteAtlasAsset is *.spriteatlasv2.</para>
+      </summary>
+      <param name="assetPath">The path of the SpriteAtlasAsset file on disk.</param>
+      <returns>
+        <para>Returns the loaded SpriteAtlasAsset.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.U2D.SpriteAtlasAsset.Remove(UnityEngine.Object[])">
       <summary>
         <para>Removes objects from the Atlas's packable objects list.</para>
       </summary>
       <param name="objects"></param>
+    </member>
+    <member name="M:UnityEditor.U2D.SpriteAtlasAsset.Save(UnityEditor.U2D.SpriteAtlasAsset,System.String)">
+      <summary>
+        <para>Saves SpriteAtlasAsset to disk. File extension of SpriteAtlasAsset is *.spriteatlasv2.</para>
+      </summary>
+      <param name="asset">The SpriteAtlasAsset object to be saved.</param>
+      <param name="assetPath">The path of the SpriteAtlasAsset file on disk.</param>
     </member>
     <member name="M:UnityEditor.U2D.SpriteAtlasAsset.SetIncludeInBuild(System.Boolean)">
       <summary>
@@ -46707,6 +47587,11 @@ Valid values are in the range [0-1], with higher values generating a tighter mes
     <member name="P:UnityEditor.U2D.SpriteAtlasPackingSettings.blockOffset">
       <summary>
         <para>Block offset to use while packing.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.U2D.SpriteAtlasPackingSettings.enableAlphaDilation">
+      <summary>
+        <para>Sets the boundary padding pixels alpha to 0 when packed into a Sprite Atlas.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.U2D.SpriteAtlasPackingSettings.enableRotation">
@@ -47085,15 +47970,51 @@ It is required that the GameObject is at the root of its current Scene.</para>
         <para>Handles interaction with the code editor.</para>
       </summary>
     </member>
-    <member name="P:Unity.CodeEditor.CodeEditor.CurrentEditor">
+    <member name="P:Unity.CodeEditor.CodeEditor.CurrentCodeEditor">
       <summary>
-        <para>Returns the current IExternalCodeEditor instance for the chosen code editor.</para>
+        <para>Returns the current IExternalCodeEditor instance for the code editor.</para>
       </summary>
     </member>
-    <member name="P:Unity.CodeEditor.CodeEditor.CurrentEditorInstallation">
+    <member name="P:Unity.CodeEditor.CodeEditor.CurrentEditorPath">
       <summary>
-        <para>The path to the current code editor installation being used to open script assets.</para>
+        <para>The path to the external code editor that Unity uses used to open script assets.</para>
       </summary>
+    </member>
+    <member name="P:Unity.CodeEditor.CodeEditor.CurrentInstallation">
+      <summary>
+        <para>Returns the current CodeEditor.Installation instance for the code editor.</para>
+      </summary>
+    </member>
+    <member name="P:Unity.CodeEditor.CodeEditor.Editor">
+      <summary>
+        <para>A singleton instance of CodeEditor. The Unity Editor references this instance to handle code editor callbacks.</para>
+      </summary>
+    </member>
+    <member name="M:Unity.CodeEditor.CodeEditor.GetCodeEditorForPath(System.String)">
+      <summary>
+        <para>Each registered code editor package has an instance of IExternalCodeEditor. This method invokes IExternalCodeEditor.TryGetInstallationForPath on that instance. It returns the first instance that returns a valid installation.</para>
+      </summary>
+      <param name="editorPath">The absolute path to an executable.</param>
+      <returns>
+        <para>Returns an IExternalCodeEditor representing the package responsible for the editor path.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.CodeEditor.CodeEditor.GetFoundScriptEditorPaths">
+      <summary>
+        <para>Collects all installations from registered instances of IExternalCodeEditor. This is done using IExternalCodeEditor.Installations.</para>
+      </summary>
+      <returns>
+        <para>A Dictionary that maps names to editor paths.</para>
+      </returns>
+    </member>
+    <member name="M:Unity.CodeEditor.CodeEditor.GetInstallationForPath(System.String)">
+      <summary>
+        <para>Each registered code editor package has an instance of IExternalCodeEditor. This method invokes IExternalCodeEditor.TryGetInstallationForPath on that instance. It finds the first instance that returns a valid installation, and returns the installation.</para>
+      </summary>
+      <param name="editorPath">The absolute path to an executable.</param>
+      <returns>
+        <para>An Installation representation of the path.</para>
+      </returns>
     </member>
     <member name="T:Unity.CodeEditor.CodeEditor.Installation">
       <summary>
@@ -47129,17 +48050,24 @@ It is required that the GameObject is at the root of its current Scene.</para>
         <para>Returns the arguments parameter with replacements based on the values passed in to the method.</para>
       </returns>
     </member>
+    <member name="M:Unity.CodeEditor.CodeEditor.QuoteForProcessStart(System.String)">
+      <summary>
+        <para>Quotes a string to pass to Process.Start as a single argument, and appends it to this string builder.</para>
+      </summary>
+      <param name="argument"></param>
+    </member>
     <member name="M:Unity.CodeEditor.CodeEditor.Register(Unity.CodeEditor.IExternalCodeEditor)">
       <summary>
         <para>Register an instance of IExternalCodeEditor to use when populating Preferences/External Tools menu. Calls ref::Initialize if you select the instance.</para>
       </summary>
       <param name="externalCodeEditor">The instance of IExternalCodeEditor to register and use to communicate with script Assets.</param>
     </member>
-    <member name="M:Unity.CodeEditor.CodeEditor.SetExternalScriptEditor(System.String)">
+    <member name="M:Unity.CodeEditor.CodeEditor.SetCodeEditor(System.String)">
       <summary>
-        <para>Sets the path of the code editor to use for opening script Assets.</para>
+        <para>Sets the path to the code editor that Unity uses to open script assets.</para>
       </summary>
       <param name="path">The absolute path to the code editor executable. Unity uses this to open files you request.</param>
+      <param name="editorPath"></param>
     </member>
     <member name="M:Unity.CodeEditor.CodeEditor.Unregister(Unity.CodeEditor.IExternalCodeEditor)">
       <summary>
@@ -49071,11 +49999,6 @@ Returns frame 0 when not playing, and frame at current time when playing.</para>
     <member name="F:UnityEditor.WSABuildAndRunDeployTarget.LocalMachine">
       <summary>
         <para>Runs the app on the local Windows PC.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.WSABuildAndRunDeployTarget.WindowsPhone">
-      <summary>
-        <para>Runs the app on a Windows device connected to the local PC via USB, e.g. Windows Phone.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.WSABuildType">

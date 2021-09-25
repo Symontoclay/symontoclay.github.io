@@ -828,7 +828,7 @@
     </member>
     <member name="P:UnityEngine.Terrain.activeTerrain">
       <summary>
-        <para>The active terrain. This is a convenience function to get to the main terrain in the Scene.</para>
+        <para>The active Terrain. This is a convenient function to get to the main Terrain in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.activeTerrains">
@@ -893,7 +893,7 @@
     </member>
     <member name="P:UnityEngine.Terrain.drawHeightmap">
       <summary>
-        <para>Specify if terrain heightmap should be drawn.</para>
+        <para>Indicates whether Unity draws the Terrain geometry itself.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.drawInstanced">
@@ -936,6 +936,11 @@
         <para>An approximation of how many pixels the terrain will pop in the worst case when switching lod.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Terrain.heightmapRenderTextureFormat">
+      <summary>
+        <para>RenderTextureFormat of the terrain heightmap.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Terrain.holesFormat">
       <summary>
         <para>Graphics format of the Terrain holes Texture when it is not compressed.</para>
@@ -948,7 +953,7 @@
     </member>
     <member name="P:UnityEngine.Terrain.leftNeighbor">
       <summary>
-        <para>Terrain left neighbor.</para>
+        <para>The Terrain tile to the left, which is in the negative X direction.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.legacyShininess">
@@ -973,7 +978,7 @@
     </member>
     <member name="P:UnityEngine.Terrain.materialTemplate">
       <summary>
-        <para>The custom material used to render the terrain.</para>
+        <para>The custom material Unity uses to render the Terrain.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.materialType">
@@ -1033,7 +1038,7 @@
     </member>
     <member name="P:UnityEngine.Terrain.rightNeighbor">
       <summary>
-        <para>Terrain right neighbor.</para>
+        <para>The Terrain tile to the left, which is in the positive X direction.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.shadowCastingMode">
@@ -1142,7 +1147,7 @@
     </member>
     <member name="M:UnityEngine.Terrain.SampleHeight(UnityEngine.Vector3)">
       <summary>
-        <para>Samples the height at the given position defined in world space, relative to the terrain space.</para>
+        <para>Samples the height at the given position defined in world space, relative to the Terrain space.</para>
       </summary>
       <param name="worldPosition"></param>
     </member>
@@ -1153,12 +1158,12 @@
     </member>
     <member name="M:UnityEngine.Terrain.SetNeighbors(UnityEngine.Terrain,UnityEngine.Terrain,UnityEngine.Terrain,UnityEngine.Terrain)">
       <summary>
-        <para>Lets you setup the connection between neighboring Terrain tiles.</para>
+        <para>Lets you set up the connection between neighboring Terrain tiles. This ensures LOD matches up on neighboring Terrain tiles.</para>
       </summary>
-      <param name="left"></param>
-      <param name="top"></param>
-      <param name="right"></param>
-      <param name="bottom"></param>
+      <param name="left">The Terrain tile to the left is in the negative X direction.</param>
+      <param name="top">The Terrain tile to the top is in the positive Z direction.</param>
+      <param name="right">The Terrain tile to the right is in the positive X direction.</param>
+      <param name="bottom">The Terrain tile to the bottom is in the negative Z direction.</param>
     </member>
     <member name="M:UnityEngine.Terrain.SetSplatMaterialPropertyBlock(UnityEngine.MaterialPropertyBlock)">
       <summary>
@@ -1223,7 +1228,7 @@
     </member>
     <member name="P:UnityEngine.TerrainData.alphamapHeight">
       <summary>
-        <para>Height of the alpha map.</para>
+        <para>Height of the alpha map. (Read only.)</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.alphamapLayers">
@@ -1233,7 +1238,7 @@
     </member>
     <member name="P:UnityEngine.TerrainData.alphamapResolution">
       <summary>
-        <para>Resolution of the alpha map.</para>
+        <para>The size of the alpha map in texels for either the width or the height.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.alphamapTextureCount">
@@ -1263,7 +1268,7 @@
     </member>
     <member name="P:UnityEngine.TerrainData.detailHeight">
       <summary>
-        <para>Detail height of the TerrainData.</para>
+        <para>The resolution of the detail data stored in TerrainData.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.detailPatchCount">
@@ -1273,7 +1278,7 @@
     </member>
     <member name="P:UnityEngine.TerrainData.detailPrototypes">
       <summary>
-        <para>Contains the detail texture/meshes that the terrain has.</para>
+        <para>Contains the detail texture/meshes that the Terrain has.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.detailResolution">
@@ -1288,7 +1293,7 @@
     </member>
     <member name="P:UnityEngine.TerrainData.detailWidth">
       <summary>
-        <para>Detail width of the TerrainData.</para>
+        <para>The resolution of the detail data stored in TerrainData.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.enableHolesTextureCompression">
@@ -1303,12 +1308,12 @@
     </member>
     <member name="P:UnityEngine.TerrainData.heightmapResolution">
       <summary>
-        <para>Resolution of the heightmap.</para>
+        <para>The size of the heightmap in texels for either the width or the height.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.heightmapScale">
       <summary>
-        <para>The size of each heightmap sample.</para>
+        <para>Returns a Vector3 where the x and z components are the size of each heightmap sample (i.e. the space between two neighboring heightmap samples), and the y component is the entire Terrain's height range in world space.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TerrainData.heightmapTexture">
@@ -1453,29 +1458,29 @@
     </member>
     <member name="M:UnityEngine.TerrainData.GetDetailLayer(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>
-        <para>Returns a 2D array of the detail object density in the specific location.</para>
+        <para>Returns a 2D array of the detail object density (i.e. the number of detail objects for this layer) in the specific location.</para>
       </summary>
-      <param name="xBase"></param>
-      <param name="yBase"></param>
-      <param name="width"></param>
-      <param name="height"></param>
-      <param name="layer"></param>
+      <param name="xBase">First x index of detail object density data to retrieve.</param>
+      <param name="yBase">First y index of detail object density data to retrieve.</param>
+      <param name="width">The amount of detail object density data to retrieve along the Terrain's x axis.</param>
+      <param name="height">The amount of detail object density data to retrieve along the Terrain's z axis.</param>
+      <param name="layer">The index of the detail in the TerrainData.detailPrototypes array.</param>
     </member>
     <member name="M:UnityEngine.TerrainData.GetHeight(System.Int32,System.Int32)">
       <summary>
-        <para>Gets the height at a certain point x,y.</para>
+        <para>Gets the world space height of the Terrain at a certain point x,y without adding the Terrain's world position y.</para>
       </summary>
       <param name="x"></param>
       <param name="y"></param>
     </member>
     <member name="M:UnityEngine.TerrainData.GetHeights(System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>
-        <para>Get an array of heightmap samples.</para>
+        <para>Gets an array of heightmap samples.</para>
       </summary>
-      <param name="xBase">First x index of heightmap samples to retrieve.</param>
-      <param name="yBase">First y index of heightmap samples to retrieve.</param>
-      <param name="width">Number of samples to retrieve along the heightmap's x axis.</param>
-      <param name="height">Number of samples to retrieve along the heightmap's y axis.</param>
+      <param name="xBase">First index of heightmap samples to retrieve along the Terrain's x axis.</param>
+      <param name="yBase">First index of heightmap samples to retrieve along the Terrain's z axis.</param>
+      <param name="width">Number of samples to retrieve along the Terrain's x axis.</param>
+      <param name="height">Number of samples to retrieve along the Terrain's z axis.</param>
     </member>
     <member name="M:UnityEngine.TerrainData.GetHoles(System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>

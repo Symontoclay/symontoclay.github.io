@@ -89,9 +89,20 @@
         <para>How far away from the camera is the Canvas generated.</para>
       </summary>
     </member>
+    <member name="?:UnityEngine.Canvas.preWillRenderCanvases(UnityEngine.Canvas/WillRenderCanvases)">
+      <summary>
+        <para>Event that is called just before Canvas rendering happens.</para>
+      </summary>
+      <param name="value"></param>
+    </member>
     <member name="P:UnityEngine.Canvas.referencePixelsPerUnit">
       <summary>
         <para>The number of pixels per unit that is considered the default.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Canvas.renderingDisplaySize">
+      <summary>
+        <para>Returns the canvas display size based on the selected render mode and target display.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Canvas.renderMode">

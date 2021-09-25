@@ -14,6 +14,11 @@
         <para>Return true if the AssetBundle is a streamed Scene AssetBundle.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.AssetBundle.memoryBudgetKB">
+      <summary>
+        <para>Controls the size of the shared AssetBundle loading cache. Default value is 1MB. </para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.AssetBundle.Contains(System.String)">
       <summary>
         <para>Check if an AssetBundle contains a specific object.</para>
@@ -253,15 +258,24 @@ See Also: UnityWebRequestAssetBundle.GetAssetBundle, DownloadHandlerAssetBundle.
     </member>
     <member name="M:UnityEngine.AssetBundle.Unload(System.Boolean)">
       <summary>
-        <para>Unloads assets in the bundle.</para>
+        <para>Unloads an AssetBundle freeing its data.</para>
       </summary>
-      <param name="unloadAllLoadedObjects"></param>
+      <param name="unloadAllLoadedObjects">Determines whether the current instances of objects loaded from the AssetBundle will also be unloaded.</param>
     </member>
     <member name="M:UnityEngine.AssetBundle.UnloadAllAssetBundles(System.Boolean)">
       <summary>
-        <para>Unloads all currently loaded Asset Bundles.</para>
+        <para>Unloads all currently loaded AssetBundles.</para>
       </summary>
-      <param name="unloadAllObjects">Determines whether the current instances of objects loaded from Asset Bundles will also be unloaded.</param>
+      <param name="unloadAllObjects">Determines whether the current instances of objects loaded from AssetBundles will also be unloaded.</param>
+    </member>
+    <member name="M:UnityEngine.AssetBundle.UnloadAsync(System.Boolean)">
+      <summary>
+        <para>Unloads assets in the bundle.</para>
+      </summary>
+      <param name="unloadAllLoadedObjects"></param>
+      <returns>
+        <para>Asynchronous unload request for an AssetBundle.</para>
+      </returns>
     </member>
     <member name="T:UnityEngine.AssetBundleCreateRequest">
       <summary>

@@ -1,5 +1,23 @@
 [
   {
+    "Date": "2021-09-25T00:00:00+03:00",
+    "Version": "0.3.3",
+    "AssetsList": [
+      {
+        "Kind": 11,
+        "Title": "Unity package",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.3/SymOntoClay-0.3.3.unitypackage"
+      },
+      {
+        "Kind": 8,
+        "Title": "Portable CLI (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.3/SymOntoClay-CLI-0.3.3-x64.zip"
+      }
+    ],
+    "Description": "* Fixing issues\r\n* CLI:\r\n  * new -world\r\n  * new -npc\r\n",
+    "IsMarkdown": true
+  },
+  {
     "Date": "2021-09-05T00:00:00+03:00",
     "Version": "0.3.2",
     "AssetsList": [

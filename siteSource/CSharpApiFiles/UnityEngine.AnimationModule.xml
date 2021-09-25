@@ -1756,6 +1756,18 @@
       </summary>
       <param name="animator">The Animator instance that calls this method.</param>
     </member>
+    <member name="M:UnityEngine.Animations.AnimatorJobExtensions.UnbindAllSceneHandles(UnityEngine.Animator)">
+      <summary>
+        <para>Removes all PropertySceneHandles and TransformSceneHandles associated with the Animator instance. Use this method to manage the lifecycle of scene handles when the animated hierarchy changes.</para>
+      </summary>
+      <param name="animator">The Animator instance that calls this method.</param>
+    </member>
+    <member name="M:UnityEngine.Animations.AnimatorJobExtensions.UnbindAllStreamHandles(UnityEngine.Animator)">
+      <summary>
+        <para>Removes all PropertyStreamHandles and TransformStreamHandles associated with the Animator instance. Use this method to manage the lifecycle of stream handles when the animated hierarchy changes.</para>
+      </summary>
+      <param name="animator">The Animator instance that calls this method.</param>
+    </member>
     <member name="T:UnityEngine.Animations.Axis">
       <summary>
         <para>Represents the axes used in 3D space.</para>
@@ -1814,6 +1826,16 @@
     <member name="F:UnityEngine.Animations.CustomStreamPropertyType.Int">
       <summary>
         <para>An integer value.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Animations.DiscreteEvaluationAttribute">
+      <summary>
+        <para>Use this attribute to indicate that a property will be evaluated as a discrete value during animation playback.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Animations.DiscreteEvaluationAttribute.#ctor">
+      <summary>
+        <para>Use this attribute to indicate that a property will be evaluated as a discrete value during animation playback.</para>
       </summary>
     </member>
     <member name="?:UnityEngine.Animations.IAnimationJob">

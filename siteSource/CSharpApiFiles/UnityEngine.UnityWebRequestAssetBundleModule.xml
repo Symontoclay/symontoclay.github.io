@@ -14,6 +14,16 @@
         <para>Returns the downloaded AssetBundle, or null. (Read Only)</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAssetBundle.autoLoadAssetBundle">
+      <summary>
+        <para>If true, the AssetBundle will be loaded as part of the UnityWebRequest process. If false, the AssetBundle will be loaded on demand when accessing the DownloadHandlerAssetBundle.assetBundle property.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.DownloadHandlerAssetBundle.isDownloadComplete">
+      <summary>
+        <para>Returns true if the data downloading portion of the operation is complete.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.#ctor(System.String,System.UInt32)">
       <summary>
         <para>Standard constructor for non-cached asset bundles.</para>
@@ -68,7 +78,7 @@
     </member>
     <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.GetData">
       <summary>
-        <para>Not implemented. Throws &lt;a href="http:msdn.microsoft.comen-uslibrarysystem.notsupportedexception"&gt;NotSupportedException&lt;a&gt;.</para>
+        <para>Not implemented. Throws &lt;a href="https:msdn.microsoft.comen-uslibrarysystem.notsupportedexception"&gt;NotSupportedException&lt;a&gt;.</para>
       </summary>
       <returns>
         <para>Not implemented.</para>
@@ -76,7 +86,7 @@
     </member>
     <member name="M:UnityEngine.Networking.DownloadHandlerAssetBundle.GetText">
       <summary>
-        <para>Not implemented. Throws &lt;a href="http:msdn.microsoft.comen-uslibrarysystem.notsupportedexception"&gt;NotSupportedException&lt;a&gt;.</para>
+        <para>Not implemented. Throws &lt;a href="https:msdn.microsoft.comen-uslibrarysystem.notsupportedexception"&gt;NotSupportedException&lt;a&gt;.</para>
       </summary>
       <returns>
         <para>Not implemented.</para>

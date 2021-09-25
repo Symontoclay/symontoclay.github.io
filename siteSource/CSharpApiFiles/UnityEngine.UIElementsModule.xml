@@ -5377,6 +5377,11 @@ When this method is called, it is not possible to use SetNextVertex to fill the 
         <para>The element is positioned in relation to its default box as calculated by layout.</para>
       </summary>
     </member>
+    <member name="T:UnityEngine.UIElements.ProgressBar">
+      <summary>
+        <para>ProgressBar control using UIElements. Supports binding to float and int values.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.UIElements.PropagationPhase">
       <summary>
         <para>The propagation phases of an event.</para>
@@ -6760,11 +6765,6 @@ When this method is called, it is not possible to use SetNextVertex to fill the 
         <para>USS class name of elements of this type, when there is no text.</para>
       </summary>
     </member>
-    <member name="P:UnityEngine.UIElements.Toggle.text">
-      <summary>
-        <para>Optional text after the toggle.</para>
-      </summary>
-    </member>
     <member name="F:UnityEngine.UIElements.Toggle.textUssClassName">
       <summary>
         <para>USS class name of text elements in elements of this type.</para>
@@ -7739,6 +7739,42 @@ Internally, an element hinted with GroupTransform will force a separate draw bat
       <param name="value">The value of the attribute.</param>
       <returns>
         <para>True if the value could be retrieved, false otherwise.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.UIElements.UxmlHash128AttributeDescription">
+      <summary>
+        <para>Describes a UXML attribute that represents a Hash128 as a string.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.UIElements.UxmlHash128AttributeDescription.defaultValueAsString">
+      <summary>
+        <para>The default value for the attribute, as a string.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.UIElements.UxmlHash128AttributeDescription.#ctor">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.UIElements.UxmlHash128AttributeDescription.GetValueFromBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext)">
+      <summary>
+        <para>This method retrieves the value of the attribute from the attribute bag. If the it finds the attribute, it returns the attribute. If it does not find the attribute, it returns defaultValue.</para>
+      </summary>
+      <param name="bag">The bag of attributes.</param>
+      <param name="cc">The context in which the method retrieves values.</param>
+      <returns>
+        <para>The value of the attribute.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.UIElements.UxmlHash128AttributeDescription.TryGetValueFromBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext,UnityEngine.Hash128&amp;)">
+      <summary>
+        <para>This method tries to retrieve the value of the attribute from the attribute bag. If it finds the attribute, it returns true. Otherwise, it returns false.</para>
+      </summary>
+      <param name="bag">The bag of attributes.</param>
+      <param name="cc">The context in which the method retrieves values.</param>
+      <param name="value">The value of the attribute.</param>
+      <returns>
+        <para>True if the method retrieves the value, false otherwise.</para>
       </returns>
     </member>
     <member name="T:UnityEngine.UIElements.UxmlIntAttributeDescription">

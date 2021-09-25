@@ -16,7 +16,7 @@
     </member>
     <member name="P:UnityEngine.ArticulationBody.anchorRotation">
       <summary>
-        <para>Position of the anchor relative to this body.</para>
+        <para>Rotation of the anchor relative to this body.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ArticulationBody.angularDamping">
@@ -32,6 +32,16 @@
     <member name="P:UnityEngine.ArticulationBody.centerOfMass">
       <summary>
         <para>The center of mass of the body defined in local space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.collisionDetectionMode">
+      <summary>
+        <para>The ArticulationBody's collision detection mode.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ArticulationBody.computeParentAnchor">
+      <summary>
+        <para>Whether the parent anchor should be computed automatically or not.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ArticulationBody.dofCount">
@@ -76,7 +86,7 @@
     </member>
     <member name="P:UnityEngine.ArticulationBody.jointFriction">
       <summary>
-        <para>Allows you to specify the amount of friction that is applied as a result of connected bodies moving relative to this body.</para>
+        <para>Allows you to specify the amount of friction that is applied as a result of the parent body moving relative to this body.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ArticulationBody.jointPosition">
@@ -146,7 +156,7 @@
     </member>
     <member name="P:UnityEngine.ArticulationBody.parentAnchorRotation">
       <summary>
-        <para>Position of the anchor relative to this body's parent.</para>
+        <para>Rotation of the anchor relative to this body's parent.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ArticulationBody.sleepThreshold">
@@ -389,6 +399,11 @@
         <para>Forces an articulation body to sleep.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.ArticulationBody.SnapAnchorToClosestContact">
+      <summary>
+        <para>Snap the anchor to the closest contact between the connected bodies.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.ArticulationBody.TeleportRoot(UnityEngine.Vector3,UnityEngine.Quaternion)">
       <summary>
         <para>Teleport the root body of the articulation to a new pose.</para>
@@ -458,7 +473,7 @@
     </member>
     <member name="F:UnityEngine.ArticulationDrive.upperLimit">
       <summary>
-        <para>The upperlimit of motion for a particular degree of freedom.</para>
+        <para>The upper limit of motion for a particular degree of freedom.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.ArticulationJacobian">
@@ -784,7 +799,7 @@
     </member>
     <member name="M:UnityEngine.CharacterController.Move(UnityEngine.Vector3)">
       <summary>
-        <para>A more complex move function taking absolute movement deltas.</para>
+        <para>Supplies the movement of a GameObject with an attached CharacterController component.</para>
       </summary>
       <param name="motion"></param>
     </member>
@@ -923,6 +938,16 @@
     <member name="T:UnityEngine.Collision">
       <summary>
         <para>Describes a collision.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.articulationBody">
+      <summary>
+        <para>The ArticulationBody of the collider that your GameObject collides with (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Collision.body">
+      <summary>
+        <para>The Rigidbody or ArticulationBody of the collider that your Component collides with (Read Only).</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Collision.collider">
@@ -2217,12 +2242,15 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
     </member>
     <member name="M:UnityEngine.Physics.OverlapSphere(UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
       <summary>
-        <para>Returns an array with all colliders touching or inside the sphere.</para>
+        <para>Computes and stores colliders touching or inside the sphere.</para>
       </summary>
       <param name="position">Center of the sphere.</param>
       <param name="radius">Radius of the sphere.</param>
-      <param name="layerMask">A that is used to selectively ignore colliders when casting a ray.</param>
+      <param name="layerMask">A defines which layers of colliders to include in the query.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
+      <returns>
+        <para>Returns an array with all colliders touching or inside the sphere.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Physics.OverlapSphereNonAlloc(UnityEngine.Vector3,System.Single,UnityEngine.Collider[],System.Int32,UnityEngine.QueryTriggerInteraction)">
       <summary>
@@ -2231,10 +2259,10 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
       <param name="position">Center of the sphere.</param>
       <param name="radius">Radius of the sphere.</param>
       <param name="results">The buffer to store the results into.</param>
-      <param name="layerMask">A that is used to selectively ignore colliders when casting a ray.</param>
+      <param name="layerMask">A defines which layers of colliders to include in the query.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
       <returns>
-        <para>The amount of colliders stored into the results buffer.</para>
+        <para>Returns the amount of colliders stored into the results buffer.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
@@ -2247,7 +2275,7 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
       <param name="layerMask">A that is used to selectively ignore Colliders when casting a ray.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
       <returns>
-        <para>True if the ray intersects with a Collider, otherwise false.</para>
+        <para>Returns true if the ray intersects with a Collider, otherwise false.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
@@ -2256,12 +2284,12 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
       </summary>
       <param name="origin">The starting point of the ray in world coordinates.</param>
       <param name="direction">The direction of the ray.</param>
-      <param name="hitInfo">If true is returned, hitInfo will contain more information about where the collider was hit. (See Also: RaycastHit).</param>
+      <param name="hitInfo">If true is returned, hitInfo will contain more information about where the closest collider was hit. (See Also: RaycastHit).</param>
       <param name="maxDistance">The max distance the ray should check for collisions.</param>
       <param name="layerMask">A that is used to selectively ignore colliders when casting a ray.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
       <returns>
-        <para>True when the ray intersects any collider, otherwise false.</para>
+        <para>Returns true when the ray intersects any collider, otherwise false.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Ray,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
@@ -2273,7 +2301,7 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
       <param name="layerMask">A that is used to selectively ignore colliders when casting a ray.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
       <returns>
-        <para>True when the ray intersects any collider, otherwise false.</para>
+        <para>Returns true when the ray intersects any collider, otherwise false.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Physics.Raycast(UnityEngine.Ray,UnityEngine.RaycastHit&amp;,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
@@ -2281,12 +2309,12 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
         <para>Same as above using ray.origin and ray.direction instead of origin and direction.</para>
       </summary>
       <param name="ray">The starting point and direction of the ray.</param>
-      <param name="hitInfo">If true is returned, hitInfo will contain more information about where the collider was hit. (See Also: RaycastHit).</param>
+      <param name="hitInfo">If true is returned, hitInfo will contain more information about where the closest collider was hit. (See Also: RaycastHit).</param>
       <param name="maxDistance">The max distance the ray should check for collisions.</param>
       <param name="layerMask">A that is used to selectively ignore colliders when casting a ray.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
       <returns>
-        <para>True when the ray intersects any collider, otherwise false.</para>
+        <para>Returns true when the ray intersects any collider, otherwise false.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Physics.RaycastAll(UnityEngine.Ray,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)">
@@ -2333,9 +2361,8 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
       <param name="results">The buffer to store the hits into.</param>
       <param name="direction">The direction of the ray.</param>
       <param name="maxDistance">The max distance the rayhit is allowed to be from the start of the ray.</param>
-      <param name="layermask">A that is used to selectively ignore colliders when casting a ray.</param>
       <param name="queryTriggerInteraction">Specifies whether this query should hit Triggers.</param>
-      <param name="layerMask"></param>
+      <param name="layerMask">A that is used to selectively ignore colliders when casting a ray.</param>
       <returns>
         <para>The amount of hits stored into the results buffer.</para>
       </returns>
