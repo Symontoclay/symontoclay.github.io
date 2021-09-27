@@ -12,6 +12,6 @@
 	"T:SymOntoClay.HeadLocator",
 	"T:SymOntoClay.BaseBehavior"
   ],
-  "PublicMembersOnly": true,
+  "PublicMembersOnly": false,
   "IgnoreErrors": true
 }
