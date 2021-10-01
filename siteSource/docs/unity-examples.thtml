@@ -51,4 +51,17 @@ Demo 3: Action
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+In the demoscene you can see a trigger inside of action. The action makes an NPC to go through a barrel. But the trigger inside of action stops the NPC near the barrel.
+</p>
+
+<div>
+<ico t='git'/> <a href='https://github.com/Symontoclay/demo3_action'>https://github.com/Symontoclay/demo3_action</a>
+</div>
+<div>
+<ico t='YouTube'/> <a href='https://youtu.be/cGULRNSvE6o'>https://youtu.be/cGULRNSvE6o</a>
+</div>
+
+<p>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/cGULRNSvE6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
