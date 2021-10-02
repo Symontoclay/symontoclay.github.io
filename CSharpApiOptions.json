@@ -9,8 +9,9 @@
     "T:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute",
 	"T:SymOntoClay.UnityAsset.Core.EndpointParamAttribute",
 	"T:SymOntoClay.IUHostListener",
-	"T:SymOntoClay.HeadLocator"
+	"T:SymOntoClay.HeadLocator",
+	"T:SymOntoClay.BaseBehavior"
   ],
-  "PublicMembersOnly": true,
+  "PublicMembersOnly": false,
   "IgnoreErrors": true
 }
