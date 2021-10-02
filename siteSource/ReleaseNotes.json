@@ -1,6 +1,6 @@
 [
   {
-    "Date": "2021-09-25T00:00:00+03:00",
+    "Date": "2021-10-02T00:00:00+03:00",
     "Version": "0.3.3",
     "AssetsList": [
       {
@@ -14,7 +14,7 @@
         "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.3/SymOntoClay-CLI-0.3.3-x64.zip"
       }
     ],
-    "Description": "* Fixing issues\r\n* CLI:\r\n  * new -world\r\n  * new -npc\r\n",
+    "Description": "* action\r\n* Function call overloading\r\n* \"await\" statement\r\n* \"complete action\" statement\r\n* \"break action\" statement\r\n* Fixing issues\r\n",
     "IsMarkdown": true
   },
   {
