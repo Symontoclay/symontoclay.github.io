@@ -647,6 +647,39 @@ world `Lost town`
 }
 </code>
 
+<h3 class='center-h' data-href='Conditional_entity_chapter'>
+Conditional entity
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ConditionalEntityDecl' groups='Expr'/> =  .
+<EBNFCDECL name='ConditionalEntityExpr'/> = <GEBNFC name='ConditionalEntityExpr' kind='or'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+#@(barrel);
+#@{: barrel($_) :}
+#@(hold(I, this) & weapon)
+#@(hold(I, this) & (weapon & dog) )
+#@(hold(#a, this) & (weapon & dog) )
+#@(color = black)
+#@{: >: { barrel($_) } :}
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Waypoint_chapter'>
 Waypoint
 </h3>
@@ -2642,9 +2675,13 @@ Expressions in round brackets executes as single expression.
 <EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 </gr>
 
+<complete_me/>
+
 <code data-lng='soc'>
 {: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
 </code>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Variable_chapter'>
 Variable
@@ -2759,6 +2796,20 @@ Logic variable can be used only in <a href='#Logic_expression_chapter'>Logic exp
 $x
 $y
 </code>
+
+<h4 class='center-h' data-href='Available_logic_variables_chapter'>
+Available logic variables
+</h4>
+
+<LinkToContent/>
+
+<h5 class='center-h' data-href='this_logic_variable_chapter'>
+$_
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Channel_chapter'>
 Channel
@@ -2920,6 +2971,10 @@ Associativity: Right-to-left.
 </p>
 
 <p>
+    <b>In imperative code:</b>
+</p>
+
+<p>
 Writes a value from the right operand to the left operand and returns the value of the right operand, which can be used in further calculations.
 </p>
 
@@ -2935,6 +2990,18 @@ The left operand must be a variable.
 @x = 1;
 @r = @b = 1;
 </code>
+
+<p>
+    <b>In logic expression:</b>
+</p>
+
+<complete_me/>
+
+<p>
+    <b>In conditional entity expression:</b>
+</p>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Relational_operators_chapter'>
 Relational operators
@@ -3138,13 +3205,19 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here<
 <EBNFCDECL name='AndOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&'/> .
 </gr>
 
+<complete_me/>
+
 <code data-lng='soc'>
 male($x) & parent($y, $x)
 </code>
 
+<complete_me/>
+
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of logic expressions <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='OrOp_chapter'>
 Operator "|"
@@ -3160,13 +3233,19 @@ Operator "|"
 <EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '|'/> .
 </gr>
 
+<complete_me/>
+
 <code data-lng='soc'>
 {: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
 </code>
 
+<complete_me/>
+
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of logic expressions <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='NotOp_chapter'>
 Operator "!"
