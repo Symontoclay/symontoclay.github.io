@@ -222,7 +222,7 @@ Names a concept (or type).
 </p>
 
 <gr>
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr'/> = <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr;ConditionalEntityExpr'/> = <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -653,20 +653,15 @@ Conditional entity
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Conditional entity represents an entity from the world around, which is described by condition.
+During code execution the condition entity will be resolved to concrete entity from the world around, which is fit to the condition.
 </p>
 
-<complete_me/>
-
 <gr>
-<EBNFCDECL name='ConditionalEntityDecl' groups='Expr'/> =  .
+<EBNFCDECL name='ConditionalEntityDecl' groups='Expr'/> = ( "#@(" <EBNFC name='ConditionalEntityExpr'/> ")" ) | ( "#@{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" ) .
 <EBNFCDECL name='ConditionalEntityExpr'/> = <GEBNFC name='ConditionalEntityExpr' kind='or'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 #@(barrel);
@@ -678,7 +673,51 @@ Conditional entity
 #@{: >: { barrel($_) } :}
 </code>
 
-<complete_me/>
+<p>
+There exist two kind of expression for conditional entity:
+    <ul>
+	    <li>
+		    Short expression also called <a href='#ConditionalEntityExpr'>ConditionalEntityExpr</a>
+		</li>
+		
+		<li>
+		    Fact with <a href='#this_logic_variable_chapter'>special logic variable $_</a>
+		</li>
+	</ul>
+</p>
+
+<p>
+The short expression is more graceful for describing conditional entity.
+But fact can describe conditional entity more precisely and with contractions which are absent in short expression now. 
+</p>
+
+<p>
+During resolving short expression is converted to fact.
+The following expressions describe the same condition:
+</p>
+
+<code data-lng='soc'>
+#@(barrel);
+#@{: barrel($_) :}
+#@{: >: { barrel($_) } :}
+</code>
+
+<p>
+Concept <b>this</b> is converted to <b>$_</b>:
+</p>
+
+<code data-lng='soc'>
+#@(hold(I, this) & weapon)
+#@{: hold(I, $_) & weapon($_) :}
+</code>
+
+<p>
+Example of using:
+</p>
+
+<code data-lng='soc'>
+@@host.take(#@(gun));
+</code>
 
 <h3 class='center-h' data-href='Waypoint_chapter'>
 Waypoint
@@ -2402,6 +2441,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 {: male(#Tom) :}
 {: >:{ male(#Tom) } :}
 {: parent(#Piter, #Tom) :}
+{: $x = act(M16, shoot) & hear(I, $x) :}
 </code>
 
 <p>
@@ -2673,15 +2713,13 @@ Expressions in round brackets executes as single expression.
 
 <gr>
 <EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
+<EBNFCDECL name='ConditionalEntityGroupingExpr' groups='ConditionalEntityExpr'/> = "(" <EBNFC name='ConditionalEntityExpr'/> ")" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 {: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
+#@(hold(I, this) & (weapon & dog) )
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Variable_chapter'>
 Variable
@@ -2809,7 +2847,13 @@ $_
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The logic variable is used in <a href='#Conditional_entity_chapter'>Conditional entity</a> and represents concrete entity which fits the condition.
+</p>
+
+<code data-lng='soc'>
+#@{: barrel($_) :}
+</code>
 
 <h3 class='center-h' data-href='Channel_chapter'>
 Channel
@@ -2995,13 +3039,49 @@ The left operand must be a variable.
     <b>In logic expression:</b>
 </p>
 
-<complete_me/>
+<p>
+Defines alias for logic expression.
+This alias can be used in logic expressions as usual <a href='#Logic_variable_chapter'>Logic variable</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='AliasLogicExpr' groups='LogicExpr'/> = <EBNFC name='LogicVarExpr'/> "=" ( <GEBNFC name='AliasLogicExpr' kind='or' /> ) .
+</gr>
+
+<code data-lng='soc'>
+$x = act(M16, shoot)
+{: $x = act(M16, shoot) & hear(I, $x) :}
+</code>
+
+<p>
+Now the alias can be created only for <a href='#PredicateOp_chapter'>predicates</a>.
+</p>
 
 <p>
     <b>In conditional entity expression:</b>
 </p>
 
-<complete_me/>
+<p>
+It is a short representation relations between object and values in conditional entity expression instead of predicate.
+</p>
+
+<gr>
+<EBNFCDECL name='ConditionalEntityRelationOpExpr' groups='ConditionalEntityExpr'/> = <EBNFC name='ConditionalEntityRelationNameExpr'/> "=" <EBNFC name='ConditionalEntityRelationValueExpr'/> .
+<EBNFCDECL name='ConditionalEntityRelationNameExpr'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConditionalEntityRelationValueExpr'/> = <EBNFC name='ConstExpr'/> .
+</gr>
+
+<code data-lng='soc'>
+#@(color = black)
+</code>
+
+<p>
+It is the same like:
+</p>
+
+<code data-lng='soc'>
+#@{: color($_, black) =  :}
+</code>
 
 <h3 class='center-h' data-href='Relational_operators_chapter'>
 Relational operators
@@ -3080,8 +3160,8 @@ You can read <a href='#Semantics_of_Logic_sentence_chapter'>here</a> about seman
 
 <gr>
 <EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
-<EBNFCDECL name='PredicateOp' groups='LogicExpr'/> = <EBNFC name='PredicateIdentifier'/> "(" <EBNFC name='PredicateParameter'/> [ { "," <EBNFC name='PredicateParameter'/> } ] ")" .
-<EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
+<EBNFCDECL name='PredicateOp' groups='LogicExpr;AliasLogicExpr'/> = <EBNFC name='PredicateIdentifier'/> "(" <EBNFC name='PredicateParameter'/> [ { "," <EBNFC name='PredicateParameter'/> } ] ")" .
+<EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> | <EBNFC name='PredicateOp'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3091,6 +3171,7 @@ son($x, $y)
 age(#Tom, 12)
 distance(I, #Tom, 12)
 $z(#Alisa_12, $x)
+hear(I, act(M16, shoot))
 </code>
 
 <p>
@@ -3198,26 +3279,29 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here<
 <LinkToContent/>
 
 <p>
-Оperator of logical conjunction (logical <b>and</b>).
+Operator of logical conjunction (logical <b>and</b>).
 </p>
 
 <gr>
 <EBNFCDECL name='AndOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '&'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 male($x) & parent($y, $x)
 </code>
 
-<complete_me/>
+<gr>
+<EBNFCDECL name='ConditionalEntityAndOpExpr' groups='ConditionalEntityExpr'/> = <TEBNFC name='ConditionalEntityBinaryOp' param = '&'/> .
+</gr>
+
+<code data-lng='soc'>
+#@(hold(I, this) & weapon)
+#@(hold(I, this) & (weapon & dog) )
+</code>
 
 <p>
 You can see examples of logic expressions <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='OrOp_chapter'>
 Operator "|"
@@ -3226,26 +3310,28 @@ Operator "|"
 <LinkToContent/>
 
 <p>
-Оperator of logical disjunction (logical <b>or</b>).
+Operator of logical disjunction (logical <b>or</b>).
 </p>
 
 <gr>
 <EBNFCDECL name='OrOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicBinaryOp' param = '|'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 {: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
 </code>
 
-<complete_me/>
+<gr>
+<EBNFCDECL name='ConditionalEntityOrOpExpr' groups='ConditionalEntityExpr'/> = <TEBNFC name='ConditionalEntityBinaryOp' param = '|'/> .
+</gr>
+
+<code data-lng='soc'>
+#@(hold(I, this) & (weapon | dog) )
+</code>
 
 <p>
 You can see examples of logic expressions <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='NotOp_chapter'>
 Operator "!"
@@ -3254,7 +3340,7 @@ Operator "!"
 <LinkToContent/>
 
 <p>
-Оperator of logical negation (logical <b>not</b>).
+Operator of logical negation (logical <b>not</b>).
 </p>
 
 <gr>
@@ -4132,6 +4218,14 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 	
 	<TEBNFCDECL name='LogicBinaryOp_2' param='_OpLiteral'>
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='ConditionalEntityBinaryOp' param='_OpLiteral'>
+	    <TEBNFC name='ConditionalEntityBinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='ConditionalEntityBinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='ConditionalEntityExpr'/>"/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='BinaryOp_base' param='_OpLiteral' param2='_ExpType'>
