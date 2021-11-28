@@ -88,6 +88,14 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
 	     Unique identifier.
 	  </td>
     </tr>
+	<tr>
+      <th>Backpack</th>
+      <td>
+	      List of references to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObjects</a> that will be recognized as things in NPC's backpack.
+		  
+		  The things will be available for taking from backpack.
+	  </td>
+    </tr>
     <tr>
       <th>Vision</th>
 	  <td>
@@ -163,6 +171,8 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
 Head locator
 </h2>
 
+<LinkToContent/>
+
 <p>
 Head locator helps to find NPC's head for NPC's ray scanner instead of direct linking by property <b>Head</b>.
 <p/>
@@ -175,6 +185,42 @@ Just add the components to target head's <ico t='unity'/><a href='https://docs.u
     <img src='/docs/head-locator-component.jpg'/>
 </p>
 
+<h2 class='center-h' data-href='Right_Hand_WP_Locator'>
+Right Hand WP Locator
+</h2>
+
+<LinkToContent/>
+
+<p>
+   Right Hand WP Locator helps to find NPC's right hand weapon point.
+</p>
+
+<p>
+Just add the components to target <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a>.
+</p>
+
+<p>
+    <img src='/docs/right-hand-wp-locator-component.jpg'/>
+</p>
+
+<h2 class='center-h' data-href='Left_Hand_WP_Locator'>
+Left Hand WP Locator
+</h2>
+
+<LinkToContent/>
+
+<p>
+   Left Hand WP Locator helps to find NPC's left hand weapon point.
+</p>
+
+<p>
+Just add the components to target <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a>.
+</p>
+
+<p>
+    <img src='/docs/left-hand-wp-locator-component.jpg'/>
+</p>
+
 <h2 class='center-h' data-href='Thing'>
 Thing
 </h2>
@@ -182,7 +228,10 @@ Thing
 <LinkToContent/>
 
 <p>
-Links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+   Links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+</p>
+
+<p>
 The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
 It allows the NPC to percept the thing and perform an action if it needs.
 </p>
@@ -191,7 +240,7 @@ It allows the NPC to percept the thing and perform an action if it needs.
     <img src='/docs/thing-component.jpg'/>
 </p>
 
-<h3 class='center-h' data-href='_Properties'>Properties</h3>
+<h3 class='center-h' data-href='Thing_Properties'>Properties</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -205,6 +254,121 @@ It allows the NPC to percept the thing and perform an action if it needs.
       <th>App File</th>
       <td>
 	      Reference to <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing.
+	  </td>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <td>
+	      Unique identifier.
+	  </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class='center-h' data-href='Hand_Thing'>
+Hand Thing
+</h2>
+
+<LinkToContent/>
+
+<p>
+   Links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+   This Game Object can be taken by <a href='#Humanoid_NPC'>Humanoind NPC</a>.
+</p>
+
+<p>
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the thing and perform an action if it needs.
+</p>
+
+<p>
+Also It provides recognizing things as things that can be taken and implementation of policies of taking.
+</p>
+
+<p>
+    <img src='/docs/hand-thing-component.jpg'/>
+</p>
+
+<h3 class='center-h' data-href='Hand_Thing_Properties'>Properties</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 250px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>App File</th>
+      <td>
+	      Reference to <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Hand Thing.
+	  </td>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <td>
+	      Unique identifier.
+	  </td>
+    </tr>
+	<tr>
+      <th>Taking Policy</th>
+      <td>
+	      In which way the thing will be available for taking to NPC's hands.
+		  
+		  <ul>
+		      <li>
+			      <b>Every Where</b>. Thing can be taken every where, except hands of another NPCs.
+			  </li>
+		      <li>
+			      <b>No Where</b>. Thing can not be taken.
+			  </li>
+		      <li>
+			      <b>By Distance</b>. Thing can be taken only if the distance between the thing and NPC less or equal distance in <b>Taking Distance</b>.
+				  Thing in hands of another NPCs can not be taken.
+			  </li>			  
+		  </ul>
+	  </td>
+    </tr>
+	<tr>
+      <th>Taking Distance</th>
+      <td>
+	      <complete_me/>
+	  </td>
+    </tr>	
+  </tbody>
+</table>
+
+<h2 class='center-h' data-href='Player'>
+Player
+</h2>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<p>
+    <img src='/docs/player-component.jpg'/>
+</p>
+
+<h3 class='center-h' data-href='Player_Properties'>Properties</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 250px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>App File</th>
+      <td>
+	      Reference to <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Player.
 	  </td>
     </tr>
     <tr>
