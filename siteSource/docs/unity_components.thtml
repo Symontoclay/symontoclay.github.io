@@ -333,7 +333,8 @@ Also It provides recognizing things as things that can be taken and implementati
 	<tr>
       <th>Taking Distance</th>
       <td>
-	      <complete_me/>
+	      Distance from which the thing can be taken.
+		  The property is visible only if property <b>Taking Policy</b> has value <b>By Distance</b>.
 	  </td>
     </tr>	
   </tbody>
@@ -346,10 +347,13 @@ Player
 <LinkToContent/>
 
 <p>
-
+Provides SymOntoClay's features to Player.
 </p>
 
-<complete_me/>
+<p>
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Player to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the Player.
+</p>
 
 <p>
     <img src='/docs/player-component.jpg'/>
