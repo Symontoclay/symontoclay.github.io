@@ -11,24 +11,145 @@
             </summary>
             <param name="report"></param>
         </member>
+        <member name="T:SymOntoClay.IUHumanoidNPC">
+            <summary>
+            Represents SymOntoClay's humanoid NPC component.
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.IUHumanoidNPC.NPC">
+            <summary>
+            Gets instance of SymOntoClay core.
+            </summary>
+        </member>
         <member name="T:SymOntoClay.BaseBehavior">
             <summary>
             Contains base recommended behavior.
             </summary>
         </member>
-        <member name="M:SymOntoClay.BaseBehavior.OnStart">
-            <summary>
-            Initializes component instead of private method <b>Start</b>.
-            </summary>
-        </member>
         <member name="M:SymOntoClay.BaseBehavior.AddStopFact">
             <summary>
-            Adds fact what the NPC has stopped itself.
+            Adds fact that the NPC has stopped itself.
+            This method can be called both in main and in usual (not main) thread.
             </summary>
         </member>
         <member name="M:SymOntoClay.BaseBehavior.AddWalkingFact">
             <summary>
-            Adds fact what the NPC has started walking.
+            Adds fact that the NPC has started walking.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddRunningFact">
+            <summary>
+            Adds fact that the NPC has started running.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddHoldFact(System.String)">
+            <summary>
+            Adds fact that the NPC holds something in his hands.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+            <param name="heldId">Id of held thing.</param>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.RemoveHoldFact">
+            <summary>
+            Removes fact that the NPC holds something in his hands.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingWalkingStepsSoundInMainThread">
+            <summary>
+            Starts pushing sound facts that the NPS is walking.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingWalkingStepsSoundInUsualThread">
+            <summary>
+            Starts pushing sound facts that the NPS is walking.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingRunningStepsSoundInMainThread">
+            <summary>
+            Starts pushing sound facts that the NPS is running.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingRunningStepsSoundInUsualThread">
+            <summary>
+            Starts pushing sound facts that the NPS is running.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingStepsSoundInMainThread">
+            <summary>
+            Stops pushing sound facts that the NPS is walking or running.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingStepsSoundInUsualThread">
+            <summary>
+            Stops pushing sound facts that the NPS is walking or running.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingShotSoundInMainThread">
+            <summary>
+            Starts pushing sound facts that something is shooting.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingShotSoundInUsualThread">
+            <summary>
+            Starts pushing sound facts that something is shooting.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingShotSoundInMainThread">
+            <summary>
+            Stops pushing sound facts that something is shooting.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingShotSoundInUsualThread">
+            <summary>
+            Stops pushing sound facts that something is shooting.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddHeShootsFact">
+            <summary>
+            Adds fact that the NPC shoots.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.RemoveHeShootsFact">
+            <summary>
+            Removes fact that the NPC shoots.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddHeIsReadyForShootFact">
+            <summary>
+            Adds fact that the NPC is ready for shooting.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.RemoveHeIsReadyForShootFact">
+            <summary>
+            Removes fact that the NPC is ready for shooting.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.RemoveAllShootFacts">
+            <summary>
+            Removes all facts related to shooting.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.ProcessDeath">
+            <summary>
+            Proceses death for NPC.
+            This method can be called both in main and in usual (not main) thread.
             </summary>
         </member>
         <member name="M:SymOntoClay.BaseBehavior.GetMethodId">
@@ -52,16 +173,201 @@
             <param name="function">Handler which should be executed in main thread context.</param>
             <returns>Result of the execution.</returns>
         </member>
+        <member name="M:SymOntoClay.BaseBehavior.CanBeTakenBy(SymOntoClay.Core.IEntity)">
+            <summary>
+            Checks that It can be taken by the NPC.
+            </summary>
+            <param name="subject">The NPC that takes this.</param>
+            <returns><b>true</b> - if It can be taken, otherwise - <b>false</b>.</returns>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddToManualControl(SymOntoClay.IUSocGameObject,SymOntoClay.UnityAsset.Core.DeviceOfBiped)">
+            <summary>
+            Adds a game object into manual controlled area of the NPC.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+            <param name="device">Describes biped device which will be using the game object.</param>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddToManualControl(SymOntoClay.IUSocGameObject,System.Collections.Generic.IList{SymOntoClay.UnityAsset.Core.DeviceOfBiped})">
+            <summary>
+            Adds a game object into manual controlled area of the NPC.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+            <param name="devices">Describes list of biped devices which will be using the game object.</param>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.RemoveFromManualControl(SymOntoClay.IUSocGameObject)">
+            <summary>
+            Removes a game object from manual controlled area of an NPC.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.AddToBackpack(SymOntoClay.UnityAsset.Core.IGameObject)">
+            <summary>
+            Adds a game object into backpack.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.RemoveFromBackpack(SymOntoClay.UnityAsset.Core.IGameObject)">
+            <summary>
+            Removes game object from backpack.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInUsualThread(System.Numerics.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in usual (not main) thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInUsualThread(UnityEngine.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in usual (not main) thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInMainThread(System.Numerics.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in main thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInMainThread(UnityEngine.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in main thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="T:SymOntoClay.IUHandThingHost">
+            <summary>
+            Provides interaction with user defined scripts/components.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.IUHandThingHost.HideForBackpackInMainThread">
+            <summary>
+            Hides the thing as part of placing in backpack.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.IUHandThingHost.HideForBackpackInUsualThread">
+            <summary>
+            Hides the thing as part of placing in backpack.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
         <member name="T:SymOntoClay.IUHostListener">
             <summary>
             Host listener locator. 
             Each NPC's behavior with host methods' endpoint should implement this interface.
             </summary>
         </member>
+        <member name="M:SymOntoClay.IUHostListener.CanBeTakenBy(SymOntoClay.Core.IEntity)">
+            <summary>
+            Checks could the game object be taken by an NPC.
+            </summary>
+            <param name="subject">The NPC that takes this.</param>
+            <returns><b>true</b> if the game object can be be taken by an NPC, otherwise <b>flase</b></returns>
+        </member>
+        <member name="T:SymOntoClay.LeftHandWPLocator">
+            <summary>
+            Helps to find NPC's left hand weapon point.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.IUHandThing">
+            <summary>
+            Represents SymOntoClay's thing component which can be taken by NPC's hands.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.IUHandThing.HideForBackpackInMainThread">
+            <summary>
+            Hides the thing as part of placing in backpack.
+            This method should be called only in main thread.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.IUHandThing.HideForBackpackInUsualThread">
+            <summary>
+            Hides the thing as part of placing in backpack.
+            This method should be called only in usual (not main) thread.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.RightHandWPLocator">
+            <summary>
+            Helps to find NPC's right hand weapon point.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.IUSocGameObject">
+            <summary>
+            Represents base SymOntoClay's game object component.
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.IUSocGameObject.IdForFacts">
+            <summary>
+            Gets unique Id which is prepared to using in building fact string.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.IUSocGameObject.RunInMainThread(System.Action)">
+            <summary>
+            Executes handler in main thread context.
+            </summary>
+            <param name="function">Handler which should be executed in main thread context.</param>
+        </member>
+        <member name="M:SymOntoClay.IUSocGameObject.RunInMainThread``1(System.Func{``0})">
+            <summary>
+            Executes handler in main thread context.
+            </summary>
+            <typeparam name="TResult">Type of result.</typeparam>
+            <param name="function">Handler which should be executed in main thread context.</param>
+            <returns>Result of the execution.</returns>
+        </member>
+        <member name="M:SymOntoClay.IUSocGameObject.InsertPublicFact(System.String)">
+            <summary>
+            Inserts public fact into storage.
+            Another NPCs can percept the fact.
+            </summary>
+            <param name="text">String that represents the fact.</param>
+            <returns>Id of inserted fact.</returns>
+        </member>
+        <member name="M:SymOntoClay.IUSocGameObject.RemovePublicFact(System.String)">
+            <summary>
+            Remove public fact from storage.
+            Another NPCs can not percept the fact.
+            </summary>
+            <param name="id">Id of previously inserted fact.</param>
+        </member>
+        <member name="M:SymOntoClay.IUSocGameObject.PushSoundFact(System.Single,System.String)">
+            <summary>
+            Pushes fact to special delivery system which simulates hearing.
+            </summary>
+            <param name="power">Power of sound.</param>
+            <param name="text">String that represents the fact.</param>
+        </member>
         <member name="T:SymOntoClay.HeadLocator">
             <summary>
             Head locator.
             It allows us to detect head for scanner of visible object without explicit linking Head to HumanoidNPC.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.IUSocHumanoid">
+            <summary>
+            Represents SymOntoClay's humanoid component.
+            It can be both NPC and Player.
+            </summary>
+        </member>
+        <member name="M:SymOntoClay.IUSocHumanoid.Die">
+            <summary>
+            Performs death of humanoid.
+            All active processes will have been stopped.
+            Another NPCs will percept the humanoid as died.
             </summary>
         </member>
         <member name="P:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.PlatformType">
@@ -172,6 +478,33 @@
             <inheritdoc/>
         </member>
         <member name="M:Assets.SymOntoClay.Data.UVisibleItem.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetAxis(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetKeyUp(UnityEngine.KeyCode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetKeyDown(UnityEngine.KeyCode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetButtonDown(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetMouseButtonUp(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetMouseButtonDown(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.SetCharacterMode">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.AddWindow">
+            <inheritdoc/>
+        </member>
+        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.ReleaseWindow">
             <inheritdoc/>
         </member>
     </members>
