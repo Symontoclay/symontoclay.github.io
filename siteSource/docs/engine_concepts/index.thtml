@@ -149,10 +149,37 @@ It is a <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.htm
 </p>
 
 <p>
+Also NPC can not interact with Thing.
+The Thing can only be percepted and be obstacle in navigation.
+</p>
+
+<p>
 The <a href='/docs/unity_components.html#Thing'>component <b>Thing</b></a> links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
 The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
-It allows the NPC to percept the thing and perform an action if it needs.
+It allows the NPC to percept the thing.
 </p>
+
+<h3 class='center-h' data-href='Hand_Thing_on_unity_scene'>
+Hand Thing
+</h3>
+
+<LinkToContent/>
+
+<p>
+Represents Thing on unity scene which can be taken by NPC's hands.
+</p>
+
+<p>
+Also the Hand Thing can be percepted.
+</p>
+
+<p>
+It is a <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> which has never been active.
+But Hand Thing can have own <a href='#HostEndpoint_on_unity_scene'>Host endpoints</a> which can be added to NPC's <a href='#HostEndpoint_on_unity_scene'>Host endpoints</a>.
+These Host endpoints will called as usual Host endpoints of NPC.
+</p>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='HostEndpoint_on_unity_scene'>
 Host endpoint
@@ -176,6 +203,14 @@ Methods implemented by Host endpoints are available to call by using <a href='/d
 <p>
 In details writing a Host endpoint is described in <ico t='git'/><a href='https://github.com/Symontoclay/demo1_linear_code/blob/master/Assets/ExamplesOfSymOntoClay/ExampleSymOntoClayHumanoidNPC.cs'>ExampleSymOntoClayHumanoidNPC.cs</a>.
 </p>
+
+<h3 class='center-h' data-href='Player_on_unity_scene'>
+Player
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Implementation'>
 Implementation
