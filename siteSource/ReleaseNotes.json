@@ -1,6 +1,6 @@
 [
   {
-    "Date": "2021-11-29T00:00:00+02:00",
+    "Date": "2021-12-02T00:00:00+02:00",
     "Version": "0.3.4",
     "AssetsList": [
       {
@@ -14,7 +14,7 @@
         "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.4/SymOntoClay-CLI-0.3.4-x64.zip"
       }
     ],
-    "Description": "* action\r\n* Function call overloading\r\n* \"await\" statement\r\n* \"complete action\" statement\r\n* \"break action\" statement\r\n* Fixing issues\r\n",
+    "Description": "* Conditional entities\r\n* Alias-variable for predicate\r\n* Bus for sound facts\r\n* Player: initial implementation\r\n* Fixing issues\r\n",
     "IsMarkdown": true
   },
   {
