@@ -179,7 +179,11 @@ But Hand Thing can have own <a href='#HostEndpoint_on_unity_scene'>Host endpoint
 These Host endpoints will called as usual Host endpoints of NPC.
 </p>
 
-<complete_me/>
+<p>
+The <a href='/docs/unity_components.html#Hand_Thing'>component <b>Hand Thing</b></a> links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the thing and to interact if needs.
+</p>
 
 <h3 class='center-h' data-href='HostEndpoint_on_unity_scene'>
 Host endpoint
@@ -210,7 +214,15 @@ Player
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Represents a Player on unity scene.
+</p>
+
+<p>
+The <a href='/docs/unity_components.html#Player'>component <b>Player</b></a> links <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <ico t='unity'/><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Player to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the player.
+</p>
 
 <h2 class='center-h' data-href='Implementation'>
 Implementation

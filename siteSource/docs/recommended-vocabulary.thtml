@@ -2,52 +2,6 @@
 
 <ContentsPlace/>
 
-<h2 class='center-h' data-href='Current_actions'>
-Current actions 
-</h2>
-
-<LinkToContent/>
-
-<p>
-Provides information about state of an NPC or a thing.
-</p>
-
-<h3 class='center-h' data-href='walk'>
-Walk
-</h3>
-
-<LinkToContent/>
-
-<gr>
-   "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "walk" ")"
-</gr>
-
-<code data-lng='soc'>
-act(#`enemyNPC10345`, walk)
-</code>
-
-<p>
-Describes human sentence: "#`enemyNPC10345` walks".
-</p>
-
-<h3 class='center-h' data-href='stop'>
-Stop
-</h3>
-
-<LinkToContent/>
-
-<gr>
-    "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "stop" ")"
-</gr>
-
-<p>
-Describes human sentence: "#`enemyNPC10345` stops".
-</p>
-
-<code data-lng='soc'>
-act(#`enemyNPC10345`, stop)
-</code>
-
 <h2 class='center-h' data-href='Perception'>
 Perception
 </h2>
@@ -94,6 +48,46 @@ focus(I, #`Barrel543534`)
 Describes human sentence: "There is #`Barrel543534` in my focus right now".
 </p>
 
+<h3 class='center-h' data-href='Hearing'>
+Hearing
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "hear" "(" "I" "," ( <a href='/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> | <a href='/docs/spec.html#PredicateOp'>PredicateOp</a> ) ")"
+</gr>
+
+<code data-lng='soc'>
+{: $x = act(M16, shoot) & hear(I, $x) :}
+{: $x = act(M16, shoot) & hear(I, $x) & distance(I, $x, 15.58) & direction($x, 12) & point($x, #@[15.58, 12]) :}
+</code>
+
+<p>
+In general sound facts for hearing are not built by user.
+Fact like "{: act(M16, shoot) :}" is pushed into sound simulation bus.
+</p>
+
+<p>
+The bus wraps the pushed fact into hear-fact and adds information about placing source of sound.
+After all transformations logical storage gets:
+</p>
+
+<code data-lng='soc'>
+{: $x = act(M16, shoot) & hear(I, $x) & distance(I, $x, 15.58) & direction($x, 12) & point($x, #@[15.58, 12]) :}
+</code>
+
+<h2 class='center-h' data-href='Geometry'>
+Geometry
+</h2>
+
+<LinkToContent/>
+
+<p>
+Provides information about placing in the world.
+It will help with navigation and aiming.
+</p>
+
 <h3 class='center-h' data-href='distance'>
 Distance
 </h3>
@@ -101,13 +95,198 @@ Distance
 <LinkToContent/>
 
 <gr>
-    "distance" "(" "I" "," <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," <a href='/docs/spec.html#NumberExpr'>NumberExpr</a> ")"
+    "distance" "(" "I" "," ( <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> | <a href='/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a> | <a href='/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> ) "," <a href='/docs/spec.html#NumberExpr'>NumberExpr</a> ")"
 </gr>
 
 <code data-lng='soc'>
+distance(I, $x, 15.58)
 distance(I, #`Barrel543534`, 14.71526)
 </code>
 
 <p>
 Describes human sentence: "Distance between me and #`Barrel543534` is 14.71526".
+</p>
+
+<h3 class='center-h' data-href='Point'>
+Point
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "point" "(" ( <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> | <a href='/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a> | <a href='/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> ) "," <a href='/docs/spec.html#WaypointDecl'>WaypointDecl</a> ")"
+</gr>
+
+<code data-lng='soc'>
+point($x, #@[15.58, 12])
+point(#`Barrel543534`, #@[15.58, 12])
+</code>
+
+<p>
+Links someone or something to waypoint.
+</p>
+
+<h3 class='center-h' data-href='Direction'>
+Direction
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "direction" "(" ( <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> | <a href='/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a> | <a href='/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> ) "," <a href='/docs/spec.html#NumberExpr'>NumberExpr</a> ")"
+</gr>
+
+<code data-lng='soc'>
+direction($x, 12)
+direction(#`Barrel543534`, 12)
+</code>
+
+<p>
+Describes human sentence: "Direction to #`Barrel543534` is 12 degrees to the right.".
+</p>
+
+<h2 class='center-h' data-href='States'>
+States
+</h2>
+
+<LinkToContent/>
+
+<p>
+Provides information about state of an NPC or a thing.
+</p>
+
+<h3 class='center-h' data-href='Alive'>
+Alive
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "state" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "alive" ")"
+</gr>
+
+<code data-lng='soc'>
+state(#`enemyNPC10345`, alive)
+</code>
+
+<p>
+Describes that someone is alive.
+</p>
+
+<h3 class='center-h' data-href='Dead'>
+Dead
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "state" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "dead" ")"
+</gr>
+
+<code data-lng='soc'>
+state(#`enemyNPC10345`, dead)
+</code>
+
+<p>
+Describes that someone is dead.
+</p>
+
+<h3 class='center-h' data-href='Ready'>
+Ready
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "ready" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," <a href='/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a>  ")"
+</gr>
+
+<code data-lng='soc'>
+ready(#`enemyNPC10345`, shoot)
+</code>
+
+<p>
+Describes that someone or something is ready for something.
+</p>
+
+<h2 class='center-h' data-href='Current_actions'>
+Current actions 
+</h2>
+
+<LinkToContent/>
+
+<p>
+Provides information about current action of an NPC or a thing.
+</p>
+
+<h3 class='center-h' data-href='walk'>
+Walk
+</h3>
+
+<LinkToContent/>
+
+<gr>
+   "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "walk" ")"
+</gr>
+
+<code data-lng='soc'>
+act(#`enemyNPC10345`, walk)
+</code>
+
+<p>
+Describes human sentence: "#`enemyNPC10345` walks".
+</p>
+
+<h3 class='center-h' data-href='stop'>
+Stop
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "stop" ")"
+</gr>
+
+<p>
+Describes human sentence: "#`enemyNPC10345` stops".
+</p>
+
+<code data-lng='soc'>
+act(#`enemyNPC10345`, stop)
+</code>
+
+<h3 class='center-h' data-href='Hold'>
+Hold
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "hold" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> ")"
+</gr>
+
+<code data-lng='soc'>
+hold(#`enemyNPC10345`, #gun123)
+</code>
+
+<p>
+Describes that someone holds something in his hands.
+</p>
+
+<h3 class='center-h' data-href='Shoot'>
+Shoot
+</h3>
+
+<LinkToContent/>
+
+<gr>
+    "act" "(" <a href='/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "shoot" ")"
+</gr>
+
+<code data-lng='soc'>
+act(#`enemyNPC10345`, shoot)
+</code>
+
+<p>
+Describes that someone or something shoots.
 </p>
