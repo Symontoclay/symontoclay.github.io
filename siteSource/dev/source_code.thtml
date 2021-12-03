@@ -97,6 +97,30 @@ The <a href='/docs/cli.html'>CLI</a>.
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI</a>.
 </p>
 
+<h3 class='center-h' data-href='Repository_SymOntoClay_Plugins_projects'>
+Plugins projects
+</h3>
+
+<LinkToContent/>
+
+<p>
+Plugins for SymOntoClay.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClaySoundBuses'>
+Project: SymOntoClaySoundBuses
+</h4>
+
+<LinkToContent/>
+
+<p>
+Simulates sound propagation. 
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClaySoundBuses'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClaySoundBuses</a>.
+</p>
+
 <h3 class='center-h' data-href='Repository_SymOntoClay_Additional_projects'>
 Additional projects
 </h3>
