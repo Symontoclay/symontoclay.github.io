@@ -53,19 +53,11 @@
 <table style='font-size: 14px; margin-bottom: 20px; width=100%;' class='table'>
 <tr style='border-bottom: solid 1px #e2e2e2;'>
 <td style='width: 300px;'>
-<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.onstart.html'>OnStart()</a>
-</td>
-<td>
-<p>Initializes component instead of private method Start.</p>
-
-</td>
-</tr>
-<tr style='border-bottom: solid 1px #e2e2e2;'>
-<td style='width: 300px;'>
 <a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addstopfact.html'>AddStopFact()</a>
 </td>
 <td>
-<p>Adds fact what the NPC has stopped itself.</p>
+<p>Adds fact that the NPC has stopped itself.
+This method can be called both in main and in usual (not main) thread.</p>
 
 </td>
 </tr>
@@ -74,7 +66,197 @@
 <a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addwalkingfact.html'>AddWalkingFact()</a>
 </td>
 <td>
-<p>Adds fact what the NPC has started walking.</p>
+<p>Adds fact that the NPC has started walking.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addrunningfact.html'>AddRunningFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC has started running.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addholdfact_system.string_.html'>AddHoldFact(String)</a>
+</td>
+<td>
+<p>Adds fact that the NPC holds something in his hands.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.removeholdfact.html'>RemoveHoldFact()</a>
+</td>
+<td>
+<p>Removes fact that the NPC holds something in his hands.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.startrepeatingwalkingstepssoundinmainthread.html'>StartRepeatingWalkingStepsSoundInMainThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is walking.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.startrepeatingwalkingstepssoundinusualthread.html'>StartRepeatingWalkingStepsSoundInUsualThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is walking.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.startrepeatingrunningstepssoundinmainthread.html'>StartRepeatingRunningStepsSoundInMainThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is running.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.startrepeatingrunningstepssoundinusualthread.html'>StartRepeatingRunningStepsSoundInUsualThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is running.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.stoprepeatingstepssoundinmainthread.html'>StopRepeatingStepsSoundInMainThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that the NPS is walking or running.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.stoprepeatingstepssoundinusualthread.html'>StopRepeatingStepsSoundInUsualThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that the NPS is walking or running.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.startrepeatingshotsoundinmainthread.html'>StartRepeatingShotSoundInMainThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that something is shooting.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.startrepeatingshotsoundinusualthread.html'>StartRepeatingShotSoundInUsualThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that something is shooting.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.stoprepeatingshotsoundinmainthread.html'>StopRepeatingShotSoundInMainThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that something is shooting.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.stoprepeatingshotsoundinusualthread.html'>StopRepeatingShotSoundInUsualThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that something is shooting.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addheshootsfact.html'>AddHeShootsFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC shoots.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.removeheshootsfact.html'>RemoveHeShootsFact()</a>
+</td>
+<td>
+<p>Removes fact that the NPC shoots.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addheisreadyforshootfact.html'>AddHeIsReadyForShootFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC is ready for shooting.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.removeheisreadyforshootfact.html'>RemoveHeIsReadyForShootFact()</a>
+</td>
+<td>
+<p>Removes fact that the NPC is ready for shooting.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.removeallshootfacts.html'>RemoveAllShootFacts()</a>
+</td>
+<td>
+<p>Removes all facts related to shooting.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.processdeath.html'>ProcessDeath()</a>
+</td>
+<td>
+<p>Proceses death for NPC.
+This method can be called both in main and in usual (not main) thread.</p>
 
 </td>
 </tr>
@@ -106,6 +288,104 @@ It can be helpful for debugging host methods.</p>
 
 </td>
 </tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.canbetakenby_symontoclay.core.ientity_.html'>CanBeTakenBy(IEntity)</a>
+</td>
+<td>
+<p>Checks that It can be taken by the NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addtomanualcontrol_symontoclay.iusocgameobject_symontoclay.unityasset.core.deviceofbiped_.html'>AddToManualControl(IUSocGameObject,DeviceOfBiped)</a>
+</td>
+<td>
+<p>Adds a game object into manual controlled area of the NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addtomanualcontrol_symontoclay.iusocgameobject_system.collections.generic.ilist_symontoclay.unityasset.core.deviceofbiped__.html'>AddToManualControl(IUSocGameObject,IList&lt;DeviceOfBiped&gt;)</a>
+</td>
+<td>
+<p>Adds a game object into manual controlled area of the NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.removefrommanualcontrol_symontoclay.iusocgameobject_.html'>RemoveFromManualControl(IUSocGameObject)</a>
+</td>
+<td>
+<p>Removes a game object from manual controlled area of an NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.addtobackpack_symontoclay.unityasset.core.igameobject_.html'>AddToBackpack(IGameObject)</a>
+</td>
+<td>
+<p>Adds a game object into backpack.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.removefrombackpack_symontoclay.unityasset.core.igameobject_.html'>RemoveFromBackpack(IGameObject)</a>
+</td>
+<td>
+<p>Removes game object from backpack.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.getrotationtopositioninusualthread_system.numerics.vector3_.html'>GetRotationToPositionInUsualThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.getrotationtopositioninusualthread_unityengine.vector3_.html'>GetRotationToPositionInUsualThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.getrotationtopositioninmainthread_system.numerics.vector3_.html'>GetRotationToPositionInMainThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/symontoclay.basebehavior.getrotationtopositioninmainthread_unityengine.vector3_.html'>GetRotationToPositionInMainThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
 </table>
 
 </article>
@@ -122,7 +402,7 @@ It can be helpful for debugging host methods.</p>
 <span style='font-size: 17px;'><a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><i class='fab fa-youtube' title='SymOntoClay on Youtube'></i></a></span>
 <br>
 </br>
-This page was last modified on 02 October 2021<br>
+This page was last modified on 04 December 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;

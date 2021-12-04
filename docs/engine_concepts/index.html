@@ -47,7 +47,7 @@
 <h2 class="center-h" is-processed="true">    Contens
     <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#General_information">General information</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts">Common concepts</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_App">App</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#On_unity_scene">On unity scene</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#World_on_unity_scene">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Humanoid_NPC_on_unity_scene">Humanoid NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Thing_on_unity_scene">Thing</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#HostEndpoint_on_unity_scene">Host endpoint</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation">Implementation</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture">Common architecture</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Native_platform">Native platform</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_bus">Common bus</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture_Host">Host</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Logical_engine_of_active_NPC">Logical engine of active NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Users_code">User's code</a></li></ul></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#General_information">General information</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts">Common concepts</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_App">App</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#On_unity_scene">On unity scene</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#World_on_unity_scene">World</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Humanoid_NPC_on_unity_scene">Humanoid NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Thing_on_unity_scene">Thing</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Hand_Thing_on_unity_scene">Hand Thing</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#HostEndpoint_on_unity_scene">Host endpoint</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Player_on_unity_scene">Player</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Implementation">Implementation</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture">Common architecture</a><ul><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Native_platform">Native platform</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_bus">Common bus</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Common_architecture_Host">Host</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Logical_engine_of_active_NPC">Logical engine of active NPC</a></li><li><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Users_code">User's code</a></li></ul></li></ul></li></ul>
 
 <h2 class='center-h' data-href='General_information' is-processed="true">
 General information
@@ -196,9 +196,40 @@ It is a <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.
 </p>
 
 <p>
+Also NPC can not interact with Thing.
+The Thing can only be percepted and be obstacle in navigation.
+</p>
+
+<p>
 The <a href='https://symontoclay.github.io/docs/unity_components.html#Thing'>component <b>Thing</b></a> links <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
 The linked <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>file</a> provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
-It allows the NPC to percept the thing and perform an action if it needs.
+It allows the NPC to percept the thing.
+</p>
+
+<h3 class='center-h' data-href='Hand_Thing_on_unity_scene' is-processed="true">
+Hand Thing
+<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Hand_Thing_on_unity_scene" name="Hand_Thing_on_unity_scene" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Represents Thing on unity scene which can be taken by NPC's hands.
+</p>
+
+<p>
+Also the Hand Thing can be percepted.
+</p>
+
+<p>
+It is a <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> which has never been active.
+But Hand Thing can have own <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#HostEndpoint_on_unity_scene'>Host endpoints</a> which can be added to NPC's <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#HostEndpoint_on_unity_scene'>Host endpoints</a>.
+These Host endpoints will called as usual Host endpoints of NPC.
+</p>
+
+<p>
+The <a href='https://symontoclay.github.io/docs/unity_components.html#Hand_Thing'>component <b>Hand Thing</b></a> links <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+The linked <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>file</a> provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the thing and to interact if needs.
 </p>
 
 <h3 class='center-h' data-href='HostEndpoint_on_unity_scene' is-processed="true">
@@ -222,6 +253,22 @@ Methods implemented by Host endpoints are available to call by using <a href='ht
 
 <p>
 In details writing a Host endpoint is described in <i class="fab fa-github" title="GitHub"></i><a href='https://github.com/Symontoclay/demo1_linear_code/blob/master/Assets/ExamplesOfSymOntoClay/ExampleSymOntoClayHumanoidNPC.cs'>ExampleSymOntoClayHumanoidNPC.cs</a>.
+</p>
+
+<h3 class='center-h' data-href='Player_on_unity_scene' is-processed="true">
+Player
+<a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Player_on_unity_scene" name="Player_on_unity_scene" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/engine_concepts/index.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Represents a Player on unity scene.
+</p>
+
+<p>
+The <a href='https://symontoclay.github.io/docs/unity_components.html#Player'>component <b>Player</b></a> links <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+The linked <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>file</a> provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Player to a <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the player.
 </p>
 
 <h2 class='center-h' data-href='Implementation' is-processed="true">
@@ -403,7 +450,7 @@ You can read more about SymOntoClay DSL <a href='https://symontoclay.github.io/d
 <span style='font-size: 17px;'><a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><i class='fab fa-youtube' title='SymOntoClay on Youtube'></i></a></span>
 <br>
 </br>
-This page was last modified on 02 October 2021<br>
+This page was last modified on 04 December 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;

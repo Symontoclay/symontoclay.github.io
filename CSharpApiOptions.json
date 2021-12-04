@@ -6,11 +6,21 @@
 	"%SITE_SOURCE_PATH%/CSharpApiFiles/Assembly-CSharp.xml"
   ],
   "UnityAssetCoreRootTypes": [
+    "T:SymOntoClay.Core.EntityConstraints",
+	"T:SymOntoClay.Core.IEntity",
     "T:SymOntoClay.UnityAsset.Core.BipedEndpointAttribute",
 	"T:SymOntoClay.UnityAsset.Core.EndpointParamAttribute",
+	"T:SymOntoClay.UnityAsset.Core.FriendsEndpointsAttribute",
 	"T:SymOntoClay.IUHostListener",
 	"T:SymOntoClay.HeadLocator",
-	"T:SymOntoClay.BaseBehavior"
+	"T:SymOntoClay.BaseBehavior",
+	"T:SymOntoClay.IUHandThingHost",
+	"T:SymOntoClay.IUHandThing",
+	"T:SymOntoClay.IUHumanoidNPC",
+	"T:SymOntoClay.IUSocHumanoid",
+	"T:SymOntoClay.IUSocGameObject",
+	"T:SymOntoClay.RightHandWPLocator",
+	"T:SymOntoClay.LeftHandWPLocator"
   ],
   "PublicMembersOnly": false,
   "IgnoreErrors": true

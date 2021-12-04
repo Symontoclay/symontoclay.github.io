@@ -47,7 +47,7 @@
 <h2 class="center-h" is-processed="true">    Contens
     <a href='https://symontoclay.github.io/docs/unity_components.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#World">World</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#World_Properties">Properties</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC">Humanoid NPC</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC_Properties">Properties</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Head_locator">Head locator</a></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Thing">Thing</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#_Properties">Properties</a></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#World">World</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#World_Properties">Properties</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC">Humanoid NPC</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC_Properties">Properties</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Head_locator">Head locator</a></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Right_Hand_WP_Locator">Right Hand WP Locator</a></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Left_Hand_WP_Locator">Left Hand WP Locator</a></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Thing">Thing</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#Thing_Properties">Properties</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Hand_Thing">Hand Thing</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#Hand_Thing_Properties">Properties</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/unity_components.html#Player">Player</a><ul><li><a href="https://symontoclay.github.io/docs/unity_components.html#Player_Properties">Properties</a></li></ul></li></ul>
 
 <p>
 SymOntoClay's unity components are available at the main menu and using button <b>Add Component</b>.
@@ -135,6 +135,14 @@ Controls behavior of Humanoid NPC using logic in linked <a href='https://symonto
 	     Unique identifier.
 	  </td>
     </tr>
+	<tr>
+      <th>Backpack</th>
+      <td>
+	      List of references to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObjects</a> that will be recognized as things in NPC's backpack.
+		  
+		  The things will be available for taking from backpack.
+	  </td>
+    </tr>
     <tr>
       <th>Vision</th>
 	  <td>
@@ -210,6 +218,8 @@ Controls behavior of Humanoid NPC using logic in linked <a href='https://symonto
 Head locator
 <a href="https://symontoclay.github.io/docs/unity_components.html#Head_locator" name="Head_locator" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
 
+<p><a href="https://symontoclay.github.io/docs/unity_components.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
 <p>
 Head locator helps to find NPC's head for NPC's ray scanner instead of direct linking by property <b>Head</b>.
 <p></p>
@@ -222,6 +232,42 @@ Just add the components to target head's <i class="fab fa-unity" title="Unity"><
     <img src='https://symontoclay.github.io/docs/head-locator-component.jpg'>
 </p>
 
+<h2 class='center-h' data-href='Right_Hand_WP_Locator' is-processed="true">
+Right Hand WP Locator
+<a href="https://symontoclay.github.io/docs/unity_components.html#Right_Hand_WP_Locator" name="Right_Hand_WP_Locator" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/unity_components.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+   Right Hand WP Locator helps to find NPC's right hand weapon point.
+</p>
+
+<p>
+Just add the components to target <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a>.
+</p>
+
+<p>
+    <img src='https://symontoclay.github.io/docs/right-hand-wp-locator-component.jpg'>
+</p>
+
+<h2 class='center-h' data-href='Left_Hand_WP_Locator' is-processed="true">
+Left Hand WP Locator
+<a href="https://symontoclay.github.io/docs/unity_components.html#Left_Hand_WP_Locator" name="Left_Hand_WP_Locator" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/unity_components.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+   Left Hand WP Locator helps to find NPC's left hand weapon point.
+</p>
+
+<p>
+Just add the components to target <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a>.
+</p>
+
+<p>
+    <img src='https://symontoclay.github.io/docs/left-hand-wp-locator-component.jpg'>
+</p>
+
 <h2 class='center-h' data-href='Thing' is-processed="true">
 Thing
 <a href="https://symontoclay.github.io/docs/unity_components.html#Thing" name="Thing" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
@@ -229,7 +275,10 @@ Thing
 <p><a href="https://symontoclay.github.io/docs/unity_components.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
 <p>
-Links <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+   Links <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+</p>
+
+<p>
 The linked <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>file</a> provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
 It allows the NPC to percept the thing and perform an action if it needs.
 </p>
@@ -238,7 +287,7 @@ It allows the NPC to percept the thing and perform an action if it needs.
     <img src='https://symontoclay.github.io/docs/thing-component.jpg'>
 </p>
 
-<h3 class='center-h' data-href='_Properties' is-processed="true">Properties<a href="https://symontoclay.github.io/docs/unity_components.html#_Properties" name="_Properties" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<h3 class='center-h' data-href='Thing_Properties' is-processed="true">Properties<a href="https://symontoclay.github.io/docs/unity_components.html#Thing_Properties" name="Thing_Properties" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <table class="table table-bordered">
   <thead>
@@ -252,6 +301,125 @@ It allows the NPC to percept the thing and perform an action if it needs.
       <th>App File</th>
       <td>
 	      Reference to <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Thing.
+	  </td>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <td>
+	      Unique identifier.
+	  </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class='center-h' data-href='Hand_Thing' is-processed="true">
+Hand Thing
+<a href="https://symontoclay.github.io/docs/unity_components.html#Hand_Thing" name="Hand_Thing" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/unity_components.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+   Links <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> to <i class="fab fa-unity" title="Unity"></i><a href='https://docs.unity3d.com/Manual/GameObjects.html'>GameObject</a> on unity scene.
+   This Game Object can be taken by <a href='https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC'>Humanoind NPC</a>.
+</p>
+
+<p>
+The linked <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>file</a> provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Thing to a <a href='https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the thing and perform an action if it needs.
+</p>
+
+<p>
+Also It provides recognizing things as things that can be taken and implementation of policies of taking.
+</p>
+
+<p>
+    <img src='https://symontoclay.github.io/docs/hand-thing-component.jpg'>
+</p>
+
+<h3 class='center-h' data-href='Hand_Thing_Properties' is-processed="true">Properties<a href="https://symontoclay.github.io/docs/unity_components.html#Hand_Thing_Properties" name="Hand_Thing_Properties" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 250px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>App File</th>
+      <td>
+	      Reference to <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Hand Thing.
+	  </td>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <td>
+	      Unique identifier.
+	  </td>
+    </tr>
+	<tr>
+      <th>Taking Policy</th>
+      <td>
+	      In which way the thing will be available for taking to NPC's hands.
+		  
+		  <ul>
+		      <li>
+			      <b>Every Where</b>. Thing can be taken every where, except hands of another NPCs.
+			  </li>
+		      <li>
+			      <b>No Where</b>. Thing can not be taken.
+			  </li>
+		      <li>
+			      <b>By Distance</b>. Thing can be taken only if the distance between the thing and NPC less or equal distance in <b>Taking Distance</b>.
+				  Thing in hands of another NPCs can not be taken.
+			  </li>			  
+		  </ul>
+	  </td>
+    </tr>
+	<tr>
+      <th>Taking Distance</th>
+      <td>
+	      Distance from which the thing can be taken.
+		  The property is visible only if property <b>Taking Policy</b> has value <b>By Distance</b>.
+	  </td>
+    </tr>	
+  </tbody>
+</table>
+
+<h2 class='center-h' data-href='Player' is-processed="true">
+Player
+<a href="https://symontoclay.github.io/docs/unity_components.html#Player" name="Player" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/unity_components.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Provides SymOntoClay's features to Player.
+</p>
+
+<p>
+The linked <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>file</a> provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Player to a <a href='https://symontoclay.github.io/docs/unity_components.html#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the Player.
+</p>
+
+<p>
+    <img src='https://symontoclay.github.io/docs/player-component.jpg'>
+</p>
+
+<h3 class='center-h' data-href='Player_Properties' is-processed="true">Properties<a href="https://symontoclay.github.io/docs/unity_components.html#Player_Properties" name="Player_Properties" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 250px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>App File</th>
+      <td>
+	      Reference to <a href='https://symontoclay.github.io/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a> about the Player.
 	  </td>
     </tr>
     <tr>
@@ -277,7 +445,7 @@ It allows the NPC to percept the thing and perform an action if it needs.
 <span style='font-size: 17px;'><a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><i class='fab fa-youtube' title='SymOntoClay on Youtube'></i></a></span>
 <br>
 </br>
-This page was last modified on 02 October 2021<br>
+This page was last modified on 04 December 2021<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov AKA metatypeman</a> 2020 - 2021</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-ShareAlike 3.0 Unported License By Sa</a>&nbsp;<i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;
