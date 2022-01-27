@@ -2096,7 +2096,7 @@ If inheritance has formed a rhombus, and there are several chains with different
 </p>
 
 <p>
-Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with <a href='#UseIsStatement_chapter'>&quot;use is&quot; statement</a>.
+Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with <a href='#SetIsStatement_chapter'>&quot;set is&quot; statement</a>.
 </p>
 
 <h3 class='center-h' data-href='Method_chapter'>
@@ -2401,7 +2401,7 @@ Logic and imperative means connect by
 		</li>
 		
 		<li>
-		    <a href='#UseIsStatement_chapter'>"use is" statement</a>
+		    <a href='#SetIsStatement_chapter'>"set is" statement</a>
 		</li>
     </ul>
 </p>
@@ -4080,8 +4080,8 @@ In details the error handling is described in the chapter <a href='#Error_handli
 You can see examples <a href='/docs/lng_examples/index.html#Error_handling'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='UseIsStatement_chapter'>
-"use is" statement
+<h3 class='center-h' data-href='SetIsStatement_chapter'>
+"set is" statement
 </h3>
 
 <LinkToContent/>
@@ -4091,14 +4091,14 @@ Sets an inheritance relationship (&quot;is a&quot;) between two objects.
 </p>
 
 <gr>
-<EBNFCDECL name='UseIsOpStatement' groups='Statement'/> = "use" <TEBNFC name='IsOpExprBody'/> .
+<EBNFCDECL name='UseIsOpStatement' groups='Statement'/> = "set" <TEBNFC name='IsOpExprBody'/> .
 </gr>
 
 <code data-lng='soc'>
-use @@self is linux;
-use exampleClass is human;
-use exampleClass is [0.5] human;
-use #`Alisa 12` is [0.6] human;
+set @@self is linux;
+set exampleClass is human;
+set exampleClass is [0.5] human;
+set #`Alisa 12` is [0.6] human;
 </code>
 
 <p>
@@ -4106,7 +4106,7 @@ Using &quot;not&quot; removes the inheritance relationship.
 </p>
 
 <code data-lng='soc'>
-use exampleClass is not human;
+set exampleClass is not human;
 </code>
 
 <p>

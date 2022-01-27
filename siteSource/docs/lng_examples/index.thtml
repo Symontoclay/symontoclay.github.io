@@ -467,7 +467,7 @@ Inheritance
 <LinkToContent/>
 
 <p>
-Here It is example of changin relationship run time using operator <a href='/docs/spec.html#IsOp_chapter'>"is"</a> and statement <a href='/docs/spec.html#UseIsStatement_chapter'>"use is"</a>.
+Here It is example of changin relationship run time using operator <a href='/docs/spec.html#IsOp_chapter'>"is"</a> and statement <a href='/docs/spec.html#SetIsStatement_chapter'>"set is"</a>.
 </p>
 
 <p>
@@ -485,19 +485,19 @@ app PeaceKeeper is [0.5] exampleClass
 
 		 exampleClass is not human >> @>log;
 
-		 use exampleClass is [0.5] human;
+		 set exampleClass is [0.5] human;
 
 		 exampleClass is human >> @>log;
 
 		 exampleClass is not human >> @>log;
 
-		 use exampleClass is not human;
+		 set exampleClass is not human;
 
 		 exampleClass is human >> @>log;
 
 		 exampleClass is not human >> @>log;
 
-		 use @@self is linux;
+		 set @@self is linux;
 
 		 @@self is linux >> @>log;
 
@@ -543,13 +543,13 @@ app PeaceKeeper is [middle] exampleClass
         'Begin' >> @>log;
         exampleClass is human >> @>log;
         exampleClass is not human >> @>log;
-        use exampleClass is [middle] human;
+        set exampleClass is [middle] human;
         exampleClass is human >> @>log;
         exampleClass is not human >> @>log;
-        use exampleClass is not human;
+        set exampleClass is not human;
         exampleClass is human >> @>log;
         exampleClass is not human >> @>log;
-        use @@self is linux;
+        set @@self is linux;
         @@self is linux >> @>log;
         'End' >> @>log;
     }
@@ -589,13 +589,13 @@ app PeaceKeeper is [very middle] exampleClass
         'Begin' >> @>log;
         exampleClass is human >> @>log;
         exampleClass is not human >> @>log;
-        use exampleClass is [very middle] human;
+        set exampleClass is [very middle] human;
         exampleClass is human >> @>log;
         exampleClass is not human >> @>log;
-        use exampleClass is not human;
+        set exampleClass is not human;
         exampleClass is human >> @>log;
         exampleClass is not human >> @>log;
-        use @@self is linux;
+        set @@self is linux;
         @@self is linux >> @>log;
         'End' >> @>log;
     }
