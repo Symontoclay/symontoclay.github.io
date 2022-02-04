@@ -1,1 +1,2 @@
-tmp Stub of contributing
+# Contributing
+<contributing_preview_content/>

@@ -1,0 +1,63 @@
+<h1 class='center-h'>Contributing</h1>
+
+<p>
+Help is always welcome and there are plenty of options how you can contribute to SymOntoClay.
+</p>
+
+<p>
+In particular, your contribution would be helpful in the following areas:
+    <ul>
+	    <li>
+		    Trying to use SymOntoClay.
+		</li>
+		<li>
+		    Reporting <a href='https://github.com/Symontoclay/SymOntoClay/issues'>issues</a>.
+		</li>
+		<li>
+		    Fixing and responding to <a href='https://github.com/Symontoclay/SymOntoClay/issues'>SymOntoClay’s GitHub issues</a>.
+		</li>
+		<li>
+		    Improving the documentation, especially fixing grammar issues. 
+			I am not a native English speaker, so there are a lot of grammar mistakes in SymOntoClay's documentation.
+		</li>
+		<li>
+		    Getting involved in the language design process by proposing language changes or new features in <a href='https://github.com/Symontoclay/SymOntoClay/discussions'>the SymOntoClay’s forum</a> and providing feedback.
+		</li>
+		<li>
+		    Getting involved in improving the design process: all ideas are welcome.
+		</li>
+		<li>
+		    Getting involved in creating new features. There are also many sub-areas in the big area:
+			
+			<ul>
+			    <li>
+				    Implementing new language features
+				</li>
+			    <li>
+				    Implementing new engine features
+				</li>
+			    <li>
+				    Improving performance
+				</li>
+			    <li>
+				    Improving integration with Unity
+				</li>
+			    <li>
+				    Creating extensions for code editors.
+					First of all SymOntoClay needs extensions for Visual Studio and Visual Studio Code.
+				</li>	
+			    <li>
+				    Improving DevOps
+				</li>
+			    <li>
+				    Redesign the SymOntoClay’s site.
+				</li>
+			</ul>
+		</li>		
+	</ul>
+</p>
+
+<p>
+Please note that this project is released with a <a href='https://github.com/Symontoclay/SymOntoClay/blob/master/CODE_OF_CONDUCT.md'>Contributor Code of Conduct</a>. 
+By participating in this project - in the <a href='https://github.com/Symontoclay/SymOntoClay/issues'>issues</a>, <a href='https://github.com/Symontoclay/SymOntoClay/pulls'>pull requests</a>, or <a href='https://github.com/Symontoclay/SymOntoClay/discussions'>Discussion</a> - you agree to abide by its terms.
+</p>

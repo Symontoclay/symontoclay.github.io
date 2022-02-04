@@ -3,7 +3,7 @@
     "title": "A hybrid language with logic programming and fuzzy logic for defining game characters behavior.",
     "enableFavicon": true,
     "logo": "/favicon.png",
-	"roadMapJsonPath" : null,
+	"roadMapJsonPath" : "%SITE_SOURCE_PATH%/Roadmap.json",
 	"CSharpUserApiJsonPath": "%SITE_SOURCE_PATH%/CSharpApiOptions.json",
 	"DestCSharpUserApiPath" : "docs/engine_api",
 	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
