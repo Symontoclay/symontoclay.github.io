@@ -14,6 +14,12 @@
 		"%SITE_SOURCE_PATH%/CommonReadmes",
 		"%SITE_SOURCE_PATH%/CommonFragments"
 	],
+	"Microdata": {
+        "Description": "SymOntoClay is a hybrid language with logic programming and fuzzy logic for defining game characters behavior.",
+        "ImageUrl": "/preview_img.jfif",
+        "ImageAlt": "",
+        "Title": ""
+    },
     "menu" : {
         "items": [
 		    {
