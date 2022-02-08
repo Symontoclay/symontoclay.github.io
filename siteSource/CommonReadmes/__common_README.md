@@ -45,7 +45,3 @@ You can build and install the project from source code.
 Feel free contact to me about the project. 
 I will be glad to receive feedback.
 </p>
-
-<p class='center-h'>
-<b>Sergiy Tolkachov</b> AKA metatypeman
-</p>
