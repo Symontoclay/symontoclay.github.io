@@ -7,3 +7,26 @@
 <p>
 <a href='/dev/source_code.html'>Here</a> is information about SymOntoClay's source code and Its projects's meaning.
 </p>
+
+<h3>
+<a href='/dev/contributing.html'>Contributing</a>
+</h3>
+
+<p>
+    Contributions are always welcome!
+	<a href='/dev/contributing.html'>Here</a> is information about how could you help in SymOntoClay's development.
+</p>
+
+<h3 class='center-h'>
+Roadmap
+</h3>
+
+<roadmap/>
+
+<p>
+Is SymOntoClay developed too slow?
+</p>
+
+<p>
+<a href='/dev/contributing.html'>You can make developing more faster.</a>
+</p>

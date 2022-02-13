@@ -2,7 +2,7 @@
 <doc>
   <members>
     <assembly>
-      <name>UnityEngine.TextCoreModule</name>
+      <name>UnityEngine.TextCoreFontEngineModule</name>
     </assembly>
     <member name="T:UnityEngine.TextCore.FaceInfo">
       <summary>
@@ -321,10 +321,10 @@ The FontEngine is also used to raster the visual representation of characters kn
     </member>
     <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.GetSystemFontNames">
       <summary>
-        <para>Gets the family names and styles of the system fonts.</para>
+        <para>Gets the family and style names of the system fonts.</para>
       </summary>
       <returns>
-        <para>The names and styles of the system fonts.</para>
+        <para>String array that contains the family and style names of the system fonts.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.TextCore.LowLevel.FontEngine.InitializeFontEngine">

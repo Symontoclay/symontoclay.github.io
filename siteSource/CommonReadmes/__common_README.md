@@ -38,11 +38,10 @@ You can build and install the project from source code.
 * [DSL code examples](https://symontoclay.github.io/docs/lng_examples/index.html)
 * [Unity examples](https://symontoclay.github.io/docs/unity-examples.html)
 
+## Contributing
+<contributing_preview_content/>
+
 <p>
 Feel free contact to me about the project. 
 I will be glad to receive feedback.
-</p>
-
-<p class='center-h'>
-<b>Sergiy Tolkachov</b> AKA metatypeman
 </p>

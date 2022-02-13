@@ -386,7 +386,7 @@
     </member>
     <member name="T:UnityEngine.Networking.UnityWebRequest">
       <summary>
-        <para>The UnityWebRequest object is used to communicate with web servers.</para>
+        <para>Provides methods to communicate with web servers.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Networking.UnityWebRequest.certificateHandler">

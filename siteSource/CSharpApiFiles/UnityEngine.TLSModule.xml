@@ -4,5 +4,10 @@
     <assembly>
       <name>UnityEngine.TLSModule</name>
     </assembly>
+    <member name="A:UnityEngine.TLSModule">
+      <summary>
+        <para>TLS module allows you to make tls connections.</para>
+      </summary>
+    </member>
   </members>
 </doc>

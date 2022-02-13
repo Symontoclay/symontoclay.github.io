@@ -4,324 +4,220 @@
         <name>Assembly-CSharp</name>
     </assembly>
     <members>
-        <member name="M:SymOntoClay.Build.BuildProcessor.OnPostprocessBuild(UnityEditor.Build.Reporting.BuildReport)">
+        <member name="T:SymOntoClay.UnityAsset.Components.LeftHandWPLocator">
+            <summary>
+            Helps to find NPC's left hand weapon point.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.UnityAsset.Components.RightHandWPLocator">
+            <summary>
+            Helps to find NPC's right hand weapon point.
+            </summary>
+        </member>
+        <member name="T:SymOntoClay.UnityAsset.Components.HeadLocator">
+            <summary>
+            Head locator.
+            It allows us to detect head for scanner of visible object without explicit linking Head to HumanoidNPC.
+            </summary>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.PlatformType">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.CoreType">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.CanConvertToPlatformType">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.CanConvertToCoreType">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ConvertToCoreType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ConvertToPlatformType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ToShortString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ToShortString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.SymOntoClay#CoreHelper#DebugHelpers#IObjectToShortString#PropertiesToShortString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ToBriefString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.ToBriefString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3UnityAndSystemNumericConverter.SymOntoClay#CoreHelper#DebugHelpers#IObjectToBriefString#PropertiesToBriefString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.PlatformType">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.CoreType">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.CanConvertToPlatformType">
+            <inheritdoc/>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.CanConvertToCoreType">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ConvertToCoreType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ConvertToPlatformType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ToShortString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ToShortString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.SymOntoClay#CoreHelper#DebugHelpers#IObjectToShortString#PropertiesToShortString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ToBriefString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.ToBriefString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Converters.Vector3AndWayPointValueConverter.SymOntoClay#CoreHelper#DebugHelpers#IObjectToBriefString#PropertiesToBriefString(System.UInt32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Build.BuildProcessor.OnPostprocessBuild(UnityEditor.Build.Reporting.BuildReport)">
             <summary>
             This method is called after build (publish) game and before finish.
             You can write your code for copying target files here.
             </summary>
             <param name="report"></param>
         </member>
-        <member name="T:SymOntoClay.IUHumanoidNPC">
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.GetAxis(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.GetKeyUp(UnityEngine.KeyCode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.GetKeyDown(UnityEngine.KeyCode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.GetButtonDown(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.GetMouseButtonUp(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.GetMouseButtonDown(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.SetCharacterMode">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.AddWindow">
+            <inheritdoc/>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.Samles.Environment.PlayerCommonBus.ReleaseWindow">
+            <inheritdoc/>
+        </member>
+        <member name="T:SymOntoClay.UnityAsset.Interfaces.IUHumanoidNPC">
             <summary>
             Represents SymOntoClay's humanoid NPC component.
             </summary>
         </member>
-        <member name="P:SymOntoClay.IUHumanoidNPC.NPC">
+        <member name="P:SymOntoClay.UnityAsset.Interfaces.IUHumanoidNPC.NPC">
             <summary>
             Gets instance of SymOntoClay core.
             </summary>
         </member>
-        <member name="T:SymOntoClay.BaseBehavior">
-            <summary>
-            Contains base recommended behavior.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddStopFact">
-            <summary>
-            Adds fact that the NPC has stopped itself.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddWalkingFact">
-            <summary>
-            Adds fact that the NPC has started walking.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddRunningFact">
-            <summary>
-            Adds fact that the NPC has started running.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddHoldFact(System.String)">
-            <summary>
-            Adds fact that the NPC holds something in his hands.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-            <param name="heldId">Id of held thing.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RemoveHoldFact">
-            <summary>
-            Removes fact that the NPC holds something in his hands.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingWalkingStepsSoundInMainThread">
-            <summary>
-            Starts pushing sound facts that the NPS is walking.
-            This method should be called only in main thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingWalkingStepsSoundInUsualThread">
-            <summary>
-            Starts pushing sound facts that the NPS is walking.
-            This method should be called only in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingRunningStepsSoundInMainThread">
-            <summary>
-            Starts pushing sound facts that the NPS is running.
-            This method should be called only in main thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingRunningStepsSoundInUsualThread">
-            <summary>
-            Starts pushing sound facts that the NPS is running.
-            This method should be called only in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingStepsSoundInMainThread">
-            <summary>
-            Stops pushing sound facts that the NPS is walking or running.
-            This method should be called only in main thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingStepsSoundInUsualThread">
-            <summary>
-            Stops pushing sound facts that the NPS is walking or running.
-            This method should be called only in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingShotSoundInMainThread">
-            <summary>
-            Starts pushing sound facts that something is shooting.
-            This method should be called only in main thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StartRepeatingShotSoundInUsualThread">
-            <summary>
-            Starts pushing sound facts that something is shooting.
-            This method should be called only in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingShotSoundInMainThread">
-            <summary>
-            Stops pushing sound facts that something is shooting.
-            This method should be called only in main thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.StopRepeatingShotSoundInUsualThread">
-            <summary>
-            Stops pushing sound facts that something is shooting.
-            This method should be called only in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddHeShootsFact">
-            <summary>
-            Adds fact that the NPC shoots.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RemoveHeShootsFact">
-            <summary>
-            Removes fact that the NPC shoots.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddHeIsReadyForShootFact">
-            <summary>
-            Adds fact that the NPC is ready for shooting.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RemoveHeIsReadyForShootFact">
-            <summary>
-            Removes fact that the NPC is ready for shooting.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RemoveAllShootFacts">
-            <summary>
-            Removes all facts related to shooting.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.ProcessDeath">
-            <summary>
-            Proceses death for NPC.
-            This method can be called both in main and in usual (not main) thread.
-            </summary>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.GetMethodId">
-            <summary>
-            Returns integer id which is unique for the component.
-            It can be helpful for debugging host methods.
-            </summary>
-            <returns>Integer id which is unique for the component.</returns>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RunInMainThread(System.Action)">
-            <summary>
-            Executes handler in main thread context.
-            </summary>
-            <param name="function">Handler which should be executed in main thread context.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RunInMainThread``1(System.Func{``0})">
-            <summary>
-            Executes handler in main thread context.
-            </summary>
-            <typeparam name="TResult">Type of result.</typeparam>
-            <param name="function">Handler which should be executed in main thread context.</param>
-            <returns>Result of the execution.</returns>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.CanBeTakenBy(SymOntoClay.Core.IEntity)">
-            <summary>
-            Checks that It can be taken by the NPC.
-            </summary>
-            <param name="subject">The NPC that takes this.</param>
-            <returns><b>true</b> - if It can be taken, otherwise - <b>false</b>.</returns>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddToManualControl(SymOntoClay.IUSocGameObject,SymOntoClay.UnityAsset.Core.DeviceOfBiped)">
-            <summary>
-            Adds a game object into manual controlled area of the NPC.
-            </summary>
-            <param name="obj">Instance of the game object.</param>
-            <param name="device">Describes biped device which will be using the game object.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddToManualControl(SymOntoClay.IUSocGameObject,System.Collections.Generic.IList{SymOntoClay.UnityAsset.Core.DeviceOfBiped})">
-            <summary>
-            Adds a game object into manual controlled area of the NPC.
-            </summary>
-            <param name="obj">Instance of the game object.</param>
-            <param name="devices">Describes list of biped devices which will be using the game object.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RemoveFromManualControl(SymOntoClay.IUSocGameObject)">
-            <summary>
-            Removes a game object from manual controlled area of an NPC.
-            </summary>
-            <param name="obj">Instance of the game object.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.AddToBackpack(SymOntoClay.UnityAsset.Core.IGameObject)">
-            <summary>
-            Adds a game object into backpack.
-            </summary>
-            <param name="obj">Instance of the game object.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.RemoveFromBackpack(SymOntoClay.UnityAsset.Core.IGameObject)">
-            <summary>
-            Removes game object from backpack.
-            </summary>
-            <param name="obj">Instance of the game object.</param>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInUsualThread(System.Numerics.Vector3)">
-            <summary>
-            Creates a rotation with the specified forward and upwards directions.
-            It is a wrapper on Quaternion.LookRotation.
-            This method should be called only in usual (not main) thread.
-            </summary>
-            <param name="targetPosition">Position that is looked at.</param>
-            <returns>Rotation to target position.</returns>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInUsualThread(UnityEngine.Vector3)">
-            <summary>
-            Creates a rotation with the specified forward and upwards directions.
-            It is a wrapper on Quaternion.LookRotation.
-            This method should be called only in usual (not main) thread.
-            </summary>
-            <param name="targetPosition">Position that is looked at.</param>
-            <returns>Rotation to target position.</returns>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInMainThread(System.Numerics.Vector3)">
-            <summary>
-            Creates a rotation with the specified forward and upwards directions.
-            It is a wrapper on Quaternion.LookRotation.
-            This method should be called only in main thread.
-            </summary>
-            <param name="targetPosition">Position that is looked at.</param>
-            <returns>Rotation to target position.</returns>
-        </member>
-        <member name="M:SymOntoClay.BaseBehavior.GetRotationToPositionInMainThread(UnityEngine.Vector3)">
-            <summary>
-            Creates a rotation with the specified forward and upwards directions.
-            It is a wrapper on Quaternion.LookRotation.
-            This method should be called only in main thread.
-            </summary>
-            <param name="targetPosition">Position that is looked at.</param>
-            <returns>Rotation to target position.</returns>
-        </member>
-        <member name="T:SymOntoClay.IUHandThingHost">
+        <member name="T:SymOntoClay.UnityAsset.Interfaces.IUHandThingHost">
             <summary>
             Provides interaction with user defined scripts/components.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUHandThingHost.HideForBackpackInMainThread">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUHandThingHost.HideForBackpackInMainThread">
             <summary>
             Hides the thing as part of placing in backpack.
             This method should be called only in main thread.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUHandThingHost.HideForBackpackInUsualThread">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUHandThingHost.HideForBackpackInUsualThread">
             <summary>
             Hides the thing as part of placing in backpack.
             This method should be called only in usual (not main) thread.
             </summary>
         </member>
-        <member name="T:SymOntoClay.IUHostListener">
+        <member name="T:SymOntoClay.UnityAsset.Interfaces.IUHostListener">
             <summary>
             Host listener locator. 
             Each NPC's behavior with host methods' endpoint should implement this interface.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUHostListener.CanBeTakenBy(SymOntoClay.Core.IEntity)">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUHostListener.CanBeTakenBy(SymOntoClay.Core.IEntity)">
             <summary>
             Checks could the game object be taken by an NPC.
             </summary>
             <param name="subject">The NPC that takes this.</param>
             <returns><b>true</b> if the game object can be be taken by an NPC, otherwise <b>flase</b></returns>
         </member>
-        <member name="T:SymOntoClay.LeftHandWPLocator">
-            <summary>
-            Helps to find NPC's left hand weapon point.
-            </summary>
-        </member>
-        <member name="T:SymOntoClay.IUHandThing">
+        <member name="T:SymOntoClay.UnityAsset.Interfaces.IUHandThing">
             <summary>
             Represents SymOntoClay's thing component which can be taken by NPC's hands.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUHandThing.HideForBackpackInMainThread">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUHandThing.HideForBackpackInMainThread">
             <summary>
             Hides the thing as part of placing in backpack.
             This method should be called only in main thread.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUHandThing.HideForBackpackInUsualThread">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUHandThing.HideForBackpackInUsualThread">
             <summary>
             Hides the thing as part of placing in backpack.
             This method should be called only in usual (not main) thread.
             </summary>
         </member>
-        <member name="T:SymOntoClay.RightHandWPLocator">
-            <summary>
-            Helps to find NPC's right hand weapon point.
-            </summary>
-        </member>
-        <member name="T:SymOntoClay.IUSocGameObject">
+        <member name="T:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject">
             <summary>
             Represents base SymOntoClay's game object component.
             </summary>
         </member>
-        <member name="P:SymOntoClay.IUSocGameObject.IdForFacts">
+        <member name="P:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject.IdForFacts">
             <summary>
             Gets unique Id which is prepared to using in building fact string.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUSocGameObject.RunInMainThread(System.Action)">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject.RunInMainThread(System.Action)">
             <summary>
             Executes handler in main thread context.
             </summary>
             <param name="function">Handler which should be executed in main thread context.</param>
         </member>
-        <member name="M:SymOntoClay.IUSocGameObject.RunInMainThread``1(System.Func{``0})">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject.RunInMainThread``1(System.Func{``0})">
             <summary>
             Executes handler in main thread context.
             </summary>
@@ -329,7 +225,7 @@
             <param name="function">Handler which should be executed in main thread context.</param>
             <returns>Result of the execution.</returns>
         </member>
-        <member name="M:SymOntoClay.IUSocGameObject.InsertPublicFact(System.String)">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject.InsertPublicFact(System.String)">
             <summary>
             Inserts public fact into storage.
             Another NPCs can percept the fact.
@@ -337,174 +233,278 @@
             <param name="text">String that represents the fact.</param>
             <returns>Id of inserted fact.</returns>
         </member>
-        <member name="M:SymOntoClay.IUSocGameObject.RemovePublicFact(System.String)">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject.RemovePublicFact(System.String)">
             <summary>
             Remove public fact from storage.
             Another NPCs can not percept the fact.
             </summary>
             <param name="id">Id of previously inserted fact.</param>
         </member>
-        <member name="M:SymOntoClay.IUSocGameObject.PushSoundFact(System.Single,System.String)">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUSocGameObject.PushSoundFact(System.Single,System.String)">
             <summary>
             Pushes fact to special delivery system which simulates hearing.
             </summary>
             <param name="power">Power of sound.</param>
             <param name="text">String that represents the fact.</param>
         </member>
-        <member name="T:SymOntoClay.HeadLocator">
-            <summary>
-            Head locator.
-            It allows us to detect head for scanner of visible object without explicit linking Head to HumanoidNPC.
-            </summary>
-        </member>
-        <member name="T:SymOntoClay.IUSocHumanoid">
+        <member name="T:SymOntoClay.UnityAsset.Interfaces.IUSocHumanoid">
             <summary>
             Represents SymOntoClay's humanoid component.
             It can be both NPC and Player.
             </summary>
         </member>
-        <member name="M:SymOntoClay.IUSocHumanoid.Die">
+        <member name="M:SymOntoClay.UnityAsset.Interfaces.IUSocHumanoid.Die">
             <summary>
             Performs death of humanoid.
             All active processes will have been stopped.
             Another NPCs will percept the humanoid as died.
             </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.PlatformType">
-            <inheritdoc/>
+        <member name="T:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior">
+            <summary>
+            Contains base recommended behavior.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.CoreType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddStopFact">
+            <summary>
+            Adds fact that the NPC has stopped itself.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.CanConvertToPlatformType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddWalkingFact">
+            <summary>
+            Adds fact that the NPC has started walking.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.CanConvertToCoreType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddRunningFact">
+            <summary>
+            Adds fact that the NPC has started running.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ConvertToCoreType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddHoldFact(System.String)">
+            <summary>
+            Adds fact that the NPC holds something in his hands.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
+            <param name="heldId">Id of held thing.</param>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ConvertToPlatformType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RemoveHoldFact">
+            <summary>
+            Removes fact that the NPC holds something in his hands.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ToString">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StartRepeatingWalkingStepsSoundInMainThread">
+            <summary>
+            Starts pushing sound facts that the NPS is walking.
+            This method should be called only in main thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ToString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StartRepeatingWalkingStepsSoundInUsualThread">
+            <summary>
+            Starts pushing sound facts that the NPS is walking.
+            This method should be called only in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StartRepeatingRunningStepsSoundInMainThread">
+            <summary>
+            Starts pushing sound facts that the NPS is running.
+            This method should be called only in main thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ToShortString">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StartRepeatingRunningStepsSoundInUsualThread">
+            <summary>
+            Starts pushing sound facts that the NPS is running.
+            This method should be called only in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ToShortString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StopRepeatingStepsSoundInMainThread">
+            <summary>
+            Stops pushing sound facts that the NPS is walking or running.
+            This method should be called only in main thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.SymOntoClay#CoreHelper#DebugHelpers#IObjectToShortString#PropertiesToShortString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StopRepeatingStepsSoundInUsualThread">
+            <summary>
+            Stops pushing sound facts that the NPS is walking or running.
+            This method should be called only in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ToBriefString">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StartRepeatingShotSoundInMainThread">
+            <summary>
+            Starts pushing sound facts that something is shooting.
+            This method should be called only in main thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.ToBriefString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StartRepeatingShotSoundInUsualThread">
+            <summary>
+            Starts pushing sound facts that something is shooting.
+            This method should be called only in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3UnityAndSystemNumericConvertor.SymOntoClay#CoreHelper#DebugHelpers#IObjectToBriefString#PropertiesToBriefString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StopRepeatingShotSoundInMainThread">
+            <summary>
+            Stops pushing sound facts that something is shooting.
+            This method should be called only in main thread.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.PlatformType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.StopRepeatingShotSoundInUsualThread">
+            <summary>
+            Stops pushing sound facts that something is shooting.
+            This method should be called only in usual (not main) thread.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.CoreType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddHeShootsFact">
+            <summary>
+            Adds fact that the NPC shoots.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.CanConvertToPlatformType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RemoveHeShootsFact">
+            <summary>
+            Removes fact that the NPC shoots.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.CanConvertToCoreType">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddHeIsReadyForShootFact">
+            <summary>
+            Adds fact that the NPC is ready for shooting.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ConvertToCoreType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RemoveHeIsReadyForShootFact">
+            <summary>
+            Removes fact that the NPC is ready for shooting.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ConvertToPlatformType(System.Object,SymOntoClay.CoreHelper.DebugHelpers.IEntityLogger)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RemoveAllShootFacts">
+            <summary>
+            Removes all facts related to shooting.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ToString">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.ProcessDeath">
+            <summary>
+            Proceses death for NPC.
+            This method can be called both in main and in usual (not main) thread.
+            </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ToString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.GetMethodId">
+            <summary>
+            Returns integer id which is unique for the component.
+            It can be helpful for debugging host methods.
+            </summary>
+            <returns>Integer id which is unique for the component.</returns>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RunInMainThread(System.Action)">
+            <summary>
+            Executes handler in main thread context.
+            </summary>
+            <param name="function">Handler which should be executed in main thread context.</param>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ToShortString">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RunInMainThread``1(System.Func{``0})">
+            <summary>
+            Executes handler in main thread context.
+            </summary>
+            <typeparam name="TResult">Type of result.</typeparam>
+            <param name="function">Handler which should be executed in main thread context.</param>
+            <returns>Result of the execution.</returns>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ToShortString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.CanBeTakenBy(SymOntoClay.Core.IEntity)">
+            <summary>
+            Checks that It can be taken by the NPC.
+            </summary>
+            <param name="subject">The NPC that takes this.</param>
+            <returns><b>true</b> - if It can be taken, otherwise - <b>false</b>.</returns>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.SymOntoClay#CoreHelper#DebugHelpers#IObjectToShortString#PropertiesToShortString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddToManualControl(SymOntoClay.UnityAsset.Interfaces.IUSocGameObject,SymOntoClay.UnityAsset.Core.DeviceOfBiped)">
+            <summary>
+            Adds a game object into manual controlled area of the NPC.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+            <param name="device">Describes biped device which will be using the game object.</param>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ToBriefString">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddToManualControl(SymOntoClay.UnityAsset.Interfaces.IUSocGameObject,System.Collections.Generic.IList{SymOntoClay.UnityAsset.Core.DeviceOfBiped})">
+            <summary>
+            Adds a game object into manual controlled area of the NPC.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+            <param name="devices">Describes list of biped devices which will be using the game object.</param>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.ToBriefString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RemoveFromManualControl(SymOntoClay.UnityAsset.Interfaces.IUSocGameObject)">
+            <summary>
+            Removes a game object from manual controlled area of an NPC.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
         </member>
-        <member name="M:Assets.SymOntoClay.Convertors.Vector3AndWayPointValueConvertor.SymOntoClay#CoreHelper#DebugHelpers#IObjectToBriefString#PropertiesToBriefString(System.UInt32)">
-            <inheritdoc/>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.AddToBackpack(SymOntoClay.UnityAsset.Core.IGameObject)">
+            <summary>
+            Adds a game object into backpack.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
         </member>
-        <member name="P:Assets.SymOntoClay.Data.UVisibleItem.InstanceId">
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.RemoveFromBackpack(SymOntoClay.UnityAsset.Core.IGameObject)">
+            <summary>
+            Removes game object from backpack.
+            </summary>
+            <param name="obj">Instance of the game object.</param>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.GetRotationToPositionInUsualThread(System.Numerics.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in usual (not main) thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.GetRotationToPositionInUsualThread(UnityEngine.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in usual (not main) thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.GetRotationToPositionInMainThread(System.Numerics.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in main thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="M:SymOntoClay.UnityAsset.BaseBehaviors.BaseBehavior.GetRotationToPositionInMainThread(UnityEngine.Vector3)">
+            <summary>
+            Creates a rotation with the specified forward and upwards directions.
+            It is a wrapper on Quaternion.LookRotation.
+            This method should be called only in main thread.
+            </summary>
+            <param name="targetPosition">Position that is looked at.</param>
+            <returns>Rotation to target position.</returns>
+        </member>
+        <member name="P:SymOntoClay.UnityAsset.Data.UVisibleItem.InstanceId">
             <summary>
             InstanceId in Unity Engine.
             </summary>
         </member>
-        <member name="P:Assets.SymOntoClay.Data.UVisibleItem.Position">
+        <member name="P:SymOntoClay.UnityAsset.Data.UVisibleItem.Position">
             <summary>
             Position of this GameObject in Unity Engine.
             This position will be used for prevention chitering AI.
             </summary>
         </member>
-        <member name="M:Assets.SymOntoClay.Data.UVisibleItem.ToString">
+        <member name="M:SymOntoClay.UnityAsset.Data.UVisibleItem.ToString">
             <inheritdoc/>
         </member>
-        <member name="M:Assets.SymOntoClay.Data.UVisibleItem.ToString(System.UInt32)">
+        <member name="M:SymOntoClay.UnityAsset.Data.UVisibleItem.ToString(System.UInt32)">
             <inheritdoc/>
         </member>
-        <member name="M:Assets.SymOntoClay.Data.UVisibleItem.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetAxis(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetKeyUp(UnityEngine.KeyCode)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetKeyDown(UnityEngine.KeyCode)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetButtonDown(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetMouseButtonUp(System.Int32)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.GetMouseButtonDown(System.Int32)">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.SetCharacterMode">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.AddWindow">
-            <inheritdoc/>
-        </member>
-        <member name="M:ExamplesOfSymOntoClay.PlayerCommonBus.ReleaseWindow">
+        <member name="M:SymOntoClay.UnityAsset.Data.UVisibleItem.SymOntoClay#CoreHelper#DebugHelpers#IObjectToString#PropertiesToString(System.UInt32)">
             <inheritdoc/>
         </member>
     </members>

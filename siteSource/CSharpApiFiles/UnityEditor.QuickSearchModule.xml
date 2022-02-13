@@ -75,6 +75,11 @@
         <para>Unspecified ISearchView display mode.</para>
       </summary>
     </member>
+    <member name="F:UnityEditor.Search.DisplayMode.Table">
+      <summary>
+        <para>Display search results in a table.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.Search.FetchPreviewOptions">
       <summary>
         <para>Options for the search provider on how the preview should be fetched.</para>
@@ -147,6 +152,51 @@
         <para>The parameter value. This can be null or empty if the filter is not a filter function, or there is no parameter written yet.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.Search.IndexingOptions">
+      <summary>
+        <para>Use Indexing options to specify the contents of your search index.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.All">
+      <summary>
+        <para>Apply all indexing options.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.Dependencies">
+      <summary>
+        <para>Include Asset dependencies in your index.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.Extended">
+      <summary>
+        <para>Include extended information in your index such as sub objects in Scene and Prefab Assets.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.Keep">
+      <summary>
+        <para>Use this option to save the created index as an Asset file.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.None">
+      <summary>
+        <para>Do not include additional indexing options.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.Properties">
+      <summary>
+        <para>Include Asset serialized properties in your index.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.Temporary">
+      <summary>
+        <para>Save the search index to a temporary folder that is not managed by Unity.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.IndexingOptions.Types">
+      <summary>
+        <para>Include additional types of information in your Asset index.</para>
+      </summary>
+    </member>
     <member name="?:UnityEditor.Search.INestedQueryNode">
       <summary>
         <para>Interface representing a nested query node.</para>
@@ -156,6 +206,131 @@
       <summary>
         <para>If the nested query is part of a filter operation, this represents the filter identifier. Otherwise, this is null or empty.</para>
       </summary>
+    </member>
+    <member name="?:UnityEditor.Search.IQueryEngineFilter">
+      <summary>
+        <para>Interface for the Search.QueryEngine_1|QueryEngine filters.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.metaInfo">
+      <summary>
+        <para>Additional information specific to the filter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.operators">
+      <summary>
+        <para>Collection of Search.QueryFilterOperator|QueryFilterOperators specific for the filter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.overridesStringComparison">
+      <summary>
+        <para>Indicates if the filter overrides the global string comparison options.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.parameterType">
+      <summary>
+        <para>The type of the constant parameter passed to the filter, if used.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.regexToken">
+      <summary>
+        <para>The regular expression that matches the filter. Matches what precedes the operator in a filter (for example. "id" in "id&gt;=2").</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.stringComparison">
+      <summary>
+        <para>The string comparison options of the filter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.supportedOperators">
+      <summary>
+        <para>List of supported operators.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.token">
+      <summary>
+        <para>The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.type">
+      <summary>
+        <para>The type of the data that is compared by the filter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.usesParameter">
+      <summary>
+        <para>Indicates if the filter uses a parameter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.usesRegularExpressionToken">
+      <summary>
+        <para>Indicates if the filter uses a regular expression token or not.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.IQueryEngineFilter.usesResolver">
+      <summary>
+        <para>Indicates if the filter uses a resolver function.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.AddOperator(System.String)">
+      <summary>
+        <para>Add a custom filter operator specific to the filter.</para>
+      </summary>
+      <param name="op">The operator identifier.</param>
+      <returns>
+        <para>The added, or existing, Search.QueryFilterOperator|QueryFilterOperator.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.AddOrUpdateMetaInfo(System.String,System.String)">
+      <summary>
+        <para>Add or update additional information specific to the filter.</para>
+      </summary>
+      <param name="key">The key of the information.</param>
+      <param name="value">The value of the information.</param>
+      <returns>
+        <para>The current filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.AddTypeParser(System.Func`2&lt;System.String,UnityEditor.Search.ParseResult`1&lt;TFilterConstant&gt;&gt;)">
+      <summary>
+        <para>Add a type parser specific to the filter.</para>
+      </summary>
+      <param name="parser">Callback used to determine if a string can be converted into "TFilterConstant". Takes a string and returns a Search.ParseResult_1|ParseResult object. This contains the success flag, and the actual converted value if it succeeded.</param>
+      <returns>
+        <para>The current filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.ClearMetaInfo">
+      <summary>
+        <para>Removes all additional information specific to the filter.</para>
+      </summary>
+      <returns>
+        <para>The current filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.RemoveMetaInfo(System.String)">
+      <summary>
+        <para>Remove information on the filter.</para>
+      </summary>
+      <param name="key">The key of the information.</param>
+      <returns>
+        <para>The current filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.RemoveOperator(System.String)">
+      <summary>
+        <para>Remove a custom operator specific to the filter.</para>
+      </summary>
+      <param name="op">The operator identifier.</param>
+      <returns>
+        <para>The current filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.IQueryEngineFilter.SetNestedQueryTransformer(System.Func`2&lt;TNestedQueryData,TRhs&gt;)">
+      <summary>
+        <para>Sets the filter's nested query transformer function. This function takes the result of a nested query and extracts the necessary data to compare with the filter.</para>
+      </summary>
+      <param name="transformer">The transformer function.</param>
     </member>
     <member name="?:UnityEditor.Search.IQueryHandler_2">
       <summary>
@@ -343,6 +518,11 @@
         <para>Allows multi-selection of items in the list/grid of items. If false, a user can only select a single item.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.Search.ISearchView.position">
+      <summary>
+        <para>Returns the absolute position of the Search window.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.Search.ISearchView.results">
       <summary>
         <para>Returns the list of all search results.</para>
@@ -382,9 +562,19 @@
       <param name="items">The items to search.</param>
       <param name="endSearch">If true, executing this action closes the Search window.</param>
     </member>
+    <member name="M:UnityEditor.Search.ISearchView.ExecuteSelection">
+      <summary>
+        <para>Execute the default action of the active selection.</para>
+      </summary>
+    </member>
     <member name="M:UnityEditor.Search.ISearchView.Focus">
       <summary>
-        <para>Make sure the search window is now selected to receive input from a user.</para>
+        <para>Make sure the Search window is now selected to receive input from a user.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Search.ISearchView.FocusSearch">
+      <summary>
+        <para>Focus the search text field control.</para>
       </summary>
     </member>
     <member name="M:UnityEditor.Search.ISearchView.Refresh(UnityEditor.Search.RefreshFlags)">
@@ -463,7 +653,7 @@
       <param name="name">Key used to retrieve the value.</param>
       <param name="value">Value to add to the index.</param>
     </member>
-    <member name="M:UnityEditor.Search.ObjectIndexer.IndexWord(System.Int32,System.String,System.Boolean,System.Int32)">
+    <member name="M:UnityEditor.Search.ObjectIndexer.IndexWord(System.Int32,System.String&amp;,System.Boolean,System.Int32)">
       <summary>
         <para>Adds a new word coming from a specific document to the index. The word will be added with multiple variations allowing partial search.</para>
       </summary>
@@ -472,7 +662,7 @@
       <param name="exact">If true, we will also store an exact match entry for this word.</param>
       <param name="scoreModifier">Modified to apply to the base match score for a specific word.</param>
     </member>
-    <member name="M:UnityEditor.Search.ObjectIndexer.IndexWord(System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+    <member name="M:UnityEditor.Search.ObjectIndexer.IndexWord(System.Int32,System.String&amp;,System.Int32,System.Boolean,System.Int32)">
       <summary>
         <para>The word will be added with a maximum of variation. This can be used to save some space for very large words.</para>
       </summary>
@@ -482,7 +672,7 @@
       <param name="exact">If true, the indexer will also store an exact match entry for this word.</param>
       <param name="scoreModifier">Modified to apply to the base match score for a specific word.</param>
     </member>
-    <member name="M:UnityEditor.Search.ObjectIndexer.IndexWordComponents(System.Int32,System.String)">
+    <member name="M:UnityEditor.Search.ObjectIndexer.IndexWordComponents(System.Int32,System.String&amp;)">
       <summary>
         <para>Splits a word into multiple variations.</para>
       </summary>
@@ -729,85 +919,196 @@ If true, unknown filters are skipped. If false and Search.QueryEngine_1.validate
       <summary>
         <para>Adds a new custom filter.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData and returns an object of type TFilter.</param>
       <param name="stringComparison">String comparison option.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`2&lt;TData,TFilter&gt;,System.StringComparison,System.String[])">
       <summary>
         <para>Adds a new custom filter.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData and returns an object of type TFilter.</param>
       <param name="stringComparison">String comparison option.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`3&lt;TData,TParam,TFilter&gt;,System.String[])">
       <summary>
         <para>Adds a new custom filter with parameters.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData and TParam, and returns an object of type TFilter.</param>
       <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
       <param name="stringComparison">String comparison option.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`3&lt;TData,TParam,TFilter&gt;,System.StringComparison,System.String[])">
       <summary>
         <para>Adds a new custom filter with parameters.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData and TParam, and returns an object of type TFilter.</param>
       <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
       <param name="stringComparison">String comparison option.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`3&lt;TData,TParam,TFilter&gt;,System.Func`2&lt;System.String,TParam&gt;,System.String[])">
       <summary>
         <para>Adds a new custom filter with parameters.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData and TParam, and returns an object of type TFilter.</param>
       <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
       <param name="stringComparison">String comparison option.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`3&lt;TData,TParam,TFilter&gt;,System.Func`2&lt;System.String,TParam&gt;,System.StringComparison,System.String[])">
       <summary>
         <para>Adds a new custom filter with parameters.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData and TParam, and returns an object of type TFilter.</param>
       <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
       <param name="stringComparison">String comparison option.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`4&lt;TData,System.String,TFilter,System.Boolean&gt;,System.String[])">
       <summary>
         <para>Adds a new custom filter with a complete resolver.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="filterResolver">Callback used to handle any operators for this filter. Takes an object of type TData, the operator token and the filter value, and returns a boolean indicating if the filter passed or not.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`5&lt;TData,TParam,System.String,TFilter,System.Boolean&gt;,System.String[])">
       <summary>
         <para>Adds a new custom filter with parameters and a complete resolver.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="filterResolver">Callback used to handle any operators for this filter. Takes an object of type TData, an object of type TParam, the operator token and the filter value, and returns a boolean indicating if the filter passed or not.</param>
       <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.String,System.Func`5&lt;TData,TParam,System.String,TFilter,System.Boolean&gt;,System.Func`2&lt;System.String,TParam&gt;,System.String[])">
       <summary>
         <para>Adds a new custom filter with parameters and a complete resolver.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="filterResolver">Callback used to handle any operators for this filter. Takes an object of type TData, an object of type TParam, the operator token and the filter value, and returns a boolean indicating if the filter passed or not.</param>
       <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
-      <param name="supportedOperatorType">List of supported operator tokens. Null for all operators.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`3&lt;TData,System.String,TFilter&gt;,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData, a string representing the actual filter name that was matched and returns an object of type TFilter.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="stringComparison">String comparison option.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`3&lt;TData,System.String,TFilter&gt;,System.StringComparison,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData, a string representing the actual filter name that was matched and returns an object of type TFilter.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="stringComparison">String comparison option.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`4&lt;TData,System.String,TParam,TFilter&gt;,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression and parameters.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData, a string representing the actual filter name that was matched, an object of type TParam, and returns an object of type TFilter.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="stringComparison">String comparison option.</param>
+      <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`4&lt;TData,System.String,TParam,TFilter&gt;,System.StringComparison,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression and parameters.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData, a string representing the actual filter name that was matched, an object of type TParam, and returns an object of type TFilter.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="stringComparison">String comparison option.</param>
+      <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`4&lt;TData,System.String,TParam,TFilter&gt;,System.Func`2&lt;System.String,TParam&gt;,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression and parameters.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData, a string representing the actual filter name that was matched, an object of type TParam, and returns an object of type TFilter.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="stringComparison">String comparison option.</param>
+      <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`4&lt;TData,System.String,TParam,TFilter&gt;,System.Func`2&lt;System.String,TParam&gt;,System.StringComparison,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression and parameters.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="getDataFunc">Callback used to get the object that is used in the filter. Takes an object of type TData, a string representing the actual filter name that was matched, an object of type TParam, and returns an object of type TFilter.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="stringComparison">String comparison option.</param>
+      <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`5&lt;TData,System.String,System.String,TFilter,System.Boolean&gt;,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression and a complete resolver.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="filterResolver">Callback used to handle any operators for this filter. Takes an object of type TData, a string representing the actual filter name that was matched, the operator token and the filter value, and returns a boolean indicating if the filter passed or not.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`6&lt;TData,System.String,TParam,System.String,TFilter,System.Boolean&gt;,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression, parameters and a complete resolver.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="filterResolver">Callback used to handle any operators for this filter. Takes an object of type TData, a string representing the actual filter name that was matched, an object of type TParam, the operator token and the filter value, and returns a boolean indicating if the filter passed or not.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.AddFilter(System.Text.RegularExpressions.Regex,System.Func`6&lt;TData,System.String,TParam,System.String,TFilter,System.Boolean&gt;,System.Func`2&lt;System.String,TParam&gt;,System.String[])">
+      <summary>
+        <para>Adds a new custom filter with a regular expression, parameters and a complete resolver.</para>
+      </summary>
+      <param name="token">The regular expression that matches the filter. Matches what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="filterResolver">Callback used to handle any operators for this filter. Takes an object of type TData, a string representing the actual filter name that was matched, an object of type TParam, the operator token and the filter value, and returns a boolean indicating if the filter passed or not.</param>
+      <param name="supportedOperatorType">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="parameterTransformer">Callback used to convert a string to type TParam. Used when parsing the query to convert what is passed to the function into the correct format.</param>
+      <returns>
+        <para>The new filter.</para>
+      </returns>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.AddFiltersFromAttribute">
       <summary>
@@ -847,6 +1148,11 @@ If true, unknown filters are skipped. If false and Search.QueryEngine_1.validate
       </summary>
       <param name="parser">Callback used to determine if a string can be converted into TFilterConstant. Takes a string and returns a ParseResult object. This contains the success flag, and the converted value if it succeeds.</param>
     </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.ClearFilters">
+      <summary>
+        <para>Removes all filters that were added on the Search.QueryEngine_1|QueryEngine.</para>
+      </summary>
+    </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.#ctor">
       <summary>
         <para>Constructs a new QueryEngine.</para>
@@ -867,6 +1173,23 @@ If true, unknown filters are skipped. If false and Search.QueryEngine_1.validate
       </summary>
       <param name="validateFilters">Indicates if the engine must validate filters when parsing the query.</param>
       <param name="validationOptions">The validation options to use in this engine.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.GetAllFilters">
+      <summary>
+        <para>Get all filters added on this Search.QueryEngine_1|QueryEngine.</para>
+      </summary>
+      <returns>
+        <para>An enumerable of Search.IQueryEngineFilter|IQueryEngineFilter.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.GetOperator(System.String)">
+      <summary>
+        <para>Get a custom operator added on the Search.QueryEngine_1|QueryEngine.</para>
+      </summary>
+      <param name="op">The operator identifier.</param>
+      <returns>
+        <para>The global Search.QueryFilterOperator|QueryFilterOperator.</para>
+      </returns>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.Parse(System.String,System.Boolean)">
       <summary>
@@ -902,7 +1225,25 @@ If true, unknown filters are skipped. If false and Search.QueryEngine_1.validate
       <summary>
         <para>Removes a custom filter.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.RemoveFilter(System.Text.RegularExpressions.Regex)">
+      <summary>
+        <para>Removes a custom filter.</para>
+      </summary>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.RemoveFilter(UnityEditor.Search.IQueryEngineFilter)">
+      <summary>
+        <para>Removes a custom filter.</para>
+      </summary>
+      <param name="filter">The filter object returned by Search.QueryEngine_1.AddFilter|AddFilter.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.RemoveOperator(System.String)">
+      <summary>
+        <para>Removes a custom operator that was added on the Search.QueryEngine_1|QueryEngine.</para>
+      </summary>
+      <param name="op">The operator identifier.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.SetDefaultFilter(System.Func`5&lt;TData,System.String,System.String,System.String,System.Boolean&gt;)">
       <summary>
@@ -920,7 +1261,7 @@ If true, unknown filters are skipped. If false and Search.QueryEngine_1.validate
       <summary>
         <para>Sets a filter's nested query transformer function. This function takes the result of a nested query and extracts the necessary data to compare with the filter.</para>
       </summary>
-      <param name="filterToken">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
+      <param name="filterToken">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
       <param name="transformer">The transformer function.</param>
     </member>
     <member name="M:UnityEditor.Search.QueryEngine_1.SetGlobalStringComparisonOptions(System.StringComparison)">
@@ -963,6 +1304,26 @@ If true, unknown filters are skipped. If false and Search.QueryEngine_1.validate
       </summary>
       <param name="wordMatcher">The search word matching function. The first parameter is the search word. The second parameter is a boolean for exact match or not. The third parameter is the StringComparison options. The fourth parameter is an element of the array returned by the search data callback. The function returns true for a match or false for no match.</param>
     </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.TryGetFilter(System.String,UnityEditor.Search.IQueryEngineFilter&amp;)">
+      <summary>
+        <para>Get a filter by its token.</para>
+      </summary>
+      <param name="token">The token used to create the filter.</param>
+      <param name="filter">The existing Search.IQueryEngineFilter|IQueryEngineFilter, or null if it does not exist.</param>
+      <returns>
+        <para>Returns true if the filter is retrieved or false if the filter does not exist.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngine_1.TryGetFilter(System.Text.RegularExpressions.Regex,UnityEditor.Search.IQueryEngineFilter&amp;)">
+      <summary>
+        <para>Get a filter by its token.</para>
+      </summary>
+      <param name="token">The token used to create the filter.</param>
+      <param name="filter">The existing Search.IQueryEngineFilter|IQueryEngineFilter, or null if it does not exist.</param>
+      <returns>
+        <para>Returns true if the filter is retrieved or false if the filter does not exist.</para>
+      </returns>
+    </member>
     <member name="T:UnityEditor.Search.QueryEngineFilterAttribute">
       <summary>
         <para>Base attribute class used to define a custom filter on a QueryEngine.
@@ -1002,12 +1363,17 @@ Tag the parameter transformer function with the appropriate ParameterTransformer
 Set to true when paramTransformerFunction is used.</para>
       </summary>
     </member>
+    <member name="F:UnityEditor.Search.QueryEngineFilterAttribute.useRegularExpressionToken">
+      <summary>
+        <para>Indicates if the filter uses a regular expression token or not.</para>
+      </summary>
+    </member>
     <member name="M:UnityEditor.Search.QueryEngineFilterAttribute.#ctor(System.String,System.String[])">
       <summary>
         <para>Create a filter with the corresponding token and supported operators.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
-      <param name="supportedOperators">List of supported operator tokens. Null for all operators.</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
       <param name="options">String comparison options.</param>
       <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
     </member>
@@ -1015,8 +1381,8 @@ Set to true when paramTransformerFunction is used.</para>
       <summary>
         <para>Create a filter with the corresponding token and supported operators.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
-      <param name="supportedOperators">List of supported operator tokens. Null for all operators.</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
       <param name="options">String comparison options.</param>
       <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
     </member>
@@ -1024,8 +1390,8 @@ Set to true when paramTransformerFunction is used.</para>
       <summary>
         <para>Create a filter with the corresponding token and supported operators.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
-      <param name="supportedOperators">List of supported operator tokens. Null for all operators.</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
       <param name="options">String comparison options.</param>
       <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
     </member>
@@ -1033,8 +1399,48 @@ Set to true when paramTransformerFunction is used.</para>
       <summary>
         <para>Create a filter with the corresponding token and supported operators.</para>
       </summary>
-      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (i.e. "id" in "id&gt;=2").</param>
-      <param name="supportedOperators">List of supported operator tokens. Null for all operators.</param>
+      <param name="token">The identifier of the filter. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="options">String comparison options.</param>
+      <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngineFilterAttribute.#ctor(System.String,System.Boolean,System.String[])">
+      <summary>
+        <para>Create a filter with the corresponding token and supported operators.</para>
+      </summary>
+      <param name="token">The identifier of the filter or regular expression that matches the filters. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="useRegularExpression">Set this flag to true if the token is a regular expression.</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="options">String comparison options.</param>
+      <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngineFilterAttribute.#ctor(System.String,System.Boolean,System.StringComparison,System.String[])">
+      <summary>
+        <para>Create a filter with the corresponding token and supported operators.</para>
+      </summary>
+      <param name="token">The identifier of the filter or regular expression that matches the filters. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="useRegularExpression">Set this flag to true if the token is a regular expression.</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="options">String comparison options.</param>
+      <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngineFilterAttribute.#ctor(System.String,System.Boolean,System.String,System.String[])">
+      <summary>
+        <para>Create a filter with the corresponding token and supported operators.</para>
+      </summary>
+      <param name="token">The identifier of the filter or regular expression that matches the filters. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="useRegularExpression">Set this flag to true if the token is a regular expression.</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
+      <param name="options">String comparison options.</param>
+      <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
+    </member>
+    <member name="M:UnityEditor.Search.QueryEngineFilterAttribute.#ctor(System.String,System.Boolean,System.String,System.StringComparison,System.String[])">
+      <summary>
+        <para>Create a filter with the corresponding token and supported operators.</para>
+      </summary>
+      <param name="token">The identifier of the filter or regular expression that matches the filters. Typically what precedes the operator in a filter (for example, "id" in "id&gt;=2").</param>
+      <param name="useRegularExpression">Set this flag to true if the token is a regular expression.</param>
+      <param name="supportedOperators">List of supported operator tokens. This list contains the supported operator tokens. Use null or an empty list to indicate that all operators are supported.</param>
       <param name="options">String comparison options.</param>
       <param name="paramTransformerFunction">Name of the parameter transformer function to use with this filter. Tag the parameter transformer function with the appropriate ParameterTransformer attribute.</param>
     </member>
@@ -1086,6 +1492,39 @@ Set to true when paramTransformerFunction is used.</para>
       <param name="index">Index where the error happened.</param>
       <param name="reason">Reason why the parsing failed.</param>
       <param name="length">Length of the block that was being parsed.</param>
+    </member>
+    <member name="T:UnityEditor.Search.QueryFilterOperator">
+      <summary>
+        <para>A QueryFilterOperator defines a boolean operator between a value returned by a filter and an operand inputted in the search query.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.QueryFilterOperator.token">
+      <summary>
+        <para>The operator identifier.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.QueryFilterOperator.valid">
+      <summary>
+        <para>Indicates if this filter operator is valid.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Search.QueryFilterOperator.AddHandler(System.Func`3&lt;TFilterVariable,TFilterConstant,System.Boolean&gt;)">
+      <summary>
+        <para>Adds a custom filter operator handler.</para>
+      </summary>
+      <param name="handler">Callback to handle the operation. Takes a TFilterVariable (the value returned by the filter handler, it will vary for each element), a TFilterConstant (right-hand side value of the operator, which is constant), and a StringComparison option and returns a boolean indicating if the filter passes or not.</param>
+      <returns>
+        <para>The current Search.QueryFilterOperator|QueryFilterOperator.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.QueryFilterOperator.AddHandler(System.Func`4&lt;TFilterVariable,TFilterConstant,System.StringComparison,System.Boolean&gt;)">
+      <summary>
+        <para>Adds a custom filter operator handler.</para>
+      </summary>
+      <param name="handler">Callback to handle the operation. Takes a TFilterVariable (the value returned by the filter handler, it will vary for each element), a TFilterConstant (right-hand side value of the operator, which is constant), and a StringComparison option and returns a boolean indicating if the filter passes or not.</param>
+      <returns>
+        <para>The current Search.QueryFilterOperator|QueryFilterOperator.</para>
+      </returns>
     </member>
     <member name="T:UnityEditor.Search.QueryGraph">
       <summary>
@@ -1156,6 +1595,11 @@ Set to true when paramTransformerFunction is used.</para>
         <para>And node.</para>
       </summary>
     </member>
+    <member name="F:UnityEditor.Search.QueryNodeType.Comment">
+      <summary>
+        <para>Comment node.</para>
+      </summary>
+    </member>
     <member name="F:UnityEditor.Search.QueryNodeType.Filter">
       <summary>
         <para>Filter node.</para>
@@ -1164,6 +1608,11 @@ Set to true when paramTransformerFunction is used.</para>
     <member name="F:UnityEditor.Search.QueryNodeType.FilterIn">
       <summary>
         <para>Filter with nested query node.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.QueryNodeType.Group">
+      <summary>
+        <para>Group node.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Search.QueryNodeType.Intersection">
@@ -1189,6 +1638,11 @@ Set to true when paramTransformerFunction is used.</para>
     <member name="F:UnityEditor.Search.QueryNodeType.Search">
       <summary>
         <para>Word search node.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.QueryNodeType.Toggle">
+      <summary>
+        <para>Toggle node.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Search.QueryNodeType.Union">
@@ -1404,6 +1858,196 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Attribute used to declare a static method that defines new actions for specific search providers.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.Search.SearchColumn">
+      <summary>
+        <para>Search columns are used to display additional information in the Search Table view.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchColumn.comparer">
+      <summary>
+        <para>If defined, the comparer delegate is used to sort search results based on the value displayed in that column.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumn.content">
+      <summary>
+        <para>The content is used to display the search column label and image in its header.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchColumn.drawer">
+      <summary>
+        <para>If defined, the drawer delegate is used to customize how the search column displays its information.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchColumn.getter">
+      <summary>
+        <para>If defined, the getter delegate is used to customize how the search field data is extracted and transformed for display (see SearchColumn.drawer).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchColumn.name">
+      <summary>
+        <para>Name of the search column.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumn.options">
+      <summary>
+        <para>Various options used to define how a search column is presented.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumn.path">
+      <summary>
+        <para>The path can be used by the column delegates to interpret how the data can be manipulated.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumn.provider">
+      <summary>
+        <para>The provider is used to indicate which search column provider (see SearchColumn) is used to define the search column format.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumn.selector">
+      <summary>
+        <para>The selector is used by the column delegates to fetch the search field data.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchColumn.setter">
+      <summary>
+        <para>If defined, the setter delegate writes back the value to the corresponding field of the search result.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumn.width">
+      <summary>
+        <para>The column width is used to set the Search Table view column width.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Search.SearchColumnCompareArgs">
+      <summary>
+        <para>Search column compare arguments are used by SearchColumn.comparer to sort search results.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnCompareArgs.lhs">
+      <summary>
+        <para>Left-hand side column to compare.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnCompareArgs.rhs">
+      <summary>
+        <para>Right-hand side column to compare.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnCompareArgs.sortAscending">
+      <summary>
+        <para>Indicates if the results should be sorted in ascending order or not.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Search.SearchColumnEventArgs">
+      <summary>
+        <para>Search column event arguments are used by SearchColumn.getter, SearchColumn.drawer and SearchColumn.setter delegates.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.column">
+      <summary>
+        <para>Search column being handled by the current event.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.context">
+      <summary>
+        <para>Search context being used for the current event.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.focused">
+      <summary>
+        <para>Indicates if the search column cell is currently focused.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.item">
+      <summary>
+        <para>Search item currently being used for the event.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.multiple">
+      <summary>
+        <para>Indicates if multiple search results are currently selected when processing the current event.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.rect">
+      <summary>
+        <para>UnityEngine.Rect used to indicate the drawing boudaries of the SearchColumn.drawer event.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.selected">
+      <summary>
+        <para>Indicates if the search result is currently selected.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnEventArgs.value">
+      <summary>
+        <para>Value obtained from SearchColumn.getter before calling SearchColumn.drawer.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Search.SearchColumnFlags">
+      <summary>
+        <para>Search column flags are used to set multiple states.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.CanHide">
+      <summary>
+        <para>Indicates that the user can manually hide the search column in the Search Table view.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.CanSort">
+      <summary>
+        <para>Indicates that the user can sort the search column in the Search Table view.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.Default">
+      <summary>
+        <para>Defines a default set of options for common usages.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.Hidden">
+      <summary>
+        <para>Indicates that the search column is currently hidden in the Search Table view.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.None">
+      <summary>
+        <para>Indicates that no column options are used.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.Sorted">
+      <summary>
+        <para>Indicates that the search column in the Search Table view is currently sorted.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.SortedDescending">
+      <summary>
+        <para>Indicates that the search column in the Search Table view is sorted in descending order. If not defined, it means the column is sorted in ascending order.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.TextAlignmentCenter">
+      <summary>
+        <para>Indicates that the search column in the Search Table view is aligning text in the middle.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.TextAlignmentLeft">
+      <summary>
+        <para>Indicates that the search column in the Search Table view is aligning text to the left.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchColumnFlags.TextAlignmentRight">
+      <summary>
+        <para>Indicates that the search column in the Search Table view is aligning text to the right.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Search.SearchColumnProviderAttribute">
+      <summary>
+        <para>The search column provider attribute is used to define new formats for a given column.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchColumnProviderAttribute.provider">
+      <summary>
+        <para>Unique name of the search column provider.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.Search.SearchContext">
       <summary>
         <para>The search context includes all the data necessary to perform a query. It allows the full customization of how a query may be performed.</para>
@@ -1581,7 +2225,7 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Document unique ID in the search index.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.Search.SearchDocument.index">
+    <member name="P:UnityEditor.Search.SearchDocument.index">
       <summary>
         <para>Index of that document in the SearchIndexer.</para>
       </summary>
@@ -1603,7 +2247,7 @@ Set to true when paramTransformerFunction is used.</para>
     </member>
     <member name="P:UnityEditor.Search.SearchDocument.source">
       <summary>
-        <para>Original source from which the document was indexed. The source is usually the container asset, that is, the prefab, Unity scene, or the imported asset itself.</para>
+        <para>Original source from which the document was indexed. The source is usually the container asset, i.e. prefab, Unity scene or the imported asset itself.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.Search.SearchDocument.valid">
@@ -1714,6 +2358,11 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Indicates that the search view is dockable. This flag is only usable with internal API.</para>
       </summary>
     </member>
+    <member name="F:UnityEditor.Search.SearchFlags.Expression">
+      <summary>
+        <para>Indicates that the search query will be evaluated as a search expression.</para>
+      </summary>
+    </member>
     <member name="F:UnityEditor.Search.SearchFlags.FirstBatchAsync">
       <summary>
         <para>Sends the first items asynchronously.</para>
@@ -1762,6 +2411,16 @@ Set to true when paramTransformerFunction is used.</para>
     <member name="F:UnityEditor.Search.SearchFlags.OpenPicker">
       <summary>
         <para>Opens a search view as an object picker. This flag is only usable with internal API.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchFlags.Packages">
+      <summary>
+        <para>The Object Picker window will include any results from packages.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchFlags.QueryString">
+      <summary>
+        <para>Evaluate the search text as a pure query string (do not evaluate the text as a search expression).</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Search.SearchFlags.ReuseExistingWindow">
@@ -2321,14 +2980,41 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Attribute used to declare a static method that will create a new search provider at load time.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.Search.SearchProposition">
+      <summary>
+        <para>Search propositions are used to display choices to the user to add new filters to a search query.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Search.SearchProposition.#ctor(System.String,System.String,System.String,System.Int32,UnityEditor.Search.TextCursorPlacement,UnityEngine.Texture2D)">
+      <summary>
+        <para>Create a new search proposition.</para>
+      </summary>
+      <param name="label">Display text of the proposition.</param>
+      <param name="replacement">Text used to auto-complete the query when selected.</param>
+      <param name="help">Help text used to display additional information about the search proposition.</param>
+      <param name="priority">Value used to sort the propositions among other search propositions when displaying choices to the user.</param>
+      <param name="moveCursor">Indicates when the text cursor should be moved when auto-completing the query with the selected proposition.</param>
+      <param name="icon">Icon used to display the proposition.</param>
+      <param name="color"></param>
+    </member>
     <member name="T:UnityEditor.Search.SearchProvider">
       <summary>
         <para>SearchProvider manages search for specific types of items and manages all fields of a SearchItem such as thumbnails, descriptions, subfilters.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.Search.SearchProvider.actions">
+      <summary>
+        <para>Search provider actions.</para>
+      </summary>
+    </member>
     <member name="F:UnityEditor.Search.SearchProvider.active">
       <summary>
         <para>Indicates if the search provider is active or not. Inactive search providers are ignored by the search service. The active state can be toggled in the search settings.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchProvider.fetchColumns">
+      <summary>
+        <para>Handler used to enumerate search columns to be used in the Search Table view.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Search.SearchProvider.fetchDescription">
@@ -2349,6 +3035,11 @@ Set to true when paramTransformerFunction is used.</para>
     <member name="F:UnityEditor.Search.SearchProvider.fetchPreview">
       <summary>
         <para>Similar to fetchThumbnail, fetchPreview usually returns a bigger preview. The Search UI will progressively show one preview each frame, preventing the UI from blocking if many previews need to be generated at the same time.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchProvider.fetchPropositions">
+      <summary>
+        <para>Handler used to enumerate search propositions when the user is using TAB to auto-complete a query.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Search.SearchProvider.fetchThumbnail">
@@ -2621,6 +3312,15 @@ Set to true when paramTransformerFunction is used.</para>
       <param name="fromSearchQuery">Set to true if this error comes from parsing the searchQuery. This will correctly offset the index with respect to the raw text.</param>
       <param name="type">The type of query error. See Search.SearchQueryErrorType. Defaults to Search.SearchQueryErrorType.Error|SearchQueryErrorType.Error.</param>
     </member>
+    <member name="M:UnityEditor.Search.SearchQueryError.#ctor(UnityEditor.Search.QueryError,UnityEditor.Search.SearchContext,UnityEditor.Search.SearchProvider,System.Boolean)">
+      <summary>
+        <para>Creates a new SearchQueryError from an existing Search.QueryError|QueryError.</para>
+      </summary>
+      <param name="error">The original Search.QueryError|QueryError.</param>
+      <param name="context">The context in which this error was logged.</param>
+      <param name="provider">Which search provider logged this error.</param>
+      <param name="fromSearchQuery">Set to true if this error comes from parsing the searchQuery. This will correctly offset the index with respect to the raw text.</param>
+    </member>
     <member name="T:UnityEditor.Search.SearchQueryErrorType">
       <summary>
         <para>Enum representing the possible types of query errors.</para>
@@ -2800,6 +3500,21 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Returns the lowest selected index.</para>
       </returns>
     </member>
+    <member name="T:UnityEditor.Search.SearchSelectorArgs">
+      <summary>
+        <para>Search selector arguments used when the search selector callback is invoked.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchSelectorArgs.current">
+      <summary>
+        <para>Current search item for which a value must be selected.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Search.SearchSelectorAttribute">
+      <summary>
+        <para>Search selector attribute used to define how a custom value can be selected from a search item.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.Search.SearchService">
       <summary>
         <para>Principal Search API to initiate searches and fetch results.</para>
@@ -2889,6 +3604,17 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Returns a new SearchContext.</para>
       </returns>
     </member>
+    <member name="M:UnityEditor.Search.SearchService.CreateIndex(System.String&amp;,UnityEditor.Search.IndexingOptions&amp;,System.Collections.Generic.IEnumerable`1&lt;System.String&gt;,System.Collections.Generic.IEnumerable`1&lt;System.String&gt;,System.Collections.Generic.IEnumerable`1&lt;System.String&gt;,System.Action`3&lt;System.String,System.String,System.Action&gt;)">
+      <summary>
+        <para>Create a new search index.</para>
+      </summary>
+      <param name="name">Unique name of the search index.</param>
+      <param name="options">Indexing option set.</param>
+      <param name="roots">Search index roots, for example "Assets" to index all Assets under Assets.</param>
+      <param name="includes">Exclusive list of assets to be indexed. If this list is empty, everything will be indexed.</param>
+      <param name="excludes">Patterns to exclude assets to be indexed under roots.</param>
+      <param name="onIndexReady">Callback that gets invoked when the index is created and ready to be used.</param>
+    </member>
     <member name="M:UnityEditor.Search.SearchService.GetAction(UnityEditor.Search.SearchProvider,System.String)">
       <summary>
         <para>Returns the search action for a given search provider and search action ID.</para>
@@ -2916,6 +3642,15 @@ Set to true when paramTransformerFunction is used.</para>
       <param name="providerId">Unique ID of the search provider.</param>
       <returns>
         <para>The matching search provider.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.SearchService.IsIndexReady(System.String)">
+      <summary>
+        <para>Indicates if a search index is ready to be used.</para>
+      </summary>
+      <param name="name">Unique name of the index. This name usually matches the one displayed in the Search Index Manager or the one used to invoke SearchService.CreateIndex.</param>
+      <returns>
+        <para>Returns true if the search index is ready to be used.</para>
       </returns>
     </member>
     <member name="P:UnityEditor.Search.SearchService.OrderedProviders">
@@ -3032,6 +3767,15 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Creates a new search window.</para>
       </returns>
     </member>
+    <member name="M:UnityEditor.Search.SearchService.ShowPicker(UnityEditor.Search.SearchViewState)">
+      <summary>
+        <para>Open a Search Picker window.</para>
+      </summary>
+      <param name="viewState">Search view state used to open the Search Picker window.</param>
+      <returns>
+        <para>Creates a new search window.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.Search.SearchService.ShowWindow(UnityEditor.Search.SearchContext,System.String,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
       <summary>
         <para>Creates a new search window.</para>
@@ -3044,6 +3788,15 @@ Set to true when paramTransformerFunction is used.</para>
       <param name="defaultWidth">Initial width of the window.</param>
       <param name="defaultHeight">Initial height of the window.</param>
       <param name="dockable">If true, creates a dockable search window (that is closed when an item is activated). If false, it creates a dropdown (borderless, undockable and unmovable) version of the search window.</param>
+      <returns>
+        <para>Returns the search view window instance.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.SearchService.ShowWindow(UnityEditor.Search.SearchViewState)">
+      <summary>
+        <para>Creates a new search window.</para>
+      </summary>
+      <param name="viewState">Search view state used to open the Search window.</param>
       <returns>
         <para>Returns the search view window instance.</para>
       </returns>
@@ -3083,6 +3836,15 @@ Set to true when paramTransformerFunction is used.</para>
       <param name="word">Word to extract variations from.</param>
       <returns>
         <para>List of variations for a word.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.Search.SearchUtils.GetAssetPath(UnityEditor.Search.SearchItem&amp;)">
+      <summary>
+        <para>Returns the asset path of a search item if any.</para>
+      </summary>
+      <param name="item">Search item.</param>
+      <returns>
+        <para>Asset path of the item or null if none can be found.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.Search.SearchUtils.GetHierarchyAssetPath(UnityEngine.GameObject,System.Boolean)">
@@ -3169,7 +3931,7 @@ Set to true when paramTransformerFunction is used.</para>
         <para>Returns list of tokens in lowercase.</para>
       </returns>
     </member>
-    <member name="M:UnityEditor.Search.SearchUtils.SplitFileEntryComponents(System.String,System.Char[])">
+    <member name="M:UnityEditor.Search.SearchUtils.SplitFileEntryComponents(System.String,System.Char[]&amp;)">
       <summary>
         <para>Split a file entry according to a list of separators and find all the variations on the entry name.</para>
       </summary>
@@ -3178,6 +3940,146 @@ Set to true when paramTransformerFunction is used.</para>
       <returns>
         <para>Returns list of tokens and variations in lowercase.</para>
       </returns>
+    </member>
+    <member name="T:UnityEditor.Search.SearchValue">
+      <summary>
+        <para>Search value is used to extend a query engine with custom type parsers and filters to search results by value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchValue.boolean">
+      <summary>
+        <para>Boolean value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.invalid">
+      <summary>
+        <para>Represent an invalid search value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.number">
+      <summary>
+        <para>Number value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.text">
+      <summary>
+        <para>Text representation of the value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.type">
+      <summary>
+        <para>Indicates the concrete type of the search value.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.Search.SearchValue.valid">
+      <summary>
+        <para>Indicates if the search value is valid.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Search.SearchValue.SetupEngine(UnityEditor.Search.QueryEngine`1&lt;T&gt;)">
+      <summary>
+        <para>Extended a query engine to work with dynamic search values.</para>
+      </summary>
+      <param name="queryEngine">Query engine to add extended search value filters and parsers.</param>
+    </member>
+    <member name="T:UnityEditor.Search.SearchValue.ValueType">
+      <summary>
+        <para>Search value supported types.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Bool">
+      <summary>
+        <para>Indicates that the search value is a Boolean value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Color">
+      <summary>
+        <para>Indicates that the search value is a UnityEngine.Color value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Enum">
+      <summary>
+        <para>Indicates that the search value is an enum value holding the text and integer representation of the Enum.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Nil">
+      <summary>
+        <para>Indicates that the search value is null.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Number">
+      <summary>
+        <para>Indicates that the search value is a numeric value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Object">
+      <summary>
+        <para>Indicates that the search value is an UnityEngine.Object.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Text">
+      <summary>
+        <para>Indicates that the search value is a text value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Vector2">
+      <summary>
+        <para>Indicates that the search value hold a UnityEngine.Vector2 value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Vector3">
+      <summary>
+        <para>Indicates that the search value hold a UnityEngine.Vector3 value.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchValue.ValueType.Vector4">
+      <summary>
+        <para>Indicates that the search value hold a UnityEngine.Vector4 value.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.Search.SearchViewState">
+      <summary>
+        <para>Search view state is used to create new Search windows. See SearchService.ShowWindow.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchViewState.flags">
+      <summary>
+        <para>Various search view options.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchViewState.group">
+      <summary>
+        <para>Indicates the group or tab to be selected when the Search window opens.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchViewState.itemSize">
+      <summary>
+        <para>Indicates the item size to be used when the Search window opens.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchViewState.position">
+      <summary>
+        <para>If defined, indicates the location of the new Search window when it opens.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.Search.SearchViewState.title">
+      <summary>
+        <para>Indicates the search topic title.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.Search.SearchViewState.#ctor(UnityEditor.Search.SearchContext)">
+      <summary>
+        <para>Create search view flags used to create a new Search window.</para>
+      </summary>
+      <param name="context">Initial search context.</param>
+      <param name="flags">Initial search view flags.</param>
+    </member>
+    <member name="M:UnityEditor.Search.SearchViewState.#ctor(UnityEditor.Search.SearchContext,UnityEngine.Search.SearchViewFlags)">
+      <summary>
+        <para>Create search view flags used to create a new Search window.</para>
+      </summary>
+      <param name="context">Initial search context.</param>
+      <param name="flags">Initial search view flags.</param>
     </member>
     <member name="T:UnityEditor.Search.ShowDetailsOptions">
       <summary>

@@ -1,17 +1,17 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "Unity examples",
-  "BreadcrumbTitle": "Unity examples",
+  "Title": "Contributing",
+  "BreadcrumbTitle": "Contributing",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "Unity examples of SymOntoClay",
+    "Description": "Contributing to SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": "Unity examples"
+    "Title": "Contributing"
   }
 }
