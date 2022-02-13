@@ -488,73 +488,88 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="T:UnityEngine.LocationService">
       <summary>
-        <para>Interface into location functionality.</para>
+        <para>Provides methods that allow an application to access the device's location.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LocationService.isEnabledByUser">
       <summary>
-        <para>Specifies whether location service is enabled in user settings.</para>
+        <para>Indicates whether the device allows access the application to access the location service.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LocationService.lastData">
       <summary>
-        <para>Last measured device geographical location.</para>
+        <para>The last geographical location that the device registered.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LocationService.status">
       <summary>
-        <para>Returns location service status.</para>
+        <para>Returns the location service status.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.LocationService.Start">
       <summary>
-        <para>Starts location service updates.  Last location coordinates could be.</para>
+        <para>Starts location service updates.</para>
       </summary>
-      <param name="desiredAccuracyInMeters"></param>
-      <param name="updateDistanceInMeters"></param>
+      <param name="desiredAccuracyInMeters">
+                    The service accuracy you want to use, in meters. This determines the accuracy of the device's last location coordinates. Higher values like 500 don't require the device to use its GPS chip and
+                    thus save battery power. Lower values like 5-10 provide the best accuracy but require the GPS chip and thus use more battery power. The default value is 10 meters.
+                </param>
+      <param name="updateDistanceInMeters">
+                    The minimum distance, in meters, that the device must move laterally before Unity updates Input.location. Higher values like 500 produce fewer updates and are less resource intensive to process. The default is 10 meters.
+                </param>
     </member>
     <member name="M:UnityEngine.LocationService.Start(System.Single)">
       <summary>
-        <para>Starts location service updates.  Last location coordinates could be.</para>
+        <para>Starts location service updates.</para>
       </summary>
-      <param name="desiredAccuracyInMeters"></param>
-      <param name="updateDistanceInMeters"></param>
+      <param name="desiredAccuracyInMeters">
+                    The service accuracy you want to use, in meters. This determines the accuracy of the device's last location coordinates. Higher values like 500 don't require the device to use its GPS chip and
+                    thus save battery power. Lower values like 5-10 provide the best accuracy but require the GPS chip and thus use more battery power. The default value is 10 meters.
+                </param>
+      <param name="updateDistanceInMeters">
+                    The minimum distance, in meters, that the device must move laterally before Unity updates Input.location. Higher values like 500 produce fewer updates and are less resource intensive to process. The default is 10 meters.
+                </param>
     </member>
     <member name="M:UnityEngine.LocationService.Start(System.Single,System.Single)">
       <summary>
-        <para>Starts location service updates.  Last location coordinates could be.</para>
+        <para>Starts location service updates.</para>
       </summary>
-      <param name="desiredAccuracyInMeters"></param>
-      <param name="updateDistanceInMeters"></param>
+      <param name="desiredAccuracyInMeters">
+                    The service accuracy you want to use, in meters. This determines the accuracy of the device's last location coordinates. Higher values like 500 don't require the device to use its GPS chip and
+                    thus save battery power. Lower values like 5-10 provide the best accuracy but require the GPS chip and thus use more battery power. The default value is 10 meters.
+                </param>
+      <param name="updateDistanceInMeters">
+                    The minimum distance, in meters, that the device must move laterally before Unity updates Input.location. Higher values like 500 produce fewer updates and are less resource intensive to process. The default is 10 meters.
+                </param>
     </member>
     <member name="M:UnityEngine.LocationService.Stop">
       <summary>
-        <para>Stops location service updates. This could be useful for saving battery life.</para>
+        <para>Stops location service updates. This is useful to save battery power when the application doesn't require the location service.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.LocationServiceStatus">
       <summary>
-        <para>Describes location service status.</para>
+        <para>Describes the location service status for a device.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.LocationServiceStatus.Failed">
       <summary>
-        <para>Location service failed (user denied access to location service).</para>
+        <para>Location service initialization failed. The user denied access to the location service.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.LocationServiceStatus.Initializing">
       <summary>
-        <para>Location service is initializing, some time later it will switch to.</para>
+        <para>The location service is initializing.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.LocationServiceStatus.Running">
       <summary>
-        <para>Location service is running and locations could be queried.</para>
+        <para>The location service is running and the application can query for locations.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.LocationServiceStatus.Stopped">
       <summary>
-        <para>Location service is stopped.</para>
+        <para>The location service is not running.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Touch">

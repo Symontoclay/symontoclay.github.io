@@ -459,6 +459,31 @@ Only one class at any one time should set defaultBrush to true.</para>
         <para>Whether the call was successful.</para>
       </returns>
     </member>
+    <member name="T:UnityEngine.Tilemaps.TileChangeData">
+      <summary>
+        <para>Represents the position and Tile information to change in a Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.color">
+      <summary>
+        <para>The color to set the Tile to.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.position">
+      <summary>
+        <para>The position to change Tile properties at.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.tile">
+      <summary>
+        <para>The Tile to set on the Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.TileChangeData.transform">
+      <summary>
+        <para>The transform matrix to set the Tile to.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.Tilemaps.TileData">
       <summary>
         <para>A Struct for the required data for rendering a Tile.</para>
@@ -683,6 +708,33 @@ Only one class at any one time should set defaultBrush to true.</para>
       <param name="position">Start position of the flood fill on the Tilemap.</param>
       <param name="tile">Tile to place.</param>
     </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetAnimationFrame(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Retrieves the current animation frame for a Tile at the given position.</para>
+      </summary>
+      <param name="position">Grid cell position.</param>
+      <returns>
+        <para>Returns the current animation frame. Returns -1 when there is no animation for the Tile at the given position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetAnimationFrameCount(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Retrieves the number of animation frames for a Tile at the given position.</para>
+      </summary>
+      <param name="position">Grid cell position.</param>
+      <returns>
+        <para>Returns the number of animation frames. Returns 0 when there is no animation for the Tile at the given position.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetAnimationTime(UnityEngine.Vector3Int)">
+      <summary>
+        <para>Retrieves the current running animation time for a Tile at the given position.</para>
+      </summary>
+      <param name="position">Grid cell position.</param>
+      <returns>
+        <para>Returns the running animation time in seconds.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.Tilemaps.Tilemap.GetCellCenterLocal(UnityEngine.Vector3Int)">
       <summary>
         <para>Get the logical center coordinate of a Grid cell in local space.</para>
@@ -836,6 +888,28 @@ Only one class at any one time should set defaultBrush to true.</para>
         <para>An array of Tiles at the given bounds.</para>
       </returns>
     </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTilesRangeCount(UnityEngine.Vector3Int,UnityEngine.Vector3Int)">
+      <summary>
+        <para>Retrieves the number of Tiles within the given range.</para>
+      </summary>
+      <param name="startPosition">The starting position of the range to retrieve Tiles from.</param>
+      <param name="endPosition">The ending position of the range to retrieve Tiles from.</param>
+      <returns>
+        <para>Returns the number of Tiles within the given range.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.GetTilesRangeNonAlloc(UnityEngine.Vector3Int,UnityEngine.Vector3Int,UnityEngine.Vector3Int[],UnityEngine.Tilemaps.TileBase[])">
+      <summary>
+        <para>Retrieves an array of Tiles within the given range.</para>
+      </summary>
+      <param name="startPosition">The starting position of the range to retrieve Tiles from.</param>
+      <param name="endPosition">The ending position of the range to retrieve Tiles from.</param>
+      <param name="positions">The positions of Tiles within the given range.</param>
+      <param name="tiles">The Tiles within the given range.</param>
+      <returns>
+        <para>Returns the number of positions and Tiles retrieved.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.Tilemaps.Tilemap.GetTransformMatrix(UnityEngine.Vector3Int)">
       <summary>
         <para>Gets the transform matrix of a Tile given the XYZ coordinates of a cell in the Tilemap.</para>
@@ -976,6 +1050,20 @@ Only one class at any one time should set defaultBrush to true.</para>
         <para>Resizes Tiles in the Tilemap to bounds defined by origin and size.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetAnimationFrame(UnityEngine.Vector3Int,System.Int32)">
+      <summary>
+        <para>Sets the current animation frame for a Tile at the given position.</para>
+      </summary>
+      <param name="position">The grid cell position.</param>
+      <param name="frame">The animation frame to set to.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetAnimationTime(UnityEngine.Vector3Int,System.Single)">
+      <summary>
+        <para>Sets the running animation time for a Tile at the given position.</para>
+      </summary>
+      <param name="position">The grid cell position.</param>
+      <param name="time">The running animation time in seconds.</param>
+    </member>
     <member name="M:UnityEngine.Tilemaps.Tilemap.SetColliderType(UnityEngine.Vector3Int,UnityEngine.Tilemaps.Tile/ColliderType)">
       <summary>
         <para>Sets the Collider type of a Tile given the XYZ coordinates of a cell in the Tilemap.</para>
@@ -1016,7 +1104,14 @@ Only one class at any one time should set defaultBrush to true.</para>
         <para>Sets a Tile at the given XYZ coordinates of a cell in the Tilemap.</para>
       </summary>
       <param name="position">Position of the Tile on the Tilemap.</param>
-      <param name="tile">Tile to be placed the cell.</param>
+      <param name="tile">The Tile to be placed in the cell.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTile(UnityEngine.Tilemaps.TileChangeData,System.Boolean)">
+      <summary>
+        <para>Sets a Tile with additional properties at the given XYZ coordinates of a cell in the Tilemap.</para>
+      </summary>
+      <param name="tileChangeData">The Tile with additional properties to be placed in the cell.</param>
+      <param name="ignoreLockFlags">Whether to ignore Lock Flags set in the Tile's TileFlags when applying Color and Transform changes from TileChangeData.</param>
     </member>
     <member name="M:UnityEngine.Tilemaps.Tilemap.SetTileFlags(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileFlags)">
       <summary>
@@ -1031,6 +1126,13 @@ Only one class at any one time should set defaultBrush to true.</para>
       </summary>
       <param name="positionArray">An array of positions of Tiles on the Tilemap.</param>
       <param name="tileArray">An array of Tiles to be placed.</param>
+    </member>
+    <member name="M:UnityEngine.Tilemaps.Tilemap.SetTiles(UnityEngine.Tilemaps.TileChangeData[],System.Boolean)">
+      <summary>
+        <para>Sets an array of Tiles with additonal properties at the given XYZ coordinates of the corresponding cells in the Tilemap. The Color and Transform of the TileChangeData will take precedence over the values from the Tile.</para>
+      </summary>
+      <param name="tileChangeDataArray">The array of Tiles with additional properties to place.</param>
+      <param name="ignoreLockFlags">Whether to ignore Lock Flags set in the Tile's TileFlags when applying Color and Transform changes from TileChangeData.</param>
     </member>
     <member name="M:UnityEngine.Tilemaps.Tilemap.SetTilesBlock(UnityEngine.BoundsInt,UnityEngine.Tilemaps.TileBase[])">
       <summary>

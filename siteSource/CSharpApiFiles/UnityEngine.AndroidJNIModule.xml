@@ -525,6 +525,14 @@ The default value is null.</param>
       <param name="methodName">Specifies which method to call.</param>
       <param name="args">An array of parameters passed to the method.</param>
     </member>
+    <member name="M:UnityEngine.AndroidJavaObject.CloneReference">
+      <summary>
+        <para>Creates a clone of the C# object that references the same Java object.</para>
+      </summary>
+      <returns>
+        <para>A new C# object which references the same Java object as the original instance.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.AndroidJavaObject.#ctor(System.String,System.Object[])">
       <summary>
         <para>Construct an AndroidJavaObject based on the name of the class.</para>

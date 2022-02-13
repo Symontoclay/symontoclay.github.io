@@ -878,7 +878,7 @@ The newly built NavMeshData, or null if the NavMeshData was empty or an error oc
     </member>
     <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.Mesh">
       <summary>
-        <para>Describes a Mesh source for use with NavMeshBuildSource.</para>
+        <para>Describes a Mesh source for use with NavMeshBuildSource. Mesh sources must be positioned within 100,000 units of the origin and must not exceed 100,000 units in any axis-aligned dimension.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.AI.NavMeshBuildSourceShape.ModifierBox">

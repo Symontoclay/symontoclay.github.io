@@ -943,12 +943,13 @@
         <para>An implementation of IPlayable that controls an animation layer mixer.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.Animations.AnimationLayerMixerPlayable.Create(UnityEngine.Playables.PlayableGraph,System.Int32)">
+    <member name="M:UnityEngine.Animations.AnimationLayerMixerPlayable.Create(UnityEngine.Playables.PlayableGraph,System.Int32,System.Boolean)">
       <summary>
         <para>Creates an AnimationLayerMixerPlayable in the PlayableGraph.</para>
       </summary>
       <param name="graph">The PlayableGraph that will contain the new AnimationLayerMixerPlayable.</param>
       <param name="inputCount">The number of layers.</param>
+      <param name="singleLayerOptimization">This optimization automatically sets the weight of the first animation layer to 1. Set to true If your layer mixer has a single animation layer and you want to bypass unnecessary weight calculations. This optimization is automatically set to false if your layer mixer has multiple animation layers.</param>
       <returns>
         <para>A new AnimationLayerMixerPlayable linked to the PlayableGraph.</para>
       </returns>
@@ -986,15 +987,25 @@
         <para>An implementation of IPlayable that controls an animation mixer.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.Animations.AnimationMixerPlayable.Create(UnityEngine.Playables.PlayableGraph,System.Int32)">
+      <summary>
+        <para>Creates an AnimationMixerPlayable in the PlayableGraph.</para>
+      </summary>
+      <param name="graph">The PlayableGraph that will contain the new AnimationMixerPlayable.</param>
+      <param name="inputCount">The number of inputs that the mixer will update.</param>
+      <returns>
+        <para>Returns a new AnimationMixerPlayable linked to the PlayableGraph.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.Animations.AnimationMixerPlayable.Create(UnityEngine.Playables.PlayableGraph,System.Int32,System.Boolean)">
       <summary>
         <para>Creates an AnimationMixerPlayable in the PlayableGraph.</para>
       </summary>
       <param name="graph">The PlayableGraph that will contain the new AnimationMixerPlayable.</param>
       <param name="inputCount">The number of inputs that the mixer will update.</param>
-      <param name="normalizeWeights">True to force a weight normalization of the inputs.</param>
+      <param name="normalizeWeights">NormalizeWeights is obsolete. It has no effect and will be removed.</param>
       <returns>
-        <para>A new AnimationMixerPlayable linked to the PlayableGraph.</para>
+        <para>Returns a new AnimationMixerPlayable linked to the PlayableGraph.</para>
       </returns>
     </member>
     <member name="P:UnityEngine.Animations.AnimationMixerPlayable.Null">
@@ -3387,7 +3398,7 @@
     </member>
     <member name="M:UnityEngine.Animator.GetBoneTransform(UnityEngine.HumanBodyBones)">
       <summary>
-        <para>Returns Transform mapped to this human bone id.</para>
+        <para>Returns Transform mapped to this human bone id. Returns null if the animator is disabled, if it does not have a human description, or if the bone id is invalid.</para>
       </summary>
       <param name="humanBoneId">The human bone that is queried, see enum HumanBodyBones for a list of possible values.</param>
     </member>

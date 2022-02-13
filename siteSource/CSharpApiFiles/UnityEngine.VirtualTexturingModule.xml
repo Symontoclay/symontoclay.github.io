@@ -390,7 +390,7 @@
     </member>
     <member name="T:UnityEngine.Rendering.VirtualTexturing.Procedural.TextureStackRequestHandle`1">
       <summary>
-        <para>Handle for a (CPUTextureStackRequest|CPU or GPUTextureStackRequest|GPU) TextureStackRequest.</para>
+        <para>Handle for a (CPUTextureStackRequestParameters|CPU or GPUTextureStackRequestParameters|GPU) TextureStackRequest.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Rendering.VirtualTexturing.Procedural.TextureStackRequestHandle_1.CompleteRequest(UnityEngine.Rendering.VirtualTexturing.Procedural/RequestStatus)">
@@ -475,6 +475,16 @@
     <member name="T:UnityEngine.Rendering.VirtualTexturing.Streaming">
       <summary>
         <para>Static class representing the Streaming Virtual Texturing system.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.GetCPUCacheSize">
+      <summary>
+        <para>Gets the CPU cache size (in MegaBytes) used by Streaming Virtual Texturing.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.GetGPUCacheSettings">
+      <summary>
+        <para>Gets the GPU cache settings used by Streaming Virtual Texturing.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Rendering.VirtualTexturing.Streaming.GetTextureStackSize(UnityEngine.Material,System.Int32,System.Int32&amp;,System.Int32&amp;)">
