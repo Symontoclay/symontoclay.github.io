@@ -2111,6 +2111,22 @@ If inheritance has formed a rhombus, and there are several chains with different
 Inheritance relationship can be read with <a href='#IsOp_chapter'>operator &quot;is&quot;</a>, and It can be changed run time with <a href='#SetIsStatement_chapter'>&quot;set is&quot; statement</a>.
 </p>
 
+<h3 class='center-h' data-href='MemberAccessModifiers_chapter'>
+Member access modifiers
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='ObjectVariable_chapter'>
+Object's variable
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Method_chapter'>
 Method
 </h3>
@@ -2727,7 +2743,7 @@ Expressions in round brackets executes as single expression.
 <gr>
 <EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 <EBNFCDECL name='ConditionalEntityGroupingExpr' groups='ConditionalEntityExpr'/> = "(" <EBNFC name='ConditionalEntityExpr'/> ")" .
-<EBNFCDECL name='ImperativeLogicExpr' groups='ImperativeLogicGroupingExpr'/> = "(" <EBNFC name='ImperativeLogicExpr'/> ")" .
+<EBNFCDECL name='ImperativeLogicGroupingExpr' groups='ImperativeLogicExpr'/> = "(" <EBNFC name='ImperativeLogicExpr'/> ")" .
 <EBNFCDECL name='GroupingExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
 </gr>
 
@@ -2759,7 +2775,7 @@ Default value of variable is <b>NULL</b>.
 </p>
 
 <gr>
-<EBNFCDECL name='VarExpr' groups='Expr'/> = <EBNFC name='VarIdentifier'/> .
+<EBNFCDECL name='VarExpr' groups='Expr;LogicExpr;ImperativeLogicExpr'/> = <EBNFC name='VarIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -2786,7 +2802,7 @@ Only reading is allowed for system variables.
 </p>
 
 <gr>
-<EBNFCDECL name='SysVarExpr' groups='Expr'/> = <EBNFC name='SysVarIdentifier'/> .
+<EBNFCDECL name='SysVarExpr' groups='Expr;LogicExpr;ImperativeLogicExpr'/> = <EBNFC name='SysVarIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -2846,7 +2862,7 @@ Logic variable can be used only in <a href='#Logic_expression_chapter'>Logic exp
 </p>
 
 <gr>
-<EBNFCDECL name='LogicVarExpr'/> = <EBNFC name='LogicVarIdentifier'/> .
+<EBNFCDECL name='LogicVarExpr' groups='LogicExpr'/> = <EBNFC name='LogicVarIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4470,5 +4486,5 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <TEBNFC name=''/>
 
-ImperativeLogicExpr   Expr
+ImperativeLogicExpr   Expr  LogicExpr
 -->
