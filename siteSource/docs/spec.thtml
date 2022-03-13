@@ -3173,12 +3173,22 @@ The right-hand operand contains a possible base object.
 exampleClass is human >> @>log;
 </code>
 
+<code data-lng='soc'>
+@a is 3
+@a is teenager
+</code>
+
 <p>
 Using "not" returns 1 if inheritance relationship is not exist between two operands otherwise returns 0.
 </p>
 
 <code data-lng='soc'>
 exampleClass is not human >> @>log;
+</code>
+
+<code data-lng='soc'>
+@a is not 3
+@a is not teenager
 </code>
 
 <p>
@@ -3259,7 +3269,24 @@ In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if lef
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<p>
+In imperative code It returns <b>true</b> if left-hand operand is greater than its right-hand operand, otherwise <b>false</b>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogicMoreOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&gt;'/> .
+</gr>
+
+<code data-lng='soc'>
+@a > 5
+@age > teenager
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h4 class='center-h' data-href='MoreOrEqvOp_chapter'>
@@ -3281,7 +3308,24 @@ In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if lef
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<p>
+In imperative code It returns <b>true</b> if left-hand operand is greater than or equal to its right-hand operand, otherwise <b>false</b>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogicMoreOrEqvOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&gt;='/> .
+</gr>
+
+<code data-lng='soc'>
+@a >= 5
+@age >= teenager
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h4 class='center-h' data-href='LessOp_chapter'>
@@ -3303,7 +3347,24 @@ In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if lef
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<p>
+In imperative code It returns <b>true</b> if left-hand operand is less than its right-hand operand, otherwise <b>false</b>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogicLessOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&lt;'/> .
+</gr>
+
+<code data-lng='soc'>
+@a < 5
+@age < teenager
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h4 class='center-h' data-href='LessOrEqvOp_chapter'>
@@ -3325,7 +3386,24 @@ In <a href='#Logic_expression_chapter'>Logic expression</a> It has sucess if lef
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<p>
+In imperative code It returns <b>true</b> if left-hand operand is less than or equal to its right-hand operand, otherwise <b>false</b>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogicLessOrEqvOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&lt;='/> .
+</gr>
+
+<code data-lng='soc'>
+@a <= 5
+@age <= teenager
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='LogicOp_chapter'>
@@ -3362,7 +3440,19 @@ male($x) & parent($y, $x)
 </code>
 
 <p>
-You can see examples of logic expressions <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogicAndOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&'/> .
+</gr>
+
+<code data-lng='soc'>
+@a > 0 & @a < 5
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h4 class='center-h' data-href='OrOp_chapter'>
@@ -3392,7 +3482,19 @@ Operator of logical disjunction (logical <b>or</b>).
 </code>
 
 <p>
-You can see examples of logic expressions <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogicOrOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '|'/> .
+</gr>
+
+<code data-lng='soc'>
+@a > 0 | @a < 5
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h4 class='center-h' data-href='NotOp_chapter'>
@@ -3414,7 +3516,19 @@ Operator of logical negation (logical <b>not</b>).
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+You can see examples of rules, facts and logic queries <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = ''/> .
+</gr>
+
+<code data-lng='soc'>
+
+</code>
+
+<p>
+You can see examples of imperative code <a href='/docs/lng_examples/index.html#ImperativeLogicOperators'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='ArithmeticOperators_chapter'>
@@ -3494,7 +3608,7 @@ The right-hand operand must contain the member's identifier.
 </p>
 
 <gr>
-<EBNFCDECL name='PointerOpExpr' groups='Expr' /> = <TEBNFC name='BinaryOp' param = '.'/> .
+<EBNFCDECL name='PointerOpExpr' groups='Expr;ImperativeLogicExpr' /> = <TEBNFC name='BinaryOp' param = '.'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3522,7 +3636,7 @@ Whether a call is synchronous or asynchronous is determined by the presence of a
 </p>
 
 <gr>
-<EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" [ <EBNFC name='NamedParamsOfCallOpExprSet'/> ] ")" .
+<EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr;ImperativeLogicExpr'/> [ "~" ] "(" [ <EBNFC name='NamedParamsOfCallOpExprSet'/> ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
 <EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
 <EBNFCDECL name='PosParamsOfCallOpExprSet'/> =  <EBNFC name='PosParamOfCallOpExpr'/> [ { "," <EBNFC name='PosParamOfCallOpExpr'/> } ] .
@@ -4503,6 +4617,8 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 <EBNFC name=''/>
 
 <TEBNFC name=''/>
+
+<EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = ''/> .
 
 ImperativeLogicExpr   Expr  LogicExpr
 -->
