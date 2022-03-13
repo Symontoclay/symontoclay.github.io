@@ -2253,7 +2253,7 @@ In the future I am going to develop other kinds of triggers.
 
 <gr>
 <EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
-<EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicСondition'/> ) [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicCondition'/> ) [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
@@ -2302,8 +2302,8 @@ In chain of inheritance each Init trigger of the chain will be called in order f
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
 
-<h4 class='center-h' data-href='Logic_сonditional_triggers_chapter'>
-Logic сonditional triggers
+<h4 class='center-h' data-href='Logic_conditional_triggers_chapter'>
+Logic conditional triggers
 </h4>
 
 <LinkToContent/>
@@ -2314,7 +2314,7 @@ Trigger resets when the logic condition is <b>false</b>.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersLogicСondition'/> = <EBNFC name='LogicRuleDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
+<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='LogicRuleDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
 <EBNFCDECL name='BindingVariablesDecl'/> = "(" <EBNFC name='BindingVariableItemDecl'/> [ { "," <EBNFC name='BindingVariableItemDecl'/> } ] ")" .
 <EBNFCDECL name='BindingVariableItemDecl'/> = <EBNFC name='SourceBoundVariable'/> ">>" <EBNFC name='DestBoundVariable'/> .
 <EBNFCDECL name='SourceBoundVariable'/> = <EBNFC name='LogicVarExpr'/> .
@@ -2322,7 +2322,7 @@ Trigger resets when the logic condition is <b>false</b>.
 </gr>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Logic_conditional_triggers'>here</a>.
 </p>
 
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
@@ -3088,6 +3088,7 @@ The left operand must be a variable.
 
 <gr>
 <EBNFCDECL name='AssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '='/> .
+<EBNFCDECL name='ImperativeLogicAssignmentOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '='/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3162,9 +3163,10 @@ The right-hand operand contains a possible base object.
 </p>
 
 <gr>
-<EBNFCDECL name='IsOpExpr' groups='Expr'/> = <TEBNFC name='IsOpExprBody'/> .
+<EBNFCDECL name='IsOpExpr' groups='Expr;ImperativeLogicExpr'/> = <TEBNFC name='IsOpExprBody'/> .
 <EBNFCDECL name='LogicIsOpExpr' groups='LogicExpr'/> = <EBNFC name='LogicIsOpExprBranch'/> "is" [ "not" ] <EBNFC name='LogicIsOpExprBranch'/> .
 <EBNFCDECL name='LogicIsOpExprBranch'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
+<EBNFCDECL name='ImperativeLogicIsOpExpr' groups='ImperativeLogicExpr' /> = <EBNFC name='ImperativeLogicExpr'/> "is" [ "not" ] <EBNFC name='ImperativeLogicExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4384,6 +4386,14 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='ImperativeLogicBinaryOp' param='_OpLiteral'>
+	    <TEBNFC name='ImperativeLogicBinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='ImperativeLogicBinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
+	</TEBNFCDECL>
+	
 	<TEBNFCDECL name='ConditionalEntityBinaryOp' param='_OpLiteral'>
 	    <TEBNFC name='ConditionalEntityBinaryOp_2' param = '"_OpLiteral"'/>
 	</TEBNFCDECL>
@@ -4404,9 +4414,17 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='ImperativeLogicUnaryOp' param='_OpLiteral'>
+	    <TEBNFC name='ImperativeLogicUnaryOp_2' param = '"_OpLiteral"' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='ImperativeLogicUnaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
+	</TEBNFCDECL>
+	
 	<TEBNFCDECL name='UnaryOp_base' param='_OpLiteral' param2='_ExpType'>
 	    _OpLiteral _ExpType
-	</TEBNFCDECL>	
+	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='InheritanceDeclItem'>
 	    [ "[" <EBNFC name='FuzzyExpr'/> "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
