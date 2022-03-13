@@ -2952,11 +2952,36 @@ Operator precedence
 	<tr>
 	    <td>insert</td>
 	</tr>
-		<tr>
-	    <th class='center-h'>3</th>
+	<tr>
+	    <th rowspan='3' class='center-h'>3</th>
 	    <td>!</td>
-		<td>Left-to-right</td>
-	</tr>	
+		<td rowspan='3' >Left-to-right</td>
+	</tr>
+	<tr>
+	    <td>Unary +</td>
+	</tr>
+	<tr>
+	    <td>Unary -</td>
+	</tr>
+	
+	<tr>
+	    <th rowspan='2' class='center-h'>5</th>
+	    <td>*</td>
+		<td rowspan='2' >Left-to-right</td>
+	</tr>
+	<tr>
+	    <td>/</td>
+	</tr>
+	
+	<tr>
+	    <th rowspan='2' class='center-h'>6</th>
+	    <td>+</td>
+		<td rowspan='2' >Left-to-right</td>
+	</tr>
+	<tr>
+	    <td>-</td>
+	</tr>
+	
 	<tr>
 	    <th rowspan='4' class='center-h'>9</th>
 	    <td>&gt;</td>
