@@ -2711,6 +2711,7 @@ Logic expression
 
 <gr>
 <EBNFCDECL name='LogicExpr'/> = <GEBNFC name='LogicExpr' kind='or'/> .
+<EBNFCDECL name='ImperativeLogicExpr' groups='Expr'/> = <GEBNFC name='ImperativeLogicExpr' kind='or'/> .
 </gr>
 
 <h3 class='center-h' data-href='Grouping_expression_chapter'>
@@ -2726,11 +2727,17 @@ Expressions in round brackets executes as single expression.
 <gr>
 <EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 <EBNFCDECL name='ConditionalEntityGroupingExpr' groups='ConditionalEntityExpr'/> = "(" <EBNFC name='ConditionalEntityExpr'/> ")" .
+<EBNFCDECL name='ImperativeLogicExpr' groups='ImperativeLogicGroupingExpr'/> = "(" <EBNFC name='ImperativeLogicExpr'/> ")" .
+<EBNFCDECL name='GroupingExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
 </gr>
 
 <code data-lng='soc'>
 {: ( age(#Tom, $x) & distance(#Tom, $y) & $x is not $y ) | see(I, enemy) :}
 #@(hold(I, this) & (weapon & dog) )
+</code>
+
+<code data-lng='soc'>
+(3 + 5) * 2
 </code>
 
 <h3 class='center-h' data-href='Variable_chapter'>
@@ -3391,6 +3398,62 @@ Operator of logical negation (logical <b>not</b>).
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='ArithmeticOperators_chapter'>
+Arithmetic operators
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='AddOp_chapter'>
+Operator "+"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='UnaryPlusOp_chapter'>
+Operator unary "+"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='SubOp_chapter'>
+Operator "-"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='UnaryMinusOp_chapter'>
+Operator unary "-"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='MulOp_chapter'>
+Operator "*"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='DivOp_chapter'>
+Operator "/"
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
@@ -4226,11 +4289,59 @@ The statement <b>break action</b> can break <b><a href='#Action_chapter'>Action<
     {
         break action {: see(I, enemy) :};
     }
-</cod
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='RepeatStatement_chapter'>
+"repeat" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='WhileStatement_chapter'>
+"while" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='ReturnStatement_chapter'>
+"return" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='IfElifElseStatement_chapter'>
+"if-elif-else" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='ContinueLoopStatement_chapter'>
+"continue" loop statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='BreakLoopStatement_chapter'>
+"break" loop statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
@@ -4359,4 +4470,5 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <TEBNFC name=''/>
 
+ImperativeLogicExpr   Expr
 -->

@@ -618,6 +618,8 @@ End
 Member access modifiers
 </h2>
 
+<LinkToContent/>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='Function'>
@@ -1785,15 +1787,19 @@ app PeaceKeeper
 $x = #a
 </console>
 
-<h2 class='center-h' data-href=''>
-
+<h2 class='center-h' data-href='ImperativeLogicOperators'>
+Imperative logic operators
 </h2>
+
+<LinkToContent/>
 
 <complete_me/>
 
-<h2 class='center-h' data-href=''>
-
+<h2 class='center-h' data-href='ArithmeticOperators'>
+Arithmetic operators
 </h2>
+
+<LinkToContent/>
 
 <complete_me/>
 
@@ -2259,8 +2265,50 @@ ensure
 End of `Init`
 </console>
 
-<h2 class='center-h' data-href=''>
-
+<h2 class='center-h' data-href='RepeatStatement'>
+"repeat" statement
 </h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='WhileStatement'>
+"while" statement
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='ReturnStatement'>
+"return" statement
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='IfElifElseStatement'>
+"if-elif-else" statement
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='ContinueLoopStatement'>
+"continue" loop statement
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='BreakLoopStatement'>
+"break" loop statement
+</h2>
+
+<LinkToContent/>
 
 <complete_me/>
