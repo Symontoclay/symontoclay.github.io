@@ -404,7 +404,15 @@ But the words can be used as identifiers in other places.
 	<kw name='complete'/>
 	<kw name='break'/>
 	<kw name='await'/>
-	<kw name='alias'/>
+	<kw name='alias'/>	
+	<kw name='repeat'/>
+	<kw name='while'/>
+	<kw name='continue'/>
+	<kw name='return'/>
+	<kw name='if'/>
+	<kw name='elif'/>
+	<kw name='true'/>
+	<kw name='false'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -420,6 +428,10 @@ The following character sequences represent <a href='#Operators_chapter'>operato
 <items cols='4'>
     <item value='?'/>
 	<item value='='/>
+	<item value='+'/>
+	<item value='-'/>
+	<item value='*'/>
+	<item value='/'/>
 	<item value='&'/>
 	<item value='|'/>
 	<item value='!'/>
