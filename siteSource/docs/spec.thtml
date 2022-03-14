@@ -3520,11 +3520,12 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 </p>
 
 <gr>
-<EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = ''/> .
+<EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicUnaryOp_2' param = '( "!" | "not" )'/> .
 </gr>
 
 <code data-lng='soc'>
-
+!(@a > 5)
+not(@a > 5)
 </code>
 
 <p>
@@ -4533,7 +4534,7 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='ImperativeLogicUnaryOp_2' param='_OpLiteral'>
-	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicExpr'/>"/>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='UnaryOp_base' param='_OpLiteral' param2='_ExpType'>
