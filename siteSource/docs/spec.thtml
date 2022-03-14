@@ -4599,11 +4599,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <complete_me/>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>here</a>.
+</p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='WhileStatement_chapter'>
 "while" statement
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -4615,11 +4627,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <complete_me/>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>here</a>.
+</p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='IfElifElseStatement_chapter'>
 "if-elif-else" statement
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -4631,6 +4655,12 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <complete_me/>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatement'>here</a>.
+</p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='BreakLoopStatement_chapter'>
 "break" loop statement
 </h3>
@@ -4638,6 +4668,14 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 <LinkToContent/>
 
 <complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#BreakLoopStatement'>here</a>.
+</p>
+
+<complete_me/>
+
+
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
