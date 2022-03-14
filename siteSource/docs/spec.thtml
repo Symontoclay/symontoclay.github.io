@@ -3571,7 +3571,10 @@ Operator "+"
 <complete_me/>
 
 <code data-lng='soc'>
-
+1 + 1
+@a + 1
+@a + @b
+@a + 'Hi' + 3
 </code>
 
 <complete_me/>
@@ -3597,7 +3600,8 @@ Operator unary "+"
 <complete_me/>
 
 <code data-lng='soc'>
-
++ @a
+2 * + @a
 </code>
 
 <complete_me/>
@@ -3623,7 +3627,9 @@ Operator "-"
 <complete_me/>
 
 <code data-lng='soc'>
-
+1 - 1
+@a - 1
+@a - @b
 </code>
 
 <complete_me/>
@@ -3649,7 +3655,8 @@ Operator unary "-"
 <complete_me/>
 
 <code data-lng='soc'>
-
+- @a
+2 * - @a
 </code>
 
 <complete_me/>
@@ -3675,7 +3682,9 @@ Operator "*"
 <complete_me/>
 
 <code data-lng='soc'>
-
+1 * 1
+@a * 1
+@a * @b
 </code>
 
 <complete_me/>
@@ -3701,7 +3710,9 @@ Operator "/"
 <complete_me/>
 
 <code data-lng='soc'>
-
+1 / 2
+@a / 1
+@a / @b
 </code>
 
 <complete_me/>
