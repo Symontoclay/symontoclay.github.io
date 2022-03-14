@@ -4637,13 +4637,17 @@ You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>her
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='WhileStatement' groups='Statement'/> =  .
+<EBNFCDECL name='WhileStatement' groups='Statement'/> = "while" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <complete_me/>
 
 <code data-lng='soc'>
-
+    while (@a > 0)
+    {
+        @a >> @>log;
+        @a = @a - 1;
+    }
 </code>
 
 <complete_me/>
@@ -4663,7 +4667,7 @@ You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ReturnStatement' groups='Statement'/> =  .
+<EBNFCDECL name='ReturnStatement' groups='Statement'/> = "return" [ <EBNFC name='Expr'/> ] .
 </gr>
 
 <complete_me/>
