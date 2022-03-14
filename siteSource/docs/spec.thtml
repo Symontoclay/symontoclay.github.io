@@ -4599,6 +4599,18 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='RepeatStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>here</a>.
 </p>
@@ -4610,6 +4622,18 @@ You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>her
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='WhileStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -4627,6 +4651,18 @@ You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ReturnStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>here</a>.
 </p>
@@ -4638,6 +4674,18 @@ You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>her
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='IfElifElseStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -4655,6 +4703,18 @@ You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ContinueLoopStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatement'>here</a>.
 </p>
@@ -4666,6 +4726,18 @@ You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatemen
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='BreakLoopStatement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
