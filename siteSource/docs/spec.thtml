@@ -271,11 +271,11 @@ Some concepts are predefined and reperesent code entities.
 	</li>
 	
 	<li>
-	    <b><a href='#Logic_literal_chapter'>true</a></b>
+	    <b><a href='#Fuzzy_expression_chapter'>true</a></b>
 	</li>
 	
 	<li>
-	    <b><a href='#Logic_literal_chapter'>false</a></b>
+	    <b><a href='#Fuzzy_expression_chapter'>false</a></b>
 	</li>
 </ul>
 
@@ -421,6 +421,7 @@ But the words can be used as identifiers in other places.
 	<kw name='elif'/>
 	<kw name='true'/>
 	<kw name='false'/>
+	<kw name='var'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -504,37 +505,6 @@ Now floating-point literal has only decimal base.
 
 <code data-lng='soc'>
 36.6
-</code>
-
-<h3 class='center-h' data-href='Logic_literal_chapter'>
-Logic literal
-</h3>
-
-<LinkToContent/>
-
-<p>
-A logic literal is a integer, floating-point or symbol representation of a <a href='#Constant_expression_chapter'>logic constant</a>.
-</p>
-
-<gr>
-<EBNFCDECL name='LogicLiteral' groups='ConstExpr;ValueExpr;LogicExpr;ImperativeLogicExpr'/> = <EBNFC name='IntegerLiteral'/> | <EBNFC name='FloatPointLiteral'/> | "true" | "false" .
-</gr>
-
-<p>
-    Integer and floating-point for logic value should be more or equal 0 and less or equal 1.
-</p>
-
-<p>
-    <b>true</b> represents 1.
-    <b>false</b> represents 0.
-</p>
-
-<code data-lng='soc'>
-1
-0
-0.5
-true
-false
 </code>
 
 <h3 class='center-h' data-href='String_literal_chapter'>
@@ -2353,7 +2323,7 @@ Trigger resets when the logic condition is <b>false</b>.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='LogicRuleDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
+<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='FactDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
 <EBNFCDECL name='BindingVariablesDecl'/> = "(" <EBNFC name='BindingVariableItemDecl'/> [ { "," <EBNFC name='BindingVariableItemDecl'/> } ] ")" .
 <EBNFCDECL name='BindingVariableItemDecl'/> = <EBNFC name='SourceBoundVariable'/> ">>" <EBNFC name='DestBoundVariable'/> .
 <EBNFCDECL name='SourceBoundVariable'/> = <EBNFC name='LogicVarExpr'/> .
@@ -2499,7 +2469,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
+<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
@@ -2745,10 +2715,15 @@ Fuzzy expression can be <EBNFC name='NumberExpr'/> in range [0, 1] or <a href='#
 </p>
 
 <gr>
-<EBNFCDECL name='FuzzyExpr' groups='ConstExpr;ValueExpr'/> = <GEBNFC name='FuzzyExpr' kind='or'/> .
+<EBNFCDECL name='FuzzyExpr' groups='ConstExpr;ValueExpr;LogicExpr;ImperativeLogicExpr'/> = <GEBNFC name='FuzzyExpr' kind='or'/> .
 <EBNFCDECL name='NumericFuzzyExpr' groups='FuzzyExpr'/> = <EBNFC name='NumberExpr'/> .
-<EBNFCDECL name='NonNumericFuzzyExpr' groups='FuzzyExpr'/> = [ { <EBNFC name='PredefinedFuzzyOpsIdentifier'/> } ] <EBNFC name='LinguisticVariableTermIdentifier'/> .
+<EBNFCDECL name='NonNumericFuzzyExpr' groups='FuzzyExpr'/> = ( [ { <EBNFC name='PredefinedFuzzyOpsIdentifier'/> } ] <EBNFC name='LinguisticVariableTermIdentifier'/> ) | "true" | "false" .
 </gr>
+
+<p>
+    <b>true</b> represents 1.
+    <b>false</b> represents 0.
+</p>
 
 <code data-lng='soc'>
 0
@@ -2756,6 +2731,8 @@ Fuzzy expression can be <EBNFC name='NumberExpr'/> in range [0, 1] or <a href='#
 1
 teenager
 very teenager
+true
+false
 </code>
 
 <h3 class='center-h' data-href='Logic_expression_chapter'>
@@ -3918,6 +3895,14 @@ Executes an expression line.
 @@host.`go`~(to: #@[25, 30]);
 </code>
 
+<h3 class='center-h' data-href='Variable_declaration_statement_chapter'>
+Variable declaration statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='ErrorStatement_chapter'>
 "error" statement
 </h3>
@@ -4586,6 +4571,10 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 	
 	<TEBNFCDECL name='IsOpExprBody'>
 	    ( <GEBNFC name='TypeIdentifier' kind='or'/> ) "is" ( ( <TEBNFC name='InheritanceDeclItem'/> ) | ( [ "not" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> ) ) )
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='VarDecl'>
+	    [ "var" ] <EBNFC name='VarIdentifier'/> [ ":" ( ( "(" <EBNFC name='ConceptIdentifier'/> [ { "|" <EBNFC name='ConceptIdentifier'/> } ] ")" ) | ( <EBNFC name='ConceptIdentifier'/> [ { "|" <EBNFC name='ConceptIdentifier'/> } ] ) ) [ "=" <EBNFC name='Expr'/> ]
 	</TEBNFCDECL>
 </div>
 
