@@ -3564,11 +3564,47 @@ Operator "+"
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='AddOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '+'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
+</p>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='UnaryPlusOp_chapter'>
 Operator unary "+"
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='UnaryPlusOp' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '+'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -3580,11 +3616,47 @@ Operator "-"
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='SubOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '-'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
+</p>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='UnaryMinusOp_chapter'>
 Operator unary "-"
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='UnaryMinusOp' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '-'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -3596,11 +3668,47 @@ Operator "*"
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='MulOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '*'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
+</p>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='DivOp_chapter'>
 Operator "/"
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='DivOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '/'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -3900,6 +4008,26 @@ Variable declaration statement
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='VarDeclStatement' groups='Statement'/> = <TEBNFC name='VarDecl'/> ";" .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+@b = 1;
+var @a: string;
+var @a: string | number;
+var @a: (string | number);
+@a: string | number;
+var @a: number = 2;
+var @a: number | string = 2;
+var @a: (number | string)  = 2;
+@a: number = 2;
+</code>
 
 <complete_me/>
 
@@ -4559,6 +4687,14 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 	
 	<TEBNFCDECL name='ImperativeLogicUnaryOp_2' param='_OpLiteral'>
 	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='UnaryOp' param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_2' param = '"_OpLiteral"' param2="<EBNFC name='Expr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='UnaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='Expr'/>"/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='UnaryOp_base' param='_OpLiteral' param2='_ExpType'>
