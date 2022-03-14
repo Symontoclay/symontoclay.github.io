@@ -269,6 +269,14 @@ Some concepts are predefined and reperesent code entities.
     <li>
 	    <b><a href='#String_literal_chapter'>string</a></b>
 	</li>
+	
+	<li>
+	    <b><a href='#Logic_literal_chapter'>true</a></b>
+	</li>
+	
+	<li>
+	    <b><a href='#Logic_literal_chapter'>false</a></b>
+	</li>
 </ul>
 
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
@@ -482,7 +490,7 @@ Floating-point literal
 <LinkToContent/>
 
 <p>
-A floating-point literal is a decimal or hexadecimal representation of a <a href='#Constant_expression_chapter'>floating-point constant</a>.
+A floating-point literal is a decimal representation of a <a href='#Constant_expression_chapter'>floating-point constant</a>.
 </p>
 
 <p>
@@ -496,6 +504,37 @@ Now floating-point literal has only decimal base.
 
 <code data-lng='soc'>
 36.6
+</code>
+
+<h3 class='center-h' data-href='Logic_literal_chapter'>
+Logic literal
+</h3>
+
+<LinkToContent/>
+
+<p>
+A logic literal is a integer, floating-point or symbol representation of a <a href='#Constant_expression_chapter'>logic constant</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='LogicLiteral' groups='ConstExpr;ValueExpr;LogicExpr;ImperativeLogicExpr'/> = <EBNFC name='IntegerLiteral'/> | <EBNFC name='FloatPointLiteral'/> | "true" | "false" .
+</gr>
+
+<p>
+    Integer and floating-point for logic value should be more or equal 0 and less or equal 1.
+</p>
+
+<p>
+    <b>true</b> represents 1.
+    <b>false</b> represents 0.
+</p>
+
+<code data-lng='soc'>
+1
+0
+0.5
+true
+false
 </code>
 
 <h3 class='center-h' data-href='String_literal_chapter'>
@@ -532,7 +571,7 @@ The <b>NULL</b> literal represents special value which means unknown or undefine
 </p>
 
 <gr>
-<EBNFCDECL name='NullLiteral' groups='ConstExpr;ValueExpr'/> = "null" .
+<EBNFCDECL name='NullLiteral' groups='ConstExpr;ValueExpr;LogicExpr;ImperativeLogicExpr'/> = "null" .
 </gr>
 
 <code data-lng='soc'>
