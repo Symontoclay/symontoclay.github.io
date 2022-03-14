@@ -4600,13 +4600,24 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='RepeatStatement' groups='Statement'/> =  .
+<EBNFCDECL name='RepeatStatement' groups='Statement'/> = "repeat" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
 <complete_me/>
 
 <code data-lng='soc'>
+    repeat
+    {
+        @a >> @>log;
+        @a = @a - 1;
 
+        if(@a > 5)
+        {
+            continue;
+        }
+
+        break;
+    }
 </code>
 
 <complete_me/>
@@ -4710,7 +4721,18 @@ You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'
 <complete_me/>
 
 <code data-lng='soc'>
+    repeat
+    {
+        @a >> @>log;
+        @a = @a - 1;
 
+        if(@a > 5)
+        {
+            continue;
+        }
+
+        break;
+    }
 </code>
 
 <complete_me/>
@@ -4736,7 +4758,18 @@ You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatemen
 <complete_me/>
 
 <code data-lng='soc'>
+    repeat
+    {
+        @a >> @>log;
+        @a = @a - 1;
 
+        if(@a > 5)
+        {
+            continue;
+        }
+
+        break;
+    }
 </code>
 
 <complete_me/>
