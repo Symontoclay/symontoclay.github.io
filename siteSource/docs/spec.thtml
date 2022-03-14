@@ -4667,7 +4667,7 @@ You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ReturnStatement' groups='Statement'/> = "return" [ <EBNFC name='Expr'/> ] .
+<EBNFCDECL name='ReturnStatement' groups='Statement'/> = "return" [ <EBNFC name='Expr'/> ] ";" .
 </gr>
 
 <complete_me/>
@@ -4719,7 +4719,7 @@ You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ContinueLoopStatement' groups='Statement'/> =  .
+<EBNFCDECL name='ContinueLoopStatement' groups='Statement'/> = "continue" ";" .
 </gr>
 
 <complete_me/>
@@ -4756,7 +4756,7 @@ You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatemen
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='BreakLoopStatement' groups='Statement'/> =  .
+<EBNFCDECL name='BreakLoopStatement' groups='Statement'/> = "break" ";" .
 </gr>
 
 <complete_me/>
