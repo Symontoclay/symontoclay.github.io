@@ -4185,13 +4185,14 @@ Variable declaration statement
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Declares a local variable.
+Optyonaly you can specify its types and initial value.
+</p>
 
 <gr>
 <EBNFCDECL name='VarDeclStatement' groups='Statement'/> = <TEBNFC name='VarDecl'/> ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 @b = 1;
@@ -4204,8 +4205,6 @@ var @a: number | string = 2;
 var @a: (number | string)  = 2;
 @a: number = 2;
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='ErrorStatement_chapter'>
 "error" statement
