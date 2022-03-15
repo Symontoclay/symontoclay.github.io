@@ -2217,14 +2217,19 @@ Field
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+    A field is a variable of any type that is declared directly in a object. 
+    Fields are members of their containing object.
+</p>
+
+<p>
+    In code a field can be used as usual variable.
+</p>
 
 <gr>
 <EBNFCDECL name='FieldDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FieldDecl'/> .
 <EBNFCDECL name='FieldDecl'/> = <TEBNFC name='VarDecl'/> ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
