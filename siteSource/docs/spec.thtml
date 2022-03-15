@@ -4867,11 +4867,17 @@ You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>her
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Selects a statement to execute based on the value of a logic expression.
+</p>
 
 <gr>
 <EBNFCDECL name='IfElifElseStatement' groups='Statement'/> = "if" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" <br/> [ <TEBNFC name='ElifSection'/> { <TEBNFC name='ElifSection'/> }] <br/> [ "else" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" ] .
 </gr>
+
+<p>
+
+</p>
 
 <complete_me/>
 
