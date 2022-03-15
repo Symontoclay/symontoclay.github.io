@@ -4762,13 +4762,13 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+"repeat" statement defines the infinite loop.
+</p>
 
 <gr>
 <EBNFCDECL name='RepeatStatement' groups='Statement'/> = "repeat" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     repeat
@@ -4795,13 +4795,14 @@ You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>her
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The <b>while</b> statement executes a statement or a block of statements while a specified logic expression evaluates to <b>true</b> (1).
+Because that expression is evaluated before each execution of the loop, a <b>while</b> loop executes zero or more times.
+</p>
 
 <gr>
 <EBNFCDECL name='WhileStatement' groups='Statement'/> = "while" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     while (@a > 0)
@@ -4821,13 +4822,17 @@ You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The <b>return</b> statement terminates execution of the function in which it appears and returns control and the function's result, if any, to the caller.
+</p>
+
+<p>
+If a function member doesn't compute a value, you use the <b>return</b> statement without expression.
+</p>
 
 <gr>
 <EBNFCDECL name='ReturnStatement' groups='Statement'/> = "return" [ <EBNFC name='Expr'/> ] ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     fun a() => 
@@ -4965,13 +4970,13 @@ You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The <b>continue</b> statement starts a new iteration of the closest enclosing iteration statement (that is, <b>repeat</b>, or <b>while</b>).
+</p>
 
 <gr>
 <EBNFCDECL name='ContinueLoopStatement' groups='Statement'/> = "continue" ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     repeat
@@ -4998,13 +5003,14 @@ You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatemen
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The <b>break</b> statement terminates the closest enclosing iteration statement (that is, <b>repeat</b>, or <b>while</b>).
+The <b>break</b> statement transfers control to the statement that follows the terminated statement, if any.
+</p>
 
 <gr>
 <EBNFCDECL name='BreakLoopStatement' groups='Statement'/> = "break" ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
     repeat
