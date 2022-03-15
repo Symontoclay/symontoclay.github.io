@@ -3705,13 +3705,22 @@ Operator "+"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The addition operator "+" computes the sum of its operands.
+</p>
 
 <gr>
 <EBNFCDECL name='AddOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '+'/> .
 </gr>
 
-<complete_me/>
+<p>
+If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
+
+<p>
+If two operands are <b><a href='String_literal_chapter'>string</a></b> the result will be concatenation of the strings.
+If an operand is <b><a href='String_literal_chapter'>string</a></b> and another operand is not string the non string operand will be converted to string and the result will be concatenation.
+</p>
 
 <code data-lng='soc'>
 1 + 1
@@ -3730,13 +3739,17 @@ Operator unary "+"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The unary "+" operator computes absolute value (or modulus) of its operand.
+</p>
+
+<p>
+If the operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
 
 <gr>
 <EBNFCDECL name='UnaryPlusOp' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '+'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 + @a
@@ -3753,13 +3766,17 @@ Operator "-"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The subtraction operator "-" subtracts its right-hand operand from its left-hand operand
+</p>
+
+<p>
+If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
 
 <gr>
 <EBNFCDECL name='SubOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '-'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 1 - 1
@@ -3777,13 +3794,18 @@ Operator unary "-"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The unary "-" operator computes the numeric negation of its operand.
+If the operand is already negative the operator returns the value of its operand.
+</p>
+
+<p>
+If the operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
 
 <gr>
 <EBNFCDECL name='UnaryMinusOp' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '-'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 - @a
@@ -3800,13 +3822,17 @@ Operator "*"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The multiplication operator "*" computes the product of its operands.
+</p>
+
+<p>
+If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
 
 <gr>
 <EBNFCDECL name='MulOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '*'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 1 * 1
@@ -3824,13 +3850,21 @@ Operator "/"
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+The division operator "/" divides its left-hand operand by its right-hand operand.
+</p>
+
+<p>
+If the right-hand operand is 0 the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
+
+<p>
+If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also will be <b><a href='NULL_literal_chapter'>null</a></b>.
+</p>
 
 <gr>
 <EBNFCDECL name='DivOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '/'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 1 / 2

@@ -1797,6 +1797,10 @@ Imperative logic operators
 
 <LinkToContent/>
 
+<p>
+Read more about Imperative logic operators <a href='/docs/spec.html#Relational_operators_chapter'>here</a> and <a href='/docs/spec.html#LogicOp_chapter'>here</a>.
+</p>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='ArithmeticOperators'>
@@ -1804,6 +1808,10 @@ Arithmetic operators
 </h2>
 
 <LinkToContent/>
+
+<p>
+Read more about Arithmetic operators <a href='/docs/spec.html#ArithmeticOperators_chapter'>here</a>.
+</p>
 
 <complete_me/>
 
