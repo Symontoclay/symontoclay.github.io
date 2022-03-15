@@ -2330,6 +2330,28 @@ Trigger resets when the logic condition is <b>false</b>.
 <EBNFCDECL name='DestBoundVariable'/> = <EBNFC name='VarExpr'/> .
 </gr>
 
+<code data-lng='soc'>
+app PeaceKeeper
+{
+	on {: see(I, #`gun 1`) :} => 
+    {
+	    'D' >> @>log;
+	}
+}
+</code>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    @a = #`gun 1`;
+
+    on {: see(I, @a) :} => 
+    {
+	    'D' >> @>log;
+	}
+}
+</code>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_conditional_triggers'>here</a>.
 </p>
@@ -3928,6 +3950,14 @@ In the absence of <a href='#QuestionVarIdentifier_chapter'>question variables</a
 &lt;yes&gt;
 </console>
 
+<code data-lng='soc'>
+? {: can(#Alisa_12, @a) :} >> @>log;
+</code>
+
+<console>
+&lt;yes&gt;
+</console>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries_Example_2'>here</a>.
 </p>
@@ -3949,6 +3979,10 @@ Returns the added fact.
 
 <code data-lng='soc'>
 insert {: >: { bird (#1234) } :};
+</code>
+
+<code data-lng='soc'>
+insert {: see(I, @a) :};
 </code>
 
 <p>
