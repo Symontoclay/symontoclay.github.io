@@ -2128,6 +2128,48 @@ Member access modifiers
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='MemberAccessModifier'/> = "public" | "protected" | "private" .
+<EBNFCDECL name='MemberAccessModifiersSectionDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'MemberAccessModifiersSectionDecl'/> .
+<EBNFCDECL name='MemberAccessModifiersSectionDecl'/> = <EBNFC name='MemberAccessModifier'/> ":" <br/> [ <GEBNFC name='MemberAccessModifierBodyContent' kind='op_and'/> ] .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+class Cls1
+{
+private:
+	{: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+	
+protected:
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+	
+public:
+    @a;
+}
+
+app PeaceKeeper is Cls1
+{
+private:
+    on Init =>
+    {
+        'Begin' >> @>log;
+        select {: son($x, $y) :} >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#MemberAccessModifiers'>here</a>.
+</p>
+
 <h3 class='center-h' data-href='Field_chapter'>
 Field
 </h3>
@@ -2137,7 +2179,7 @@ Field
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='FieldDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FieldDecl'/> .
+<EBNFCDECL name='FieldDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FieldDecl'/> .
 <EBNFCDECL name='FieldDecl'/> = <TEBNFC name='VarDecl'/> ";" .
 </gr>
 
@@ -2190,7 +2232,7 @@ Technically a method is an <a href='#Objects_declaration_chapter'><b>object's</b
 </p>
 
 <gr>
-<EBNFCDECL name='MethodDeclSet'  groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
+<EBNFCDECL name='MethodDeclSet'  groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
 <EBNFCDECL name='MethodDecl'/> = <EBNFC name='FunctionDecl'/> .
 </gr>
 
@@ -2248,7 +2290,7 @@ An object can declare an operator () function, which provides function call sema
 </p>
 
 <gr>
-<EBNFCDECL name='FunCallOverloadingDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FunCallOverloadingDecl'/> .
+<EBNFCDECL name='FunCallOverloadingDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FunCallOverloadingDecl'/> .
 <EBNFCDECL name='FunCallOverloadingDecl'/> = "op" "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
@@ -2296,7 +2338,7 @@ In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
+<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
 <EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicCondition'/> ) [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
@@ -2525,7 +2567,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 </p>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
@@ -2584,7 +2626,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
