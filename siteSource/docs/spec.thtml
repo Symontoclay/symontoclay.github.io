@@ -3554,8 +3554,6 @@ Arithmetic operators
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='AddOp_chapter'>
 Operator "+"
 </h4>
@@ -3577,13 +3575,9 @@ Operator "+"
 @a + 'Hi' + 3
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='UnaryPlusOp_chapter'>
 Operator unary "+"
@@ -3604,13 +3598,9 @@ Operator unary "+"
 2 * + @a
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='SubOp_chapter'>
 Operator "-"
@@ -3632,13 +3622,9 @@ Operator "-"
 @a - @b
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='UnaryMinusOp_chapter'>
 Operator unary "-"
@@ -3659,13 +3645,9 @@ Operator unary "-"
 2 * - @a
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='MulOp_chapter'>
 Operator "*"
@@ -3687,13 +3669,9 @@ Operator "*"
 @a * @b
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='DivOp_chapter'>
 Operator "/"
@@ -3715,13 +3693,9 @@ Operator "/"
 @a / @b
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ArithmeticOperators'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Member_access_operators_chapter'>
 Member access operators
