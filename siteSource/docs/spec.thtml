@@ -4099,10 +4099,10 @@ For example, <b>try</b>-<b>catch</b>, <b>try</b>-<b>catch</b>-<b>else</b>-<b>ens
 
 <gr>
 <EBNFCDECL name='TryCatchStatement' groups='Statement'/> = <EBNFC name='TryBlockOfTryCatchStatement'/> <br/> [ <EBNFC name='CatchBlockOfTryCatchStatement'/> [{ <EBNFC name='CatchBlockOfTryCatchStatement'/> }]] <br/> [ <EBNFC name='ElseBlockOfTryCatchStatement'/> ] <br/> [ <EBNFC name='EnsureBlockOfTryCatchStatement'/> ] .
-<EBNFCDECL name='TryBlockOfTryCatchStatement'/> = "try" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='CatchBlockOfTryCatchStatement'/> = "catch" [ "(" <EBNFC name='VarIdentifier'/> ")" [ "where" <EBNFC name='FactDecl'/> ] ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='ElseBlockOfTryCatchStatement'/> = "else" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='EnsureBlockOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TryBlockOfTryCatchStatement'/> = "try" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
+<EBNFCDECL name='CatchBlockOfTryCatchStatement'/> = "catch" [ "(" <EBNFC name='VarIdentifier'/> ")" [ "where" <EBNFC name='FactDecl'/> ] ] <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
+<EBNFCDECL name='ElseBlockOfTryCatchStatement'/> = "else" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
+<EBNFCDECL name='EnsureBlockOfTryCatchStatement'/> = "ensure" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
 </gr>
 
 <p>
@@ -4600,7 +4600,7 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='RepeatStatement' groups='Statement'/> = "repeat" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='RepeatStatement' groups='Statement'/> = "repeat" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
 </gr>
 
 <complete_me/>
@@ -4620,13 +4620,9 @@ You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
     }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='WhileStatement_chapter'>
 "while" statement
@@ -4637,7 +4633,7 @@ You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>her
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='WhileStatement' groups='Statement'/> = "while" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='WhileStatement' groups='Statement'/> = "while" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" .
 </gr>
 
 <complete_me/>
@@ -4650,13 +4646,9 @@ You can see examples <a href='/docs/lng_examples/index.html#RepeatStatement'>her
     }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='ReturnStatement_chapter'>
 "return" statement
@@ -4682,8 +4674,6 @@ You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here
 You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>here</a>.
 </p>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='IfElifElseStatement_chapter'>
 "if-elif-else" statement
 </h3>
@@ -4693,22 +4683,98 @@ You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>her
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='IfElifElseStatement' groups='Statement'/> =  .
+<EBNFCDECL name='IfElifElseStatement' groups='Statement'/> = "if" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" <br/> [ <TEBNFC name='ElifSection'/> { <TEBNFC name='ElifSection'/> }] <br/> [ "else" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" ] .
 </gr>
 
 <complete_me/>
 
-<code data-lng='soc'>
+<p>
+<b>if:</b>
+</p>
 
+<code data-lng='soc'>
+    if(@a is 0)
+    {
+        'Yes!' >> @>log;
+    }
 </code>
 
-<complete_me/>
+<p>
+<b>if-else:</b>
+</p>
+
+<code data-lng='soc'>
+    if({: >: { see(I, #`Barel 1`) } :})
+    {
+        'Yes!' >> @>log;
+    } else {
+        'Else Yes!' >> @>log;
+    }
+</code>
+
+<p>
+<b>if-elif:</b>
+</p>
+
+<code data-lng='soc'>
+    if({: >: { see(I, #`Barel 0`) } :})
+    {
+        'Yes!' >> @>log;
+    } elif ({: >: { see(I, #`Barel 1`) } :}) {
+        'Elif 1 Yes!' >> @>log;
+    }
+</code>
+
+<p>
+<b>if-elif-elif:</b>
+</p>
+
+<code data-lng='soc'>
+    if({: >: { see(I, #`Barel 0`) } :})
+    {
+        'Yes!' >> @>log;
+    } elif ({: >: { see(I, #`Barel 1`) } :}) {
+        'Elif 1 Yes!' >> @>log;
+    } elif ({: >: { see(I, #`Barel 2`) } :}) {
+        'Elif 2 Yes!' >> @>log;
+    }
+</code>
+
+<p>
+<b>if-elif-elif-else:</b>
+</p>
+
+<code data-lng='soc'>
+    if({: >: { see(I, #`Barel 0`) } :})
+    {
+        'Yes!' >> @>log;
+    } elif ({: >: { see(I, #`Barel 1`) } :}) {
+        'Elif 1 Yes!' >> @>log;
+    } elif ({: >: { see(I, #`Barel 2`) } :}) {
+        'Elif 2 Yes!' >> @>log;
+    } else{
+        'Else Yes!' >> @>log;
+    }
+</code>
+
+<p>
+<b>if-elif-else:</b>
+</p>
+
+<code data-lng='soc'>
+    if({: >: { see(I, #`Barel 0`) } :})
+    {
+        'Yes!' >> @>log;
+    } elif ({: >: { see(I, #`Barel 1`) } :}) {
+        'Elif 1 Yes!' >> @>log;
+    } else{
+        'Else Yes!' >> @>log;
+    }
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='ContinueLoopStatement_chapter'>
 "continue" loop statement
@@ -4739,13 +4805,9 @@ You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'
     }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='BreakLoopStatement_chapter'>
 "break" loop statement
@@ -4776,13 +4838,9 @@ You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatemen
     }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#BreakLoopStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 
 
@@ -4869,6 +4927,10 @@ You can see examples <a href='/docs/lng_examples/index.html#BreakLoopStatement'>
 	
 	<TEBNFCDECL name='VarDecl'>
 	    [ "var" ] <EBNFC name='VarIdentifier'/> [ ":" ( ( "(" <EBNFC name='ConceptIdentifier'/> [ { "|" <EBNFC name='ConceptIdentifier'/> } ] ")" ) | ( <EBNFC name='ConceptIdentifier'/> [ { "|" <EBNFC name='ConceptIdentifier'/> } ] ) ) [ "=" <EBNFC name='Expr'/> ]
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='ElifSection'>
+	    "elif" "(" <EBNFC name='ImperativeLogicExpr'/> ")" <br/> "{" <br/> [ <EBNFC name='StatementsSet'/> ] <br/> "}" <br/>
 	</TEBNFCDECL>
 </div>
 
