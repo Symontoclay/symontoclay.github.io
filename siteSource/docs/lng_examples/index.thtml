@@ -2283,6 +2283,10 @@ End of `Init`
 
 <LinkToContent/>
 
+<p>
+Read more about "repeat" statement <a href='/docs/spec.html#RepeatStatement_chapter'>here</a>.
+</p>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='WhileStatement'>
@@ -2290,6 +2294,10 @@ End of `Init`
 </h2>
 
 <LinkToContent/>
+
+<p>
+Read more about "while" statement <a href='/docs/spec.html#WhileStatement_chapter'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -2299,6 +2307,10 @@ End of `Init`
 
 <LinkToContent/>
 
+<p>
+Read more about "return" statement <a href='/docs/spec.html#ReturnStatement_chapter'>here</a>.
+</p>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='IfElifElseStatement'>
@@ -2306,6 +2318,10 @@ End of `Init`
 </h2>
 
 <LinkToContent/>
+
+<p>
+Read more about "if-elif-else" statement <a href='/docs/spec.html#IfElifElseStatement_chapter'>here</a>.
+</p>
 
 <complete_me/>
 
@@ -2315,6 +2331,10 @@ End of `Init`
 
 <LinkToContent/>
 
+<p>
+Read more about "continue" loop statement <a href='/docs/spec.html#ContinueLoopStatement_chapter'>here</a>.
+</p>
+
 <complete_me/>
 
 <h2 class='center-h' data-href='BreakLoopStatement'>
@@ -2322,5 +2342,9 @@ End of `Init`
 </h2>
 
 <LinkToContent/>
+
+<p>
+Read more about "break" loop statement <a href='/docs/spec.html#BreakLoopStatement_chapter'>here</a>.
+</p>
 
 <complete_me/>
