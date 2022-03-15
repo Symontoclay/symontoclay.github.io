@@ -2134,7 +2134,48 @@ Member access modifiers
 <EBNFCDECL name='MemberAccessModifiersSectionDecl'/> = <EBNFC name='MemberAccessModifier'/> ":" <br/> [ <GEBNFC name='MemberAccessModifierBodyContent' kind='op_and'/> ] .
 </gr>
 
-<complete_me/>
+<p>
+Use the access modifiers to specify one of the following declared accessibility levels for members.
+</p>
+
+<table class='std-table' style='width: 400px;' border='1' cellspacing='0'>
+    <tr>
+	    <th class='center-h'>Declared accessibility</th>
+		<th class='center-h'>Meaning</th>
+    </tr>
+    <tr>
+	    <td>
+		    public
+		</td>
+	    <td>
+		    Access is not restricted.
+		</td>
+    </tr>
+    <tr>
+	    <td>
+		    protected
+		</td>
+	    <td>
+		    Access is limited to the containing object derived from the containing object.
+		</td>
+    </tr>
+    <tr>
+	    <td>
+		    private
+		</td>
+	    <td>
+		    Access is limited to the containing object.
+		</td>
+    </tr>	
+</table>
+
+<p>
+Access modifiers are optional.
+</p>
+
+<p>
+Code without access modifiers is <b>public</b>.
+</p>
 
 <code data-lng='soc'>
 class Cls1
