@@ -4665,10 +4665,28 @@ You can see examples <a href='/docs/lng_examples/index.html#WhileStatement'>here
 <complete_me/>
 
 <code data-lng='soc'>
-
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+        return;
+    }
 </code>
 
-<complete_me/>
+<code data-lng='soc'>
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+        return 2;
+    }
+</code>
+
+<code data-lng='soc'>
+    fun a(@param) => 
+    {
+        '`a` has been called!' >> @>log;
+        return @param + 2;
+    }
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ReturnStatement'>here</a>.
