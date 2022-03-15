@@ -2128,13 +2128,48 @@ Member access modifiers
 
 <complete_me/>
 
-<h3 class='center-h' data-href='ObjectVariable_chapter'>
-Object's variable
+<h3 class='center-h' data-href='Field_chapter'>
+Field
 </h3>
 
 <LinkToContent/>
 
 <complete_me/>
+
+<gr>
+<EBNFCDECL name='FieldDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'FieldDecl'/> .
+<EBNFCDECL name='FieldDecl'/> = <TEBNFC name='VarDecl'/> ";" .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    @b;
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        @b >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    var @b: number = 2;
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        @b >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
 
 <h3 class='center-h' data-href='Method_chapter'>
 Method
