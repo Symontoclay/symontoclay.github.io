@@ -4876,10 +4876,17 @@ Selects a statement to execute based on the value of a logic expression.
 </gr>
 
 <p>
-
+An <b>if</b> statement with an <b>else</b> part selects one of the two statements to execute based on the value of a Logic expression.
+An <b>if</b> statement executes if the Logic expression evaluates to <b>true</b> (1).
 </p>
 
-<complete_me/>
+<p>
+An <b>if</b> statement without an <b>else</b> part executes its body only if a Logic expression evaluates to <b>true</b> (1).
+</p>
+
+<p>
+You can use <b>elif</b> statements to check multiple conditions.
+</p>
 
 <p>
 <b>if:</b>
