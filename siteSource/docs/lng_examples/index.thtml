@@ -196,6 +196,35 @@ NULL
 End
 </console>
 
+<h3 class='center-h' data-href='Variables_Example3'>
+Example 3
+</h3>
+
+<code data-lng='soc' example-href='/docs/lng_examples/Variables_Example3.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        var @a: number = 2;
+        @a >> @>log;
+        var @b: number;
+        @b >> @>log;
+        var @c;
+        @c >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+2
+NULL
+NULL
+End
+</console>
+
 <h2 class='center-h' data-href='Linguistic_variable'>
 Linguistic variable
 </h2>
@@ -624,7 +653,89 @@ Member access modifiers
 Read more about Member access modifiers <a href='/docs/spec.html#MemberAccessModifiers_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/MemberAccessModifiers_Example1.zip'>
+class Cls1
+{
+protected:
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+}
+
+app PeaceKeeper is Cls1
+{
+private:
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a();
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/MemberAccessModifiers_Example2.zip'>
+class Cls1
+{
+private:
+	{: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+}
+
+app PeaceKeeper is Cls1
+{
+private:
+    on Init =>
+    {
+        'Begin' >> @>log;
+        select {: son($x, $y) :} >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+&lt;no&gt;
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/MemberAccessModifiers_Example3.zip'>
+class Cls1
+{
+protected:
+	{: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+}
+
+app PeaceKeeper is Cls1
+{
+private:
+    on Init =>
+    {
+        'Begin' >> @>log;
+        select {: son($x, $y) :} >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+&lt;yes&gt;
+$y = #piter; $x = #tom
+
+End
+</console>
 
 <h2 class='center-h' data-href='Field'>
 Field
