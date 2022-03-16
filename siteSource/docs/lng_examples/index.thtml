@@ -2783,7 +2783,45 @@ End of `Init`
 Read more about "repeat" statement <a href='/docs/spec.html#RepeatStatement_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/RepeatStatement_Example1.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        @a = 10;
+
+        repeat
+        {
+            @a >> @>log;
+            @a = @a - 1;
+
+            if(@a > 5)
+            {
+                continue;
+            }
+
+            'End of while iteration' >> @>log;
+
+            break;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+10
+9
+8
+7
+6
+End of while iteration
+End
+</console>
 
 <h2 class='center-h' data-href='WhileStatement'>
 "while" statement
@@ -2795,7 +2833,40 @@ Read more about "repeat" statement <a href='/docs/spec.html#RepeatStatement_chap
 Read more about "while" statement <a href='/docs/spec.html#WhileStatement_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/WhileStatement_Example1.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        @a = 10;
+
+        while (@a > 0)
+        {
+            @a >> @>log;
+            @a = @a - 1;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+End
+</console>
 
 <h2 class='center-h' data-href='ReturnStatement'>
 "return" statement
@@ -2807,7 +2878,82 @@ Read more about "while" statement <a href='/docs/spec.html#WhileStatement_chapte
 Read more about "return" statement <a href='/docs/spec.html#ReturnStatement_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/ReturnStatement_Example1.zip'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+        return;
+        '`a` has been ended!' >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a();
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ReturnStatement_Example2.zip'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+        return;
+        '`a` has been ended!' >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a() >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+NULL
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/ReturnStatement_Example3.zip'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+        return 1;
+        '`a` has been ended!' >> @>log;
+    }
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        a() >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+`a` has been called!
+1
+End
+</console>
 
 <h2 class='center-h' data-href='IfElifElseStatement'>
 "if-elif-else" statement
@@ -2819,7 +2965,140 @@ Read more about "return" statement <a href='/docs/spec.html#ReturnStatement_chap
 Read more about "if-elif-else" statement <a href='/docs/spec.html#IfElifElseStatement_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example1.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        @a = 1;
+
+        if(@a)
+        {
+            'Yes!' >> @>log;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Yes!
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example2.zip'>
+app PeaceKeeper
+{
+    {: >: { see(I, #`Barel 1`) } :}
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        if({: >: { see(I, #`Barel 1`) } :})
+        {
+            'Yes!' >> @>log;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Yes!
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example3.zip'>
+app PeaceKeeper
+{
+    {: >: { see(I, #`Barel 1`) } :}
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        if({: >: { see(I, #`Barel 1`) } :})
+        {
+            'Yes!' >> @>log;
+        } else {
+            'Else Yes!' >> @>log;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Yes!
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example4.zip'>
+app PeaceKeeper
+{
+    {: >: { see(I, #`Barel 0`) } :}
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        if({: >: { see(I, #`Barel 0`) } :})
+        {
+            'Yes!' >> @>log;
+        } elif ({: >: { see(I, #`Barel 1`) } :}) {
+            'Elif 1 Yes!' >> @>log;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Yes!
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example5.zip'>
+app PeaceKeeper
+{
+    {: >: { see(I, #`Barel 3`) } :}
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        if({: >: { see(I, #`Barel 0`) } :})
+        {
+            'Yes!' >> @>log;
+        } elif ({: >: { see(I, #`Barel 1`) } :}) {
+            'Elif 1 Yes!' >> @>log;
+        }elif ({: >: { see(I, #`Barel 2`) } :}) {
+            'Elif 2 Yes!' >> @>log;
+        }else{
+            'Else Yes!' >> @>log;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Else Yes!
+End
+</console>
 
 <h2 class='center-h' data-href='ContinueLoopStatement'>
 "continue" loop statement
@@ -2831,7 +3110,45 @@ Read more about "if-elif-else" statement <a href='/docs/spec.html#IfElifElseStat
 Read more about "continue" loop statement <a href='/docs/spec.html#ContinueLoopStatement_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/ContinueLoopStatement_Example1.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        @a = 10;
+
+        repeat
+        {
+            @a >> @>log;
+            @a = @a - 1;
+
+            if(@a > 5)
+            {
+                continue;
+            }
+
+            'End of while iteration' >> @>log;
+
+            break;
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+10
+9
+8
+7
+6
+End of while iteration
+End
+</console>
 
 <h2 class='center-h' data-href='BreakLoopStatement'>
 "break" loop statement
@@ -2843,4 +3160,33 @@ Read more about "continue" loop statement <a href='/docs/spec.html#ContinueLoopS
 Read more about "break" loop statement <a href='/docs/spec.html#BreakLoopStatement_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/BreakLoopStatement_Example1.zip'>
+app PeaceKeeper
+{
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        @a = 10;
+
+        while (@a > 0)
+        {
+            @a >> @>log;
+            @a = @a - 1;
+
+            if(@a > 5)
+            {
+                break;
+            }
+        }
+
+        'End' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+10
+End
+</console>
