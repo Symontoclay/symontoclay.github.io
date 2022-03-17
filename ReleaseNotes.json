@@ -1,5 +1,41 @@
 [
   {
+    "Date": "2022-03-17T00:00:00+02:00",
+    "Version": "0.3.6",
+    "AssetsList": [
+      {
+        "Kind": 11,
+        "Title": "Unity package",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.6/SymOntoClay-0.3.6.unitypackage"
+      },
+      {
+        "Kind": 8,
+        "Title": "Portable CLI (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.6/SymOntoClay-CLI-0.3.6-x64.zip"
+      }
+    ],
+    "Description": "* Member access modifiers\r\n* Field\r\n* Improved variable declaration\r\n* Improved rules and facts\r\n* Improved trigger\r\n* Arithmetic operators\r\n* \"repeat\" statement\r\n* \"while\" statement\r\n* \"return\" statement\r\n* \"if-elif-else\" statement\r\n* \"continue\" loop statement\r\n* \"break\" loop statement\r\n* Fixing issues\r\n",
+    "IsMarkdown": true
+  },
+  {
+    "Date": "2022-02-13T00:00:00+02:00",
+    "Version": "0.3.5",
+    "AssetsList": [
+      {
+        "Kind": 11,
+        "Title": "Unity package",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.5/SymOntoClay-0.3.5.unitypackage"
+      },
+      {
+        "Kind": 8,
+        "Title": "Portable CLI (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.3.5/SymOntoClay-CLI-0.3.5-x64.zip"
+      }
+    ],
+    "Description": "* Conditional entities\r\n* Alias-variable for predicate\r\n* Bus for sound facts\r\n* Player: initial implementation\r\n* Fixing issues\r\n",
+    "IsMarkdown": true
+  },
+  {
     "Date": "2021-12-04T00:00:00+02:00",
     "Version": "0.3.4",
     "AssetsList": [
