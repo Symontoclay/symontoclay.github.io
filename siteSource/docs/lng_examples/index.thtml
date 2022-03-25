@@ -1242,6 +1242,18 @@ End Go
 End
 </console>
 
+<h2 class='center-h' data-href='State'>
+State
+</h2>
+
+<LinkToContent/>
+
+<p>
+Read more <a href='/docs/spec.html#State_chapter'>here</a> about State.
+</p>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>

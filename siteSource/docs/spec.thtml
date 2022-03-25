@@ -422,6 +422,12 @@ But the words can be used as identifiers in other places.
 	<kw name='true'/>
 	<kw name='false'/>
 	<kw name='var'/>
+	<kw name='default'/>
+	<kw name='state'/>
+	<kw name='enter'/>
+	<kw name='leave'/>
+	<kw name='states'/>
+	<kw name='as'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -2030,6 +2036,54 @@ action Go
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='State_chapter'>
+State
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='MutuallyExclusiveStates_chapter'>
+Mutually exclusive states
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='SetDefaultState_chapter'>
+Set default state
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='SetState_chapter'>
+Set state
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='ActivatingClauses_chapter'>
+Activating clauses
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='DeactivatingClauses_chapter'>
+Deactivating clauses
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
 </h2>
@@ -2437,6 +2491,14 @@ In chain of inheritance each Init trigger of the chain will be called in order f
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
+
+<h5 class='center-h' data-href='Enter_Lifecycle_trigger_chapter'>
+Enter
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='Logic_conditional_triggers_chapter'>
 Logic conditional triggers
@@ -5047,7 +5109,49 @@ The <b>break</b> statement transfers control to the statement that follows the t
 You can see examples <a href='/docs/lng_examples/index.html#BreakLoopStatement'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='SetAsDefaultStateStatement_chapter'>
+"Set as default state" statement
+</h3>
 
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='SetAsStateStatement_chapter'>
+"Set as state" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='ContinueStateStatement_chapter'>
+"continue" state statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='BreakStateStatement_chapter'>
+"break" state statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
