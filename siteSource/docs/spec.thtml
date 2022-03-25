@@ -2044,11 +2044,45 @@ State
 
 <complete_me/>
 
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='' groups=''/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
+
 <h4 class='center-h' data-href='MutuallyExclusiveStates_chapter'>
 Mutually exclusive states
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -2060,11 +2094,35 @@ Set default state
 
 <complete_me/>
 
+<p>
+
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='SetState_chapter'>
 Set state
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -2076,11 +2134,35 @@ Activating clauses
 
 <complete_me/>
 
+<p>
+
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='DeactivatingClauses_chapter'>
 Deactivating clauses
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -2497,6 +2579,24 @@ Enter
 </h5>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='' groups=''/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -5117,11 +5217,47 @@ You can see examples <a href='/docs/lng_examples/index.html#BreakLoopStatement'>
 
 <complete_me/>
 
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name=' Statement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='SetAsStateStatement_chapter'>
 "Set as state" statement
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name=' Statement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -5138,6 +5274,24 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 <complete_me/>
 
 <p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name=' Statement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
 
@@ -5146,6 +5300,24 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name=' Statement' groups='Statement'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
