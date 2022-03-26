@@ -2658,8 +2658,13 @@ It is like a constructor in other programming languages.
 </p>
 
 <p>
-Init trigger of <a href='#App_chapter'>App</a> is a first code which is executed for the App.
+<b>Init</b> trigger of <a href='#App_chapter'>App</a> is a first code which is executed for the App.
 So It is an entrypoint of the App.
+</p>
+
+<p>
+<b>Init</b> trigger of <a href='#State_chapter'>State</a> executes on starts <a href='#App_chapter'>App</a> for each <a href='#State_chapter'>State</a> which is available for the <a href='#App_chapter'>App</a>.
+But the <a href='#State_chapter'>State's</a> <b>Init</b> trigger is not entrypoint of the State.
 </p>
 
 <gr>
@@ -2691,19 +2696,14 @@ Enter
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+It is an entrypoint of <a href='#State_chapter'>State</a>.
+<b>Enter</b> trigger executes each time then the <a href='#State_chapter'>State</a> has been activated.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='EnterLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Enter" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 state Attacking
@@ -2717,7 +2717,13 @@ state Attacking
 }
 </code>
 
-<complete_me/>
+<p>
+In chain of inheritance each <b>Enter</b> trigger of the chain will be called in order from the farthest item to the root item.
+</p>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='Logic_conditional_triggers_chapter'>
 Logic conditional triggers
