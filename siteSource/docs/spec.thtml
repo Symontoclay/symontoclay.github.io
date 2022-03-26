@@ -2103,26 +2103,28 @@ Mutually exclusive states
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Declares set of states what can not be active simultaneously.
+If one of states of the set is activated another active state of the set will be deactivated automatically.
 </p>
 
-<complete_me/>
+<p>
+There can be many sets of mutually exclusive states in the code.
+And one state can be in many sets of mutually exclusive states.
+</p>
 
 <gr>
 <EBNFCDECL name='MutuallyExclusiveStatesDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'MutuallyExclusiveStatesDecl'/> .
 <EBNFCDECL name='MutuallyExclusiveStatesDecl'/> = "states" "{" <EBNFC name='StateIdentifier'/> [ { "," <EBNFC name='StateIdentifier'/> } ] "}" .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 states { Idling, Patrolling, Attacking, Fleeing }
 </code>
 
-<complete_me/>
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='SetDefaultStateDirective_chapter'>
 Set default state
