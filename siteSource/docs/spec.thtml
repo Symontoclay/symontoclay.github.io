@@ -2086,7 +2086,7 @@ State can can be automatically deactivated by conditions using <a href='#Deactiv
 
 <p>
 One of States can be set as <b>default state</b> by <a href='#SetDefaultStateDirective_chapter'>"Set default state"</a> directive on <a href='#App_chapter'>App</a> declaration or anytime in any place of code by <a href='#SetAsDefaultStateStatement_chapter'>"Set as default state"</a> statement.
-The <b>default state</b> will be activated if current state is closed withot activation new set explicitly by <a href='#CompleteStateStatement_chapter'>"complete state"</a> or <a href='#BreakStateStatement_chapter'>"break state"</a> statements.
+The <b>default state</b> will be activated if current state is closed without activation new state explicitly by <a href='#CompleteStateStatement_chapter'>"complete state"</a> or <a href='#BreakStateStatement_chapter'>"break state"</a> statements.
 </p>
 
 <code data-lng='soc'>
@@ -2156,19 +2156,17 @@ Set default state
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+One of States can be set as <b>default state</b>.
 </p>
 
-<complete_me/>
+<p>
+The <b>default state</b> will be activated if current state is closed without activation new state explicitly.
+</p>
 
 <gr>
 <EBNFCDECL name='SetDefaultStateDirective' groups='AppBodyContent'/> = <TEBNFC name='SetDefaultStateDecl'/> ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 set Idling as default state;
@@ -2181,7 +2179,9 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='SetStateDirective_chapter'>
 Set state
@@ -2215,6 +2215,10 @@ app PeaceKeeper
 </code>
 
 <complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='ActivatingConditions_chapter'>
 Activating conditions
@@ -2255,6 +2259,10 @@ state Attacking
 
 <complete_me/>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
+
 <h4 class='center-h' data-href='DeactivatingConditions_chapter'>
 Deactivating conditions
 </h4>
@@ -2293,6 +2301,10 @@ state Attacking
 </code>
 
 <complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
@@ -5366,19 +5378,17 @@ You can see examples <a href='/docs/lng_examples/index.html#BreakLoopStatement'>
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+One of States can be set as <b>default state</b>.
 </p>
 
-<complete_me/>
+<p>
+The <b>default state</b> will be activated if current state is closed without activation new state explicitly.
+</p>
 
 <gr>
 <EBNFCDECL name='SetAsDefaultStateStatement' groups='Statement'/> = <TEBNFC name='SetDefaultStateDecl'/> ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 set Idling as default state;
@@ -5398,7 +5408,9 @@ state Patrolling
 }
 </code>
 
-<complete_me/>
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='SetAsStateStatement_chapter'>
 "Set as state" statement
