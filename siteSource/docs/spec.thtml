@@ -2042,26 +2042,52 @@ State
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+State describes behavior which can be turn on or turn off fast.
 </p>
 
-<complete_me/>
+<p>
+State is implementation of <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/State_pattern'>state pattern</a>.
+It is close to the concept of <ico target='Wikipedia'/><a href='https://en.wikipedia.org/wiki/Finite-state_machine'>finite-state machines</a>.
+</p>
+
+<p>
+States and <a href='#App_chapter'>App</a> can be overviewed as partial object with switchable parts that are states.
+States have full access to App's members (even for private).
+State's members are isolated so do not visible for App and another states.
+</p>
 
 <gr>
 <EBNFCDECL name='StateDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
 <EBNFCDECL name='StateDecl'/> = "state" <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='StateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='StateBodyContent'/> = <GEBNFC name='StateBodyContent' kind='op_and'/> .
-<EBNFCDECL name='ActivatingClausesDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'ActivatingClausesDecl'/> .
-<EBNFCDECL name='ActivatingClausesDecl'/> = "enter" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
-<EBNFCDECL name='DeactivatingClausesDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'DeactivatingClausesDecl'/> .
-<EBNFCDECL name='DeactivatingClausesDecl'/> = "leave" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
+<EBNFCDECL name='ActivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'ActivatingConditionsDecl'/> .
+<EBNFCDECL name='ActivatingConditionsDecl'/> = "enter" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
+<EBNFCDECL name='DeactivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'DeactivatingConditionsDecl'/> .
+<EBNFCDECL name='DeactivatingConditionsDecl'/> = "leave" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
 </gr>
 
-<complete_me/>
+<p>
+One State can be automatically activated during starting <a href='#App_chapter'>App</a> by <a href='#SetStateDirective_chapter'>"set state"</a> directive.
+</p>
+
+<p>
+Target State can be activated any time from any place of code by <a href='#SetAsStateStatement_chapter'>"Set as state"</a> statement.
+</p>
+
+<p>
+State can can be automatically activated by conditions using <a href='#ActivatingConditions_chapter'>Activating conditions</a>.
+</p>
+
+<p>
+State can can be automatically deactivated by conditions using <a href='#DeactivatingConditions_chapter'>Deactivating conditions</a>.
+</p>
+
+<p>
+One of States can be set as <b>default state</b> by <a href='#SetDefaultStateDirective_chapter'>"Set default state"</a> directive on <a href='#App_chapter'>App</a> declaration or anytime in any place of code by <a href='#SetAsDefaultStateStatement_chapter'>"Set as default state"</a> statement.
+The <b>default state</b> will be activated if current state is closed withot activation new set explicitly by <a href='#CompleteStateStatement_chapter'>"complete state"</a> or <a href='#BreakStateStatement_chapter'>"break state"</a> statements.
+</p>
 
 <code data-lng='soc'>
 state Attacking
@@ -2090,8 +2116,6 @@ state Attacking
     }
 }
 </code>
-
-<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
@@ -2192,8 +2216,8 @@ app PeaceKeeper
 
 <complete_me/>
 
-<h4 class='center-h' data-href='ActivatingClauses_chapter'>
-Activating clauses
+<h4 class='center-h' data-href='ActivatingConditions_chapter'>
+Activating conditions
 </h4>
 
 <LinkToContent/>
@@ -2231,8 +2255,8 @@ state Attacking
 
 <complete_me/>
 
-<h4 class='center-h' data-href='DeactivatingClauses_chapter'>
-Deactivating clauses
+<h4 class='center-h' data-href='DeactivatingConditions_chapter'>
+Deactivating conditions
 </h4>
 
 <LinkToContent/>
@@ -5270,7 +5294,7 @@ You can see examples <a href='/docs/lng_examples/index.html#IfElifElseStatement'
 </p>
 
 <h3 class='center-h' data-href='ContinueLoopStatement_chapter'>
-"continue" loop statement
+"continue loop" statement
 </h3>
 
 <LinkToContent/>
@@ -5303,7 +5327,7 @@ You can see examples <a href='/docs/lng_examples/index.html#ContinueLoopStatemen
 </p>
 
 <h3 class='center-h' data-href='BreakLoopStatement_chapter'>
-"break" loop statement
+"break loop" statement
 </h3>
 
 <LinkToContent/>
@@ -5419,7 +5443,7 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='CompleteStateStatement_chapter'>
-"complete" state statement
+"complete state" statement
 </h3>
 
 <LinkToContent/>
@@ -5461,7 +5485,7 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='BreakStateStatement_chapter'>
-"break" state statement
+"break state" statement
 </h3>
 
 <LinkToContent/>
