@@ -2410,7 +2410,7 @@ Access modifiers are optional.
 </p>
 
 <p>
-Code without access modifiers is <b>public</b>.
+Code without access modifiers is <b>protected</b>.
 </p>
 
 <code data-lng='soc'>
@@ -2422,7 +2422,7 @@ private:
 	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
 	
 protected:
-    fun a() => 
+    fun a() =>
     {
         '`a` has been called!' >> @>log;
     }
@@ -2653,7 +2653,7 @@ Init
 <LinkToContent/>
 
 <p>
-Initializes an object. 
+Initializes an object.
 It is like a constructor in other programming languages.
 </p>
 
