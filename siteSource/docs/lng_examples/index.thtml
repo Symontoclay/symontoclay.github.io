@@ -1252,7 +1252,353 @@ State
 Read more <a href='/docs/spec.html#State_chapter'>here</a> about State.
 </p>
 
-<complete_me/>
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example1.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+
+    on Init =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+}
+
+states { Idling, Attacking }
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+
+state Attacking
+{
+    enter on:
+        {: see(I, enemy) :}
+
+    leave on:
+        {: see(I, barrel) :}
+
+    on Enter
+    {
+        'Begin Attacking Enter' >> @>log;
+
+        'End Attacking Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin Idling Enter
+Begin
+End Idling Enter
+End
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example2.zip'>
+app PeaceKeeper
+{
+    set Idling as state;
+
+    on Init =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Enter' >> @>log;
+        'End Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Begin Enter
+End
+End Enter
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example3.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+    set Patrolling as state;
+
+    on Init =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+
+state Patrolling
+{
+    on Enter
+    {
+        'Begin Patrolling Enter' >> @>log;
+
+        set Idling as state;
+
+        'End Patrolling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin Patrolling Enter
+Begin
+Begin Idling Enter
+End
+End Idling Enter
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example4.zip'>
+app PeaceKeeper
+{ 
+    set Patrolling as state;
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+
+state Patrolling
+{
+    on Enter
+    {
+        'Begin Patrolling Enter' >> @>log;
+
+        set Idling as default state;
+        complete state;
+
+        'End Patrolling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin Patrolling Enter
+Begin Idling Enter
+End Idling Enter
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example5.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+    set Patrolling as state;
+
+    on Init =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+
+    on {: attack(I, enemy) :}
+    {
+        'D' >> @>log;
+    }
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+
+state Patrolling
+{
+    on Enter
+    {
+        'Begin Patrolling Enter' >> @>log;
+
+        break state {: attack(I, enemy) :};
+
+        'End Patrolling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+End
+Begin Patrolling Enter
+Begin Idling Enter
+End Idling Enter
+D
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example6.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+    set Patrolling as state;
+
+    on Init =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+
+    on {: attack(I, enemy) :}
+    {
+        'D' >> @>log;
+    }
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+
+state Patrolling
+{
+    on Enter
+    {
+        'Begin Patrolling Enter' >> @>log;
+
+        break state;
+
+        'End Patrolling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+Begin Patrolling Enter
+End
+Begin Idling Enter
+End Idling Enter
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example7.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+
+    {: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        
+        select {: son($x, $y) :} >> @>log;
+
+        'End Idling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin Idling Enter
+&lt;yes&gt;
+$y = #piter; $x = #tom
+
+End Idling Enter
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example8.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+
+    on Init =>
+    {
+        'Begin' >> @>log;
+        
+        select {: son($x, $y) :} >> @>log;
+
+        'End' >> @>log;
+    }
+}
+
+state Idling
+{
+    {: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        
+        'End Idling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin
+&lt;no&gt;
+End
+Begin Idling Enter
+End Idling Enter
+</console>
+
+<code data-lng='soc' example-href='/docs/lng_examples/States_Example9.zip'>
+app PeaceKeeper
+{
+    set Idling as default state;
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        ? {: bird ($x) :} >> @>log;
+        insert {: >: { bird (#1234) } :};
+        ? {: bird ($x) :} >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+</code>
+ 
+<console>
+Begin Idling Enter
+&lt;no&gt;
+&lt;yes&gt;
+$x = #1234
+
+End Idling Enter
+</console>
 
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
