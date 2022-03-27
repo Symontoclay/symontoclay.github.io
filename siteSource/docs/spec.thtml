@@ -2227,7 +2227,7 @@ Declares list of conditions for activating <a href='/docs/lng_examples/index.htm
 </p>
 
 <p>
-The State will be activated if It is inactive and at least one of Activating conditions is <b>true</b>.
+The State will be activated automatically if It is inactive and at least one of Activating conditions is <b>true</b>.
 </p>
 
 <code data-lng='soc'>
@@ -2263,13 +2263,13 @@ Deactivating conditions
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Declares list of conditions for deactivating <a href='/docs/lng_examples/index.html#State'>State</a>.
 </p>
 
-<complete_me/>
+<p>
+The State will be deactivated automatically if It is active and at least one of Deactivating conditions is <b>true</b>.
+</p>
 
 <code data-lng='soc'>
 leave on:
@@ -2293,8 +2293,6 @@ state Attacking
     }
 }
 </code>
-
-<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
