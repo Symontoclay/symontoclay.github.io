@@ -2164,6 +2164,8 @@ One of States can be set as <b>default state</b>.
 The <b>default state</b> will be activated if current state is closed without activation new state explicitly.
 </p>
 
+<include path='CommonFragments/how_many_state_directives_and_where.thtml'/>
+
 <gr>
 <EBNFCDECL name='SetDefaultStateDirective' groups='AppBodyContent'/> = <TEBNFC name='SetDefaultStateDecl'/> ";" .
 </gr>
@@ -2189,13 +2191,11 @@ Set state
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Declares target set which will be started automatically with starting <a href='#App_chapter'>App</a>.
 </p>
 
-<complete_me/>
+<include path='CommonFragments/how_many_state_directives_and_where.thtml'/>
 
 <gr>
 <EBNFCDECL name='SetStateDirective' groups='AppBodyContent'/> = <TEBNFC name='SetStateDecl'/> ";" .
@@ -2205,16 +2205,12 @@ Set state
 set Patrolling as state;
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 app PeaceKeeper
 {
     set Patrolling as state;
 }
 </code>
-
-<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.

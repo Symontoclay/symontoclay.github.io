@@ -1,0 +1,5 @@
+<p>
+There can be many directives on one object and on many levels of inheritance.
+There will be used only one directive which has maximal rank of inheritance.
+If object with maximal rank of inheritance has many directives there will be used last (bottom) directive.
+</p>
