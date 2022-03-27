@@ -2146,6 +2146,22 @@ And one state can be in many sets of mutually exclusive states.
 states { Idling, Patrolling, Attacking, Fleeing }
 </code>
 
+<code data-lng='soc'>
+app PeaceKeeper
+{
+}
+
+states { Idling, Attacking }
+
+state Idling
+{
+}
+
+state Attacking
+{
+}
+</code>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
