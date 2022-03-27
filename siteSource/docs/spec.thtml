@@ -2157,7 +2157,7 @@ Set default state
 <LinkToContent/>
 
 <p>
-One of States can be set as <b>default state</b>.
+One of <a href='/docs/lng_examples/index.html#State'>States</a> can be set as <b>default state</b>.
 </p>
 
 <p>
@@ -2222,10 +2222,14 @@ Activating conditions
 
 <LinkToContent/>
 
+<p>
+Declares list of conditions for activating <a href='/docs/lng_examples/index.html#State'>State</a>.
+</p>
+
 <complete_me/>
 
 <p>
-
+The 
 </p>
 
 <complete_me/>
