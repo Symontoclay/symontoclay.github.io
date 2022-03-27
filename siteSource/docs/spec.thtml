@@ -5410,19 +5410,17 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+   Activates target <a href='/docs/lng_examples/index.html#State'>State</a> explicitly.
 </p>
 
-<complete_me/>
+<p>
+   Current State will be deactivated.
+</p>
 
 <gr>
 <EBNFCDECL name='SetAsStateStatement' groups='Statement'/> = <TEBNFC name='SetStateDecl'/> ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 set Idling as state;
@@ -5440,8 +5438,6 @@ state Patrolling
 }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
@@ -5452,19 +5448,13 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Finishes current <a href='/docs/lng_examples/index.html#State'>State</a> and markes It as completed.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='CompleteStateStatement' groups='Statement'/> = "complete" "state" ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 complete state;
@@ -5482,8 +5472,6 @@ state Patrolling
 }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
@@ -5494,19 +5482,18 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Finishes current <a href='/docs/lng_examples/index.html#State'>State</a> and markes It as broken.
 </p>
 
-<complete_me/>
-
 <gr>
-<EBNFCDECL name='BreakStateStatement' groups='Statement'/> = "break" "state" [ <EBNFC name='FactDecl'/> ] ";" .
+<EBNFCDECL name='BreakStateStatement' groups='Statement'/> = "break" "state" [ <EBNFC name='ReasonOfBreakStateStatement'/> ] ";" .
+<EBNFCDECL name='ReasonOfBreakStateStatement'/> = <EBNFC name='FactDecl'/> .
 </gr>
 
-<complete_me/>
+<p>
+If "break state" statement has <EBNFC name='ReasonOfBreakStateStatement'/>, the reason will be put into global storage and <a href='#Logic_conditional_triggers_chapter'>triggers</a> are able to react to the the reason.
+</p>
 
 <code data-lng='soc'>
 break state;
@@ -5537,11 +5524,12 @@ state Patrolling
 }
 </code>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
+
+
+
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
