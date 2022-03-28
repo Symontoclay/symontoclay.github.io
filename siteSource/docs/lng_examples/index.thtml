@@ -8,6 +8,25 @@ Hello world!
 
 <LinkToContent/>
 
+<complete_me/>
+
+<code example_name='HelloWorld_Example1'>
+app PeaceKeeper
+{
+    on Init => 
+	{
+	     "Begin" >> @>log;
+
+	      "End" >> @>log;
+	}
+}
+</code>
+
+<console example_name='HelloWorld_Example1'>
+</console>
+
+<complete_me/>
+
 <code data-lng='soc' example-href='/docs/lng_examples/HelloWorld_Example1.zip'>
 app PeaceKeeper
 {

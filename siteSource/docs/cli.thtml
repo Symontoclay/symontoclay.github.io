@@ -107,3 +107,32 @@ Prints current version of SymOntoClay.
 soc <b>version</b></br>
 soc <b>v</b>
 </p>
+
+<h3 class='center-h' data-href='AdditionalOptions'>
+Additional options
+</h3>
+
+<h4 class='center-h' data-href='NoLogo'>
+-nologo
+</h4>
+
+<p>
+Supresses printing header.
+</p>
+
+<p>
+help <b>-nologo</b>
+</p>
+
+<h4 class='center-h' data-href='Timeout'>
+-timeout
+</h4>
+
+<p>
+Terminates CLI after target milliseconds. 
+CLI will return 0.
+</p>
+
+<p>
+help <b>-timeout</b> 10000
+</p>
