@@ -12,7 +12,7 @@
 	"LngExamplesPath" : "%SITE_SOURCE_PATH%/docs/lng_examples",
 	"DestLngExamplesPath": "docs/lng_examples",
 	"LngExamplesPages": [
-	    "docs/lng_examples/index.html"
+	    "%SITE_SOURCE_PATH%/docs/lng_examples/index.html"
 	],
 	"IgnoredDirs" : [
 	    "%SITE_SOURCE_PATH%/CSharpApiFiles",
