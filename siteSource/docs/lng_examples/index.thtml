@@ -946,14 +946,7 @@ app PeaceKeeper
 <console example_name='FuncExample_7'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_8.zip'>
+<code example_name='FuncExample_8'>
 app PeaceKeeper
 {
     fun a(@param_1, @param_2 = 15)
@@ -973,23 +966,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` (2) has been called!
-12
-15
-End
+
+<console example_name='FuncExample_8'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_9.zip'>
+<code example_name='FuncExample_9'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -1016,22 +997,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-End
+
+<console example_name='FuncExample_9'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_a.zip'>
+<code example_name='FuncExample_10_a'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -1056,23 +1026,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-`a` (number | string) has been called!
-1
-`a` (number | string) has been called!
-Hi
-End
+<console example_name='FuncExample_10_a'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_b.zip'>
+<code example_name='FuncExample_10_b'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -1096,14 +1053,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` (number | string) has been called!
-1
-`a` (number | string) has been called!
-Hi
-End
+
+<console example_name='FuncExample_10_b'>
 </console>
 
 <h2 class='center-h' data-href='Action'>
@@ -1128,14 +1079,7 @@ Read more <a href='/docs/spec.html#CompleteActionStatement_chapter'>here</a> abo
 Read more <a href='/docs/spec.html#BreakActionStatement_chapter'>here</a> about "break action" statement.
 </p>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/ActionExample_1.zip'>
+<code example_name='ActionExample_1'>
 app PeaceKeeper
 {
     on Init =>
@@ -1170,11 +1114,7 @@ action Go
 }
 </code>
 
-<console>
-Begin
-Begin Go
-End Go
-End
+<console example_name='ActionExample_1'>
 </console>
 
 <h2 class='center-h' data-href='State'>
@@ -1187,14 +1127,7 @@ State
 Read more <a href='/docs/spec.html#State_chapter'>here</a> about State.
 </p>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example1.zip'>
+<code example_name='States_Example1'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1233,22 +1166,11 @@ state Attacking
     }
 }
 </code>
- 
-<console>
-Begin Idling Enter
-Begin
-End Idling Enter
-End
+
+<console example_name='States_Example1'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example2.zip'>
+<code example_name='States_Example2'>
 app PeaceKeeper
 {
     set Idling as state;
@@ -1269,22 +1191,11 @@ state Idling
     }
 }
 </code>
- 
-<console>
-Begin
-Begin Enter
-End
-End Enter
+
+<console example_name='States_Example2'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example3.zip'>
+<code example_name='States_Example3'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1318,23 +1229,11 @@ state Patrolling
     }
 }
 </code>
- 
-<console>
-Begin Patrolling Enter
-Begin
-Begin Idling Enter
-End
-End Idling Enter
+
+<console example_name='States_Example3'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example4.zip'>
+<code example_name='States_Example4'>
 app PeaceKeeper
 { 
     set Patrolling as state;
@@ -1362,21 +1261,11 @@ state Patrolling
     }
 }
 </code>
- 
-<console>
-Begin Patrolling Enter
-Begin Idling Enter
-End Idling Enter
+
+<console example_name='States_Example4'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example5.zip'>
+<code example_name='States_Example5'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1415,24 +1304,11 @@ state Patrolling
     }
 }
 </code>
- 
-<console>
-Begin
-End
-Begin Patrolling Enter
-Begin Idling Enter
-End Idling Enter
-D
+
+<console example_name='States_Example5'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example6.zip'>
+<code example_name='States_Example6'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1471,23 +1347,11 @@ state Patrolling
     }
 }
 </code>
- 
-<console>
-Begin
-Begin Patrolling Enter
-End
-Begin Idling Enter
-End Idling Enter
+
+<console example_name='States_Example6'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example7.zip'>
+<code example_name='States_Example7'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1509,23 +1373,11 @@ state Idling
     }
 }
 </code>
- 
-<console>
-Begin Idling Enter
-&lt;yes&gt;
-$y = #piter; $x = #tom
 
-End Idling Enter
+<console example_name='States_Example7'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example8.zip'>
+<code example_name='States_Example8'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1554,23 +1406,11 @@ state Idling
     }
 }
 </code>
- 
-<console>
-Begin
-&lt;no&gt;
-End
-Begin Idling Enter
-End Idling Enter
+
+<console example_name='States_Example8'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/States_Example9.zip'>
+<code example_name='States_Example9'>
 app PeaceKeeper
 {
     set Idling as default state;
@@ -1588,14 +1428,8 @@ state Idling
     }
 }
 </code>
- 
-<console>
-Begin Idling Enter
-&lt;no&gt;
-&lt;yes&gt;
-$x = #1234
 
-End Idling Enter
+<console example_name='States_Example9'>
 </console>
 
 <h2 class='center-h' data-href="Calling_host_method">
@@ -1618,14 +1452,7 @@ Synchronous
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodSynchronousExample1.zip'>
+<code example_name='CallingHostMethodSynchronousExample1'>
 app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -1639,9 +1466,7 @@ app PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<console>
-Begin
-End
+<console example_name='CallingHostMethodSynchronousExample1'>
 </console>
 
 <h3 class='center-h' data-href='Calling_host_method_Asynchronous'>
@@ -1650,10 +1475,7 @@ Asynchronous
 
 <LinkToContent/>
 
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodAsynchronousExample1.zip'>
+<code example_name='CallingHostMethodAsynchronousExample1'>
 app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -1667,9 +1489,7 @@ app PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<console>
-Begin
-End
+<console example_name='CallingHostMethodAsynchronousExample1'>
 </console>
 
 <h2 class='center-h' data-href="Logic_queries">
@@ -1696,7 +1516,7 @@ Read more about facts <a href='/docs/spec.html#Fact_chapter'>here</a>.
 Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_a.zip'>
+<code example_name='LogicQueriesExample_1_a'>
 class exampleClass is human, [0.1] animal
 {
 	{: male(#Tom) :}
@@ -1722,12 +1542,14 @@ app PeaceKeeper is [0.5] exampleClass
 The result of this query:
 </p>
 
-<console>
-Begin
-&lt;yes&gt;
-$y = #piter; $x = #tom
+<console example_name='LogicQueriesExample_1_a'>
+</console>
 
-End
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_b.zip'>
@@ -1868,7 +1690,7 @@ Read more about facts <a href='/docs/spec.html#Fact_chapter'>here</a>.
 Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_3.zip'>
+<code example_name='LogicQueriesExample_3'>
 app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -1882,9 +1704,7 @@ app PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<console>
-Begin
-End
+<console example_name='LogicQueriesExample_3'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_4'>
@@ -1892,6 +1712,13 @@ Example 4
 </h3>
 
 <LinkToContent/>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_a.zip'>
 app PeaceKeeper
@@ -1909,6 +1736,13 @@ app PeaceKeeper
 &lt;yes&gt;
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_b.zip'>
 app PeaceKeeper
 {
@@ -1923,6 +1757,13 @@ app PeaceKeeper
 
 <console>
 &lt;yes&gt;
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_c.zip'>
@@ -1947,6 +1788,13 @@ Example 5
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_a.zip'>
 linvar age for range (0, 150]
 {
@@ -1970,6 +1818,13 @@ app PeaceKeeper
 
 <console>
 &lt;yes&gt;
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_b.zip'>
@@ -1997,6 +1852,13 @@ app PeaceKeeper
 &lt;yes&gt;
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_c.zip'>
 linvar age for range (0, 150]
 {
@@ -2020,6 +1882,13 @@ app PeaceKeeper
 
 <console>
 &lt;yes&gt;
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_d.zip'>
@@ -2047,6 +1916,13 @@ app PeaceKeeper
 &lt;yes&gt;
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_e.zip'>
 linvar age for range (0, 150]
 {
@@ -2070,6 +1946,13 @@ app PeaceKeeper
 
 <console>
 &lt;yes&gt;
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_f.zip'>
@@ -2103,6 +1986,13 @@ Example 6
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample6.zip'>
 app PeaceKeeper
 {
@@ -2128,6 +2018,13 @@ Example 7
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample7.zip'>
 app PeaceKeeper
 {
@@ -2152,6 +2049,13 @@ Example 8
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_a.zip'>
 app PeaceKeeper
 {
@@ -2168,6 +2072,13 @@ app PeaceKeeper
 <console>
 &lt;yes&gt;
 $x = 50
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_b.zip'>
@@ -2194,6 +2105,13 @@ app PeaceKeeper
 <console>
 &lt;yes&gt;
 $x = 50
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_c.zip'>
@@ -2228,6 +2146,13 @@ Example 9
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample9.zip'>
 app PeaceKeeper
 {
@@ -2251,6 +2176,13 @@ Example 10
 </h3>
 
 <LinkToContent/>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample10.zip'>
 app PeaceKeeper
@@ -2276,6 +2208,13 @@ Example 11
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample11.zip'>
 app PeaceKeeper
 {
@@ -2299,6 +2238,13 @@ Example 12
 </h3>
 
 <LinkToContent/>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample12.zip'>
 app PeaceKeeper
@@ -2328,7 +2274,7 @@ Imperative logic operators
 Read more about Imperative logic operators <a href='/docs/spec.html#Relational_operators_chapter'>here</a> and <a href='/docs/spec.html#LogicOp_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ImperativeLogicOperators_Example1.zip'>
+<code example_name='ImperativeLogicOperators_Example1'>
 app PeaceKeeper
 {
     on Init =>
@@ -2348,14 +2294,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Yes!
-End
+
+<console example_name='ImperativeLogicOperators_Example1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ImperativeLogicOperators_Example2.zip'>
+<code example_name='ImperativeLogicOperators_Example2'>
 linvar age for range (0, 150]
 {
     terms:
@@ -2381,11 +2324,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Yes!
-End
+
+<console example_name='ImperativeLogicOperators_Example2'>
 </console>
 
 <h2 class='center-h' data-href='ArithmeticOperators'>
@@ -2398,7 +2338,7 @@ Arithmetic operators
 Read more about Arithmetic operators <a href='/docs/spec.html#ArithmeticOperators_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example1.zip'>
+<code example_name='ArithmeticOperators_Example1'>
 app PeaceKeeper
 {
 private:
@@ -2410,14 +2350,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-2
-End
+
+<console example_name='ArithmeticOperators_Example1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example2.zip'>
+<code example_name='ArithmeticOperators_Example2'>
 app PeaceKeeper
 {
 private:
@@ -2433,14 +2370,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-5
-End
+
+<console example_name='ArithmeticOperators_Example2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example3.zip'>
+<code example_name='ArithmeticOperators_Example3'>
 app PeaceKeeper
 {
 private:
@@ -2452,14 +2386,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-NULL
-End
+
+<console example_name='ArithmeticOperators_Example3'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example4.zip'>
+<code example_name='ArithmeticOperators_Example4'>
 app PeaceKeeper
 {
 private:
@@ -2471,14 +2402,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-1Hi
-End
+
+<console example_name='ArithmeticOperators_Example4'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example5.zip'>
+<code example_name='ArithmeticOperators_Example5'>
 app PeaceKeeper
 {
 private:
@@ -2490,14 +2418,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-2
-End
+
+<console example_name='ArithmeticOperators_Example5'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example6.zip'>
+<code example_name='ArithmeticOperators_Example6'>
 app PeaceKeeper
 {
 private:
@@ -2509,14 +2434,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-12
-End
+
+<console example_name='ArithmeticOperators_Example6'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example7.zip'>
+<code example_name='ArithmeticOperators_Example7'>
 app PeaceKeeper
 {
 private:
@@ -2528,14 +2450,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-3
-End
+
+<console example_name='ArithmeticOperators_Example7'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example8.zip'>
+<code example_name='ArithmeticOperators_Example8'>
 app PeaceKeeper
 {
 private:
@@ -2547,14 +2466,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-NULL
-End
+
+<console example_name='ArithmeticOperators_Example8'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example9.zip'>
+<code example_name='ArithmeticOperators_Example9'>
 app PeaceKeeper
 {
     on Init =>
@@ -2567,14 +2483,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-16
-End
+
+<console example_name='ArithmeticOperators_Example9'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example10.zip'>
+<code example_name='ArithmeticOperators_Example10'>
 app PeaceKeeper
 {
 private:
@@ -2587,14 +2500,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
--4
-End
+
+<console example_name='ArithmeticOperators_Example10'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example11.zip'>
+<code example_name='ArithmeticOperators_Example11'>
 app PeaceKeeper
 {
 private:
@@ -2607,14 +2517,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
--4
-End
+
+<console example_name='ArithmeticOperators_Example11'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example12.zip'>
+<code example_name='ArithmeticOperators_Example12'>
 app PeaceKeeper
 {
 private:
@@ -2627,14 +2534,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-4
-End
+
+<console example_name='ArithmeticOperators_Example12'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ArithmeticOperators_Example13.zip'>
+<code example_name='ArithmeticOperators_Example13'>
 app PeaceKeeper
 {
 private:
@@ -2647,11 +2551,8 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-4
-End
+
+<console example_name='ArithmeticOperators_Example13'>
 </console>
 
 <h2 class='center-h' data-href='Logic_сonditional_triggers'>
@@ -2672,7 +2573,7 @@ In Unity scene facts are provided by perception channels.
 Read more about Logic сonditional triggers <a href='/docs/spec.html#Logic_conditional_triggers_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicConditional_Trigger_Example_1.zip'>
+<code example_name='LogicConditional_Trigger_Example_1'>
 app MyNPC
 {
     {: barrel(#`Barel 1`) :}
@@ -2693,13 +2594,10 @@ app MyNPC
 }
 </code>
 
-<console>
-Begin
-End
-Logic condition fired!!!!
+<console example_name='LogicConditional_Trigger_Example_1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicConditional_Trigger_Example3.zip'>
+<code example_name='LogicConditional_Trigger_Example3'>
 app PeaceKeeper
 {
     @a = #`gun 1`;
@@ -2716,10 +2614,8 @@ app PeaceKeeper
 	}
 }
 </code>
- 
-<console>
-Begin
-D
+
+<console example_name='LogicConditional_Trigger_Example3'>
 </console>
 
 <p>
@@ -2730,7 +2626,7 @@ This trigger binds captured in logic variable value with imperative variable.
 Read more about binding variables <a href='/docs/spec.html#Logic_сonditional_triggers_Binding_variables_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicConditional_Trigger_Example_2.zip'>
+<code example_name='LogicConditional_Trigger_Example_2'>
 app PeaceKeeper
 {
     {: barrel(#a) :}
@@ -2743,8 +2639,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-#a
+<console example_name='LogicConditional_Trigger_Example_2'>
 </console>
 
 <h2 class='center-h' data-href='Error_handling'>
@@ -2757,7 +2652,7 @@ Error handling
 Read more about error handling <a href='/docs/spec.html#Error_handling_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_1.zip'>
+<code example_name='ErrorProcessingExample_1'>
 app PeaceKeeper
 {
     fun a(@param_1) =>
@@ -2809,18 +2704,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-catch(@e) where {: see(I, $x) :}
-ERROR: {: #ffe7cbb0-7db0-439b-81f4-0d036b8410e8 &gt;: { see(i,#a) } :}
-ensure
-End of `Init`
+
+<console example_name='ErrorProcessingExample_1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_2.zip'>
+<code example_name='ErrorProcessingExample_2'>
 app PeaceKeeper
 {
     fun a(@param_1) =>
@@ -2878,20 +2766,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-catch(@e) where {: see(I, $x) :}
-ERROR: {: #a7fe49fa-2dbe-4192-94fc-390d444c428b &gt;: { see(i,#a) } :}
-on Fired
-ensure
-#a
-End of `Init`
+
+<console example_name='ErrorProcessingExample_2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_3.zip'>
+<code example_name='ErrorProcessingExample_3'>
 app PeaceKeeper
 {
     fun a(@param_1) =>
@@ -2921,16 +2800,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-catch
-End of `Init`
+
+<console example_name='ErrorProcessingExample_3'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_4.zip'>
+<code example_name='ErrorProcessingExample_4'>
 app PeaceKeeper
 {
     fun a(@param_1) =>
@@ -2964,16 +2838,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-catch
-End of `Init`
+
+<console example_name='ErrorProcessingExample_4'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_5.zip'>
+<code example_name='ErrorProcessingExample_5'>
 app PeaceKeeper
 {
     fun a(@param_1) =>
@@ -3011,17 +2880,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-catch
-ensure
-End of `Init`
+
+<console example_name='ErrorProcessingExample_5'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_6.zip'>
+<code example_name='ErrorProcessingExample_6'>
 app PeaceKeeper
 {
     fun a(@param_1) =>
@@ -3047,15 +2910,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-End of `Init`
+
+<console example_name='ErrorProcessingExample_6'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_7.zip'>
+<code example_name='ErrorProcessingExample_7'>
 app PeaceKeeper
 {
     on Init =>
@@ -3075,13 +2934,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-End of `Init`
+
+<console example_name='ErrorProcessingExample_7'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_8.zip'>
+<code example_name='ErrorProcessingExample_8'>
 app PeaceKeeper
 {
     on Init =>
@@ -3101,14 +2958,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-ensure
-End of `Init`
+
+<console example_name='ErrorProcessingExample_8'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ErrorProcessingExample_9.zip'>
+<code example_name='ErrorProcessingExample_9'>
 app PeaceKeeper
 {
     on Init =>
@@ -3132,11 +2986,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-ensure
-End of `Init`
+
+<console example_name='ErrorProcessingExample_9'>
 </console>
 
 <h2 class='center-h' data-href='RepeatStatement'>
@@ -3149,7 +3000,7 @@ End of `Init`
 Read more about "repeat" statement <a href='/docs/spec.html#RepeatStatement_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/RepeatStatement_Example1.zip'>
+<code example_name='RepeatStatement_Example1'>
 app PeaceKeeper
 {
     on Init =>
@@ -3177,16 +3028,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-10
-9
-8
-7
-6
-End of while iteration
-End
+
+<console example_name='RepeatStatement_Example1'>
 </console>
 
 <h2 class='center-h' data-href='WhileStatement'>
@@ -3199,7 +3042,7 @@ End
 Read more about "while" statement <a href='/docs/spec.html#WhileStatement_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/WhileStatement_Example1.zip'>
+<code example_name='WhileStatement_Example1'>
 app PeaceKeeper
 {
     on Init =>
@@ -3218,20 +3061,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-End
+
+<console example_name='WhileStatement_Example1'>
 </console>
 
 <h2 class='center-h' data-href='ReturnStatement'>
@@ -3244,7 +3075,7 @@ End
 Read more about "return" statement <a href='/docs/spec.html#ReturnStatement_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ReturnStatement_Example1.zip'>
+<code example_name='ReturnStatement_Example1'>
 app PeaceKeeper
 {
     fun a() => 
@@ -3262,14 +3093,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-End
+
+<console example_name='ReturnStatement_Example1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ReturnStatement_Example2.zip'>
+<code example_name='ReturnStatement_Example2'>
 app PeaceKeeper
 {
     fun a() => 
@@ -3287,15 +3115,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-NULL
-End
+
+<console example_name='ReturnStatement_Example2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ReturnStatement_Example3.zip'>
+<code example_name='ReturnStatement_Example3'>
 app PeaceKeeper
 {
     fun a() => 
@@ -3313,12 +3137,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-End
+
+<console example_name='ReturnStatement_Example3'>
 </console>
 
 <h2 class='center-h' data-href='IfElifElseStatement'>
@@ -3331,7 +3151,7 @@ End
 Read more about "if-elif-else" statement <a href='/docs/spec.html#IfElifElseStatement_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example1.zip'>
+<code example_name='IfElifElseStatement_Example1'>
 app PeaceKeeper
 {
     on Init =>
@@ -3349,14 +3169,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Yes!
-End
+
+<console example_name='IfElifElseStatement_Example1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example2.zip'>
+<code example_name='IfElifElseStatement_Example2'>
 app PeaceKeeper
 {
     {: >: { see(I, #`Barel 1`) } :}
@@ -3374,14 +3191,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Yes!
-End
+
+<console example_name='IfElifElseStatement_Example2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example3.zip'>
+<code example_name='IfElifElseStatement_Example3'>
 app PeaceKeeper
 {
     {: >: { see(I, #`Barel 1`) } :}
@@ -3401,14 +3215,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Yes!
-End
+
+<console example_name='IfElifElseStatement_Example3'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example4.zip'>
+<code example_name='IfElifElseStatement_Example4'>
 app PeaceKeeper
 {
     {: >: { see(I, #`Barel 0`) } :}
@@ -3428,14 +3239,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Yes!
-End
+
+<console example_name='IfElifElseStatement_Example4'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/IfElifElseStatement_Example5.zip'>
+<code example_name='IfElifElseStatement_Example5'>
 app PeaceKeeper
 {
     {: >: { see(I, #`Barel 3`) } :}
@@ -3459,11 +3267,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-Else Yes!
-End
+
+<console example_name='IfElifElseStatement_Example5'>
 </console>
 
 <h2 class='center-h' data-href='ContinueLoopStatement'>
@@ -3476,7 +3281,7 @@ End
 Read more about "continue" loop statement <a href='/docs/spec.html#ContinueLoopStatement_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/ContinueLoopStatement_Example1.zip'>
+<code example_name='ContinueLoopStatement_Example1'>
 app PeaceKeeper
 {
     on Init =>
@@ -3504,16 +3309,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-10
-9
-8
-7
-6
-End of while iteration
-End
+
+<console example_name='ContinueLoopStatement_Example1'>
 </console>
 
 <h2 class='center-h' data-href='BreakLoopStatement'>
@@ -3526,7 +3323,7 @@ End
 Read more about "break" loop statement <a href='/docs/spec.html#BreakLoopStatement_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/BreakLoopStatement_Example1.zip'>
+<code example_name='BreakLoopStatement_Example1'>
 app PeaceKeeper
 {
     on Init =>
@@ -3550,9 +3347,6 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-10
-End
+
+<console example_name='BreakLoopStatement_Example1'>
 </console>
