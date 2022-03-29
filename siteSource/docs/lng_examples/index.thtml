@@ -22,30 +22,11 @@ app PeaceKeeper
 }
 </code>
 
-<console example_name='HelloWorld_Example1'>
-</console>
-
-<complete_me/>
-
-<code data-lng='soc' example-href='/docs/lng_examples/HelloWorld_Example1.zip'>
-app PeaceKeeper
-{
-    on Init => 
-	{
-	     "Begin" >> @>log;
-
-	      "End" >> @>log;
-	}
-}
-</code>
-
 <p>
 <a href='/docs/spec.html#Init_Lifecycle_trigger_chapter'>Init life cycle trigger</a> is executed. <a href='/docs/spec.html#String_literal_chapter'>Strings</a> are wrritten into <a href='/docs/spec.html#Log_system_channel_chapter'>log channel</a>.
 </p>
 
-<console>
-Begin
-End
+<console example_name='HelloWorld_Example1'>
 </console>
 
 <h2 class='center-h' data-href="Comments">
@@ -64,7 +45,7 @@ Single line comment
 Read more about Single line comment <a href='/docs/spec.html#Comments_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/SingleLineComment.zip'>
+<code example_name='SingleLineComment'>
 app PeaceKeeper
 {
     on Init => 
@@ -79,10 +60,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-NULL
-End
+<console example_name='SingleLineComment'>
 </console>
 
 <h3 class='center-h' data-href='Multi_line_comment'>
@@ -95,7 +73,7 @@ Multi line comment
 Read more about Multi line comment <a href='/docs/spec.html#Comments_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/MultiLineComment.zip'>
+<code example_name='MultiLineComment'>
 app PeaceKeeper
 {
     on Init => 
@@ -110,9 +88,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-End
+<console example_name='MultiLineComment'>
 </console>
 
 <h2 class='center-h' data-href='NULL'>
@@ -123,7 +99,7 @@ NULL
 Read more about <b>NULL</b> <a href='/docs/spec.html#NULL_literal_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/NullExample.zip'>
+<code example_name='NullExample'>
 app Example
 {
     on Init =>
@@ -136,10 +112,7 @@ app Example
 }
 </code>
 
-<console>
-Begin
-NULL
-End
+<console example_name='NullExample'>
 </console>
 
 <h2 class='center-h' data-href="Variables">
@@ -163,7 +136,7 @@ Here 1 is alternately assigned to variables <b>@r</b> and <b>@b</b>.
 So the variable <b>@b</b> will contain 1.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/Variables_Example1.zip'>
+<code example_name='Variables_Example1'>
 app PeaceKeeper
 {
     on Init => 
@@ -178,10 +151,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-1
-End
+<console example_name='Variables_Example1'>
 </console>
 
 <h3 class='center-h' data-href='Variables_Example_2'>
@@ -194,7 +164,7 @@ Example 2
 A variable <b>@bx</b> has never been being assigned. So It contains default value <b>NULL</b>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/Variables_Example2.zip'>
+<code example_name='Variables_Example2'>
 app PeaceKeeper
 {
     on Init => 
@@ -209,17 +179,14 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-NULL
-End
+<console example_name='Variables_Example2'>
 </console>
 
 <h3 class='center-h' data-href='Variables_Example3'>
 Example 3
 </h3>
 
-<code data-lng='soc' example-href='/docs/lng_examples/Variables_Example3.zip'>
+<code example_name='Variables_Example3'>
 app PeaceKeeper
 {
     on Init =>
@@ -235,13 +202,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-2
-NULL
-NULL
-End
+
+<console example_name='Variables_Example3'>
 </console>
 
 <h2 class='center-h' data-href='Linguistic_variable'>
@@ -260,7 +222,7 @@ Full declaration
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableFullDeclaration1.zip'>
+<code example_name='LinguisticVariableFullDeclaration1'>
 linvar age for range (0, 150]
 {
     constraints:
@@ -272,7 +234,7 @@ linvar age for range (0, 150]
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableFullDeclaration2.zip'>
+<code example_name='LinguisticVariableFullDeclaration2'>
 linvar logic for range [0, 1]
 {
     constraints:
@@ -293,7 +255,7 @@ Minimal declaration
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableMinimalDeclaration1.zip'>
+<code example_name='LinguisticVariableMinimalDeclaration1'>
 linvar age
 {
     terms:
@@ -301,7 +263,7 @@ linvar age
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableMinimalDeclaration2.zip'>
+<code example_name='LinguisticVariableMinimalDeclaration2'>
 linvar age
 {
     `teenager` = Trapezoid(10, 12, 17, 20);
@@ -314,7 +276,7 @@ With ranges
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange1.zip'>
+<code example_name='LinguisticVariableWithRange1'>
 linvar age for range (-∞, +∞)
 {
     terms:
@@ -326,7 +288,7 @@ linvar age for range (-∞, +∞)
 This range is also from negative infinity to positive infinity:
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange2.zip'>
+<code example_name='LinguisticVariableWithRange2'>
 linvar age for range (*, *)
 {
     terms:
@@ -338,7 +300,7 @@ linvar age for range (*, *)
 This range is open.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange3.zip'>
+<code example_name='LinguisticVariableWithRange3'>
 linvar age for range (0, 150)
 {
     terms:
@@ -350,7 +312,7 @@ linvar age for range (0, 150)
 This range is closed.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange4.zip'>
+<code example_name='LinguisticVariableWithRange4'>
 linvar age for range [0, 150]
 {
     terms:
@@ -362,7 +324,7 @@ linvar age for range [0, 150]
 This range is left-open and right-closed.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange5.zip'>
+<code example_name='LinguisticVariableWithRange5'>
 linvar age for range (0, 150]
 {
     terms:
@@ -374,7 +336,7 @@ linvar age for range (0, 150]
 This range is left-closed and right-open.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithRange6.zip'>
+<code example_name='LinguisticVariableWithRange6'>
 linvar age for range [0, 150)
 {
     terms:
@@ -388,7 +350,7 @@ With constraints
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints1.zip'>
+<code example_name='LinguisticVariableWithConstraints1'>
 linvar age
 {
     constraints:
@@ -400,7 +362,7 @@ linvar age
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints2.zip'>
+<code example_name='LinguisticVariableWithConstraints2'>
 linvar age
 {
     constraints:
@@ -412,7 +374,7 @@ linvar age
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints3.zip'>
+<code example_name='LinguisticVariableWithConstraints3'>
 linvar age for range (0, 150]
 {
     constraints:
@@ -423,7 +385,7 @@ linvar age for range (0, 150]
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints4.zip'>
+<code example_name='LinguisticVariableWithConstraints4'>
 linvar age for range (0, 150]
 {
     constraints:
@@ -434,7 +396,7 @@ linvar age for range (0, 150]
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints5.zip'>
+<code example_name='LinguisticVariableWithConstraints5'>
 linvar age for range (0, 150]
 {
     constraints:
@@ -445,7 +407,7 @@ linvar age for range (0, 150]
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariableWithConstraints6.zip'>
+<code example_name='LinguisticVariableWithConstraints6'>
 linvar age for range (0, 150]
 {
     constraints:
@@ -468,7 +430,7 @@ L Function
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionLFunction1.zip'>
+<code example_name='LinguisticVariablePredefinedMembershipFunctionLFunction1'>
 linvar age for range (0, 150]
 {
 	`teenager` = L(5, 10);
@@ -481,7 +443,7 @@ Trapezoid Function
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionTrapezoidFunction1.zip'>
+<code example_name='LinguisticVariablePredefinedMembershipFunctionTrapezoidFunction1'>
 linvar age for range (0, 150]
 {
     `teenager` = Trapezoid(10, 12, 17, 20);
@@ -494,14 +456,14 @@ S Function
 
 <LinkToContent/>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionSFunction1.zip'>
+<code example_name='LinguisticVariablePredefinedMembershipFunctionSFunction1'>
 linvar age for range (0, 150]
 {
     `teenager` = S(12, 17, 22);
 }
 </code>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LinguisticVariablePredefinedMembershipFunctionSFunction2.zip'>
+<code example_name='LinguisticVariablePredefinedMembershipFunctionSFunction2'>
 linvar age for range (0, 150]
 {
     `teenager` = S(12, 22);
@@ -522,7 +484,7 @@ Here It is example of changin relationship run time using operator <a href='/doc
 Read more <a href='/docs/spec.html#Inheritance_chapter'>here</a> about inheritance in SymOntoClay DSL.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample1.zip'>
+<code example_name='InheritanceExample1'>
 app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -554,23 +516,14 @@ app PeaceKeeper is [0.5] exampleClass
 }
 </code>
 
-<console>
-Begin
-0
-1
-0.5
-0.5
-0
-1
-1
-End
+<console example_name='InheritanceExample1'>
 </console>
 
 <p>
 Using non-numeric fuzzy value:
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample2.zip'>
+<code example_name='InheritanceExample2'>
 linvar logic for range [0, 1]
 {
     constraints:
@@ -604,19 +557,10 @@ app PeaceKeeper is [middle] exampleClass
 }
 </code>
 
-<console>
-Begin
-0
-1
-0.5
-0.5
-0
-1
-1
-End
+<console example_name='InheritanceExample2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/InheritanceExample3.zip'>
+<code example_name='InheritanceExample3'>
 linvar logic for range [0, 1]
 {
     constraints:
@@ -650,16 +594,7 @@ app PeaceKeeper is [very middle] exampleClass
 }
 </code>
 
-<console>
-Begin
-0
-1
-0.5
-0.5
-0
-1
-1
-End
+<console example_name='InheritanceExample3'>
 </console>
 
 <h2 class='center-h' data-href='MemberAccessModifiers'>
@@ -672,7 +607,7 @@ Member access modifiers
 Read more about Member access modifiers <a href='/docs/spec.html#MemberAccessModifiers_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/MemberAccessModifiers_Example1.zip'>
+<code example_name='MemberAccessModifiers_Example1'>
 class Cls1
 {
 protected:
@@ -693,14 +628,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-End
+
+<console example_name='MemberAccessModifiers_Example1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/MemberAccessModifiers_Example2.zip'>
+<code example_name='MemberAccessModifiers_Example2'>
 class Cls1
 {
 private:
@@ -720,14 +652,11 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-&lt;no&gt;
-End
+
+<console example_name='MemberAccessModifiers_Example2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/MemberAccessModifiers_Example3.zip'>
+<code example_name='MemberAccessModifiers_Example3'>
 class Cls1
 {
 protected:
@@ -747,13 +676,8 @@ private:
     }
 }
 </code>
- 
-<console>
-Begin
-&lt;yes&gt;
-$y = #piter; $x = #tom
 
-End
+<console example_name='MemberAccessModifiers_Example3'>
 </console>
 
 <h2 class='center-h' data-href='Field'>
@@ -766,7 +690,7 @@ Field
 Read more about Field <a href='/docs/spec.html#Field_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/Field_Example1.zip'>
+<code example_name='Field_Example1'>
 app PeaceKeeper
 {
     @b;
@@ -779,14 +703,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-NULL
-End
+
+<console example_name='Field_Example1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/Field_Example2.zip'>
+<code example_name='Field_Example2'>
 app PeaceKeeper
 {
     var @b: number = 2;
@@ -799,11 +720,8 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-2
-End
+
+<console example_name='Field_Example2'>
 </console>
 
 <h2 class='center-h' data-href='Function'>
@@ -820,7 +738,7 @@ Read more about Function <a href='/docs/spec.html#Function_chapter'>here</a>.
 Read more about Method <a href='/docs/spec.html#Method_chapter'>here</a>.
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_1.zip'>
+<code example_name='FuncExample_1'>
 app PeaceKeeper
 {
     fun a() => 
@@ -836,14 +754,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-End
+
+<console example_name='FuncExample_1'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_1_a.zip'>
+<code example_name='FuncExample_1_a'>
 app PeaceKeeper
 {
     fun a()
@@ -860,13 +775,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-`a` has been called!
-End
+<console example_name='FuncExample_1_a'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_2.zip'>
+<code example_name='FuncExample_2'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -884,14 +796,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-`a` has been called!
-1
-End
+<console example_name='FuncExample_2'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_2_a.zip'>
+<code example_name='FuncExample_2_a'>
 fun a(@param_1)
 {
     '`a` (any) has been called!' >> @>log;
@@ -908,15 +816,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` (any) has been called!
-1
-End
+
+<console example_name='FuncExample_2_a'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_3.zip'>
+<code example_name='FuncExample_3'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -933,15 +837,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-End
+
+<console example_name='FuncExample_3'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_4.zip'>
+<code example_name='FuncExample_4'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -958,15 +858,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` has been called!
-1
-End
+
+<console example_name='FuncExample_4'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_5.zip'>
+<code example_name='FuncExample_5'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -986,14 +882,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-Begin
-`a` has been called!
-12
-End
+<console example_name='FuncExample_5'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_6.zip'>
+<code example_name='FuncExample_6'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -1019,15 +911,11 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` (1) has been called!
-12
-End
+
+<console example_name='FuncExample_6'>
 </console>
 
-<code data-lng='soc' example-href='/docs/lng_examples/FuncExample_7.zip'>
+<code example_name='FuncExample_7'>
 app PeaceKeeper
 {
     fun a(@param_1)
@@ -1054,15 +942,15 @@ app PeaceKeeper
     }
 }
 </code>
- 
-<console>
-Begin
-`a` (1) has been called!
-12
-`a` (2) has been called!
-3
-Hi
-End
+
+<console example_name='FuncExample_7'>
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_8.zip'>
@@ -1092,6 +980,13 @@ Begin
 12
 15
 End
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_9.zip'>
@@ -1129,6 +1024,13 @@ Begin
 End
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_a.zip'>
 app PeaceKeeper
 {
@@ -1161,6 +1063,13 @@ Begin
 `a` (number | string) has been called!
 Hi
 End
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/FuncExample_10_b.zip'>
@@ -1219,6 +1128,13 @@ Read more <a href='/docs/spec.html#CompleteActionStatement_chapter'>here</a> abo
 Read more <a href='/docs/spec.html#BreakActionStatement_chapter'>here</a> about "break action" statement.
 </p>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/ActionExample_1.zip'>
 app PeaceKeeper
 {
@@ -1271,6 +1187,13 @@ State
 Read more <a href='/docs/spec.html#State_chapter'>here</a> about State.
 </p>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example1.zip'>
 app PeaceKeeper
 {
@@ -1318,6 +1241,13 @@ End Idling Enter
 End
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example2.zip'>
 app PeaceKeeper
 {
@@ -1345,6 +1275,13 @@ Begin
 Begin Enter
 End
 End Enter
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example3.zip'>
@@ -1390,6 +1327,13 @@ End
 End Idling Enter
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example4.zip'>
 app PeaceKeeper
 { 
@@ -1423,6 +1367,13 @@ state Patrolling
 Begin Patrolling Enter
 Begin Idling Enter
 End Idling Enter
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example5.zip'>
@@ -1474,6 +1425,13 @@ End Idling Enter
 D
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example6.zip'>
 app PeaceKeeper
 {
@@ -1522,6 +1480,13 @@ Begin Idling Enter
 End Idling Enter
 </console>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example7.zip'>
 app PeaceKeeper
 {
@@ -1551,6 +1516,13 @@ Begin Idling Enter
 $y = #piter; $x = #tom
 
 End Idling Enter
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example8.zip'>
@@ -1589,6 +1561,13 @@ Begin
 End
 Begin Idling Enter
 End Idling Enter
+</console>
+
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
 </console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/States_Example9.zip'>
@@ -1639,6 +1618,13 @@ Synchronous
 
 <LinkToContent/>
 
+<code example_name=''>
+
+</code>
+
+<console example_name=''>
+</console>
+
 <code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodSynchronousExample1.zip'>
 app PeaceKeeper is [0.5] exampleClass
 {
@@ -1663,6 +1649,9 @@ Asynchronous
 </h3>
 
 <LinkToContent/>
+
+<console example_name=''>
+</console>
 
 <code data-lng='soc' example-href='/docs/lng_examples/CallingHostMethodAsynchronousExample1.zip'>
 app PeaceKeeper is [0.5] exampleClass
