@@ -1,0 +1,7 @@
+Begin
+`a` has been called!
+1
+catch(@e) where {: see(I, $x) :}
+ERROR {: #4049fd8b-d681-4460-b96c-5e87d45f41cd &gt;: { see(i,#a) } :}
+ensure
+End of `Init`
