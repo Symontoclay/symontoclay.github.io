@@ -633,7 +633,7 @@ It is root object and entry point of <a href='/docs/engine_concepts/index.html#C
 <code data-lng='soc'>
 app PeaceKeeper
 {
-    on Init => 
+    on Enter => 
 	{
     }
 }
@@ -642,7 +642,7 @@ app PeaceKeeper
 <code data-lng='soc'>
 app PeaceKeeper is human
 {
-    on Init => 
+    on Enter => 
 	{
     }
 }
@@ -2480,7 +2480,7 @@ public:
 app PeaceKeeper is Cls1
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         select {: son($x, $y) :} >> @>log;
@@ -2518,7 +2518,7 @@ app PeaceKeeper
 {
     @b;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @b >> @>log;
@@ -2532,7 +2532,7 @@ app PeaceKeeper
 {
     var @b: number = 2;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @b >> @>log;
@@ -2692,8 +2692,8 @@ If there exist inheritance relation between object, then life cycle triggers of 
 <EBNFCDECL name='LifecycleTriggerIdentifier'/> = <GEBNFC name='LifecycleTriggerIdentifier' kind='or' /> .
 </gr>
 
-<h5 class='center-h' data-href='Init_Lifecycle_trigger_chapter'>
-Init
+<h5 class='center-h' data-href='Enter_Lifecycle_trigger_chapter'>
+Enter
 </h5>
 
 <LinkToContent/>
@@ -2704,52 +2704,29 @@ It is like a constructor in other programming languages.
 </p>
 
 <p>
-<b>Init</b> trigger of <a href='#App_chapter'>App</a> is a first code which is executed for the App.
+<b>Enter</b> trigger of <a href='#App_chapter'>App</a> is a first code which is executed for the App.
 So It is an entrypoint of the App.
 </p>
 
 <p>
-<b>Init</b> trigger of <a href='#State_chapter'>State</a> executes on starts <a href='#App_chapter'>App</a> for each <a href='#State_chapter'>State</a> which is available for the <a href='#App_chapter'>App</a>.
-But the <a href='#State_chapter'>State's</a> <b>Init</b> trigger is not entrypoint of the State.
+Also It is an entrypoint of <a href='#State_chapter'>State</a> and <a href='#Action_chapter'>Action</a>.
+<b>Enter</b> trigger executes each time then the <a href='#State_chapter'>State</a> or <a href='#Action_chapter'>Action</a> has been activated.
 </p>
 
 <gr>
-<EBNFCDECL name='InitLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Init" .
+<EBNFCDECL name='EnterLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Enter" .
 </gr>
 
 <code data-lng='soc'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;        
         'End' >> @>log;
     }
 }
 </code>
-
-<p>
-In chain of inheritance each <b>Init</b> trigger of the chain will be called in order from the farthest item to the root item.
-</p>
-
-<p>
-You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
-</p>
-
-<h5 class='center-h' data-href='Enter_Lifecycle_trigger_chapter'>
-Enter
-</h5>
-
-<LinkToContent/>
-
-<p>
-It is an entrypoint of <a href='#State_chapter'>State</a>.
-<b>Enter</b> trigger executes each time then the <a href='#State_chapter'>State</a> has been activated.
-</p>
-
-<gr>
-<EBNFCDECL name='EnterLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Enter" .
-</gr>
 
 <code data-lng='soc'>
 state Attacking
@@ -2768,7 +2745,7 @@ In chain of inheritance each <b>Enter</b> trigger of the chain will be called in
 </p>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
 
 <h4 class='center-h' data-href='Logic_conditional_triggers_chapter'>
@@ -4564,7 +4541,7 @@ error {: see(I, #a) :};
 <code data-lng='soc'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         error {: see(I, #a) :};
     }
@@ -4745,7 +4722,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4780,7 +4757,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -4802,7 +4779,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4815,7 +4792,7 @@ app PeaceKeeper
             'catch' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -4837,7 +4814,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4854,7 +4831,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -4866,7 +4843,7 @@ app PeaceKeeper
 <code data-lng='soc'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4879,7 +4856,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -4891,7 +4868,7 @@ app PeaceKeeper
 <code data-lng='soc'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4904,7 +4881,7 @@ app PeaceKeeper
             'else' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -4916,7 +4893,7 @@ app PeaceKeeper
 <code data-lng='soc'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4933,7 +4910,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -4955,7 +4932,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -4964,7 +4941,7 @@ app PeaceKeeper
             'End' >> @>log;        
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
