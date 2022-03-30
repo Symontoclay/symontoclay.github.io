@@ -13,7 +13,7 @@ Hello world!
 <code example_name='HelloWorld_Example1'>
 app PeaceKeeper
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -23,7 +23,7 @@ app PeaceKeeper
 </code>
 
 <p>
-<a href='/docs/spec.html#Init_Lifecycle_trigger_chapter'>Init life cycle trigger</a> is executed. <a href='/docs/spec.html#String_literal_chapter'>Strings</a> are wrritten into <a href='/docs/spec.html#Log_system_channel_chapter'>log channel</a>.
+<a href='/docs/spec.html#Enter_Lifecycle_trigger_chapter'>Enter life cycle trigger</a> is executed. <a href='/docs/spec.html#String_literal_chapter'>Strings</a> are wrritten into <a href='/docs/spec.html#Log_system_channel_chapter'>log channel</a>.
 </p>
 
 <console example_name='HelloWorld_Example1'>
@@ -48,7 +48,7 @@ Read more about Single line comment <a href='/docs/spec.html#Comments_chapter'>h
 <code example_name='SingleLineComment'>
 app PeaceKeeper
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -76,7 +76,7 @@ Read more about Multi line comment <a href='/docs/spec.html#Comments_chapter'>he
 <code example_name='MultiLineComment'>
 app PeaceKeeper
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -102,7 +102,7 @@ Read more about <b>NULL</b> <a href='/docs/spec.html#NULL_literal_chapter'>here<
 <code example_name='NullExample'>
 app Example
 {
-    on Init =>
+    on Enter =>
     {
 	    'Begin' >> @>log;
 		@x = NULL;
@@ -139,7 +139,7 @@ So the variable <b>@b</b> will contain 1.
 <code example_name='Variables_Example1'>
 app PeaceKeeper
 {
-    on Init => 
+    on Enter => 
 	{
 	    "Begin" >> @>log;
 
@@ -167,7 +167,7 @@ A variable <b>@bx</b> has never been being assigned. So It contains default valu
 <code example_name='Variables_Example2'>
 app PeaceKeeper
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -189,7 +189,7 @@ Example 3
 <code example_name='Variables_Example3'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         var @a: number = 2;
@@ -487,7 +487,7 @@ Read more <a href='/docs/spec.html#Inheritance_chapter'>here</a> about inheritan
 <code example_name='InheritanceExample1'>
 app PeaceKeeper is [0.5] exampleClass
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -539,7 +539,7 @@ linvar logic for range [0, 1]
 
 app PeaceKeeper is [middle] exampleClass
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         exampleClass is human >> @>log;
@@ -576,7 +576,7 @@ linvar logic for range [0, 1]
 
 app PeaceKeeper is [very middle] exampleClass
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         exampleClass is human >> @>log;
@@ -620,7 +620,7 @@ protected:
 app PeaceKeeper is Cls1
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a();
@@ -644,7 +644,7 @@ private:
 app PeaceKeeper is Cls1
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         select {: son($x, $y) :} >> @>log;
@@ -668,7 +668,7 @@ protected:
 app PeaceKeeper is Cls1
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         select {: son($x, $y) :} >> @>log;
@@ -695,7 +695,7 @@ app PeaceKeeper
 {
     @b;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @b >> @>log;
@@ -712,7 +712,7 @@ app PeaceKeeper
 {
     var @b: number = 2;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @b >> @>log;
@@ -746,7 +746,7 @@ app PeaceKeeper
         '`a` has been called!' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a();
@@ -766,7 +766,7 @@ app PeaceKeeper
         '`a` has been called!' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a();
@@ -787,7 +787,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(1);
@@ -808,7 +808,7 @@ fun a(@param_1)
 
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(param_1: 1);
@@ -829,7 +829,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(@param_1: 1);
@@ -850,7 +850,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(param_1: 1);
@@ -871,7 +871,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @param_1 = 12;
@@ -901,7 +901,7 @@ app PeaceKeeper
         @param_2 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @param_1 = 12;
@@ -931,7 +931,7 @@ app PeaceKeeper
         @param_2 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @param_1 = 12;
@@ -956,7 +956,7 @@ app PeaceKeeper
         @param_2 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @param_1 = 12;
@@ -989,7 +989,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(param_1: 1);
@@ -1016,7 +1016,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(param_1: 1);
@@ -1044,7 +1044,7 @@ app PeaceKeeper
         @param_1 >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a(param_1: 1);
@@ -1082,7 +1082,7 @@ Read more <a href='/docs/spec.html#BreakActionStatement_chapter'>here</a> about 
 <code example_name='ActionExample_1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
  
@@ -1094,9 +1094,9 @@ app PeaceKeeper
 
 action Go 
 {
-    on Init =>
+    on Enter =>
     {
-        'Init Go' >> @>log;
+        'Enter Go' >> @>log;
     }
 
     op () => 
@@ -1132,7 +1132,7 @@ app PeaceKeeper
 {
     set Idling as default state;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;        
         'End' >> @>log;
@@ -1175,7 +1175,7 @@ app PeaceKeeper
 {
     set Idling as state;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;        
         'End' >> @>log;
@@ -1201,7 +1201,7 @@ app PeaceKeeper
     set Idling as default state;
     set Patrolling as state;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;        
         'End' >> @>log;
@@ -1271,7 +1271,7 @@ app PeaceKeeper
     set Idling as default state;
     set Patrolling as state;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;        
         'End' >> @>log;
@@ -1314,7 +1314,7 @@ app PeaceKeeper
     set Idling as default state;
     set Patrolling as state;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;        
         'End' >> @>log;
@@ -1382,7 +1382,7 @@ app PeaceKeeper
 {
     set Idling as default state;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -1455,7 +1455,7 @@ Synchronous
 <code example_name='CallingHostMethodSynchronousExample1'>
 app PeaceKeeper is [0.5] exampleClass
 {
-    on Init => 
+    on Enter => 
 	{
 	    "Begin" >> @>log;
 
@@ -1478,7 +1478,7 @@ Asynchronous
 <code example_name='CallingHostMethodAsynchronousExample1'>
 app PeaceKeeper is [0.5] exampleClass
 {
-    on Init => 
+    on Enter => 
 	{
 	    "Begin" >> @>log;
 
@@ -1527,7 +1527,7 @@ class exampleClass is human, [0.1] animal
 
 app PeaceKeeper is [0.5] exampleClass
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -1556,7 +1556,7 @@ class exampleClass is human, [0.1] animal
 
 app PeaceKeeper is [0.5] exampleClass
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;
 
@@ -1615,7 +1615,7 @@ app PeaceKeeper
     {: can(bird, fly) :}
     {: bird(#Alisa_12) :}
 
-    on Init =>
+    on Enter =>
     {
 	    ? {: can(#Alisa_12, $x) :} >> @>log;
     }
@@ -1651,7 +1651,7 @@ app PeaceKeeper
     {: can(bird, fly) :}
     {: bird(#Alisa_12) :}
 
-    on Init =>
+    on Enter =>
     {
 	     ? {: can(#Alisa_12, fly) :} >> @>log;
     }
@@ -1679,7 +1679,7 @@ app PeaceKeeper
     {: can(bird, fly) :}
     {: bird(#Alisa_12) :}
 
-    on Init =>
+    on Enter =>
     {
 	     ? {: $z(#Alisa_12, $x) :} >> @>log;
     }
@@ -1723,7 +1723,7 @@ Read more about logic rule <a href='/docs/spec.html#Logic_rule_chapter'>here</a>
 <code example_name='LogicQueriesExample_3'>
 app PeaceKeeper is [0.5] exampleClass
 {
-    on Init => 
+    on Enter => 
 	{
 	     "Begin" >> @>log;		 
 
@@ -1748,7 +1748,7 @@ app PeaceKeeper
 {
     {: animal(cat) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: { cat is animal } :} >> @>log;
     }
@@ -1763,7 +1763,7 @@ app PeaceKeeper
 {
     {: >: { animal(cat) } :}
 
-    on Init =>
+    on Enter =>
     {
         select {: cat is animal :} >> @>log;
     }
@@ -1778,7 +1778,7 @@ app PeaceKeeper
 {
     {: animal(cat) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: >: { cat is animal } :} >> @>log;
     }
@@ -1808,7 +1808,7 @@ app PeaceKeeper
 {
     {: age(#Tom, 15) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, `teenager`) :} >> @>log;
     }
@@ -1832,7 +1832,7 @@ app PeaceKeeper
 {
     {: age(#Tom, 12) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, very `teenager`) :} >> @>log;
     }
@@ -1856,7 +1856,7 @@ app PeaceKeeper
 {
     {: age(#Tom, 12) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, very teenager) :} >> @>log;
     }
@@ -1880,7 +1880,7 @@ app PeaceKeeper
 {
     {: age(#Tom, 12) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, `very` `teenager`) :} >> @>log;
     }
@@ -1904,7 +1904,7 @@ app PeaceKeeper
 {
     {: age(#Tom, very `teenager`) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, 12) :} >> @>log;
     }
@@ -1928,7 +1928,7 @@ app PeaceKeeper
 {
     {: age(#Tom, `teenager`) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, 12) :} >> @>log;
     }
@@ -1951,7 +1951,7 @@ app PeaceKeeper
     {: age(#Tom, 50) :}
     {: distance(I, #Tom, 12) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, $x) & distance(#Tom, $y) & $x is not $y :} >> @>log;
     }
@@ -1973,7 +1973,7 @@ app PeaceKeeper
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
     {: distance(I, #Tom, 12) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: distance(#Tom, $x) & $x is 12 :} >> @>log;
     }
@@ -1995,7 +1995,7 @@ app PeaceKeeper
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
     {: distance(I, #Tom, 50) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: distance(#Tom, $x) & $x > 5 :} >> @>log;
     }
@@ -2019,7 +2019,7 @@ app PeaceKeeper
 {
     {: age(#Tom, 50) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, $x) & $x > `teenager` :} >> @>log;
     }
@@ -2043,7 +2043,7 @@ app PeaceKeeper
 {
     {: age(#Tom, 50) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: age(#Tom, $x) & $x > very `teenager` :} >> @>log;
     }
@@ -2065,7 +2065,7 @@ app PeaceKeeper
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
     {: distance(I, #Tom, 50) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: distance(#Tom, $x) & $x >= 5 :} >> @>log;
     }
@@ -2087,7 +2087,7 @@ app PeaceKeeper
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
     {: distance(I, #Tom, 4) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: distance(#Tom, $x) & $x < 5 :} >> @>log;
     }
@@ -2109,7 +2109,7 @@ app PeaceKeeper
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
     {: distance(I, #Tom, 5) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: distance(#Tom, $x) & $x <= 5 :} >> @>log;
     }
@@ -2131,7 +2131,7 @@ app PeaceKeeper
     {: barrel(#a) :}
     {: see(I, #a) :}
 
-    on Init =>
+    on Enter =>
     {
         select {: see(I, $x) & barrel($x) & !focus(I, friend) :} >> @>log;
     }
@@ -2154,7 +2154,7 @@ Read more about Imperative logic operators <a href='/docs/spec.html#Relational_o
 <code example_name='ImperativeLogicOperators_Example1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -2184,7 +2184,7 @@ linvar age for range (0, 150]
 
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -2219,7 +2219,7 @@ Read more about Arithmetic operators <a href='/docs/spec.html#ArithmeticOperator
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         1 + 1 >> @>log;
@@ -2237,7 +2237,7 @@ app PeaceKeeper
 private:
     @a = 2;
 
-    on Init =>
+    on Enter =>
     {
         @b = 3;
 
@@ -2255,7 +2255,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         1 + NULL >> @>log;
@@ -2271,7 +2271,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         1 + 'Hi' >> @>log;
@@ -2287,7 +2287,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         3 - 1 >> @>log;
@@ -2303,7 +2303,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         3 * 4 >> @>log;
@@ -2319,7 +2319,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         12 / 4 >> @>log;
@@ -2335,7 +2335,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         12 / 0 >> @>log;
@@ -2350,7 +2350,7 @@ private:
 <code example_name='ArithmeticOperators_Example9'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -2368,7 +2368,7 @@ app PeaceKeeper
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @a = 2;
@@ -2385,7 +2385,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @a = -2;
@@ -2402,7 +2402,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @a = -2;
@@ -2419,7 +2419,7 @@ private:
 app PeaceKeeper
 {
 private:
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         @a = 2;
@@ -2455,7 +2455,7 @@ app MyNPC
 {
     {: barrel(#`Barel 1`) :}
 
-    on Init =>
+    on Enter =>
     {
 	    "Begin" >> @>log;
 		
@@ -2479,7 +2479,7 @@ app PeaceKeeper
 {
     @a = #`gun 1`;
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         insert {: see(I, @a) :};
@@ -2542,7 +2542,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2577,7 +2577,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2598,7 +2598,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2633,7 +2633,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 
     on {: see(I, $x) :} ($x >> @x) => 
@@ -2660,7 +2660,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2673,7 +2673,7 @@ app PeaceKeeper
             'catch' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2694,7 +2694,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2711,7 +2711,7 @@ app PeaceKeeper
             'else' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2732,7 +2732,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2753,7 +2753,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2774,7 +2774,7 @@ app PeaceKeeper
         'End of `a`' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2783,7 +2783,7 @@ app PeaceKeeper
             'End' >> @>log;        
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2794,7 +2794,7 @@ app PeaceKeeper
 <code example_name='ErrorProcessingExample_7'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2807,7 +2807,7 @@ app PeaceKeeper
             'else' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2818,7 +2818,7 @@ app PeaceKeeper
 <code example_name='ErrorProcessingExample_8'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2831,7 +2831,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2842,7 +2842,7 @@ app PeaceKeeper
 <code example_name='ErrorProcessingExample_9'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         try
         {
@@ -2859,7 +2859,7 @@ app PeaceKeeper
             'ensure' >> @>log;
         }
 
-        'End of `Init`' >> @>log;
+        'End of `Enter`' >> @>log;
     }
 }
 </code>
@@ -2880,7 +2880,7 @@ Read more about "repeat" statement <a href='/docs/spec.html#RepeatStatement_chap
 <code example_name='RepeatStatement_Example1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -2922,7 +2922,7 @@ Read more about "while" statement <a href='/docs/spec.html#WhileStatement_chapte
 <code example_name='WhileStatement_Example1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -2962,7 +2962,7 @@ app PeaceKeeper
         '`a` has been ended!' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a();
@@ -2984,7 +2984,7 @@ app PeaceKeeper
         '`a` has been ended!' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a() >> @>log;
@@ -3006,7 +3006,7 @@ app PeaceKeeper
         '`a` has been ended!' >> @>log;
     }
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         a() >> @>log;
@@ -3031,7 +3031,7 @@ Read more about "if-elif-else" statement <a href='/docs/spec.html#IfElifElseStat
 <code example_name='IfElifElseStatement_Example1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -3055,7 +3055,7 @@ app PeaceKeeper
 {
     {: >: { see(I, #`Barel 1`) } :}
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -3077,7 +3077,7 @@ app PeaceKeeper
 {
     {: >: { see(I, #`Barel 1`) } :}
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -3101,7 +3101,7 @@ app PeaceKeeper
 {
     {: >: { see(I, #`Barel 0`) } :}
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -3125,7 +3125,7 @@ app PeaceKeeper
 {
     {: >: { see(I, #`Barel 3`) } :}
 
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -3161,7 +3161,7 @@ Read more about "continue" loop statement <a href='/docs/spec.html#ContinueLoopS
 <code example_name='ContinueLoopStatement_Example1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
@@ -3203,7 +3203,7 @@ Read more about "break" loop statement <a href='/docs/spec.html#BreakLoopStateme
 <code example_name='BreakLoopStatement_Example1'>
 app PeaceKeeper
 {
-    on Init =>
+    on Enter =>
     {
         'Begin' >> @>log;
         
