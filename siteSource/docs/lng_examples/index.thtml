@@ -1545,14 +1545,15 @@ The result of this query:
 <console example_name='LogicQueriesExample_1_a'>
 </console>
 
-<code example_name=''>
+<code example_name='LogicQueriesExample_1_b'>
+class exampleClass is human, [0.1] animal
+{
+	{: male(#Tom) :}
+	{: parent(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+	{: { love($x, $y) } -> { help($x, $y) } :}
+}
 
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_1_b.zip'>
 app PeaceKeeper is [0.5] exampleClass
 {
     on Init => 
@@ -1570,12 +1571,7 @@ app PeaceKeeper is [0.5] exampleClass
 The result of this query:
 </p>
 
-<console>
-Begin
-&lt;yes&gt;
-$y = #piter; $x = #tom
-
-End
+<console example_name='LogicQueriesExample_1_b'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_2'>
@@ -1613,11 +1609,24 @@ For set of facts:
 {: bird(#Alisa_12) :}
 </code>
 
+<code example_name='LogicQueriesExample_2_a'>
+app PeaceKeeper
+{
+    {: can(bird, fly) :}
+    {: bird(#Alisa_12) :}
+
+    on Init =>
+    {
+	    ? {: can(#Alisa_12, $x) :} >> @>log;
+    }
+}
+</code>
+
 <p>
 The query:
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_a.zip'>
+<code data-lng='soc'>
 {: can(#Alisa_12, $x) :}
 </code>
 
@@ -1625,42 +1634,63 @@ The query:
 returns:
 </p>
 
-<console>
-&lt;yes&gt;
-$x = fly
+<console example_name='LogicQueriesExample_2_a'>
 </console>
 
 <p>
 The query:
 </p>
 
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_b.zip'>
+<code data-lng='soc'>
 {: can(#Alisa_12, fly) :}
 </code>
 
-<p>
-returns:
-</p>
+<code example_name='LogicQueriesExample_2_b'>
+app PeaceKeeper
+{
+    {: can(bird, fly) :}
+    {: bird(#Alisa_12) :}
 
-<console>
-&lt;yes&gt;
-</console>
-
-<p>
-The query:
-</p>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample_2_c.zip'>
-{: $z(#Alisa_12, $x) :}
+    on Init =>
+    {
+	     ? {: can(#Alisa_12, fly) :} >> @>log;
+    }
+}
 </code>
 
 <p>
 returns:
 </p>
 
-<console>
-&lt;yes&gt;
-$z = can(bird,fly); $x = fly
+<console example_name='LogicQueriesExample_2_b'>
+</console>
+
+<p>
+The query:
+</p>
+
+<code data-lng='soc'>
+{: $z(#Alisa_12, $x) :}
+</code>
+
+<code example_name='LogicQueriesExample_2_c'>
+app PeaceKeeper
+{
+    {: can(bird, fly) :}
+    {: bird(#Alisa_12) :}
+
+    on Init =>
+    {
+	     ? {: $z(#Alisa_12, $x) :} >> @>log;
+    }
+}
+</code>
+
+<p>
+returns:
+</p>
+
+<console example_name='LogicQueriesExample_2_c'>
 </console>
 
 <p>
@@ -1713,14 +1743,7 @@ Example 4
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_a.zip'>
+<code example_name='LogicQueriesExample4_a'>
 app PeaceKeeper
 {
     {: animal(cat) :}
@@ -1732,21 +1755,13 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample4_a'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_b.zip'>
+<code example_name='LogicQueriesExample4_b'>
 app PeaceKeeper
 {
-    {: animal(cat) :}
+    {: >: { animal(cat) } :}
 
     on Init =>
     {
@@ -1755,18 +1770,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample4_b'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample4_c.zip'>
+<code example_name='LogicQueriesExample4_c'>
 app PeaceKeeper
 {
     {: animal(cat) :}
@@ -1778,8 +1785,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample4_c'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_5'>
@@ -1788,14 +1794,7 @@ Example 5
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_a.zip'>
+<code example_name='LogicQueriesExample5_a'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -1816,18 +1815,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample5_a'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_b.zip'>
+<code example_name='LogicQueriesExample5_b'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -1848,18 +1839,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample5_b'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_c.zip'>
+<code example_name='LogicQueriesExample5_c'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -1880,18 +1863,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample5_c'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_d.zip'>
+<code example_name='LogicQueriesExample5_d'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -1912,18 +1887,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample5_d'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_e.zip'>
+<code example_name='LogicQueriesExample5_e'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -1944,18 +1911,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample5_e'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample5_f.zip'>
+<code example_name='LogicQueriesExample5_f'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -1976,8 +1935,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
+<console example_name='LogicQueriesExample5_f'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_6'>
@@ -1986,14 +1944,7 @@ Example 6
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample6.zip'>
+<code example_name='LogicQueriesExample6'>
 app PeaceKeeper
 {
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
@@ -2007,9 +1958,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$y = 12; $x = 50
+<console example_name='LogicQueriesExample6'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_7'>
@@ -2018,14 +1967,7 @@ Example 7
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample7.zip'>
+<code example_name='LogicQueriesExample7'>
 app PeaceKeeper
 {
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
@@ -2038,9 +1980,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 12
+<console example_name='LogicQueriesExample7'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_8'>
@@ -2049,14 +1989,7 @@ Example 8
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_a.zip'>
+<code example_name='LogicQueriesExample8_a'>
 app PeaceKeeper
 {
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
@@ -2069,19 +2002,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 50
+<console example_name='LogicQueriesExample8_a'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_b.zip'>
+<code example_name='LogicQueriesExample8_b'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -2102,19 +2026,10 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 50
+<console example_name='LogicQueriesExample8_b'>
 </console>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample8_c.zip'>
+<code example_name='LogicQueriesExample8_c'>
 linvar age for range (0, 150]
 {
 	constraints:
@@ -2135,9 +2050,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 50
+<console example_name='LogicQueriesExample8_c'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_9'>
@@ -2146,14 +2059,7 @@ Example 9
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample9.zip'>
+<code example_name='LogicQueriesExample9'>
 app PeaceKeeper
 {
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
@@ -2166,9 +2072,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 50
+<console example_name='LogicQueriesExample9'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_10'>
@@ -2177,14 +2081,7 @@ Example 10
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample10.zip'>
+<code example_name='LogicQueriesExample10'>
 app PeaceKeeper
 {
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
@@ -2197,9 +2094,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 4
+<console example_name='LogicQueriesExample10'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_11'>
@@ -2208,14 +2103,7 @@ Example 11
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample11.zip'>
+<code example_name='LogicQueriesExample11'>
 app PeaceKeeper
 {
     {: >: {distance($x, $y)} -> { distance(I, $x, $y) } :}
@@ -2228,9 +2116,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = 5
+<console example_name='LogicQueriesExample11'>
 </console>
 
 <h3 class='center-h' data-href='Logic_queries_Example_12'>
@@ -2239,14 +2125,7 @@ Example 12
 
 <LinkToContent/>
 
-<code example_name=''>
-
-</code>
-
-<console example_name=''>
-</console>
-
-<code data-lng='soc' example-href='/docs/lng_examples/LogicQueriesExample12.zip'>
+<code example_name='LogicQueriesExample12'>
 app PeaceKeeper
 {
     {: barrel(#a) :}
@@ -2259,9 +2138,7 @@ app PeaceKeeper
 }
 </code>
 
-<console>
-&lt;yes&gt;
-$x = #a
+<console example_name='LogicQueriesExample12'>
 </console>
 
 <h2 class='center-h' data-href='ImperativeLogicOperators'>
