@@ -2748,6 +2748,62 @@ In chain of inheritance each <b>Enter</b> trigger of the chain will be called in
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
 </p>
 
+<h5 class='center-h' data-href='Leave_Lifecycle_trigger_chapter'>
+Leave
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LeaveLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Leave" .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+state Patrolling
+{
+    on Leave
+    {
+        'Begin Patrolling Leave' >> @>log;
+        'End Patrolling Leave' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+action Go 
+{
+    on Enter =>
+    {
+        'Enter Go' >> @>log;
+    }
+
+    on Leave
+    {
+        'Leave Go' >> @>log;
+    }
+
+    op () => 
+    {
+        'Begin Go' >> @>log;
+        'End Go' >> @>log;
+    }
+}
+</code>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#State'>here</a> and <a href='/docs/lng_examples/index.html#Action'>here</a>.
+</p>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Logic_conditional_triggers_chapter'>
 Logic conditional triggers
 </h4>

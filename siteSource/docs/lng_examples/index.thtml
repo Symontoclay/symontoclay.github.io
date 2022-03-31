@@ -1117,6 +1117,42 @@ action Go
 <console example_name='ActionExample_1'>
 </console>
 
+<code example_name='ActionExample_2'>
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+ 
+        Go();
+
+        'End' >> @>log;
+    }
+}
+
+action Go 
+{
+    on Enter =>
+    {
+        'Enter Go' >> @>log;
+    }
+
+    on Leave
+    {
+        'Leave Go' >> @>log;
+    }
+
+    op () => 
+    {
+        'Begin Go' >> @>log;
+        'End Go' >> @>log;
+    }
+}
+</code>
+
+<console example_name='ActionExample_2'>
+</console>
+
 <h2 class='center-h' data-href='State'>
 State
 </h2>
@@ -1430,6 +1466,50 @@ state Idling
 </code>
 
 <console example_name='States_Example9'>
+</console>
+
+<code example_name='States_Example10'>
+app PeaceKeeper
+{
+    set Idling as default state;
+    set Patrolling as state;
+
+    on Enter =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Idling Enter' >> @>log;
+        'End Idling Enter' >> @>log;
+    }
+}
+
+state Patrolling
+{
+    on Enter
+    {
+        'Begin Patrolling Enter' >> @>log;
+
+        set Idling as state;
+
+        'End Patrolling Enter' >> @>log;
+    }
+
+    on Leave
+    {
+        'Begin Patrolling Leave' >> @>log;
+        'End Patrolling Leave' >> @>log;
+    }
+}
+</code>
+
+<console example_name='States_Example10'>
 </console>
 
 <h2 class='center-h' data-href="Calling_host_method">
