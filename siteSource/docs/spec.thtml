@@ -2699,8 +2699,7 @@ Enter
 <LinkToContent/>
 
 <p>
-Initializes an object.
-It is like a constructor in other programming languages.
+Executes when an object has been activated.
 </p>
 
 <p>
@@ -2754,13 +2753,20 @@ Leave
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Executes when an object has been activated.
+</p>
+
+<p>
+This trigger allows to perform some finalization actions.
+For example to stop shooting when state of killing enemy has been finished.
+There can be more reasons to finish killing enemy: enemy has been died, NPC must run away.
+But in any case killing the enemy must be stopped.
+</p>
 
 <gr>
 <EBNFCDECL name='LeaveLifecycleTriggerIdentifier' groups='LifecycleTriggerIdentifier'/> = "Leave" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 state Patrolling
@@ -2772,8 +2778,6 @@ state Patrolling
     }
 }
 </code>
-
-<complete_me/>
 
 <code data-lng='soc'>
 action Go 
@@ -2796,13 +2800,13 @@ action Go
 }
 </code>
 
-<complete_me/>
+<p>
+In chain of inheritance each <b>Leave</b> trigger of the chain will be called in order from the root item to the farthest item.
+</p>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a> and <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='Logic_conditional_triggers_chapter'>
 Logic conditional triggers

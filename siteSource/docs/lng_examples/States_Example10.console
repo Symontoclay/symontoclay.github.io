@@ -1,5 +1,7 @@
-Begin
 Begin Patrolling Enter
-End
+Begin
+Begin Patrolling Leave
 Begin Idling Enter
+End
+End Patrolling Leave
 End Idling Enter
