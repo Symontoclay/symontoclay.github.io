@@ -2064,6 +2064,7 @@ State's members are isolated so do not visible for App and another states.
 <EBNFCDECL name='StateBodyContent'/> = <GEBNFC name='StateBodyContent' kind='op_and'/> .
 <EBNFCDECL name='ActivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'ActivatingConditionsDecl'/> .
 <EBNFCDECL name='ActivatingConditionsDecl'/> = "enter" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
+<EBNFCDECL name='ActivatingCondition'/> =  .
 <EBNFCDECL name='DeactivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'DeactivatingConditionsDecl'/> .
 <EBNFCDECL name='DeactivatingConditionsDecl'/> = "leave" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
 </gr>
