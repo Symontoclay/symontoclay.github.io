@@ -2063,8 +2063,8 @@ State's members are isolated so do not visible for App and another states.
 <EBNFCDECL name='StateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='StateBodyContent'/> = <GEBNFC name='StateBodyContent' kind='op_and'/> .
 <EBNFCDECL name='ActivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'ActivatingConditionsDecl'/> .
-<EBNFCDECL name='ActivatingConditionsDecl'/> = "enter" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
-<EBNFCDECL name='ActivatingCondition'/> =  .
+<EBNFCDECL name='ActivatingConditionsDecl'/> = "enter" "on" ":" <br/> <EBNFC name='ActivatingCondition'/> [ { <EBNFC name='ActivatingCondition'/> } ] .
+<EBNFCDECL name='ActivatingCondition'/> = <EBNFC name='FactDecl'/> <EBNFC name='BindingVariableItemDecl'/> .
 <EBNFCDECL name='DeactivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'DeactivatingConditionsDecl'/> .
 <EBNFCDECL name='DeactivatingConditionsDecl'/> = "leave" "on" ":" <br/> <EBNFC name='FactDeclSet'/> .
 </gr>
@@ -2259,7 +2259,7 @@ state Attacking
         {: see(I, enemy) :}
 
     leave on:
-        {: see(I, barrel) :}
+        {: (kill(I, $x) | see(I, $x)) & enemy($x) :}
 
     on Enter
     {
@@ -2269,6 +2269,29 @@ state Attacking
     }
 }
 </code>
+
+<p>
+Activating condition can bind captured in logic variable value with an automatically created <a href='#Field_chapter'>Field</a> by <EBNFC name='BindingVariableItemDecl'/>.
+</p>
+
+<code data-lng='soc'>
+state Attacking
+{
+    enter on:
+        {: see(I, $x) & enemy($x) :} ($x >> @target)
+		
+	on Enter
+    {
+        Kill(@target);
+    }
+}
+</code>
+
+<p>
+In the example identifier of an detected enemy will be put into automatically created <a href='#Field_chapter'>Field</a> @target.
+The field can be used into the state Attacking for killing the detected enemy.
+So you should not write any additional code for detecting target entity in the state.
+</p>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
@@ -2290,7 +2313,7 @@ The State will be deactivated automatically if It is active and at least one of 
 
 <code data-lng='soc'>
 leave on:
-    {: see(I, barrel) :}
+    {: (kill(I, $x) | see(I, $x)) & enemy($x) :}
 </code>
 
 <code data-lng='soc'>
@@ -2300,7 +2323,7 @@ state Attacking
         {: see(I, enemy) :}
 
     leave on:
-        {: see(I, barrel) :}
+        {: (kill(I, $x) | see(I, $x)) & enemy($x) :}
 
     on Enter
     {
@@ -2861,7 +2884,7 @@ Binding variables
 <LinkToContent/>
 
 <p>
-Conditional trigger can bind captured in logic variable value with imperative variable.
+Conditional trigger can bind captured in logic variable value with imperative variable by <EBNFC name='BindingVariableItemDecl'/>.
 </p>
 
 <code data-lng='soc'>
