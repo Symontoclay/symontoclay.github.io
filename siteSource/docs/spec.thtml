@@ -428,6 +428,8 @@ But the words can be used as identifiers in other places.
 	<kw name='leave'/>
 	<kw name='states'/>
 	<kw name='as'/>
+	<kw name='down'/>
+	<kw name='duration'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -3728,6 +3730,7 @@ The right-hand operand contains a possible base object.
 <EBNFCDECL name='LogicIsOpExpr' groups='LogicExpr'/> = <EBNFC name='LogicIsOpExprBranch'/> "is" [ "not" ] <EBNFC name='LogicIsOpExprBranch'/> .
 <EBNFCDECL name='LogicIsOpExprBranch'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
 <EBNFCDECL name='ImperativeLogicIsOpExpr' groups='ImperativeLogicExpr' /> = <EBNFC name='ImperativeLogicExpr'/> "is" [ "not" ] <EBNFC name='ImperativeLogicExpr'/> .
+<EBNFCDECL name='TriggerLogicIsOpExpr' groups='TriggerLogicExpr' /> = <EBNFC name='TriggerLogicExpr'/> "is" [ "not" ] <EBNFC name='TriggerLogicExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3839,6 +3842,7 @@ In imperative code It returns <b>true</b> if left-hand operand is greater than i
 
 <gr>
 <EBNFCDECL name='ImperativeLogicMoreOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&gt;'/> .
+<EBNFCDECL name='TriggerMoreOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&gt;'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3878,6 +3882,7 @@ In imperative code It returns <b>true</b> if left-hand operand is greater than o
 
 <gr>
 <EBNFCDECL name='ImperativeLogicMoreOrEqvOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&gt;='/> .
+<EBNFCDECL name='TriggerMoreOrEqvOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&gt;='/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3917,6 +3922,7 @@ In imperative code It returns <b>true</b> if left-hand operand is less than its 
 
 <gr>
 <EBNFCDECL name='ImperativeLogicLessOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&lt;'/> .
+<EBNFCDECL name='TriggerLessOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&lt;'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3956,6 +3962,7 @@ In imperative code It returns <b>true</b> if left-hand operand is less than or e
 
 <gr>
 <EBNFCDECL name='ImperativeLogicLessOrEqvOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&lt;='/> .
+<EBNFCDECL name='TriggerLessOrEqvOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&lt;='/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4006,6 +4013,7 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 
 <gr>
 <EBNFCDECL name='ImperativeLogicAndOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&'/> .
+<EBNFCDECL name='TriggerAndOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4048,6 +4056,7 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 
 <gr>
 <EBNFCDECL name='ImperativeLogicOrOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '|'/> .
+<EBNFCDECL name='TriggerOrOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '|'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4069,7 +4078,7 @@ Operator of logical negation (logical <b>not</b>).
 </p>
 
 <gr>
-<EBNFCDECL name='NotOp' groups='LogicExpr'/> = <TEBNFC name='LogicUnaryOp' param = '!'/> .
+<EBNFCDECL name='NotOpExpr' groups='LogicExpr'/> = <TEBNFC name='LogicUnaryOp' param = '!'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4081,7 +4090,8 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 </p>
 
 <gr>
-<EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicUnaryOp_2' param = '( "!" | "not" )'/> .
+<EBNFCDECL name='ImperativeLogicNotOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicUnaryOp_2' param = '( "!" | "not" )'/> .
+<EBNFCDECL name='TriggerNotOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicUnaryOp_2' param = '( "!" | "not" )'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4110,7 +4120,8 @@ The addition operator "+" computes the sum of its operands.
 </p>
 
 <gr>
-<EBNFCDECL name='AddOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '+'/> .
+<EBNFCDECL name='AddOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '+'/> .
+<EBNFCDECL name='TriggerAddOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicUnaryOp' param = '+'/> .
 </gr>
 
 <p>
@@ -4148,7 +4159,8 @@ If the operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also
 </p>
 
 <gr>
-<EBNFCDECL name='UnaryPlusOp' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '+'/> .
+<EBNFCDECL name='UnaryPlusOpExpr' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '+'/> .
+<EBNFCDECL name='TriggerUnaryPlusOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicUnaryOp' param = '+'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4175,7 +4187,8 @@ If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the re
 </p>
 
 <gr>
-<EBNFCDECL name='SubOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '-'/> .
+<EBNFCDECL name='SubOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '-'/> .
+<EBNFCDECL name='TriggerSubOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicUnaryOp' param = '-'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4204,7 +4217,8 @@ If the operand is <b><a href='NULL_literal_chapter'>null</a></b> the result also
 </p>
 
 <gr>
-<EBNFCDECL name='UnaryMinusOp' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '-'/> .
+<EBNFCDECL name='UnaryMinusOpExpr' groups='Expr'/> = <TEBNFC name='UnaryOp' param = '-'/> .
+<EBNFCDECL name='TriggerUnaryMinusOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicUnaryOp' param = '-'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4231,7 +4245,8 @@ If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the re
 </p>
 
 <gr>
-<EBNFCDECL name='MulOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '*'/> .
+<EBNFCDECL name='MulOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '*'/> .
+<EBNFCDECL name='TriggerMulOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '*'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4263,7 +4278,8 @@ If one (or two) operand is <b><a href='NULL_literal_chapter'>null</a></b> the re
 </p>
 
 <gr>
-<EBNFCDECL name='DivOp' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '/'/> .
+<EBNFCDECL name='DivOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '/'/> .
+<EBNFCDECL name='TriggerDivOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '/'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4325,7 +4341,8 @@ Whether a call is synchronous or asynchronous is determined by the presence of a
 </p>
 
 <gr>
-<EBNFCDECL name='CallOpExpr'/> = <EBNFC name='Expr;ImperativeLogicExpr'/> [ "~" ] "(" [ <EBNFC name='NamedParamsOfCallOpExprSet'/> ] ")" .
+<EBNFCDECL name='CallOpExpr' groups='Expr;ImperativeLogicExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
+<EBNFCDECL name='TriggerCallOpExpr' groups='TriggerLogicExpr'/> = <EBNFC name='TriggerLogicExpr'/> "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
 <EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
 <EBNFCDECL name='PosParamsOfCallOpExprSet'/> =  <EBNFC name='PosParamOfCallOpExpr'/> [ { "," <EBNFC name='PosParamOfCallOpExpr'/> } ] .
