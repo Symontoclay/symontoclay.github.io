@@ -5643,6 +5643,14 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='TriggerLogicBinaryOp' param='_OpLiteral'>
+	    <TEBNFC name='TriggerLogicBinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='TriggerLogicBinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='TriggerLogicExpr'/>"/>
+	</TEBNFCDECL>
+	
 	<TEBNFCDECL name='ConditionalEntityBinaryOp' param='_OpLiteral'>
 	    <TEBNFC name='ConditionalEntityBinaryOp_2' param = '"_OpLiteral"'/>
 	</TEBNFCDECL>
@@ -5656,7 +5664,7 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='LogicUnaryOp' param='_OpLiteral'>
-	    <TEBNFC name='LogicUnaryOp_2' param = '"_OpLiteral"' param2="<EBNFC name='LogicExpr'/>"/>
+	    <TEBNFC name='LogicUnaryOp_2' param = '"_OpLiteral"'/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='LogicUnaryOp_2' param='_OpLiteral'>
@@ -5664,11 +5672,19 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='ImperativeLogicUnaryOp' param='_OpLiteral'>
-	    <TEBNFC name='ImperativeLogicUnaryOp_2' param = '"_OpLiteral"' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
+	    <TEBNFC name='ImperativeLogicUnaryOp_2' param = '"_OpLiteral"'/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='ImperativeLogicUnaryOp_2' param='_OpLiteral'>
 	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='ImperativeLogicExpr'/>"/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='TriggerLogicUnaryOp' param='_OpLiteral'>
+	    <TEBNFC name='TriggerLogicUnaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='TriggerLogicUnaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='TriggerLogicExpr'/>"/>
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='UnaryOp' param='_OpLiteral'>
