@@ -1950,7 +1950,7 @@ The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> ca
 <EBNFCDECL name='ActionDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ActionDecl'/> .
 <EBNFCDECL name='ActionDecl'/> = "action" <EBNFC name='ActionIdentifier'/> [ <EBNFC name='ActionAliasDecl'/> ] [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='ActionBodyContent'/> = <GEBNFC name='ActionBodyContent' kind='op_and'/> .
-<EBNFCDECL name='ActionAliasDecl'/> = "alias" <EBNFC name='ConceptIdentifier'/> [ { "," <EBNFC name='ConceptIdentifier'/> } ] .
+<EBNFCDECL name='ActionAliasDecl'/> = <TEBNFC name='AliasDecl'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -2680,7 +2680,7 @@ An object can declare an operator () function, which provides function call sema
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
 
-<h3 class='center-h' data-href='Trigger_chapter'>
+<h3 class='center-h' data-href='InlineTrigger_chapter'>
 Trigger
 </h3>
 
@@ -2696,8 +2696,15 @@ In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContent'/> .
-<EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicCondition'/> ) [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContentDecl'/> .
+<EBNFCDECL name='TriggersContentDecl'/> = ( <EBNFC name='LifecycleTriggerCondition'/> | <EBNFC name='TriggersLogicCondition'/> ) <br/> [ "as" <EBNFC name='TriggerName'/> [ <EBNFC name='TriggerAliasDecl'/> ]] <br/> ( <EBNFC name='TriggerHandler'/> | <EBNFC name='ActiveLogicRuleBody'/> ) .
+<EBNFCDECL name='TriggerHandler'/> = [ "=>" ] <EBNFC name='SetTriggerHandler'/> "else" <EBNFC name='DownTriggerHandler'/> .
+<EBNFCDECL name='SetTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='DownTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='TriggerName'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='TriggerAliasDecl'/> = <TEBNFC name='AliasDecl'/> .
+<EBNFCDECL name='ActiveLogicRuleBody'/> = "=>" <EBNFC name='ActiveLogicRuleBodyItem'/> [ { "," <EBNFC name='ActiveLogicRuleBodyItem'/> } ] .
+<EBNFCDECL name='ActiveLogicRuleBodyItem'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicRuleDecl'/> .
 </gr>
 
 <complete_me/>
@@ -2717,6 +2724,7 @@ If there exist inheritance relation between object, then life cycle triggers of 
 </p>
 
 <gr>
+<EBNFCDECL name='LifecycleTriggerCondition'/> = "on" <EBNFC name='LifecycleTriggerIdentifier'/> .
 <EBNFCDECL name='LifecycleTriggerIdentifier'/> = <GEBNFC name='LifecycleTriggerIdentifier' kind='or' /> .
 </gr>
 
@@ -2842,15 +2850,22 @@ Logic conditional triggers
 
 <LinkToContent/>
 
+<complete_me/>
+
 <p>
-Logic сonditional trigger fires when logic condition is <b>true</b> and trigger is reset.
-Trigger resets when the logic condition is <b>false</b>.
+
 </p>
 
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='FactDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
+<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='TriggersLogicSetCondition'/> [ <EBNFC name='TriggersLogicDownCondition'/> [<EBNFC name='TriggersLogicDoubleConditionsStrategy'/>] ] .
+<EBNFCDECL name='TriggersLogicSetCondition'/> = "on" ( <EBNFC name='FactDecl'/> | "(" <EBNFC name='TriggerLogicExpr'/> ")" ) [ <EBNFC name='BindingVariablesDecl'/> ] .
+<EBNFCDECL name='TriggersLogicDownCondition'/> = "on" ( <EBNFC name='FactDecl'/> | <EBNFC name='TriggersDurationDecl'/> | "(" <EBNFC name='TriggerLogicExpr'/> ")" ) [ <EBNFC name='BindingVariablesDecl'/> ] .
+<EBNFCDECL name='TriggersLogicDoubleConditionsStrategy'/> = <GEBNFC name='TriggersLogicDoubleConditionsStrategy' kind='or' /> .
+<EBNFCDECL name='EqualDoubleConditionsStrategy' groups='TriggersLogicDoubleConditionsStrategy'/> = "(=)" .
+<EBNFCDECL name='PriorSetDoubleConditionsStrategy' groups='TriggersLogicDoubleConditionsStrategy'/> = "(set)" .
+<EBNFCDECL name='PriorResetDoubleConditionsStrategy' groups='TriggersLogicDoubleConditionsStrategy'/> = "(down)" .
 <EBNFCDECL name='BindingVariablesDecl'/> = "(" <EBNFC name='BindingVariableItemDecl'/> [ { "," <EBNFC name='BindingVariableItemDecl'/> } ] ")" .
 <EBNFCDECL name='BindingVariableItemDecl'/> = <EBNFC name='SourceBoundVariable'/> ">>" <EBNFC name='DestBoundVariable'/> .
 <EBNFCDECL name='SourceBoundVariable'/> = <EBNFC name='LogicVarExpr'/> .
@@ -2889,15 +2904,48 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_conditional_tr
 
 <complete_me/>
 
+<h5 class='center-h' data-href='Logic_сonditional_triggers_Explicit_and_implicit_reset_chapter'>
+Explicit and implicit reset
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+Logic сonditional trigger fires when logic condition is <b>true</b> and trigger is reset.
+Trigger resets when the logic condition is <b>false</b>.
+</p>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Logic_сonditional_triggers_Reset_by_timeout_chapter'>
+Reset by timeout
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='TriggersDurationDecl' groups='TriggerLogicExpr' /> = "duration" <EBNFC name='NumberExpr'/> .
+</gr>
+
+<complete_me/>
+
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
 Binding variables
 </h5>
 
 <LinkToContent/>
 
+<complete_me/>
+
 <p>
 Conditional trigger can bind captured in logic variable value with imperative variable by <EBNFC name='BindingVariableItemDecl'/>.
 </p>
+
+<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -2916,9 +2964,19 @@ app PeaceKeeper
 #a
 </console>
 
+<complete_me/>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
 </p>
+
+<h4 class='center-h' data-href='Active_rule_chapter'>
+Active rule
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='#Error_handling_chapter'>
 Error handling
@@ -5728,6 +5786,10 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 	
 	<TEBNFCDECL name='InheritanceDeclItem'>
 	    [ "[" <EBNFC name='FuzzyExpr'/> "]" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> )
+	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='AliasDecl'>
+	    "alias" <EBNFC name='ConceptIdentifier'/> [ { "," <EBNFC name='ConceptIdentifier'/> } ]
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='IsOpExprBody'>
