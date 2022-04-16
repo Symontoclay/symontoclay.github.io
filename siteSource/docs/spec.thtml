@@ -2700,6 +2700,8 @@ In the future I am going to develop other kinds of triggers.
 <EBNFCDECL name='TriggersContent'/> = "on" ( <EBNFC name='LifecycleTriggerIdentifier'/> | <EBNFC name='TriggersLogicCondition'/> ) [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
+<complete_me/>
+
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
 Life cycle triggers
 </h4>
@@ -2845,6 +2847,8 @@ Logic сonditional trigger fires when logic condition is <b>true</b> and trigger
 Trigger resets when the logic condition is <b>false</b>.
 </p>
 
+<complete_me/>
+
 <gr>
 <EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='FactDecl'/> [ <EBNFC name='BindingVariablesDecl'/> ] .
 <EBNFCDECL name='BindingVariablesDecl'/> = "(" <EBNFC name='BindingVariableItemDecl'/> [ { "," <EBNFC name='BindingVariableItemDecl'/> } ] ")" .
@@ -2852,6 +2856,8 @@ Trigger resets when the logic condition is <b>false</b>.
 <EBNFCDECL name='SourceBoundVariable'/> = <EBNFC name='LogicVarExpr'/> .
 <EBNFCDECL name='DestBoundVariable'/> = <EBNFC name='VarExpr'/> .
 </gr>
+
+<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -2875,9 +2881,13 @@ app PeaceKeeper
 }
 </code>
 
+<complete_me/>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_conditional_triggers'>here</a>.
 </p>
+
+<complete_me/>
 
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
 Binding variables
