@@ -2707,7 +2707,40 @@ In the future I am going to develop other kinds of triggers.
 <EBNFCDECL name='ActiveLogicRuleBodyItem'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicRuleDecl'/> .
 </gr>
 
-<complete_me/>
+<p>
+   <EBNFC name='SetTriggerHandler'/> will be executed when the trigger has been set.
+</p>
+
+<p>
+   <EBNFC name='DownTriggerHandler'/> will be executed only in <a href='#Logic_conditional_triggers_chapter'>Logic conditional triggers</a> when the trigger has been reset (down).
+</p>
+
+<p>
+   Also <a href='#Logic_conditional_triggers_chapter'>Logic conditional trigger</a> can be an <a href='#Active_rule_chapter'>active rule</a>.
+</p>
+
+<h4 class='center-h' data-href='Named_triggers_chapter'>
+Named triggers
+</h4>
+
+<LinkToContent/>
+
+<p>
+Trigger <a href='#TriggerName'>name</a> or <a href='#TriggerAliasDecl'>alias</a> can be used in trigger condition(<EBNFC name='TriggerLogicExpr'/>).
+When the trigger is set it is <b>true</b> in that condition, otherwise <b>false</b>.
+</p>
+
+<code data-lng='soc'>
+	on {: see(I, #a) :} as `trigger 1` alias `Alarm trigger`, trigger_5 => 
+    {
+	}
+</code>
+
+<code data-lng='soc'>
+    on (trigger_5 & @a is 15)
+    {
+    }
+</code>
 
 <h4 class='center-h' data-href='Lifecycle_triggers_chapter'>
 Life cycle triggers
@@ -2850,13 +2883,10 @@ Logic conditional triggers
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-
+Logic сonditional trigger sets and sometimes resets by condition.
+You can read more about how to set and reset trigger <a href='#Logic_сonditional_triggers_Explicit_and_implicit_reset_chapter'>here</a>.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='TriggersLogicSetCondition'/> [ <EBNFC name='TriggersLogicDownCondition'/> [<EBNFC name='TriggersLogicDoubleConditionsStrategy'/>] ] .
@@ -2872,7 +2902,10 @@ Logic conditional triggers
 <EBNFCDECL name='DestBoundVariable'/> = <EBNFC name='VarExpr'/> .
 </gr>
 
-<complete_me/>
+<p>
+Trigger's condition can be a <a href='#Fact_chapter'>fact</a>, <a href='#Logic_сonditional_triggers_Reset_by_timeout_chapter'>duration</a> (only for reset), <a href='#Named_triggers_chapter'>trigger name</a>, <a href='#Field_chapter'>field</a> or combination of many different kinds of conditions.
+<EBNFC name='TriggerLogicExpr'/> allows operators (exclude "=") and <a href='#CallOp_chapter'>synchronous method call</a>.
+</p>
 
 <code data-lng='soc'>
 app PeaceKeeper
@@ -2896,13 +2929,36 @@ app PeaceKeeper
 }
 </code>
 
-<complete_me/>
+<code data-lng='soc'>
+	on {: see(I, #a) :} duration 1 (down) => 
+    {
+	}
+</code>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    var @a = 15;
+
+	on {: see(I, #a) :} as `trigger 1` alias `Alarm trigger`, trigger_5 => 
+    {
+	    'S' >> @>log;
+	}
+
+    on (trigger_5 & @a is 15)
+    {
+        'D' >> @>log;
+    }
+}
+</code>
+
+<code data-lng='soc'>
+on {: see(I, #a) :} duration 1 => {: pet(I, cat) :}, {: pet(I, dog) :}, {: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_conditional_triggers'>here</a>.
 </p>
-
-<complete_me/>
 
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Explicit_and_implicit_reset_chapter'>
 Explicit and implicit reset
