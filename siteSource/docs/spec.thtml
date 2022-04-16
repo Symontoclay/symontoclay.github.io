@@ -3287,6 +3287,7 @@ Logic expression
 <gr>
 <EBNFCDECL name='LogicExpr'/> = <GEBNFC name='LogicExpr' kind='or'/> .
 <EBNFCDECL name='ImperativeLogicExpr' groups='Expr'/> = <GEBNFC name='ImperativeLogicExpr' kind='or'/> .
+<EBNFCDECL name='TriggerLogicExpr' groups='Expr'/> = <GEBNFC name='TriggerLogicExpr' kind='or'/> .
 </gr>
 
 <h3 class='center-h' data-href='Grouping_expression_chapter'>
@@ -3303,6 +3304,7 @@ Expressions in round brackets executes as single expression.
 <EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 <EBNFCDECL name='ConditionalEntityGroupingExpr' groups='ConditionalEntityExpr'/> = "(" <EBNFC name='ConditionalEntityExpr'/> ")" .
 <EBNFCDECL name='ImperativeLogicGroupingExpr' groups='ImperativeLogicExpr'/> = "(" <EBNFC name='ImperativeLogicExpr'/> ")" .
+<EBNFCDECL name='TriggerLogicGroupingExpr' groups='TriggerLogicExpr'/> = "(" <EBNFC name='TriggerLogicExpr'/> ")" .
 <EBNFCDECL name='GroupingExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
 </gr>
 
@@ -3334,7 +3336,7 @@ Default value of variable is <b>NULL</b>.
 </p>
 
 <gr>
-<EBNFCDECL name='VarExpr' groups='Expr;LogicExpr;ImperativeLogicExpr'/> = <EBNFC name='VarIdentifier'/> .
+<EBNFCDECL name='VarExpr' groups='Expr;LogicExpr;ImperativeLogicExpr;TriggerLogicExpr'/> = <EBNFC name='VarIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -3361,7 +3363,7 @@ Only reading is allowed for system variables.
 </p>
 
 <gr>
-<EBNFCDECL name='SysVarExpr' groups='Expr;LogicExpr;ImperativeLogicExpr'/> = <EBNFC name='SysVarIdentifier'/> .
+<EBNFCDECL name='SysVarExpr' groups='Expr;LogicExpr;ImperativeLogicExpr;TriggerLogicExpr'/> = <EBNFC name='SysVarIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
