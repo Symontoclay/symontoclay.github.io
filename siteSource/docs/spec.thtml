@@ -3103,7 +3103,14 @@ app PeaceKeeper
 #a
 </console>
 
-<complete_me/>
+<p>
+Reset-condition can have its own binding variables to use in reset-handler.
+</p>
+
+<p>
+If trigger has only set-condition with a binding variables and reset-handler then the reset-handler can not use the binding variables of the set-condition.
+So the reset-handler is executed without any binding variables.
+</p>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
