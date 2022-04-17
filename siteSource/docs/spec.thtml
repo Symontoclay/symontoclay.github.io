@@ -2889,7 +2889,7 @@ You can read more about how to set and reset trigger <a href='#Logic_сonditiona
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='TriggersLogicSetCondition'/> [ <EBNFC name='TriggersLogicDownCondition'/> [<EBNFC name='TriggersLogicDoubleConditionsStrategy'/>] ] .
+<EBNFCDECL name='TriggersLogicCondition'/> = <EBNFC name='TriggersLogicSetCondition'/> [ <EBNFC name='TriggersLogicDownCondition'/> [ <EBNFC name='TriggersLogicDoubleConditionsStrategy'/> ] ] .
 <EBNFCDECL name='TriggersLogicSetCondition'/> = "on" ( <EBNFC name='FactDecl'/> | "(" <EBNFC name='TriggerLogicExpr'/> ")" ) [ <EBNFC name='BindingVariablesDecl'/> ] .
 <EBNFCDECL name='TriggersLogicDownCondition'/> = "on" ( <EBNFC name='FactDecl'/> | <EBNFC name='TriggersDurationDecl'/> | "(" <EBNFC name='TriggerLogicExpr'/> ")" ) [ <EBNFC name='BindingVariablesDecl'/> ] .
 <EBNFCDECL name='TriggersLogicDoubleConditionsStrategy'/> = <GEBNFC name='TriggersLogicDoubleConditionsStrategy' kind='or' /> .
@@ -2966,14 +2966,80 @@ Explicit and implicit reset
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
-Logic сonditional trigger fires when logic condition is <b>true</b> and trigger is reset.
-Trigger resets when the logic condition is <b>false</b>.
+Logic сonditional trigger fires (set) when <a href='#TriggersLogicSetCondition'>logic condition</a> is <b>true</b> and trigger is reset.
 </p>
 
-<complete_me/>
+<p>
+If the trigger has <a href='#Logic_сonditional_triggers_Binding_variables_chapter'>binding variables</a> then <EBNFC name='SetTriggerHandler'/> will be executed as many times as needed.
+If the trigger has already been set then the trigger continues to be set.
+</p>
+
+<p>
+The trigger can be reset (down) in two ways:
+    <ul>
+	    <li>Explicitly</li>
+		<li>Implicitly</li>
+	</ul>
+</p>
+
+<p>
+Logic сonditional trigger can be reset explicitly by <EBNFC name='TriggersLogicDownCondition'/> when the condition is <b>true</b>.
+</p>
+
+<p>
+Logic сonditional trigger can be reset implicitly when the <EBNFC name='TriggersLogicSetCondition'/> is <b>false</b>.
+</p>
+
+<p>
+If Logic сonditional trigger has both <EBNFC name='TriggersLogicSetCondition'/> and <EBNFC name='TriggersLogicDownCondition'/> there can be a situation when the trigger should set and reset simultaneously.
+The situation is resolved by <EBNFC name='TriggersLogicDoubleConditionsStrategy'/>.
+</p>
+
+<p>
+There are strategies:
+   <ul>
+       <li>
+	       <b>Equal</b> - "<a href='#EqualDoubleConditionsStrategy'>(=)</a>". Both conditions are equal. So set-condition sets trigger immediately and reset-condition resets trigger immediately.
+	   </li>
+	   
+	   <li>
+	       <b>Priority set</b> - "<a href='#PriorSetDoubleConditionsStrategy'>(set)</a>". Trigger can be reset only if set-condition is <b>false</b>.
+	   </li>
+	   
+	   <li>
+	       <b>Priority reset</b> - "<a href='#PriorResetDoubleConditionsStrategy'>(down)</a>". Trigger can be set only if reset-condition is <b>false</b>.
+	   </li>
+   </ul>
+</p>
+
+<code data-lng='soc'>
+	on {: see(I, #a) :} down on {: see(I, barrel) :} (set) =>
+    {
+	}
+    else
+    {
+    }
+</code>
+
+<code data-lng='soc'>
+	on {: see(I, #a) :} duration 1 (down) => 
+    {
+	}
+</code>
+
+<p>
+Default strategy is <b>Priority set</b>.
+</p>
+
+<code data-lng='soc'>
+	on {: see(I, #a) :} down on {: see(I, barrel) :} =>
+    {
+	}
+    else
+    {
+    }
+</code>
 
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Reset_by_timeout_chapter'>
 Reset by timeout
@@ -2986,6 +3052,20 @@ Reset by timeout
 <gr>
 <EBNFCDECL name='TriggersDurationDecl' groups='TriggerLogicExpr' /> = "duration" <EBNFC name='NumberExpr'/> .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+	on {: see(I, #a) :} duration 1 (down) => 
+    {
+	}
+</code>
+
+<code data-lng='soc'>
+	on {: see(I, #a) :} down on (duration 1 | (`Alarm trigger` & @a is 15)) (down) => 
+    {
+	}
+</code>
 
 <complete_me/>
 
