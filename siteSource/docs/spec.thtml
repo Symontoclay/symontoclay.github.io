@@ -3047,13 +3047,18 @@ Reset by timeout
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Logic сonditional trigger can be reset explicitly by timeout.
+</p>
+
+<p>
+Now the timeout value is in seconds.
+In the future I am going to use different domain values with units of measurement.
+</p>
 
 <gr>
 <EBNFCDECL name='TriggersDurationDecl' groups='TriggerLogicExpr' /> = "duration" <EBNFC name='NumberExpr'/> .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 	on {: see(I, #a) :} duration 1 (down) => 
@@ -3061,13 +3066,15 @@ Reset by timeout
 	}
 </code>
 
+<p>
+Timeout can be combined with other kinds of conditions.
+</p>
+
 <code data-lng='soc'>
 	on {: see(I, #a) :} down on (duration 1 | (`Alarm trigger` & @a is 15)) (down) => 
     {
 	}
 </code>
-
-<complete_me/>
 
 <h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
 Binding variables
@@ -3075,13 +3082,9 @@ Binding variables
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
 Conditional trigger can bind captured in logic variable value with imperative variable by <EBNFC name='BindingVariableItemDecl'/>.
 </p>
-
-<complete_me/>
 
 <code data-lng='soc'>
 app PeaceKeeper
