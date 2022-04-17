@@ -3122,7 +3122,17 @@ Active rule
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Active rule is a conditional trigger with special simple syntax which adds rules or facts when the trigger sets and removes the rules or facts when the trigger resets.
+</p>
+
+<code data-lng='soc'>
+on {: see(I, #a) :} duration 1 => {: pet(I, cat) :}
+</code>
+
+<code data-lng='soc'>
+on {: see(I, #a) :} duration 1 => {: pet(I, cat) :}, {: pet(I, dog) :}, {: {son($x, $y)} -> { male($x) & parent($y, $x) } :}
+</code>
 
 <h3 class='center-h' data-href='#Error_handling_chapter'>
 Error handling
