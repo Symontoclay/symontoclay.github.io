@@ -3173,6 +3173,36 @@ Otherwise the execution async function or trigger will be stopped.
 
 As parallel the NPC can react to the error by <a href='#Logic_сonditional_triggers_chapter'>conditional trigger</a>.
 
+<h3 class='center-h' data-href='Annotation_chapter'>
+Annotation
+</h3>
+
+<LinkToContent/>
+
+<p>
+Annotation provides a powerful method of associating metadata, or declarative information, with code.
+</p>
+
+<p>
+After an annotation is associated with a program entity, the annotation can be queried at run time by using a technique called <b>reflection</b>.
+</p>
+
+<p>
+Now the reflection is still not available in user code. I am going to implement this in the future.
+The reflection can be consumed only automatically by engine's components.
+</p>
+
+<gr>
+<EBNFCDECL name='AnnotationDeclSet'/> = <TEBNFC name='DeclSet' param = 'AnnotationDecl'/> .
+<EBNFCDECL name='AnnotationDecl'/> = "[:" <EBNFC name='AnnotationItem'/> [ { "," <EBNFC name='AnnotationItem'/> }] ":]" .
+<EBNFCDECL name='AnnotationItem'/> = <EBNFC name='ConceptIdentifier'/> .
+</gr>
+
+<code data-lng='soc'>
+[: experiencer :]
+[: experiencer, subject :]
+</code>
+
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
 </h2>
@@ -3311,6 +3341,95 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='Relation_metadata_chapter'>
+Relation metadata
+</h3>
+
+<LinkToContent/>
+
+<p>
+Relation metadata provides machine-readable meaning of the relation.
+</p>
+
+<p>
+Now It needs for conversion fact to text.
+</p>
+
+<gr>
+<EBNFCDECL name='RelationMetadataDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'RelationMetadataDecl'/> .
+<EBNFCDECL name='RelationMetadataDecl'/> = "rel" <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='RelationMetadataArgument'/> [ { "," <EBNFC name='RelationMetadataArgument'/> } ] ")" [ <EBNFC name='InheritanceDecl'/> ] .
+<EBNFCDECL name='RelationMetadataArgument'/> = <EBNFC name='LogicVarIdentifier'/> [ <EBNFC name='AnnotationDeclSet'/> ] .
+</gr>
+
+<p>
+Meaning of relation's argument is provided by concepts in argument's <a href='#Annotation_chapter'>annotation</a>.
+You can read <a href='#Standard_relation_argument_roles_chapter'>here</a> about recommended concepts.
+</p>
+
+<code data-lng='soc'>
+rel like ($x1 [: experiencer :], $x2 [: object :]) is state;
+</code>
+
+<h4 class='center-h' data-href='Standard_inheritance_in_relation_chapter'>
+Standard inheritance in relation
+</h4>
+
+<LinkToContent/>
+
+<p>
+Conversion fact to text consumes the following concepts as superclass for relations:
+
+    <ul>
+	    <li>
+		    <b>event</b> - <complete_me/>
+		</li>
+		
+		<li>
+		    <b>act</b> - <complete_me/>
+		</li>
+		
+	    <li>
+		    <b>state</b> - <complete_me/>
+		</li>
+	</ul>
+</p>
+
+<h4 class='center-h' data-href='Standard_relation_argument_roles_chapter'>
+Standard relation argument roles
+</h4>
+
+<LinkToContent/>
+
+<p>
+Conversion fact to text consumes the following concepts as meaning of relation's argument:
+
+    <ul>
+	    <li>
+		    <b>agent</b> - <complete_me/>
+		</li>
+		
+	    <li>
+		    <b>subject</b> - <complete_me/>
+		</li>
+		
+	    <li>
+		    <b>experiencer</b> -  <complete_me/>
+		</li>
+		
+	    <li>
+		    <b>object</b> - <complete_me/>
+		</li>
+		
+	    <li>
+		    <b>owner</b> - <complete_me/>
+		</li>
+		
+	    <li>
+		    <b>possessions</b> -  <complete_me/>
+		</li>
+	</ul>
 </p>
 
 <h3 class='center-h' data-href='Semantics_of_Logic_sentence_chapter'>
@@ -4016,6 +4135,10 @@ Predicate can be only used in <a href='#Logic_expression_chapter'>Logic expressi
 
 <p>
 You can read <a href='#Semantics_of_Logic_sentence_chapter'>here</a> about semantics of predicates.
+</p>
+
+<p>
+Predicate's metadata can be described by <a href='#Relation_metadata_chapter'>Relation metadata</a>.
 </p>
 
 <gr>
@@ -6047,5 +6170,7 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 
 <EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = ''/> .
 
-ImperativeLogicExpr   Expr  LogicExpr
+ImperativeLogicExpr   Expr  LogicExpr 
+
+AnnotationDeclSet <a href='#Annotation_chapter'></a>
 -->
