@@ -3401,15 +3401,15 @@ Conversion fact to text consumes the following concepts as superclass for relati
 
     <ul>
 	    <li>
-		    <b>event</b> - <complete_me/>
+		    <b>event</b> - represents an event.
 		</li>
 		
 		<li>
-		    <b>act</b> - <complete_me/>
+		    <b>act</b> - represents an action.
 		</li>
 		
 	    <li>
-		    <b>state</b> - <complete_me/>
+		    <b>state</b> - represents a state.
 		</li>
 	</ul>
 </p>
@@ -3425,27 +3425,27 @@ Conversion fact to text consumes the following concepts as meaning of relation's
 
     <ul>
 	    <li>
-		    <b>agent</b> - <complete_me/>
+		    <b>agent</b> - someone or something who does an <b>action</b>.
 		</li>
 		
 	    <li>
-		    <b>subject</b> - <complete_me/>
+		    <b>subject</b> - synonym of <b>agent</b>.
 		</li>
 		
 	    <li>
-		    <b>experiencer</b> -  <complete_me/>
+		    <b>experiencer</b> - someone or something who a <b>state</b>.
 		</li>
 		
 	    <li>
-		    <b>object</b> - <complete_me/>
+		    <b>object</b> - who was affected by the <b>action</b>.
 		</li>
 		
 	    <li>
-		    <b>owner</b> - <complete_me/>
+		    <b>owner</b> - someone or something who has <b>possessions</b>.
 		</li>
 		
 	    <li>
-		    <b>possessions</b> -  <complete_me/>
+		    <b>possessions</b> - something which is property of the <b>owner</b>.
 		</li>
 	</ul>
 </p>
