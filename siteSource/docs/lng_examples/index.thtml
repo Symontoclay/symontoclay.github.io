@@ -8,8 +8,6 @@ Hello world!
 
 <LinkToContent/>
 
-<complete_me/>
-
 <code example_name='HelloWorld_Example1'>
 app PeaceKeeper
 {
