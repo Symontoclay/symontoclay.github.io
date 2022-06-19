@@ -297,6 +297,24 @@ Names an instance of concept.
 #123
 </code>
 
+<h4 class='center-h' data-href='FactIdentifier_chapter'>
+Fact identifier
+</h4>
+
+<LinkToContent/>
+
+<p>
+Names a rule or fact.
+</p>
+
+<gr>
+<EBNFCDECL name='FactIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr'/> = "#^" <TEBNFC name='BaseIdentifier'/> .
+</gr>
+
+<code data-lng='soc'>
+#^123
+</code>
+
 <h4 class='center-h' data-href='VarIdentifier_chapter'>
 Variable identifier
 </h4>
@@ -3268,7 +3286,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr'/> = "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
+<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
@@ -3327,7 +3345,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 
 <gr>
 <EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
-<EBNFCDECL name='LogicRuleDecl'/> = "{:" <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
+<EBNFCDECL name='LogicRuleDecl'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='ImplicationSymbol'/> = "->" .
