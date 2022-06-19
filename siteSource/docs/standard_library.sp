@@ -1,17 +1,17 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "",
-  "BreadcrumbTitle": "",
+  "Title": "Standard library",
+  "BreadcrumbTitle": "Standard library",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "",
+    "Description": "Standard library of SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": ""
+    "Title": "Standard library"
   }
 }
