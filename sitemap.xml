@@ -52,6 +52,9 @@
 <loc>https://symontoclay.github.io/downloads/arch/0.3.6.html</loc>
 </url>
 <url>
+<loc>https://symontoclay.github.io/downloads/arch/0.3.7.html</loc>
+</url>
+<url>
 <loc>https://symontoclay.github.io/docs/engine_api/symontoclay.corehelper.isymontoclaydisposable.html</loc>
 </url>
 <url>
@@ -113,6 +116,9 @@
 </url>
 <url>
 <loc>https://symontoclay.github.io/docs/engine_api/symontoclay.unityasset.core.ihumanoidnpc.backpackstorage.html</loc>
+</url>
+<url>
+<loc>https://symontoclay.github.io/docs/engine_api/symontoclay.unityasset.core.ihumanoidnpc.enginecontext.html</loc>
 </url>
 <url>
 <loc>https://symontoclay.github.io/docs/engine_api/symontoclay.unityasset.core.ihumanoidnpc.die.html</loc>
@@ -404,6 +410,9 @@
 </url>
 <url>
 <loc>https://symontoclay.github.io/docs/spec.html</loc>
+</url>
+<url>
+<loc>https://symontoclay.github.io/docs/standard_library.html</loc>
 </url>
 <url>
 <loc>https://symontoclay.github.io/docs/unity_components.html</loc>
