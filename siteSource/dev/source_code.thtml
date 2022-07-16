@@ -143,12 +143,28 @@ Project: SymOntoClayUnity3DAssetTest
 <LinkToContent/>
 
 <p>
-The tests.
+The tests based on NUnit.
 </p>
 
 <p>
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest</a>.
 </p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayHardTests'>
+Project: SymOntoClayHardTests
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayBaseTestLib'>
+Project: SymOntoClayBaseTestLib
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayCoreHelper'>
 Project: SymOntoClayCoreHelper

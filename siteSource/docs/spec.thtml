@@ -3134,6 +3134,14 @@ So the reset-handler is executed without any binding variables.
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
 </p>
 
+<h4 class='center-h' data-href='Triggers_on_adding_facts_chapter'>
+Triggers on adding facts
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='Active_rule_chapter'>
 Active rule
 </h4>
@@ -3360,6 +3368,30 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='Modalities_chapter'>
+Modalities
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='ObligationModality_chapter'>
+Obligation modality
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='SelfObligationModality_chapter'>
+Self obligation modality
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Relation_metadata_chapter'>
 Relation metadata
@@ -5989,7 +6021,13 @@ state Patrolling
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='RejectStatement_chapter'>
+"reject" statement
+</h3>
 
+<LinkToContent/>
+
+<complete_me/>
 
 
 <div class='templates'>
