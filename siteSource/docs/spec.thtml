@@ -3294,7 +3294,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
+<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
@@ -3696,7 +3696,7 @@ Expressions in round brackets executes as single expression.
 </p>
 
 <gr>
-<EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
+<EBNFCDECL name='LogicGroupingExpr' groups='LogicExpr;AliasLogicExpr'/> = "(" <EBNFC name='LogicExpr'/> ")" .
 <EBNFCDECL name='ConditionalEntityGroupingExpr' groups='ConditionalEntityExpr'/> = "(" <EBNFC name='ConditionalEntityExpr'/> ")" .
 <EBNFCDECL name='ImperativeLogicGroupingExpr' groups='ImperativeLogicExpr'/> = "(" <EBNFC name='ImperativeLogicExpr'/> ")" .
 <EBNFCDECL name='TriggerLogicGroupingExpr' groups='TriggerLogicExpr'/> = "(" <EBNFC name='TriggerLogicExpr'/> ")" .
@@ -4068,6 +4068,8 @@ This alias can be used in logic expressions as usual <a href='#Logic_variable_ch
 <code data-lng='soc'>
 $x = act(M16, shoot)
 {: $x = act(M16, shoot) & hear(I, $x) :}
+{: $x = (act(M16, shoot) & gun(M16)) & hear(I, $x) :}
+{: $x = {: act(M16, shoot) :} & hear(I, $x) :}
 </code>
 
 <p>
@@ -4194,7 +4196,7 @@ Predicate's metadata can be described by <a href='#Relation_metadata_chapter'>Re
 <gr>
 <EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
 <EBNFCDECL name='PredicateOp' groups='LogicExpr;AliasLogicExpr'/> = <EBNFC name='PredicateIdentifier'/> "(" <EBNFC name='PredicateParameter'/> [ { "," <EBNFC name='PredicateParameter'/> } ] ")" .
-<EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> | <EBNFC name='PredicateOp'/> .
+<EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> | <EBNFC name='LogicExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4205,6 +4207,9 @@ age(#Tom, 12)
 distance(I, #Tom, 12)
 $z(#Alisa_12, $x)
 hear(I, act(M16, shoot))
+hear(I, act(M16, shoot) | act(M4A1, shoot))
+hear(I, (act(M16, shoot) | act(M4A1, shoot)))
+hear(I, {: act(M16, shoot) | act(M4A1, shoot) :})
 </code>
 
 <p>
@@ -6027,7 +6032,34 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Special statement for <a href='#Triggers_on_adding_facts_chapter'>Trigger on adding facts</a> which rejects added <a href='#Fact_chapter'>Fact</a>.
+In this case the fact is not added into storage and ignored.
+</p>
+
+<gr>
+<EBNFCDECL name='RejectStatement' groups='Statement'/> = "reject" ";" .
+</gr>
+
+<p>
+The statement can be called only in body of <a href='#Triggers_on_adding_facts_chapter'>Trigger on adding facts</a>.
+</p>
+
+<p>
+The statement does not break execution of the body of the trigger's handler.
+</p>
+
+<code data-lng='soc'>
+    on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
+	{
+	    reject;
+	}
+</code>
+
+<p>
+In this example the trigger rejects all facts which fit contition "{: hear(I, $x) & gun($x) :}";
+</p>
+
 
 
 <div class='templates'>

@@ -156,7 +156,14 @@ Project: SymOntoClayHardTests
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Additional tests based on NUnit. 
+These tests require more resources.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayHardTests'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayHardTests</a>.
+</p>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayBaseTestLib'>
 Project: SymOntoClayBaseTestLib
@@ -164,7 +171,13 @@ Project: SymOntoClayBaseTestLib
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Common library for tests which provides common classes and other code entities.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayBaseTestLib'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayBaseTestLib</a>.
+</p>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayCoreHelper'>
 Project: SymOntoClayCoreHelper
