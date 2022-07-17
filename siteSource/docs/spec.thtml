@@ -3141,16 +3141,18 @@ Triggers on adding facts
 <LinkToContent/>
 
 <p>
-
+Triggers on adding facts fires before the fact will have been added into storage.
+It allows to modify, reject of just log the fact.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='TriggersAddingFactCondition' /> = "on" "add" "fact" [( <EBNFC name='FactDecl'/> | "(" <EBNFC name='TriggerLogicExpr'/> ")" )] [ <EBNFC name='BindingVariablesDecl'/> ] .
 </gr>
 
-<complete_me/>
+<p>
+If fact is not rejected it will be added to storage.
+Then logic conditional trigger could be fired with the fact.
+</p>
 
 <code data-lng='soc'>
     on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
@@ -3159,16 +3161,12 @@ Triggers on adding facts
 	}
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
     on add fact ($_ >> @x)
 	{
 		@x.so = 1;
 	}
 </code>
-
-<complete_me/>
 
 <code data-lng='soc'>
     on add facts
@@ -3177,7 +3175,19 @@ Triggers on adding facts
 	}
 </code>
 
-<complete_me/>
+<p>
+If one fact is processed by many Triggers on adding facts the result follows the rules:
+</p>
+
+<ul>
+    <li>
+	    Rejection has bigger priority then modification.
+	</li>
+	
+    <li>
+	    If a modality is modified in many triggers the result will have the biggest set value of the modality.
+	</li>	
+</ul>
 
 <h5 class='center-h' data-href='Triggers_on_adding_facts_fact_modification_chapter'>
 Fact modification
@@ -3185,7 +3195,35 @@ Fact modification
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Now only <a href='#Modalities_chapter'>modalities</a> can be modified.
+</p>
+
+<p>
+Modalities can be modified using variable with captured fact, <EBNFC name='PointerOpExpr'/> and <EBNFC name='ModalityName'/>.
+</p>
+
+<code data-lng='soc'>
+    on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
+	{
+		@x.o = 1;
+	}
+</code>
+
+<p>
+1 is set as value of <a href='#ObligationModality_chapter'>obligation modality</a>.
+</p>
+
+<code data-lng='soc'>
+    on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
+	{
+		@x.so = middle;
+	}
+</code>
+
+<p>
+`middle` is set as value of <a href='#SelfObligationModality_chapter'>self obligation modality</a>.
+</p>
 
 <h5 class='center-h' data-href='Triggers_on_adding_facts_fact_rejecting_chapter'>
 Fact rejecting
@@ -3193,7 +3231,21 @@ Fact rejecting
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+A fact can be rejected with <a href='#RejectStatement_chapter'>"reject" statement</a>.
+In this case the fact will not be added into storage and will be ignored.
+</p>
+
+<code data-lng='soc'>
+    on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
+	{
+	    reject;
+	}
+</code>
+
+<p>
+In this example the trigger rejects all facts which fit contition "{: hear(I, $x) & gun($x) :}";
+</p>
 
 <h4 class='center-h' data-href='Active_rule_chapter'>
 Active rule
@@ -3430,6 +3482,12 @@ Modalities
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ModalityName' groups='Expr'/> = <GEBNFC name='ModalityNames' kind='or'/> .
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='ObligationModality_chapter'>
 Obligation modality
 </h4>
@@ -3438,11 +3496,23 @@ Obligation modality
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ObligationModalityName' groups='ModalityNames'/> = "o" .
+</gr>
+
+<complete_me/>
+
 <h4 class='center-h' data-href='SelfObligationModality_chapter'>
 Self obligation modality
 </h4>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='SelfObligationModalityName' groups='ModalityNames'/> = "so" .
+</gr>
 
 <complete_me/>
 
@@ -6087,7 +6157,7 @@ You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 
 <p>
 Special statement for <a href='#Triggers_on_adding_facts_chapter'>Trigger on adding facts</a> which rejects added <a href='#Fact_chapter'>Fact</a>.
-In this case the fact is not added into storage and ignored.
+In this case the fact will not be added into storage and will be ignored.
 </p>
 
 <gr>
