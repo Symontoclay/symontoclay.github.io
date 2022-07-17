@@ -2715,7 +2715,7 @@ In the future I am going to develop other kinds of triggers.
 
 <gr>
 <EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContentDecl'/> .
-<EBNFCDECL name='TriggersContentDecl'/> = ( <EBNFC name='LifecycleTriggerCondition'/> | <EBNFC name='TriggersLogicCondition'/> ) <br/> [ "as" <EBNFC name='TriggerName'/> [ <EBNFC name='TriggerAliasDecl'/> ]] <br/> ( <EBNFC name='TriggerHandler'/> | <EBNFC name='ActiveLogicRuleBody'/> ) .
+<EBNFCDECL name='TriggersContentDecl'/> = ( <EBNFC name='LifecycleTriggerCondition'/> | <EBNFC name='TriggersLogicCondition'/> | <EBNFC name='TriggersAddingFactCondition'/> ) <br/> [ "as" <EBNFC name='TriggerName'/> [ <EBNFC name='TriggerAliasDecl'/> ]] <br/> ( <EBNFC name='TriggerHandler'/> | <EBNFC name='ActiveLogicRuleBody'/> ) .
 <EBNFCDECL name='TriggerHandler'/> = [ "=>" ] <EBNFC name='SetTriggerHandler'/> "else" <EBNFC name='DownTriggerHandler'/> .
 <EBNFCDECL name='SetTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='DownTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
@@ -3137,6 +3137,59 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_t
 <h4 class='center-h' data-href='Triggers_on_adding_facts_chapter'>
 Triggers on adding facts
 </h4>
+
+<LinkToContent/>
+
+<p>
+
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='TriggersAddingFactCondition' /> = "on" "add" "fact" [( <EBNFC name='FactDecl'/> | "(" <EBNFC name='TriggerLogicExpr'/> ")" )] [ <EBNFC name='BindingVariablesDecl'/> ] .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+    on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
+	{
+		@x.so = 1;
+	}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+    on add fact ($_ >> @x)
+	{
+		@x.so = 1;
+	}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+    on add facts
+	{
+		reject;
+	}
+</code>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Triggers_on_adding_facts_fact_modification_chapter'>
+Fact modification
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Triggers_on_adding_facts_fact_rejecting_chapter'>
+Fact rejecting
+</h5>
 
 <LinkToContent/>
 
