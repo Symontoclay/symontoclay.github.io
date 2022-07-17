@@ -3482,9 +3482,17 @@ Modalities
 
 <complete_me/>
 
+
+
+<complete_me/>
+
 <gr>
 <EBNFCDECL name='ModalityName' groups='Expr'/> = <GEBNFC name='ModalityNames' kind='or'/> .
 </gr>
+
+<complete_me/>
+
+
 
 <complete_me/>
 
@@ -3962,7 +3970,16 @@ $_
 <LinkToContent/>
 
 <p>
-The logic variable is used in <a href='#Conditional_entity_chapter'>Conditional entity</a> and represents concrete entity which fits the condition.
+The logic variable is used in:
+    <ul>
+	    <li>
+		    <a href='#Conditional_entity_chapter'>Conditional entity</a> and represents concrete entity which fits the condition.
+		</li>
+		
+		<li>
+		    <complete_me/>
+		</li>
+	</ul>
 </p>
 
 <code data-lng='soc'>
