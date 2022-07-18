@@ -121,7 +121,7 @@ Supresses printing header.
 </p>
 
 <p>
-help <b>-nologo</b>
+soc help <b>-nologo</b>
 </p>
 
 <h4 class='center-h' data-href='Timeout'>
@@ -134,5 +134,5 @@ CLI will return 0.
 </p>
 
 <p>
-help <b>-timeout</b> 10000
+soc run <b>-timeout</b> 10000
 </p>
