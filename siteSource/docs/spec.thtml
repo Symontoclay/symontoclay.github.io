@@ -3399,7 +3399,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" .
+<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) [ <EBNFC name='ModalityDeclSet'/> ] ":}" .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
@@ -3410,6 +3410,12 @@ In this case, the predicate form will be saved as an alternative way of describi
 {: parent(#Piter, #Tom) :}
 {: $x = act(M16, shoot) & hear(I, $x) :}
 </code>
+
+<complete_me/>
+
+<EBNFC name='ModalityDeclSet'/>
+
+<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
@@ -3487,7 +3493,11 @@ Modalities
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ModalityName' groups='Expr'/> = <GEBNFC name='ModalityNames' kind='or'/> .
+<EBNFCDECL name='ModalityDeclSet'/> = <TEBNFC name='DeclSet' param = 'ModalityDecl'/> .
+<EBNFCDECL name='ModalityDecl'/> = <EBNFC name='ModalityName'/> ":" ( <EBNFC name='FuzzyExpr'/> | "{" <EBNFC name='LogicalModalityExpr'/> "}" ) .
+<EBNFCDECL name='LogicalModalityExpr'/> = <GEBNFC name='LogicalModalityExpr' kind='or'/> | "$_" .
+<EBNFCDECL name='ModalityName' groups='Expr'/> = <EBNFC name='LogicalModalityName'/> .
+<EBNFCDECL name='LogicalModalityName' groups='Expr'/> = <GEBNFC name='LogicalModalityNames' kind='or'/> .
 </gr>
 
 <complete_me/>
@@ -3505,7 +3515,7 @@ Obligation modality
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='ObligationModalityName' groups='ModalityNames'/> = "o" .
+<EBNFCDECL name='ObligationModalityName' groups='LogicalModalityNames'/> = "o" .
 </gr>
 
 <complete_me/>
@@ -3519,7 +3529,7 @@ Self obligation modality
 <complete_me/>
 
 <gr>
-<EBNFCDECL name='SelfObligationModalityName' groups='ModalityNames'/> = "so" .
+<EBNFCDECL name='SelfObligationModalityName' groups='LogicalModalityNames'/> = "so" .
 </gr>
 
 <complete_me/>
@@ -3784,7 +3794,7 @@ Fuzzy expression can be <EBNFC name='NumberExpr'/> in range [0, 1] or <a href='#
 </p>
 
 <gr>
-<EBNFCDECL name='FuzzyExpr' groups='ConstExpr;ValueExpr;LogicExpr;ImperativeLogicExpr'/> = <GEBNFC name='FuzzyExpr' kind='or'/> .
+<EBNFCDECL name='FuzzyExpr' groups='ConstExpr;ValueExpr;LogicExpr;ImperativeLogicExpr;LogicalModalityExpr'/> = <GEBNFC name='FuzzyExpr' kind='or'/> .
 <EBNFCDECL name='NumericFuzzyExpr' groups='FuzzyExpr'/> = <EBNFC name='NumberExpr'/> .
 <EBNFCDECL name='NonNumericFuzzyExpr' groups='FuzzyExpr'/> = ( [ { <EBNFC name='PredefinedFuzzyOpsIdentifier'/> } ] <EBNFC name='LinguisticVariableTermIdentifier'/> ) | "true" | "false" .
 </gr>
@@ -3977,7 +3987,7 @@ The logic variable is used in:
 		</li>
 		
 		<li>
-		    <complete_me/>
+		    <a href='#Modalities_chapter'>Modal query</a> and reperesents current modal value in the fact.
 		</li>
 	</ul>
 </p>
