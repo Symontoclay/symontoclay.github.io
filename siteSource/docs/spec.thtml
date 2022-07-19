@@ -448,6 +448,9 @@ But the words can be used as identifiers in other places.
 	<kw name='as'/>
 	<kw name='down'/>
 	<kw name='duration'/>
+	<kw name='add'/>
+	<kw name='fact'/>
+	<kw name='reject'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -3411,11 +3414,15 @@ In this case, the predicate form will be saved as an alternative way of describi
 {: $x = act(M16, shoot) & hear(I, $x) :}
 </code>
 
-<complete_me/>
+<p>
+<a href='#Modalities_chapter'>Modalities</a> (<EBNFC name='ModalityDeclSet'/>) allows to describe an additional information about a fact outside <EBNFC name='FactSentence'/> and without using another fact for describing this fact.
+</p>
 
-<EBNFC name='ModalityDeclSet'/>
-
-<complete_me/>
+<code data-lng='soc'>
+	{: male(#Tom) o: 0 :}
+	{: parent(#Piter, #Tom) o: very middle :}
+	{: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}) & $x1 = go(someone,self) } o: 1 :}
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_queries'>here</a>.
@@ -3486,11 +3493,13 @@ Modalities
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Modalities allows to describe an additional information about a <a href='#Fact_chapter'>fact</a> outside <EBNFC name='FactSentence'/> and without using another fact for describing this fact.
+</p>
 
-
-
-<complete_me/>
+<p>
+Now modalities can be used only for facts.
+</p>
 
 <gr>
 <EBNFCDECL name='ModalityDeclSet'/> = <TEBNFC name='DeclSet' param = 'ModalityDecl'/> .
@@ -3500,11 +3509,42 @@ Modalities
 <EBNFCDECL name='LogicalModalityName' groups='Expr'/> = <GEBNFC name='LogicalModalityNames' kind='or'/> .
 </gr>
 
-<complete_me/>
+<p>
+Facts can use only constant expression in modality:
+</p>
 
+<code data-lng='soc'>
+	{: male(#Tom) o: low :}
+	{: parent(#Piter, #Tom) o: very middle :}
+	{: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}) & $x1 = go(someone,self) } o: 1 :}
+</code>
 
+<p>
+Queries can use all types of expressions in modality.
+</p>
 
-<complete_me/>
+<code data-lng='soc'>
+	on {: hear(I, $x) & gun($x) & distance(I, $x, $y) so: 1 :} ($x >> @x, $y >> @y)
+    {
+    }
+</code>
+
+<code data-lng='soc'>
+select {: son($x, $y)  o: { _ >= low } :} >> @>log;
+select {: son($x, $y)  o: { not ( _ < high ) } :} >> @>log;
+select {: son($x, $y)  o: { _ < high and _ > low } :} >> @>log;
+</code>
+
+<p>
+Modalities can be modified in <a href='#Triggers_on_adding_facts_chapter'>Triggers on adding facts</a>.
+</p>
+
+<code data-lng='soc'>
+    on add fact {: hear(I, $x) & gun($x) :} ($_ >> @x)
+	{
+		@x.so = 1;
+	}
+</code>
 
 <h4 class='center-h' data-href='ObligationModality_chapter'>
 Obligation modality
@@ -3512,13 +3552,25 @@ Obligation modality
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+This modality is helpful for describing commands.
+For two facts with the same sentences high level of obligation modality defines a command and low or zero level of obligation modality defines a general description.
+</p>
+
+<p>
+Obligation modality means a general obligation which meant by someone else.
+The NPC can have own personal obligation called <a href='#SelfObligationModality_chapter'>Self obligation modality</a> which can be different from Obligation modality.
+</p>
 
 <gr>
 <EBNFCDECL name='ObligationModalityName' groups='LogicalModalityNames'/> = "o" .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+	{: male(#Tom) o: 0 :}
+	{: parent(#Piter, #Tom) o: very middle :}
+	{: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}) & $x1 = go(someone,self) } o: 1 :}
+</code>
 
 <h4 class='center-h' data-href='SelfObligationModality_chapter'>
 Self obligation modality
@@ -3526,13 +3578,26 @@ Self obligation modality
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+This modality is similar to <a href='#ObligationModality_chapter'>Obligation modality</a> but means own personal obligation of the NPC which can be different from <a href='#ObligationModality_chapter'>Obligation modality</a>.
+</p>
+
+<p>
+For instance, enemy commander makes an order. 
+Technically It is a fact width obligation modality = 1.
+But for the NPC self obligation modality of the fact will be 0, because this fact represent an order of enemy commander.
+So the NPC must not to execute the order.
+</p>
 
 <gr>
 <EBNFCDECL name='SelfObligationModalityName' groups='LogicalModalityNames'/> = "so" .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+	{: male(#Tom) so: 0 :}
+	{: parent(#Piter, #Tom) so: very middle :}
+	{: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}) & $x1 = go(someone,self) } so: 1 :}
+</code>
 
 <h3 class='center-h' data-href='Relation_metadata_chapter'>
 Relation metadata
@@ -3841,6 +3906,7 @@ Expressions in round brackets executes as single expression.
 <EBNFCDECL name='ConditionalEntityGroupingExpr' groups='ConditionalEntityExpr'/> = "(" <EBNFC name='ConditionalEntityExpr'/> ")" .
 <EBNFCDECL name='ImperativeLogicGroupingExpr' groups='ImperativeLogicExpr'/> = "(" <EBNFC name='ImperativeLogicExpr'/> ")" .
 <EBNFCDECL name='TriggerLogicGroupingExpr' groups='TriggerLogicExpr'/> = "(" <EBNFC name='TriggerLogicExpr'/> ")" .
+<EBNFCDECL name='LogicalModalityGroupingExpr' groups='LogicalModalityExpr'/> = "(" <EBNFC name='LogicalModalityExpr'/> ")" .
 <EBNFCDECL name='GroupingExpr' groups='Expr'/> = "(" <EBNFC name='Expr'/> ")" .
 </gr>
 
@@ -4276,6 +4342,7 @@ The right-hand operand contains a possible base object.
 <EBNFCDECL name='LogicIsOpExprBranch'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> .
 <EBNFCDECL name='ImperativeLogicIsOpExpr' groups='ImperativeLogicExpr' /> = <EBNFC name='ImperativeLogicExpr'/> "is" [ "not" ] <EBNFC name='ImperativeLogicExpr'/> .
 <EBNFCDECL name='TriggerLogicIsOpExpr' groups='TriggerLogicExpr' /> = <EBNFC name='TriggerLogicExpr'/> "is" [ "not" ] <EBNFC name='TriggerLogicExpr'/> .
+<EBNFCDECL name='LogicalModalityIsOpExpr' groups='LogicalModalityExpr' /> = <EBNFC name='LogicalModalityExpr'/> "is" [ "not" ] <EBNFC name='LogicalModalityExpr'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -6252,7 +6319,15 @@ In this example the trigger rejects all facts which fit contition "{: hear(I, $x
 	<TEBNFCDECL name='TriggerLogicBinaryOp_2' param='_OpLiteral'>
 	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='TriggerLogicExpr'/>"/>
 	</TEBNFCDECL>
+
+	<TEBNFCDECL name='LogicalModalityBinaryOp' param='_OpLiteral'>
+	    <TEBNFC name='LogicalModalityBinaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='LogicalModalityBinaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='BinaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicalModalityExpr'/>"/>
+	</TEBNFCDECL>
+
 	<TEBNFCDECL name='ConditionalEntityBinaryOp' param='_OpLiteral'>
 	    <TEBNFC name='ConditionalEntityBinaryOp_2' param = '"_OpLiteral"'/>
 	</TEBNFCDECL>
@@ -6288,7 +6363,15 @@ In this example the trigger rejects all facts which fit contition "{: hear(I, $x
 	<TEBNFCDECL name='TriggerLogicUnaryOp_2' param='_OpLiteral'>
 	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='TriggerLogicExpr'/>"/>
 	</TEBNFCDECL>
+		
+	<TEBNFCDECL name='LogicalModalityUnaryOp' param='_OpLiteral'>
+	    <TEBNFC name='LogicalModalityUnaryOp_2' param = '"_OpLiteral"'/>
+	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='LogicalModalityUnaryOp_2' param='_OpLiteral'>
+	    <TEBNFC name='UnaryOp_base' param = '_OpLiteral' param2="<EBNFC name='LogicalModalityExpr'/>"/>
+	</TEBNFCDECL>
+		
 	<TEBNFCDECL name='UnaryOp' param='_OpLiteral'>
 	    <TEBNFC name='UnaryOp_2' param = '"_OpLiteral"' param2="<EBNFC name='Expr'/>"/>
 	</TEBNFCDECL>
