@@ -4462,6 +4462,7 @@ In imperative code It returns <b>true</b> if left-hand operand is greater than i
 <gr>
 <EBNFCDECL name='ImperativeLogicMoreOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&gt;'/> .
 <EBNFCDECL name='TriggerMoreOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&gt;'/> .
+<EBNFCDECL name='LogicalModalityMoreOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityBinaryOp' param = '&gt;'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4502,6 +4503,7 @@ In imperative code It returns <b>true</b> if left-hand operand is greater than o
 <gr>
 <EBNFCDECL name='ImperativeLogicMoreOrEqvOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&gt;='/> .
 <EBNFCDECL name='TriggerMoreOrEqvOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&gt;='/> .
+<EBNFCDECL name='LogicalModalityMoreOrEqvOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityBinaryOp' param = '&gt;='/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4542,6 +4544,7 @@ In imperative code It returns <b>true</b> if left-hand operand is less than its 
 <gr>
 <EBNFCDECL name='ImperativeLogicLessOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&lt;'/> .
 <EBNFCDECL name='TriggerLessOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&lt;'/> .
+<EBNFCDECL name='LogicalModalityLessOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityBinaryOp' param = '&lt;'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4582,6 +4585,7 @@ In imperative code It returns <b>true</b> if left-hand operand is less than or e
 <gr>
 <EBNFCDECL name='ImperativeLogicLessOrEqvOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&lt;='/> .
 <EBNFCDECL name='TriggerLessOrEqvOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&lt;='/> .
+<EBNFCDECL name='LogicalModalityLessOrEqvOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityBinaryOp' param = '&lt;='/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4633,6 +4637,7 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 <gr>
 <EBNFCDECL name='ImperativeLogicAndOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '&'/> .
 <EBNFCDECL name='TriggerAndOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '&'/> .
+<EBNFCDECL name='LogicalModalityAndOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityBinaryOp_2' param = '( "&" | "and" )'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4676,6 +4681,7 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 <gr>
 <EBNFCDECL name='ImperativeLogicOrOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = '|'/> .
 <EBNFCDECL name='TriggerOrOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicBinaryOp' param = '|'/> .
+<EBNFCDECL name='LogicalModalityOrOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityBinaryOp_2' param = '( "|" | "or" )'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4711,6 +4717,7 @@ You can see examples of rules, facts and logic queries <a href='/docs/lng_exampl
 <gr>
 <EBNFCDECL name='ImperativeLogicNotOpExpr' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicUnaryOp_2' param = '( "!" | "not" )'/> .
 <EBNFCDECL name='TriggerNotOpExpr' groups='TriggerLogicExpr'/> = <TEBNFC name='TriggerLogicUnaryOp_2' param = '( "!" | "not" )'/> .
+<EBNFCDECL name='LogicalModalityNotOpExpr' groups='LogicalModalityExpr'/> = <TEBNFC name='LogicalModalityUnaryOp_2' param = '( "!" | "not" )'/> .
 </gr>
 
 <code data-lng='soc'>
