@@ -107,7 +107,7 @@ Plugins projects
 Plugins for SymOntoClay.
 </p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClaySoundBuses'>
+<h4 class='center-h' data-href='Repository_SymOntoClay_Plugins_projects_SymOntoClaySoundBuses'>
 Project: SymOntoClaySoundBuses
 </h4>
 
@@ -120,6 +120,22 @@ Simulates sound propagation.
 <p>
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClaySoundBuses'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClaySoundBuses</a>.
 </p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Plugins_projects_SymOntoClayNLP'>
+Project: SymOntoClayNLP
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Plugins_projects_SymOntoClayStandardFacts'>
+Project: SymOntoClayStandardFacts
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Repository_SymOntoClay_Additional_projects'>
 Additional projects
@@ -221,6 +237,14 @@ Provides classes for working with <a href='/docs/file_structure.html'>projects o
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayProjectFiles'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayProjectFiles</a>.
 </p>
 
+<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayNLPCommonDict'>
+Project: SymOntoClayNLPCommonDict
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Repository_SymOntoClay_Internal_projects'>
 Internal projects
 </h3>
@@ -262,6 +286,14 @@ Small program for quick running parts of SymOntoClay.
 <p>
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/TestSandbox'>https://github.com/Symontoclay/SymOntoClay/tree/master/TestSandbox</a>.
 </p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Internal_projects_DictionaryGenerator'>
+Project: DictionaryGenerator
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Repository_SymOntoClayAsset'>
 Repository: SymOntoClayAsset
