@@ -4100,8 +4100,38 @@ A channel for writing information to the log in text form.
 Logging targets are determined by the engine settings.
 </p>
 
+<code data-lng='soc'>
+'Begin' >> @>log;
+</code>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Hello_world'>here</a>.
+</p>
+
+<h5 class='center-h' data-href='Say_channel_chapter'>
+@>say
+</h5>
+
+<LinkToContent/>
+
+<p>
+A channel for writing information to game sound bus.
+The information can be perceived by other NPCs' <a href='#Logic_conditional_triggers_chapter'>trigges</a> as speech.
+</p>
+
+<p>
+For players this information can be shown as tooltips or subtitles or converted to voice.
+</p>
+
+<code data-lng='soc'>
+'I like my cat.' >> @>say;
+{: >: { like(i,#@{: >: { possess(i,$_) & cat($_) } :}) } :} >> @>say;
+@a >> @>say;
+</code>
+
+<p>
+<a href='#String_literal_chapter'>String</a> will be converted to <a href='#Fact_chapter'>fact</a> automatically.
+So you do not have to create special trigger for the string value in parallel with trigger for the fact.
 </p>
 
 <h3 class='center-h' data-href='Operators_chapter'>
