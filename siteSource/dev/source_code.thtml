@@ -293,7 +293,13 @@ Project: DictionaryGenerator
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Small program for generating dictionary for <a href='#SymOntoClayNLP'>SymOntoClayNLP</a> using <a href='https://wordnet.princeton.edu/'>WordNet</a> and custom data files as source.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/DictionaryGenerator'>https://github.com/Symontoclay/SymOntoClay/tree/master/DictionaryGenerator</a>.
+</p>
 
 <h2 class='center-h' data-href='Repository_SymOntoClayAsset'>
 Repository: SymOntoClayAsset
