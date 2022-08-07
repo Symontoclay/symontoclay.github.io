@@ -2,6 +2,14 @@
 
 <ContentsPlace/>
 
+<p>
+Here are relations and facts that I would recommend using in SymOntoClay projects.
+</p>
+
+<p>
+SymOntoClay provides building the facts using <a href='/dev/source_code.html#Repository_SymOntoClay_Plugins_projects_SymOntoClayStandardFacts'>SymOntoClayStandardFacts</a> library.
+</p>
+
 <h2 class='center-h' data-href='Perception'>
 Perception
 </h2>

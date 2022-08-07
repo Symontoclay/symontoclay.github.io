@@ -127,7 +127,13 @@ Project: SymOntoClayNLP
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Provides Natural language processing.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayNLP'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayNLP</a>.
+</p>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Plugins_projects_SymOntoClayStandardFacts'>
 Project: SymOntoClayStandardFacts
@@ -135,7 +141,14 @@ Project: SymOntoClayStandardFacts
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Provides building facts that I would recommend as Standard facts.
+The facts are descrbed in <a href='/docs/recommended-vocabulary.html'>Recommended vocabulary</a>.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayStandardFacts'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayStandardFacts</a>.
+</p>
 
 <h3 class='center-h' data-href='Repository_SymOntoClay_Additional_projects'>
 Additional projects
@@ -243,7 +256,13 @@ Project: SymOntoClayNLPCommonDict
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Provides common classes for word's dictionary for <a href='#Repository_SymOntoClay_Plugins_projects_SymOntoClayNLP'>SymOntoClayNLP</a>.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayNLPCommonDict'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayNLPCommonDict</a>.
+</p>
 
 <h3 class='center-h' data-href='Repository_SymOntoClay_Internal_projects'>
 Internal projects
@@ -294,7 +313,7 @@ Project: DictionaryGenerator
 <LinkToContent/>
 
 <p>
-Small program for generating dictionary for <a href='#SymOntoClayNLP'>SymOntoClayNLP</a> using <a href='https://wordnet.princeton.edu/'>WordNet</a> and custom data files as source.
+Small program for generating dictionary for <a href='#Repository_SymOntoClay_Plugins_projects_SymOntoClayNLP'>SymOntoClayNLP</a> using <a href='https://wordnet.princeton.edu/'>WordNet</a> and custom data files as source.
 </p>
 
 <p>
