@@ -45,6 +45,32 @@ I recommend to add the component to <b>Terrain</b>.
 	      Reference to <a href='/docs/file_structure.html#.world'>world file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_World'>DSL world</a>.
 	  </td>
     </tr>
+	<tr>
+      <th>Logical explain mode</th>
+      <td>
+	      <p>
+	         Sets target Logical explain mode.
+		     It is helpful during debugging and bug fixing.
+          </p>
+		   
+	      <p>
+             Explanation will be saved into log directory in <ico target='Wikipedia'/><a href='#https://en.wikipedia.org/wiki/DOT_(graph_description_language)'>.dot (graph description language) file</a> for each logical query.
+			 The log directory are placed in &percnt;USERPROFILE&percnt;/AppData/Roaming/&lt;your_project_name&gt;/NpcLogs/
+          </p>
+	  
+		  <ul>
+		      <li>
+			      <b>None</b>. Explanation will not be saved.
+			  </li>
+		      <li>
+			      <b>Dump always</b>. Explanation will be saved after any logical query.
+			  </li>
+		      <li>
+			      <b>Dump If Error</b>. Explanation will be saved only in case of an error during logical query.
+			  </li>			  
+		  </ul>
+	  </td>
+    </tr>
   </tbody>
 </table>
 
