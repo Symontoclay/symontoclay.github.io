@@ -51,6 +51,14 @@
         <i class='fas fa-link'></i>
     </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Perception">Perception</a><ul><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#see">See</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#focus">Focus</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Hearing">Hearing</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Geometry">Geometry</a><ul><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#distance">Distance</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Point">Point</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Direction">Direction</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#States">States</a><ul><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Alive">Alive</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Dead">Dead</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Ready">Ready</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Current_actions">Current actions</a><ul><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#walk">Walk</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#stop">Stop</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Hold">Hold</a></li><li><a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Shoot">Shoot</a></li></ul></li></ul>
 
+<p>
+Here are relations and facts that I would recommend using in SymOntoClay projects.
+</p>
+
+<p>
+SymOntoClay provides building the facts using <a href='https://symontoclay.github.io/dev/source_code.html#Repository_SymOntoClay_Plugins_projects_SymOntoClayStandardFacts'>SymOntoClayStandardFacts</a> library.
+</p>
+
 <h2 class='center-h' data-href='Perception' is-processed="true">
 Perception
 <a href="https://symontoclay.github.io/docs/recommended-vocabulary.html#Perception" name="Perception" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
@@ -69,7 +77,7 @@ See
 
 <div class="ebnf-code"><div class="ebnf-code-item">"see" "(" "I" "," <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id615d157d_89c9_4c73_ae88_dd92dfb2c347">Copy</button></div><script>$('#id615d157d_89c9_4c73_ae88_dd92dfb2c347').click(function() {navigator.clipboard.writeText(atob('c2VlKEksICNgQmFycmVsNTQzNTM0YCkNCg=='));});</script><div class="code-viewer-line">see(I, #`Barrel543534`)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idcc4df12c_44df_43a5_8475_18b39c18a4ba">Copy</button></div><script>$('#idcc4df12c_44df_43a5_8475_18b39c18a4ba').click(function() {navigator.clipboard.writeText(atob('c2VlKEksICNgQmFycmVsNTQzNTM0YCkNCg=='));});</script><div class="code-viewer-line">see(I, #`Barrel543534`)</div></div>
 
 <p>
 Describes human sentence: "I am seeing #`Barrel543534`".
@@ -83,7 +91,7 @@ Focus
 
 <div class="ebnf-code"><div class="ebnf-code-item">"focus" "(" "I" "," <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id793dd6a2_8636_4c52_a6ea_e6ddfe68e8e4">Copy</button></div><script>$('#id793dd6a2_8636_4c52_a6ea_e6ddfe68e8e4').click(function() {navigator.clipboard.writeText(atob('Zm9jdXMoSSwgI2BCYXJyZWw1NDM1MzRgKQ0K'));});</script><div class="code-viewer-line">focus(I, #`Barrel543534`)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id027e59e3_3a63_40aa_8b46_64bbcd7537e7">Copy</button></div><script>$('#id027e59e3_3a63_40aa_8b46_64bbcd7537e7').click(function() {navigator.clipboard.writeText(atob('Zm9jdXMoSSwgI2BCYXJyZWw1NDM1MzRgKQ0K'));});</script><div class="code-viewer-line">focus(I, #`Barrel543534`)</div></div>
 
 <p>
 Describes human sentence: "There is #`Barrel543534` in my focus right now".
@@ -97,7 +105,7 @@ Hearing
 
 <div class="ebnf-code"><div class="ebnf-code-item">"hear" "(" "I" "," ( <a href='https://symontoclay.github.io/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> | <a href='https://symontoclay.github.io/docs/spec.html#PredicateOp'>PredicateOp</a> ) ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id5d70d263_35df_4d78_8029_24c138511a4c">Copy</button></div><script>$('#id5d70d263_35df_4d78_8029_24c138511a4c').click(function() {navigator.clipboard.writeText(atob('ezogJHggPSBhY3QoTTE2LCBzaG9vdCkgJiBoZWFyKEksICR4KSA6fQ0KezogJHggPSBhY3QoTTE2LCBzaG9vdCkgJiBoZWFyKEksICR4KSAmIGRpc3RhbmNlKEksICR4LCAxNS41OCkgJiBkaXJlY3Rpb24oJHgsIDEyKSAmIHBvaW50KCR4LCAjQFsxNS41OCwgMTJdKSA6fQ0K'));});</script><div class="code-viewer-line">{: $x = act(M16, shoot) & hear(I, $x) :}</div><div class="code-viewer-line">{: $x = act(M16, shoot) & hear(I, $x) & distance(I, $x, 15.58) & direction($x, 12) & point($x, #@[15.58, 12]) :}</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id3275661e_5872_4f0e_a496_ff7e4ccee02d">Copy</button></div><script>$('#id3275661e_5872_4f0e_a496_ff7e4ccee02d').click(function() {navigator.clipboard.writeText(atob('ezogJHggPSBhY3QoTTE2LCBzaG9vdCkgJiBoZWFyKEksICR4KSA6fQ0KezogJHggPSBhY3QoTTE2LCBzaG9vdCkgJiBoZWFyKEksICR4KSAmIGRpc3RhbmNlKEksICR4LCAxNS41OCkgJiBkaXJlY3Rpb24oJHgsIDEyKSAmIHBvaW50KCR4LCAjQFsxNS41OCwgMTJdKSA6fQ0K'));});</script><div class="code-viewer-line">{: $x = act(M16, shoot) & hear(I, $x) :}</div><div class="code-viewer-line">{: $x = act(M16, shoot) & hear(I, $x) & distance(I, $x, 15.58) & direction($x, 12) & point($x, #@[15.58, 12]) :}</div></div>
 
 <p>
 In general sound facts for hearing are not built by user.
@@ -109,7 +117,7 @@ The bus wraps the pushed fact into hear-fact and adds information about placing 
 After all transformations logical storage gets:
 </p>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idce9efd16_bafe_40b4_8cf0_fa0fa5e60275">Copy</button></div><script>$('#idce9efd16_bafe_40b4_8cf0_fa0fa5e60275').click(function() {navigator.clipboard.writeText(atob('ezogJHggPSBhY3QoTTE2LCBzaG9vdCkgJiBoZWFyKEksICR4KSAmIGRpc3RhbmNlKEksICR4LCAxNS41OCkgJiBkaXJlY3Rpb24oJHgsIDEyKSAmIHBvaW50KCR4LCAjQFsxNS41OCwgMTJdKSA6fQ0K'));});</script><div class="code-viewer-line">{: $x = act(M16, shoot) & hear(I, $x) & distance(I, $x, 15.58) & direction($x, 12) & point($x, #@[15.58, 12]) :}</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id2c9a9f17_83c3_4eec_bac4_05c81e4bcc49">Copy</button></div><script>$('#id2c9a9f17_83c3_4eec_bac4_05c81e4bcc49').click(function() {navigator.clipboard.writeText(atob('ezogJHggPSBhY3QoTTE2LCBzaG9vdCkgJiBoZWFyKEksICR4KSAmIGRpc3RhbmNlKEksICR4LCAxNS41OCkgJiBkaXJlY3Rpb24oJHgsIDEyKSAmIHBvaW50KCR4LCAjQFsxNS41OCwgMTJdKSA6fQ0K'));});</script><div class="code-viewer-line">{: $x = act(M16, shoot) & hear(I, $x) & distance(I, $x, 15.58) & direction($x, 12) & point($x, #@[15.58, 12]) :}</div></div>
 
 <h2 class='center-h' data-href='Geometry' is-processed="true">
 Geometry
@@ -130,7 +138,7 @@ Distance
 
 <div class="ebnf-code"><div class="ebnf-code-item">"distance" "(" "I" "," ( <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> | <a href='https://symontoclay.github.io/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a> | <a href='https://symontoclay.github.io/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> ) "," <a href='https://symontoclay.github.io/docs/spec.html#NumberExpr'>NumberExpr</a> ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idc6377284_a3c5_420e_8c63_f8841051f070">Copy</button></div><script>$('#idc6377284_a3c5_420e_8c63_f8841051f070').click(function() {navigator.clipboard.writeText(atob('ZGlzdGFuY2UoSSwgJHgsIDE1LjU4KQ0KZGlzdGFuY2UoSSwgI2BCYXJyZWw1NDM1MzRgLCAxNC43MTUyNikNCg=='));});</script><div class="code-viewer-line">distance(I, $x, 15.58)</div><div class="code-viewer-line">distance(I, #`Barrel543534`, 14.71526)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id7753822f_0c7c_4e21_a89a_f03837881ad0">Copy</button></div><script>$('#id7753822f_0c7c_4e21_a89a_f03837881ad0').click(function() {navigator.clipboard.writeText(atob('ZGlzdGFuY2UoSSwgJHgsIDE1LjU4KQ0KZGlzdGFuY2UoSSwgI2BCYXJyZWw1NDM1MzRgLCAxNC43MTUyNikNCg=='));});</script><div class="code-viewer-line">distance(I, $x, 15.58)</div><div class="code-viewer-line">distance(I, #`Barrel543534`, 14.71526)</div></div>
 
 <p>
 Describes human sentence: "Distance between me and #`Barrel543534` is 14.71526".
@@ -144,7 +152,7 @@ Point
 
 <div class="ebnf-code"><div class="ebnf-code-item">"point" "(" ( <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> | <a href='https://symontoclay.github.io/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a> | <a href='https://symontoclay.github.io/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> ) "," <a href='https://symontoclay.github.io/docs/spec.html#WaypointDecl'>WaypointDecl</a> ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idd22c4cb2_5a94_41dc_a3c6_8a7aba19d2b2">Copy</button></div><script>$('#idd22c4cb2_5a94_41dc_a3c6_8a7aba19d2b2').click(function() {navigator.clipboard.writeText(atob('cG9pbnQoJHgsICNAWzE1LjU4LCAxMl0pDQpwb2ludCgjYEJhcnJlbDU0MzUzNGAsICNAWzE1LjU4LCAxMl0pDQo='));});</script><div class="code-viewer-line">point($x, #@[15.58, 12])</div><div class="code-viewer-line">point(#`Barrel543534`, #@[15.58, 12])</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id56195f1c_7742_4ecb_a5b0_2d36a1267b52">Copy</button></div><script>$('#id56195f1c_7742_4ecb_a5b0_2d36a1267b52').click(function() {navigator.clipboard.writeText(atob('cG9pbnQoJHgsICNAWzE1LjU4LCAxMl0pDQpwb2ludCgjYEJhcnJlbDU0MzUzNGAsICNAWzE1LjU4LCAxMl0pDQo='));});</script><div class="code-viewer-line">point($x, #@[15.58, 12])</div><div class="code-viewer-line">point(#`Barrel543534`, #@[15.58, 12])</div></div>
 
 <p>
 Links someone or something to waypoint.
@@ -158,7 +166,7 @@ Direction
 
 <div class="ebnf-code"><div class="ebnf-code-item">"direction" "(" ( <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> | <a href='https://symontoclay.github.io/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a> | <a href='https://symontoclay.github.io/docs/spec.html#LogicVarExpr'>LogicVarExpr</a> ) "," <a href='https://symontoclay.github.io/docs/spec.html#NumberExpr'>NumberExpr</a> ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id2ffa6cd4_f225_470e_b0c3_5325f2bf2bff">Copy</button></div><script>$('#id2ffa6cd4_f225_470e_b0c3_5325f2bf2bff').click(function() {navigator.clipboard.writeText(atob('ZGlyZWN0aW9uKCR4LCAxMikNCmRpcmVjdGlvbigjYEJhcnJlbDU0MzUzNGAsIDEyKQ0K'));});</script><div class="code-viewer-line">direction($x, 12)</div><div class="code-viewer-line">direction(#`Barrel543534`, 12)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id3df64e57_e4a5_4e65_a8e5_e4f111275516">Copy</button></div><script>$('#id3df64e57_e4a5_4e65_a8e5_e4f111275516').click(function() {navigator.clipboard.writeText(atob('ZGlyZWN0aW9uKCR4LCAxMikNCmRpcmVjdGlvbigjYEJhcnJlbDU0MzUzNGAsIDEyKQ0K'));});</script><div class="code-viewer-line">direction($x, 12)</div><div class="code-viewer-line">direction(#`Barrel543534`, 12)</div></div>
 
 <p>
 Describes human sentence: "Direction to #`Barrel543534` is 12 degrees to the right.".
@@ -182,7 +190,7 @@ Alive
 
 <div class="ebnf-code"><div class="ebnf-code-item">"state" "(" <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "alive" ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idfb672741_3644_4863_9da6_97ca75efe9fb">Copy</button></div><script>$('#idfb672741_3644_4863_9da6_97ca75efe9fb').click(function() {navigator.clipboard.writeText(atob('c3RhdGUoI2BlbmVteU5QQzEwMzQ1YCwgYWxpdmUpDQo='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>state</span>(#`enemyNPC10345`, alive)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id46277fbb_4539_413c_be33_db5c7a249e90">Copy</button></div><script>$('#id46277fbb_4539_413c_be33_db5c7a249e90').click(function() {navigator.clipboard.writeText(atob('c3RhdGUoI2BlbmVteU5QQzEwMzQ1YCwgYWxpdmUpDQo='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>state</span>(#`enemyNPC10345`, alive)</div></div>
 
 <p>
 Describes that someone is alive.
@@ -196,7 +204,7 @@ Dead
 
 <div class="ebnf-code"><div class="ebnf-code-item">"state" "(" <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "dead" ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id86334551_ea00_44b4_91cc_8bb6516076b1">Copy</button></div><script>$('#id86334551_ea00_44b4_91cc_8bb6516076b1').click(function() {navigator.clipboard.writeText(atob('c3RhdGUoI2BlbmVteU5QQzEwMzQ1YCwgZGVhZCkNCg=='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>state</span>(#`enemyNPC10345`, dead)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id5d86ac7b_9cb2_4fd2_b89e_f1cb27de22b4">Copy</button></div><script>$('#id5d86ac7b_9cb2_4fd2_b89e_f1cb27de22b4').click(function() {navigator.clipboard.writeText(atob('c3RhdGUoI2BlbmVteU5QQzEwMzQ1YCwgZGVhZCkNCg=='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>state</span>(#`enemyNPC10345`, dead)</div></div>
 
 <p>
 Describes that someone is dead.
@@ -210,7 +218,7 @@ Ready
 
 <div class="ebnf-code"><div class="ebnf-code-item">"ready" "(" <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," <a href='https://symontoclay.github.io/docs/spec.html#ConceptIdentifier'>ConceptIdentifier</a>  ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id96b004d2_bbc1_49fa_aeb8_6ffe21a9fa4e">Copy</button></div><script>$('#id96b004d2_bbc1_49fa_aeb8_6ffe21a9fa4e').click(function() {navigator.clipboard.writeText(atob('cmVhZHkoI2BlbmVteU5QQzEwMzQ1YCwgc2hvb3QpDQo='));});</script><div class="code-viewer-line">ready(#`enemyNPC10345`, shoot)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id65eb4265_dcc9_48cf_9c4a_d0fa5c10f6a9">Copy</button></div><script>$('#id65eb4265_dcc9_48cf_9c4a_d0fa5c10f6a9').click(function() {navigator.clipboard.writeText(atob('cmVhZHkoI2BlbmVteU5QQzEwMzQ1YCwgc2hvb3QpDQo='));});</script><div class="code-viewer-line">ready(#`enemyNPC10345`, shoot)</div></div>
 
 <p>
 Describes that someone or something is ready for something.
@@ -234,7 +242,7 @@ Walk
 
 <div class="ebnf-code"><div class="ebnf-code-item">"act" "(" <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "walk" ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="ide130d8fa_592b_49b9_86e4_7bf17c9bcbd3">Copy</button></div><script>$('#ide130d8fa_592b_49b9_86e4_7bf17c9bcbd3').click(function() {navigator.clipboard.writeText(atob('YWN0KCNgZW5lbXlOUEMxMDM0NWAsIHdhbGspDQo='));});</script><div class="code-viewer-line">act(#`enemyNPC10345`, walk)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id050ee1aa_e977_4bd3_b75c_2428e0ebe84e">Copy</button></div><script>$('#id050ee1aa_e977_4bd3_b75c_2428e0ebe84e').click(function() {navigator.clipboard.writeText(atob('YWN0KCNgZW5lbXlOUEMxMDM0NWAsIHdhbGspDQo='));});</script><div class="code-viewer-line">act(#`enemyNPC10345`, walk)</div></div>
 
 <p>
 Describes human sentence: "#`enemyNPC10345` walks".
@@ -252,7 +260,7 @@ Stop
 Describes human sentence: "#`enemyNPC10345` stops".
 </p>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id7371697a_ce67_49e3_a4bf_3d92476aa229">Copy</button></div><script>$('#id7371697a_ce67_49e3_a4bf_3d92476aa229').click(function() {navigator.clipboard.writeText(atob('YWN0KCNgZW5lbXlOUEMxMDM0NWAsIHN0b3ApDQo='));});</script><div class="code-viewer-line">act(#`enemyNPC10345`, stop)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id71ac1953_2e2f_4157_9e2b_d5501c43fd00">Copy</button></div><script>$('#id71ac1953_2e2f_4157_9e2b_d5501c43fd00').click(function() {navigator.clipboard.writeText(atob('YWN0KCNgZW5lbXlOUEMxMDM0NWAsIHN0b3ApDQo='));});</script><div class="code-viewer-line">act(#`enemyNPC10345`, stop)</div></div>
 
 <h3 class='center-h' data-href='Hold' is-processed="true">
 Hold
@@ -262,7 +270,7 @@ Hold
 
 <div class="ebnf-code"><div class="ebnf-code-item">"hold" "(" <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idf3d8156d_af1d_495a_b00c_d901aed47f7d">Copy</button></div><script>$('#idf3d8156d_af1d_495a_b00c_d901aed47f7d').click(function() {navigator.clipboard.writeText(atob('aG9sZCgjYGVuZW15TlBDMTAzNDVgLCAjZ3VuMTIzKQ0K'));});</script><div class="code-viewer-line">hold(#`enemyNPC10345`, #gun123)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id082821a3_5d13_45f7_8c35_ca613a22b240">Copy</button></div><script>$('#id082821a3_5d13_45f7_8c35_ca613a22b240').click(function() {navigator.clipboard.writeText(atob('aG9sZCgjYGVuZW15TlBDMTAzNDVgLCAjZ3VuMTIzKQ0K'));});</script><div class="code-viewer-line">hold(#`enemyNPC10345`, #gun123)</div></div>
 
 <p>
 Describes that someone holds something in his hands.
@@ -276,7 +284,7 @@ Shoot
 
 <div class="ebnf-code"><div class="ebnf-code-item">"act" "(" <a href='https://symontoclay.github.io/docs/spec.html#InstanceIdentifier'>InstanceIdentifier</a> "," "shoot" ")".</div></div>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idb0f953b6_5f9f_4321_8cf1_96e28818fccf">Copy</button></div><script>$('#idb0f953b6_5f9f_4321_8cf1_96e28818fccf').click(function() {navigator.clipboard.writeText(atob('YWN0KCNgZW5lbXlOUEMxMDM0NWAsIHNob290KQ0K'));});</script><div class="code-viewer-line">act(#`enemyNPC10345`, shoot)</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id6e799d01_23fa_4273_927c_80084062831f">Copy</button></div><script>$('#id6e799d01_23fa_4273_927c_80084062831f').click(function() {navigator.clipboard.writeText(atob('YWN0KCNgZW5lbXlOUEMxMDM0NWAsIHNob290KQ0K'));});</script><div class="code-viewer-line">act(#`enemyNPC10345`, shoot)</div></div>
 
 <p>
 Describes that someone or something shoots.
@@ -296,7 +304,7 @@ Describes that someone or something shoots.
 <span style='font-size: 17px;'><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
 <br>
 </br>
-This page was last modified on 20 July 2022<br>
+This page was last modified on 20 August 2022<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2022</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;

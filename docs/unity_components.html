@@ -94,6 +94,58 @@ I recommend to add the component to <b>Terrain</b>.
 	      Reference to <a href='https://symontoclay.github.io/docs/file_structure.html#.world'>world file</a> with target <a href='https://symontoclay.github.io/docs/engine_concepts/index.html#Common_concepts_World'>DSL world</a>.
 	  </td>
     </tr>
+    <tr>
+      <th>Enable NLP</th>
+      <td>
+	      <p>
+              Enables or disables NLP features.
+          </p>
+		  
+		  <p>
+              <b>Warning:</b> NLP requires long dictionary file. 
+			  Loading this file significantly increases startup time.
+          </p>
+	  </td>
+    </tr>
+	<tr>
+	  <th>Logging</th>
+	  <td>
+	      Options for logging.
+	  </td>
+    </tr>
+	<tr>
+	    <th>- Adding or removing facts</th>
+		<td>
+	        <b>true</b> - enables logging adding or removing facts. 
+			It is helpful during debugging and bug fixing.
+	    </td>
+	</tr>
+	<tr>
+      <th>- Logical explain mode</th>
+      <td>
+	      <p>
+	         Sets target Logical explain mode.
+		     It is helpful during debugging and bug fixing.
+          </p>
+		   
+	      <p>
+             Explanation will be saved into log directory in <i class="fab fa-wikipedia-w" title="Wikipedia"></i><a href='https://symontoclay.github.io/docs/unity_components.html#https://en.wikipedia.org/wiki/DOT_(graph_description_language)'>.dot (graph description language) file</a> for each logical query.
+			 The log directory are placed in &percnt;USERPROFILE&percnt;/AppData/Roaming/&lt;your_project_name&gt;/NpcLogs/
+          </p>
+	  
+		  <ul>
+		      <li>
+			      <b>None</b>. Explanation will not be saved.
+			  </li>
+		      <li>
+			      <b>Dump always</b>. Explanation will be saved after any logical query.
+			  </li>
+		      <li>
+			      <b>Dump If Error</b>. Explanation will be saved only in case of an error during logical query.
+			  </li>			  
+		  </ul>
+	  </td>
+    </tr>
   </tbody>
 </table>
 
@@ -447,7 +499,7 @@ It allows the NPC to percept the Player.
 <span style='font-size: 17px;'><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
 <br>
 </br>
-This page was last modified on 20 July 2022<br>
+This page was last modified on 20 August 2022<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2022</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;

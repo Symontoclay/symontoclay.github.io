@@ -1,9 +1,9 @@
 {
-  "XmlDocFiles": [
-    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.CoreHelper.xml",
-    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.Core.xml",
-    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.UnityAsset.Core.xml",
-	"%SITE_SOURCE_PATH%/CSharpApiFiles/Assembly-CSharp.xml"
+  "DocFiles": [
+    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.CoreHelper.json",
+    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.Core.json",
+    "%SITE_SOURCE_PATH%/CSharpApiFiles/SymOntoClay.UnityAsset.Core.json",
+	"%SITE_SOURCE_PATH%/CSharpApiFiles/Assembly-CSharp.json"
   ],
   "UnityAssetCoreRootTypes": [
     "T:SymOntoClay.Core.EntityConstraints",
