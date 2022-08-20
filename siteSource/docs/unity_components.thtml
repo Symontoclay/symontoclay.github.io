@@ -45,8 +45,34 @@ I recommend to add the component to <b>Terrain</b>.
 	      Reference to <a href='/docs/file_structure.html#.world'>world file</a> with target <a href='/docs/engine_concepts/index.html#Common_concepts_World'>DSL world</a>.
 	  </td>
     </tr>
+    <tr>
+      <th>Enable NLP</th>
+      <td>
+	      <p>
+              Enables or disables NLP features.
+          </p>
+		  
+		  <p>
+              <b>Warning:</b> NLP requires long dictionary file. 
+			  Loading this file significantly increases startup time.
+          </p>
+	  </td>
+    </tr>
 	<tr>
-      <th>Logical explain mode</th>
+	  <th>Logging</th>
+	  <td>
+	      Options for logging.
+	  </td>
+    </tr>
+	<tr>
+	    <th>- Adding or removing facts</th>
+		<td>
+	        <b>true</b> - enables logging adding or removing facts. 
+			It is helpful during debugging and bug fixing.
+	    </td>
+	</tr>
+	<tr>
+      <th>- Logical explain mode</th>
       <td>
 	      <p>
 	         Sets target Logical explain mode.
