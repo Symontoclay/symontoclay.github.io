@@ -3305,3 +3305,31 @@ app PeaceKeeper
 
 <console example_name='BreakLoopStatement_Example1'>
 </console>
+
+<h2 class='center-h' data-href='ExecStatement'>
+"exec" statement
+</h2>
+
+<LinkToContent/>
+
+<p>
+Read more about "exec" loop statement <a href='/docs/spec.html#ExecStatement_chapter'>here</a>.
+</p>
+
+<code example_name='ExecStatement_Example1'>
+app PeaceKeeper
+{
+	on Enter => {
+	    exec {: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}) & $x1 = go(someone,self) } o: 1 :};
+	}
+
+	fun go(@direction)
+	{
+	    'go!!!!' >> @>log;
+	    @direction >> @>log;
+	}
+}
+</code>
+
+<console example_name='ExecStatement_Example1'>
+</console>

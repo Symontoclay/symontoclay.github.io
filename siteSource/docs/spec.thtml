@@ -6314,7 +6314,21 @@ The statement does not break execution of the body of the trigger's handler.
 In this example the trigger rejects all facts which fit contition "{: hear(I, $x) & gun($x) :}";
 </p>
 
+<h3 class='center-h' data-href='ExecStatement_chapter'>
+"exec" statement
+</h3>
 
+<LinkToContent/>
+
+<complete_me/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here</a>.
+</p>
+
+<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
