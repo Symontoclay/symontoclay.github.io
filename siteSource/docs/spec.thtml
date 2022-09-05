@@ -451,6 +451,7 @@ But the words can be used as identifiers in other places.
 	<kw name='add'/>
 	<kw name='fact'/>
 	<kw name='reject'/>
+	<kw name='exec'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -6320,15 +6321,22 @@ In this example the trigger rejects all facts which fit contition "{: hear(I, $x
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Converts <a href='#Fact_chapter'>Fact</a> to imperative code and executes the code. 
+</p>
 
-<complete_me/>
+<gr>
+<EBNFCDECL name='ExecStatement' groups='Statement'/> = "exec" <EBNFC name='Expr'/> ";" .
+</gr>
+
+<code data-lng='soc'>
+exec @a;
+exec {: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}) & $x1 = go(someone,self) } o: 1 :};
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
