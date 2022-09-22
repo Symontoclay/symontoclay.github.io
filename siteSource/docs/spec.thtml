@@ -2363,6 +2363,28 @@ state Attacking
 You can see examples <a href='/docs/lng_examples/index.html#State'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='Synonym_chapter'>
+Synonym
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='SynonymDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
+<EBNFCDECL name='SynonymDecl'/> = "synonym" <EBNFC name='SynonymIdentifier'/> "for" <EBNFC name='SynonymIdentifier'/> ";" .
+<EBNFC name='SynonymIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
 </h2>
