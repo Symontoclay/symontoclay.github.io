@@ -468,6 +468,158 @@ linvar age for range (0, 150]
 }
 </code>
 
+<h2 class='center-h' data-href='Synonym'>
+Synonym
+</h2>
+
+<LinkToContent/>
+
+<p>
+Read more <a href='/docs/spec.html#Synonym_chapter'>here</a> about synonyms in SymOntoClay DSL.
+</p>
+
+<code example_name='SynonymExample1'>
+synonym b for a;
+
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        b();
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='SynonymExample1'>
+</console>
+
+<code example_name='SynonymExample2'>
+synonym param_1 for param_2;
+
+app PeaceKeeper
+{
+    fun a(@param_1)
+    {
+        '`a` has been called!' >> @>log;
+        @param_1 >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        a(param_2: 1);
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='SynonymExample2'>
+</console>
+
+<code example_name='SynonymExample3'>
+synonym procreator for parent;
+
+app PeaceKeeper
+{
+	{: male(#Tom) :}
+	{: procreator(#Piter, #Tom) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+
+	on Enter => {
+	    select {: son($x, $y) :} >> @>log;
+	}
+}
+</code>
+
+<console example_name='SynonymExample3'>
+</console>
+
+<code example_name='SynonymExample4'>
+synonym procreator for parent;
+synonym #Tom for #Person123;
+
+app PeaceKeeper
+{
+	{: male(#Tom) :}
+	{: procreator(#Piter, #Person123) :}
+	{: {son($x, $y)} -> { male($x) & parent($y, $x)} :}
+
+	on Enter => {
+	    select {: son($x, $y) :} >> @>log;
+	}
+}
+</code>
+
+<console example_name='SynonymExample4'>
+</console>
+
+<code example_name='SynonymExample5'>
+synonym go for walk;
+
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+ 
+        walk();
+
+        'End' >> @>log;
+    }
+}
+
+action Go 
+{
+    on Enter =>
+    {
+        'Enter Go' >> @>log;
+    }
+
+    op () => 
+    {
+        'Begin Go' >> @>log;
+        'End Go' >> @>log;
+    }
+}
+</code>
+
+<console example_name='SynonymExample5'>
+</console>
+
+<code example_name='SynonymExample6'>
+synonym Chilling for Idling;
+
+app PeaceKeeper
+{
+    set Chilling as default state;
+
+    on Enter =>
+    {
+        'Begin' >> @>log;        
+        'End' >> @>log;
+    }
+}
+
+state Idling
+{
+    on Enter
+    {
+        'Begin Enter' >> @>log;
+        'End Enter' >> @>log;
+    }
+}
+</code>
+
+<console example_name='SynonymExample6'>
+</console>
+
 <h2 class='center-h' data-href="Inheritance">
 Inheritance
 </h2>

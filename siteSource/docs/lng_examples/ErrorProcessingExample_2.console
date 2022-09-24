@@ -2,8 +2,8 @@ Begin
 `a` has been called!
 1
 catch(@e) where {: see(I, $x) :}
-ERROR {: #^`3f2b668f-a4ee-4522-872f-ca651feb719e` &gt;: { see(i,#a) } :}
 on Fired
-ensure
+ERROR {: #^`ac9095fc-a420-4a13-bc98-a9f27a4772eb` &gt;: { see(i,#a) } :}
 #a
+ensure
 End of `Enter`

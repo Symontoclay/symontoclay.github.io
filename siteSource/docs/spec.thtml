@@ -2369,7 +2369,9 @@ Synonym
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Synonym provides an alternative name for another indentifier.
+</p>
 
 <gr>
 <EBNFCDECL name='SynonymDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
@@ -2377,13 +2379,15 @@ Synonym
 <EBNFC name='SynonymIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+synonym procreator for parent;
+synonym #Tom for #Person123;
+synonym param_1 for param_2;
 </code>
 
-<complete_me/>
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Synonym'>here</a>.
+</p>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
