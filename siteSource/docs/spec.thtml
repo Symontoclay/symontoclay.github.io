@@ -426,10 +426,12 @@ But the words can be used as identifiers in other places.
 	<kw name='else'/>
 	<kw name='ensure'/>
 	<kw name='action'/>
+	<kw name='actions'/>
 	<kw name='op'/>
 	<kw name='complete'/>
 	<kw name='break'/>
 	<kw name='await'/>
+	<kw name='wait'/>
 	<kw name='alias'/>	
 	<kw name='repeat'/>
 	<kw name='while'/>
@@ -453,6 +455,7 @@ But the words can be used as identifiers in other places.
 	<kw name='reject'/>
 	<kw name='exec'/>
 	<kw name='synonym'/>
+	<kw name='idle'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -2671,6 +2674,14 @@ app PeaceKeeper
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Function'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='IdleActions_chapter'>
+Idle actions
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='operator_overloading_chapter'>
 Operator overloading
@@ -5802,6 +5813,14 @@ The <b>await</b> statement suspends evaluation of the enclosing method until the
         await;
     }
 </code>
+
+<h3 class='center-h' data-href='WaitStatement_chapter'>
+"wait" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='CompleteActionStatement_chapter'>
 "complete action" statement
