@@ -456,6 +456,8 @@ But the words can be used as identifiers in other places.
 	<kw name='exec'/>
 	<kw name='synonym'/>
 	<kw name='idle'/>
+	<kw name='with'/>
+	<kw name='priority'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
