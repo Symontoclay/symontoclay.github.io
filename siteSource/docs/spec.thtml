@@ -2573,6 +2573,22 @@ private:
 You can see examples <a href='/docs/lng_examples/index.html#MemberAccessModifiers'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='AddSettingsOfObjOrMember_chapter'>
+Additional settings
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='AddSettingsOfObjOrMember_Priority_chapter'>
+Priority
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='Field_chapter'>
 Field
 </h3>
