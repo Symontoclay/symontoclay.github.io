@@ -3389,10 +3389,44 @@ The reflection can be consumed only automatically by engine's components.
 <EBNFCDECL name='AnnotationItem'/> = <EBNFC name='ConceptIdentifier'/> .
 </gr>
 
+<h4 class='center-h' data-href='ConceptAnnotation_chapter'>
+Concept
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <code data-lng='soc'>
 [: experiencer :]
 [: experiencer, subject :]
 </code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='KeyValueAnnotation_chapter'>
+Key - value
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='TimeoutKeyValueAnnotation_chapter'>
+Timeout
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='PriorityKeyValueAnnotation_chapter'>
+Priority
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
