@@ -627,7 +627,7 @@ Inheritance
 <LinkToContent/>
 
 <p>
-Here It is example of changin relationship run time using operator <a href='/docs/spec.html#IsOp_chapter'>"is"</a> and statement <a href='/docs/spec.html#SetIsStatement_chapter'>"set is"</a>.
+Here It is example of changing relationship run time using operator <a href='/docs/spec.html#IsOp_chapter'>"is"</a> and statement <a href='/docs/spec.html#SetIsStatement_chapter'>"set is"</a>.
 </p>
 
 <p>
@@ -746,6 +746,22 @@ app PeaceKeeper is [very middle] exampleClass
 
 <console example_name='InheritanceExample3'>
 </console>
+
+<h2 class='center-h' data-href='AddSettingsOfObjOrMember'>
+Additional settings
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='AddSettingsOfObjOrMember_Priority'>
+Priority
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='MemberAccessModifiers'>
 Member access modifiers
@@ -1207,6 +1223,14 @@ app PeaceKeeper
 <console example_name='FuncExample_10_b'>
 </console>
 
+<h2 class='center-h' data-href='IdleActions'>
+Idle actions
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Action'>
 Action
 </h2>
@@ -1662,6 +1686,54 @@ state Patrolling
 <console example_name='States_Example10'>
 </console>
 
+<h2 class='center-h' data-href='Calling_method'>
+Calling method
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Calling_host_method_Synchronous'>
+Synchronous
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Calling_method_Asynchronous'>
+Asynchronous
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Calling_method_Asynchronous_Child'>
+Child asynchronous call
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Calling_method_Asynchronous_Independent'>
+Independent asynchronous call
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Calling_method_Asynchronous_Cancelation'>
+Cancelation
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>
@@ -1712,7 +1784,7 @@ app PeaceKeeper is [0.5] exampleClass
 	{
 	    "Begin" >> @>log;
 
-        @@host.`go`~(to: #@[25, 30]);
+        @@host.`go`~~(to: #@[25, 30]);
 
 	    "End" >> @>log;
 	}
@@ -3485,3 +3557,11 @@ app PeaceKeeper
 
 <console example_name='ExecStatement_Example1'>
 </console>
+
+<h2 class='center-h' data-href='WaitStatement'>
+"wait" statement
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
