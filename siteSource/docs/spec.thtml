@@ -2699,7 +2699,46 @@ Idle actions
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Declares list of actions which can be executed when NPC is idle.
+</p>
+
+<gr>
+<EBNFCDECL name='IdleActionsDecl' groups='AppBodyContent'/> = "idle" "actions" "{" <TEBNFC name='DeclSet' param = 'IdleActionsItemDecl'/> "}" .
+<EBNFCDECL name='IdleActionsItemDecl'/> = <EBNFC name='Expr'/> | <EBNFC name='FactDecl'/> .
+</gr>
+
+<code data-lng='soc'>
+    idle actions
+    {
+        go();
+    }
+</code>
+
+<code data-lng='soc'>
+    idle actions
+    {
+        go()[: timeout=1000 :];
+    }
+</code>
+
+<code data-lng='soc'>
+    idle actions
+    {
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :};
+    }
+</code>
+
+<code data-lng='soc'>
+    idle actions
+    {
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1000 :];
+    }
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#IdleActions'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='operator_overloading_chapter'>
 Operator overloading
@@ -3493,7 +3532,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 
 <gr>
 <EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
-<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) [ <EBNFC name='ModalityDeclSet'/> ] ":}" .
+<EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) [ <EBNFC name='ModalityDeclSet'/> ] ":}" <TEBNFC name='Annotation'/> .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
 </gr>
@@ -6568,6 +6607,10 @@ You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here<
 	<TEBNFCDECL name='SetStateDecl'>
 	    "set" <EBNFC name='StateIdentifier'/> "as" "state"
 	</TEBNFCDECL>
+	
+	<TEBNFCDECL name='Annotation'>
+	    [ <EBNFC name='AnnotationDeclSet'/> ]
+	</TEBNFCDECL>
 </div>
 
 <a href='/docs/lng_examples/index.html#'></a>
@@ -6647,6 +6690,8 @@ You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here<
 <TEBNFC name=''/>
 
 <EBNFCDECL name='ImperativeLogic ' groups='ImperativeLogicExpr'/> = <TEBNFC name='ImperativeLogicBinaryOp' param = ''/> .
+
+<TEBNFC name='Annotation'/>
 
 ImperativeLogicExpr   Expr  LogicExpr 
 
