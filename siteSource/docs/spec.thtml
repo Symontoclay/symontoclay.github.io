@@ -5123,11 +5123,11 @@ Calls an object (or member reference) with parameters specified in round bracket
 </p>
 
 <p>
-Whether a call is synchronous or asynchronous is determined by the presence of a &quot;~&quot; before the opening round bracket of the parameter list.
+Whether a call is synchronous or asynchronous is determined by the presence of a &quot;~&quot; or &quot;~~&quot; before the opening round bracket of the parameter list.
 </p>
 
 <gr>
-<EBNFCDECL name='CallOpExpr' groups='Expr;ImperativeLogicExpr'/> = <EBNFC name='Expr'/> [ "~" ] "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
+<EBNFCDECL name='CallOpExpr' groups='Expr;ImperativeLogicExpr'/> = <EBNFC name='Expr'/> [ "~" | "~~" ] "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" <TEBNFC name='Annotation'/> .
 <EBNFCDECL name='TriggerCallOpExpr' groups='TriggerLogicExpr'/> = <EBNFC name='TriggerLogicExpr'/> "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
 <EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
@@ -5164,30 +5164,46 @@ a();
 </code>
 
 <p>
-A <b>synchronous call</b> is made when there is no &quot;~&quot;.
+A <b>synchronous call</b> is made when there is no &quot;~&quot; or &quot;~~&quot;.
 In this case, the operator returns directly the result of the called method.
 </p>
 
 <code data-lng='soc'>
 @@host.`go`(to: #@[25, 30]);
+some_fun();
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a> and <a href='/docs/lng_examples/index.html#Function'>here</a>.
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Synchronous'>here</a>, <a href='/docs/lng_examples/index.html#Function'>here</a> or <a href='/docs/lng_examples/index.html#Calling_method_Synchronous'>here</a>.
 </p>
 
 <p>
-An <b>asynchronous call</b> is made when &quot;~&quot; is present.
-In this case, the operator returns a reference to the object representing the asynchronous operation.
-Working with asynchronous operations will be designed in details in the future.
+An <b>asynchronous call</b> is made when &quot;~&quot; or &quot;~~&quot; is present.
+In this case, the operator returns a reference to the <a href='/docs/standard_library/callpointer.html'>object</a> which represents the asynchronous operation.
+</p>
+
+<p>
+&quot;~&quot; starts child asynchronous operation.
+The operation will be automatically cancelled after finishing parent operation.
 </p>
 
 <code data-lng='soc'>
 @@host.`go`~(to: #@[25, 30]);
+some_fun~();
 </code>
 
 <p>
-You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Asynchronous'>here</a> and <a href='/docs/lng_examples/index.html#Function'>here</a>.
+&quot;~~&quot; starts independent asynchronous operation.
+The operation will executes after finishing parent operation.
+</p>
+
+<code data-lng='soc'>
+@@host.`go`~~(to: #@[25, 30]);
+some_fun~~();
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Calling_host_method_Asynchronous'>here</a>, <a href='/docs/lng_examples/index.html#Function'>here</a> or <a href='/docs/lng_examples/index.html#Calling_method_Asynchronous'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Stream_operators_chapter'>
