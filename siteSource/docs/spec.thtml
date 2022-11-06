@@ -1770,7 +1770,7 @@ Function is <ico t='w'/><a href='https://en.wikipedia.org/wiki/First-class_funct
 <gr>
 <EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
-<EBNFCDECL name='FunctionDecl'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='FunctionDecl'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='FunctionParamsDeclSet'/> = <EBNFC name='FunctionParamDecl'/> [ { "," <EBNFC name='FunctionParamDecl'/> } ] .
 <EBNFCDECL name='FunctionParamName'/> = <EBNFC name='VarIdentifier'/> .
 <EBNFCDECL name='FunctionParamDecl'/> = <EBNFC name='FunctionParamName'/> [ ":" ( <EBNFC name='FunctionParamType'/> | <EBNFC name='TupleOfFunctionParamTypes'/> ) ] [ "=" <EBNFC name='DefaultValueOfFunctionParam'/> ] .
@@ -2579,7 +2579,27 @@ Additional settings
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Declares additional setting of object or member.
+</p>
+
+<gr>
+<EBNFCDECL name='AddSettingsOfObjOrMemberDecl'/> = "width" <EBNFC name='AddSettingsOfObjOrMemberItem'/> [{ "," <EBNFC name='AddSettingsOfObjOrMemberItem'/> }] .
+<EBNFCDECL name='AddSettingsOfObjOrMemberItem'/> = <EBNFC name='AddSettingsOfObjOrMemberName'/> [ "=" ] <EBNFC name='Expr'/> .
+<EBNFCDECL name='AddSettingsOfObjOrMemberName'/> = <GEBNFC name='AddSettingsOfObjOrMemberName' kind='or'/> .
+</gr>
+
+<code data-lng='soc'>
+fun a() with priority = 1 {}
+fun a() with priority 1 {}
+fun a() with priority middle {}
+on {: see(I, #a) :} with priority 1 => {}
+on {: see(I, #a) :} as `trigger 1` alias `Alarm trigger`, trigger_5 with priority 1 => {}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#AddSettingsOfObjOrMember'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='AddSettingsOfObjOrMember_Priority_chapter'>
 Priority
@@ -2587,7 +2607,29 @@ Priority
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Declares priority of object or member.
+</p>
+
+<p>
+Now It is allowed only for <a href='#Method_chapter'>method</a>, <a href='#Function_chapter'>function</a> or <a href='#InlineTrigger_chapter'>trigger</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='AddSettingsOfObjOrMemberPriorityName' groups='AddSettingsOfObjOrMemberName'/> = "priority" .
+</gr>
+
+<code data-lng='soc'>
+fun a() with priority = 1 {}
+fun a() with priority 1 {}
+fun a() with priority middle {}
+on {: see(I, #a) :} with priority 1 => {}
+on {: see(I, #a) :} as `trigger 1` alias `Alarm trigger`, trigger_5 with priority 1 => {}
+</code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#AddSettingsOfObjOrMember_Priority'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Field_chapter'>
 Field
@@ -2814,7 +2856,7 @@ In the future I am going to develop other kinds of triggers.
 
 <gr>
 <EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContentDecl'/> .
-<EBNFCDECL name='TriggersContentDecl'/> = ( <EBNFC name='LifecycleTriggerCondition'/> | <EBNFC name='TriggersLogicCondition'/> | <EBNFC name='TriggersAddingFactCondition'/> ) <br/> [ "as" <EBNFC name='TriggerName'/> [ <EBNFC name='TriggerAliasDecl'/> ]] <br/> ( <EBNFC name='TriggerHandler'/> | <EBNFC name='ActiveLogicRuleBody'/> ) .
+<EBNFCDECL name='TriggersContentDecl'/> = ( <EBNFC name='LifecycleTriggerCondition'/> | <EBNFC name='TriggersLogicCondition'/> | <EBNFC name='TriggersAddingFactCondition'/> ) <br/> [ "as" <EBNFC name='TriggerName'/> [ <EBNFC name='TriggerAliasDecl'/> ]] [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] <br/> ( <EBNFC name='TriggerHandler'/> | <EBNFC name='ActiveLogicRuleBody'/> ) .
 <EBNFCDECL name='TriggerHandler'/> = [ "=>" ] <EBNFC name='SetTriggerHandler'/> "else" <EBNFC name='DownTriggerHandler'/> .
 <EBNFCDECL name='SetTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='DownTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
@@ -6709,7 +6751,7 @@ You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here<
 
 <TEBNFC name='Annotation'/>
 
-ImperativeLogicExpr   Expr  LogicExpr 
+ImperativeLogicExpr   Expr  LogicExpr AddSettingsOfObjOrMemberDecl
 
 AnnotationDeclSet <a href='#Annotation_chapter'></a>
 -->
