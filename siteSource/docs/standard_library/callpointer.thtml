@@ -1,0 +1,35 @@
+<h1 class='center-h'>callPointer</h1>
+
+<p>
+Represents an asynchronous operation.
+</p>
+
+<p>
+An instance of <b>callPointer</b> automatically creates after an <a href='/docs/spec.html#CallOp_chapter'>asynchronous call</a>.
+</p>
+
+<h2 class='center-h' data-href='Methods'>
+Methods
+</h2>
+
+<h3 class='center-h' data-href='Method_Cancel'>
+Cancel
+</h3>
+
+<p>
+Cancels executing asynchronous operation.
+</p>
+
+<code data-lng='soc'>
+@a.cancel();
+</code>
+
+<code data-lng='soc'>
+@a = some_fun~~();
+wait 1000;
+@a.cancel();
+</code>
+
+<p>
+You can see example <a href='/docs/lng_examples/index.html#Calling_method_Asynchronous_Cancelation'>here</a>.
+</p>

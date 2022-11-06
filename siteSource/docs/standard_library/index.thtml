@@ -1,0 +1,29 @@
+<h1 class='center-h'>Standard library</h1>
+
+<p>
+Standard library is defined by collection of source code files which are located on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCore/StandardLibrary'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCore/StandardLibrary</a>.
+</p>
+
+<p>
+The standard library is still in early stage of development.
+</p>
+
+<h3 class='center-h' data-href='BuiltInObjects'>
+Built-in objects
+</h3>
+
+<p>
+SymOntoClay provides some built-in objects.
+This objects are cteated automatically duting program execution.
+Customer can not create the objects manually.
+</p>
+
+<p>
+The type names of these objects can be used in code as type of code entity (parameters, variables, fields and something like this).
+</p>
+
+<ul>
+    <li>
+	    <a href='/docs/standard_library/callpointer.html'>callPointer</a>
+	</li>
+<ul/>
