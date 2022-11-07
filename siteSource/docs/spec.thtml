@@ -3467,7 +3467,7 @@ The reflection can be consumed only automatically by engine's components.
 <gr>
 <EBNFCDECL name='AnnotationDeclSet'/> = <TEBNFC name='DeclSet' param = 'AnnotationDecl'/> .
 <EBNFCDECL name='AnnotationDecl'/> = "[:" <EBNFC name='AnnotationItem'/> [ { "," <EBNFC name='AnnotationItem'/> }] ":]" .
-<EBNFCDECL name='AnnotationItem'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='AnnotationItem'/> = <GEBNFC name='AnnotationItem' kind='or'/> .
 </gr>
 
 <h4 class='center-h' data-href='ConceptAnnotation_chapter'>
@@ -3476,14 +3476,19 @@ Concept
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Adds additional meaning of the code entity.
+This meaning will be used for transformations and linking by meaning.
+</p>
+
+<gr>
+<EBNFCDECL name='ConceptAnnotationDecl' groups='AnnotationItem'/> = <EBNFC name='ConceptIdentifier'/> .
+</gr>
 
 <code data-lng='soc'>
 [: experiencer :]
 [: experiencer, subject :]
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='KeyValueAnnotation_chapter'>
 Key - value
@@ -3491,7 +3496,20 @@ Key - value
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Adds additional settings to code expressions.
+</p>
+
+<gr>
+<EBNFCDECL name='KeyValueAnnotationDecl' groups='AnnotationItem'/> = <EBNFC name='KeyOfKeyValueAnnotation'/> "=" <EBNFC name='Expr'/> .
+<EBNFCDECL name='KeyOfKeyValueAnnotation'/> = <GEBNFC name='KeyOfKeyValueAnnotation' kind='or'/> .
+</gr>
+
+<code data-lng='soc'>
+go()[: timeout=1000 :];
+go()[: priority = 1 :];
+go()[: priority = 1, timeout=1000 :];
+</code>
 
 <h5 class='center-h' data-href='TimeoutKeyValueAnnotation_chapter'>
 Timeout
@@ -3499,7 +3517,35 @@ Timeout
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Sets timeout for <a href='#IdleActions_chapter'>idle actions</a> or <a href='#CallOp_chapter'>asynchronous call</a>.
+</p>
+
+<p>
+Executing operation will be automatically canceled after target period.
+</p>
+
+<gr>
+<EBNFCDECL name='TimeoutKeyOfKeyValueAnnotation' groups='KeyOfKeyValueAnnotation'/> = "timeout" .
+</gr>
+
+<code data-lng='soc'>
+go~()[: timeout=1000 :];
+</code>
+
+<code data-lng='soc'>
+    idle actions
+    {
+        go()[: timeout=1000 :];
+    }
+</code>
+
+<code data-lng='soc'>
+    idle actions
+    {
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1000 :];
+    }
+</code>
 
 <h5 class='center-h' data-href='PriorityKeyValueAnnotation_chapter'>
 Priority
@@ -3507,7 +3553,17 @@ Priority
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Sets priority of operation.
+</p>
+
+<gr>
+<EBNFCDECL name='PriorityKeyOfKeyValueAnnotation' groups='KeyOfKeyValueAnnotation'/> = "priority" .
+</gr>
+
+<code data-lng='soc'>
+go~()[: priority = 1 :];
+</code>
 
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
