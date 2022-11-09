@@ -1734,6 +1734,14 @@ Cancelation
 
 <complete_me/>
 
+<h4 class='center-h' data-href='Calling_method_Asynchronous_Timeout'>
+Timeout
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
 </h2>
