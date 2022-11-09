@@ -6025,19 +6025,17 @@ The <b>await</b> statement suspends evaluation of the enclosing method until the
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+"wait" statement suspends excution of the enclosing method.
+</p>
 
 <gr>
 <EBNFCDECL name='WaitStatement' groups='Statement'/> = "wait" <EBNFC name='Expr'/> [{ "," <EBNFC name='Expr'/> }] .
 </gr>
 
-<complete_me/>
-
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#WaitStatement'>here</a>.
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='WaitTimeoutStatement_chapter'>
 Wait timeout
@@ -6045,19 +6043,21 @@ Wait timeout
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+"wait" statement suspends excution of the enclosing method for the specified amount of time.
+</p>
+
+<p>
+Now the amount of time is in approximately milliseconds.
+</p>
 
 <code data-lng='soc'>
 wait 10000;
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 wait @timeout;
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='WaitCallPointerStatement_chapter'>
 Wait callPointer
@@ -6065,22 +6065,20 @@ Wait callPointer
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+"wait" statement suspends excution of the enclosing method while <a href='/docs/standard_library/callpointer.html'>callPointers</a> is running.
+</p>
 
 <code data-lng='soc'>
 @a = a~~();
 wait @a;
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 @a = a~~();
 @b = b~~();
 wait @a, @b;
 </code>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='CompleteActionStatement_chapter'>
 "complete action" statement
