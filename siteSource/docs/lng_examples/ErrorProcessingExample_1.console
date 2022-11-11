@@ -1,7 +1,0 @@
-Begin
-`a` has been called!
-1
-catch(@e) where {: see(I, $x) :}
-ERROR {: #^`3b6dc788-fd03-4596-8d2e-6d9dbb1b37be` &gt;: { see(i,#a) } :}
-ensure
-End of `Enter`

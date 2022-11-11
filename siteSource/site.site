@@ -9,6 +9,7 @@
 	"ReleaseNotesJsonPath": "%SITE_SOURCE_PATH%/ReleaseNotes.json",
 	"BaseReleaseNotesPath" : "%SITE_SOURCE_PATH%/downloads/arch",
 	"DestKeyFeaturesPath": "docs/key-features.html",
+	"LngExamplesCachePath": "%SITE_SOURCE_PATH%/.cache/lng_examples",
 	"LngExamplesPath" : "%SITE_SOURCE_PATH%/docs/lng_examples",
 	"DestLngExamplesPath": "docs/lng_examples",
 	"LngExamplesPages": [
@@ -17,7 +18,8 @@
 	"IgnoredDirs" : [
 	    "%SITE_SOURCE_PATH%/CSharpApiFiles",
 		"%SITE_SOURCE_PATH%/CommonReadmes",
-		"%SITE_SOURCE_PATH%/CommonFragments"
+		"%SITE_SOURCE_PATH%/CommonFragments",
+		"%SITE_SOURCE_PATH%/.cache"
 	],
 	"Microdata": {
         "Description": "SymOntoClay is a hybrid language with logic programming and fuzzy logic for defining game characters behavior.",
