@@ -753,7 +753,9 @@ Additional settings
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more about Additional settings <a href='/docs/spec.html#AddSettingsOfObjOrMember_chapter'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='AddSettingsOfObjOrMember_Priority'>
 Priority
@@ -761,7 +763,81 @@ Priority
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more about Priority <a href='/docs/spec.html#AddSettingsOfObjOrMember_Priority_chapter'>here</a>.
+</p>
+
+<code example_name='AddSettingsOfObjOrMember_PriorityFunctionExample1'>
+app PeaceKeeper
+{
+    fun a() with priority = 1 => 
+    {
+        '`a` has been called!' >> @>log;
+
+        @a = 10;
+
+        while (@a > 0)
+        {
+            @a >> @>log;
+            @a = @a - 1;
+        }
+
+        'End `a`' >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+
+        @a = a~~();
+
+        wait @a;
+
+        'End' >> @>log;
+    }
+}
+</code>
+
+<code example_name='AddSettingsOfObjOrMember_PriorityTriggerExample1'>
+app PeaceKeeper
+{
+	on {: see(I, #a) :} with priority 1 => 
+	{
+	     'D' >> @>log;
+	}
+}
+</code>
+
+<code example_name='AddSettingsOfObjOrMember_PriorityTriggerExample2'>
+app PeaceKeeper
+{
+	on {: see(I, #a) :} as `trigger 1` alias `Alarm trigger`, trigger_5 with priority 1 => 
+	{
+	     'D' >> @>log;
+	}
+}
+</code>
+
+<code example_name='AddSettingsOfObjOrMember_PriorityTriggerExample3'>
+app PeaceKeeper
+{
+	on {: see(I, #a) :} as `trigger 1` with priority 1 => 
+	{
+	     'D' >> @>log;
+	}
+}
+</code>
+
+<code example_name='AddSettingsOfObjOrMember_PriorityTriggerExample4'>
+app PeaceKeeper
+{
+    on {: see(I, $x) :}($x >> @x) with priority 1  => 
+    {
+        'on Fired $x in App' >> @>log;
+        @x >> @>log;
+    }
+}
+</code>
 
 <h2 class='center-h' data-href='MemberAccessModifiers'>
 Member access modifiers
