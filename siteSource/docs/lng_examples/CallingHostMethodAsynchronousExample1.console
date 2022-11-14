@@ -1,0 +1,14 @@
+Begin
+End
+methodName = 'go'
+#020ED339-6313-459A-900D-92F809CEBDC5&gt;&gt;14-11-2022 20:09:18.90812 SymOntoClay.CLI.CLIRunHandler GenericCall LOG methodName = 'go'
+isNamedParameters = True
+#020ED339-6313-459A-900D-92F809CEBDC5&gt;&gt;14-11-2022 20:09:18.90986 SymOntoClay.CLI.CLIRunHandler GenericCall LOG isNamedParameters = True
+namedParameters = {
+  "to": "#@[25, 30]"
+}
+#020ED339-6313-459A-900D-92F809CEBDC5&gt;&gt;14-11-2022 20:09:18.93094 SymOntoClay.CLI.CLIRunHandler GenericCall LOG namedParameters = {
+  "to": "#@[25, 30]"
+}
+positionedParameters = null
+#020ED339-6313-459A-900D-92F809CEBDC5&gt;&gt;14-11-2022 20:09:18.93186 SymOntoClay.CLI.CLIRunHandler GenericCall LOG positionedParameters = null

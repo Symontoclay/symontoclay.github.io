@@ -1,0 +1,7 @@
+Begin
+`a` has been called!
+1
+catch(@e) where {: see(I, $x) :}
+ERROR {: #^`93666682-93fd-44bf-870a-2d3056703be4` &gt;: { see(i,#a) } :}
+ensure
+End of `Enter`
