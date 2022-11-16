@@ -1305,7 +1305,86 @@ Idle actions
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more <a href='/docs/spec.html#IdleActions_chapter'>here</a> about Idle actions.
+</p>
+
+<code example_name='IdleActionsExample1'>
+app PeaceKeeper
+{
+    idle actions
+    {
+        go();
+    }
+
+    fun go()
+    {
+        'GO()' >> @>log;
+        wait 10000;
+    }
+}
+</code>
+
+<console example_name='IdleActionsExample1'>
+</console>
+
+<code example_name='IdleActionsExample2'>
+app PeaceKeeper
+{
+    idle actions
+    {
+        go()[: timeout=1000 :];
+    }
+
+    fun go()
+    {
+        'GO()' >> @>log;
+        wait 10000;
+    }
+}
+</code>
+
+<console example_name='IdleActionsExample2'>
+</console>
+
+<code example_name='IdleActionsExample3'>
+app PeaceKeeper
+{
+    idle actions
+    {
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :};
+    }
+
+    fun go(@direction)
+    {
+        'GO()' >> @>log;
+        @direction >> @>log;
+        wait 10000;
+    }
+}
+</code>
+
+<console example_name='IdleActionsExample3'>
+</console>
+
+<code example_name='IdleActionsExample4'>
+app PeaceKeeper
+{
+    idle actions
+    {
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1000 :];
+    }
+
+    fun go(@direction)
+    {
+        'GO()' >> @>log;
+        wait 10000;
+    }
+
+</code>
+
+<console example_name='IdleActionsExample4'>
+</console>
 
 <h2 class='center-h' data-href='Action'>
 Action
@@ -1768,7 +1847,13 @@ Calling method
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Read more <a href='/docs/engine_concepts/index.html#CallOp_chapter'>here</a> about Calling method.
+</p>
+
+<p>
+You can see other examples <a href='/docs/lng_examples/index.html#Function'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Calling_method_Synchronous'>
 Synchronous
@@ -1776,7 +1861,25 @@ Synchronous
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='Calling_method_SynchronousExample1'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        a();
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='Calling_method_SynchronousExample1'>
+</console>
 
 <h3 class='center-h' data-href='Calling_method_Asynchronous'>
 Asynchronous
@@ -1784,15 +1887,30 @@ Asynchronous
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='Calling_method_Asynchronous_Child'>
 Child asynchronous call
 </h4>
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='Calling_method_Asynchronous_ChildExample1'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Enter =>
+    {
+        a~();
+        wait 1000;
+    }
+}
+</code>
+
+<console example_name='Calling_method_Asynchronous_ChildExample1'>
+</console>
 
 <h4 class='center-h' data-href='Calling_method_Asynchronous_Independent'>
 Independent asynchronous call
@@ -1800,7 +1918,23 @@ Independent asynchronous call
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='Calling_method_Asynchronous_IndependentExample1'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Enter =>
+    {
+        a~~();        
+    }
+}
+</code>
+
+<console example_name='Calling_method_Asynchronous_IndependentExample1'>
+</console>
 
 <h4 class='center-h' data-href='Calling_method_Asynchronous_Cancelation'>
 Cancelation
@@ -1808,7 +1942,39 @@ Cancelation
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='Calling_method_Asynchronous_CancelationExample1'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+
+        @a = 10;
+
+        while (@a > 0)
+        {
+            @a >> @>log;
+            @a = @a - 1;
+        }
+
+        'End `a`' >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+
+        @a = a~~();
+
+        @a.cancel();
+
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='Calling_method_Asynchronous_CancelationExample1'>
+</console>
 
 <h4 class='center-h' data-href='Calling_method_Asynchronous_Timeout'>
 Timeout
@@ -1816,7 +1982,43 @@ Timeout
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='Calling_method_Asynchronous_TimeoutExample1'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+
+        wait 10000;
+
+        'End `a`' >> @>log;
+    }
+
+    fun b() => 
+    {
+        '`b` has been called!' >> @>log;
+
+        wait 10000;
+
+        'End `b`' >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+
+        @a = a~~()[: timeout = 1000 :];
+        @b = b~~()[: timeout = 1000 :];
+
+        wait @a, @b;
+
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='Calling_method_Asynchronous_TimeoutExample1'>
+</console>
 
 <h2 class='center-h' data-href="Calling_host_method">
 Calling host method
@@ -3648,4 +3850,72 @@ app PeaceKeeper
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='WaitStatement_Example1'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+
+    on Enter =>
+    {
+        a~();
+        wait 1000;
+    }
+}
+</code>
+
+<console example_name='WaitStatement_Example1'>
+</console>
+
+<code example_name='WaitStatement_Example2'>
+app PeaceKeeper
+{
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+
+        @a = 10;
+
+        while (@a > 0)
+        {
+            @a >> @>log;
+            @a = @a - 1;
+        }
+
+        'End `a`' >> @>log;
+    }
+
+    fun b() => 
+    {
+        '`b` has been called!' >> @>log;
+
+        @a = 10;
+
+        while (@a > 0)
+        {
+            @a >> @>log;
+            @a = @a - 1;
+        }
+
+        'End `b`' >> @>log;
+    }
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+
+        @a = a~();
+        @b = b~();
+
+        wait @a, @b;
+
+        'End' >> @>log;
+    }
+}
+
+</code>
+
+<console example_name='WaitStatement_Example2'>
+</console>
