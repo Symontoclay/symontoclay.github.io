@@ -205,7 +205,7 @@ Methods implemented by Host endpoints are available to call by using <a href='/d
 </p>
 
 <p>
-In details writing a Host endpoint is described in <complete_me/>.
+In details writing a Host endpoint is described <a href='/docs/host_methods.html'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Player_on_unity_scene'>

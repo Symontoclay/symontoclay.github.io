@@ -1,0 +1,93 @@
+<h1 class='center-h'>Host methods</h1>
+
+<ContentsPlace/>
+
+<h2 class='center-h' data-href='GeneralDescription'>
+General description
+</h2>
+
+<LinkToContent/>
+
+<p>
+SymOntoClay is a game-AI engine which is abstracted from concrete host (a game engine, like Unity, with which SymOntoClay is connected).
+It means SymOntoClay can not interact directly with objects on a game scene. 
+</p>
+
+<p>
+But sometimes game logic requires interaction with objects on a game scene.
+For instance:
+   <ul>
+       <li>
+	       Implementation of walking could require interaction with Unity NavMeshAgent and Animator.
+	   </li>
+	   
+	   <li>
+	       Implementation of shooting require interaction with Unity Light, ParticleSystem and AudioSource.
+	   </li>
+   </ul>
+</p>
+
+<p>
+Host methods are defined on Unity MonoBehaviour level and are imported into a namespace of SymOntoClay DSL.
+It allows us to call the methods on SymOntoClay DSL level by system variable <a href='/docs/spec.html#Host_system_variable_chapter'>@@host</a> and interact with objects on a game scene in the methods.
+</p>
+
+<h2 class='center-h' data-href='HostMethodDeclaration'>
+Host method declaration
+</h2>
+
+<LinkToContent/>
+
+<p>
+Host method is usual C# method on Unity MonoBehaviour level.
+</p>
+
+<p>
+Host method must be annotated by <a href='/docs/engine_api/2E05416F192FCACD25308FED210B7347.html'>BipedEndpointAttribute</a>.
+The first parameter of the atribute ("Go") is a name of the method in a namespace of SymOntoClay DSL.
+The name can be different from C#-name of the method.
+The next parameters are <a href='#Devices'>Devices</a> (like right of left leg or hand) which required for exeqution of the method.
+</p>
+
+<p>
+Host method must return only <b>void</b>.
+</p>
+
+<p>
+The first parameter of the method must be CancellationToken.
+Periodically you should check IsCancellationRequested or call ThrowIfCancellationRequested() of the CancellationToken to correctly cancel the method.
+</p>
+
+<p>
+Next parameters are passed from SymOntoClay DSL using <a href='#TypeConversion'>Type сonversion</a>.
+Attribute <a href='/docs/engine_api/C1CF31FDB74FFC5E643A421BC816D9CA.html'>EndpointParamAttribute</a> allows to set different name of the parameter ("To") and advice for <a href='#TypeConversion'>Type сonversion</a>.
+</p>
+
+<complete_me/>
+
+<code data-lng='C#'>
+[BipedEndpoint("Go", DeviceOfBiped.RightLeg, DeviceOfBiped.LeftLeg)]
+public void GoToImpl(CancellationToken cancellationToken,
+    [EndpointParam("To", KindOfEndpointParam.Position)] Vector3 point,
+    float speed = 12)
+{
+}
+</code>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='Devices'>
+Devices
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h2 class='center-h' data-href='TypeConversion'>
+Type сonversion
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>

@@ -99,6 +99,14 @@ Documentation about project file structure on SymOntoClay DSL.
 </p>
 
 <h3>
+<a href='/docs/host_methods.html'>Host methods</a>
+</h3>
+
+<p>
+How to define Unity-specific methods for SymOntoClay.
+</p>
+
+<h3>
 <a href='/docs/cli.html'>CLI</a>
 </h3>
 

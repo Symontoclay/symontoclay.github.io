@@ -2027,7 +2027,11 @@ Calling host method
 <LinkToContent/>
 
 <p>
-Read more <a href='/docs/engine_concepts/index.html#Common_concepts_Host'>host</a> about <b>Host</b>.
+Read more <a href='/docs/engine_concepts/index.html#Common_concepts_Host'>here</a> about <b>Host</b>.
+</p>
+
+<p>
+In details writing a Host endpoint is described <a href='/docs/host_methods.html'>here</a>.
 </p>
 
 <p>
