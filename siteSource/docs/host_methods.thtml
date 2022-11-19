@@ -63,8 +63,6 @@ Next parameters are passed from SymOntoClay DSL using <a href='#TypeConversion'>
 Attribute <a href='/docs/engine_api/C1CF31FDB74FFC5E643A421BC816D9CA.html'>EndpointParamAttribute</a> allows to set different name of the parameter ("To") and advice for <a href='#TypeConversion'>Type сonversion</a>.
 </p>
 
-<complete_me/>
-
 <code data-lng='C#'>
 [BipedEndpoint("Go", DeviceOfBiped.RightLeg, DeviceOfBiped.LeftLeg)]
 public void GoToImpl(CancellationToken cancellationToken,
@@ -73,6 +71,12 @@ public void GoToImpl(CancellationToken cancellationToken,
 {
 }
 </code>
+
+<h2 class='center-h' data-href='GeneralizedHostMethodDeclaration'>
+Generalized host method declaration
+</h2>
+
+<LinkToContent/>
 
 <complete_me/>
 
