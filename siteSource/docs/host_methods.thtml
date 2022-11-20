@@ -18,17 +18,17 @@ But sometimes game logic requires interaction with objects on a game scene.
 For instance:
    <ul>
        <li>
-	       Implementation of walking could require interaction with Unity NavMeshAgent and Animator.
+	       Implementation of walking could require interaction with Unity <b>NavMeshAgent</b> and <b>Animator</b>.
 	   </li>
 	   
 	   <li>
-	       Implementation of shooting require interaction with Unity Light, ParticleSystem and AudioSource.
+	       Implementation of shooting require interaction with Unity <b>Light</b>, <b>ParticleSystem</b> and <b>AudioSource</b>.
 	   </li>
    </ul>
 </p>
 
 <p>
-Host methods are defined on Unity MonoBehaviour level and are imported into a namespace of SymOntoClay DSL.
+Host methods are defined on Unity <b>MonoBehaviour</b> level and are imported into a namespace of SymOntoClay DSL.
 It allows us to call the methods on SymOntoClay DSL level by system variable <a href='/docs/spec.html#Host_system_variable_chapter'>@@host</a> and interact with objects on a game scene in the methods.
 </p>
 
@@ -39,7 +39,7 @@ Host method declaration
 <LinkToContent/>
 
 <p>
-Host method is usual C# method on Unity MonoBehaviour level.
+Host method is usual C# method on Unity <b>MonoBehaviour</b> level.
 </p>
 
 <p>
@@ -54,8 +54,8 @@ Host method must return only <b>void</b>.
 </p>
 
 <p>
-The first parameter of the method must be CancellationToken.
-Periodically you should check IsCancellationRequested or call ThrowIfCancellationRequested() of the CancellationToken to correctly cancel the method.
+The first parameter of the method must be <b>CancellationToken</b>.
+Periodically you should check <b>IsCancellationRequested</b> or call <b>ThrowIfCancellationRequested()</b> of the <b>CancellationToken</b> to correctly cancel the method.
 </p>
 
 <p>
@@ -77,6 +77,69 @@ Generalized host method declaration
 </h2>
 
 <LinkToContent/>
+
+<p>
+Sometimes host method can be unimplemented but call of the method should be logged instead of error of call undefined method.
+For instance, in <a href='/docs/cli.html'>CLI</a> host methods (like "Go" or "Take") are not implemented but can be called. 
+</p>
+
+<p>
+Generalized host method allows calling undefined host methods.
+</p>
+
+<p>
+Generalized host method is usual C# method on Unity <b>MonoBehaviour</b> level.
+</p>
+
+<p>
+Generalized host method must be annotated by <a href='/docs/engine_api/2E05416F192FCACD25308FED210B7347.html'>BipedEndpointAttribute</a>.
+The annotation should have just one parameter "*".
+</p>
+
+<p>
+Generalized host method must return only <b>void</b>.
+</p>
+
+<p>
+Generalized host method must have parameters:
+</p>
+
+<dl>
+  <dt>CancellationToken cancellationToken</dt>
+  <dd>
+      <complete_me/>
+  </dd>
+  
+  <dt>string methodName</dt>
+  <dd>
+      <complete_me/>
+  </dd>
+  
+  <dt>bool isNamedParameters</dt>
+  <dd>
+      <complete_me/>
+  </dd>
+  
+  <dt>Dictionary&lt;string, object&gt; namedParameters</dt>
+  <dd>
+      <complete_me/>
+  </dd>
+  
+  <dt>List&lt;object&gt; positionedParameters</dt>
+  <dd>
+      <complete_me/>
+  </dd> 
+</dl>
+
+<complete_me/>
+
+<code data-lng='C#'>
+[BipedEndpoint("*")]
+public void GenericCall(CancellationToken cancellationToken, string methodName, bool isNamedParameters,
+    Dictionary&lt;string, object&gt; namedParameters, List&lt;object&gt; positionedParameters)
+{
+}
+</code>
 
 <complete_me/>
 
