@@ -107,31 +107,29 @@ Generalized host method must have parameters:
 <dl>
   <dt>CancellationToken cancellationToken</dt>
   <dd>
-      <complete_me/>
+      Periodically you should check <b>IsCancellationRequested</b> or call <b>ThrowIfCancellationRequested()</b> of the <b>CancellationToken</b> to correctly cancel the method.
   </dd>
   
   <dt>string methodName</dt>
   <dd>
-      <complete_me/>
+      Contains name of called method.
   </dd>
   
   <dt>bool isNamedParameters</dt>
   <dd>
-      <complete_me/>
+      Contains <b>true</b> if method is called by named parameters, otherwise contains <b>false</b>.
   </dd>
   
   <dt>Dictionary&lt;string, object&gt; namedParameters</dt>
   <dd>
-      <complete_me/>
+      Contais <b>Dictionary</b> with named parameters if method is called by named parameters, otherwise contains <b>null</b>.
   </dd>
   
   <dt>List&lt;object&gt; positionedParameters</dt>
   <dd>
-      <complete_me/>
+      Contains <b>List</b> with parameters if method is called by positioneds parameters, otherwise contains <b>null</b>.
   </dd> 
 </dl>
-
-<complete_me/>
 
 <code data-lng='C#'>
 [BipedEndpoint("*")]
@@ -140,8 +138,6 @@ public void GenericCall(CancellationToken cancellationToken, string methodName, 
 {
 }
 </code>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Devices'>
 Devices
