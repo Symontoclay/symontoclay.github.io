@@ -145,12 +145,30 @@ Devices
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Devices represent parts of character's body which can be used in character's actions.
+For instance, head, right hand, left hand, right leg, left leg.
+Available devices are described in <a href='/docs/engine_api/E343054A1D19A9AD224E1D7D0FFB9943.html'>DeviceOfBiped</a>.
+</p>
+
+<p>
+Devices in host method declaration allow coordination between different host methods which want to use the same devices.
+</p>
+
+<p>
+If many host methods claim to use the same device, higher priority method will cath device.
+Other methods will be rejected.
+If lower priority method is already using this device, the lower priority method will be canceled.
+</p>
 
 <h2 class='center-h' data-href='TypeConversion'>
 Type сonversion
 </h2>
 
 <LinkToContent/>
+
+<p>
+SymOntoClay provides automatic type conversion.
+</p>
 
 <complete_me/>
