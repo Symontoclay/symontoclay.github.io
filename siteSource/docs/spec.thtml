@@ -458,6 +458,8 @@ But the words can be used as identifiers in other places.
 	<kw name='idle'/>
 	<kw name='with'/>
 	<kw name='priority'/>
+	<kw name='lib'/>
+	<kw name='import'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -703,6 +705,24 @@ world `Lost town`
 {
 }
 </code>
+
+<h3 class='center-h' data-href='Lib_chapter'>
+Lib
+</h3>
+
+<LinkToContent/>
+
+<p>
+It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_Lib'>Lib</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='LibIdentifier'/> =  .
+<EBNFCDECL name='LibDecl' groups=''/> =  .
+<EBNFCDECL name='LibBodyContent'/> =  .
+</gr>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Conditional_entity_chapter'>
 Conditional entity
@@ -5477,6 +5497,14 @@ Statements control execution.
 <EBNFCDECL name='StatementsSet'/> = <TEBNFC name='DeclSet' param = 'Statement'/> .
 <EBNFCDECL name='Statement'/> = <GEBNFC name='Statement' kind='or' /> .
 </gr>
+
+<h3 class='center-h' data-href='ImportStatement_chapter'>
+"import" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Expression_statement_chapter'>
 Expression statement

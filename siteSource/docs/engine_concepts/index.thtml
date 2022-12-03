@@ -95,6 +95,14 @@ Some of the information is updated automatically, depending on the state of an g
 There exists special <a href='/docs/spec.html#App_chapter'>syntax construction</a> for the root code entity of <b>app</b>.
 </p>
 
+<h3 class='center-h' data-href='Common_concepts_Lib'>
+Lib
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='On_unity_scene'>
 On unity scene
 </h2>
