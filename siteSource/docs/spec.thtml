@@ -1789,7 +1789,7 @@ Function is <ico t='w'/><a href='https://en.wikipedia.org/wiki/First-class_funct
 
 <gr>
 <EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
+<EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
 <EBNFCDECL name='FunctionDecl'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='FunctionParamsDeclSet'/> = <EBNFC name='FunctionParamDecl'/> [ { "," <EBNFC name='FunctionParamDecl'/> } ] .
 <EBNFCDECL name='FunctionParamName'/> = <EBNFC name='VarIdentifier'/> .
@@ -1995,7 +1995,7 @@ The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> ca
 
 <gr>
 <EBNFCDECL name='ActionIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='ActionDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ActionDecl'/> .
+<EBNFCDECL name='ActionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ActionDecl'/> .
 <EBNFCDECL name='ActionDecl'/> = "action" <EBNFC name='ActionIdentifier'/> [ <EBNFC name='ActionAliasDecl'/> ] [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='ActionBodyContent'/> = <GEBNFC name='ActionBodyContent' kind='op_and'/> .
 <EBNFCDECL name='ActionAliasDecl'/> = <TEBNFC name='AliasDecl'/> .
@@ -2108,7 +2108,7 @@ State's members are isolated so do not visible for App and another states.
 </p>
 
 <gr>
-<EBNFCDECL name='StateDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
+<EBNFCDECL name='StateDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
 <EBNFCDECL name='StateDecl'/> = "state" <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='StateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='StateBodyContent'/> = <GEBNFC name='StateBodyContent' kind='op_and'/> .
@@ -2189,7 +2189,7 @@ And one state can be in many sets of mutually exclusive states.
 </p>
 
 <gr>
-<EBNFCDECL name='MutuallyExclusiveStatesDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'MutuallyExclusiveStatesDecl'/> .
+<EBNFCDECL name='MutuallyExclusiveStatesDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'MutuallyExclusiveStatesDecl'/> .
 <EBNFCDECL name='MutuallyExclusiveStatesDecl'/> = "states" "{" <EBNFC name='StateIdentifier'/> [ { "," <EBNFC name='StateIdentifier'/> } ] "}" .
 </gr>
 
@@ -2399,7 +2399,7 @@ Synonym provides an alternative name for another indentifier.
 </p>
 
 <gr>
-<EBNFCDECL name='SynonymDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
+<EBNFCDECL name='SynonymDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
 <EBNFCDECL name='SynonymDecl'/> = "synonym" <EBNFC name='SynonymIdentifier'/> "for" <EBNFC name='SynonymIdentifier'/> ";" .
 <EBNFC name='SynonymIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
@@ -3649,7 +3649,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 </p>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) [ <EBNFC name='ModalityDeclSet'/> ] ":}" <TEBNFC name='Annotation'/> .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
@@ -3718,7 +3718,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
@@ -3862,7 +3862,7 @@ Now It needs for conversion fact to text.
 </p>
 
 <gr>
-<EBNFCDECL name='RelationMetadataDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;AppBodyContent;WorldBodyContent;WorldSourceCodeFileContent;ActionBodyContent;StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'RelationMetadataDecl'/> .
+<EBNFCDECL name='RelationMetadataDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'RelationMetadataDecl'/> .
 <EBNFCDECL name='RelationMetadataDecl'/> = "rel" <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='RelationMetadataArgument'/> [ { "," <EBNFC name='RelationMetadataArgument'/> } ] ")" [ <EBNFC name='InheritanceDecl'/> ] .
 <EBNFCDECL name='RelationMetadataArgument'/> = <EBNFC name='LogicVarIdentifier'/> [ <EBNFC name='AnnotationDeclSet'/> ] .
 </gr>
