@@ -125,6 +125,22 @@ Also this file can contain other content which is allowed in <a href='#Class_sou
 <EBNFCDECL name='AppSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='AppSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
 </gr>
 
+<h4 class='center-h' data-href='Lib_source_code_file_chapter'>
+Lib source code file
+</h4>
+
+<LinkToContent/>
+
+<p>
+The file contains <a href='#Lib_chapter'>Lib declaration</a>.
+There can be only one Lib declaration in the file.
+Also this file can contain other content which is allowed in <a href='#Class_source_code_file_chapter'>Class source code file</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='LibSourceCodeFileContent' groups='SourceCodeFileContent'/> = [ <EBNFC name='ClassSourceCodeFileContent'/> ] <GEBNFC name='LibSourceCodeFileContent' kind='op_and'/> [ <EBNFC name='ClassSourceCodeFileContent'/> ] .
+</gr>
+
 <h4 class='center-h' data-href='Class_source_code_file_chapter'>
 Class source code file
 </h4>
@@ -718,7 +734,7 @@ It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_L
 
 <gr>
 <EBNFCDECL name='LibIdentifier'/> =  .
-<EBNFCDECL name='LibDecl' groups=''/> =  .
+<EBNFCDECL name='LibDecl' groups='LibSourceCodeFileContent'/> =  .
 <EBNFCDECL name='LibBodyContent'/> =  .
 </gr>
 
@@ -850,7 +866,7 @@ You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/
 </p>
 
 <gr>
-<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppSourceCodeFileContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
+<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
 <EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='ConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
 <EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
