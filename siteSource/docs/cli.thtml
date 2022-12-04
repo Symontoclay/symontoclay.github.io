@@ -122,19 +122,47 @@ For creating project in existing worldspace run command <b>new</b> in worldspace
 soc install
 </h3>
 
-<complete_me/>
+<p>
+Installs shared library to worldspace.
+</p>
+
+<p>
+Now the source of the shared library is local directory in directory of CLI installation.
+So the shared libraries will be updated with CLI.
+</p>
+
+<p>
+It the future I am going to use installation from server.
+But now I don't have enough time for organization installation from server.
+</p>
 
 <p>
 soc <b>install</b> &lt;Shared library name&gt;
 </p>
 
-<complete_me/>
-
 <h4 class='center-h' data-href='Available_shared_libs'>
 Available libs
 </h4>
 
-<complete_me/>
+<h5 class='center-h' data-href='Available_shared_libs_sstdlib'>
+stdlib
+</h5>
+
+<p>
+Library with common code entities which will be helpful in different games.
+</p>
+
+<p>
+The location of the library is <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI/LibsForInstall/stdlib'>SymOntoClayCLI/LibsForInstall/stdlib</a>.
+</p>
+
+<p>
+To install the library, use the <a href='#install'>command</a>:
+</p>
+
+<console>
+soc install stdlib
+</console>
 
 <h3 class='center-h' data-href='version'>
 soc version
