@@ -76,9 +76,20 @@ soc <b>n</b> <b>-w</b> &lt;Worldspace name&gt;</br>
 </br>
 soc <b>new</b> <b>-thing</b> &lt;Thing Project name&gt;</br>
 soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
+</br>
+soc <b>new</b> <b>-lib</b> &lt;Library name&gt;</br>
+soc <b>n</b> <b>-lib</b> &lt;Library name&gt;</br>
+soc <b>new</b> <b>-l</b> &lt;Library name&gt;</br>
+soc <b>n</b> <b>-l</b> &lt;Library name&gt;</br>
+</br>
+soc <b>new</b> <b>-player</b> &lt;Player Project name&gt;</br>
+soc <b>n</b> <b>-player</b> &lt;Player Project name&gt;</br>
+soc <b>new</b> <b>-p</b> &lt;Player Project name&gt;</br>
+soc <b>n</b> <b>-p</b> &lt;Player Project name&gt;</br>
+</br>
+soc <b>new</b> <b>-nav</b> &lt;Navigation Project name&gt;</br>
+soc <b>n</b> <b>-nav</b> &lt;Navigation Project name&gt;
 </p>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='new_arguments'>Arguments</h4>
 
@@ -92,7 +103,14 @@ soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
   <dt>&lt;Thing Project name&gt;</dt>
   <dd>Name of new Thing Project</dd>
   
-  <complete_me/>
+  <dt>&lt;Library name&gt;</dt>
+  <dd>Name of new Library</dd>
+  
+  <dt>&lt;Player Project name&gt;</dt>
+  <dd>Name of new Player Project</dd>
+  
+  <dt>&lt;Navigation Project name&gt;</dt>
+  <dd>Name of new Navigation Project</dd>
 </dl>
 
 <p>

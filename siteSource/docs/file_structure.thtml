@@ -104,11 +104,25 @@ The meaning of these directories - grouping projects.
 Libs/
 </h3>
 
-<complete_me/>
+<LinkToContent/>
+
+<p>
+It is a root directory of your libraries.
+</p>
+
+<p>
+To create a library, use the command:
+</p>
+
+<console>
+soc new -lib &lt;Library name&gt;
+</console>
 
 <h3 class='center-h' data-href='Navs'>
 Navs/
 </h3>
+
+<LinkToContent/>
 
 <complete_me/>
 
@@ -178,6 +192,18 @@ World/
 Defines general information about world.
 </p>
 
+<p>
+World creates automatically during creation new project.
+</p>
+
+<p>
+To create a world in empty directory, use the command:
+</p>
+
+<console>
+soc new -world &lt;Worldspace name&gt;
+</console>
+
 <h3 class='center-h' data-href='wspace'>
 .wspace
 </h3>
@@ -224,7 +250,15 @@ Locator of project.
 .slib
 </h3>
 
-<complete_me/>
+<LinkToContent/>
+
+<p>
+<b>Required</b>
+</p>
+
+<p>
+Locator of library.
+</p>
 
 <h3 class='center-h' data-href='soc'>
 .soc
