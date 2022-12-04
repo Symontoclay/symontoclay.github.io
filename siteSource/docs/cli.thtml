@@ -124,7 +124,13 @@ soc install
 
 <complete_me/>
 
-<h4 class='center-h' data-href='Available_libs'>
+<p>
+soc <b>install</b> &lt;Shared library name&gt;
+</p>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Available_shared_libs'>
 Available libs
 </h4>
 

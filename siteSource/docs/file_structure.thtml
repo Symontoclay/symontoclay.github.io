@@ -124,7 +124,17 @@ Navs/
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Groups projects which are defining information about navigation elements, like waypoints, areas, roads and something like this.
+</p>
+
+<p>
+To create a Navigation element, use the <a href='/docs/cli.html#new'>command</a>:
+</p>
+
+<console>
+soc new -nav &lt;Navigation Project name&gt;
+</console>
 
 <h3 class='center-h' data-href='Npcs'>
 Npcs/
@@ -173,10 +183,20 @@ SharedLibs/
 </p>
 
 <p>
-This directory will contain shared libs.
+This directory contains shared libs.
 </p>
 
-<complete_me/>
+<p>
+To install a shared library, use the <a href='/docs/cli.html#install'>command</a>:
+</p>
+
+<console>
+soc install &lt;Shared library name&gt;
+</console>
+
+<p>
+Available shared libraries you can see <a href='/docs/cli.html#Available_shared_libs'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Things'>
 Things/
