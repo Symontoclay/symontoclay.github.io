@@ -16,7 +16,7 @@ The project is unit which is linked to Unity Game object with special asset.
 </p>
 
 <p>
-The SymOntoClay CLI <b>soc</b> <b>new</b> create new worldspace.
+The SymOntoClay CLI <a href='/docs/cli.html#new'><b>soc</b> <b>new</b></a> creates new worldspace.
 </p>
 
 <console>
@@ -111,7 +111,7 @@ It is a root directory of your libraries.
 </p>
 
 <p>
-To create a library, use the command:
+To create a library, use the <a href='/docs/cli.html#new'>command</a>:
 </p>
 
 <console>
@@ -136,7 +136,13 @@ Npcs/
 Groups projects which are defining NPCs' behavior and information.
 </p>
 
-<complete_me/>
+<p>
+To create an NPC, use the <a href='/docs/cli.html#new'>command</a>:
+</p>
+
+<console>
+soc new -npc &lt;NPC Project name&gt;</br>
+</console>
 
 <h3 class='center-h' data-href='Players'>
 Players/
@@ -148,7 +154,13 @@ Players/
 Groups projects which are defining information about players.
 </p>
 
-<complete_me/>
+<p>
+To create a Player, use the <a href='/docs/cli.html#new'>command</a>:
+</p>
+
+<console>
+soc new -player &lt;Player Project name&gt;
+</console>
 
 <h3 class='center-h' data-href='SharedLibs'>
 SharedLibs/
@@ -176,7 +188,13 @@ Things/
 Groups projects which are defining information about things.
 </p>
 
-<complete_me/>
+<p>
+To create a Thing, use the <a href='/docs/cli.html#new'>command</a>:
+</p>
+
+<console>
+soc new -thing &lt;Thing Project name&gt;
+</console>
 
 <h3 class='center-h' data-href='World'>
 World/
@@ -197,7 +215,7 @@ World creates automatically during creation new project.
 </p>
 
 <p>
-To create a world in empty directory, use the command:
+To create a world in empty directory, use the <a href='/docs/cli.html#new'>command</a>:
 </p>
 
 <console>

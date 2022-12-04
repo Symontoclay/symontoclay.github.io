@@ -66,6 +66,7 @@ Creates new project(NPC, Thing, Player, Place) in new or existing worldspace.
 <p>
 soc <b>new</b> &lt;NPC Project name&gt;</br>
 soc <b>n</b> &lt;NPC Project name&gt;</br>
+</br>
 soc <b>new</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
 soc <b>n</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
 </br>
