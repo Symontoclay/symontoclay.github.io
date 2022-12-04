@@ -20,7 +20,7 @@ The SymOntoClay CLI <b>soc</b> <b>new</b> create new worldspace.
 </p>
 
 <console>
-soc <b>new</b> &lt;Project name&gt;
+soc new &lt;Project name&gt;
 </console>
 
 <p>
@@ -39,11 +39,17 @@ Here is general project file structure.
 
 <pre style='width: 100%; background-color: #f8f9fa;'>
 my-worldspace/
-&nbsp;&nbsp;&nbsp;&nbsp;Modules/
-&nbsp;&nbsp;&nbsp;&nbsp;Things/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.sobj
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Libs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib1/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib1.slib
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib1.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib2/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib2.slib
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib2.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Navs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GreenWaypoint/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GreenWaypoint.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GreenWaypoint.soc
 &nbsp;&nbsp;&nbsp;&nbsp;Npcs/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC.sobj
@@ -52,6 +58,16 @@ my-worldspace/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RedPlayer/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RedPlayer.sobj
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RedPlayer.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;SharedLibs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdlib/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdlib.slib
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LinguisticVariables.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relations.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rules.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Things/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.soc
 &nbsp;&nbsp;&nbsp;&nbsp;World/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my-world.world
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my-world.soc
@@ -76,7 +92,7 @@ The name of the root directory can be whatever you want.
 </p>
 
 <p>
-Directories <a href='#Modules'><b>Modules</b></a> and <a href='#World'><b>World</b></a> are required.
+Directory <a href='#World'><b>World</b></a> are required.
 </p>
 
 <p>
@@ -84,37 +100,17 @@ Another directories can be in any count and can have any names.
 The meaning of these directories - grouping projects.
 </p>
 
-<h3 class='center-h' data-href='Modules'>
-Modules/
+<h3 class='center-h' data-href='Libs'>
+Libs/
 </h3>
 
-<LinkToContent/>
+<complete_me/>
 
-<p>
-<b>Required</b>
-</p>
-
-<p>
-This directory will contain shared modules.
-</p>
-
-<p>
-Now this directory is not used.
-</p>
-
-<p>
-This name of directory is reserved for future.
-</p>
-
-<h3 class='center-h' data-href='Things'>
-Things/
+<h3 class='center-h' data-href='Navs'>
+Navs/
 </h3>
 
-<LinkToContent/>
-
-<p>
-Groups projects which are defining information about things.
-</p>
+<complete_me/>
 
 <h3 class='center-h' data-href='Npcs'>
 Npcs/
@@ -126,6 +122,8 @@ Npcs/
 Groups projects which are defining NPCs' behavior and information.
 </p>
 
+<complete_me/>
+
 <h3 class='center-h' data-href='Players'>
 Players/
 </h3>
@@ -135,6 +133,36 @@ Players/
 <p>
 Groups projects which are defining information about players.
 </p>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='SharedLibs'>
+SharedLibs/
+</h3>
+
+<LinkToContent/>
+
+<p>
+<b>Required</b>
+</p>
+
+<p>
+This directory will contain shared libs.
+</p>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Things'>
+Things/
+</h3>
+
+<LinkToContent/>
+
+<p>
+Groups projects which are defining information about things.
+</p>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='World'>
 World/
@@ -150,7 +178,7 @@ World/
 Defines general information about world.
 </p>
 
-<h3 class='center-h' data-href='.wspace'>
+<h3 class='center-h' data-href='wspace'>
 .wspace
 </h3>
 
@@ -164,7 +192,7 @@ Defines general information about world.
 Locator of worldspace.
 </p>
 
-<h3 class='center-h' data-href='.world'>
+<h3 class='center-h' data-href='world'>
 .world
 </h3>
 
@@ -178,7 +206,7 @@ Locator of worldspace.
 Locator of world's project.
 </p>
 
-<h3 class='center-h' data-href='.sobj'>
+<h3 class='center-h' data-href='sobj'>
 .sobj
 </h3>
 
@@ -192,7 +220,13 @@ Locator of world's project.
 Locator of project.
 </p>
 
-<h3 class='center-h' data-href='.soc'>
+<h3 class='center-h' data-href='sllb'>
+.slib
+</h3>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='soc'>
 .soc
 </h3>
 

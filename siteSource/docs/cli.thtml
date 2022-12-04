@@ -78,6 +78,8 @@ soc <b>new</b> <b>-thing</b> &lt;Thing Project name&gt;</br>
 soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
 </p>
 
+<complete_me/>
+
 <h4 class='center-h' data-href='new_arguments'>Arguments</h4>
 
 <dl>
@@ -89,11 +91,25 @@ soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
   
   <dt>&lt;Thing Project name&gt;</dt>
   <dd>Name of new Thing Project</dd>
+  
+  <complete_me/>
 </dl>
 
 <p>
 For creating project in existing worldspace run command <b>new</b> in worldspace directory.
 </p>
+
+<h3 class='center-h' data-href='install'>
+soc install
+</h3>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='Available_libs'>
+Available libs
+</h4>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='version'>
 soc version
@@ -136,3 +152,9 @@ CLI will return 0.
 <p>
 soc run <b>-timeout</b> 10000
 </p>
+
+<h4 class='center-h' data-href='NLP'>
+-nlp
+</h4>
+
+<complete_me/>
