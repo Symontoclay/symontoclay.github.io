@@ -182,4 +182,14 @@ soc run <b>-timeout</b> 10000
 -nlp
 </h4>
 
-<complete_me/>
+<p>
+Enables Natural language processing.
+</p>
+
+<p>
+Natural language processing takes too much resources, so It is disabled by default.
+</p>
+
+<p>
+soc run <b>-nlp</b>
+</p>
