@@ -733,12 +733,27 @@ It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_L
 </p>
 
 <gr>
-<EBNFCDECL name='LibIdentifier'/> =  .
-<EBNFCDECL name='LibDecl' groups='LibSourceCodeFileContent'/> =  .
-<EBNFCDECL name='LibBodyContent'/> =  .
+<EBNFCDECL name='LibIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='LibDecl' groups='LibSourceCodeFileContent'/> = "lib" <EBNFC name='LibIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'LibBodyContent'/> ] <br/> "}" .
+<EBNFCDECL name='LibBodyContent'/> = <GEBNFC name='LibBodyContent' kind='op_and'/> .
 </gr>
 
-<complete_me/>
+<p>
+Target library can be imported by <a href='#ImportStatement_chapter'>"import" statement</a>.
+</p>
+
+<code data-lng='soc'>
+lib lib2
+{
+}
+</code>
+
+<code data-lng='soc'>
+lib lib1
+{
+    import lib2;
+}
+</code>
 
 <h3 class='center-h' data-href='Conditional_entity_chapter'>
 Conditional entity
@@ -5520,7 +5535,45 @@ Statements control execution.
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Imports target <a href='#Lib_chapter'>library</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='ImportStatement' groups='LibBodyContent;WorldBodyContent;AppBodyContent'/> = "import" ( <EBNFC name='LibIdentifier'/> | <EBNFC name='StringLiteral'/> ) ";" .
+</gr>
+
+<p>
+<a href='#Lib_chapter'>Libraries</a> which imported on <a href='#World_chapter'>world</a> level are common for all <a href='#App_chapter'>apps</a> of the <a href='#World_chapter'>world</a>.
+</p>
+
+<code data-lng='soc'>
+world `Lost town`
+{
+   import stdlib;
+}
+</code>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    import lib1;
+}
+</code>
+
+<code data-lng='soc'>
+lib lib1
+{
+    import lib2;
+}
+</code>
+
+<code data-lng='soc'>
+lib lib1
+{
+    import 'lib2';
+}
+</code>
 
 <h3 class='center-h' data-href='Expression_statement_chapter'>
 Expression statement
