@@ -101,7 +101,13 @@ Lib
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Library contains code which is common for different <a href='#Common_concepts_App'>Apps</a>, <a href='#Common_concepts_World'>Worlds</a> other Libs.
+</p>
+
+<p>
+There exists special <a href='/docs/spec.html#Lib_chapter'>syntax construction</a> for the root code entity of <b>lib</b>.
+</p>
 
 <h2 class='center-h' data-href='On_unity_scene'>
 On unity scene
