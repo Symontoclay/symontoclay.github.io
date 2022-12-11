@@ -827,6 +827,44 @@ Example of using:
 @@host.take(#@(gun));
 </code>
 
+<h4 class='center-h' data-href='Conditional_entity_constraints_chapter'>
+Conditional entity constraints
+</h4>
+
+<LinkToContent/>
+
+<p>
+Constraints allow to resolve conditional entity to entity on game level that is the fittest to the situation.
+</p>
+
+<h5 class='center-h' data-href='Conditional_entity_constraints_nearest_chapter'>
+Nearest
+</h5>
+
+<LinkToContent/>
+
+<p>
+The conditional entity should be resolved to nearest game object on game level.
+</p>
+
+<code data-lng='soc'>
+@@host.go(#@(barrel & nearest));
+</code>
+
+<h5 class='center-h' data-href='Conditional_entity_constraints_random_chapter'>
+Random
+</h5>
+
+<LinkToContent/>
+
+<p>
+The conditional entity should be resolved to random game object on game level.
+</p>
+
+<code data-lng='soc'>
+@@host.go(#@(barrel & random));
+</code>
+
 <h3 class='center-h' data-href='Waypoint_chapter'>
 Waypoint
 </h3>
