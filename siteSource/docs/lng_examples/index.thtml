@@ -1299,6 +1299,334 @@ app PeaceKeeper
 <console example_name='FuncExample_10_b'>
 </console>
 
+<code example_name='FuncExample_11'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        fun SomeFun()
+        {
+            return 1;
+        }
+
+        'Begin' >> @>log;
+        SomeFun() >> @>log;
+        'End' >> @>log;
+    }
+
+</code>
+
+<console example_name='FuncExample_11'>
+</console>
+
+<h2 class='center-h' data-href='Function_as_a_first_order_object'>
+Function as a first order object
+</h2>
+
+<LinkToContent/>
+
+<p>
+Read more about Function <a href='/docs/spec.html#Function_chapter'>here</a>.
+</p>
+
+<p>
+Read more about Method <a href='/docs/spec.html#Method_chapter'>here</a>.
+</p>
+
+<complete_me/>
+
+<code example_name='FuncAsObjectExample_1_a'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = fun()
+		     {
+			    return 1;
+			 };
+        @a() >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_a'>
+</console>
+
+<code example_name='FuncAsObjectExample_1_b'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        fun()
+		{
+		    return 1;
+		}() >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_b'>
+</console>
+
+<code example_name='FuncAsObjectExample_1_c'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = SomeFun();
+        @a() >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return fun()
+		{
+		    return 1;
+		};
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_c'>
+</console>
+
+<code example_name='FuncAsObjectExample_1_d'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = OtherFun(SomeFun());
+        @a >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return fun()
+		{
+		    return 1;
+		};
+    }
+
+    fun OtherFun(@param)
+    {
+        return @param();
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_d'>
+</console>
+
+<code example_name='FuncAsObjectExample_1_e'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = OtherFun(param: SomeFun());
+        @a >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return fun()
+		{
+		    return 1;
+		};
+    }
+
+    fun OtherFun(@param)
+    {
+        return @param();
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_e'>
+</console>
+
+<code example_name='FuncAsObjectExample_1_f'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = OtherFun(@param: SomeFun());
+        @a >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return fun()
+		{
+		    return 1;
+		};
+    }
+
+    fun OtherFun(@param)
+    {
+        return @param();
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_f'>
+</console>
+
+<code example_name='FuncAsObjectExample_1_g'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = OtherFun(fun()
+		{
+		    return 1;
+		});
+        @a >> @>log;
+        'End' >> @>log;
+    }
+
+    fun OtherFun(@param)
+    {
+        return @param();
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_1_g'>
+</console>
+
+<code example_name='FuncAsObjectExample_2'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        SomeFun()() >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return fun()
+		{
+		    return 1;		
+		};
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_2'>
+</console>
+
+<code example_name='FuncAsObjectExample_3'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        SomeFun()() >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        @a = 2;
+        return fun()
+		{
+		    return @a + 1;
+		};
+    }
+
+</code>
+
+<console example_name='FuncAsObjectExample_3'>
+</console>
+
+<code example_name='FuncAsObjectExample_4'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        SomeFun(2)() >> @>log;
+        'End' >> @>log;
+    }
+
+    fun SomeFun(@a)
+    {
+        return fun()
+		{
+		    return @a + 1;
+		};
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_4'>
+</console>
+
+<code example_name='FuncAsObjectExample_5'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        OtherFun()() >> @>log;
+        'End' >> @>log;
+    }
+
+    fun OtherFun()
+    {
+        return SomeFun;
+    }
+
+    fun SomeFun()
+    {
+        return 1;
+    }
+}"
+</code>
+
+<console example_name='FuncAsObjectExample_5'>
+</console>
+
+<code example_name='FuncAsObjectExample_6'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        OtherFun(SomeFun);
+        'End' >> @>log;
+    }
+
+    fun OtherFun(@fn)
+    {
+        @fn() >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return 1;
+    }
+}
+</code>
+
+<console example_name='FuncAsObjectExample_6'>
+</console>
+
 <h2 class='center-h' data-href='IdleActions'>
 Idle actions
 </h2>
