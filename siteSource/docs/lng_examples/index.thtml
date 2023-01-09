@@ -1333,7 +1333,9 @@ Read more about Function <a href='/docs/spec.html#Function_chapter'>here</a>.
 Read more about Method <a href='/docs/spec.html#Method_chapter'>here</a>.
 </p>
 
-<complete_me/>
+<p>
+Read more about Anonymous function <a href='/docs/spec.html#Anonymous_function_chapter'>here</a>.
+</p>
 
 <code example_name='FuncAsObjectExample_1_a'>
 app PeaceKeeper

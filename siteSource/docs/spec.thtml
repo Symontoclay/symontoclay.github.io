@@ -1859,7 +1859,7 @@ Function is <ico t='w'/><a href='https://en.wikipedia.org/wiki/First-class_funct
 <gr>
 <EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
-<EBNFCDECL name='FunctionDecl'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='FunctionDecl' groups='Expr'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='FunctionParamsDeclSet'/> = <EBNFC name='FunctionParamDecl'/> [ { "," <EBNFC name='FunctionParamDecl'/> } ] .
 <EBNFCDECL name='FunctionParamName'/> = <EBNFC name='VarIdentifier'/> .
 <EBNFCDECL name='FunctionParamDecl'/> = <EBNFC name='FunctionParamName'/> [ ":" ( <EBNFC name='FunctionParamType'/> | <EBNFC name='TupleOfFunctionParamTypes'/> ) ] [ "=" <EBNFC name='DefaultValueOfFunctionParam'/> ] .
@@ -4449,6 +4449,20 @@ For players this information can be shown as tooltips or subtitles or converted 
 <p>
 <a href='#String_literal_chapter'>String</a> will be converted to <a href='#Fact_chapter'>fact</a> automatically.
 So you do not have to create special trigger for the string value in parallel with trigger for the fact.
+</p>
+
+<h3 class='center-h' data-href='Anonymous_function_chapter'>
+Anonymous function
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Function_as_a_first_order_object'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Operators_chapter'>
