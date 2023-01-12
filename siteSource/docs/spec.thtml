@@ -4457,9 +4457,39 @@ Anonymous function
 
 <LinkToContent/>
 
-<complete_me/>
+<gr>
+<EBNFCDECL name='AnonymousFunctionDeclExpr' groups='Expr'/> = "fun" "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+</gr>
 
-<complete_me/>
+<code data-lng='soc'>
+fun()
+{
+return 1;
+}
+</code>
+
+<code data-lng='soc'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        @a = SomeFun();
+        @a() >> @>log;
+    }
+
+    fun SomeFun()
+    {
+        return fun()
+		{
+		    return 1;
+		};
+    }
+}
+</code>
+
+<p>
+Anonymous function can be passed as parameter, assigned to a variable, returned as a result or called immediately. 
+</p>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Function_as_a_first_order_object'>here</a>.
