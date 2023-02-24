@@ -476,6 +476,8 @@ But the words can be used as identifiers in other places.
 	<kw name='priority'/>
 	<kw name='lib'/>
 	<kw name='import'/>
+	<kw name='ctor'/>
+	<kw name='new'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -625,6 +627,20 @@ For example <b>Class</b> represents a general concept which can have many instan
 <p>
 Some objects have special engine support to make writing code easier and faster, or as entry point locators.
 </p>
+
+<h3 class='center-h' data-href='ObjectLiteral_chapter'>
+Object literal
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ObjectLiteral'>here</a>.
+</p>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Class_chapter'>
 Class
@@ -2771,6 +2787,20 @@ app PeaceKeeper
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Field'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='Ctor_chapter'>
+Constructor
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Ctor'>here</a>.
+</p>
+
+<complete_me/>
 
 <h3 class='center-h' data-href='Method_chapter'>
 Method
@@ -6821,6 +6851,20 @@ exec {: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}
 You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here</a>.
 </p>
 
+<h3 class='center-h' data-href='NewStatement_chapter'>
+"new" statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#NewStatement'>here</a>.
+</p>
+
+<complete_me/>
+
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
 	    (( <EBNFC name='Letter'/> { <EBNFC name='Letter'/> | <EBNFC name='DecimalDigit'/> } ) | ( "`" { <EBNFC name='UnicodeChar'/> } "`"))
@@ -6959,7 +7003,7 @@ You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here<
 	</TEBNFCDECL>
 </div>
 
-<a href='/docs/lng_examples/index.html#'></a>
+
 
 <!--
 <h2 class='center-h' data-href=''>
@@ -7046,4 +7090,6 @@ You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here<
 ImperativeLogicExpr   Expr  LogicExpr AddSettingsOfObjOrMemberDecl
 
 AnnotationDeclSet <a href='#Annotation_chapter'></a>
+
+<a href='/docs/lng_examples/index.html#'></a>
 -->

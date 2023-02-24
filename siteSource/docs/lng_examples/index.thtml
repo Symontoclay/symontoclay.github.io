@@ -204,6 +204,20 @@ app PeaceKeeper
 <console example_name='Variables_Example3'>
 </console>
 
+<h2 class='center-h' data-href='ObjectLiteral'>
+Object literal
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+Read more about Object literal <a href='/docs/spec.html#ObjectLiteral_chapter'>here</a>.
+</p>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Linguistic_variable'>
 Linguistic variable
 </h2>
@@ -965,6 +979,20 @@ app PeaceKeeper
 
 <console example_name='Field_Example2'>
 </console>
+
+<h2 class='center-h' data-href='Ctor'>
+Constructor
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+Read more about Constructor <a href='/docs/spec.html#Ctor_chapter'>here</a>.
+</p>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Function'>
 Function and Method
@@ -4157,7 +4185,7 @@ app PeaceKeeper
 <LinkToContent/>
 
 <p>
-Read more about "exec" loop statement <a href='/docs/spec.html#ExecStatement_chapter'>here</a>.
+Read more about "exec" statement <a href='/docs/spec.html#ExecStatement_chapter'>here</a>.
 </p>
 
 <code example_name='ExecStatement_Example1'>
@@ -4253,3 +4281,17 @@ app PeaceKeeper
 
 <console example_name='WaitStatement_Example2'>
 </console>
+
+<h2 class='center-h' data-href='NewStatement'>
+"new" statement
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+Read more about "new" statement <a href='/docs/spec.html#NewStatement_chapter'>here</a>.
+</p>
+
+<complete_me/>
