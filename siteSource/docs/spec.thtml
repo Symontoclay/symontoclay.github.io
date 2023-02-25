@@ -636,6 +636,12 @@ Object literal
 
 <complete_me/>
 
+<gr>
+<EBNFCDECL name='ObjectLiteralDecl' groups='Expr'/> = "{"<br/> <GEBNFC name='GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
+</gr>
+
+<complete_me/>
+
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ObjectLiteral'>here</a>.
 </p>
@@ -658,9 +664,7 @@ In general, It is similar to the concept 'class' in other OOP languages.
 
 <gr>
 <EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ClassBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='ClassBodyContent'/> = <GEBNFC name='ClassBodyContent' kind='op_declset'/> .
-<EBNFCDECL name='ClassBodyContent_2'/> = <GEBNFC name='ClassBodyContent' kind='op_declset'/> .
+<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='ClassBodyContent' include='GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
 </gr>
 
 <code data-lng='soc'>
@@ -691,7 +695,7 @@ It is root object and entry point of <a href='/docs/engine_concepts/index.html#C
 
 <gr>
 <EBNFCDECL name='AppIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='AppDecl' groups='AppSourceCodeFileContent'/> = "app" <EBNFC name='AppIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='AppBodyContent' include="ClassBodyContent" kind='op_declset'/> <br/> "}" .
+<EBNFCDECL name='AppDecl' groups='AppSourceCodeFileContent'/> = "app" <EBNFC name='AppIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='AppBodyContent' include="GeneralObjectBodyContent" kind='op_declset'/> <br/> "}" .
 </gr>
 
 <code data-lng='soc'>
@@ -933,7 +937,7 @@ You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/
 </p>
 
 <gr>
-<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;WorldBodyContent;ActionBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
+<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
 <EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='ConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
 <EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
@@ -2079,8 +2083,7 @@ The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> ca
 <gr>
 <EBNFCDECL name='ActionIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='ActionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ActionDecl'/> .
-<EBNFCDECL name='ActionDecl'/> = "action" <EBNFC name='ActionIdentifier'/> [ <EBNFC name='ActionAliasDecl'/> ] [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='ActionBodyContent'/> = <GEBNFC name='ActionBodyContent' kind='op_and'/> .
+<EBNFCDECL name='ActionDecl'/> = "action" <EBNFC name='ActionIdentifier'/> [ <EBNFC name='ActionAliasDecl'/> ] [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='ActionBodyContent' include="GeneralObjectBodyContent" kind='op_declset'/> <br/> "}" .
 <EBNFCDECL name='ActionAliasDecl'/> = <TEBNFC name='AliasDecl'/> .
 </gr>
 
@@ -2192,9 +2195,8 @@ State's members are isolated so do not visible for App and another states.
 
 <gr>
 <EBNFCDECL name='StateDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
-<EBNFCDECL name='StateDecl'/> = "state" <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ActionBodyContent'/> ] <br/> "}" .
+<EBNFCDECL name='StateDecl'/> = "state" <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='StateBodyContent' include = 'GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
 <EBNFCDECL name='StateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='StateBodyContent'/> = <GEBNFC name='StateBodyContent' kind='op_and'/> .
 <EBNFCDECL name='ActivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'ActivatingConditionsDecl'/> .
 <EBNFCDECL name='ActivatingConditionsDecl'/> = "enter" "on" ":" <br/> <EBNFC name='ActivatingCondition'/> [ { <EBNFC name='ActivatingCondition'/> } ] .
 <EBNFCDECL name='ActivatingCondition'/> = <EBNFC name='FactDecl'/> <EBNFC name='BindingVariableItemDecl'/> .
@@ -2595,7 +2597,7 @@ Member access modifiers
 
 <gr>
 <EBNFCDECL name='MemberAccessModifier'/> = "public" | "protected" | "private" .
-<EBNFCDECL name='MemberAccessModifiersSectionDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'MemberAccessModifiersSectionDecl'/> .
+<EBNFCDECL name='MemberAccessModifiersSectionDeclSet' groups='GeneralObjectBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'MemberAccessModifiersSectionDecl'/> .
 <EBNFCDECL name='MemberAccessModifiersSectionDecl'/> = <EBNFC name='MemberAccessModifier'/> ":" <br/> [ <GEBNFC name='MemberAccessModifierBodyContent' kind='op_and'/> ] .
 </gr>
 
@@ -2750,7 +2752,7 @@ Field
 </p>
 
 <gr>
-<EBNFCDECL name='FieldDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FieldDecl'/> .
+<EBNFCDECL name='FieldDeclSet' groups='GeneralObjectBodyContent;WorldBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FieldDecl'/> .
 <EBNFCDECL name='FieldDecl'/> = <TEBNFC name='VarDecl'/> ";" .
 </gr>
 
@@ -2819,7 +2821,7 @@ Technically a method is an <a href='#Objects_declaration_chapter'><b>object's</b
 </p>
 
 <gr>
-<EBNFCDECL name='MethodDeclSet'  groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
+<EBNFCDECL name='MethodDeclSet'  groups='GeneralObjectBodyContent;WorldBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'MethodDecl'/> .
 <EBNFCDECL name='MethodDecl'/> = <EBNFC name='FunctionDecl'/> .
 </gr>
 
@@ -2924,7 +2926,7 @@ An object can declare an operator () function, which provides function call sema
 </p>
 
 <gr>
-<EBNFCDECL name='FunCallOverloadingDeclSet' groups='ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FunCallOverloadingDecl'/> .
+<EBNFCDECL name='FunCallOverloadingDeclSet' groups='GeneralObjectBodyContent;WorldBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FunCallOverloadingDecl'/> .
 <EBNFCDECL name='FunCallOverloadingDecl'/> = "op" "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 </gr>
 
@@ -2972,7 +2974,7 @@ In the future I am going to develop other kinds of triggers.
 </p>
 
 <gr>
-<EBNFCDECL name='TriggersContentDeclSet' groups='ClassBodyContent;AppBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContentDecl'/> .
+<EBNFCDECL name='TriggersContentDeclSet' groups='GeneralObjectBodyContent;MemberAccessModifierBodyContent' /> = <TEBNFC name='DeclSet' param = 'TriggersContentDecl'/> .
 <EBNFCDECL name='TriggersContentDecl'/> = ( <EBNFC name='LifecycleTriggerCondition'/> | <EBNFC name='TriggersLogicCondition'/> | <EBNFC name='TriggersAddingFactCondition'/> ) <br/> [ "as" <EBNFC name='TriggerName'/> [ <EBNFC name='TriggerAliasDecl'/> ]] [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] <br/> ( <EBNFC name='TriggerHandler'/> | <EBNFC name='ActiveLogicRuleBody'/> ) .
 <EBNFCDECL name='TriggerHandler'/> = [ "=>" ] <EBNFC name='SetTriggerHandler'/> "else" <EBNFC name='DownTriggerHandler'/> .
 <EBNFCDECL name='SetTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
@@ -3746,7 +3748,7 @@ In this case, the predicate form will be saved as an alternative way of describi
 </p>
 
 <gr>
-<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
+<EBNFCDECL name='FactDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'FactDecl'/> .
 <EBNFCDECL name='FactDecl' groups='ImperativeLogicExpr;Expr;AliasLogicExpr'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) [ <EBNFC name='ModalityDeclSet'/> ] ":}" <TEBNFC name='Annotation'/> .
 <EBNFCDECL name='FactSection'/> = [ ">:" ] "{" <EBNFC name='FactSentence'/> "}" .
 <EBNFCDECL name='FactSentence'/> = <EBNFC name='LogicExpr'/> .
@@ -3815,7 +3817,7 @@ In the future, the area of using logic searching (conclusion) in SymOntoClay wil
 </p>
 
 <gr>
-<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
+<EBNFCDECL name='LogicRuleDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'LogicRuleDecl'/> .
 <EBNFCDECL name='LogicRuleDecl'/> = "{:" [ <EBNFC name='FactIdentifier'/> ] <EBNFC name='LogicRulePrimarySection'/> <EBNFC name='ImplicationSymbol'/> <EBNFC name='LogicRuleSecondarySection'/> ":}" .
 <EBNFCDECL name='LogicRulePrimarySection'/> = [ ">:" ] "{" <EBNFC name='LogicRuleSentence'/> "}" .
 <EBNFCDECL name='LogicRuleSecondarySection'/> = "{" <EBNFC name='LogicRuleSentence'/> "}" .
@@ -3959,7 +3961,7 @@ Now It needs for conversion fact to text.
 </p>
 
 <gr>
-<EBNFCDECL name='RelationMetadataDeclSet' groups='ClassSourceCodeFileContent;ClassBodyContent;AppBodyContent;WorldBodyContent;ActionBodyContent;StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'RelationMetadataDecl'/> .
+<EBNFCDECL name='RelationMetadataDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'RelationMetadataDecl'/> .
 <EBNFCDECL name='RelationMetadataDecl'/> = "rel" <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='RelationMetadataArgument'/> [ { "," <EBNFC name='RelationMetadataArgument'/> } ] ")" [ <EBNFC name='InheritanceDecl'/> ] .
 <EBNFCDECL name='RelationMetadataArgument'/> = <EBNFC name='LogicVarIdentifier'/> [ <EBNFC name='AnnotationDeclSet'/> ] .
 </gr>
