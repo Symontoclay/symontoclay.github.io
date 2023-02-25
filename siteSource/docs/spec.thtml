@@ -634,19 +634,36 @@ Object literal
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Instantiates an object or collection and performs member assignments in a single statement.
+</p>
 
 <gr>
 <EBNFCDECL name='ObjectLiteralDecl' groups='Expr'/> = "{"<br/> <GEBNFC name='GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+var @a = {
+};
+</code>
+
+<code data-lng='soc'>
+var @a = {
+    @b = 1;
+};
+</code>
+
+<code data-lng='soc'>
+`some fun`(
+    {
+        @b = 1;
+    }
+)
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ObjectLiteral'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Class_chapter'>
 Class
@@ -1877,7 +1894,7 @@ Function is <ico t='w'/><a href='https://en.wikipedia.org/wiki/First-class_funct
 <gr>
 <EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> .
 <EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
-<EBNFCDECL name='FunctionDecl' groups='Expr'/> = "fun" <EBNFC name='FunctionName'/> "(" <EBNFC name='FunctionParamsDeclSet'/> ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='FunctionDecl' groups='Expr'/> = "fun" <EBNFC name='FunctionName'/> "(" [ <EBNFC name='FunctionParamsDeclSet'/> ] ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='FunctionParamsDeclSet'/> = <EBNFC name='FunctionParamDecl'/> [ { "," <EBNFC name='FunctionParamDecl'/> } ] .
 <EBNFCDECL name='FunctionParamName'/> = <EBNFC name='VarIdentifier'/> .
 <EBNFCDECL name='FunctionParamDecl'/> = <EBNFC name='FunctionParamName'/> [ ":" ( <EBNFC name='FunctionParamType'/> | <EBNFC name='TupleOfFunctionParamTypes'/> ) ] [ "=" <EBNFC name='DefaultValueOfFunctionParam'/> ] .
@@ -2794,13 +2811,51 @@ Constructor
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Whenever an instance is created, its constructor is called.
+An object may have multiple constructors that take different arguments.
+Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
+</p>
+
+<gr>
+<EBNFCDECL name='CtorDecl' groups='GeneralObjectBodyContent'/> = "ctor" "(" [ <EBNFC name='FunctionParamsDeclSet'/> ] ")" <br/> [ ":" <EBNFC name='CallCtorsExpr'/> ][ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
+<EBNFCDECL name='CallCtorsExpr'/> = <EBNFC name='CallSuperCtorItemExpr'/> [ { "," <EBNFC name='CallSuperCtorItemExpr'/> } ] .
+<EBNFCDECL name='CallCtorItemExpr'/> = <EBNFC name='CallSuperCtorExpr'/> | <EBNFC name='CallOtherSelfCtorExpr'/> .
+<EBNFCDECL name='CallSuperCtorExpr'/> = <EBNFC name='ConceptIdentifier'/> "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
+<EBNFCDECL name='CallOtherSelfCtorExpr'/> = "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
+</gr>
+
+<code data-lng='soc'>
+    ctor(@param: string)
+    {
+    }
+</code>
+
+<code data-lng='soc'>
+    ctor(@param: string)
+        : cls0('Cool!')
+    {
+    }
+</code>
+
+<code data-lng='soc'>
+    ctor(@param: string)
+        : cls1('The Beatles!'),
+        cls2(12)
+    {
+    }
+</code>
+
+<code data-lng='soc'>
+    ctor()
+        : ('Hi')
+    {
+    }
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Ctor'>here</a>.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='Method_chapter'>
 Method
@@ -4569,17 +4624,19 @@ Operator precedence
 	    <td>insert</td>
 	</tr>
 	<tr>
-	    <th rowspan='3' class='center-h'>3</th>
+	    <th rowspan='4' class='center-h'>3</th>
 	    <td>!</td>
-		<td rowspan='3' >Left-to-right</td>
+		<td rowspan='4' >Left-to-right</td>
 	</tr>
 	<tr>
 	    <td>Unary +</td>
 	</tr>
 	<tr>
-	    <td>Unary -</td>
+	    <td>Unary -</td> new
 	</tr>
-	
+	<tr>
+	    <td>new</td>
+	</tr>	
 	<tr>
 	    <th rowspan='2' class='center-h'>5</th>
 	    <td>*</td>
@@ -4650,6 +4707,26 @@ Operator precedence
 	</tr>	
 </table>
 <p>
+
+<h3 class='center-h' data-href='NewOp_chapter'>
+Operator "new"
+</h3>
+
+<LinkToContent/>
+
+<p>
+The <b>new</b> operator creates a new instance of a type.
+</p>
+
+<gr>
+<EBNFCDECL name='NewOpExpr' groups='Expr'/> = "new" ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarExpr'/> | <EBNFC name='CallOpExpr'/> ) [ "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ] .
+</gr>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#NewOperator'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Assignment_operators_chapter'>
 Assignment operators
@@ -5365,6 +5442,10 @@ The right-hand operand must contain the member's identifier.
 
 <code data-lng='soc'>
 @@host.`go`
+</code>
+
+<code data-lng='soc'>
+@a.@b
 </code>
 
 <h3 class='center-h' data-href='Call_operators_chapter'>
@@ -6850,20 +6931,6 @@ exec {: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here</a>.
 </p>
-
-<h3 class='center-h' data-href='NewStatement_chapter'>
-"new" statement
-</h3>
-
-<LinkToContent/>
-
-<complete_me/>
-
-<p>
-You can see examples <a href='/docs/lng_examples/index.html#NewStatement'>here</a>.
-</p>
-
-<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>

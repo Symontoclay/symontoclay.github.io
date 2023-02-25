@@ -210,8 +210,6 @@ Object literal
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
 Read more about Object literal <a href='/docs/spec.html#ObjectLiteral_chapter'>here</a>.
 </p>
@@ -3382,6 +3380,20 @@ private:
 <console example_name='ArithmeticOperators_Example13'>
 </console>
 
+<h2 class='center-h' data-href='NewOperator'>
+Operator "new"
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<p>
+Read more about "new" statement <a href='/docs/spec.html#NewOp_chapter'>here</a>.
+</p>
+
+<complete_me/>
+
 <h2 class='center-h' data-href='Logic_сonditional_triggers'>
 Logic сonditional triggers
 </h2>
@@ -4281,17 +4293,3 @@ app PeaceKeeper
 
 <console example_name='WaitStatement_Example2'>
 </console>
-
-<h2 class='center-h' data-href='NewStatement'>
-"new" statement
-</h2>
-
-<LinkToContent/>
-
-<complete_me/>
-
-<p>
-Read more about "new" statement <a href='/docs/spec.html#NewStatement_chapter'>here</a>.
-</p>
-
-<complete_me/>
