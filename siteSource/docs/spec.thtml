@@ -659,7 +659,8 @@ In general, It is similar to the concept 'class' in other OOP languages.
 <gr>
 <EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
 <EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'ClassBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='ClassBodyContent'/> = <GEBNFC name='ClassBodyContent' kind='op_and'/> .
+<EBNFCDECL name='ClassBodyContent'/> = <GEBNFC name='ClassBodyContent' kind='op_declset'/> .
+<EBNFCDECL name='ClassBodyContent_2'/> = <GEBNFC name='ClassBodyContent' kind='op_declset'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -690,8 +691,7 @@ It is root object and entry point of <a href='/docs/engine_concepts/index.html#C
 
 <gr>
 <EBNFCDECL name='AppIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='AppDecl' groups='AppSourceCodeFileContent'/> = "app" <EBNFC name='AppIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'AppBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='AppBodyContent'/> = [ <GEBNFC name='AppBodyContent' kind='op_and'/> ] .
+<EBNFCDECL name='AppDecl' groups='AppSourceCodeFileContent'/> = "app" <EBNFC name='AppIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='AppBodyContent' include="ClassBodyContent" kind='op_declset'/> <br/> "}" .
 </gr>
 
 <code data-lng='soc'>
@@ -728,8 +728,7 @@ It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_W
 
 <gr>
 <EBNFCDECL name='WorldIdentifier'/> = <GEBNFC name='TypeIdentifier' kind='or'/> .
-<EBNFCDECL name='WorldDecl' groups='WorldSourceCodeFileContent'/> = "world" <EBNFC name='WorldIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'WorldBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='WorldBodyContent'/> = <GEBNFC name='WorldBodyContent' kind='op_and'/> .
+<EBNFCDECL name='WorldDecl' groups='WorldSourceCodeFileContent'/> = "world" <EBNFC name='WorldIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='WorldBodyContent' kind='op_declset'/> <br/> "}" .
 </gr>
 
 <code data-lng='soc'>
@@ -750,8 +749,7 @@ It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_L
 
 <gr>
 <EBNFCDECL name='LibIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
-<EBNFCDECL name='LibDecl' groups='LibSourceCodeFileContent'/> = "lib" <EBNFC name='LibIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> [ <TEBNFC name='DeclSet' param = 'LibBodyContent'/> ] <br/> "}" .
-<EBNFCDECL name='LibBodyContent'/> = <GEBNFC name='LibBodyContent' kind='op_and'/> .
+<EBNFCDECL name='LibDecl' groups='LibSourceCodeFileContent'/> = "lib" <EBNFC name='LibIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='LibBodyContent' kind='op_declset'/> <br/> "}" .
 </gr>
 
 <p>
