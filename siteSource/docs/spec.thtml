@@ -4719,7 +4719,7 @@ The <b>new</b> operator creates a new instance of a type.
 </p>
 
 <gr>
-<EBNFCDECL name='NewOpExpr' groups='Expr'/> = "new" ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarExpr'/> | <EBNFC name='CallOpExpr'/> ) [ "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ] .
+<EBNFCDECL name='NewOpExpr' groups='Expr'/> = "new" ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarExpr'/> ) [ "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ] .
 </gr>
 
 <complete_me/>
