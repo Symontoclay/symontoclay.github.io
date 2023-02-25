@@ -1,0 +1,23 @@
+Begin ctor 1 of cls0
+Cool!
+0
+End ctor 1 of cls0
+Begin ctor of cls1
+The Beatles!
+1
+End ctor of cls1
+Begin ctor 2 of cls0
+16
+0
+End ctor 2 of cls0
+Begin ctor of cls2
+12
+2
+End ctor of cls2
+Begin ctor 2 of PeaceKeeper
+Hi
+3
+End ctor 2 of PeaceKeeper
+Begin ctor 1 of PeaceKeeper
+3
+End ctor 1 of PeaceKeeper
