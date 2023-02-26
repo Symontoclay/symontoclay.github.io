@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml' prefix='og: https://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta name='generator' content='SymOntoClay/InternalCLI:SiteBuilder'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta property='og:type' content='article'>
+<meta property='og:title' content='Host methods'>
+<meta property='og:image' content='https://symontoclay.github.io/preview_img.jfif'>
+<link rel='image_src' href='https://symontoclay.github.io/preview_img.jfif'>
+<meta property='og:url' content='https://symontoclay.github.io/docs/host_methods.html'>
+<meta name='description' content='SymOntoClay: Host methods - how to write'>
+<title>SymOntoClay - Host methods</title>
+<link rel='icon' href='https://symontoclay.github.io/favicon.png' type='image/png'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous'>
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx' crossorigin='anonymous'></script>
+<script src='https://symontoclay.github.io/assets/fontawesome_5.15.1/all.js'></script>
+<link rel='stylesheet' href='https://symontoclay.github.io/site.css'>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src='https://www.googletagmanager.com/gtag/js?id=G-4T85EVM2WV'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4T85EVM2WV');
+</script>
+
+</head>
+<body>
+<div class='container main-container'>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<header role='banner'>
+<p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>is game AI experimental open source engine.</span></p>
+</header>
+<nav role='navigation'>
+<a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Developing</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/contact_me.html'>Contact me</a></nav>
+<hr style='border-bottom-color: #e2e2e2;'>
+<nav class='bread-crumb-nav'>
+<a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>Host methods</a></nav>
+</div>
+</div>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<article>
+<h1 class='center-h' is-processed="true">Host methods</h1>
+
+<h2 class="center-h" is-processed="true">    Contens
+    <a href='https://symontoclay.github.io/docs/host_methods.html#Contents' name='Contents' class='permalink' title='The link to the section'>
+        <i class='fas fa-link'></i>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/host_methods.html#GeneralDescription">General description</a></li><li><a href="https://symontoclay.github.io/docs/host_methods.html#HostMethodDeclaration">Host method declaration</a></li><li><a href="https://symontoclay.github.io/docs/host_methods.html#GeneralizedHostMethodDeclaration">Generalized host method declaration</a></li><li><a href="https://symontoclay.github.io/docs/host_methods.html#Devices">Devices</a></li><li><a href="https://symontoclay.github.io/docs/host_methods.html#TypeConversion">Type сonversion</a></li></ul>
+
+<h2 class='center-h' data-href='GeneralDescription' is-processed="true">
+General description
+<a href="https://symontoclay.github.io/docs/host_methods.html#GeneralDescription" name="GeneralDescription" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/host_methods.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+SymOntoClay is a game-AI engine which is abstracted from concrete host (a game engine, like Unity, with which SymOntoClay is connected).
+It means SymOntoClay can not interact directly with objects on a game scene. 
+</p>
+
+<p>
+But sometimes game logic requires interaction with objects on a game scene.
+For instance:
+   <ul>
+       <li>
+	       Implementation of walking could require interaction with Unity <b>NavMeshAgent</b> and <b>Animator</b>.
+	   </li>
+	   
+	   <li>
+	       Implementation of shooting require interaction with Unity <b>Light</b>, <b>ParticleSystem</b> and <b>AudioSource</b>.
+	   </li>
+   </ul>
+
+
+<p>
+Host methods are defined on Unity <b>MonoBehaviour</b> level and are imported into a namespace of SymOntoClay DSL.
+It allows us to call the methods on SymOntoClay DSL level by system variable <a href='https://symontoclay.github.io/docs/spec.html#Host_system_variable_chapter'>@@host</a> and interact with objects on a game scene in the methods.
+</p>
+
+<h2 class='center-h' data-href='HostMethodDeclaration' is-processed="true">
+Host method declaration
+<a href="https://symontoclay.github.io/docs/host_methods.html#HostMethodDeclaration" name="HostMethodDeclaration" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/host_methods.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Host method is usual C# method on Unity <b>MonoBehaviour</b> level.
+</p>
+
+<p>
+Host method must be annotated by <a href='https://symontoclay.github.io/docs/engine_api/2E05416F192FCACD25308FED210B7347.html'>BipedEndpointAttribute</a>.
+The first parameter of the atribute ("Go") is a name of the method in a namespace of SymOntoClay DSL.
+The name can be different from C#-name of the method.
+The next parameters are <a href='https://symontoclay.github.io/docs/host_methods.html#Devices'>Devices</a> (like right of left leg or hand) which required for exeqution of the method.
+</p>
+
+<p>
+Host method must return only <b>void</b>.
+</p>
+
+<p>
+The first parameter of the method must be <b>CancellationToken</b>.
+Periodically you should check <b>IsCancellationRequested</b> or call <b>ThrowIfCancellationRequested()</b> of the <b>CancellationToken</b> to correctly cancel the method.
+</p>
+
+<p>
+Next parameters are passed from SymOntoClay DSL using <a href='https://symontoclay.github.io/docs/host_methods.html#TypeConversion'>Type сonversion</a>.
+Attribute <a href='https://symontoclay.github.io/docs/engine_api/C1CF31FDB74FFC5E643A421BC816D9CA.html'>EndpointParamAttribute</a> allows to set different name of the parameter ("To") and advice for <a href='https://symontoclay.github.io/docs/host_methods.html#TypeConversion'>Type сonversion</a>.
+</p>
+
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id72262d3b_b9a9_4e5e_b342_2f83bb7d949f">Copy</button></div><script>$('#id72262d3b_b9a9_4e5e_b342_2f83bb7d949f').click(function() {navigator.clipboard.writeText(atob('W0JpcGVkRW5kcG9pbnQoIkdvIiwgRGV2aWNlT2ZCaXBlZC5SaWdodExlZywgRGV2aWNlT2ZCaXBlZC5MZWZ0TGVnKV0NCnB1YmxpYyB2b2lkIEdvVG9JbXBsKENhbmNlbGxhdGlvblRva2VuIGNhbmNlbGxhdGlvblRva2VuLA0KW0VuZHBvaW50UGFyYW0oIlRvIiwgS2luZE9mRW5kcG9pbnRQYXJhbS5Qb3NpdGlvbildIFZlY3RvcjMgcG9pbnQsDQpmbG9hdCBzcGVlZCA9IDEyKQ0Kew0KfQ0K'));});</script><div class="code-viewer-line">[BipedEndpoint("Go", DeviceOfBiped.RightLeg, DeviceOfBiped.LeftLeg)]</div><div class="code-viewer-line"><span class='code-viewer-keyword'>public</span> <span class='code-viewer-keyword'>void</span> GoToImpl(CancellationToken cancellationToken,</div><div class="code-viewer-line">[EndpointParam("To", KindOfEndpointParam.Position)] Vector3 point,</div><div class="code-viewer-line"><span class='code-viewer-keyword'>float</span> speed = 12)</div><div class="code-viewer-line">{</div><div class="code-viewer-line">}</div></div>
+
+<h2 class='center-h' data-href='GeneralizedHostMethodDeclaration' is-processed="true">
+Generalized host method declaration
+<a href="https://symontoclay.github.io/docs/host_methods.html#GeneralizedHostMethodDeclaration" name="GeneralizedHostMethodDeclaration" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/host_methods.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Sometimes host method can be unimplemented but call of the method should be logged instead of error of call undefined method.
+For instance, in <a href='https://symontoclay.github.io/docs/cli.html'>CLI</a> host methods (like "Go" or "Take") are not implemented but can be called. 
+</p>
+
+<p>
+Generalized host method allows calling undefined host methods.
+</p>
+
+<p>
+Generalized host method is usual C# method on Unity <b>MonoBehaviour</b> level.
+</p>
+
+<p>
+Generalized host method must be annotated by <a href='https://symontoclay.github.io/docs/engine_api/2E05416F192FCACD25308FED210B7347.html'>BipedEndpointAttribute</a>.
+The annotation should have just one parameter "*".
+</p>
+
+<p>
+Generalized host method must return only <b>void</b>.
+</p>
+
+<p>
+Generalized host method must have parameters:
+</p>
+
+<dl>
+  <dt>CancellationToken cancellationToken</dt>
+  <dd>
+      Periodically you should check <b>IsCancellationRequested</b> or call <b>ThrowIfCancellationRequested()</b> of the <b>CancellationToken</b> to correctly cancel the method.
+  </dd>
+  
+  <dt>string methodName</dt>
+  <dd>
+      Contains name of called method.
+  </dd>
+  
+  <dt>bool isNamedParameters</dt>
+  <dd>
+      Contains <b>true</b> if method is called by named parameters, otherwise contains <b>false</b>.
+  </dd>
+  
+  <dt>Dictionary&lt;string, object&gt; namedParameters</dt>
+  <dd>
+      Contais <b>Dictionary</b> with named parameters if method is called by named parameters, otherwise contains <b>null</b>.
+  </dd>
+  
+  <dt>List&lt;object&gt; positionedParameters</dt>
+  <dd>
+      Contains <b>List</b> with parameters if method is called by positioneds parameters, otherwise contains <b>null</b>.
+  </dd> 
+</dl>
+
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idb0818a04_cd9a_4213_8f4d_4eeea8263656">Copy</button></div><script>$('#idb0818a04_cd9a_4213_8f4d_4eeea8263656').click(function() {navigator.clipboard.writeText(atob('W0JpcGVkRW5kcG9pbnQoIioiKV0NCnB1YmxpYyB2b2lkIEdlbmVyaWNDYWxsKENhbmNlbGxhdGlvblRva2VuIGNhbmNlbGxhdGlvblRva2VuLCBzdHJpbmcgbWV0aG9kTmFtZSwgYm9vbCBpc05hbWVkUGFyYW1ldGVycywNCkRpY3Rpb25hcnkmbHQ7c3RyaW5nLCBvYmplY3QmZ3Q7IG5hbWVkUGFyYW1ldGVycywgTGlzdCZsdDtvYmplY3QmZ3Q7IHBvc2l0aW9uZWRQYXJhbWV0ZXJzKQ0Kew0KfQ0K'));});</script><div class="code-viewer-line">[BipedEndpoint("*")]</div><div class="code-viewer-line"><span class='code-viewer-keyword'>public</span> <span class='code-viewer-keyword'>void</span> GenericCall(CancellationToken cancellationToken, <span class='code-viewer-keyword'>string</span> methodName, <span class='code-viewer-keyword'>bool</span> isNamedParameters,</div><div class="code-viewer-line">Dictionary&lt;<span class='code-viewer-keyword'>string</span>, <span class='code-viewer-keyword'>object</span>&gt; namedParameters, List&lt;<span class='code-viewer-keyword'>object</span>&gt; positionedParameters)</div><div class="code-viewer-line">{</div><div class="code-viewer-line">}</div></div>
+
+<h2 class='center-h' data-href='Devices' is-processed="true">
+Devices
+<a href="https://symontoclay.github.io/docs/host_methods.html#Devices" name="Devices" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/host_methods.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Devices represent parts of character's body which can be used in character's actions.
+For instance, head, right hand, left hand, right leg, left leg.
+Available devices are described in <a href='https://symontoclay.github.io/docs/engine_api/E343054A1D19A9AD224E1D7D0FFB9943.html'>DeviceOfBiped</a>.
+</p>
+
+<p>
+Devices in host method declaration allow coordination between different host methods which want to use the same devices.
+</p>
+
+<p>
+If many host methods claim to use the same device, higher priority method will cath device.
+Other methods will be rejected.
+If lower priority method is already using this device, the lower priority method will be canceled.
+</p>
+
+<h2 class='center-h' data-href='TypeConversion' is-processed="true">
+Type сonversion
+<a href="https://symontoclay.github.io/docs/host_methods.html#TypeConversion" name="TypeConversion" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h2>
+
+<p><a href="https://symontoclay.github.io/docs/host_methods.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+SymOntoClay provides automatic type conversion.
+</p>
+
+<p>
+In future It will be described in details.
+</p>
+
+</article>
+<p>
+&nbsp;
+</p>
+</div>
+</div>
+</div>
+<footer class='container' role='contentinfo'>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<span style='font-size: 17px;'><a href='https://github.com/Symontoclay'><i class='fab fa-github' title='SymOntoClay on GitHub'></i></a></span>
+<span style='font-size: 17px;'><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
+<br>
+</br>
+This page was last modified on 26 February 2023<br>
+&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2023</br>
+The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+<br>&nbsp;
+</div>
+</div>
+</footer>
+</body>
+</html>

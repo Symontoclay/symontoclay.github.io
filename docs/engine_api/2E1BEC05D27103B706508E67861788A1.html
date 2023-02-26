@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml' prefix='og: https://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta name='generator' content='SymOntoClay/InternalCLI:SiteBuilder'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta property='og:type' content='article'>
+<meta property='og:title' content='BaseBehavior Class (SymOntoClay.UnityAsset.BaseBehaviors) | C# user API reference | SymOntoClay Docs'>
+<meta property='og:image' content='https://symontoclay.github.io/preview_img.jfif'>
+<link rel='image_src' href='https://symontoclay.github.io/preview_img.jfif'>
+<meta property='og:url' content='https://symontoclay.github.io/docs/engine_api/2E1BEC05D27103B706508E67861788A1.html'>
+<meta name='description' content='Contains base recommended behavior.'>
+<title>SymOntoClay - BaseBehavior Class (SymOntoClay.UnityAsset.BaseBehaviors) | C# user API reference | SymOntoClay Docs</title>
+<link rel='icon' href='https://symontoclay.github.io/favicon.png' type='image/png'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous'>
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx' crossorigin='anonymous'></script>
+<script src='https://symontoclay.github.io/assets/fontawesome_5.15.1/all.js'></script>
+<link rel='stylesheet' href='https://symontoclay.github.io/site.css'>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src='https://www.googletagmanager.com/gtag/js?id=G-4T85EVM2WV'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4T85EVM2WV');
+</script>
+
+</head>
+<body>
+<div class='container main-container'>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<header role='banner'>
+<p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>is game AI experimental open source engine.</span></p>
+</header>
+<nav role='navigation'>
+<a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Developing</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/contact_me.html'>Contact me</a></nav>
+<hr style='border-bottom-color: #e2e2e2;'>
+<nav class='bread-crumb-nav'>
+<a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/engine_api/index.html' style='color: #C0C0C0;'>Engine API</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>BaseBehavior</a></nav>
+</div>
+</div>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<article>
+<h1 is-processed="true">BaseBehavior Class</h1>
+<div style='margin-top: 20px; margin-bottom: 20px; font-size: 14px;'>
+<div><span style='font-weight: bold;'>Namespace:</span>&nbsp;SymOntoClay.UnityAsset.BaseBehaviors</div>
+<div><span style='font-weight: bold;'>Assembly:</span>&nbsp;Assembly-CSharp</div>
+</div>
+<div><p>Contains base recommended behavior.</p>
+</div>
+<h2 is-processed="true">Methods</h2>
+<table style='font-size: 14px; margin-bottom: 20px; width=100%;' class='table'>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/DB476CB8A485EFFBC4C6A213DCF79F0B.html'>AddStopFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC has stopped itself.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/1C0746C3C25AAAE961802947DF3A06F5.html'>AddWalkingFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC has started walking.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/E9D5193206AC26EB66B207352B02C760.html'>AddRunningFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC has started running.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/EE186137C66A15054F1F6EA640474EED.html'>AddHoldFact(String)</a>
+</td>
+<td>
+<p>Adds fact that the NPC holds something in his hands.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/2CF2616FE957693916976CF8EC677A86.html'>RemoveHoldFact()</a>
+</td>
+<td>
+<p>Removes fact that the NPC holds something in his hands.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/DA8D96E7CB5FAC7203C0B36ADBE7FF5F.html'>StartRepeatingWalkingStepsSoundInMainThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is walking.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/FDEB07CE762B422689A148C9533B69EE.html'>StartRepeatingWalkingStepsSoundInUsualThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is walking.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/0177B13799F3E3889C3AED1B768D17D5.html'>StartRepeatingRunningStepsSoundInMainThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is running.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/973A99446D8F675C91112A674658C4F2.html'>StartRepeatingRunningStepsSoundInUsualThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that the NPS is running.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/EB168E62C42CB92C48A98955706D8BAE.html'>StopRepeatingStepsSoundInMainThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that the NPS is walking or running.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/C219269EC8CA04E2AFBA9CA9A5458583.html'>StopRepeatingStepsSoundInUsualThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that the NPS is walking or running.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/43B695717ABF0FF4248A328212181ABF.html'>StartRepeatingShotSoundInMainThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that something is shooting.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/86DBA198F7CFA99D6A1C9C26EDEEC560.html'>StartRepeatingShotSoundInUsualThread()</a>
+</td>
+<td>
+<p>Starts pushing sound facts that something is shooting.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/7690C5F894EAE9D6A2AC110AC685FE47.html'>StopRepeatingShotSoundInMainThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that something is shooting.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/9D343CC8F229FF9C1E4AB7A7D334B1B8.html'>StopRepeatingShotSoundInUsualThread()</a>
+</td>
+<td>
+<p>Stops pushing sound facts that something is shooting.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/59153641016F3EA42EABCA1283B6EBE6.html'>AddHeShootsFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC shoots.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/5D4A683565B1B37839116591F174D830.html'>RemoveHeShootsFact()</a>
+</td>
+<td>
+<p>Removes fact that the NPC shoots.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/1F0578228BEA59C57665ADCB9ED39C7C.html'>AddHeIsReadyForShootFact()</a>
+</td>
+<td>
+<p>Adds fact that the NPC is ready for shooting.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/9B27DE148162DADA2563BE60B142FDE8.html'>RemoveHeIsReadyForShootFact()</a>
+</td>
+<td>
+<p>Removes fact that the NPC is ready for shooting.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/EFF1C5344954E20D6CA7644F608B5998.html'>RemoveAllShootFacts()</a>
+</td>
+<td>
+<p>Removes all facts related to shooting.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/E7E377E2D5A662C2F8AD7151F0EAE499.html'>ProcessDeath()</a>
+</td>
+<td>
+<p>Proceses death for NPC.
+This method can be called both in main and in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/E82B003CB37B6029140EE12F5DFDD7FE.html'>GetMethodId()</a>
+</td>
+<td>
+<p>Returns integer id which is unique for the component.
+It can be helpful for debugging host methods.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/6ECC9ABA58095CE83F293985D60EB60F.html'>RunInMainThread(Action)</a>
+</td>
+<td>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/1EF574DEE3D29E2CBBE8CA007B84A043.html'>RunInMainThread(Func&lt;&gt;)</a>
+</td>
+<td>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/8ABD88F57AE32FA580EC912690330979.html'>RunInMainThread(Action)</a>
+</td>
+<td>
+<p>Executes handler in main thread context.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/9CCDE74443656D3A8D48141DBFCD9157.html'>RunInMainThread&lt;TResult&gt;(Func&lt;&gt;)</a>
+</td>
+<td>
+<p>Executes handler in main thread context.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/11184DBC0963AB20B18460B165CEB53D.html'>CanBeTakenBy(IEntity)</a>
+</td>
+<td>
+<p>Checks that It can be taken by the NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/CA57F84CDD9FF3B96CDC9935688F60EA.html'>AddToManualControl(IGameObjectBehavior,DeviceOfBiped)</a>
+</td>
+<td>
+<p>Adds a game object into manual controlled area of the NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/7E73A39EE5EAA9E21437B3490503A72F.html'>AddToManualControl(IGameObjectBehavior,IList&lt;DeviceOfBiped&gt;)</a>
+</td>
+<td>
+<p>Adds a game object into manual controlled area of the NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/196EBACEF01CB0921EA176B734EDBE54.html'>RemoveFromManualControl(IGameObjectBehavior)</a>
+</td>
+<td>
+<p>Removes a game object from manual controlled area of an NPC.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/CCF4BB4AC838BF63F75A16BCD13B6196.html'>AddToBackpack(IGameObject)</a>
+</td>
+<td>
+<p>Adds a game object into backpack.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/07B36B6A7BBCBC612AD104BF96103C12.html'>RemoveFromBackpack(IGameObject)</a>
+</td>
+<td>
+<p>Removes game object from backpack.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/FA31B241496C059935E73BB74965A5B4.html'>GetRotationToPositionInUsualThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/9D71CFB41D3CD3D5C167D70BC3D4876D.html'>GetRotationToPositionInUsualThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in usual (not main) thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/7DB7CC61F9F0E66F0EEBB7A14AA573AA.html'>GetRotationToPositionInMainThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+<tr style='border-bottom: solid 1px #e2e2e2;'>
+<td style='width: 300px;'>
+<a href='https://symontoclay.github.io/docs/engine_api/1F5B83521223A3C4054FE26ADEBEACDD.html'>GetRotationToPositionInMainThread(Vector3)</a>
+</td>
+<td>
+<p>Creates a rotation with the specified forward and upwards directions.
+It is a wrapper on Quaternion.LookRotation.
+This method should be called only in main thread.</p>
+
+</td>
+</tr>
+</table>
+
+</article>
+<p>
+&nbsp;
+</p>
+</div>
+</div>
+</div>
+<footer class='container' role='contentinfo'>
+<div class='row justify-content-center'>
+<div class='col col-md-10'>
+<span style='font-size: 17px;'><a href='https://github.com/Symontoclay'><i class='fab fa-github' title='SymOntoClay on GitHub'></i></a></span>
+<span style='font-size: 17px;'><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
+<br>
+</br>
+This page was last modified on 26 February 2023<br>
+&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2023</br>
+The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+<br>&nbsp;
+</div>
+</div>
+</footer>
+</body>
+</html>
