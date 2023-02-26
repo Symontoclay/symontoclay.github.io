@@ -3564,7 +3564,136 @@ Operator "new"
 
 <LinkToContent/>
 
-<complete_me/>
+<code example_name='NewOperatorExample1'>
+class class1
+{
+   @b = 1;
+}
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = new class1;
+        @a.@b >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='NewOperatorExample1'>
+</console>
+
+<code example_name='NewOperatorExample2'>
+class class1
+{
+   @b = 1;
+}
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @c = class1;
+        @a = new @c;
+        @a.@b >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='NewOperatorExample2'>
+</console>
+
+<code example_name='NewOperatorExample3'>
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @c = {
+            @b = 1;
+        };
+
+        @a = new @c;
+        @a.@b >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='NewOperatorExample3'>
+</console>
+
+<code example_name='NewOperatorExample4'>
+class class1
+{
+   @b = 1;
+}
+
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+
+        OtherFun(param: new class1);
+        'End' >> @>log;
+    }
+    fun OtherFun(@param)
+    {
+        @param.@b >> @>log;
+    }
+}
+</code>
+
+<console example_name='NewOperatorExample4'>
+</console>
+
+<code example_name='NewOperatorExample5'>
+class cls0
+{
+    ctor(@param: string)
+    {
+        'Begin ctor of cls0' >> @>log;
+        @param >> @>log;
+        @b >> @>log;
+        'End ctor of cls0' >> @>log;
+    }
+
+    private:
+        @b = 0;
+}
+
+class cls1 is cls0
+{
+    ctor(@param: string)
+        : cls0('Cool!')
+    {
+        'Begin ctor of cls1' >> @>log;
+        @param >> @>log;
+        @b >> @>log;
+        'End ctor of cls1' >> @>log;
+    }
+
+    private:
+        @b = 1;
+}
+
+app PeaceKeeper
+{
+    on Enter
+    {
+        'Begin' >> @>log;
+        @a = new cls1('Hi!');
+        @a.@b >> @>log;
+        'End' >> @>log;
+    }
+}
+</code>
+
+<console example_name='NewOperatorExample5'>
+</console>
 
 <p>
 Read more about "new" statement <a href='/docs/spec.html#NewOp_chapter'>here</a>.

@@ -4722,7 +4722,21 @@ The <b>new</b> operator creates a new instance of a type.
 <EBNFCDECL name='NewOpExpr' groups='Expr'/> = "new" ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarExpr'/> ) [ "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ] .
 </gr>
 
-<complete_me/>
+<code data-lng='soc'>
+@a = new cls1;
+</code>
+
+<code data-lng='soc'>
+@a = new cls1('Hi!');
+</code>
+
+<code data-lng='soc'>
+@a = new @b;
+</code>
+
+<code data-lng='soc'>
+@a = new @b'Hi!');
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#NewOperator'>here</a>.
