@@ -49,7 +49,7 @@
 <h2 class="center-h" is-processed="true">    Contens
     <a href='https://symontoclay.github.io/docs/file_structure.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/file_structure.html#Overview">Overview</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#General_file_structure">General file structure</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Files_and_directories_meaning">Files and directories meaning</a><ul><li><a href="https://symontoclay.github.io/docs/file_structure.html#my-worldspace">my-worldspace/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Modules">Modules/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Things">Things/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Npcs">Npcs/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Players">Players/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#World">World/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#.wspace">.wspace</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#.world">.world</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#.sobj">.sobj</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#.soc">.soc</a></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/file_structure.html#Overview">Overview</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#General_file_structure">General file structure</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Files_and_directories_meaning">Files and directories meaning</a><ul><li><a href="https://symontoclay.github.io/docs/file_structure.html#my-worldspace">my-worldspace/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Libs">Libs/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Navs">Navs/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Npcs">Npcs/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Players">Players/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#SharedLibs">SharedLibs/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#Things">Things/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#World">World/</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#wspace">.wspace</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#world">.world</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#sobj">.sobj</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#sllb">.slib</a></li><li><a href="https://symontoclay.github.io/docs/file_structure.html#soc">.soc</a></li></ul></li></ul>
 
 <h2 class='center-h' data-href='Overview' is-processed="true">
 Overview
@@ -65,10 +65,10 @@ The project is unit which is linked to Unity Game object with special asset.
 </p>
 
 <p>
-The SymOntoClay CLI <b>soc</b> <b>new</b> create new worldspace.
+The SymOntoClay CLI <a href='https://symontoclay.github.io/docs/cli.html#new'><b>soc</b> <b>new</b></a> creates new worldspace.
 </p>
 
-<div class="console-viewer"><div>soc  &lt;Project name&gt;</div></div>
+<div class="console-viewer"><div>soc new &lt;Project name&gt;</div></div>
 
 <p>
 The created worldspace contains an initial skeleton and is ready to run and easy to modify.
@@ -86,11 +86,17 @@ Here is general project file structure.
 
 <pre style='width: 100%; background-color: #f8f9fa;'>
 my-worldspace/
-&nbsp;&nbsp;&nbsp;&nbsp;Modules/
-&nbsp;&nbsp;&nbsp;&nbsp;Things/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.sobj
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Libs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib1/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib1.slib
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib1.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib2/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib2.slib
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib2.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Navs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GreenWaypoint/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GreenWaypoint.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GreenWaypoint.soc
 &nbsp;&nbsp;&nbsp;&nbsp;Npcs/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyNPC.sobj
@@ -99,6 +105,17 @@ my-worldspace/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RedPlayer/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RedPlayer.sobj
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RedPlayer.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;SharedLibs/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdlib/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdlib.slib
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdlib.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LinguisticVariables.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relations.soc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rules.soc
+&nbsp;&nbsp;&nbsp;&nbsp;Things/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.sobj
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyBarrel.soc
 &nbsp;&nbsp;&nbsp;&nbsp;World/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my-world.world
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my-world.soc
@@ -123,7 +140,7 @@ The name of the root directory can be whatever you want.
 </p>
 
 <p>
-Directories <a href='https://symontoclay.github.io/docs/file_structure.html#Modules'><b>Modules</b></a> and <a href='https://symontoclay.github.io/docs/file_structure.html#World'><b>World</b></a> are required.
+Directory <a href='https://symontoclay.github.io/docs/file_structure.html#World'><b>World</b></a> are required.
 </p>
 
 <p>
@@ -131,9 +148,73 @@ Another directories can be in any count and can have any names.
 The meaning of these directories - grouping projects.
 </p>
 
-<h3 class='center-h' data-href='Modules' is-processed="true">
-Modules/
-<a href="https://symontoclay.github.io/docs/file_structure.html#Modules" name="Modules" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<h3 class='center-h' data-href='Libs' is-processed="true">
+Libs/
+<a href="https://symontoclay.github.io/docs/file_structure.html#Libs" name="Libs" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+It is a root directory of your libraries.
+</p>
+
+<p>
+To create a library, use the <a href='https://symontoclay.github.io/docs/cli.html#new'>command</a>:
+</p>
+
+<div class="console-viewer"><div>soc new -lib &lt;Library name&gt;</div></div>
+
+<h3 class='center-h' data-href='Navs' is-processed="true">
+Navs/
+<a href="https://symontoclay.github.io/docs/file_structure.html#Navs" name="Navs" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Groups projects which are defining information about navigation elements, like waypoints, areas, roads and something like this.
+</p>
+
+<p>
+To create a Navigation element, use the <a href='https://symontoclay.github.io/docs/cli.html#new'>command</a>:
+</p>
+
+<div class="console-viewer"><div>soc new -nav &lt;Navigation Project name&gt;</div></div>
+
+<h3 class='center-h' data-href='Npcs' is-processed="true">
+Npcs/
+<a href="https://symontoclay.github.io/docs/file_structure.html#Npcs" name="Npcs" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Groups projects which are defining NPCs' behavior and information.
+</p>
+
+<p>
+To create an NPC, use the <a href='https://symontoclay.github.io/docs/cli.html#new'>command</a>:
+</p>
+
+<div class="console-viewer"><div>soc new -npc &lt;NPC Project name&gt;</div></div>
+
+<h3 class='center-h' data-href='Players' is-processed="true">
+Players/
+<a href="https://symontoclay.github.io/docs/file_structure.html#Players" name="Players" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+Groups projects which are defining information about players.
+</p>
+
+<p>
+To create a Player, use the <a href='https://symontoclay.github.io/docs/cli.html#new'>command</a>:
+</p>
+
+<div class="console-viewer"><div>soc new -player &lt;Player Project name&gt;</div></div>
+
+<h3 class='center-h' data-href='SharedLibs' is-processed="true">
+SharedLibs/
+<a href="https://symontoclay.github.io/docs/file_structure.html#SharedLibs" name="SharedLibs" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
@@ -142,15 +223,17 @@ Modules/
 </p>
 
 <p>
-This directory will contain shared modules.
+This directory contains shared libs.
 </p>
 
 <p>
-Now this directory is not used.
+To install a shared library, use the <a href='https://symontoclay.github.io/docs/cli.html#install'>command</a>:
 </p>
 
+<div class="console-viewer"><div>soc install &lt;Shared library name&gt;</div></div>
+
 <p>
-This name of directory is reserved for future.
+Available shared libraries you can see <a href='https://symontoclay.github.io/docs/cli.html#Available_shared_libs'>here</a>.
 </p>
 
 <h3 class='center-h' data-href='Things' is-processed="true">
@@ -163,25 +246,11 @@ Things/
 Groups projects which are defining information about things.
 </p>
 
-<h3 class='center-h' data-href='Npcs' is-processed="true">
-Npcs/
-<a href="https://symontoclay.github.io/docs/file_structure.html#Npcs" name="Npcs" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
-
-<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
 <p>
-Groups projects which are defining NPCs' behavior and information.
+To create a Thing, use the <a href='https://symontoclay.github.io/docs/cli.html#new'>command</a>:
 </p>
 
-<h3 class='center-h' data-href='Players' is-processed="true">
-Players/
-<a href="https://symontoclay.github.io/docs/file_structure.html#Players" name="Players" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
-
-<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
-
-<p>
-Groups projects which are defining information about players.
-</p>
+<div class="console-viewer"><div>soc new -thing &lt;Thing Project name&gt;</div></div>
 
 <h3 class='center-h' data-href='World' is-processed="true">
 World/
@@ -197,9 +266,19 @@ World/
 Defines general information about world.
 </p>
 
-<h3 class='center-h' data-href='.wspace' is-processed="true">
+<p>
+World creates automatically during creation new project.
+</p>
+
+<p>
+To create a world in empty directory, use the <a href='https://symontoclay.github.io/docs/cli.html#new'>command</a>:
+</p>
+
+<div class="console-viewer"><div>soc new -world &lt;Worldspace name&gt;</div></div>
+
+<h3 class='center-h' data-href='wspace' is-processed="true">
 .wspace
-<a href="https://symontoclay.github.io/docs/file_structure.html#.wspace" name=".wspace" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/file_structure.html#wspace" name="wspace" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
@@ -211,9 +290,9 @@ Defines general information about world.
 Locator of worldspace.
 </p>
 
-<h3 class='center-h' data-href='.world' is-processed="true">
+<h3 class='center-h' data-href='world' is-processed="true">
 .world
-<a href="https://symontoclay.github.io/docs/file_structure.html#.world" name=".world" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/file_structure.html#world" name="world" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
@@ -225,9 +304,9 @@ Locator of worldspace.
 Locator of world's project.
 </p>
 
-<h3 class='center-h' data-href='.sobj' is-processed="true">
+<h3 class='center-h' data-href='sobj' is-processed="true">
 .sobj
-<a href="https://symontoclay.github.io/docs/file_structure.html#.sobj" name=".sobj" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/file_structure.html#sobj" name="sobj" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
@@ -239,9 +318,23 @@ Locator of world's project.
 Locator of project.
 </p>
 
-<h3 class='center-h' data-href='.soc' is-processed="true">
+<h3 class='center-h' data-href='sllb' is-processed="true">
+.slib
+<a href="https://symontoclay.github.io/docs/file_structure.html#sllb" name="sllb" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
+
+<p>
+<b>Required</b>
+</p>
+
+<p>
+Locator of library.
+</p>
+
+<h3 class='center-h' data-href='soc' is-processed="true">
 .soc
-<a href="https://symontoclay.github.io/docs/file_structure.html#.soc" name=".soc" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+<a href="https://symontoclay.github.io/docs/file_structure.html#soc" name="soc" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
 
 <p><a href="https://symontoclay.github.io/docs/file_structure.html#Contents"><i class='fas fa-long-arrow-alt-up'></i> back to top</a></p>
 
@@ -263,8 +356,8 @@ Source code on <a href='https://symontoclay.github.io/docs/spec.html'>SymOntoCla
 <span style='font-size: 17px;'><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
 <br>
 </br>
-This page was last modified on 08 October 2022<br>
-&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2022</br>
+This page was last modified on 26 February 2023<br>
+&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2023</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;
 </div>

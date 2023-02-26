@@ -49,7 +49,7 @@
 <h2 class="center-h" is-processed="true">    Contens
     <a href='https://symontoclay.github.io/docs/cli.html#Contents' name='Contents' class='permalink' title='The link to the section'>
         <i class='fas fa-link'></i>
-    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/cli.html#help">soc help</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#run">soc run</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#run_arguments">Arguments</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#exit">soc exit</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#new">soc new</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#new_arguments">Arguments</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#version">soc version</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#AdditionalOptions">Additional options</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#NoLogo">-nologo</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#Timeout">-timeout</a></li></ul></li></ul>
+    </a></h2><p><ul><li><a href="https://symontoclay.github.io/docs/cli.html#help">soc help</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#run">soc run</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#run_arguments">Arguments</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#exit">soc exit</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#new">soc new</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#new_arguments">Arguments</a></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#install">soc install</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#Available_shared_libs">Available libs</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#Available_shared_libs_sstdlib">stdlib</a></li></ul></li></ul></li><li><a href="https://symontoclay.github.io/docs/cli.html#version">soc version</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#AdditionalOptions">Additional options</a><ul><li><a href="https://symontoclay.github.io/docs/cli.html#NoLogo">-nologo</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#Timeout">-timeout</a></li><li><a href="https://symontoclay.github.io/docs/cli.html#NLP">-nlp</a></li></ul></li></ul>
 
 <p>
 A command line interface for SymOntoClay.
@@ -115,16 +115,30 @@ Creates new project(NPC, Thing, Player, Place) in new or existing worldspace.
 <p>
 soc <b>new</b> &lt;NPC Project name&gt;<br>
 soc <b>n</b> &lt;NPC Project name&gt;</br>
-soc <b>new</b> <b>-npc</b> &lt;NPC Project name&gt;<br>
-soc <b>n</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
 <br>
-soc <b>new</b> <b>-world</b> &lt;Worldspace name&gt;</br>
-soc <b>n</b> <b>-world</b> &lt;Worldspace name&gt;<br>
-soc <b>new</b> <b>-w</b> &lt;Worldspace name&gt;</br>
-soc <b>n</b> <b>-w</b> &lt;Worldspace name&gt;<br>
+soc <b>new</b> <b>-npc</b> &lt;NPC Project name&gt;</br>
+soc <b>n</b> <b>-npc</b> &lt;NPC Project name&gt;<br>
 </br>
-soc <b>new</b> <b>-thing</b> &lt;Thing Project name&gt;<br>
+soc <b>new</b> <b>-world</b> &lt;Worldspace name&gt;<br>
+soc <b>n</b> <b>-world</b> &lt;Worldspace name&gt;</br>
+soc <b>new</b> <b>-w</b> &lt;Worldspace name&gt;<br>
+soc <b>n</b> <b>-w</b> &lt;Worldspace name&gt;</br>
+<br>
+soc <b>new</b> <b>-thing</b> &lt;Thing Project name&gt;</br>
 soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
+<br>
+soc <b>new</b> <b>-lib</b> &lt;Library name&gt;</br>
+soc <b>n</b> <b>-lib</b> &lt;Library name&gt;<br>
+soc <b>new</b> <b>-l</b> &lt;Library name&gt;</br>
+soc <b>n</b> <b>-l</b> &lt;Library name&gt;<br>
+</br>
+soc <b>new</b> <b>-player</b> &lt;Player Project name&gt;<br>
+soc <b>n</b> <b>-player</b> &lt;Player Project name&gt;</br>
+soc <b>new</b> <b>-p</b> &lt;Player Project name&gt;<br>
+soc <b>n</b> <b>-p</b> &lt;Player Project name&gt;</br>
+<br>
+soc <b>new</b> <b>-nav</b> &lt;Navigation Project name&gt;</br>
+soc <b>n</b> <b>-nav</b> &lt;Navigation Project name&gt;
 </p>
 
 <h4 class='center-h' data-href='new_arguments' is-processed="true">Arguments<a href="https://symontoclay.github.io/docs/cli.html#new_arguments" name="new_arguments" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
@@ -138,11 +152,64 @@ soc <b>n</b> <b>-thing</b> &lt;Thing Project name&gt;
   
   <dt>&lt;Thing Project name&gt;</dt>
   <dd>Name of new Thing Project</dd>
+  
+  <dt>&lt;Library name&gt;</dt>
+  <dd>Name of new Library</dd>
+  
+  <dt>&lt;Player Project name&gt;</dt>
+  <dd>Name of new Player Project</dd>
+  
+  <dt>&lt;Navigation Project name&gt;</dt>
+  <dd>Name of new Navigation Project</dd>
 </dl>
 
 <p>
 For creating project in existing worldspace run command <b>new</b> in worldspace directory.
 </p>
+
+<h3 class='center-h' data-href='install' is-processed="true">
+soc install
+<a href="https://symontoclay.github.io/docs/cli.html#install" name="install" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h3>
+
+<p>
+Installs shared library to worldspace.
+</p>
+
+<p>
+Now the source of the shared library is local directory in directory of CLI installation.
+So the shared libraries will be updated with CLI.
+</p>
+
+<p>
+It the future I am going to use installation from server.
+But now I don't have enough time for organization installation from server.
+</p>
+
+<p>
+soc <b>install</b> &lt;Shared library name&gt;
+</p>
+
+<h4 class='center-h' data-href='Available_shared_libs' is-processed="true">
+Available libs
+<a href="https://symontoclay.github.io/docs/cli.html#Available_shared_libs" name="Available_shared_libs" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<h5 class='center-h' data-href='Available_shared_libs_sstdlib' is-processed="true">
+stdlib
+<a href="https://symontoclay.github.io/docs/cli.html#Available_shared_libs_sstdlib" name="Available_shared_libs_sstdlib" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h5>
+
+<p>
+Library with common code entities which will be helpful in different games.
+</p>
+
+<p>
+The location of the library is <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayCLI/LibsForInstall/stdlib'>SymOntoClayCLI/LibsForInstall/stdlib</a>.
+</p>
+
+<p>
+To install the library, use the <a href='https://symontoclay.github.io/docs/cli.html#install'>command</a>:
+</p>
+
+<div class="console-viewer"><div>soc install stdlib</div></div>
 
 <h3 class='center-h' data-href='version' is-processed="true">
 soc version
@@ -186,6 +253,22 @@ CLI will return 0.
 soc run <b>-timeout</b> 10000
 </p>
 
+<h4 class='center-h' data-href='NLP' is-processed="true">
+-nlp
+<a href="https://symontoclay.github.io/docs/cli.html#NLP" name="NLP" title="The link to the section" class="permalink"><i class='fas fa-link'></i></a></h4>
+
+<p>
+Enables Natural language processing.
+</p>
+
+<p>
+Natural language processing takes too much resources, so It is disabled by default.
+</p>
+
+<p>
+soc run <b>-nlp</b>
+</p>
+
 </article>
 <p>
 &nbsp;
@@ -200,8 +283,8 @@ soc run <b>-timeout</b> 10000
 <span style='font-size: 17px;'><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
 <br>
 </br>
-This page was last modified on 08 October 2022<br>
-&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2022</br>
+This page was last modified on 26 February 2023<br>
+&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2023</br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;
 </div>

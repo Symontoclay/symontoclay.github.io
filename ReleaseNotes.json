@@ -1,5 +1,23 @@
 [
   {
+    "Date": "2023-02-26T00:00:00+02:00",
+    "Version": "0.4.3",
+    "AssetsList": [
+      {
+        "Kind": 11,
+        "Title": "Unity package",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.4.3/SymOntoClay-0.4.3.unitypackage"
+      },
+      {
+        "Kind": 8,
+        "Title": "Portable CLI (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.4.3/SymOntoClay-CLI-0.4.3-x64.zip"
+      }
+    ],
+    "Description": "* Ilde actions\r\n* \"wait\" statement\r\n* Child and independent async call\r\n* Generalized call in host method\r\n* Priority of method or thigger's handler\r\n* Timeout of method or idle action\r\n* Anonymous function\r\n* Function defined in body of another function\r\n* Library\r\n* \"import\" statement\r\n* Object literal\r\n* \"new\" operator\r\n* Constructor\r\n* CLI:\r\n  * install\r\n  * new -lib\r\n  * new -nav\r\n  * new -player\r\n* DSL project improvement\r\n* Fixing issues\r\n",
+    "IsMarkdown": true
+  },
+  {
     "Date": "2022-10-08T00:00:00+03:00",
     "Version": "0.4.2",
     "AssetsList": [
