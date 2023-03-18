@@ -3739,6 +3739,74 @@ Sets priority of operation.
 go~()[: priority = 1 :];
 </code>
 
+<h4 class='center-h' data-href='EventsAnnotation_chapter'>
+Events
+</h4>
+
+<LinkToContent/>
+
+<p>
+Events are fired when a method finishes execution.
+</p>
+
+<p>
+First of all, It allows us to detect and handle finish of execution synchronous functions.
+I think this will be easier than creating a variable, starting execution the function in asynchronous mode and waiting for finishing function the function.
+</p>
+
+<p>
+Annotation events are allowed for both synchronous and asynchronous mode.
+</p>
+
+<p>
+Annotation events can be executed in both synchronous and asynchronous mode.
+Asynchronous annotation event contains "~".
+</p>
+
+<p>
+Synchronous annotation event:
+</p>
+
+<code data-lng='soc'>
+on complete { }
+on complete => { }
+</code>
+
+<p>
+Asynchronous annotation event:
+</p>
+
+<code data-lng='soc'>
+on complete ~ { }
+on complete ~ => { }
+</code>
+
+<p>
+In general It looks like this:
+</p>
+
+<code data-lng='soc'>
+@@host.`rotate`(30)[: timeout=1000, on complete { complete action; } :];
+</code>
+
+<h5 class='center-h' data-href='CompleteEventAnnotation_chapter'>
+Complete event
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='CompleteEventAnnotation' groups='AnnotationItem'/> =  .
+</gr>
+
+<complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
+</p>
+
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
 </h2>

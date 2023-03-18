@@ -2016,6 +2016,61 @@ action Go
 <console example_name='ActionExample_2'>
 </console>
 
+<code example_name='ActionExample_3'>
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+
+        Go();
+
+        'End' >> @>log;
+    }
+}
+
+action Go
+{
+    op () => 
+    {
+        'Begin Go' >> @>log;
+        
+        @a = 10;
+
+        repeat
+        {
+            @a >> @>log;
+            @a = @a - 1;
+
+            a()[:on complete { complete action; } :];
+
+            if(@a > 5)
+            {
+                continue;
+            }
+
+            'End of while iteration' >> @>log;
+
+            break;
+        }
+
+        'End Go' >> @>log;
+    }
+
+    fun a() => 
+    {
+        '`a` has been called!' >> @>log;
+    }
+}
+</code>
+
+<console example_name='ActionExample_3'>
+</console>
+
+<p>
+Read more <a href='/docs/spec.html#CompleteEventAnnotation_chapter'>here</a> about Annotation complete event.
+</p>
+
 <h2 class='center-h' data-href='State'>
 State
 </h2>
