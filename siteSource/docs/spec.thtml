@@ -3795,13 +3795,13 @@ Complete event
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Fires if function is completed.
+</p>
 
 <gr>
-<EBNFCDECL name='CompleteEventAnnotation' groups='AnnotationItem'/> =  .
+<EBNFCDECL name='CompleteEventAnnotation' groups='AnnotationItem'/> = "on" "complete" [ "~" ] [ "=>" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" .
 </gr>
-
-<complete_me/>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
