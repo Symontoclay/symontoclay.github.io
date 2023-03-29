@@ -100,9 +100,17 @@ I recommend to add the component to <b>Terrain</b>.
   </tbody>
 </table>
 
-<h2 class='center-h' data-href='Humanoid_NPC'>
-Humanoid NPC
+<h2 class='center-h' data-href='Characters_and_things'>
+Characters and things 
 </h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Humanoid_NPC'>
+Humanoid NPC
+</h3>
 
 <LinkToContent/>
 
@@ -118,7 +126,7 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
     <img src='/docs/humanoid-npc-component.jpg'/>
 </p>
 
-<h3 class='center-h' data-href='Humanoid_NPC_Properties'>Properties</h3>
+<h4 class='center-h' data-href='Humanoid_NPC_Properties'>Properties</h4>
 
 <table class="table table-bordered">
   <thead>
@@ -219,9 +227,9 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
   </tbody>
 </table>
 
-<h2 class='center-h' data-href='Head_locator'>
+<h3 class='center-h' data-href='Head_locator'>
 Head locator
-</h2>
+</h3>
 
 <LinkToContent/>
 
@@ -237,9 +245,9 @@ Just add the components to target head's <ico t='unity'/><a href='https://docs.u
     <img src='/docs/head-locator-component.jpg'/>
 </p>
 
-<h2 class='center-h' data-href='Right_Hand_WP_Locator'>
+<h3 class='center-h' data-href='Right_Hand_WP_Locator'>
 Right Hand WP Locator
-</h2>
+</h3>
 
 <LinkToContent/>
 
@@ -255,9 +263,9 @@ Just add the components to target <ico t='unity'/><a href='https://docs.unity3d.
     <img src='/docs/right-hand-wp-locator-component.jpg'/>
 </p>
 
-<h2 class='center-h' data-href='Left_Hand_WP_Locator'>
+<h3 class='center-h' data-href='Left_Hand_WP_Locator'>
 Left Hand WP Locator
-</h2>
+</h3>
 
 <LinkToContent/>
 
@@ -388,7 +396,7 @@ Also It provides recognizing things as things that can be taken and implementati
 	      Distance from which the thing can be taken.
 		  The property is visible only if property <b>Taking Policy</b> has value <b>By Distance</b>.
 	  </td>
-    </tr>	
+    </tr>
   </tbody>
 </table>
 
@@ -435,3 +443,13 @@ It allows the NPC to percept the Player.
     </tr>
   </tbody>
 </table>
+
+<h2 class='center-h' data-href='Navigation'>
+Navigation
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+Waypoint
