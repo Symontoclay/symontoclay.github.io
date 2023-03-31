@@ -29,7 +29,9 @@ I recommend to add the component to <b>Terrain</b>.
     <img src='/docs/world-component.jpg'/>
 </p>
 
-<h3 class='center-h' data-href='World_Properties'>Properties</h3>
+<h3 class='center-h' data-href='World_Properties'>
+Properties
+</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -106,8 +108,6 @@ Characters and things
 
 <LinkToContent/>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='Humanoid_NPC'>
 Humanoid NPC
 </h3>
@@ -126,7 +126,9 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
     <img src='/docs/humanoid-npc-component.jpg'/>
 </p>
 
-<h4 class='center-h' data-href='Humanoid_NPC_Properties'>Properties</h4>
+<h4 class='center-h' data-href='Humanoid_NPC_Properties'>
+Properties
+</h4>
 
 <table class="table table-bordered">
   <thead>
@@ -146,6 +148,20 @@ Controls behavior of Humanoid NPC using logic in linked <a href='/docs/engine_co
       <th>Id</th>
       <td>
 	     Unique identifier.
+	  </td>
+    </tr>
+    <tr>
+      <th>Enable Categories</th>
+      <td>
+	      Enables/disables using <b>Categories</b>. By default is <b>false</b>.
+	  </td>
+    </tr>
+    <tr>
+      <th>Categories</th>
+      <td>
+	      List of classes this NPC belongs to.
+          Allows to set <a href='/docs/spec.html#Inheritance_chapter'>inheritance relationships</a> (with rank 1) in addition to <b>App File</b> or without it.
+          By default is empty.
 	  </td>
     </tr>
 	<tr>
@@ -281,9 +297,9 @@ Just add the components to target <ico t='unity'/><a href='https://docs.unity3d.
     <img src='/docs/left-hand-wp-locator-component.jpg'/>
 </p>
 
-<h2 class='center-h' data-href='Thing'>
+<h3 class='center-h' data-href='Thing'>
 Thing
-</h2>
+</h3>
 
 <LinkToContent/>
 
@@ -300,7 +316,9 @@ It allows the NPC to percept the thing and perform an action if it needs.
     <img src='/docs/thing-component.jpg'/>
 </p>
 
-<h3 class='center-h' data-href='Thing_Properties'>Properties</h3>
+<h4 class='center-h' data-href='Thing_Properties'>
+Properties
+</h4>
 
 <table class="table table-bordered">
   <thead>
@@ -322,12 +340,26 @@ It allows the NPC to percept the thing and perform an action if it needs.
 	      Unique identifier.
 	  </td>
     </tr>
+    <tr>
+      <th>Enable Categories</th>
+      <td>
+	      Enables/disables using <b>Categories</b>. By default is <b>false</b>.
+	  </td>
+    </tr>
+    <tr>
+      <th>Categories</th>
+      <td>
+	      List of classes this Thing belongs to.
+          Allows to set <a href='/docs/spec.html#Inheritance_chapter'>inheritance relationships</a> (with rank 1) in addition to <b>App File</b> or without it.
+          By default is empty.
+	  </td>
+    </tr>
   </tbody>
 </table>
 
-<h2 class='center-h' data-href='Hand_Thing'>
+<h3 class='center-h' data-href='Hand_Thing'>
 Hand Thing
-</h2>
+</h3>
 
 <LinkToContent/>
 
@@ -349,7 +381,9 @@ Also It provides recognizing things as things that can be taken and implementati
     <img src='/docs/hand-thing-component.jpg'/>
 </p>
 
-<h3 class='center-h' data-href='Hand_Thing_Properties'>Properties</h3>
+<h4 class='center-h' data-href='Hand_Thing_Properties'>
+Properties
+</h4>
 
 <table class="table table-bordered">
   <thead>
@@ -369,6 +403,20 @@ Also It provides recognizing things as things that can be taken and implementati
       <th>Id</th>
       <td>
 	      Unique identifier.
+	  </td>
+    </tr>
+    <tr>
+      <th>Enable Categories</th>
+      <td>
+	      Enables/disables using <b>Categories</b>. By default is <b>false</b>.
+	  </td>
+    </tr>
+    <tr>
+      <th>Categories</th>
+      <td>
+	      List of classes this Hand Thing belongs to.
+          Allows to set <a href='/docs/spec.html#Inheritance_chapter'>inheritance relationships</a> (with rank 1) in addition to <b>App File</b> or without it.
+          By default is empty.
 	  </td>
     </tr>
 	<tr>
@@ -400,9 +448,9 @@ Also It provides recognizing things as things that can be taken and implementati
   </tbody>
 </table>
 
-<h2 class='center-h' data-href='Player'>
+<h3 class='center-h' data-href='Player'>
 Player
-</h2>
+</h3>
 
 <LinkToContent/>
 
@@ -419,7 +467,9 @@ It allows the NPC to percept the Player.
     <img src='/docs/player-component.jpg'/>
 </p>
 
-<h3 class='center-h' data-href='Player_Properties'>Properties</h3>
+<h4 class='center-h' data-href='Player_Properties'>
+Properties
+</h4>
 
 <table class="table table-bordered">
   <thead>
@@ -441,6 +491,20 @@ It allows the NPC to percept the Player.
 	      Unique identifier.
 	  </td>
     </tr>
+    <tr>
+      <th>Enable Categories</th>
+      <td>
+	      Enables/disables using <b>Categories</b>. By default is <b>false</b>.
+	  </td>
+    </tr>
+    <tr>
+      <th>Categories</th>
+      <td>
+	      List of classes this Player belongs to.
+          Allows to set <a href='/docs/spec.html#Inheritance_chapter'>inheritance relationships</a> (with rank 1) in addition to <b>App File</b> or without it.
+          By default is empty.
+	  </td>
+    </tr>
   </tbody>
 </table>
 
@@ -450,6 +514,58 @@ Navigation
 
 <LinkToContent/>
 
-<complete_me/>
-
+<h3 class='center-h' data-href='Waypoint'>
 Waypoint
+</h3>
+
+<LinkToContent/>
+
+<p>
+The linked <a href='/docs/file_structure.html#.sobj'>file</a> provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Waypoint to a <a href='#Humanoid_NPC_on_unity_scene'>Humanoid NPC</a>.
+It allows the NPC to percept the Waypoint.
+</p>
+
+<h4 class='center-h' data-href='Waypoint_Properties'>
+Properties
+</h4>
+
+<p>
+    <img src='/docs/waypoint-component.jpg'/>
+</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style='width: 250px;'>Property:</th>
+      <th scope="col">Function:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>App File</th>
+      <td>
+	      Reference to <a href='/docs/file_structure.html#.sobj'>SymOntoClay DSL project file</a> which provides <a href='/docs/spec.html#Fact_chapter'>facts</a> about the Waypoint.
+	  </td>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <td>
+	      Unique identifier.
+	  </td>
+    </tr>
+    <tr>
+      <th>Enable Categories</th>
+      <td>
+	      Enables/disables using <b>Categories</b>. By default is <b>true</b>.
+	  </td>
+    </tr>
+    <tr>
+      <th>Categories</th>
+      <td>
+	      List of classes this Waypoint belongs to.
+          Allows to set <a href='/docs/spec.html#Inheritance_chapter'>inheritance relationships</a> (with rank 1) in addition to <b>App File</b> or without it.
+          By default contains &quot;waypoint&quot;
+	  </td>
+    </tr>
+  </tbody>
+</table>
