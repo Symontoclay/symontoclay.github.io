@@ -445,6 +445,7 @@ But the words can be used as identifiers in other places.
 	<kw name='actions'/>
 	<kw name='op'/>
 	<kw name='complete'/>
+	<kw name='completed'/>
 	<kw name='break'/>
 	<kw name='await'/>
 	<kw name='wait'/>
@@ -478,6 +479,9 @@ But the words can be used as identifiers in other places.
 	<kw name='import'/>
 	<kw name='ctor'/>
 	<kw name='new'/>
+	<kw name='cancel'/>
+	<kw name='canceled'/>
+	<kw name='weak'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
@@ -6504,6 +6508,50 @@ The statement <b>break action</b> can break <b><a href='#Action_chapter'>Action<
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='CancelActionStatement_chapter'>
+"cancel action" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+The statement <b>cancel action</b> canceles the <b><a href='#Action_chapter'>action</a></b>.
+All parents callers will also be canceled.
+</p>
+
+<gr>
+<EBNFCDECL name='CancelActionStatement' groups='Statement'/> = "cancel" "action" .
+</gr>
+
+<code data-lng='soc'>
+    on {: see(I, $x) :} ($x >> @x) => 
+    {
+        cancel action;
+    }
+</code>
+
+<h3 class='center-h' data-href='WeakCancelActionStatement_chapter'>
+"weak cancel action" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+The statement <b>cancel action</b> canceles the <b><a href='#Action_chapter'>action</a></b>.
+But all parents callers will not be canceled.
+</p>
+
+<gr>
+<EBNFCDECL name='WeakCancelActionStatement' groups='Statement'/> = "weak" "cancel" "action" .
+</gr>
+
+<code data-lng='soc'>
+    on {: see(I, $x) :} ($x >> @x) => 
+    {
+        weak cancel action;
+    }
+</code>
 
 <h3 class='center-h' data-href='RepeatStatement_chapter'>
 "repeat" statement
