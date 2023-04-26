@@ -3804,12 +3804,67 @@ Fires if function is completed.
 </p>
 
 <gr>
-<EBNFCDECL name='CompleteEventAnnotation' groups='AnnotationItem'/> = "on" "complete" [ "~" ] [ "=>" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" .
+<EBNFCDECL name='CompleteEventAnnotation' groups='AnnotationItem'/> = "on" ( "complete" | "completed" ) [ "~" ] [ "=>" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" .
 </gr>
+
+<code data-lng='soc'>
+on complete { }
+on complete => { }
+on complete ~ { }
+on complete ~ => { }
+</code>
+
+<code data-lng='soc'>
+on completed { }
+on completed => { }
+on completed ~ { }
+on completed ~ => { }
+</code>
+
+<code data-lng='soc'>
+@@host.`rotate`(30)[: timeout=1000, on complete { complete action; } :];
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Action'>here</a>.
 </p>
+
+<h5 class='center-h' data-href='WeakCancelEventAnnotation_chapter'>
+Weak cancel event
+</h5>
+
+<LinkToContent/>
+
+<p>
+Fires if function is weak canceled.
+So canceled without canceling callers.
+</p>
+
+<gr>
+<EBNFCDECL name='WeakCancelEventAnnotation' groups='AnnotationItem'/> = "on" "weak" ( "cancel" | "canceled" ) [ "~" ] [ "=>" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" .
+</gr>
+
+<code data-lng='soc'>
+on weak cancel { }
+on weak cancel => { }
+on weak cancel ~ { }
+on weak cancel ~ => { }
+</code>
+
+<code data-lng='soc'>
+on weak canceled { }
+on weak canceled => { }
+on weak canceled ~ { }
+on weak canceled ~ => { }
+</code>
+
+<code data-lng='soc'>
+Go()[: on weak cancel { 'on weak cancel' >> @>log; } :];
+</code>
+
+<code data-lng='soc'>
+a()[: timeout = 100, on weak canceled { 'on weak canceled' >> @>log; } :];
+</code>
 
 <h2 class='center-h' data-href='Logic_programming_chapter'>
 Logic programming
@@ -6344,7 +6399,7 @@ Sets an inheritance relationship (&quot;is a&quot;) between two objects.
 </p>
 
 <gr>
-<EBNFCDECL name='UseIsOpStatement' groups='Statement'/> = "set" <TEBNFC name='IsOpExprBody'/> .
+<EBNFCDECL name='UseIsOpStatement' groups='Statement'/> = "set" <TEBNFC name='IsOpExprBody'/> ";" .
 </gr>
 
 <code data-lng='soc'>
@@ -6373,11 +6428,15 @@ You can see examples <a href='/docs/lng_examples/index.html#Inheritance'>here</a
 <LinkToContent/>
 
 <p>
-The <b>await</b> statement suspends evaluation of the enclosing method until the <b><a href='#Action_chapter'>action</a></b> will be <a href='#CompleteActionStatement_chapter'>completed</a> or <a href='#BreakActionStatement_chapter'>broken</a> by handlers of child triggers or functions which have been called from the handlers.
+The <b>await</b> statement suspends evaluation of the enclosing method until the <b><a href='#Action_chapter'>action</a></b> will be <a href='#CompleteActionStatement_chapter'>completed</a>, <a href='#BreakActionStatement_chapter'>broken</a>, <a href='#CancelActionStatement_chapter'>canceled</a> or <a href='#WeakCancelActionStatement_chapter'>weak canceled</a> by handlers of child triggers or functions which have been called from the handlers.
+</p>
+
+<p>
+Statements after <b>await</b> will not be executed.
 </p>
 
 <gr>
-<EBNFCDECL name='AwaitStatement' groups='Statement'/> = "await" .
+<EBNFCDECL name='AwaitStatement' groups='Statement'/> = "await" ";" .
 </gr>
 
 <code data-lng='soc'>
@@ -6406,7 +6465,7 @@ The <b>await</b> statement suspends evaluation of the enclosing method until the
 </p>
 
 <gr>
-<EBNFCDECL name='WaitStatement' groups='Statement'/> = "wait" <EBNFC name='Expr'/> [{ "," <EBNFC name='Expr'/> }] .
+<EBNFCDECL name='WaitStatement' groups='Statement'/> = "wait" <EBNFC name='Expr'/> [{ "," <EBNFC name='Expr'/> }] ";" .
 </gr>
 
 <p>
@@ -6467,7 +6526,7 @@ The statement <b>complete action</b> terminates <b><a href='#Action_chapter'>act
 </p>
 
 <gr>
-<EBNFCDECL name='CompleteActionStatement' groups='Statement'/> = "complete" "action" .
+<EBNFCDECL name='CompleteActionStatement' groups='Statement'/> = "complete" "action" ";" .
 </gr>
 
 <code data-lng='soc'>
@@ -6495,7 +6554,7 @@ The statement <b>break action</b> can break <b><a href='#Action_chapter'>Action<
 </p>
 
 <gr>
-<EBNFCDECL name='BreakActionStatement' groups='Statement'/> = "break" "action" <EBNFC name='FactDecl'/> .
+<EBNFCDECL name='BreakActionStatement' groups='Statement'/> = "break" "action" <EBNFC name='FactDecl'/> ";" .
 </gr>
 
 <code data-lng='soc'>
@@ -6521,7 +6580,7 @@ All parents callers will also be canceled.
 </p>
 
 <gr>
-<EBNFCDECL name='CancelActionStatement' groups='Statement'/> = "cancel" "action" .
+<EBNFCDECL name='CancelActionStatement' groups='Statement'/> = "cancel" "action" ";" .
 </gr>
 
 <code data-lng='soc'>
@@ -6543,7 +6602,7 @@ But all parents callers will not be canceled.
 </p>
 
 <gr>
-<EBNFCDECL name='WeakCancelActionStatement' groups='Statement'/> = "weak" "cancel" "action" .
+<EBNFCDECL name='WeakCancelActionStatement' groups='Statement'/> = "weak" "cancel" "action" ";" .
 </gr>
 
 <code data-lng='soc'>
@@ -7061,6 +7120,39 @@ exec {: >: { direction($x1,#@{: >: { color($_,$x1) & place($_) & green($x1) } :}
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#ExecStatement'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='EventDeclStatement_chapter'>
+event declaration statement
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='EventDeclStatement' groups='Statement'/> = "on" <EBNFC name='Expr'/> <EBNFC name='LifecycleEventName'/> [ "=>" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" ";".
+<EBNFCDECL name='LifecycleEventName'/> = "complete" | "completed" | "weak" "cancel" | "weak" "canceled" .
+</gr>
+
+<complete_me/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='CompleteEventDeclStatement_chapter'>
+Complete event
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='WeakCancelEventDeclStatement_chapter'>
+Weak cancel event
+</h4>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
