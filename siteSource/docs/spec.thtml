@@ -3725,6 +3725,27 @@ go~()[: timeout=1000 :];
     }
 </code>
 
+<p>
+By default, <b>timeout</b> performs <b>weak cancel</b>.
+But this behavior can be changed with some concepts.
+</p>
+
+<p>
+Using concept <b>cancel</b> produce cancellation (with canceling callers).
+</p>
+
+<code data-lng='soc'>
+    go()[: timeout=1000, cancel :];
+</code>
+
+<p>
+Using concept <b>weak cancel</b> produce weak cancellation (without canceling callers).
+</p>
+
+<code data-lng='soc'>
+    go()[: timeout=1000, weak cancel :];
+</code>
+
 <h5 class='center-h' data-href='PriorityKeyValueAnnotation_chapter'>
 Priority
 </h5>
@@ -3836,8 +3857,7 @@ Weak cancel event
 <LinkToContent/>
 
 <p>
-Fires if function is weak canceled.
-So canceled without canceling callers.
+Fires if function is weak canceled (without canceling callers).
 </p>
 
 <gr>
@@ -7127,16 +7147,19 @@ event declaration statement
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Adds trigger to an object in function body.
+</p>
 
 <gr>
 <EBNFCDECL name='EventDeclStatement' groups='Statement'/> = "on" <EBNFC name='Expr'/> <EBNFC name='LifecycleEventName'/> [ "=>" ] "{" [ <EBNFC name='StatementsSet'/> ] "}" ";".
 <EBNFCDECL name='LifecycleEventName'/> = "complete" | "completed" | "weak" "cancel" | "weak" "canceled" .
 </gr>
 
-<complete_me/>
-
-<complete_me/>
+<code data-lng='soc'>
+    var @task = a~~();
+    on @task complete { 'on complete' >> @>log; };
+</code>
 
 <h4 class='center-h' data-href='CompleteEventDeclStatement_chapter'>
 Complete event
@@ -7144,7 +7167,19 @@ Complete event
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Fires if function is completed.
+</p>
+
+<code data-lng='soc'>
+    var @task = a~~();
+    on @task complete { 'on complete' >> @>log; };
+</code>
+
+<code data-lng='soc'>
+    var @task = a~~();
+    on @task completed { 'on completed' >> @>log; };
+</code>
 
 <h4 class='center-h' data-href='WeakCancelEventDeclStatement_chapter'>
 Weak cancel event
@@ -7152,7 +7187,20 @@ Weak cancel event
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Fires if function is weak canceled (without canceling callers).
+</p>
+
+<code data-lng='soc'>
+    var @task = a~~() [: timeout = 100 :];
+    on @task weak cancel { 'on weak cancel' >> @>log; };
+</code>
+
+<code data-lng='soc'>
+    var @task = a~~() [: timeout = 100 :];
+    on @task weak canceled { 'on weak canceled' >> @>log; };
+</code>
+
 
 <div class='templates'>
     <TEBNFCDECL name='BaseIdentifier'>
