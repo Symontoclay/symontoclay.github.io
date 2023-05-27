@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="100%" height="50" alt="Glory to Ukraine" src="https://symontoclay.github.io/UA_Flag.jpg">
+</p>
+
 <spec_readme/>
 
 # SymOntoClay
