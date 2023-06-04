@@ -9,6 +9,8 @@
 
 <general_description_content/>
 
+<disclaimer/>
+
 ## Aim
 <aim_content/>
 

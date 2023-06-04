@@ -2,4 +2,50 @@
 
 <ContentsPlace/>
 
+<p>
+<a href='privacy.html'>Privacy Policy</a>
+</p>
+
+<complete_me/>
+
+<h2 data-href='plus_unknown_language'>
+<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
+Plus another language, in addition unknown
+</h2>
+
+<complete_me/>
+
+<h2 data-href='lacks_features'>
+<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/> 
+SymOntoClay lacks features for game development
+</h2>
+
+<complete_me/>
+
+<h2 data-href='unstable'>
+<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
+SymOntoClay contains many bugs and is very unstable
+</h2>
+
+<complete_me/>
+
+<h2 data-href='very_slow'>
+<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
+SymOntoClay is very slow
+</h2>
+
+<complete_me/>
+
+<h2 data-href='consumes_a_lot'>
+<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
+SymOntoClay consumes a lot of computer resources
+</h2>
+
+<complete_me/>
+
+<h2 data-href='does_not_have_a_community'>
+<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
+SymOntoClay does not have a community and is being developed for free by only one person in his spare time.
+</h2>
+
 <complete_me/>

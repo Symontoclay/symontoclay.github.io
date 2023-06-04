@@ -8,6 +8,7 @@
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
+  "ShowDisclaimer": false,
   "Microdata": {
     "Description": "Some things you need to know about SymOntoClay",
     "ImageUrl": "",

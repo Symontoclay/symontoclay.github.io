@@ -8,6 +8,7 @@
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
+  "ShowDisclaimer": false,
   "Microdata": {
     "Description": "Privacy Policy of SymOntoClay",
     "ImageUrl": "",
