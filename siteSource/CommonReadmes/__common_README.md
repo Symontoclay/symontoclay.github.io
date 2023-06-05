@@ -11,7 +11,11 @@
 
 <disclaimer/>
 
-## Aim
+## Reason
+
+<project_reason_content/>
+
+## Goal
 <aim_content/>
 
 ## Key features
