@@ -15,7 +15,7 @@
 
 <project_reason_content/>
 
-## Goal
+## Goals
 <aim_content/>
 
 ## Key features
