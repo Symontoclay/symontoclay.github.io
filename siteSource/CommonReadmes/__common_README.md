@@ -11,10 +11,6 @@
 
 <disclaimer/>
 
-## Reason
-
-<project_reason_content/>
-
 ## Goals
 <aim_content/>
 
