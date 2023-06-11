@@ -6,37 +6,107 @@
 <a href='privacy.html'>Privacy Policy</a>
 </p>
 
-<complete_me/>
+<p>
+If you're thinking about getting started with SymOntoClay there are a few things you should know.
+SymOntoClay lets you create game AI in a different way than you usual do.
+As such, you should take time to inform yourself before using SymOntoClay for any serious projects.
+</p>
 
-
-
-<complete_me/>
+<p>
+I know that learning and using SymOntoClay by others is very unlikely yet.
+But I must take steps to prevent misunderstandings.
+</p>
 
 <h2 data-href='plus_unknown_language'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
 Plus another language, in addition unknown
 </h2>
 
-<complete_me/>
+<p>
+SymOntoClay is only for creating game AI.
+This means that all other parts of the game (animations, visual effects, scene management, etc.) will need to be done in the scripting language of your game engine.
+</p>
+
+<p>
+For Unity this means that you have to write one part of the code in C# and the AI ​​code in SymOntoClay.
+Create game with two different programming languages is not convenient.
+</p>
+
+<p>
+Also SymOntoClay is unknown language.
+You can not find developers who know this language.
+</p>
+
+<p>
+I hope that in the future the benefits of using SymOntoClay will outweigh these obstacles.
+But now that's far from the case.
+</p>
 
 <h2 data-href='lacks_features'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/> 
 SymOntoClay lacks features for game development
 </h2>
 
-<complete_me/>
+<p>
+I'm focused on adding interesting features that will make SymOntoClay stand out from other languages.
+But I don't have enough free time.
+Therefore, many important, but not impressive, features are not added to the language for a long time.
+</p>
+
+<p>
+As a result, SymOntoClay has many interesting features (like fuzzy logic or complex triggers), but lacks many of the features that even the simplest programming languages generally have.
+</p>
+
+<p>
+SymOntoClay does not have a debugger.
+</p>
+
+<p>
+Module (package) infrastructure and standard library in very rudimentary state.
+</p>
+
+<p>
+<b>In general and frankly, I think that SymOntoClay is still too experimental and raw for practical use.</b>
+</p>
 
 <h2 data-href='unstable'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
 SymOntoClay contains many bugs and is very unstable
 </h2>
 
-<complete_me/>
+<p>
+I'm focused on adding interesting features that will make SymOntoClay stand out from other languages.
+But I don't have enough free time.
+Therefore, SymOntoClay contains many bugs and is very unstable.
+</p>
+
+<p>
+Right now my main goals are:
+    <ul>
+	    <li>
+		    to add more interesting features
+		</li>
+		
+	    <li>
+		    to make the simplest Zero player game in SymOntoClay
+		</li>
+	</ul>
+</p>
+
+<p>
+Bugs are fixed only those that are direct obstacles to achieving these goals.
+</p>
 
 <h2 data-href='very_slow'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
 SymOntoClay is very slow
 </h2>
+
+<complete_me/>
+
+<p>
+
+</p>
 
 <complete_me/>
 
@@ -47,9 +117,21 @@ SymOntoClay consumes a lot of computer resources
 
 <complete_me/>
 
+<p>
+
+</p>
+
+<complete_me/>
+
 <h2 data-href='does_not_have_a_community'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
 SymOntoClay does not have a community and is being developed for free by only one person in his spare time.
 </h2>
+
+<complete_me/>
+
+<p>
+
+</p>
 
 <complete_me/>
