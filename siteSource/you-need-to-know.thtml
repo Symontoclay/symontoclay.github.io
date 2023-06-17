@@ -97,41 +97,32 @@ Right now my main goals are:
 Bugs are fixed only those that are direct obstacles to achieving these goals.
 </p>
 
-<h2 data-href='very_slow'>
+<h2 data-href='very_slow_and_consumes_a_lot'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
-SymOntoClay is very slow
+SymOntoClay is very slow and consumes a lot of computer resources
 </h2>
 
-<complete_me/>
-
 <p>
-
+I think that to some extent, slowness of NPC code is normal.
+This makes the NPC's reaction speed similar to the player's reaction speed.
 </p>
 
-<complete_me/>
-
-<h2 data-href='consumes_a_lot'>
-<img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
-SymOntoClay consumes a lot of computer resources
-</h2>
-
-<complete_me/>
-
 <p>
-
+But with more than 10 NPCs, they become too slow.
+When the number of NPCs is more than 30, they generally stop react to anything.
 </p>
 
-<complete_me/>
+<p>
+I'm thinking of ways to improve the performance of the engine and have planned to implement several ways.
+But as I mentioned before, I'm focused on adding interesting features and don't have free time to optimization.
+</p>
 
 <h2 data-href='does_not_have_a_community'>
 <img src='icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'/>
 SymOntoClay does not have a community and is being developed for free by only one person in his spare time.
 </h2>
 
-<complete_me/>
-
 <p>
-
+I am developing SymOntoClay in my free time.
+Development is not too intense because SymOntoClay is a hobby and also I want to keep work-life balance.
 </p>
-
-<complete_me/>
