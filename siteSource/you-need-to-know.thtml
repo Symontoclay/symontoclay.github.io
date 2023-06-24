@@ -113,6 +113,12 @@ When the number of NPCs is more than 30, they generally stop react to anything.
 </p>
 
 <p>
+My PC:</br>
+CPU: AMD Ryzen 5 4600H with Radeon Graphics, 3000 Mhz, 6 Core(s), 12 Logical Processor(s)</br>
+RAM: 16.0 GB </br>
+</p>
+
+<p>
 I'm thinking of ways to improve the performance of the engine and have planned to implement several ways.
 But as I mentioned before, I'm focused on adding interesting features and don't have free time to optimization.
 </p>
