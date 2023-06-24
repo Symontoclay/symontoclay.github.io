@@ -150,22 +150,13 @@ The facts are descrbed in <a href='/docs/recommended-vocabulary.html'>Recommende
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayStandardFacts'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayStandardFacts</a>.
 </p>
 
-<h3 class='center-h' data-href='Repository_SymOntoClay_Additional_projects'>
-Additional projects
+<h3 class='center-h' data-href='Repository_SymOntoClay_Tests_projects'>
+Tests
 </h3>
 
 <LinkToContent/>
 
-<p>
-The projects which are dependencies for main projects.
-The projects are created to prevent code duplication.
-</p>
-
-<p>
-It will be supplied to user.
-</p>
-
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayUnity3DAssetTest'>
+<h4 class='center-h' data-href='Repository_SymOntoClay_Tests_projects_SymOntoClayUnity3DAssetTest'>
 Project: SymOntoClayUnity3DAssetTest
 </h4>
 
@@ -179,7 +170,7 @@ The tests based on NUnit.
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayUnity3DAssetTest</a>.
 </p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayHardTests'>
+<h4 class='center-h' data-href='Repository_SymOntoClay_Tests_projects_SymOntoClayHardTests'>
 Project: SymOntoClayHardTests
 </h4>
 
@@ -194,7 +185,37 @@ These tests require more resources.
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayHardTests'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayHardTests</a>.
 </p>
 
-<h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayBaseTestLib'>
+<h4 class='center-h' data-href='Repository_SymOntoClay_Tests_projects_SymOntoClayPlacesHardTests'>
+Project: SymOntoClayPlacesHardTests
+</h4>
+
+<LinkToContent/>
+
+<p>
+Additional tests based on NUnit. 
+These tests require more resources.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayPlacesHardTests'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayPlacesHardTests</a>.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Tests_projects_SymOntoClayActionsHardTests'>
+Project: SymOntoClayActionsHardTests
+</h4>
+
+<LinkToContent/>
+
+<p>
+Additional tests based on NUnit. 
+These tests require more resources.
+</p>
+
+<p>
+Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayActionsHardTests'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayActionsHardTests</a>.
+</p>
+
+<h4 class='center-h' data-href='Repository_SymOntoClay_Tests_projects_SymOntoClayBaseTestLib'>
 Project: SymOntoClayBaseTestLib
 </h4>
 
@@ -206,6 +227,21 @@ Common library for tests which provides common classes and other code entities.
 
 <p>
 Placed on <a href='https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayBaseTestLib'>https://github.com/Symontoclay/SymOntoClay/tree/master/SymOntoClayBaseTestLib</a>.
+</p>
+
+<h3 class='center-h' data-href='Repository_SymOntoClay_Additional_projects'>
+Additional projects
+</h3>
+
+<LinkToContent/>
+
+<p>
+The projects which are dependencies for main projects.
+The projects are created to prevent code duplication.
+</p>
+
+<p>
+It will be supplied to user.
 </p>
 
 <h4 class='center-h' data-href='Repository_SymOntoClay_Additional_projects_SymOntoClayCoreHelper'>
