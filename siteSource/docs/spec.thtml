@@ -3293,7 +3293,7 @@ You can read more about how to set and reset trigger <a href='#Logic_сonditiona
 </gr>
 
 <p>
-Trigger's condition can be a <a href='#Fact_chapter'>fact</a>, <a href='#Logic_сonditional_triggers_Reset_by_timeout_chapter'>duration</a> (only for reset), <a href='#Named_triggers_chapter'>trigger name</a>, <a href='#Field_chapter'>field</a> or combination of many different kinds of conditions.
+Trigger's condition can be a <a href='#Fact_chapter'>fact</a>, <a href='#Conditional_triggers_Reset_by_timeout_chapter'>duration</a> (only for reset), <a href='#Named_triggers_chapter'>trigger name</a>, <a href='#Field_chapter'>field</a> or combination of many different kinds of conditions.
 <EBNFC name='TriggerLogicExpr'/> allows operators (exclude "=") and <a href='#CallOp_chapter'>synchronous method call</a>.
 </p>
 
@@ -3361,7 +3361,7 @@ Logic сonditional trigger fires (set) when <a href='#TriggersLogicSetCondition'
 </p>
 
 <p>
-If the trigger has <a href='#Logic_сonditional_triggers_Binding_variables_chapter'>binding variables</a> then <EBNFC name='SetTriggerHandler'/> will be executed as many times as needed.
+If the trigger has <a href='#Conditional_triggers_Binding_variables_chapter'>binding variables</a> then <EBNFC name='SetTriggerHandler'/> will be executed as many times as needed.
 If the trigger has already been set then the trigger continues to be set.
 </p>
 
@@ -3431,7 +3431,7 @@ Default strategy is <b>Priority set</b>.
     }
 </code>
 
-<h5 class='center-h' data-href='Logic_сonditional_triggers_Reset_by_timeout_chapter'>
+<h5 class='center-h' data-href='Conditional_triggers_Reset_by_timeout_chapter'>
 Reset by timeout
 </h5>
 
@@ -3466,7 +3466,7 @@ Timeout can be combined with other kinds of conditions.
 	}
 </code>
 
-<h5 class='center-h' data-href='Logic_сonditional_triggers_Binding_variables_chapter'>
+<h5 class='center-h' data-href='Conditional_triggers_Binding_variables_chapter'>
 Binding variables
 </h5>
 
@@ -3505,6 +3505,22 @@ So the reset-handler is executed without any binding variables.
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_triggers_chapter'>here</a>.
 </p>
+
+<h5 class='center-h' data-href='Conditional_triggers_each_timer_chapter'>
+"each" timer
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<h5 class='center-h' data-href='Conditional_triggers_once_timer_chapter'>
+"once" timer
+</h5>
+
+<LinkToContent/>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='Triggers_on_adding_facts_chapter'>
 Triggers on adding facts
@@ -4623,7 +4639,7 @@ Logic variable
 <LinkToContent/>
 
 <p>
-Logic variable can be used only in <a href='#Logic_expression_chapter'>Logic expression</a> and <a href='#Logic_сonditional_triggers_Binding_variables_chapter'>Binding variables</a> in <a href='#Logic_сonditional_triggers_chapter'>Logic сonditional triggers</a>.
+Logic variable can be used only in <a href='#Logic_expression_chapter'>Logic expression</a> and <a href='#Conditional_triggers_Binding_variables_chapter'>Binding variables</a> in <a href='#Logic_сonditional_triggers_chapter'>Logic сonditional triggers</a>.
 </p>
 
 <gr>

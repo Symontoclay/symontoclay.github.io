@@ -3822,7 +3822,7 @@ This trigger binds captured in logic variable value with imperative variable.
 </p>
 
 <p>
-Read more about binding variables <a href='/docs/spec.html#Logic_сonditional_triggers_Binding_variables_chapter'>here</a>.
+Read more about binding variables <a href='/docs/spec.html#Conditional_triggers_Binding_variables_chapter'>here</a>.
 </p>
 
 <code example_name='LogicConditional_Trigger_Example_2'>
