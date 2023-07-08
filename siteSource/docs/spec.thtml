@@ -3514,6 +3514,10 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_t
 
 <complete_me/>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Conditional_triggers_each_timer'>here</a>.
+</p>
+
 <h5 class='center-h' data-href='Conditional_triggers_once_timer_chapter'>
 "once" timer
 </h5>
@@ -3521,6 +3525,10 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_t
 <LinkToContent/>
 
 <complete_me/>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#Conditional_triggers_once_timer'>here</a>.
+</p>
 
 <h4 class='center-h' data-href='Triggers_on_adding_facts_chapter'>
 Triggers on adding facts

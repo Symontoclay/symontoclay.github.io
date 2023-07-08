@@ -1854,7 +1854,7 @@ app PeaceKeeper
     fun go()
     {
         'GO()' >> @>log;
-        wait 10000;
+        wait 10;
     }
 }
 </code>
@@ -1867,13 +1867,13 @@ app PeaceKeeper
 {
     idle actions
     {
-        go()[: timeout=1000 :];
+        go()[: timeout=1 :];
     }
 
     fun go()
     {
         'GO()' >> @>log;
-        wait 10000;
+        wait 10;
     }
 }
 </code>
@@ -1893,7 +1893,7 @@ app PeaceKeeper
     {
         'GO()' >> @>log;
         @direction >> @>log;
-        wait 10000;
+        wait 10;
     }
 }
 </code>
@@ -1906,15 +1906,15 @@ app PeaceKeeper
 {
     idle actions
     {
-        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1000 :];
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1 :];
     }
 
     fun go(@direction)
     {
         'GO()' >> @>log;
-        wait 10000;
+        wait 10;
     }
-
+}
 </code>
 
 <console example_name='IdleActionsExample4'>
@@ -3840,6 +3840,30 @@ app PeaceKeeper
 
 <console example_name='LogicConditional_Trigger_Example_2'>
 </console>
+
+<h3 class='center-h' data-href='Conditional_triggers_each_timer'>
+"each" timer
+</h3>
+
+<LinkToContent/>
+
+<p>
+Read more about "each" timer <a href='/docs/spec.html#Conditional_triggers_each_timer_chapter'>here</a>.
+</p>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='Conditional_triggers_once_timer'>
+"once" timer
+</h3>
+
+<LinkToContent/>
+
+<p>
+Read more about "once" timer <a href='/docs/spec.html#Conditional_triggers_once_timer_chapter'>here</a>.
+</p>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Error_handling'>
 Error handling
