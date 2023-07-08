@@ -2528,7 +2528,39 @@ Date and time
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Currently only time is implemented in SymOntoClay.
+Date implementation requires calendar implementation, which is planned for future releases.
+</p>
+
+<p>
+Time in SymOntoClay is not accurate.
+But its accuracy is enough for the needs of game development.
+</p>
+
+<p>
+In the future, it is planned to create custom calendars with in-game time. 
+Therefore, the concepts of "second" and "millisecond" are reserved for these calendars as subject-specific and which can differ significantly in duration from their seconds and milliseconds from the real world.
+</p>
+
+<p>
+System units of time available for use:
+    <ul>
+	    <li>
+		    <b>tick</b>.
+			It is the basic calendar-independent system unit of time in SymOntoClay. 
+			One tick is approximately equal to 1 millisecond from the real world.
+		</li>
+	    <li>
+		    <b>system millisecond</b> (internal millisecond).
+			Approximately equal to 1 millisecond from the real world.
+		</li>
+	    <li>
+		    <b>system second</b> (internal second).
+			Approximately equal to 1 second from the real world.
+		</li>
+	</ul>
+</p>
 
 <h2 class='center-h' data-href='Common_objects_parts_chapter'>
 Common objects’ parts
