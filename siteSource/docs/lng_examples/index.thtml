@@ -2493,7 +2493,7 @@ app PeaceKeeper
     on Enter =>
     {
         a~();
-        wait 1000;
+        wait 1;
     }
 }
 </code>
@@ -2578,7 +2578,7 @@ app PeaceKeeper
     {
         '`a` has been called!' >> @>log;
 
-        wait 10000;
+        wait 10;
 
         'End `a`' >> @>log;
     }
@@ -2587,7 +2587,7 @@ app PeaceKeeper
     {
         '`b` has been called!' >> @>log;
 
-        wait 10000;
+        wait 10;
 
         'End `b`' >> @>log;
     }
@@ -2596,8 +2596,8 @@ app PeaceKeeper
     {
         'Begin' >> @>log;
 
-        @a = a~~()[: timeout = 1000 :];
-        @b = b~~()[: timeout = 1000 :];
+        @a = a~~()[: timeout = 1 :];
+        @b = b~~()[: timeout = 1 :];
 
         wait @a, @b;
 
@@ -3841,9 +3841,9 @@ app PeaceKeeper
 <console example_name='LogicConditional_Trigger_Example_2'>
 </console>
 
-<h3 class='center-h' data-href='Conditional_triggers_each_timer'>
+<h2 class='center-h' data-href='Conditional_triggers_each_timer'>
 "each" timer
-</h3>
+</h2>
 
 <LinkToContent/>
 
@@ -3853,9 +3853,9 @@ Read more about "each" timer <a href='/docs/spec.html#Conditional_triggers_each_
 
 <complete_me/>
 
-<h3 class='center-h' data-href='Conditional_triggers_once_timer'>
+<h2 class='center-h' data-href='Conditional_triggers_once_timer'>
 "once" timer
-</h3>
+</h2>
 
 <LinkToContent/>
 
@@ -4619,7 +4619,7 @@ app PeaceKeeper
     on Enter =>
     {
         a~();
-        wait 1000;
+        wait 1;
     }
 }
 </code>

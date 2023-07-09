@@ -2552,11 +2552,11 @@ System units of time available for use:
 			One tick is approximately equal to 1 millisecond from the real world.
 		</li>
 	    <li>
-		    <b>system millisecond</b> (internal millisecond).
+		    <b>internal millisecond</b> (system millisecond).
 			Approximately equal to 1 millisecond from the real world.
 		</li>
 	    <li>
-		    <b>system second</b> (internal second).
+		    <b>internal second</b> (system second).
 			Approximately equal to 1 second from the real world.
 		</li>
 	</ul>
@@ -3442,8 +3442,7 @@ Logic сonditional trigger can be reset explicitly by timeout.
 </p>
 
 <p>
-Now the timeout value is in seconds.
-In the future I am going to use different domain values with units of measurement.
+The timeout without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
 </p>
 
 <gr>
@@ -3780,25 +3779,29 @@ Sets timeout for <a href='#IdleActions_chapter'>idle actions</a> or <a href='#Ca
 Executing operation will be automatically canceled after target period.
 </p>
 
+<p>
+The period without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
+</p>
+
 <gr>
 <EBNFCDECL name='TimeoutKeyOfKeyValueAnnotation' groups='KeyOfKeyValueAnnotation'/> = "timeout" .
 </gr>
 
 <code data-lng='soc'>
-go~()[: timeout=1000 :];
+go~()[: timeout=1 :];
 </code>
 
 <code data-lng='soc'>
     idle actions
     {
-        go()[: timeout=1000 :];
+        go()[: timeout=1 :];
     }
 </code>
 
 <code data-lng='soc'>
     idle actions
     {
-        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1000 :];
+        {: >: { direction($x1,#@(place & color = green)) & $x1 = go(someone,self) } o: 1 :}[: timeout=1 :];
     }
 </code>
 
@@ -3812,7 +3815,7 @@ Using concept <b>cancel</b> produce cancellation (with canceling callers).
 </p>
 
 <code data-lng='soc'>
-    go()[: timeout=1000, cancel :];
+    go()[: timeout=1, cancel :];
 </code>
 
 <p>
@@ -3820,7 +3823,7 @@ Using concept <b>weak cancel</b> produce weak cancellation (without canceling ca
 </p>
 
 <code data-lng='soc'>
-    go()[: timeout=1000, weak cancel :];
+    go()[: timeout=1, weak cancel :];
 </code>
 
 <h5 class='center-h' data-href='PriorityKeyValueAnnotation_chapter'>
@@ -6580,11 +6583,11 @@ Wait timeout
 </p>
 
 <p>
-Now the amount of time is in approximately milliseconds.
+The amount of time without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
 </p>
 
 <code data-lng='soc'>
-wait 10000;
+wait 10;
 </code>
 
 <code data-lng='soc'>
@@ -7501,7 +7504,12 @@ Fires if function is weak canceled (without canceling callers).
 
 <TEBNFC name='Annotation'/>
 
-Date_and_time_chapter
+
+<a href='#Date_and_time_chapter'>internal milliseconds</a>
+<a href='#Date_and_time_chapter'>internal seconds</a>
+
+The time without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
+The period without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
 
 ImperativeLogicExpr   Expr  LogicExpr AddSettingsOfObjOrMemberDecl
 
