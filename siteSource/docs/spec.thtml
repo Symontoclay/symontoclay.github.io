@@ -3511,7 +3511,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Logic_сonditional_t
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Generates recurring events at the specified interval.
+</p>
+
+<p>
+The interval without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='TriggersEachTimerDecl' groups='TriggerLogicExpr'/> = "each" <EBNFC name='NumberExpr'/> .
+</gr>
+
+<code data-lng='soc'>
+	on each 1
+    {
+	}
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Conditional_triggers_each_timer'>here</a>.
@@ -3523,7 +3539,23 @@ You can see examples <a href='/docs/lng_examples/index.html#Conditional_triggers
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Generates an one-time event after a set interval.
+</p>
+
+<p>
+The interval without units of measurement is specified in <a href='#Date_and_time_chapter'>internal seconds</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='TriggersOnceTimerDecl' groups='TriggerLogicExpr'/> = "once" <EBNFC name='NumberExpr'/> .
+</gr>
+
+<code data-lng='soc'>
+	on once 1
+    {
+	}
+</code>
 
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Conditional_triggers_once_timer'>here</a>.
