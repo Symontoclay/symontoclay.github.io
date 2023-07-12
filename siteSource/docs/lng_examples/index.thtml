@@ -3851,8 +3851,6 @@ app PeaceKeeper
 Read more about "each" timer <a href='/docs/spec.html#Conditional_triggers_each_timer_chapter'>here</a>.
 </p>
 
-<complete_me/>
-
 <code example_name='Conditional_triggers_each_timer_Example_1'>
 app PeaceKeeper
 {
@@ -3866,8 +3864,6 @@ app PeaceKeeper
 <console example_name='Conditional_triggers_each_timer_Example_1'>
 </console>
 
-<complete_me/>
-
 <h2 class='center-h' data-href='Conditional_triggers_once_timer'>
 "once" timer
 </h2>
@@ -3877,8 +3873,6 @@ app PeaceKeeper
 <p>
 Read more about "once" timer <a href='/docs/spec.html#Conditional_triggers_once_timer_chapter'>here</a>.
 </p>
-
-<complete_me/>
 
 <code example_name='Conditional_triggers_once_timer_Example_1'>
 app PeaceKeeper
@@ -3892,8 +3886,6 @@ app PeaceKeeper
 
 <console example_name='Conditional_triggers_once_timer_Example_1'>
 </console>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Error_handling'>
 Error handling
