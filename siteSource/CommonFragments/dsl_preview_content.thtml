@@ -4,6 +4,8 @@ SymOntoClay engine has own Domain-specific scripting language (DSL).
 
 <p>
 It is a imperative scripting dynamically typed C-like language which combines with non-mainstream approaches:
+</p>
+
     <ul>
 	    <li>
 		    logic programming
@@ -21,7 +23,6 @@ It is a imperative scripting dynamically typed C-like language which combines wi
 		    and other interesting approaches.
 		</li>
 	</ul>
-</p>
 
 <p>
 I'm completely free in my experiments with syntax.
