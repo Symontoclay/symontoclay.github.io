@@ -1,21 +1,21 @@
 [
    {
        "Title": "Simple basic AI",
-	   "PeriodOfCompletion": "Beginning of 2024",
+	   "PeriodOfCompletion": "Beginning of 2025",
 	   "Description": "A minimal single player battle royale game. All enemies will be controlled by AI on SymOntoClay DSL.",
 	   "IsMarkDown": false,
 	   "HrefWithDetailedInfomation": null
    },
    {
        "Title": "AI driven by natural language commands",
-	   "PeriodOfCompletion": "Beginning of 2025",
+	   "PeriodOfCompletion": "Beginning of 2026",
 	   "Description": "Tactical single-player shooter that allows you to coordinate the actions of friendly characters using voice commands.",
 	   "IsMarkDown": false,
 	   "HrefWithDetailedInfomation": null
    },
    {
        "Title": "AI driven by natural language documents",
-	   "PeriodOfCompletion": "Beginning of 2026",
+	   "PeriodOfCompletion": "Beginning of 2027",
 	   "Description": "A single-player tactical shooter that allows you to control the behavior of characters using documents in natural language: sacred texts, combat orders, posters.",
 	   "IsMarkDown": false,
 	   "HrefWithDetailedInfomation": null
