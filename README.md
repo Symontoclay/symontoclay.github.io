@@ -11,11 +11,25 @@
 SymOntoClay is a Domain-specific scripting language for creating game artificial intelligence (game AI).
 </p>
 
+<p>
 The main idea of the language to combine imperative dynamically typed C-like language with non-mainstream approaches:
-* logic programming
-* fuzzy logic
-* multiple fuzzy inheritance
-* and other interesting approaches.
+    <ul>
+	    <li>
+		    logic programming
+		</li>
+		
+		<li>
+		    fuzzy logic
+		</li>
+		
+		<li>
+		    multiple fuzzy inheritance
+		</li>
+		
+		<li>
+		    and other interesting approaches.
+		</li>
+	</ul>
 
 
 <p>
@@ -105,11 +119,26 @@ Learn key features in details <a href='https://symontoclay.github.io/docs/key-fe
 SymOntoClay engine has own Domain-specific scripting language (DSL).
 </p>
 
+<p>
 It is a imperative scripting dynamically typed C-like language which combines with non-mainstream approaches:
-* logic programming
-* fuzzy logic
-* multiple fuzzy inheritance
-* and other interesting approaches.
+    <ul>
+	    <li>
+		    logic programming
+		</li>
+		
+		<li>
+		    fuzzy logic
+		</li>
+		
+		<li>
+		    multiple fuzzy inheritance
+		</li>
+		
+		<li>
+		    and other interesting approaches.
+		</li>
+	</ul>
+
 
 <p>
 I'm completely free in my experiments with syntax.

@@ -1,5 +1,23 @@
 [
   {
+    "Date": "2024-04-20T00:00:00+03:00",
+    "Version": "0.5.3",
+    "AssetsList": [
+      {
+        "Kind": 11,
+        "Title": "Unity package",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.5.3/SymOntoClay-0.5.3.unitypackage"
+      },
+      {
+        "Kind": 8,
+        "Title": "Portable CLI (.zip)",
+        "Href": "https://github.com/Symontoclay/SymOntoClayreleases/download/0.5.3/SymOntoClay-CLI-0.5.3-x64.zip"
+      }
+    ],
+    "Description": "* Improved monitoring and logging\r\n* Fixing issues\r\n",
+    "IsMarkdown": true
+  },
+  {
     "Date": "2023-07-15T00:00:00+03:00",
     "Version": "0.5.2",
     "AssetsList": [
