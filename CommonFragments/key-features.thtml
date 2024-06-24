@@ -1,0 +1,115 @@
+<ul>
+    <li>
+        <gist>Simple, clear and clean code</gist>
+		
+		<p>
+		    My main goal: to enable game developers to write simple, clear and clean code in the shortest possible time and with minimum effort.
+		</p>
+		
+		<p>
+		    SymOntoClay reduces boilerplate code using domain-specific language.
+		</p>
+    </li>
+
+    <li>
+        <gist>Fuzzy logic</gist>
+		
+		<p>
+		    Fuzzy logic makes code closer to natural language.
+		</p>		
+		
+		<p>
+		    Specific numbers are replaced with more convenient human concepts: &quot;near&quot;, &quot;far&quot;, &quot;a lot&quot;, &quot;little&quot;, &quot;almost&quot;, &quot;maybe&quot;, &quot;cold&quot;, &quot;warm&quot;, &quot;hot&quot; and the like.
+		</p>		
+		
+		<p>
+		    It also greatly simplifies the code.
+			A complex condition can easily be replaced with a more elegant looking fuzzy value.
+		</p>		
+    </li>
+	
+    <li>
+        <gist>Logical database</gist>
+		
+		<p>
+		    Allows to use a powerful logic programming paradigm in game development:
+			<ul>
+			    <li>
+				    <b>Declarative knowledge representation.</b> 
+					Knowledge is presented as <a href='/docs/spec.html#Fact_chapter'>facts</a>.
+					This allows to focus on describing a world, game objects and relationships between them.
+				</li>
+			    <li>
+				    <b>Inference using rules.</b>
+                    New knowledge can be obtained using existing knowledge and logical rules.
+				</li>
+			</ul>
+			</br>
+		</p>		
+				
+		<p>
+		    SymOntoClay provides additional possibilities in logic programming:
+			<ul>
+			    <li>
+				    <b>Using inheritance in logical inference</b>.
+                    Rules for more general (basic) concepts can be used for a concrete concept.
+				</li>
+			    <li>
+				    <b>Fuzzy logic</b>.
+                    Simplifies code and makes it closer to natural language.
+				</li>
+			</ul>
+			</br>
+		</p>
+		
+        <p>
+            These features allow to write simple, clear and clean code quickly and with minimal effort.
+        </p>		
+    </li>
+
+    <li>
+        <gist>Triggers</gist>
+		
+		<p>
+		    A trigger activates the execution of a code upon the occurrence of an event described by some condition.
+			It uses all the power of logic programming in SymOntoClay.
+		</p>		
+    </li>
+
+    <li>
+        <gist>Multiple fuzzy inheritance</gist>
+		
+		<p>
+		    In real life, an object, an entity, a concept can have many basic concepts.
+			For example, a person can have many social roles.
+			It is convenient to consider belonging to a social role by the inheritance relation &quot;is a&quot;
+		</p>
+		
+		<p>
+		    Since we are talking about a person's borrowing of a certain behavior from a social role, multiple inheritance of classes should be preferred over inheritance of interfaces.
+		</p>
+		
+		<p>
+		    The degree of expression of these social roles in this person may be different, so It is conveniently expressed as the rank of inheritance.
+			It allows to choose a more preferable action, taking into account the involvement in the social role.
+		</p>
+
+		<p>
+		    SymOntoClay supports this on syntax level.
+			Just define a relationship between concepts!
+		</p>		
+    </li>
+
+    <li>
+        <gist>NPC isolation</gist>
+		
+		<p>
+		    Each NPC is isolated from other NPCs.
+			The interaction between them is carried out exclusively by simulating the work of the human senses.
+		</p>		
+		
+		<p>
+		    This eliminates AI cheating without any additional effort of a developer.
+		</p>		
+    </li>	
+</ul>

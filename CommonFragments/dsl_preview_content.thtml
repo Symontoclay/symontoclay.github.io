@@ -1,0 +1,38 @@
+<p>
+SymOntoClay engine has own Domain-specific scripting language (DSL).
+</p>
+
+<p>
+It is a imperative scripting dynamically typed C-like language which combines with non-mainstream approaches:
+</p>
+
+    <ul>
+	    <li>
+		    logic programming
+		</li>
+		
+		<li>
+		    fuzzy logic
+		</li>
+		
+		<li>
+		    multiple fuzzy inheritance
+		</li>
+		
+		<li>
+		    and other interesting approaches.
+		</li>
+	</ul>
+
+<p>
+I'm completely free in my experiments with syntax.
+</p>
+
+<p>
+My main criterion in SymOntoClay syntax solutions is the most elegant inclusion of interesting features in the syntax and the convenience of using them in game development.
+</p>
+
+<p>
+Custom domain-specific language allows to combine features in more convenient way for using.
+It could be difficult or even impossible to add non-mainstream approaches into existing programming language.
+</p>
