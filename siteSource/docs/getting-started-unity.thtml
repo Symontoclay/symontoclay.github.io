@@ -90,7 +90,7 @@ Write SymOntoClay DSL code
 		<code data-lng='soc'>
 		app MyNPC
 {
-    on Init =>
+    on Enter =>
     {
 		"Begin" >> @>log;
         "The Beatles!" >> @>log;

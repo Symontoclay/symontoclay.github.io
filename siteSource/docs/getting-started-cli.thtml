@@ -57,7 +57,7 @@ Get started with "Hello, World".
 		<code data-lng='soc'>
 app Example
 {
-    on Init =>
+    on Enter =>
     {
 		"Helo, World!" >> @>log;
     }
@@ -74,7 +74,7 @@ app Example
 			</li>
 			
 			<li>
-			Add <a href='/docs/spec.html#Lifecycle_triggers_chapter'>life cycle trigger</a> <a href='/docs/spec.html#Init_Lifecycle_trigger_chapter'><b>Init</b></a>.
+			Add <a href='/docs/spec.html#Lifecycle_triggers_chapter'>life cycle trigger</a> <a href='/docs/spec.html#Enter_Lifecycle_trigger_chapter'><b>Enter</b></a>.
 			This trigger fires when your code starts. 
 			</li>
 			
