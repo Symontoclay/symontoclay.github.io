@@ -251,8 +251,27 @@ Great_Britain
 `Great Britain`
 </code>
 
+<p>
+If a property or linguistic variable is defined at the same time, an ambiguous exception will occur.
+In this case, special identifiers should be used to determine the target code entity:
+</p>
+
+<ul>
+	<li>
+	    <EBNFC name='ConceptIdentifier'/>	
+    </li>
+	
+	<li>
+	    <EBNFC name='LinguisticVariableIdentifier'/>	
+    </li>
+	
+	<li>
+	    <EBNFC name='PropertyIdentifier'/>	
+    </li>
+</ul>
+
 <h5 class='center-h' data-href='Predefined_concept_identifiers_chapter'>
-Predefined concept identifiers
+    Predefined concept identifiers
 </h5>
 
 <LinkToContent/>
@@ -294,6 +313,78 @@ Some concepts are predefined and reperesent code entities.
 	    <b><a href='#Fuzzy_expression_chapter'>false</a></b>
 	</li>
 </ul>
+
+<h4 class='center-h' data-href='ConceptIdentifier_chapter'>
+    Concept identifier
+</h4>
+
+<LinkToContent/>
+
+<p>
+Names a concept.
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='LinguisticVariableIdentifier_chapter'>
+Linguistic variable identifier
+</h4>
+
+<LinkToContent/>
+
+<p>
+Names a Linguistic variable.
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='LinguisticVariableIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
+<h4 class='center-h' data-href='PropertyIdentifier_chapter'>
+Property identifier
+</h4>
+
+<LinkToContent/>
+
+<p>
+Names a property.
+</p>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='PropertyIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> =  .
+</gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
 
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
 Instance identifier
