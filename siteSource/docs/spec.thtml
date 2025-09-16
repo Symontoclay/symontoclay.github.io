@@ -227,18 +227,18 @@ Each of these identifiers has Its own meaning in code.
 <EBNFCDECL name='Identifier'/> = <GEBNFC name='Identifier' kind='or' /> .
 </gr>
 
-<h4 class='center-h' data-href='ConceptIdentifier_chapter'>
-Concept identifier
+<h4 class='center-h' data-href='CommonConceptIdentifier_chapter'>
+Common concept identifier
 </h4>
 
 <LinkToContent/>
 
 <p>
-Names a concept (or type).
+Names a concept, property, Linguistic variable or type.
 </p>
 
 <gr>
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr;ConditionalEntityExpr'/> = <TEBNFC name='BaseIdentifier'/> .
+<EBNFCDECL name='CommonConceptIdentifier' groups='Identifier;TypeIdentifier;ConstExpr;ValueExpr;ConditionalEntityExpr'/> = <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -700,7 +700,7 @@ In general, It is similar to the concept 'class' in other OOP languages.
 
 <gr>
 <EBNFCDECL name='ClassDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ClassDecl'/> .
-<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='ConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='ClassBodyContent' include='GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
+<EBNFCDECL name='ClassDecl'/> = "class" <EBNFC name='CommonConceptIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='ClassBodyContent' include='GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
 </gr>
 
 <code data-lng='soc'>
@@ -788,7 +788,7 @@ It is root object of <a href='/docs/engine_concepts/index.html#Common_concepts_L
 </p>
 
 <gr>
-<EBNFCDECL name='LibIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='LibIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='LibDecl' groups='LibSourceCodeFileContent'/> = "lib" <EBNFC name='LibIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='LibBodyContent' kind='op_declset'/> <br/> "}" .
 </gr>
 
@@ -974,12 +974,12 @@ You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/
 
 <gr>
 <EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
-<EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='ConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
+<EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='CommonConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
 <EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
 <EBNFCDECL name='LinguisticVariableFullBodyContent' groups='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableFullBodyContent' kind='op_and'/> .
 <EBNFCDECL name='LinguisticVariableShortBodyContent' groups='LinguisticVariableBodyContent'/> = <EBNFC name='LinguisticVariableTermsItemsSet'/> .
-<EBNFCDECL name='LinguisticVariableTermIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='LinguisticVariableTermIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='LinguisticVariableTermsDeclSet' groups='LinguisticVariableFullBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableTermsDecl'/> .
 <EBNFCDECL name='LinguisticVariableTermsDecl'/> = "terms" ":"<br/> <EBNFC name='LinguisticVariableTermsItemsSet'/> .
 <EBNFCDECL name='LinguisticVariableTermsItemsSet'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableTermsItem'/> .
@@ -989,7 +989,7 @@ You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/
 <EBNFCDECL name='LinguisticVariableConstraintsItemsSet'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableConstraintsItem'/> .
 <EBNFCDECL name='LinguisticVariableConstraintsItem'/> = "for" ( <EBNFC name='LinguisticVariableConstraintsItemForInheritance'/> | <EBNFC name='LinguisticVariableConstraintsItemForRelation'/> ) ";" .
 <EBNFCDECL name='LinguisticVariableConstraintsItemForInheritance'/> = "inheritance" | "inh" .
-<EBNFCDECL name='LinguisticVariableConstraintsItemForRelation'/> = ( "relation" | "rel" ) <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='LinguisticVariableConstraintsItemForRelation'/> = ( "relation" | "rel" ) <EBNFC name='CommonConceptIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -1076,7 +1076,7 @@ linvar logic
 
 <p>
 A term can be used in <EBNFC name='FuzzyExpr'/> as <EBNFC name='NonNumericFuzzyExpr'/>.
-It looks as using usual <a href='#ConceptIdentifier'>concept</a> instead of <a href='#NumberExpr'>numeric value</a>.
+It looks as using usual <a href='#CommonConceptIdentifier'>concept</a> instead of <a href='#NumberExpr'>numeric value</a>.
 </p>
 
 <code data-lng='soc'>
@@ -1911,13 +1911,13 @@ Function is <ico t='w'/><a href='https://en.wikipedia.org/wiki/First-class_funct
 </p>
 
 <gr>
-<EBNFCDECL name='FunctionName'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='FunctionName'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='FunctionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'FunctionDecl'/> .
 <EBNFCDECL name='FunctionDecl' groups='Expr'/> = "fun" <EBNFC name='FunctionName'/> "(" [ <EBNFC name='FunctionParamsDeclSet'/> ] ")" [ <EBNFC name='AddSettingsOfObjOrMemberDecl'/> ] [ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='FunctionParamsDeclSet'/> = <EBNFC name='FunctionParamDecl'/> [ { "," <EBNFC name='FunctionParamDecl'/> } ] .
 <EBNFCDECL name='FunctionParamName'/> = <EBNFC name='VarIdentifier'/> .
 <EBNFCDECL name='FunctionParamDecl'/> = <EBNFC name='FunctionParamName'/> [ ":" ( <EBNFC name='FunctionParamType'/> | <EBNFC name='TupleOfFunctionParamTypes'/> ) ] [ "=" <EBNFC name='DefaultValueOfFunctionParam'/> ] .
-<EBNFCDECL name='FunctionParamType'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='FunctionParamType'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='TupleOfFunctionParamTypes'/> = ( "(" <EBNFC name='FunctionParamType'/> [ { "|" <EBNFC name='FunctionParamType'/> }] ")" ) | ( <EBNFC name='FunctionParamType'/> [ { "|" <EBNFC name='FunctionParamType'/> }] ) .
 <EBNFCDECL name='DefaultValueOfFunctionParam'/> = <EBNFC name='ConstExpr'/> .
 </gr>
@@ -2117,7 +2117,7 @@ The statement <b><a href='#BreakActionStatement_chapter'>break action</a></b> ca
 </p>
 
 <gr>
-<EBNFCDECL name='ActionIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ActionIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='ActionDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'ActionDecl'/> .
 <EBNFCDECL name='ActionDecl'/> = "action" <EBNFC name='ActionIdentifier'/> [ <EBNFC name='ActionAliasDecl'/> ] [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='ActionBodyContent' include="GeneralObjectBodyContent" kind='op_declset'/> <br/> "}" .
 <EBNFCDECL name='ActionAliasDecl'/> = <TEBNFC name='AliasDecl'/> .
@@ -2232,7 +2232,7 @@ State's members are isolated so do not visible for App and another states.
 <gr>
 <EBNFCDECL name='StateDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StateDecl'/> .
 <EBNFCDECL name='StateDecl'/> = "state" <EBNFC name='StateIdentifier'/> [ <EBNFC name='InheritanceDecl'/> ] <br/> "{"<br/> <GEBNFC name='StateBodyContent' include = 'GeneralObjectBodyContent' kind='op_declset'/> <br/> "}" .
-<EBNFCDECL name='StateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='StateIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='ActivatingConditionsDeclSet' groups='StateBodyContent'/> = <TEBNFC name='DeclSet' param = 'ActivatingConditionsDecl'/> .
 <EBNFCDECL name='ActivatingConditionsDecl'/> = "enter" "on" ":" <br/> <EBNFC name='ActivatingCondition'/> [ { <EBNFC name='ActivatingCondition'/> } ] .
 <EBNFCDECL name='ActivatingCondition'/> = <EBNFC name='FactDecl'/> <EBNFC name='BindingVariableItemDecl'/> .
@@ -2522,7 +2522,7 @@ Synonym provides an alternative name for another indentifier.
 <gr>
 <EBNFCDECL name='SynonymDeclSet' groups='ClassSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'SynonymDecl'/> .
 <EBNFCDECL name='SynonymDecl'/> = "synonym" <EBNFC name='SynonymIdentifier'/> "for" <EBNFC name='SynonymIdentifier'/> ";" .
-<EBNFC name='SynonymIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
+<EBNFC name='SynonymIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> | <EBNFC name='InstanceIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -2880,7 +2880,7 @@ Constructors enable the programmer to set default values, limit instantiation, a
 <EBNFCDECL name='CtorDecl' groups='GeneralObjectBodyContent'/> = "ctor" "(" [ <EBNFC name='FunctionParamsDeclSet'/> ] ")" <br/> [ ":" <EBNFC name='CallCtorsExpr'/> ][ "=>" ] <br/> "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='CallCtorsExpr'/> = <EBNFC name='CallSuperCtorItemExpr'/> [ { "," <EBNFC name='CallSuperCtorItemExpr'/> } ] .
 <EBNFCDECL name='CallCtorItemExpr'/> = <EBNFC name='CallSuperCtorExpr'/> | <EBNFC name='CallOtherSelfCtorExpr'/> .
-<EBNFCDECL name='CallSuperCtorExpr'/> = <EBNFC name='ConceptIdentifier'/> "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
+<EBNFCDECL name='CallSuperCtorExpr'/> = <EBNFC name='CommonConceptIdentifier'/> "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
 <EBNFCDECL name='CallOtherSelfCtorExpr'/> = "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
 </gr>
 
@@ -3093,7 +3093,7 @@ In the future I am going to develop other kinds of triggers.
 <EBNFCDECL name='TriggerHandler'/> = [ "=>" ] <EBNFC name='SetTriggerHandler'/> "else" <EBNFC name='DownTriggerHandler'/> .
 <EBNFCDECL name='SetTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
 <EBNFCDECL name='DownTriggerHandler'/> = "{" <br/> <EBNFC name='StatementsSet'/> <br/> "}" .
-<EBNFCDECL name='TriggerName'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='TriggerName'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='TriggerAliasDecl'/> = <TEBNFC name='AliasDecl'/> .
 <EBNFCDECL name='ActiveLogicRuleBody'/> = "=>" <EBNFC name='ActiveLogicRuleBodyItem'/> [ { "," <EBNFC name='ActiveLogicRuleBodyItem'/> } ] .
 <EBNFCDECL name='ActiveLogicRuleBodyItem'/> = <EBNFC name='FactDecl'/> | <EBNFC name='LogicRuleDecl'/> .
@@ -3781,7 +3781,7 @@ This meaning will be used for transformations and linking by meaning.
 </p>
 
 <gr>
-<EBNFCDECL name='ConceptAnnotationDecl' groups='AnnotationItem'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConceptAnnotationDecl' groups='AnnotationItem'/> = <EBNFC name='CommonConceptIdentifier'/> .
 </gr>
 
 <code data-lng='soc'>
@@ -4289,7 +4289,7 @@ Now It needs for conversion fact to text.
 
 <gr>
 <EBNFCDECL name='RelationMetadataDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'RelationMetadataDecl'/> .
-<EBNFCDECL name='RelationMetadataDecl'/> = "rel" <EBNFC name='ConceptIdentifier'/> "(" <EBNFC name='RelationMetadataArgument'/> [ { "," <EBNFC name='RelationMetadataArgument'/> } ] ")" [ <EBNFC name='InheritanceDecl'/> ] .
+<EBNFCDECL name='RelationMetadataDecl'/> = "rel" <EBNFC name='CommonConceptIdentifier'/> "(" <EBNFC name='RelationMetadataArgument'/> [ { "," <EBNFC name='RelationMetadataArgument'/> } ] ")" [ <EBNFC name='InheritanceDecl'/> ] .
 <EBNFCDECL name='RelationMetadataArgument'/> = <EBNFC name='LogicVarIdentifier'/> [ <EBNFC name='AnnotationDeclSet'/> ] .
 </gr>
 
@@ -4991,7 +4991,7 @@ The <b>new</b> operator creates a new instance of a type.
 </p>
 
 <gr>
-<EBNFCDECL name='NewOpExpr' groups='Expr'/> = "new" ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarExpr'/> ) [ "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ] .
+<EBNFCDECL name='NewOpExpr' groups='Expr'/> = "new" ( <EBNFC name='CommonConceptIdentifier'/> | <EBNFC name='VarExpr'/> ) [ "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ] .
 </gr>
 
 <code data-lng='soc'>
@@ -5086,7 +5086,7 @@ It is a short representation relations between object and values in conditional 
 
 <gr>
 <EBNFCDECL name='ConditionalEntityRelationOpExpr' groups='ConditionalEntityExpr'/> = <EBNFC name='ConditionalEntityRelationNameExpr'/> "=" <EBNFC name='ConditionalEntityRelationValueExpr'/> .
-<EBNFCDECL name='ConditionalEntityRelationNameExpr'/> = <EBNFC name='ConceptIdentifier'/> .
+<EBNFCDECL name='ConditionalEntityRelationNameExpr'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='ConditionalEntityRelationValueExpr'/> = <EBNFC name='ConstExpr'/> .
 </gr>
 
@@ -5195,7 +5195,7 @@ Predicate's metadata can be described by <a href='#Relation_metadata_chapter'>Re
 </p>
 
 <gr>
-<EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='ConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
+<EBNFCDECL name='PredicateIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> | <EBNFC name='LogicVarExpr'/> .
 <EBNFCDECL name='PredicateOp' groups='LogicExpr;AliasLogicExpr'/> = <EBNFC name='PredicateIdentifier'/> "(" <EBNFC name='PredicateParameter'/> [ { "," <EBNFC name='PredicateParameter'/> } ] ")" .
 <EBNFCDECL name='PredicateParameter'/> = <EBNFC name='ConstExpr'/> | <EBNFC name='LogicVarExpr'/> | <EBNFC name='LogicExpr'/> .
 </gr>
@@ -5758,7 +5758,7 @@ Whether a call is synchronous or asynchronous is determined by the presence of a
 <EBNFCDECL name='CallOpExpr' groups='Expr;ImperativeLogicExpr'/> = <EBNFC name='Expr'/> [ "~" | "~~" ] "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" <TEBNFC name='Annotation'/> .
 <EBNFCDECL name='TriggerCallOpExpr' groups='TriggerLogicExpr'/> = <EBNFC name='TriggerLogicExpr'/> "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" .
 <EBNFCDECL name='NamedParamsOfCallOpExprSet'/> = <EBNFC name='NamedParamOfCallOpExpr'/> [ { "," <EBNFC name='NamedParamOfCallOpExpr'/> } ] .
-<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='ConceptIdentifier'/> | <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
+<EBNFCDECL name='NamedParamOfCallOpExpr'/> =  ( <EBNFC name='CommonConceptIdentifier'/> | <EBNFC name='VarIdentifier'/> ) ":" <EBNFC name='Expr'/> .
 <EBNFCDECL name='PosParamsOfCallOpExprSet'/> =  <EBNFC name='PosParamOfCallOpExpr'/> [ { "," <EBNFC name='PosParamOfCallOpExpr'/> } ] .
 <EBNFCDECL name='PosParamOfCallOpExpr'/> = <EBNFC name='Expr'/> .
 </gr>
@@ -7437,7 +7437,7 @@ Fires if function is weak canceled (without canceling callers).
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='AliasDecl'>
-	    "alias" <EBNFC name='ConceptIdentifier'/> [ { "," <EBNFC name='ConceptIdentifier'/> } ]
+	    "alias" <EBNFC name='CommonConceptIdentifier'/> [ { "," <EBNFC name='CommonConceptIdentifier'/> } ]
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='IsOpExprBody'>
@@ -7445,7 +7445,7 @@ Fires if function is weak canceled (without canceling callers).
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='VarDecl'>
-	    [ "var" ] <EBNFC name='VarIdentifier'/> [ ":" ( ( "(" <EBNFC name='ConceptIdentifier'/> [ { "|" <EBNFC name='ConceptIdentifier'/> } ] ")" ) | ( <EBNFC name='ConceptIdentifier'/> [ { "|" <EBNFC name='ConceptIdentifier'/> } ] ) ) [ "=" <EBNFC name='Expr'/> ]
+	    [ "var" ] <EBNFC name='VarIdentifier'/> [ ":" ( ( "(" <EBNFC name='CommonConceptIdentifier'/> [ { "|" <EBNFC name='CommonConceptIdentifier'/> } ] ")" ) | ( <EBNFC name='CommonConceptIdentifier'/> [ { "|" <EBNFC name='CommonConceptIdentifier'/> } ] ) ) [ "=" <EBNFC name='Expr'/> ]
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='ElifSection'>
