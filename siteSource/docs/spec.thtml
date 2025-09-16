@@ -484,6 +484,19 @@ But the words can be used as identifiers in other places.
 	<kw name='weak'/>
 	<kw name='each'/>
 	<kw name='once'/>
+	<kw name='root'/>
+	<kw name='strategic'/>
+	<kw name='tactical'/>
+	<kw name='compound'/>
+	<kw name='primitive'/>
+	<kw name='task'/>
+	<kw name='operator'/>
+	<kw name='preconditions'/>
+	<kw name='case'/>
+	<kw name='before'/>
+	<kw name='after'/>
+	<kw name='background'/>
+	<kw name='prop'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
