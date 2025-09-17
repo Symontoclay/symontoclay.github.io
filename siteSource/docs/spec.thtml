@@ -2927,7 +2927,7 @@ Field
 <LinkToContent/>
 
 <p>
-    A field is a variable of any type that is declared directly in a object. 
+    A field is a variable of any type that is declared directly in an object.
     Fields are members of their containing object.
 </p>
 
@@ -2971,6 +2971,91 @@ app PeaceKeeper
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Field'>here</a>.
 </p>
+
+<h3 class='center-h' data-href='Property_chapter'>
+Property
+</h3>
+
+<LinkToContent/>
+
+<p>
+Property is a member that provides a flexible and controlled mechanism to read, write, or compute the value of a <a href='#Field_chapter'>data field</a>.
+</p>
+
+<gr>
+<EBNFCDECL name='PropertyDeclSet' groups='GeneralObjectBodyContent;WorldBodyContent;MemberAccessModifierBodyContent'/> = <TEBNFC name='DeclSet' param = 'PropertyDecl'/> .
+<EBNFCDECL name='PropertyDecl'/> = [ "prop" ] <EBNFC name='CommonConceptIdentifier'/> [ ":" <TEBNFC name='TypeOfCodeItem'/> [ ( ( "=" <EBNFC name='Expr'/> ) | "=>" <EBNFC name='Expr'/> ) ] .
+</gr>
+
+<h4 class='center-h' data-href='AutoProperty_chapter'>
+Auto property
+</h4>
+
+<LinkToContent/>
+
+<p>
+Auto property is similar to <a href='#Field_chapter'>field</a>.
+</p>
+
+<code data-lng='soc'>
+prop SomeProp1;
+prop SomeProp1 = 2;
+prop SomeProp1: number;
+prop SomeProp1: number = 2;
+SomeProp1;
+SomeProp1 = 2;
+SomeProp1: number;
+SomeProp1: number = 2;
+</code>
+
+<p>
+The main difference from the <a href='#Field_chapter'>field</a> is a connection between a property and relation from a <a href='#Fact_chapter'>fact</a>.
+The property is equivalent the relation with the same name from a fact.
+</p>
+
+<p>
+For instance, the fact
+</p>
+
+<code data-lng='soc'>
+{: color(cat, black) :}
+</code>
+
+<p>
+is the same as declaration
+</p>
+
+<code data-lng='soc'>
+class cat
+{
+    prop Color = black;
+}
+</code>
+
+<p>
+So, you can write something as a fact and read as a property.
+Or you can write this one as a property ad reas as a fact.
+</p>
+
+<p>
+By default the property value is <a href='#NULL_literal_chapter'><b>NULL</b></a>.
+</p>
+
+<h4 class='center-h' data-href='ReadOnlyProperty_chapter'>
+Read-only property
+</h4>
+
+<LinkToContent/>
+
+<p>
+Read-only property executes an expression and returns the result.
+</p>
+
+<code data-lng='soc'>
+prop CanSeeEnemy: boolean => {: enemy($_) & see(I, $_) & alive($_, true) :};
+CanSeeEnemy: boolean => {: enemy($_) & see(I, $_) & alive($_, true) :};
+SomeProp => @SomeField;
+</code>
 
 <h3 class='center-h' data-href='Ctor_chapter'>
 Constructor
@@ -7552,8 +7637,12 @@ Fires if function is weak canceled (without canceling callers).
 	    ( <GEBNFC name='TypeIdentifier' kind='or'/> ) "is" ( ( <TEBNFC name='InheritanceDeclItem'/> ) | ( [ "not" ] ( <GEBNFC name='TypeIdentifier' kind='or'/> ) ) )
 	</TEBNFCDECL>
 	
+	<TEBNFCDECL name='TypeOfCodeItem'>
+	    ( ( "(" <EBNFC name='CommonConceptIdentifier'/> [ { "|" <EBNFC name='CommonConceptIdentifier'/> } ] ")" ) | ( <EBNFC name='CommonConceptIdentifier'/> [ { "|" <EBNFC name='CommonConceptIdentifier'/> } ] ) )
+	</TEBNFCDECL>
+	
 	<TEBNFCDECL name='VarDecl'>
-	    [ "var" ] <EBNFC name='VarIdentifier'/> [ ":" ( ( "(" <EBNFC name='CommonConceptIdentifier'/> [ { "|" <EBNFC name='CommonConceptIdentifier'/> } ] ")" ) | ( <EBNFC name='CommonConceptIdentifier'/> [ { "|" <EBNFC name='CommonConceptIdentifier'/> } ] ) ) [ "=" <EBNFC name='Expr'/> ]
+	    [ "var" ] <EBNFC name='VarIdentifier'/> [ ":" <TEBNFC name='TypeOfCodeItem'/> [ "=" <EBNFC name='Expr'/> ]
 	</TEBNFCDECL>
 	
 	<TEBNFCDECL name='ElifSection'>
