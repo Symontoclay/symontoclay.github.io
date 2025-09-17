@@ -321,22 +321,16 @@ Some concepts are predefined and reperesent code entities.
 <LinkToContent/>
 
 <p>
-Names a concept.
+Names a concept in code expression.
 </p>
 
-<complete_me/>
-
 <gr>
-<EBNFCDECL name='ConceptIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> =  .
+<EBNFCDECL name='ConceptIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> = "##" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+##`cat`
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='LinguisticVariableIdentifier_chapter'>
 Linguistic variable identifier
@@ -345,22 +339,20 @@ Linguistic variable identifier
 <LinkToContent/>
 
 <p>
-Names a Linguistic variable.
+Names a Linguistic variable in code expression.
 </p>
 
-<complete_me/>
+<p>
+The Linguistic variable declaration uses only <EBNFC name='CommonConceptIdentifier'/>.
+</p>
 
 <gr>
-<EBNFCDECL name='LinguisticVariableIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> =  .
+<EBNFCDECL name='LinguisticVariableIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> = "#|" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+#|`teenager`
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='PropertyIdentifier_chapter'>
 Property identifier
@@ -369,22 +361,20 @@ Property identifier
 <LinkToContent/>
 
 <p>
-Names a property.
+Names a property in code expression.
 </p>
 
-<complete_me/>
+<p>
+The property declaration uses only <EBNFC name='CommonConceptIdentifier'/>.
+</p>
 
 <gr>
-<EBNFCDECL name='PropertyIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> =  .
+<EBNFCDECL name='PropertyIdentifier' groups='Identifier;ConstExpr;ValueExpr'/> = "@:" <TEBNFC name='BaseIdentifier'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
-
+@:`Property1`
 </code>
-
-<complete_me/>
 
 <h4 class='center-h' data-href='InstanceIdentifier_chapter'>
 Instance identifier
