@@ -902,7 +902,9 @@ During code execution the condition entity will be resolved to concrete entity f
 </p>
 
 <gr>
-<EBNFCDECL name='ConditionalEntityDecl' groups='Expr'/> = ( "#@(" <EBNFC name='ConditionalEntityExpr'/> ")" ) | ( "#@{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" ) .
+<EBNFCDECL name='ConditionalEntityPrefix'/> = "#@" .
+<EBNFCDECL name='OnceResolvedConditionalEntityPrefix'/> = "##@" .
+<EBNFCDECL name='ConditionalEntityDecl' groups='Expr'/> = ( ( <EBNFC name='ConditionalEntityPrefix'/> | <EBNFC name='OnceResolvedConditionalEntityPrefix'/> ) "(" <EBNFC name='ConditionalEntityExpr'/> ")" ) | ( ( <EBNFC name='ConditionalEntityPrefix'/> | <EBNFC name='OnceResolvedConditionalEntityPrefix'/> ) "{:" ( <EBNFC name='FactSection'/> | <EBNFC name='FactSentence'/> ) ":}" ) .
 <EBNFCDECL name='ConditionalEntityExpr'/> = <GEBNFC name='ConditionalEntityExpr' kind='or'/> .
 </gr>
 
@@ -914,6 +916,7 @@ During code execution the condition entity will be resolved to concrete entity f
 #@(hold(#a, this) & (weapon & dog) )
 #@(color = black)
 #@{: >: { barrel($_) } :}
+##@{: enemy($_) & see(I, $_) & alive($_, true) :}
 </code>
 
 <p>
@@ -961,6 +964,30 @@ Example of using:
 <code data-lng='soc'>
 @@host.take(#@(gun));
 </code>
+
+<h4 class='center-h' data-href='One-time_vs_multiple-time_resolving_chapter'>
+One-time vs multiple-time resolving
+</h4>
+
+<LinkToContent/>
+
+<p>
+<b>One-time resolved conditional entity</b> is resolved once during declaration.
+Next the conditional entity keeps the resolved game object.
+Its allows to catch tharget game object and pass the link through methods, properties and other code.
+</p>
+
+<p>
+The One-time resolved conditional entity has prefix "##@" (<EBNFC name='OnceResolvedConditionalEntityPrefix'/>).
+</p>
+
+<p>
+<b>Multiple-time resolved conditional entity</b> is many resolved times after declaration.
+</p>
+
+<p>
+The Multiple-time resolved conditional entity has prefix "#@" (<EBNFC name='ConditionalEntityPrefix'/>).
+</p>
 
 <h4 class='center-h' data-href='Conditional_entity_constraints_chapter'>
 Conditional entity constraints
