@@ -3041,6 +3041,10 @@ Or you can write this one as a property ad reas as a fact.
 By default the property value is <a href='#NULL_literal_chapter'><b>NULL</b></a>.
 </p>
 
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#AutoProperty'>here</a>.
+</p>
+
 <h4 class='center-h' data-href='ReadOnlyProperty_chapter'>
 Read-only property
 </h4>
@@ -3056,6 +3060,10 @@ prop CanSeeEnemy: boolean => {: enemy($_) & see(I, $_) & alive($_, true) :};
 CanSeeEnemy: boolean => {: enemy($_) & see(I, $_) & alive($_, true) :};
 SomeProp => @SomeField;
 </code>
+
+<p>
+You can see examples <a href='/docs/lng_examples/index.html#ReadOnlyProperty'>here</a>.
+</p>
 
 <h3 class='center-h' data-href='Ctor_chapter'>
 Constructor

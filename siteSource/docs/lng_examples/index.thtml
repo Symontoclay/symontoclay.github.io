@@ -1079,6 +1079,123 @@ app PeaceKeeper
 <console example_name='Field_Example2'>
 </console>
 
+<h2 class='center-h' data-href='Property'>
+Property
+</h2>
+
+<LinkToContent/>
+
+<p>
+Read more about Property <a href='/docs/spec.html#Property_chapter'>here</a>.
+</p>
+
+<h3 class='center-h' data-href='AutoProperty'>
+Auto property
+</h3>
+
+<LinkToContent/>
+
+<p>
+Read more about Auto property <a href='/docs/spec.html#AutoProperty_chapter'>here</a>.
+</p>
+
+<code example_name='AutoProperty_Example1'>
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        SomeAutoProp >> @>log;
+        'End' >> @>log;
+    }
+
+    prop SomeAutoProp: number = 16;
+}
+</code>
+
+<console example_name='AutoProperty_Example1'>
+</console>
+
+<code example_name='AutoProperty_Example2'>
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        SomeAutoProp >> @>log;
+        'End' >> @>log;
+    }
+
+    SomeAutoProp: number = 16;
+}
+</code>
+
+<console example_name='AutoProperty_Example2'>
+</console>
+
+<code example_name='AutoProperty_Example3'>
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        SomeAutoProp >> @>log;
+        'End' >> @>log;
+    }
+
+    prop SomeAutoProp = 16;
+}
+</code>
+
+<console example_name='AutoProperty_Example3'>
+</console>
+
+<code example_name='AutoProperty_Example4'>
+app PeaceKeeper
+{
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        SomeAutoProp >> @>log;
+        'End' >> @>log;
+    }
+
+    SomeAutoProp;
+}
+</code>
+
+<console example_name='AutoProperty_Example4'>
+</console>
+
+<h3 class='center-h' data-href='ReadOnlyProperty'>
+Read-only property
+</h3>
+
+<LinkToContent/>
+
+<p>
+Read more about Read-only property <a href='/docs/spec.html#ReadOnlyProperty_chapter'>here</a>.
+</p>
+
+<code example_name='ReadOnlyProperty_Example1'>
+app PeaceKeeper
+{
+    var @b: number = 2;
+
+    on Enter =>
+    {
+        'Begin' >> @>log;
+        SomeGetProp >> @>log;
+        'End' >> @>log;
+    }
+
+    prop SomeGetProp: number => @b;
+}
+</code>
+
+<console example_name='ReadOnlyProperty_Example1'>
+</console>
+
 <h2 class='center-h' data-href='Ctor'>
 Constructor
 </h2>
