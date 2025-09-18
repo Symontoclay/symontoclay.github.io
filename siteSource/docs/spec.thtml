@@ -1081,7 +1081,7 @@ You can read more details in <ico t='w'/><a href='https://en.wikipedia.org/wiki/
 </p>
 
 <gr>
-<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;GeneralObjectBodyContent;WorldBodyContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
+<EBNFCDECL name='LinguisticVariableDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'LinguisticVariableDecl'/> .
 <EBNFCDECL name='LinguisticVariableDecl'/> = "linvar" <EBNFC name='CommonConceptIdentifier'/> [ "for" <EBNFC name='LinguisticVariableDomainDecl'/> ] <br/> "{"<br/> [ <EBNFC name='LinguisticVariableBodyContent'/> ] <br/> "}" .
 <EBNFCDECL name='LinguisticVariableDomainDecl'/> = "range" ( "(" | "[" ) ( "-∞" | "*" | <EBNFC name='NumberExpr'/> ) "," ( "+∞" | "*" | <EBNFC name='NumberExpr'/> ) ( ")" | "]" ) .
 <EBNFCDECL name='LinguisticVariableBodyContent'/> = <GEBNFC name='LinguisticVariableBodyContent' kind='or'/> .
@@ -2642,6 +2642,93 @@ synonym param_1 for param_2;
 <p>
 You can see examples <a href='/docs/lng_examples/index.html#Synonym'>here</a>.
 </p>
+
+<h2 class='center-h' data-href='HTN_chapter'>
+Hierarchical task networks (HTN)
+</h2>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='HtnTask'/> = <GEBNFC name='HtnTask' kind='or' /> .
+</gr>
+
+<h3 class='center-h' data-href='RootHtnTask_chapter'>
+Root task
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='RootHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'RootHtnTaskDecl'/> .
+<EBNFCDECL name='RootHtnTaskDecl' groups='HtnTask'/> =  .
+</gr>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='StrategicHtnTask_chapter'>
+Strategic task
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='StrategicHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StrategicHtnTaskDecl'/> .
+<EBNFCDECL name='StrategicHtnTaskDecl' groups='HtnTask'/> =  .
+</gr>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='TacticalHtnTask_chapter'>
+Tactical task
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='TacticalHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'TacticalHtnTaskDecl'/> .
+<EBNFCDECL name='TacticalHtnTaskDecl' groups='HtnTask'/> =  .
+</gr>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='CompoundHtnTask_chapter'>
+Compound task
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='CompoundHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'CompoundHtnTaskDecl'/> .
+<EBNFCDECL name='CompoundHtnTaskDecl' groups='HtnTask'/> =  .
+</gr>
+
+<complete_me/>
+
+<h3 class='center-h' data-href='PrimitiveHtnTask_chapter'>
+Primitive task
+</h3>
+
+<LinkToContent/>
+
+<complete_me/>
+
+<gr>
+<EBNFCDECL name='PrimitiveHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'PrimitiveHtnTaskDecl'/> .
+<EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> =  .
+</gr>
+
+<complete_me/>
 
 <h2 class='center-h' data-href='Date_and_time_chapter'>
 Date and time
