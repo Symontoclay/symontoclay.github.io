@@ -2665,7 +2665,14 @@ Root task
 
 <gr>
 <EBNFCDECL name='RootHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'RootHtnTaskDecl'/> .
-<EBNFCDECL name='RootHtnTaskDecl' groups='HtnTask'/> =  .
+<EBNFCDECL name='RootHtnTaskDecl' groups='HtnTask'/> = "root" "task" <EBNFC name='RootHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='RootHtnTaskCaseDeclSet'/> <br/> <EBNFC name='RootHtnTaskBeforeDecl'/> <br/> <EBNFC name='RootHtnTaskAfterDecl'/> <br/> <EBNFC name='RootHtnTaskBackgroundDeclSet'/> <br/> "}" .
+<EBNFCDECL name='RootHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
+<EBNFCDECL name='RootHtnTaskCaseDeclSet'/> = <TEBNFC name='DeclSet' param = 'RootHtnTaskCaseDecl'/> .
+<EBNFCDECL name='RootHtnTaskCaseDecl'/> =  .
+<EBNFCDECL name='RootHtnTaskBeforeDecl'/> =  .
+<EBNFCDECL name='RootHtnTaskAfterDecl'/> =  .
+<EBNFCDECL name='RootHtnTaskBackgroundDeclSet'/> = <TEBNFC name='DeclSet' param = 'RootHtnTaskBackgroundDecl'/> .
+<EBNFCDECL name='RootHtnTaskBackgroundDecl'/> =  .
 </gr>
 
 <complete_me/>
@@ -2680,7 +2687,14 @@ Strategic task
 
 <gr>
 <EBNFCDECL name='StrategicHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StrategicHtnTaskDecl'/> .
-<EBNFCDECL name='StrategicHtnTaskDecl' groups='HtnTask'/> =  .
+<EBNFCDECL name='StrategicHtnTaskDecl' groups='HtnTask'/> = "strategic" "task" <EBNFC name='StrategicHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='StrategicHtnTaskCaseDeclSet'/> <br/> <EBNFC name='StrategicHtnTaskBeforeDecl'/> <br/> <EBNFC name='StrategicHtnTaskAfterDecl'/> <br/> <EBNFC name='StrategicHtnTaskBackgroundDeclSet'/> <br/> "}" .
+<EBNFCDECL name='StrategicHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
+<EBNFCDECL name='StrategicHtnTaskCaseDeclSet'/> = <TEBNFC name='DeclSet' param = 'StrategicHtnTaskCaseDecl'/> .
+<EBNFCDECL name='StrategicHtnTaskCaseDecl'/> =  .
+<EBNFCDECL name='StrategicHtnTaskBeforeDecl'/> =  .
+<EBNFCDECL name='StrategicHtnTaskAfterDecl'/> =  .
+<EBNFCDECL name='StrategicHtnTaskBackgroundDeclSet'/> = <TEBNFC name='DeclSet' param = 'StrategicHtnTaskBackgroundDecl'/> .
+<EBNFCDECL name='StrategicHtnTaskBackgroundDecl'/> =  .
 </gr>
 
 <complete_me/>
@@ -2695,7 +2709,14 @@ Tactical task
 
 <gr>
 <EBNFCDECL name='TacticalHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'TacticalHtnTaskDecl'/> .
-<EBNFCDECL name='TacticalHtnTaskDecl' groups='HtnTask'/> =  .
+<EBNFCDECL name='TacticalHtnTaskDecl' groups='HtnTask'/> = "tactical" "task" <EBNFC name='TacticalHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='TacticalHtnTaskCaseDeclSet'/> <br/> <EBNFC name='TacticalHtnTaskBeforeDecl'/> <br/> <EBNFC name='TacticalHtnTaskAfterDecl'/> <br/> <EBNFC name='TacticalHtnTaskBackgroundDeclSet'/> <br/> "}" .
+<EBNFCDECL name='TacticalHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
+<EBNFCDECL name='TacticalHtnTaskCaseDeclSet'/> = <TEBNFC name='DeclSet' param = 'TacticalHtnTaskCaseDecl'/> .
+<EBNFCDECL name='TacticalHtnTaskCaseDecl'/> =  .
+<EBNFCDECL name='TacticalHtnTaskBeforeDecl'/> =  .
+<EBNFCDECL name='TacticalHtnTaskAfterDecl'/> =  .
+<EBNFCDECL name='TacticalHtnTaskBackgroundDeclSet'/> = <TEBNFC name='DeclSet' param = 'TacticalHtnTaskBackgroundDecl'/> .
+<EBNFCDECL name='TacticalHtnTaskBackgroundDecl'/> =  .
 </gr>
 
 <complete_me/>
@@ -2710,7 +2731,14 @@ Compound task
 
 <gr>
 <EBNFCDECL name='CompoundHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'CompoundHtnTaskDecl'/> .
-<EBNFCDECL name='CompoundHtnTaskDecl' groups='HtnTask'/> =  .
+<EBNFCDECL name='CompoundHtnTaskDecl' groups='HtnTask'/> = "compound" "task" <EBNFC name='CompoundHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='CompoundHtnTaskCaseDeclSet'/> <br/> <EBNFC name='CompoundHtnTaskBeforeDecl'/> <br/> <EBNFC name='CompoundHtnTaskAfterDecl'/> <br/> <EBNFC name='CompoundHtnTaskBackgroundDeclSet'/> <br/> "}" .
+<EBNFCDECL name='CompoundHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
+<EBNFCDECL name='CompoundHtnTaskCaseDeclSet'/> = <TEBNFC name='DeclSet' param = 'CompoundHtnTaskCaseDecl'/> .
+<EBNFCDECL name='CompoundHtnTaskCaseDecl'/> =  .
+<EBNFCDECL name='CompoundHtnTaskBeforeDecl'/> =  .
+<EBNFCDECL name='CompoundHtnTaskAfterDecl'/> =  .
+<EBNFCDECL name='CompoundHtnTaskBackgroundDeclSet'/> = <TEBNFC name='DeclSet' param = 'CompoundHtnTaskBackgroundDecl'/> .
+<EBNFCDECL name='CompoundHtnTaskBackgroundDecl'/> =  .
 </gr>
 
 <complete_me/>
@@ -2726,6 +2754,7 @@ Primitive task
 <gr>
 <EBNFCDECL name='PrimitiveHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'PrimitiveHtnTaskDecl'/> .
 <EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> =  .
+<EBNFCDECL name='PrimitiveHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 </gr>
 
 <complete_me/>
