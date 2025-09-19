@@ -2757,8 +2757,10 @@ Primitive task
 
 <gr>
 <EBNFCDECL name='PrimitiveHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'PrimitiveHtnTaskDecl'/> .
-<EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> =  .
+<EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> = "primitive" "task" <EBNFC name='PrimitiveHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='PrimitiveHtnTaskPreconditions'/> <br/> <EBNFC name='PrimitiveHtnTaskOperator'/> <br/> "}" .
 <EBNFCDECL name='PrimitiveHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
+<EBNFCDECL name='PrimitiveHtnTaskPreconditions'/> = "preconditions" <EBNFC name='TriggerLogicExpr'/> ";" .
+<EBNFCDECL name='PrimitiveHtnTaskOperator'/> =  .
 </gr>
 
 <complete_me/>
