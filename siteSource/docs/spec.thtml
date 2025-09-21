@@ -2760,7 +2760,7 @@ Primitive task
 <EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> = "primitive" "task" <EBNFC name='PrimitiveHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='PrimitiveHtnTaskPreconditions'/> <br/> <EBNFC name='PrimitiveHtnTaskOperator'/> <br/> "}" .
 <EBNFCDECL name='PrimitiveHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='PrimitiveHtnTaskPreconditions'/> = "preconditions" <EBNFC name='TriggerLogicExpr'/> ";" .
-<EBNFCDECL name='PrimitiveHtnTaskOperator'/> =  .
+<EBNFCDECL name='PrimitiveHtnTaskOperator'/> = "operator" ( <EBNFC name='ActionIdentifier'/> | <EBNFC name='FunctionName'/> ) "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ";" .
 </gr>
 
 <complete_me/>
