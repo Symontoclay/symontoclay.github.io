@@ -6377,6 +6377,36 @@ lib lib1
 }
 </code>
 
+<h3 class='center-h' data-href='RootHtnTaskStatement_chapter'>
+"root task" statement
+</h3>
+
+<LinkToContent/>
+
+<p>
+Sets <a href='#RootHtnTask_chapter'>Root task</a>, <a href='#StrategicHtnTask_chapter'>Strategic task</a>, <a href='#TacticalHtnTask_chapter'>Tactical task</a> or <a href='#CompoundHtnTask_chapter'>Compound task</a> as executed root task.
+All other available root tasks will be ignored.
+</p>
+
+<gr>
+<EBNFCDECL name='RootHtnTaskStatement' groups='AppBodyContent'/> = "root" "task" ( <EBNFC name='RootHtnTaskIdentifier'/> | <EBNFC name='StrategicHtnTaskIdentifier'/> | <EBNFC name='TacticalHtnTaskIdentifier'/> | <EBNFC name='CompoundHtnTaskIdentifier'/> ) ";" .
+</gr>
+
+<code data-lng='soc'>
+    app PeaceKeeper
+    {
+        root task `SomeCompoundTask`;
+    }
+
+    compound task SomeCompoundTask
+    {
+        case
+        {
+            SomePrimitiveTask;
+        }
+    }
+</code>
+
 <h3 class='center-h' data-href='Expression_statement_chapter'>
 Expression statement
 </h3>
