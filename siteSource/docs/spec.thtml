@@ -578,6 +578,7 @@ But the words can be used as identifiers in other places.
 	<kw name='after'/>
 	<kw name='background'/>
 	<kw name='prop'/>
+	<kw name='effects'/>
 </keywords>
 
 <h3 class='center-h' data-href='Operators_and_punctuation_chapter'>
