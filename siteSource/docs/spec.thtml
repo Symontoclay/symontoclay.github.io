@@ -2758,10 +2758,11 @@ Primitive task
 
 <gr>
 <EBNFCDECL name='PrimitiveHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'PrimitiveHtnTaskDecl'/> .
-<EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> = "primitive" "task" <EBNFC name='PrimitiveHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='PrimitiveHtnTaskPreconditions'/> <br/> <EBNFC name='PrimitiveHtnTaskOperator'/> <br/> "}" .
+<EBNFCDECL name='PrimitiveHtnTaskDecl' groups='HtnTask'/> = "primitive" "task" <EBNFC name='PrimitiveHtnTaskIdentifier'/> <br/> "{" <br/> <EBNFC name='PrimitiveHtnTaskPreconditions'/> <br/> <EBNFC name='PrimitiveHtnTaskOperator'/> <br/> <EBNFC name='PrimitiveHtnTaskEffects'/> <br/> "}" .
 <EBNFCDECL name='PrimitiveHtnTaskIdentifier'/> = <EBNFC name='CommonConceptIdentifier'/> .
 <EBNFCDECL name='PrimitiveHtnTaskPreconditions'/> = "preconditions" <EBNFC name='TriggerLogicExpr'/> ";" .
 <EBNFCDECL name='PrimitiveHtnTaskOperator'/> = "operator" ( <EBNFC name='ActionIdentifier'/> | <EBNFC name='FunctionName'/> ) "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ";" .
+<EBNFCDECL name='PrimitiveHtnTaskEffects'/> =  .
 </gr>
 
 <complete_me/>
@@ -5292,10 +5293,27 @@ Operator precedence
 	    <td>Left-to-right</td>
 	</tr>
 	<tr>
-	    <th class='center-h'>17</th>
+	    <th rowspan='5' class='center-h'>17</th>
 	    <td>=</td>
-	    <td>Right-to-left</td>
+	    <td rowspan='5'>Right-to-left</td>
 	</tr>
+	
+	<tr>
+	    <td>+=</td>
+	</tr>
+	
+    <tr>
+	    <td>-=</td>
+	</tr>
+	
+	<tr>
+	    <td>*=</td>
+	</tr>
+	
+	<tr>
+	    <td>/=</td>
+	</tr>
+		
 	<tr>
 	    <th class='center-h'>18</th>
 	    <td>,</td>
@@ -5423,7 +5441,93 @@ It is the same like:
 </p>
 
 <code data-lng='soc'>
-#@{: color($_, black) =  :}
+#@{: color($_, black) :}
+</code>
+
+<h4 class='center-h' data-href='AdditionAssignmentOp_chapter'>
+Operator "+="
+</h4>
+
+<LinkToContent/>
+
+<p>
+Associativity: Right-to-left.
+</p>
+
+<p>
+<b>x += y</b> is shorthand for <b>x = x + y</b>.
+It adds the left operand by the right and assigns the result back to the left operand.
+</p>
+
+<gr>
+<EBNFCDECL name='AdditionAssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '+='/> .
+</gr>
+
+<code data-lng='soc'>
+@x += 1;
+</code>
+
+<h4 class='center-h' data-href='SubtractionAssignmentOp_chapter'>
+Operator "-="
+</h4>
+
+<p>
+Associativity: Right-to-left.
+</p>
+
+<p>
+<b>x -= y</b> is shorthand for <b>x = x - y</b>.
+It subtracts the left operand by the right and assigns the result back to the left operand.
+</p>
+
+<gr>
+<EBNFCDECL name='SubtractionAssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '-='/> .
+</gr>
+
+<code data-lng='soc'>
+@x -= 1;
+</code>
+
+<h4 class='center-h' data-href='MultiplicationAssignmentOp_chapter'>
+Operator "*="
+</h4>
+
+<p>
+Associativity: Right-to-left.
+</p>
+
+<p>
+<b>x *= y</b> is shorthand for <b>x = x * y</b>.
+It multiplies the left operand by the right and assigns the result back to the left operand.
+</p>
+
+<gr>
+<EBNFCDECL name='MultiplicationAssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '*='/> .
+</gr>
+
+<code data-lng='soc'>
+@x *= 1;
+</code>
+
+<h4 class='center-h' data-href='DivisionAssignmentOp_chapter'>
+Operator "/="
+</h4>
+
+<p>
+Associativity: Right-to-left.
+</p>
+
+<p>
+<b>x /= y</b> is shorthand for <b>x = x / y</b>.
+It divides the left operand by the right and assigns the result back to the left operand.
+</p>
+
+<gr>
+<EBNFCDECL name='DivisionAssignmentOpExpr' groups='Expr'/> = <TEBNFC name='BinaryOp' param = '/='/> .
+</gr>
+
+<code data-lng='soc'>
+@x /= 1;
 </code>
 
 <h3 class='center-h' data-href='Relational_operators_chapter'>
