@@ -2763,6 +2763,7 @@ Primitive task
 <EBNFCDECL name='PrimitiveHtnTaskPreconditions'/> = "preconditions" <EBNFC name='TriggerLogicExpr'/> ";" .
 <EBNFCDECL name='PrimitiveHtnTaskOperator'/> = "operator" ( <EBNFC name='ActionIdentifier'/> | <EBNFC name='FunctionName'/> ) "(" [ ( <EBNFC name='NamedParamsOfCallOpExprSet'/> | <EBNFC name='PosParamsOfCallOpExprSet'/> ) ] ")" ";" .
 <EBNFCDECL name='PrimitiveHtnTaskEffects'/> =  .
+<EBNFCDECL name='PrimitiveHtnTaskEffectsAssignmentOpExpr'/> = <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='AdditionAssignmentOpExpr'/> | <EBNFC name='SubtractionAssignmentOpExpr'/> | <EBNFC name='MultiplicationAssignmentOpExpr'/> | <EBNFC name='DivisionAssignmentOpExpr'/> .
 </gr>
 
 <complete_me/>
