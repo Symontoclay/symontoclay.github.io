@@ -2656,6 +2656,8 @@ Hierarchical task networks (HTN)
 <EBNFCDECL name='HtnTask'/> = <GEBNFC name='HtnTask' kind='or' /> .
 </gr>
 
+<complete_me/>
+
 <h3 class='center-h' data-href='RootHtnTask_chapter'>
 Root task
 </h3>
@@ -2677,6 +2679,12 @@ Root task
 <EBNFCDECL name='RootHtnTaskBackgroundDecl'/> = "background" [ <EBNFC name='TriggerLogicExpr'/> ] <br/> "{" <br/> [ <TEBNFC name='DeclSet' param = 'RootHtnTaskSubTask'/> ] <br/> "}" .
 <EBNFCDECL name='RootHtnTaskSubTask'/> = ( <EBNFC name='RootHtnTaskIdentifier'/> | <EBNFC name='StrategicHtnTaskIdentifier'/> | <EBNFC name='TacticalHtnTaskIdentifier'/> | <EBNFC name='CompoundHtnTaskIdentifier'/> | <EBNFC name='PrimitiveHtnTaskIdentifier'/> ) ";" .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -2704,6 +2712,12 @@ Strategic task
 
 <complete_me/>
 
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='TacticalHtnTask_chapter'>
 Tactical task
 </h3>
@@ -2725,6 +2739,12 @@ Tactical task
 <EBNFCDECL name='TacticalHtnTaskBackgroundDecl'/> = "background" [ <EBNFC name='TriggerLogicExpr'/> ] <br/> "{" <br/> [ <TEBNFC name='DeclSet' param = 'TacticalHtnTaskSubTask'/> ] <br/> "}" .
 <EBNFCDECL name='TacticalHtnTaskSubTask'/> = ( <EBNFC name='TacticalHtnTaskIdentifier'/> | <EBNFC name='CompoundHtnTaskIdentifier'/> | <EBNFC name='PrimitiveHtnTaskIdentifier'/> ) ";" .
 </gr>
+
+<complete_me/>
+
+<code data-lng='soc'>
+
+</code>
 
 <complete_me/>
 
@@ -2752,6 +2772,12 @@ Compound task
 
 <complete_me/>
 
+<code data-lng='soc'>
+
+</code>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='PrimitiveHtnTask_chapter'>
 Primitive task
 </h3>
@@ -2772,7 +2798,45 @@ Primitive task
 <EBNFCDECL name='PrimitiveHtnTaskEffectsAssignmentOpExpr'/> = <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='AdditionAssignmentOpExpr'/> | <EBNFC name='SubtractionAssignmentOpExpr'/> | <EBNFC name='MultiplicationAssignmentOpExpr'/> | <EBNFC name='DivisionAssignmentOpExpr'/> .
 </gr>
 
+<complete_me/>
 
+<code data-lng='soc'>
+primitive task SomePrimitiveTask
+{
+    preconditions SomeAutoProp is 18;
+    effects { SomeAutoProp = 42; }
+    operator SomeOperator();
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+primitive task SomePrimitiveTask2
+{
+    preconditions SomeAutoProp is 18;
+    operator SomeOperator2();
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+primitive task SomePrimitiveTask
+{
+    effects { SomeAutoProp += 42; }
+    operator SomeOperator();
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+primitive task SomePrimitiveTask3
+{
+    operator SomeOperator3();
+}
+</code>
 
 <complete_me/>
 
