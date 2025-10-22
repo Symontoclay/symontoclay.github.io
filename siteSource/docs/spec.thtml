@@ -2773,7 +2773,72 @@ Compound task
 <complete_me/>
 
 <code data-lng='soc'>
+compound task SomeCompoundTask
+{
+    before
+    {
+        SomeBeforePrimitiveTask;
+    }
 
+    case SomeAutoProp is 16
+    {
+        SomePrimitiveTask;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomePrimitiveTask2;
+    }
+
+    case 
+    {
+        SomePrimitiveTask3;
+    }
+	
+	background each 1
+    {
+        SomeBackgroundPrimitiveTask;
+    }
+	
+    after
+    {
+        SomeAfterPrimitiveTask;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+compound task SomeCompoundTask
+{
+    case SomeAutoProp is 16
+    {
+        SomePrimitiveTask;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomePrimitiveTask2;
+    }
+
+    case 
+    {
+        SomePrimitiveTask3;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+compound task SomeCompoundTask
+{
+    case
+    {
+        SomePrimitiveTask;
+    }
+}
 </code>
 
 <complete_me/>
