@@ -2683,7 +2683,90 @@ Root task
 <complete_me/>
 
 <code data-lng='soc'>
+root task SomeRootTask
+{
+    before
+    {
+        SomeBeforePrimitiveTask;
+		SomeBeforeCompoundTask;
+		SomeBeforeTacticalTask;
+		SomeBeforeStrategicTask;
+    }
 
+    case SomeAutoProp is 16
+    {
+        SomePrimitiveTask;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+		SomeStrategicTask2;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomePrimitiveTask2;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+		SomeStrategicTask2;
+    }
+
+    case 
+    {
+        SomePrimitiveTask3;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+		SomeStrategicTask2;
+    }
+	
+	background each 1
+    {
+        SomeBackgroundPrimitiveTask;
+		SomeBackgroundCompoundTask;
+		SomeBackgroundTacticalTask;
+		SomeBackgroundStrategicTask;
+    }
+	
+    after
+    {
+        SomeAfterPrimitiveTask;
+		SomeAfterCompoundTask;
+		SomeAfterTacticalTask;
+		SomeAfterStrategicTask;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+root task SomeRootTask
+{
+    case SomeAutoProp is 16
+    {
+        SomeTacticalTask;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomeTacticalTask2;
+    }
+
+    case 
+    {
+        SomeTacticalTask3;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+root task SomeRootTask
+{
+    case
+    {
+        SomeTacticalTask;
+    }
+}
 </code>
 
 <complete_me/>
@@ -2713,7 +2796,90 @@ Strategic task
 <complete_me/>
 
 <code data-lng='soc'>
+strategic task SomeStrategicTask
+{
+    before
+    {
+        SomeBeforePrimitiveTask;
+		SomeBeforeCompoundTask;
+		SomeBeforeTacticalTask;
+		SomeBeforeStrategicTask;
+    }
 
+    case SomeAutoProp is 16
+    {
+        SomePrimitiveTask;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+		SomeStrategicTask2;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomePrimitiveTask2;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+		SomeStrategicTask2;
+    }
+
+    case 
+    {
+        SomePrimitiveTask3;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+		SomeStrategicTask2;
+    }
+	
+	background each 1
+    {
+        SomeBackgroundPrimitiveTask;
+		SomeBackgroundCompoundTask;
+		SomeBackgroundTacticalTask;
+		SomeBackgroundStrategicTask;
+    }
+	
+    after
+    {
+        SomeAfterPrimitiveTask;
+		SomeAfterCompoundTask;
+		SomeAfterTacticalTask;
+		SomeAfterStrategicTask;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+strategic task SomeStrategicTask
+{
+    case SomeAutoProp is 16
+    {
+        SomeTacticalTask;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomeTacticalTask2;
+    }
+
+    case 
+    {
+        SomeTacticalTask3;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+strategic task SomeStrategicTask
+{
+    case
+    {
+        SomeTacticalTask;
+    }
+}
 </code>
 
 <complete_me/>
@@ -2743,7 +2909,84 @@ Tactical task
 <complete_me/>
 
 <code data-lng='soc'>
+tactical task SomeTacticalTask
+{
+    before
+    {
+        SomeBeforePrimitiveTask;
+		SomeBeforeCompoundTask;
+		SomeBeforeTacticalTask;
+    }
 
+    case SomeAutoProp is 16
+    {
+        SomePrimitiveTask;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomePrimitiveTask2;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+    }
+
+    case 
+    {
+        SomePrimitiveTask3;
+		SomeCompoundTask2;
+		SomeTacticalTask2;
+    }
+	
+	background each 1
+    {
+        SomeBackgroundPrimitiveTask;
+		SomeBackgroundCompoundTask;
+		SomeBackgroundTacticalTask;
+    }
+	
+    after
+    {
+        SomeAfterPrimitiveTask;
+		SomeAfterCompoundTask;
+		SomeAfterTacticalTask;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+tactical task SomeTacticalTask
+{
+    case SomeAutoProp is 16
+    {
+        SomeCompoundTask;
+    }
+
+    case OtherAutoProp > 16
+    {
+        SomeCompoundTask2;
+    }
+
+    case 
+    {
+        SomeCompoundTask3;
+    }
+}
+</code>
+
+<complete_me/>
+
+<code data-lng='soc'>
+tactical task SomeTacticalTask
+{
+    case
+    {
+        SomeCompoundTask;
+    }
+}
 </code>
 
 <complete_me/>
@@ -2778,31 +3021,37 @@ compound task SomeCompoundTask
     before
     {
         SomeBeforePrimitiveTask;
+		SomeBeforeCompoundTask;
     }
 
     case SomeAutoProp is 16
     {
         SomePrimitiveTask;
+		SomeCompoundTask2;
     }
 
     case OtherAutoProp > 16
     {
         SomePrimitiveTask2;
+		SomeCompoundTask2;
     }
 
     case 
     {
         SomePrimitiveTask3;
+		SomeCompoundTask2;
     }
 	
 	background each 1
     {
         SomeBackgroundPrimitiveTask;
+		SomeBackgroundCompoundTask;
     }
 	
     after
     {
         SomeAfterPrimitiveTask;
+		SomeAfterCompoundTask;
     }
 }
 </code>
