@@ -2650,7 +2650,20 @@ Hierarchical task networks (HTN)
 
 <LinkToContent/>
 
-<complete_me/>
+<p>
+Hierarchical Task Networks (HTN) is a planning technique based on task decomposition. 
+Instead of reasoning over goals and actions directly, HTN planners break down high-level tasks into smaller subtasks using predefined methods.
+This process continues recursively until only executable (primitive) actions remain.
+When this process is completed, we are left with a series of atomic tasks that represent a plan. 
+Breaking up high level tasks into smaller ones is a very natural way of solving many sorts of problems.
+</p>
+
+<p>
+With a high degree of modularity and fast run time execution, HTNs make an attractive choice as a solution. 
+For those of you that are familiar with behavior trees, these benefits might also seem familiar.
+Unlike behavior trees, however, HTN planners can reason about the effects of possible actions. 
+This ability to reason about the future allows HTN planners to be incredibly expressive in how they describe behavior.
+</p>
 
 <gr>
 <EBNFCDECL name='HtnTask'/> = <GEBNFC name='HtnTask' kind='or' /> .
