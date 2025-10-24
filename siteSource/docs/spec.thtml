@@ -2671,6 +2671,18 @@ This ability to reason about the future allows HTN planners to be incredibly exp
 
 <complete_me/>
 
+<b>Core concepts</b>
+  
+  <ul>
+    <li><strong>Abstract tasks</strong> — high-level goals that cannot be executed directly.</li>
+    <li><strong>Methods</strong> — decomposition rules that describe how to break an abstract task into simpler tasks or actions.</li>
+    <li><strong>Primitive tasks</strong> — actions that can be executed directly by the agent or system.</li>
+    <li><strong>Plan</strong> — a sequence of primitive actions produced by recursive decomposition.</li>
+  </ul>
+
+
+<complete_me/>
+
 <h3 class='center-h' data-href='RootHtnTask_chapter'>
 Root task
 </h3>
