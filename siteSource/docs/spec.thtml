@@ -2669,17 +2669,16 @@ This ability to reason about the future allows HTN planners to be incredibly exp
 <EBNFCDECL name='HtnTask'/> = <GEBNFC name='HtnTask' kind='or' /> .
 </gr>
 
-<complete_me/>
+<p>
+<strong>Core concepts</strong>
+</p>
 
-<b>Core concepts</b>
-  
-  <ul>
-    <li><strong>Abstract tasks</strong> — high-level goals that cannot be executed directly.</li>
-    <li><strong>Methods</strong> — decomposition rules that describe how to break an abstract task into simpler tasks or actions.</li>
-    <li><strong>Primitive tasks</strong> — actions that can be executed directly by the agent or system.</li>
-    <li><strong>Plan</strong> — a sequence of primitive actions produced by recursive decomposition.</li>
-  </ul>
-
+<ul>
+   <li><strong>Compound tasks</strong> also called <strong>Abstract tasks</strong> - high-level goals that cannot be executed directly.</li>
+   <li><strong>Cases</strong> also called <strong>Methods</strong> - decomposition rules that describe how to break an abstract task into simpler tasks or actions.</li>
+   <li><strong>Primitive tasks</strong> - actions that can be executed directly by the agent or system.</li>
+   <li><strong>Plan</strong> - a sequence of primitive actions produced by recursive decomposition.</li>
+</ul>
 
 <complete_me/>
 
