@@ -2674,11 +2674,30 @@ This ability to reason about the future allows HTN planners to be incredibly exp
 </p>
 
 <ul>
-   <li><strong>Compound tasks</strong> also called <strong>Abstract tasks</strong> - high-level goals that cannot be executed directly.</li>
-   <li><strong>Cases</strong> also called <strong>Methods</strong> - decomposition rules that describe how to break an abstract task into simpler tasks or actions.</li>
-   <li><strong>Primitive tasks</strong> - actions that can be executed directly by the agent or system.</li>
-   <li><strong>Plan</strong> - a sequence of primitive actions produced by recursive decomposition.</li>
+    <li><strong>Abstract tasks</strong> - high-level goals that cannot be executed directly.</li>
+    <li><strong>Cases</strong> also called <strong>Methods</strong> - decomposition rules that describe how to break an abstract task into simpler tasks or actions.</li>
+    <li><strong>Primitive tasks</strong> - actions that can be executed directly by the agent or system.</li>
+    <li><strong>Plan</strong> - a sequence of primitive actions produced by recursive decomposition.</li>
 </ul>
+
+<p>
+Abstract tasks are divided into levels (from highest to lowest):
+</p>
+
+<ul>
+    <li><strong>root task</strong></li>
+	<li><strong>strategic task</strong></li>
+	<li><strong>tactical task</strong></li>
+	<li><strong>compound task</strong></li>
+</ul>
+
+<p>
+In the future, I plan to add optimization of program execution by disabling lower levels.
+For instance, only root, strategic and tactical tasks will be being executed.
+Or even only root and strategic tasks.
+And compound and primitive tasks execution will be disabled.
+This will help optimize the consumption of computing resources by characters invisible to the player, whose logic must nevertheless be executed for some reason. 
+</p>
 
 <complete_me/>
 
