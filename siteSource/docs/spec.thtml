@@ -2701,6 +2701,68 @@ This will help optimize the consumption of computing resources by characters inv
 
 <complete_me/>
 
+<table class='std-table' border='1' cellspacing='0'>
+    <tr>
+        <th rowspan='2'>Level name</th>
+		<th colspan="6">May contain</th>
+    </tr>
+    <tr>
+	    <th>Itself</th>
+		<th>root tasks</th>
+		<th>strategic tasks</th>
+		<th>tactical tasks</th>
+		<th>compound tasks</th>
+		<th>primitive tasks</th>
+    </tr>
+    <tr>
+	    <td>root task</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+    <tr>
+	    <td>strategic task</td>
+		<td>&#10004;</td>
+		<td>-</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+    <tr>
+	    <td>tactical task</td>
+		<td>&#10004;</td>
+		<td>-</td>
+		<td>-</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+    <tr>
+	    <td>compound task</td>
+		<td>&#10004;</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+    <tr>
+	    <td>primitive task</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+    </tr>
+</table>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='RootHtnTask_chapter'>
 Root task
 </h3>
