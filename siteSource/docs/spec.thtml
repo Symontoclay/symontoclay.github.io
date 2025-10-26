@@ -2650,6 +2650,10 @@ Hierarchical task networks (HTN)
 
 <LinkToContent/>
 
+<blockquote>
+  Special thanks to <a href="https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf" target="_blank" rel="noopener">Troy Humphreys</a>, whose article served as a key reference and inspiration during development.
+</blockquote>
+
 <p>
 Hierarchical Task Networks (HTN) is a planning technique based on task decomposition. 
 Instead of reasoning over goals and actions directly, HTN planners break down high-level tasks into smaller subtasks using predefined methods.
@@ -2677,6 +2681,7 @@ This ability to reason about the future allows HTN planners to be incredibly exp
     <li><strong>Abstract tasks</strong> - high-level goals that cannot be executed directly.</li>
     <li><strong>Cases</strong> also called <strong>Methods</strong> - decomposition rules that describe how to break an abstract task into simpler tasks or actions.</li>
     <li><strong>Primitive tasks</strong> - actions that can be executed directly by the agent or system.</li>
+	<li><strong>World state</strong> - a formal representation of the environment at a given moment, capturing all relevant facts, variables, and relationships needed to evaluate method applicability and action execution.</li>
     <li><strong>Plan</strong> - a sequence of primitive actions produced by recursive decomposition.</li>
 </ul>
 
@@ -2704,7 +2709,7 @@ This will help optimize the consumption of computing resources by characters inv
 <table class='std-table' border='1' cellspacing='0'>
     <tr>
         <th rowspan='2'>Level name</th>
-		<th colspan="6">May contain</th>
+		<th colspan="6">May call</th>
     </tr>
     <tr>
 	    <th>Itself</th>
@@ -2763,11 +2768,115 @@ This will help optimize the consumption of computing resources by characters inv
 
 <complete_me/>
 
+<p>
+    The root task for building a plan can be chosen from:
+</p>
+
+<ul>
+    <li>One of available root tasks. If there are many available root tasks, every item will considered during the building the plan.</li>
+	<li>Any abstract task by <a href='#RootHtnTaskStatement_chapter'>"root task" statement</a>. In this case all available available root tasks will be ignored.</li>
+</ul>
+
+<complete_me/>
+
+<p>
+    <strong>Common parts of all tasks</strong>
+</p>
+
+<ul>
+    <li><strong>preconditions</strong></li>
+</ul>
+
+<complete_me/>
+
+<p>
+<strong>Preconditions</strong> verify whether the task can be planned for execution.
+</p>
+
+<complete_me/>
+
+<p>
+    <strong>Parts of Abstract tasks</strong>
+</p>
+
+<ul>
+	<li><strong>case</strong></li>
+	<li><strong>before</strong></li>
+	<li><strong>after</strong></li>
+	<li><strong>background</strong></li>
+</ul>
+
+<complete_me/>
+
+<p>
+    A <strong>case</strong> organizes subtasks according to their execution sequence.
+	Each case represents some approach.
+	The case's subtasks can be primitive or abstract tasks.
+	The ability to put compound tasks into the cases of other abstract tasks is where hierarchical task networks get their hierarchical nature.
+</p>
+
+<p>
+    An Abstract task can contain many cases with different conditions and at least one case without conditions.
+</p>
+
+<p>
+    To be applicable, a case's condition must hold true in the current world state.
+</p>
+
+<p>
+   The case without conditions is the default case of the Abstract task.
+   It is chosen if no one condition holds true in the current world state.
+</p>
+
+<complete_me/>
+
+<p>
+    <strong>Before</strong> and <strong>after</strong> are special cases without conditions what executes before and after usual cases.
+</p>
+
+<complete_me/>
+
+<p>
+    <strong>Background</strong> is special case with conditions, which is executed in parallel to chosen case.
+	One abstract task may have many background cases with different conditions.
+</p>
+
+<complete_me/>
+
+<p>
+    <strong>Parts of Primitive tasks</strong>
+</p>
+
+<ul>
+	<li><strong>operator</strong></li>
+	<li><strong>effects</strong></li>
+</ul>
+
+<complete_me/>
+
+<p>
+    The <strong>operator</strong> represents an atomic action that a NPC can do.
+</p>
+
+<complete_me/>
+
+<p>
+A primitive task’s <strong>effects</strong> describe how the success of the task will affect the NPC’s world state.
+This allows the HTN to reason about the "future".
+It means that preconditions and cases' conditions in the next tasks use the world state which was changed by effects of the previous primitive tasks.
+</p>
+
+<complete_me/>
+
 <h3 class='center-h' data-href='RootHtnTask_chapter'>
 Root task
 </h3>
 
 <LinkToContent/>
+
+<p>
+Abstract root level task.
+</p>
 
 <complete_me/>
 
@@ -2882,6 +2991,10 @@ Strategic task
 
 <LinkToContent/>
 
+<p>
+Abstract strategic level task.
+</p>
+
 <complete_me/>
 
 <gr>
@@ -2995,6 +3108,10 @@ Tactical task
 
 <LinkToContent/>
 
+<p>
+Abstract tactical level task.
+</p>
+
 <complete_me/>
 
 <gr>
@@ -3102,6 +3219,8 @@ Compound task
 
 <LinkToContent/>
 
+Abstract low level task.
+
 <complete_me/>
 
 <gr>
@@ -3202,6 +3321,12 @@ Primitive task
 </h3>
 
 <LinkToContent/>
+
+<complete_me/>
+
+<p>
+    Primitive tasks represent a single step that can be performed by an NPC.
+</p>
 
 <complete_me/>
 
