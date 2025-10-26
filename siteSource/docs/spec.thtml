@@ -2704,8 +2704,6 @@ And compound and primitive tasks execution will be disabled.
 This will help optimize the consumption of computing resources by characters invisible to the player, whose logic must nevertheless be executed for some reason. 
 </p>
 
-<complete_me/>
-
 <table class='std-table' border='1' cellspacing='0'>
     <tr>
         <th rowspan='2'>Level name</th>
@@ -2766,8 +2764,6 @@ This will help optimize the consumption of computing resources by characters inv
     </tr>
 </table>
 
-<complete_me/>
-
 <p>
     The root task for building a plan can be chosen from:
 </p>
@@ -2777,8 +2773,6 @@ This will help optimize the consumption of computing resources by characters inv
 	<li>Any abstract task by <a href='#RootHtnTaskStatement_chapter'>"root task" statement</a>. In this case all available available root tasks will be ignored.</li>
 </ul>
 
-<complete_me/>
-
 <p>
     <strong>Common parts of all tasks</strong>
 </p>
@@ -2787,13 +2781,9 @@ This will help optimize the consumption of computing resources by characters inv
     <li><strong>preconditions</strong></li>
 </ul>
 
-<complete_me/>
-
 <p>
 <strong>Preconditions</strong> verify whether the task can be planned for execution.
 </p>
-
-<complete_me/>
 
 <p>
     <strong>Parts of Abstract tasks</strong>
@@ -2805,8 +2795,6 @@ This will help optimize the consumption of computing resources by characters inv
 	<li><strong>after</strong></li>
 	<li><strong>background</strong></li>
 </ul>
-
-<complete_me/>
 
 <p>
     A <strong>case</strong> organizes subtasks according to their execution sequence.
@@ -2828,20 +2816,14 @@ This will help optimize the consumption of computing resources by characters inv
    It is chosen if no one condition holds true in the current world state.
 </p>
 
-<complete_me/>
-
 <p>
     <strong>Before</strong> and <strong>after</strong> are special cases without conditions what executes before and after usual cases.
 </p>
-
-<complete_me/>
 
 <p>
     <strong>Background</strong> is special case with conditions, which is executed in parallel to chosen case.
 	One abstract task may have many background cases with different conditions.
 </p>
-
-<complete_me/>
 
 <p>
     <strong>Parts of Primitive tasks</strong>
@@ -2852,21 +2834,15 @@ This will help optimize the consumption of computing resources by characters inv
 	<li><strong>effects</strong></li>
 </ul>
 
-<complete_me/>
-
 <p>
     The <strong>operator</strong> represents an atomic action that a NPC can do.
 </p>
-
-<complete_me/>
 
 <p>
 A primitive task’s <strong>effects</strong> describe how the success of the task will affect the NPC’s world state.
 This allows the HTN to reason about the "future".
 It means that preconditions and cases' conditions in the next tasks use the world state which was changed by effects of the previous primitive tasks.
 </p>
-
-<complete_me/>
 
 <h3 class='center-h' data-href='RootHtnTask_chapter'>
 Root task
@@ -2877,8 +2853,6 @@ Root task
 <p>
 Abstract root level task.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='RootHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'RootHtnTaskDecl'/> .
@@ -2894,8 +2868,6 @@ Abstract root level task.
 <EBNFCDECL name='RootHtnTaskSubTask'/> = ( <EBNFC name='RootHtnTaskIdentifier'/> | <EBNFC name='StrategicHtnTaskIdentifier'/> | <EBNFC name='TacticalHtnTaskIdentifier'/> | <EBNFC name='CompoundHtnTaskIdentifier'/> | <EBNFC name='PrimitiveHtnTaskIdentifier'/> ) ";" .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 root task SomeRootTask
 {
@@ -2949,8 +2921,6 @@ root task SomeRootTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 root task SomeRootTask
 {
@@ -2971,8 +2941,6 @@ root task SomeRootTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 root task SomeRootTask
 {
@@ -2983,8 +2951,6 @@ root task SomeRootTask
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='StrategicHtnTask_chapter'>
 Strategic task
 </h3>
@@ -2994,8 +2960,6 @@ Strategic task
 <p>
 Abstract strategic level task.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='StrategicHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'StrategicHtnTaskDecl'/> .
@@ -3011,8 +2975,6 @@ Abstract strategic level task.
 <EBNFCDECL name='StrategicHtnTaskSubTask'/> = ( <EBNFC name='StrategicHtnTaskIdentifier'/> | <EBNFC name='TacticalHtnTaskIdentifier'/> | <EBNFC name='CompoundHtnTaskIdentifier'/> | <EBNFC name='PrimitiveHtnTaskIdentifier'/> ) ";" .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 strategic task SomeStrategicTask
 {
@@ -3066,8 +3028,6 @@ strategic task SomeStrategicTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 strategic task SomeStrategicTask
 {
@@ -3088,8 +3048,6 @@ strategic task SomeStrategicTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 strategic task SomeStrategicTask
 {
@@ -3100,8 +3058,6 @@ strategic task SomeStrategicTask
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='TacticalHtnTask_chapter'>
 Tactical task
 </h3>
@@ -3111,8 +3067,6 @@ Tactical task
 <p>
 Abstract tactical level task.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='TacticalHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'TacticalHtnTaskDecl'/> .
@@ -3127,8 +3081,6 @@ Abstract tactical level task.
 <EBNFCDECL name='TacticalHtnTaskBackgroundDecl'/> = "background" [ <EBNFC name='TriggerLogicExpr'/> ] <br/> "{" <br/> [ <TEBNFC name='DeclSet' param = 'TacticalHtnTaskSubTask'/> ] <br/> "}" .
 <EBNFCDECL name='TacticalHtnTaskSubTask'/> = ( <EBNFC name='TacticalHtnTaskIdentifier'/> | <EBNFC name='CompoundHtnTaskIdentifier'/> | <EBNFC name='PrimitiveHtnTaskIdentifier'/> ) ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 tactical task SomeTacticalTask
@@ -3176,8 +3128,6 @@ tactical task SomeTacticalTask
     }
 }
 </code>
-
-<complete_me/>
 
 <code data-lng='soc'>
 tactical task SomeTacticalTask
@@ -3199,8 +3149,6 @@ tactical task SomeTacticalTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 tactical task SomeTacticalTask
 {
@@ -3211,8 +3159,6 @@ tactical task SomeTacticalTask
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='CompoundHtnTask_chapter'>
 Compound task
 </h3>
@@ -3220,8 +3166,6 @@ Compound task
 <LinkToContent/>
 
 Abstract low level task.
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='CompoundHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'CompoundHtnTaskDecl'/> .
@@ -3236,8 +3180,6 @@ Abstract low level task.
 <EBNFCDECL name='CompoundHtnTaskBackgroundDecl'/> = "background" [ <EBNFC name='TriggerLogicExpr'/> ] <br/> "{" <br/> [ <TEBNFC name='DeclSet' param = 'CompoundHtnTaskSubTask'/> ] <br/> "}" .
 <EBNFCDECL name='CompoundHtnTaskSubTask'/> = ( <EBNFC name='CompoundHtnTaskIdentifier'/> | <EBNFC name='PrimitiveHtnTaskIdentifier'/> ) ";" .
 </gr>
-
-<complete_me/>
 
 <code data-lng='soc'>
 compound task SomeCompoundTask
@@ -3280,8 +3222,6 @@ compound task SomeCompoundTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 compound task SomeCompoundTask
 {
@@ -3302,8 +3242,6 @@ compound task SomeCompoundTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 compound task SomeCompoundTask
 {
@@ -3314,21 +3252,15 @@ compound task SomeCompoundTask
 }
 </code>
 
-<complete_me/>
-
 <h3 class='center-h' data-href='PrimitiveHtnTask_chapter'>
 Primitive task
 </h3>
 
 <LinkToContent/>
 
-<complete_me/>
-
 <p>
     Primitive tasks represent a single step that can be performed by an NPC.
 </p>
-
-<complete_me/>
 
 <gr>
 <EBNFCDECL name='PrimitiveHtnTaskDeclSet' groups='ClassSourceCodeFileContent;AppSourceCodeFileContent;WorldSourceCodeFileContent;LibSourceCodeFileContent'/> = <TEBNFC name='DeclSet' param = 'PrimitiveHtnTaskDecl'/> .
@@ -3342,8 +3274,6 @@ Primitive task
 <EBNFCDECL name='PrimitiveHtnTaskEffectsAssignmentOpExpr'/> = <EBNFC name='AssignmentOpExpr'/> | <EBNFC name='AdditionAssignmentOpExpr'/> | <EBNFC name='SubtractionAssignmentOpExpr'/> | <EBNFC name='MultiplicationAssignmentOpExpr'/> | <EBNFC name='DivisionAssignmentOpExpr'/> .
 </gr>
 
-<complete_me/>
-
 <code data-lng='soc'>
 primitive task SomePrimitiveTask
 {
@@ -3353,8 +3283,6 @@ primitive task SomePrimitiveTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 primitive task SomePrimitiveTask2
 {
@@ -3362,8 +3290,6 @@ primitive task SomePrimitiveTask2
     operator SomeOperator2();
 }
 </code>
-
-<complete_me/>
 
 <code data-lng='soc'>
 primitive task SomePrimitiveTask
@@ -3373,16 +3299,12 @@ primitive task SomePrimitiveTask
 }
 </code>
 
-<complete_me/>
-
 <code data-lng='soc'>
 primitive task SomePrimitiveTask3
 {
     operator SomeOperator3();
 }
 </code>
-
-<complete_me/>
 
 <h2 class='center-h' data-href='Date_and_time_chapter'>
 Date and time
