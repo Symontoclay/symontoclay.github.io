@@ -12,28 +12,18 @@
 <meta name='description' content='Getting started game development with SymOntoClay'>
 <title>SymOntoClay - Getting started game development with SymOntoClay</title>
 <link rel='icon' href='https://symontoclay.github.io/favicon.png' type='image/png'>
-<link rel='stylesheet' href='https://symontoclay.github.io/assets/bootstrap_4.5.3/bootstrap.min.css'>
-<script src='https://symontoclay.github.io/assets/jquery-3.5.1/jquery-3.5.1.slim.min.js'></script>
-<script src='https://symontoclay.github.io/assets/bootstrap_4.5.3/bootstrap.bundle.min.js'></script>
 <script src='https://symontoclay.github.io/assets/fontawesome_5.15.1/all.js'></script>
 <link rel='stylesheet' href='https://symontoclay.github.io/site.css'>
 </head>
 <body>
-<div class='container main-container'>
-<div class='row justify-content-center'>
-<div class='col col-md-10'>
 <header role='banner'>
 <p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>is game AI experimental open source engine.</span></p>
 </header>
 <nav role='navigation'>
 <a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Development</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/contact_me.html'>Contact me</a></nav>
 <hr style='border-bottom-color: #e2e2e2;'>
-<nav class='bread-crumb-nav'>
+<nav role='navigation'>
 <a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>Getting started game dev</a></nav>
-</div>
-</div>
-<div class='row justify-content-center'>
-<div class='col col-md-10'>
 <div style='background-color: #FFF9F3;'>
 <table>
 <tbody>
@@ -142,7 +132,7 @@ Write SymOntoClay DSL code
 	
 	<li>
 	    Write code:
-		<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id9e460d83_35d9_4df4_90df_e3e7c6f8524d">Copy</button></div><script>$('#id9e460d83_35d9_4df4_90df_e3e7c6f8524d').click(function() {navigator.clipboard.writeText(atob('YXBwIE15TlBDDQp7DQogICAgb24gSW5pdCA9Pg0KICAgIHsNCiAgICAgICAgIkJlZ2luIiA+PiBAPmxvZzsNCiAgICAgICAgIlRoZSBCZWF0bGVzISIgPj4gQD5sb2c7DQogICAgICAgIEBAaG9zdC5gZ29gKHRvOiAjQFsyMCwgLTQ1XSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCAxIiA+PiBAPmxvZzsNCiAgICAgICAgQEBob3N0LmBnb2AodG86ICNAWzEwLCA5MF0pOw0KICAgICAgICAiRW5kIG9mIHN0ZXAgMiIgPj4gQD5sb2c7DQogICAgICAgIEBAaG9zdC5gZ29gKHRvOiAjQFsxMCwgLTIwXSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCAzIiA+PiBAPmxvZzsNCiAgICAgICAgQEBob3N0LmBnb2AodG86ICNAWzEwLCAtMTBdKTsNCiAgICAgICAgIkVuZCBvZiBzdGVwIDQiID4+IEA+bG9nOw0KICAgICAgICBAQGhvc3QuYGdvYCh0bzogI0BbNSwgLTIwXSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCA1IiA+PiBAPmxvZzsNCiAgICAgICAgQEBob3N0LmBnb2AodG86ICNAWzE0LCAyXSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCA2IiA+PiBAPmxvZzsNCiAgICAgICAgQEBob3N0LmBnb2AodG86ICNAWzIwLCAtOTBdKTsNCiAgICAgICAgIkVuZCBvZiBzdGVwIDciID4+IEA+bG9nOw0KICAgICAgICBAQGhvc3QuYGdvYCh0bzogI0BbMjBdKTsNCiAgICAgICAgIkVuZCBvZiBzdGVwIDgiID4+IEA+bG9nOw0KICAgICAgICAiRW5kIiA+PiBAPmxvZzsNCiAgICB9DQp9DQo='));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>app</span> MyNPC</div><div class="code-viewer-line">{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-viewer-keyword'>on</span> Init =></div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Begin" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"The Beatles!" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[20, -45]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 1" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[10, 90]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 2" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[10, -20]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 3" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[10, -10]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 4" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[5, -20]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 5" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[14, 2]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 6" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[20, -90]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 7" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[20]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 8" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div class="code-viewer-line">}</div></div>
+		<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idedfe78db_96bd_457f_9bf7_85c38dbd0708">Copy</button></div><script>$('#idedfe78db_96bd_457f_9bf7_85c38dbd0708').click(function() {navigator.clipboard.writeText(atob('YXBwIE15TlBDDQp7DQogICAgb24gRW50ZXIgPT4NCiAgICB7DQogICAgICAgICJCZWdpbiIgPj4gQD5sb2c7DQogICAgICAgICJUaGUgQmVhdGxlcyEiID4+IEA+bG9nOw0KICAgICAgICBAQGhvc3QuYGdvYCh0bzogI0BbMjAsIC00NV0pOw0KICAgICAgICAiRW5kIG9mIHN0ZXAgMSIgPj4gQD5sb2c7DQogICAgICAgIEBAaG9zdC5gZ29gKHRvOiAjQFsxMCwgOTBdKTsNCiAgICAgICAgIkVuZCBvZiBzdGVwIDIiID4+IEA+bG9nOw0KICAgICAgICBAQGhvc3QuYGdvYCh0bzogI0BbMTAsIC0yMF0pOw0KICAgICAgICAiRW5kIG9mIHN0ZXAgMyIgPj4gQD5sb2c7DQogICAgICAgIEBAaG9zdC5gZ29gKHRvOiAjQFsxMCwgLTEwXSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCA0IiA+PiBAPmxvZzsNCiAgICAgICAgQEBob3N0LmBnb2AodG86ICNAWzUsIC0yMF0pOw0KICAgICAgICAiRW5kIG9mIHN0ZXAgNSIgPj4gQD5sb2c7DQogICAgICAgIEBAaG9zdC5gZ29gKHRvOiAjQFsxNCwgMl0pOw0KICAgICAgICAiRW5kIG9mIHN0ZXAgNiIgPj4gQD5sb2c7DQogICAgICAgIEBAaG9zdC5gZ29gKHRvOiAjQFsyMCwgLTkwXSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCA3IiA+PiBAPmxvZzsNCiAgICAgICAgQEBob3N0LmBnb2AodG86ICNAWzIwXSk7DQogICAgICAgICJFbmQgb2Ygc3RlcCA4IiA+PiBAPmxvZzsNCiAgICAgICAgIkVuZCIgPj4gQD5sb2c7DQogICAgfQ0KfQ0K'));});</script><div class="code-viewer-line"><span class='code-viewer-keyword'>app</span> MyNPC</div><div class="code-viewer-line">{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-viewer-keyword'>on</span> Enter =></div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;{</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Begin" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"The Beatles!" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[20, -45]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 1" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[10, 90]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 2" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[10, -20]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 3" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[10, -10]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 4" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[5, -20]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 5" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[14, 2]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 6" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[20, -90]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 7" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@host.`go`(to: #@[20]);</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End of step 8" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"End" >> @>log;</div><div class="code-viewer-line">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div class="code-viewer-line">}</div></div>
 	</li>
 	
 	<li>
@@ -257,14 +247,9 @@ Try SymOntoClay DSL <a href='https://symontoclay.github.io/docs/lng_examples/ind
 <p>
 &nbsp;
 </p>
-</div>
-</div>
-</div>
 <hr style='border-bottom-color: #e2e2e2;'>
 <br>
 <footer class='container' role='contentinfo'>
-<div class='row justify-content-center'>
-<div class='col col-md-10'>
 <span><a href='https://github.com/Symontoclay'><i class='fab fa-github' title='SymOntoClay on GitHub'></i></a></span>
 <span><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
 <br>
@@ -274,12 +259,10 @@ Try SymOntoClay DSL <a href='https://symontoclay.github.io/docs/lng_examples/ind
 <a href='https://symontoclay.github.io/privacy.html'>Privacy Policy</a>
 <br>
 <br>
-This page was last modified on 24 June 2024<br>
-&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2024<br>
+This page was last modified on 01 November 2025<br>
+&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2025<br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;
-</div>
-</div>
 </footer>
 </body>
 </html>
