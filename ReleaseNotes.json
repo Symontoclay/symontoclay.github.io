@@ -1,5 +1,12 @@
 [
   {
+    "Date": "2025-11-02T00:00:00+02:00",
+    "Version": "0.5.5",
+    "AssetsList": [],
+    "Description": "* HTN (Hierarchical Task Networks)\r\n* Property\r\n* Operators:\r\n  * +=\r\n  * -=\r\n  * *=\r\n  * /-\r\n* Fixing issues\r\n",
+    "IsMarkdown": true
+  },
+  {
     "Date": "2024-06-24T00:00:00+03:00",
     "Version": "0.5.4",
     "AssetsList": [
