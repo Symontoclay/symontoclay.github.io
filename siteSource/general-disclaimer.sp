@@ -1,8 +1,8 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "Some things you need to know",
-  "BreadcrumbTitle": "You need to know",
+  "Title": "General disclaimer",
+  "BreadcrumbTitle": "General disclaimer",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
@@ -10,9 +10,9 @@
   "IsReady": true,
   "ShowDisclaimer": false,
   "Microdata": {
-    "Description": "Some things you need to know about SymOntoClay",
+    "Description": "SymOntoClay: General disclaimer",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": "Some things you need to know"
+    "Title": "General disclaimer"
   }
 }

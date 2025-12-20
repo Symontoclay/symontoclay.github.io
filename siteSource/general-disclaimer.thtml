@@ -1,4 +1,4 @@
-<h1 class='center-h'>Some things you need to know</h1>
+<h1 class='center-h'>General disclaimer</h1>
 
 <ContentsPlace/>
 
@@ -28,7 +28,7 @@ This means that all other parts of the game (animations, visual effects, scene m
 </p>
 
 <p>
-For Unity this means that you have to write one part of the code in C# and the AI ​​code in SymOntoClay.
+For Unity this means that you have to write one part of the code in C# and the AI code in SymOntoClay.
 Create game with two different programming languages is not convenient.
 </p>
 
