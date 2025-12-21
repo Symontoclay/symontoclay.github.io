@@ -47,8 +47,12 @@
 				"label" : "Development"
 			},
 			{
+			    "href" : "/white-paper.html",
+				"label" : "White Paper"
+			},
+			{
 				"href" : "/contact_me.html",
-				"label" : "Contact me"
+				"label" : "About"
 			}
 		]
     }
