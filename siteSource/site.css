@@ -255,3 +255,20 @@ img.centered-img {
     max-width: 40%;
     position: relative;
 }
+
+.santa-letter-y {
+  position: relative;
+  display: inline-block;
+}
+
+.santa-letter-y::after {
+  content: "";
+  position: absolute;
+  width: 0.8em;
+  height: 0.8em;
+  top: -0.1em;
+  left: 0.05em;
+  background: url('santa-hat-min.svg') no-repeat center / contain;
+  transform: rotate(36deg);
+  pointer-events: none;
+}

@@ -12,6 +12,7 @@
 	"LngExamplesCachePath": "%SITE_SOURCE_PATH%/.cache/lng_examples",
 	"LngExamplesPath" : "%SITE_SOURCE_PATH%/docs/lng_examples",
 	"DestLngExamplesPath": "docs/lng_examples",
+	"EnableChristmasMode": true,
 	"LngExamplesPages": [
 	    "%SITE_SOURCE_PATH%/docs/lng_examples/index.thtml"
 	],
