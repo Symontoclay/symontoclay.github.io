@@ -1,30 +1,28 @@
 <p>
-SymOntoClay is an independent DIY scripting language to define game character behavior.
+<b>SymOntoClay</b> is a domain-specific scripting language and AI engine for defining game character behavior. 
+It combines imperative constructs with logic programming, HTN planning, fuzzy logic, and event-driven triggers, offering a maximally declarative and human-readable syntax.
 </p>
 
 <p>
-The main idea of the language to combine imperative dynamically typed C-like language with non-mainstream approaches:
+It adheres to high standards of <b>expressiveness</b>, <b>modularity</b>, and <b>extensibility</b>, drawing inspiration from both programming language theory and AI research. 
+The design principles ensure the following benefits:
 </p>
 
-    <ul>
-	    <li>
-		    logic programming
-		</li>
+<ul>
+	<li>
+		<b>Declarativity</b>: behavior is described at a high level, reducing boilerplate and making scripts more readable.
+	</li>
 		
-		<li>
-		    fuzzy logic
-		</li>
+	<li>
+		<b>Expressiveness</b>: complex reasoning, planning, and reactive mechanisms can be captured concisely.
+	</li>
 		
-		<li>
-		    multiple fuzzy inheritance
-		</li>
-		
-		<li>
-		    and other interesting approaches.
-		</li>
-	</ul>
+	<li>
+		<b>Extensibility</b>: modular architecture allows adding new logic operators, triggers, or planning strategies without breaking existing code.
+    </li>
+</ul>
 
 <p>
-Also SymOntoClay is a game AI engine which executes SymOntoClay language scripts in game.
-It is implemented as open source components for Unity.
+SymOntoClay integrates with Unity as open-source components.
+It provides support for Hierarchical Task Networks (HTN) and knowledge‑based reasoning, enabling developers to create NPCs with predictable, consistent, and intelligent behavior.
 </p>
