@@ -17,7 +17,7 @@
 </head>
 <body>
 <header role='banner'>
-<p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoClay</span>&nbsp;<span>is game AI experimental open source engine.</span></p>
+<p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoCla<span class='santa-letter-y'>y</span></span>&nbsp;<span> is an Independent DIY Game AI DSL.</span></p>
 </header>
 <nav role='navigation'>
 <a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Development</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/contact_me.html'>Contact me</a></nav>
@@ -35,8 +35,8 @@
 <img src='https://symontoclay.github.io/icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'>
 </td>
 <td>
-<b>Purely experimental and very unstable project developed by only one person</b><br>
-Please read the <a href='https://symontoclay.github.io/you-need-to-know.html'>page</a> before starting
+<b>Disclaimer: This is a purely experimental and unstable personal project, created by a single developer. Not intended for production use.</b><br>
+Please read the <a href='https://symontoclay.github.io/general-disclaimer.html'>disclaimers</a> carefully before use!
 </td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ Next parameters are passed from SymOntoClay DSL using <a href='https://symontocl
 Attribute <a href='https://symontoclay.github.io/docs/engine_api/C1CF31FDB74FFC5E643A421BC816D9CA.html'>EndpointParamAttribute</a> allows to set different name of the parameter ("To") and advice for <a href='https://symontoclay.github.io/docs/host_methods.html#TypeConversion'>Type сonversion</a>.
 </p>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idaa17a801_f64f_4d6a_aa69_ef177c8536e7">Copy</button></div><script>$('#idaa17a801_f64f_4d6a_aa69_ef177c8536e7').click(function() {navigator.clipboard.writeText(atob('W0JpcGVkRW5kcG9pbnQoIkdvIiwgRGV2aWNlT2ZCaXBlZC5SaWdodExlZywgRGV2aWNlT2ZCaXBlZC5MZWZ0TGVnKV0NCnB1YmxpYyB2b2lkIEdvVG9JbXBsKENhbmNlbGxhdGlvblRva2VuIGNhbmNlbGxhdGlvblRva2VuLA0KW0VuZHBvaW50UGFyYW0oIlRvIiwgS2luZE9mRW5kcG9pbnRQYXJhbS5Qb3NpdGlvbildIFZlY3RvcjMgcG9pbnQsDQpmbG9hdCBzcGVlZCA9IDEyKQ0Kew0KfQ0K'));});</script><div class="code-viewer-line">[BipedEndpoint("Go", DeviceOfBiped.RightLeg, DeviceOfBiped.LeftLeg)]</div><div class="code-viewer-line"><span class='code-viewer-keyword'>public</span> <span class='code-viewer-keyword'>void</span> GoToImpl(CancellationToken cancellationToken,</div><div class="code-viewer-line">[EndpointParam("To", KindOfEndpointParam.Position)] Vector3 point,</div><div class="code-viewer-line"><span class='code-viewer-keyword'>float</span> speed = 12)</div><div class="code-viewer-line">{</div><div class="code-viewer-line">}</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="id6f5bee46_a660_447c_b137_91a359f4268f">Copy</button></div><script>$('#id6f5bee46_a660_447c_b137_91a359f4268f').click(function() {navigator.clipboard.writeText(atob('W0JpcGVkRW5kcG9pbnQoIkdvIiwgRGV2aWNlT2ZCaXBlZC5SaWdodExlZywgRGV2aWNlT2ZCaXBlZC5MZWZ0TGVnKV0NCnB1YmxpYyB2b2lkIEdvVG9JbXBsKENhbmNlbGxhdGlvblRva2VuIGNhbmNlbGxhdGlvblRva2VuLA0KW0VuZHBvaW50UGFyYW0oIlRvIiwgS2luZE9mRW5kcG9pbnRQYXJhbS5Qb3NpdGlvbildIFZlY3RvcjMgcG9pbnQsDQpmbG9hdCBzcGVlZCA9IDEyKQ0Kew0KfQ0K'));});</script><div class="code-viewer-line">[BipedEndpoint("Go", DeviceOfBiped.RightLeg, DeviceOfBiped.LeftLeg)]</div><div class="code-viewer-line"><span class='code-viewer-keyword'>public</span> <span class='code-viewer-keyword'>void</span> GoToImpl(CancellationToken cancellationToken,</div><div class="code-viewer-line">[EndpointParam("To", KindOfEndpointParam.Position)] Vector3 point,</div><div class="code-viewer-line"><span class='code-viewer-keyword'>float</span> speed = 12)</div><div class="code-viewer-line">{</div><div class="code-viewer-line">}</div></div>
 
 <h2 class='center-h' data-href='GeneralizedHostMethodDeclaration' is-processed="true">
 Generalized host method declaration
@@ -173,7 +173,7 @@ Generalized host method must have parameters:
   </dd> 
 </dl>
 
-<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="ide54b2e47_702b_4795_ac5a_272f51f067af">Copy</button></div><script>$('#ide54b2e47_702b_4795_ac5a_272f51f067af').click(function() {navigator.clipboard.writeText(atob('W0JpcGVkRW5kcG9pbnQoIioiKV0NCnB1YmxpYyB2b2lkIEdlbmVyaWNDYWxsKENhbmNlbGxhdGlvblRva2VuIGNhbmNlbGxhdGlvblRva2VuLCBzdHJpbmcgbWV0aG9kTmFtZSwgYm9vbCBpc05hbWVkUGFyYW1ldGVycywNCkRpY3Rpb25hcnkmbHQ7c3RyaW5nLCBvYmplY3QmZ3Q7IG5hbWVkUGFyYW1ldGVycywgTGlzdCZsdDtvYmplY3QmZ3Q7IHBvc2l0aW9uZWRQYXJhbWV0ZXJzKQ0Kew0KfQ0K'));});</script><div class="code-viewer-line">[BipedEndpoint("*")]</div><div class="code-viewer-line"><span class='code-viewer-keyword'>public</span> <span class='code-viewer-keyword'>void</span> GenericCall(CancellationToken cancellationToken, <span class='code-viewer-keyword'>string</span> methodName, <span class='code-viewer-keyword'>bool</span> isNamedParameters,</div><div class="code-viewer-line">Dictionary&lt;<span class='code-viewer-keyword'>string</span>, <span class='code-viewer-keyword'>object</span>&gt; namedParameters, List&lt;<span class='code-viewer-keyword'>object</span>&gt; positionedParameters)</div><div class="code-viewer-line">{</div><div class="code-viewer-line">}</div></div>
+<div class="code-viewer"><div><button class="btn btn-outline-info code-viewer-btn" title="Copy to clipboard" id="idd219551a_ad92_4be6_ae92_506f70b0e764">Copy</button></div><script>$('#idd219551a_ad92_4be6_ae92_506f70b0e764').click(function() {navigator.clipboard.writeText(atob('W0JpcGVkRW5kcG9pbnQoIioiKV0NCnB1YmxpYyB2b2lkIEdlbmVyaWNDYWxsKENhbmNlbGxhdGlvblRva2VuIGNhbmNlbGxhdGlvblRva2VuLCBzdHJpbmcgbWV0aG9kTmFtZSwgYm9vbCBpc05hbWVkUGFyYW1ldGVycywNCkRpY3Rpb25hcnkmbHQ7c3RyaW5nLCBvYmplY3QmZ3Q7IG5hbWVkUGFyYW1ldGVycywgTGlzdCZsdDtvYmplY3QmZ3Q7IHBvc2l0aW9uZWRQYXJhbWV0ZXJzKQ0Kew0KfQ0K'));});</script><div class="code-viewer-line">[BipedEndpoint("*")]</div><div class="code-viewer-line"><span class='code-viewer-keyword'>public</span> <span class='code-viewer-keyword'>void</span> GenericCall(CancellationToken cancellationToken, <span class='code-viewer-keyword'>string</span> methodName, <span class='code-viewer-keyword'>bool</span> isNamedParameters,</div><div class="code-viewer-line">Dictionary&lt;<span class='code-viewer-keyword'>string</span>, <span class='code-viewer-keyword'>object</span>&gt; namedParameters, List&lt;<span class='code-viewer-keyword'>object</span>&gt; positionedParameters)</div><div class="code-viewer-line">{</div><div class="code-viewer-line">}</div></div>
 
 <h2 class='center-h' data-href='Devices' is-processed="true">
 Devices
@@ -218,16 +218,16 @@ In future It will be described in details.
 <hr style='border-bottom-color: #e2e2e2;'>
 <br>
 <footer class='container' role='contentinfo'>
+<br>
 <span><a href='https://github.com/Symontoclay'><i class='fab fa-github' title='SymOntoClay on GitHub'></i></a></span>
-<span><a href='https://github.com/Symontoclay/SymOntoClay/discussions'><i class='far fa-comments' title='Discussions'></i></a></span>
 <br>
 <br>
-<a href='https://symontoclay.github.io/you-need-to-know.html'>You need to know</a>
+<a href='https://symontoclay.github.io/general-disclaimer.html'>Disclaimers</a>
 <br>
 <a href='https://symontoclay.github.io/privacy.html'>Privacy Policy</a>
 <br>
 <br>
-This page was last modified on 02 November 2025<br>
+This page was last modified on 21 December 2025<br>
 &copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2025<br>
 The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
 <br>&nbsp;

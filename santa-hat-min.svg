@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+  <title>Santa Hat Minimal</title>
+  
+  <!-- red top -->
+  <path d="M10 38c6-8 16-18 26-22 6-2 12-1 16 2 3 3 3 7-2 9-3 1-6 2-9 4l5 6c-9-2-19-1-25 1-5 2-9 3-11 0-2-3 0-6 0-6z"
+        fill="#e53935" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- white brim -->
+  <rect x="6" y="40" rx="6" ry="6" width="44" height="12"
+        fill="#ffffff" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- white pompom -->
+  <circle cx="56" cy="30" r="6"
+          fill="#ffffff" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
