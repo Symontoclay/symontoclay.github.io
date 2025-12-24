@@ -4,7 +4,7 @@ It combines imperative constructs with logic programming, HTN planning, fuzzy lo
 </p>
 
 <p>
-It adheres to high standards of <b>expressiveness</b>, <b>modularity</b>, and <b>extensibility</b>, drawing inspiration from both programming language theory and AI research. 
+It adheres to high standards of <b>expressiveness</b>, drawing inspiration from both programming language theory and AI research. 
 The design principles ensure the following benefits:
 </p>
 
@@ -14,15 +14,22 @@ The design principles ensure the following benefits:
 	</li>
 		
 	<li>
-		<b>Expressiveness</b>: complex reasoning, planning, and reactive mechanisms can be captured concisely.
+	    <b>Readability</b>: syntax that remains clear and approachable.
 	</li>
 		
 	<li>
-		<b>Extensibility</b>: modular architecture allows adding new triggers, or planning strategies without breaking existing code.
-    </li>
+		<b>Expressiveness</b>: complex reasoning, planning, and reactive mechanisms can be captured concisely.
+	</li>
 </ul>
 
 <p>
 SymOntoClay integrates with Unity as open-source components.
 It provides support for Hierarchical Task Networks (HTN) and knowledge-based reasoning, enabling developers to create NPCs with predictable, consistent, and intelligent behavior.
+</p>
+
+<p>
+SymOntoClay is completely free, released under the MIT License.  
+I only ask for your recognition, nothing else.  
+If you find it useful and would like to support the project, I would be very grateful.  
+Your support inspires me and helps me dedicate more time to developing SymOntoClay.
 </p>
