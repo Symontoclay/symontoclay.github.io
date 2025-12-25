@@ -2,7 +2,7 @@
   "Extension": "html",
   "ContentPath": "",
   "Title": "Language Specification",
-  "BreadcrumbTitle": "Language Specification",
+  "BreadcrumbTitle": "Specification",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": true,

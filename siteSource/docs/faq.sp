@@ -1,8 +1,8 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "Principles and Project Philosophy",
-  "BreadcrumbTitle": "Philosophy",
+  "Title": "FAQ",
+  "BreadcrumbTitle": "FAQ",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
@@ -11,9 +11,9 @@
   "IsReady": true,
   "ShowDisclaimer": null,
   "Microdata": {
-    "Description": "SymOntoClay's Principles and Project Philosophy",
+    "Description": "SymOntoClay's FAQ",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": "Principles and Project Philosophy"
+    "Title": "FAQ"
   }
 }
