@@ -1,17 +1,17 @@
 {
   "Extension": "html",
   "ContentPath": "",
-  "Title": "Contact me",
-  "BreadcrumbTitle": "Contact me",
+  "Title": "About",
+  "BreadcrumbTitle": "About",
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
   "UseMarkdown": false,
   "IsReady": true,
   "Microdata": {
-    "Description": "Contact me about SymOntoClay",
+    "Description": "About SymOntoClay",
     "ImageUrl": "",
     "ImageAlt": "",
-    "Title": "Contact me"
+    "Title": "About"
   }
 }
