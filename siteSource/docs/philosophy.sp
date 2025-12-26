@@ -6,7 +6,7 @@
   "IsBreadcrumbRoot": false,
   "AdditionalMenu": null,
   "EnableMathML": false,
-  "UseMarkdown": false,
+  "UseMarkdown": true,
   "AddPdfVersion": false,
   "IsReady": true,
   "ShowDisclaimer": null,
