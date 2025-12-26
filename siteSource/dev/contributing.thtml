@@ -1,63 +1,50 @@
 <h1 class='center-h'>Contributing</h1>
 
-<p>
-Help is always welcome and there are plenty of options how you can contribute to SymOntoClay.
-</p>
+<p>Help is always welcome — there are many ways you can contribute to <strong>SymOntoClay</strong>.</p>
 
-<p>
-In particular, your contribution would be helpful in the following areas:
-    <ul>
-	    <li>
-		    Trying to use SymOntoClay.
-		</li>
-		<li>
-		    Reporting <a href='https://github.com/Symontoclay/SymOntoClay/issues'>issues</a>.
-		</li>
-		<li>
-		    Fixing and responding to <a href='https://github.com/Symontoclay/SymOntoClay/issues'>SymOntoClay’s GitHub issues</a>.
-		</li>
-		<li>
-		    Improving the documentation, especially fixing grammar issues. 
-			I am not a native English speaker, so there are a lot of grammar mistakes in SymOntoClay's documentation.
-		</li>
-		<li>
-		    Getting involved in the language design process by proposing language changes or new features in <a href='https://github.com/Symontoclay/SymOntoClay/discussions'>the SymOntoClay’s forum</a> and providing feedback.
-		</li>
-		<li>
-		    Getting involved in improving the design process: all ideas are welcome.
-		</li>
-		<li>
-		    Getting involved in creating new features. There are also many sub-areas in the big area:
-			
-			<ul>
-			    <li>
-				    Implementing new language features
-				</li>
-			    <li>
-				    Implementing new engine features
-				</li>
-			    <li>
-				    Improving performance
-				</li>
-			    <li>
-				    Improving integration with Unity
-				</li>
-			    <li>
-				    Creating extensions for code editors.
-					First of all SymOntoClay needs extensions for Visual Studio and Visual Studio Code.
-				</li>	
-			    <li>
-				    Improving DevOps
-				</li>
-			    <li>
-				    Redesign the SymOntoClay’s site.
-				</li>
-			</ul>
-		</li>		
-	</ul>
-</p>
+<h3>Using and testing</h3>
+  
+  <ul>
+    <li><strong>Try the language:</strong> Use SymOntoClay in your projects.</li>
+    <li><strong><a href='https://github.com/Symontoclay/SymOntoClay/issues'>Report issues</a>:</strong> Share bugs and unexpected behavior.</li>
+  </ul>
 
-<p>
-Please note that this project is released with a <a href='https://github.com/Symontoclay/SymOntoClay/blob/master/CODE_OF_CONDUCT.md'>Contributor Code of Conduct</a>. 
-By participating in this project - in the <a href='https://github.com/Symontoclay/SymOntoClay/issues'>issues</a>, <a href='https://github.com/Symontoclay/SymOntoClay/pulls'>pull requests</a>, or <a href='https://github.com/Symontoclay/SymOntoClay/discussions'>Discussion</a> - you agree to abide by its terms.
-</p>
+  <h3>Issues and fixes</h3>
+  <ul>
+    <li><strong><a href='https://github.com/Symontoclay/SymOntoClay/issues'>Triage GitHub issues</a>:</strong> Reproduce, label, and prioritize.</li>
+    <li><strong><a href='https://github.com/Symontoclay/SymOntoClay/pulls'>Submit pull requests</a>:</strong> Provide fixes and improvements.</li>
+  </ul>
+
+  <h3>Documentation</h3>
+  <ul>
+    <li><strong>Improve clarity:</strong> Refine structure and examples.</li>
+    <li><strong>Fix grammar:</strong> English edits are especially appreciated.</li>
+  </ul>
+
+  <h3>Language and design</h3>
+  <ul>
+    <li><strong>Propose changes:</strong> Language features and design ideas.</li>
+    <li><strong><a href='https://discord.gg/UkC5r3ZDTN'>Discuss on Discord</a>:</strong> Join the community for feedback and iteration.</li>
+    <li><strong>Improve process:</strong> Share ideas for better design workflows.</li>
+  </ul>
+
+  <h3>Features and development</h3>
+  <ul>
+    <li><strong>Language features:</strong> Implement new syntax and semantics.</li>
+    <li><strong>Engine capabilities:</strong> Extend runtime behavior.</li>
+    <li><strong>Performance:</strong> Optimize execution and memory.</li>
+    <li><strong>Unity integration:</strong> Improve tooling and pipelines.</li>
+    <li><strong>Editor extensions:</strong> Build plugins for Visual Studio and VS Code.</li>
+    <li><strong>DevOps:</strong> Enhance CI/CD, testing, and releases.</li>
+    <li><strong>Website:</strong> Redesign the SymOntoClay site.</li>
+  </ul>
+
+  <p><strong>Contributor Code of Conduct:</strong> By participating in this project — through <a href='https://github.com/Symontoclay/SymOntoClay/issues'>issues</a>, <a href='https://github.com/Symontoclay/SymOntoClay/pulls'>pull requests</a>, or our <a href='https://discord.gg/UkC5r3ZDTN'>Discord community</a> — you agree to abide by the <a href='https://github.com/Symontoclay/SymOntoClay/blob/master/CODE_OF_CONDUCT.md'>Contributor Code of Conduct</a>.</p>
+
+<h3>Resources</h3>
+  <ul>
+    <li><a href="https://github.com/Symontoclay/SymOntoClay/issues">GitHub Issues</a></li>
+    <li><a href="https://github.com/Symontoclay/SymOntoClay/pulls">Pull Requests</a></li>
+    <li><a href="https://github.com/Symontoclay/SymOntoClay/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a></li>
+    <li><a href="https://discord.gg/UkC5r3ZDTN">Discord Community</a></li>
+  </ul>
