@@ -1,40 +1,43 @@
-<h1 class='center-h'>Development</h1>
-
-<!--
-<h3>
-<a href='/dev/whitepaper.html'>White paper</a>
-</h3>
-
-<complete_me/>
--->
+<h1 class="center-h">Development</h1>
 
 <h3>
-<a href='/dev/source_code.html'>Source Code</a>
+  <a href="/white-paper.html">White Paper</a>
 </h3>
-
 <p>
-<a href='/dev/source_code.html'>Here</a> is information about SymOntoClay's source code and Its projects's meaning.
+  Read the <a href="/white-paper.html">White Paper</a> to understand the vision and foundations of SymOntoClay.
 </p>
 
 <h3>
-<a href='/dev/contributing.html'>Contributing</a>
+  <a href="/docs/philosophy.html">Principles and Project Philosophy</a>
 </h3>
-
 <p>
-    Contributions are always welcome!
-	<a href='/dev/contributing.html'>Here</a> is information about how could you help in SymOntoClay's development.
+  Explore the <a href="/docs/philosophy.html">Principles and Project Philosophy</a> behind SymOntoClay — its principles and conceptual meaning.
 </p>
 
-<h3 class='center-h'>
-Roadmap
+<h3>
+  <a href="/dev/source_code.html">Source Code</a>
 </h3>
-
-<roadmap/>
-
 <p>
-Is SymOntoClay developed too slow?
+  Learn more about SymOntoClay's <a href="/dev/source_code.html">source code</a> and the meaning of its projects.
+</p>
+
+<h3>
+  <a href="/dev/contributing.html">Contributing</a>
+</h3>
+<p>
+  Contributions are always welcome!  
+  Discover how you can <a href="/dev/contributing.html">support SymOntoClay's development</a>.
+</p>
+
+<h3 class="center-h">Roadmap</h3>
+
+<p>SymOntoClay is evolving step by step.
+See the <a href="/roadmap.html">full roadmap</a> for details.
 </p>
 
 <p>
-<a href='/dev/contributing.html'>You can make developing more faster.</a>
+  Do you feel SymOntoClay is progressing too slowly?
+</p>
+<p>
+  <a href="/dev/contributing.html">Help accelerate development</a> by joining the community.
 </p>
