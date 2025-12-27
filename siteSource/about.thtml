@@ -1,33 +1,36 @@
 <h1 class='center-h'>About</h1>
 
-<complete_me/>
+<h3 class='center-h'>
+Mission
+</h3>
 
 <p>
-Now SymOntoClay is my experimental pet-project.
-But I will be happy if SymOntoClay becomes really useful Open source project.
-So feel free to contact me about SymOntoClay.
+Introduce symbolic logic programming into game development.  
+Establish it as a tool for clear specification of game logic.
 </p>
+
+<h3 class='center-h'>
+Principles and Project Philosophy
+</h3>
 
 <p>
-<b>SymOntoClay</b>:
+  SymOntoClay is built on a philosophy of declarativity, clarity, and human-readability.  
+  Learn more in the <a href="/docs/philosophy.html">Principles and Project Philosophy</a> section.
 </p>
 
-<p style='font-size: 28px;'>
-<a href='https://github.com/Symontoclay'><ico t = 'git'/><a/>
-<!-- <a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'><ico t='YouTube'/></a> -->
-<a href='https://github.com/Symontoclay/SymOntoClay/discussions'><ico t='Discussions'/></a>
-</p>
-
-<p>
-<b>My personal</b>:
-</p>
-
-<p style='font-size: 28px;'>
-<a href='https://github.com/metatypeman'><ico t = 'git'/><a/>
-<a href='https://www.facebook.com/metatypeman'><ico t = 'f'/><a/>
-<a href='https://www.linkedin.com/in/metatypeman/'><ico t = 'in'/><a/>
-</p>
+<h3 class='center-h'>
+Community
+</h3>
 
 <p>
-<b>Sergiy Tolkachov</b>
+For communication and participation, use:
 </p>
+
+<ul>
+    <li>
+	    <strong><a href='https://discord.gg/UkC5r3ZDTN'>Discord</a>:</strong> discussions and idea exchange.
+	</li>
+    <li>
+	    <strong><a href='https://github.com/Symontoclay/SymOntoClay/issues'>GitHub Issues</a>:</strong> primary support channel, bugs and proposals.
+	</li>
+</ul>
