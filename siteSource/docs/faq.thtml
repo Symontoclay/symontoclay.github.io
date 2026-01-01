@@ -2,4 +2,116 @@
 
 <ContentsPlace/>
 
-<complete_me/>
+<h2 class='center-h' data-href='general-questions'>
+    General Questions
+</h2>
+
+<h3 data-href='f-f-ai-q'>
+    Is this a fully-fledged artificial intelligence?
+</h3>
+
+<p>
+No. SymOntoClay is a scripting language for game characters.
+It provides tools for describing behavior, but it is not an artificial intelligence in itself — just as Python or any other programming language is not.
+</p>
+
+<h3 data-href='f-p-q'>
+    Is the project free? Are there any limitations?
+</h3>
+
+<p>
+The project is completely free and distributed under the MIT license.  
+There are no artificial restrictions on usage or modification.
+</p>
+
+<h3 data-href='p-m-p-q'>
+    Is project monetization planned?
+</h3>
+
+<p>
+No. The project does not assume commercialization and will not include intrusive monetization methods.  
+In the future, only voluntary donations typical of open-source initiatives may be possible.  
+</p>
+
+<h3 data-href='f-p-u-q'>
+    How frequently is the project updated?
+</h3>
+
+<p>
+The project is updated infrequently and irregularly — on average no more than four times per year.  
+This is natural for an experimental DIY project developed by a single developer in their spare time.
+</p>
+
+<h2 class='center-h' data-href='practical-usage'>
+    Practical Usage
+</h2>
+
+<h3 data-href='prod-using-q'>
+   Can the project be used in a production environment?
+</h3>
+
+<p>
+No. The project is not yet fully developed: even a small playable demo version has not been created.  
+Therefore, at the current stage of development, it is strongly discouraged to plan its use in a production environment.  
+</p>
+
+<h3 data-href='w-d-g-s-i-q'>
+    Where can documentation and getting-started instructions be found?
+</h3>
+
+<p>
+Documentation is available at the following addresses:
+</p>
+
+<ul>
+    <li><a href='/docs/index.html'>Main section</a></li>
+	
+	<li><a href='/docs/getting-started-cli.html'>Getting started with CLI</a></li>
+	
+	<li><a href='/docs/getting-started-unity.html'>Getting started with Unity</a></li>
+</ul>
+
+<h3 data-href='s-a-q'>
+    Is support available?
+</h3>
+
+<p>
+This project is developed by a single developer in his spare time.  
+I try to fix bugs whenever I have the opportunity.  
+
+If you need a quick fix — the code is open.  
+I will gladly accept a pull request with a correction.  
+
+In this way, we will improve the project together.  
+</p>
+
+<h3 data-href='c-l-q'>
+    Does the project have a community, and how large is it?
+</h3>
+
+<p>
+At present, the project does not have a community — it involves only me.  
+I am just beginning the process of forming one.  
+You can join and become part of the community on the <a href='https://discord.gg/UkC5r3ZDTN'>project's Discord server</a>.  
+</p>
+
+<h2 data-href='additional-clarifications'>
+    Additional Clarifications
+</h2>
+
+<h3 data-href='w-a-llm-q'>
+    Is the project merely a wrapper around some LLM?
+</h3>
+
+<p>
+No. The project is based on its own virtual machine and a symbolic logical inference module.  
+It is an independent development, not a wrapper around an existing LLM.
+</p>
+
+<h3 data-href='fork-q'>
+    From which project is SymOntoClay forked?
+</h3>
+
+<p>
+SymOntoClay is being developed from scratch and is not a fork of any existing project.
+</p>
