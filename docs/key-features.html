@@ -20,7 +20,7 @@
 <p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoCla<span class='santa-letter-y'>y</span></span>&nbsp;<span> is an Independent DIY Game AI DSL.</span></p>
 </header>
 <nav role='navigation'>
-<a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Development</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/contact_me.html'>Contact me</a></nav>
+<a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Development</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/white-paper.html'>White Paper</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/about.html'>About</a></nav>
 <hr style='border-bottom-color: #e2e2e2;'>
 <nav role='navigation'>
 <a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>Key features</a></nav>
@@ -51,28 +51,36 @@ Please read the <a href='https://symontoclay.github.io/general-disclaimer.html'>
         <b orig="gist">Simple, clear and clean code</b>
 		
 		<p>
-		    My main goal: to enable game developers to write simple, clear and clean code in the shortest possible time and with minimum effort.
+		    The primary goal is to enable game developers to write simple, clear, and clean code as quickly as possible and with minimal effort.  
+            SymOntoClay reduces boilerplate code through the use of a domain-specific language. 
 		</p>
+    </li>
+
+    <li>
+        <b orig="gist">NPC isolation</b>
 		
 		<p>
-		    SymOntoClay reduces boilerplate code using domain-specific language.
-		</p>
+		    Each NPC is isolated from others. Interaction between NPCs is carried out exclusively by simulating human sensory mechanisms.  
+            This eliminates AI cheating without requiring any additional effort from the developer.
+		</p>		
+    </li>
+
+    <li>
+        <b orig="gist">HTN (Hierarchical Task Networks)</b>
+		
+		<p>
+            NPCs plan their actions through a hierarchy of tasks. Goals are decomposed into subtasks, forming a behavior tree.  
+            This planning approach makes characters more realistic and adaptive.		    
+		</p>		
     </li>
 
     <li>
         <b orig="gist">Fuzzy logic</b>
 		
 		<p>
-		    Fuzzy logic makes code closer to natural language.
-		</p>		
-		
-		<p>
-		    Specific numbers are replaced with more convenient human concepts: &quot;near&quot;, &quot;far&quot;, &quot;a lot&quot;, &quot;little&quot;, &quot;almost&quot;, &quot;maybe&quot;, &quot;cold&quot;, &quot;warm&quot;, &quot;hot&quot; and the like.
-		</p>		
-		
-		<p>
-		    It also greatly simplifies the code.
-			A complex condition can easily be replaced with a more elegant looking fuzzy value.
+		    Fuzzy logic brings code closer to natural language.  
+            Numeric values are replaced with more intuitive human concepts such as: &quot;near&quot;, &quot;far&quot;, &quot;many&quot;, &quot;few&quot;, &quot;almost&quot;, &quot;maybe&quot;, &quot;cold&quot;, &quot;warm&quot;, &quot;hot&quot;, and similar terms.  
+            This greatly simplifies the code: a complex condition can be replaced with a more elegant fuzzy value.
 		</p>		
     </li>
 	
@@ -80,47 +88,38 @@ Please read the <a href='https://symontoclay.github.io/general-disclaimer.html'>
         <b orig="gist">Logical database</b>
 		
 		<p>
-		    Allows to use a powerful logic programming paradigm in game development:
+		    Provides the ability to use a powerful logic programming paradigm in game development:
 			<ul>
 			    <li>
-				    <b>Declarative knowledge representation.</b> 
-					Knowledge is presented as <a href='https://symontoclay.github.io/docs/spec.html#Fact_chapter'>facts</a>.
-					This allows to focus on describing a world, game objects and relationships between them.
+				    <b>Declarative knowledge representation</b>: facts describe the world, game objects, and their relationships.					
 				</li>
 			    <li>
-				    <b>Inference using rules.</b>
-                    New knowledge can be obtained using existing knowledge and logical rules.
+				    <b>Rule-based inference</b>: new knowledge is derived from existing facts and logical rules.                  
 				</li>
 			</ul>
 			<br>
 				
 				
 		<p>
-		    SymOntoClay provides additional possibilities in logic programming:
+		    Additionally, SymOntoClay supports:
 			<ul>
 			    <li>
-				    <b>Using inheritance in logical inference</b>.
-                    Rules for more general (basic) concepts can be used for a concrete concept.
+				    Inheritance in logical inference.        
 				</li>
 			    <li>
-				    <b>Fuzzy logic</b>.
-                    Simplifies code and makes it closer to natural language.
+				    Fuzzy logic to simplify conditions.
 				</li>
 			</ul>
 			<br>
-		
-		
-        <p>
-            These features allow to write simple, clear and clean code quickly and with minimal effort.
-        </p>		
+				
     </li>
 
     <li>
         <b orig="gist">Triggers</b>
 		
 		<p>
-		    A trigger activates the execution of a code upon the occurrence of an event described by some condition.
-			It uses all the power of logic programming in SymOntoClay.
+		    Triggers activate code execution when an event described by a condition occurs.  
+            They leverage the full power of logic programming in SymOntoClay.
 		</p>		
     </li>
 
@@ -128,39 +127,13 @@ Please read the <a href='https://symontoclay.github.io/general-disclaimer.html'>
         <b orig="gist">Multiple fuzzy inheritance</b>
 		
 		<p>
-		    In real life, an object, an entity, a concept can have many basic concepts.
-			For example, a person can have many social roles.
-			It is convenient to consider belonging to a social role by the inheritance relation &quot;is a&quot;
-		</p>
-		
-		<p>
-		    Since we are talking about a person's borrowing of a certain behavior from a social role, multiple inheritance of classes should be preferred over inheritance of interfaces.
-		</p>
-		
-		<p>
-		    The degree of expression of these social roles in this person may be different, so It is conveniently expressed as the rank of inheritance.
-			It allows to choose a more preferable action, taking into account the involvement in the social role.
-		</p>
-
-		<p>
-		    SymOntoClay supports this on syntax level.
-			Just define a relationship between concepts!
+            In real life, an object or a person can belong to multiple base concepts (for example, social roles).  
+            SymOntoClay supports multiple inheritance with ranks: the degree of role expression is defined numerically, allowing the system to select the most appropriate action based on role involvement.  
+            This is implemented at the syntax level—simply define the relationship between concepts.		    
 		</p>		
     </li>
-
-    <li>
-        <b orig="gist">NPC isolation</b>
-		
-		<p>
-		    Each NPC is isolated from other NPCs.
-			The interaction between them is carried out exclusively by simulating the work of the human senses.
-		</p>		
-		
-		<p>
-		    This eliminates AI cheating without any additional effort of a developer.
-		</p>		
-    </li>	
 </ul>
+
 
 </article>
 <p>
@@ -169,19 +142,28 @@ Please read the <a href='https://symontoclay.github.io/general-disclaimer.html'>
 <hr style='border-bottom-color: #e2e2e2;'>
 <br>
 <footer class='container' role='contentinfo'>
-<br>
-<span><a href='https://github.com/Symontoclay'><i class='fab fa-github' title='SymOntoClay on GitHub'></i></a></span>
-<br>
-<br>
+<p>
+<a href='https://github.com/Symontoclay'>GitHub</a>
+ | 
+<a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'>YouTube</a>
+ | 
+<a href='https://discord.gg/UkC5r3ZDTN'>Discord</a>
+</p>
+<p>
 <a href='https://symontoclay.github.io/general-disclaimer.html'>Disclaimers</a>
-<br>
+ • 
 <a href='https://symontoclay.github.io/privacy.html'>Privacy Policy</a>
-<br>
-<br>
-This page was last modified on 21 December 2025<br>
-&copy;&nbsp; <a href='https://github.com/metatypeman'>Sergiy Tolkachov</a> 2020 - 2025<br>
-The text is available under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License By Sa</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
-<br>&nbsp;
+</p>
+<p>
+Last modified: 01 January 2026<br>
+</p>
+<p>
+&copy;&nbsp;<a href='https://github.com/Symontoclay'>SymOntoClay</a>, 2020 - 2026. 
+<a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+</p>
+<p>
+&nbsp;
+</p>
 </footer>
 </body>
 </html>

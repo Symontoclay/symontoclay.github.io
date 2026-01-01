@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml' prefix='og: https://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta name='generator' content='SymOntoClay/InternalCLI:SiteBuilder'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta property='og:type' content='article'>
+<meta property='og:title' content='Principles and Project Philosophy'>
+<meta property='og:image' content='https://symontoclay.github.io/preview_img.jfif'>
+<link rel='image_src' href='https://symontoclay.github.io/preview_img.jfif'>
+<meta property='og:url' content='https://symontoclay.github.io/docs/philosophy.html'>
+<meta name='description' content='SymOntoClay' s="" principles="" and="" project="" philosophy'/="">
+<title>SymOntoClay - Principles and Project Philosophy</title>
+<link rel='icon' href='https://symontoclay.github.io/favicon.png' type='image/png'>
+<script src='https://symontoclay.github.io/assets/fontawesome_5.15.1/all.js'></script>
+<link rel='stylesheet' href='https://symontoclay.github.io/site.css'>
+</head>
+<body>
+<header role='banner'>
+<p><a href='https://symontoclay.github.io/'><img src='https://symontoclay.github.io/favicon.png' style='margin-top: -12px;'></a>&nbsp;<span style='font-size: 30px; font-weight: bold;'>SymOntoCla<span class='santa-letter-y'>y</span></span>&nbsp;<span> is an Independent DIY Game AI DSL.</span></p>
+</header>
+<nav role='navigation'>
+<a href='https://symontoclay.github.io/index.html'>Main</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/downloads/index.html'>Downloads</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/docs/index.html'>Documentation</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/dev/index.html'>Development</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/white-paper.html'>White Paper</a>&nbsp;|&nbsp;<a href='https://symontoclay.github.io/about.html'>About</a></nav>
+<hr style='border-bottom-color: #e2e2e2;'>
+<nav role='navigation'>
+<a style='color: #C0C0C0;'></a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/index.html' style='color: #C0C0C0;'>Main</a>&nbsp;/&nbsp;<a href='https://symontoclay.github.io/docs/index.html' style='color: #C0C0C0;'>Documentation</a>&nbsp;/&nbsp;<a style='color: #C0C0C0;'>Philosophy</a></nav>
+<div style='background-color: #FFF9F3;'>
+<table>
+<tbody>
+<tr>
+<td style='background-color: #FEBE0A;'>
+&nbsp;
+</td>
+<td>
+<img src='https://symontoclay.github.io/icons8-warning-48.png' width='48px' height='48px' alt='Warning logo'>
+</td>
+<td>
+<b>Disclaimer: This is a purely experimental and unstable personal project, created by a single developer. Not intended for production use.</b><br>
+Please read the <a href='https://symontoclay.github.io/general-disclaimer.html'>disclaimers</a> carefully before use!
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<article>
+<h1 id="principles-and-project-philosophy" is-processed="true">Principles and Project Philosophy</h1>
+<p>Any open project inevitably reflects the personality of its author.<br>
+These principles represent my personal guidelines, an expression of my values and preferences.<br>
+This is the way I find the work most engaging.</p>
+<h2 id="system-philosophy" is-processed="true">System Philosophy</h2>
+<h3 id="the-system-focuses-exclusively-on-agent-npc-behavior" is-processed="true">The System Focuses Exclusively on Agent (NPC) Behavior</h3>
+<p>The system is designed solely for describing NPC behavior. It does not provide access to game scene objects, particle systems, animations, sounds, or similar components. In cases where the system might be applied in other domains—for example, in robot control—it will likewise not provide access to low-level hardware management.</p>
+<p>This design approach enables:</p>
+<ul>
+<li>Abstraction from other game components and even from the execution environment</li>
+<li>Cleaner and more maintainable code</li>
+<li>The possibility of applying the system beyond the game industry—in simulations, robotics control, expert systems, knowledge bases, and ontologies</li>
+</ul>
+<p>Since my current primary focus is the use of the system in game development, I will henceforth use the term NPC (Non-Player Character) to denote an agent.</p>
+<h3 id="declarativity-expressiveness-and-readability" is-processed="true">Declarativity, Expressiveness, and Readability</h3>
+<p>The developer should focus on the required behavioral logic rather than struggle with language or framework constructs.</p>
+<p>Code must be easily readable, understandable, and aesthetically clean. The developer should be able to grasp, at first glance, what the code describes and what it performs.</p>
+<p>The number of places requiring modifications should be minimized—ideally limited to a single location.</p>
+<p>In the design of the system, priority is given to declarative means.</p>
+<h3 id="simplicity-as-clarity-and-expressiveness-through-understanding" is-processed="true">Simplicity as Clarity and Expressiveness Through Understanding</h3>
+<p>In this system, simplicity is understood as a pursuit of clarity, expressiveness, and semantic transparency. It is a simplicity that arises from understanding rather than from the rejection of complexity.</p>
+<p>My ideal is the simplicity found in Haskell: where expressive constructs allow complex behavior to be described concisely and intelligibly.</p>
+<p>The system does not aim for artificial simplicity that restricts expressiveness. If, in the course of development, the system results in a very high entry threshold or even appears esoteric—so be it.</p>
+<p>At the same time, it avoids excessive complexity that hinders comprehension. If, in the course of development, the system results in a very low entry threshold and appears overly primitive—so be it.</p>
+<p>The essential requirement is that simplicity serves meaning, not form.</p>
+<h3 id="usability-takes-priority-over-dogmatic-adherence-to-a-specific-programming-paradigm" is-processed="true">Usability Takes Priority Over Dogmatic Adherence to a Specific Programming Paradigm</h3>
+<p>The system is not rigidly bound to a single programming paradigm. Any paradigm is acceptable if its use enhances declarativity, expressiveness, and readability, and makes the specification of NPC behavior more convenient.</p>
+<p>It is not advisable to implement logical programming exclusively through imperative or functional programming constructs merely to remain within the boundaries of the corresponding paradigm. Such an approach results, at minimum, in a loss of expressiveness and makes it difficult to discern the required logic amid large amounts of auxiliary code.</p>
+<p>Similarly, I do not consider it necessary to repeat the attempt made in Visual Prolog to express imperative code solely through logical programming constructs, simply to remain within Prolog.</p>
+<p>A paradigm is merely a means to achieve results, not an end in itself.</p>
+<h3 id="implicitness-is-acceptable-for-convenience-and-expressiveness-but-control-must-also-be-possible" is-processed="true">Implicitness Is Acceptable for Convenience and Expressiveness, but Control Must Also Be Possible</h3>
+<p>Implicitness helps avoid excessive amounts of code by removing the need to declare everything explicitly. This is a deliberate compromise: a trade-off of strictness and formal safety in favor of convenience and expressiveness.</p>
+<p>Convenience requires reducing unnecessary code. Expressiveness requires freedom from technical noise.</p>
+<p>At the same time, there must be optional mechanisms for controlling and overriding the system’s default behavior. The developer should have the ability to understand, refine, and modify implicit decisions.</p>
+<p>The key is to maintain balance.</p>
+<h3 id="reducing-boilerplate-code-is-important-but-should-not-become-fanatical" is-processed="true">Reducing Boilerplate Code Is Important, but Should Not Become Fanatical</h3>
+<p>Declarativity, expressiveness, readability, usability, and simplicity all imply minimizing template-like, repetitive code.</p>
+<p>In this sense, the purpose of my system is precisely to reduce boilerplate code — for example, by allowing an entity to be declared without the need to register it in multiple places.</p>
+<p>At the same time, eliminating every single &quot;extra character&quot; is not a priority, especially if declarativity, expressiveness, readability, usability, and simplicity are degraded as a result of such removal.</p>
+<p>Reducing unnecessary characters is a means, not an end. If a bracket helps clarify structure, it should remain.</p>
+<h3 id="determinism-is-important-but-non-determinism-should-also-be-convenient-when-needed" is-processed="true">Determinism Is Important, but Non-Determinism Should Also Be Convenient When Needed</h3>
+<p>In human behavior, determinism manifests itself in logic, instructions, habits, rituals, and adherence to rules. This is a significant aspect, particularly when behavior must be explainable and reproducible.</p>
+<p>Within the system, priority is given to determinism — so that behavior remains predictable, debuggable, and reproducible.</p>
+<p>At the same time, mechanisms for enabling non-deterministic behavior are also necessary where appropriate. Randomness, variability, and improvisation are likewise part of realistic behavior, and they should be available without sacrificing transparency or controllability.</p>
+<h2 id="language-design" is-processed="true">Language Design</h2>
+<h3 id="multiparadigm-approach" is-processed="true">Multiparadigm Approach</h3>
+<p>The language supports multiple paradigms simultaneously — object-oriented, functional, logical, and imperative.<br>
+This enables developers to combine programming styles and leverage the strengths of each approach depending on the context.</p>
+<h3 id="domain-orientation" is-processed="true">Domain Orientation</h3>
+<p>The primary objective is to facilitate the modeling of character behavior.<br>
+To achieve this, the developer must directly operate with domain-specific concepts.</p>
+<h3 id="declarativity-without-compromising-applicable-paradigms" is-processed="true">Declarativity Without Compromising Applicable Paradigms</h3>
+<p>Declarative constructs allow the expression of intentions rather than step-by-step instructions.<br>
+At the same time, the language does not restrict developers from using imperative or functional mechanisms, maintaining a balance between declarativity and practical applicability.</p>
+<h3 id="modularity-and-incremental-development" is-processed="true">Modularity and Incremental Development</h3>
+<p>The module system ensures separation of concerns and code reuse.<br>
+Projects can be developed incrementally by adding new components without the need to rewrite existing ones.<br>
+This makes the language suitable for long-term and evolving systems.</p>
+<h3 id="dynamic-typing-with-optional-strict-typing" is-processed="true">Dynamic Typing with Optional Strict Typing</h3>
+<p>By default, the language is dynamically typed, which accelerates prototyping.<br>
+For critical parts of the system, strict typing can be enabled to provide additional control and safety.<br>
+This approach combines flexibility with reliability.</p>
+<h2 id="architectural-design" is-processed="true">Architectural Design</h2>
+<h3 id="isolation-of-npcs-from-each-other-and-from-the-game-scene" is-processed="true">Isolation of NPCs: From Each Other and from the Game Scene</h3>
+<p>Each agent (NPC) in the system is isolated—it has no direct access to the game scene or to the data of other NPCs.<br>
+NPC behavior is formed on the basis of its own knowledge and the data obtained through perception channels.</p>
+<h3 id="modularity-and-incremental-construction-of-agent-npc-behavior" is-processed="true">Modularity and Incremental Construction of Agent (NPC) Behavior</h3>
+<p>The behavior of agents (NPCs) can be described in parts, with the ability to gradually extend, override, and refine it. The system supports a modular structure in which each behavior block can be added, disabled, or adjusted without the need to rewrite the entire behavior.</p>
+<p>Advantages of modularity:</p>
+<ul>
+<li><strong>Incrementality</strong>: development can begin with simple behavior and gradually add new reactions, refinements, and scenario-specific exceptions.</li>
+<li><strong>Reusability</strong>: behavioral blocks can be structured as modules and reused across different contexts.</li>
+<li><strong>Overriding</strong>: more specific modules can override or refine behavior defined at a more general level.</li>
+<li><strong>Isolation</strong>: modules are not required to be aware of each other—they can be combined by the system based on priorities, context, or scenario.</li>
+</ul>
+<p>A module may be represented as a book, scroll, or artifact that grants an NPC new knowledge or abilities. This is particularly relevant in an architecture where NPCs are isolated and do not have global access to behavior definitions.</p>
+<p>For example, a game scenario might proceed as follows:</p>
+<ol>
+<li>The NPC finds, purchases, or receives a book from a teacher.</li>
+<li>The game triggers a reading scene or a knowledge-acquisition animation.</li>
+<li>At that moment, the engine attaches the corresponding module to the NPC.</li>
+<li>The NPC acquires new knowledge or a behavioral capability.</li>
+</ol>
+<p>This approach makes the architecture not only technically flexible but also narratively expressive—behavior becomes part of the world rather than merely code.</p>
+<h3 id="full-control-over-execution" is-processed="true">Full Control over Execution</h3>
+<p>The system provides the ability to stop execution at any moment and save it as an image. After loading from the image, execution can be resumed exactly from the point at which it was interrupted.</p>
+<p>In practice, this means:</p>
+<ul>
+<li><strong>Stop and Save</strong>: execution can be interrupted at any point, preserving all data about the agent’s state, its modules, and its context.</li>
+<li><strong>Resume</strong>: after loading from the image, execution continues without loss of information—the NPC behaves as if no pause occurred.</li>
+<li><strong>Deterministic Restoration</strong>: it is guaranteed that the restored behavior is identical to the original, with no hidden discrepancies.</li>
+<li><strong>Instrumentality</strong>: developers or researchers can use save/resume functionality for debugging, experimentation, or scenario control.</li>
+</ul>
+<h3 id="the-engines-application-should-not-be-limited-to-games" is-processed="true">The Engine’s Application Should Not Be Limited to Games</h3>
+<p>The engine is designed as a universal platform for describing and executing agent behavior. Its application is not restricted to the game industry—the architecture is intended to support use in other domains where knowledge, logic, and control are essential.</p>
+<p>Possible additional application areas:</p>
+<ul>
+<li>Knowledge base</li>
+<li>CLI in the style of an interactive Prolog interpreter</li>
+<li>AI for robot control (with server-side execution)</li>
+</ul>
+<h3 id="all-execution-must-occur-locally-on-the-users-computer-without-requiring-internet-connectivity" is-processed="true">All Execution Must Occur Locally on the User’s Computer Without Requiring Internet Connectivity</h3>
+<p>The engine must operate entirely locally on the user’s computer. All functions are executed without the need for an internet connection. This ensures autonomy, reliability, and control over the process.</p>
+<p>In practice, this means:</p>
+<ul>
+<li><strong>Autonomy</strong>: the system does not depend on external services or servers.</li>
+<li><strong>Reliability</strong>: operation continues even in the absence of a network or with limited access.</li>
+<li><strong>Transparency</strong>: the user knows that all computations occur on their device.</li>
+<li><strong>Security</strong>: NPC data and game states never leave the local machine.</li>
+<li><strong>Predictability</strong>: no external factors can alter the behavior of the engine.</li>
+</ul>
+<h3 id="the-use-of-third-party-components-requiring-or-potentially-requiring-license-purchases-is-not-permissible" is-processed="true">The Use of Third-Party Components Requiring or Potentially Requiring License Purchases Is Not Permissible</h3>
+<p>The engine must not include third-party components that require or may require the purchase of licenses. All elements of the system must be free from hidden restrictions, paid dependencies, and mandatory subscriptions.</p>
+
+</article>
+<p>
+&nbsp;
+</p>
+<hr style='border-bottom-color: #e2e2e2;'>
+<br>
+<footer class='container' role='contentinfo'>
+<p>
+<a href='https://github.com/Symontoclay'>GitHub</a>
+ | 
+<a href='https://www.youtube.com/channel/UCgw9QmyKGZQXQyugbzCstZA'>YouTube</a>
+ | 
+<a href='https://discord.gg/UkC5r3ZDTN'>Discord</a>
+</p>
+<p>
+<a href='https://symontoclay.github.io/general-disclaimer.html'>Disclaimers</a>
+ • 
+<a href='https://symontoclay.github.io/privacy.html'>Privacy Policy</a>
+</p>
+<p>
+Last modified: 01 January 2026<br>
+</p>
+<p>
+&copy;&nbsp;<a href='https://github.com/Symontoclay'>SymOntoClay</a>, 2020 - 2026. 
+<a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>&nbsp;<i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i>
+</p>
+<p>
+&nbsp;
+</p>
+</footer>
+</body>
+</html>

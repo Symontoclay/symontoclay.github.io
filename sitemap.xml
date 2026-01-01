@@ -352,13 +352,16 @@
 <loc>https://symontoclay.github.io/index.html</loc>
 </url>
 <url>
-<loc>https://symontoclay.github.io/contact_me.html</loc>
+<loc>https://symontoclay.github.io/about.html</loc>
 </url>
 <url>
 <loc>https://symontoclay.github.io/general-disclaimer.html</loc>
 </url>
 <url>
 <loc>https://symontoclay.github.io/privacy.html</loc>
+</url>
+<url>
+<loc>https://symontoclay.github.io/roadmap.html</loc>
 </url>
 <url>
 <loc>https://symontoclay.github.io/white-paper.html</loc>
@@ -382,6 +385,9 @@
 <loc>https://symontoclay.github.io/docs/cli.html</loc>
 </url>
 <url>
+<loc>https://symontoclay.github.io/docs/faq.html</loc>
+</url>
+<url>
 <loc>https://symontoclay.github.io/docs/file_structure.html</loc>
 </url>
 <url>
@@ -398,6 +404,9 @@
 </url>
 <url>
 <loc>https://symontoclay.github.io/docs/key-features.html</loc>
+</url>
+<url>
+<loc>https://symontoclay.github.io/docs/philosophy.html</loc>
 </url>
 <url>
 <loc>https://symontoclay.github.io/docs/recommended-vocabulary.html</loc>
