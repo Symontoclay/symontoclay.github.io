@@ -1,3 +1,5 @@
 User-agent: *
+Allow: /assets/
 Disallow: /siteSource/
 Disallow: /CSharpApiFiles/
+Sitemap: https://symontoclay.github.io/sitemap.xml
